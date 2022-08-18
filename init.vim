@@ -1,9 +1,23 @@
-" vimrc を読み込む
+" vimrc  を読み込む
 if has('win64')
     source ~\_vimrc
 else
     source ~/.vimrc
 endif
+
+" クリップボード
+let g:clipboard = {
+    'name': 'myClipboard',
+    'copy': {
+        '+': 'win32yank.exe -i',
+        '*': 'win32yank.exe -i',
+        },
+    'paste': {
+        '+': 'win32yank.exe -o',
+        '*': 'win32yank.exe4 -o',
+        },
+    'cache_enabled': 1,
+    }
 
 " install vim-jetpack
 let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
@@ -16,20 +30,15 @@ endif
 packadd vim-jetpack
 call jetpack#begin('~/.vim/jetpack')  
 
-Jetpack 'tani/vim-jetpack', {'opt': 2} 
+Jetpack 'tani/vim-jetpack', {'opt': 1} 
 
-"Jetpack 'vim-jp/vimdoc-ja'
+Jetpack 'vim-jp/vimdoc-ja'
 
 Jetpack 'neoclide/coc.nvim', {'branch': 'release'}
 
 Jetpack 'lambdalisue/fern.vim'
 
 Jetpack 'nvim-treesitter/nvim-treesitter'
-" カラースキーマ
-Jetpack 'sainnhe/gruvbox-material'
-Jetpack 'sainnhe/edge'
-Jetpack 'sainnhe/sonokai'
-Jetpack 'sainnhe/everforest'
 " nerdfont
 Jetpack 'lambdalisue/nerdfont.vim'
 Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
@@ -39,6 +48,13 @@ Jetpack 'easymotion/vim-easymotion'
 Jetpack 'vim-denops/denops.vim'
 " markdown
 Jetpack 'tani/glance-vim'
+
+" カラースキーマ
+Jetpack 'sainnhe/gruvbox-material'
+Jetpack 'sainnhe/edge'
+Jetpack 'sainnhe/sonokai'
+Jetpack 'sainnhe/everforest'
+Jetpack 'EdenEast/nightfox.nvim'
 call jetpack#end()
 
 " 起動時にインストール
@@ -82,8 +98,8 @@ require('nvim-treesitter.configs').setup {
     "typescript",
     "tsx",
     "javascript",
-    "vim",
     "vue",
+    "vim",
     "json",
     "markdown",
     "lua",
@@ -97,6 +113,4 @@ require('nvim-treesitter.configs').setup {
 EOF
 
 " colorscheme
-"colorscheme gruvbox-material
-"colorscheme edge
-colorscheme everforest
+colorscheme nordfox
