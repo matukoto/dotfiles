@@ -57,14 +57,6 @@ Jetpack 'sainnhe/everforest'
 Jetpack 'EdenEast/nightfox.nvim'
 call jetpack#end()
 
-" 起動時にインストール
-" for name in jetpack#names()
-"   if !jetpack#tap(name)
-"     call jetpack#sync()
-"     break
-"   endif
-" endfor
-
 " map prefix
 let g:mapleader = "\<Space>"
 nnoremap <Leader> <Nop>
