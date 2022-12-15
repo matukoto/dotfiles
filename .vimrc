@@ -36,11 +36,11 @@ set nowrapscan
 " esc
 tnoremap <ESC> <C-\><C-n>
 " " インサートモードで入る
-" if has('nvim')
-" 	autocmd WinEnter * if &buftype ==# 'terminal' | startinsert | endif
-" else
-" 	autocmd WinEnter * if &buftype ==# 'terminal' | normal i | endif
-" endif
+ if has('nvim')
+ 	autocmd WinEnter * if &buftype ==# 'terminal' | startinsert | endif
+ else
+ 	autocmd WinEnter * if &buftype ==# 'terminal' | normal i | endif
+ endif
 
 nnoremap <silent> <C-t><C-m> :split<CR> <C-w>j :terminal<CR> :resize 6<CR> i
 "行番号を表示
@@ -59,9 +59,6 @@ nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 "スクロール時に表示を10行確保
 set scrolloff=10
  
-"JIS 配列 C-[ で Esc
-inoremap <C-[> <Esc>
- 
 "x キー削除でデフォルトレジスタに入れない
 nnoremap x "_x
 vnoremap x "_x
@@ -79,9 +76,6 @@ noremap <CR> i<CR><Esc>
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk
-
-" vを二回で行末まで選択
-vnoremap v $h
 
 " 動作環境との統合
 " OSのクリップボードをレジスタ指定無しで Yank, Put 出来るようにする
