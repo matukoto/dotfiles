@@ -1,34 +1,44 @@
-" Windows vimrc 
-" 文字コードの自動は別
+" 文字コードの自動判別
 set encoding=utf-8
 set fileencodings=utf-8
+"
 " 改行コードの自動認識
-set fileformats=unix,dos,mac
+set fileformat=unix
 
 " 新しいウィンドウを下､右に開く
 set splitbelow
 set splitright
+
 "  カーソルの位置を%で表示
 set ruler
+
 " カーソル行の背景色変更
 set cursorline
+
 " タブ
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+
 " インデントにスペースを使用
 set expandtab
+
 " 開業時に自動インデント
 set autoindent
 set smartindent
+
 " 折返医sたときもインデント
 set breakindent
+
 " 折り返したときにインデントの深さを同じに
 set breakindentopt=shift:0
+
 " 全角文字専用の設定
 set ambiwidth=double
+
 " 対応する括弧やブレースを表示
 set showmatch matchtime=1
+
 "検索をファイルの先頭へ循環しない
 set nowrapscan
 
