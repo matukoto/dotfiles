@@ -31,11 +31,5 @@ if [ -d "$HOME/.deno/bin" ] ; then
     PATH="$HOME/.deno/bin:$PATH"
 fi
 
-
-sudo bash ~/script/write_resolv_conf.sh
-
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
-# asdf 
-. /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
 
