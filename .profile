@@ -33,3 +33,6 @@ fi
 
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
+export VIMRC="$HOME/dotfiles/vimrc"
+export INTIVIM="$HOME/dotfiles/init.vim"
+
