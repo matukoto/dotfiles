@@ -163,4 +163,4 @@ require('nvim-treesitter.configs').setup {
 EOF
 
 " colorscheme
-colorscheme gruvbox-material
+colorscheme edge
