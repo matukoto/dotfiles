@@ -62,6 +62,8 @@ Jetpack 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Jetpack 'vim-denops/denops.vim'
 " markdown
 "Jetpack 'tani/glance-vim'
+" git
+Jetpack 'lambdalisue/gin.vim'
 
 " カラースキーマ
 Jetpack 'sainnhe/gruvbox-material'
