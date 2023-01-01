@@ -1,0 +1,122 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.017  000.017: --- NVIM STARTING ---
+000.187  000.170: event init
+000.346  000.159: early init
+000.419  000.073: locale set
+000.492  000.073: init first window
+001.042  000.550: inits 1
+001.058  000.016: window checked
+001.064  000.006: parsing arguments
+001.859  000.099  000.099: require('vim.shared')
+002.120  000.126  000.126: require('vim._meta')
+002.124  000.257  000.131: require('vim._editor')
+002.127  000.421  000.065: require('vim._init_packages')
+002.130  000.644: init lua interpreter
+002.174  000.044: expanding arguments
+002.256  000.082: inits 2
+002.890  000.634: init highlight
+002.892  000.003: waiting for UI
+004.635  001.743: done waiting for UI
+004.653  000.018: init screen for UI
+005.151  000.497: init default mappings
+005.218  000.068: init default autocommands
+006.088  000.161  000.161: sourcing /usr/share/nvim/runtime/ftplugin.vim
+006.251  000.086  000.086: sourcing /usr/share/nvim/runtime/indent.vim
+006.605  000.227  000.227: sourcing /home/kesu/.vimrc
+007.962  000.865  000.865: sourcing /home/kesu/.config/nvim/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim
+012.708  000.158  000.158: sourcing /usr/share/nvim/runtime/syntax/nosyntax.vim
+013.483  000.045  000.045: sourcing /usr/share/nvim/runtime/ftplugof.vim
+013.569  000.028  000.028: sourcing /usr/share/nvim/runtime/indoff.vim
+021.206  000.341  000.341: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+021.817  000.437  000.437: sourcing /usr/share/nvim/runtime/filetype.lua
+021.890  000.028  000.028: sourcing /usr/share/nvim/runtime/filetype.vim
+024.498  002.399  002.399: require('vim.filetype')
+032.640  006.883  006.883: require('vim.filetype.detect')
+033.846  000.878  000.878: sourcing /usr/share/nvim/runtime/scripts.vim
+033.904  013.948  002.983: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+034.202  000.133  000.133: sourcing /usr/share/nvim/runtime/filetype.lua
+034.268  000.025  000.025: sourcing /usr/share/nvim/runtime/filetype.vim
+034.536  000.107  000.107: sourcing /usr/share/nvim/runtime/ftplugin.vim
+034.712  000.072  000.072: sourcing /usr/share/nvim/runtime/indent.vim
+037.561  000.120  000.120: require('vim.treesitter.language')
+037.588  000.962  000.842: require('vim.treesitter.query')
+040.862  000.586  000.586: require('vim.treesitter.languagetree')
+040.886  000.798  000.212: require('vim.treesitter')
+041.092  002.530  001.732: require('nvim-treesitter.parsers')
+041.417  000.320  000.320: require('nvim-treesitter.utils')
+041.432  003.538  000.688: require('nvim-treesitter.ts_utils')
+041.444  003.851  000.313: require('nvim-treesitter.tsrange')
+041.550  000.101  000.101: require('nvim-treesitter.caching')
+041.569  005.538  000.624: require('nvim-treesitter.query')
+041.591  006.625  001.086: require('nvim-treesitter.configs')
+042.794  000.304  000.304: require('nvim-treesitter.info')
+043.117  000.316  000.316: require('nvim-treesitter.shell_command_selectors')
+043.162  001.552  000.931: require('nvim-treesitter.install')
+044.175  000.131  000.131: require('nightfox.lib.collect')
+044.462  000.280  000.280: require('nightfox.util')
+044.682  000.767  000.357: require('nightfox.config')
+045.129  000.150  000.150: require('nightfox.lib.highlight')
+045.138  000.443  000.293: require('nightfox.main')
+045.235  000.093  000.093: require('nightfox.override')
+050.944  005.462  005.462: require('nightfox.precompiled.nvim.nordfox_compiled')
+050.959  007.084  000.319: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/nightfox.nvim/colors/nordfox.vim
+050.998  044.666  013.799: sourcing /home/kesu/.config/nvim/init.vim
+051.010  000.878: sourcing vimrc file(s)
+066.250  014.594  014.594: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/plugin/EasyMotion.vim
+066.795  000.205  000.205: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/autoload/coc/rpc.vim
+067.716  000.788  000.788: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/autoload/coc/util.vim
+068.607  000.483  000.483: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/autoload/coc/client.vim
+085.550  019.207  017.731: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/plugin/coc.vim
+085.755  000.106  000.106: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/plugin/denops/debug.vim
+086.044  000.149  000.149: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/autoload/denops.vim
+086.196  000.401  000.252: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/plugin/denops.vim
+086.481  000.246  000.246: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/plugin/fern.vim
+087.413  000.746  000.746: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/autoload/vital/fern.vim
+087.923  000.217  000.217: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/autoload/vital/_fern/Config.vim
+088.116  000.061  000.061: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/autoload/vital/_fern.vim
+089.496  002.892  001.869: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/autoload/fern.vim
+089.531  003.004  000.112: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/plugin/fern_renderer_nerdfont.vim
+090.002  000.036  000.036: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/denops.vim/plugin/denops/debug.vim
+090.065  000.018  000.018: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/denops.vim/plugin/denops.vim
+090.325  000.141  000.141: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/glance-vim/plugin/glance.vim
+090.533  000.095  000.095: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/nightfox.nvim/plugin/nightfox.vim
+090.745  000.033  000.033: sourcing /home/kesu/.config/nvim/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim
+091.115  000.054  000.054: sourcing /home/kesu/.local/share/nvim/site/pack/jetpack/opt/_/plugin/EasyMotion.vim
+091.163  000.019  000.019: sourcing /home/kesu/.local/share/nvim/site/pack/jetpack/opt/_/plugin/coc.vim
+091.202  000.015  000.015: sourcing /home/kesu/.local/share/nvim/site/pack/jetpack/opt/_/plugin/denops/debug.vim
+091.239  000.014  000.014: sourcing /home/kesu/.local/share/nvim/site/pack/jetpack/opt/_/plugin/denops.vim
+091.274  000.013  000.013: sourcing /home/kesu/.local/share/nvim/site/pack/jetpack/opt/_/plugin/fern.vim
+092.438  000.572  000.572: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+092.499  000.022  000.022: sourcing /usr/share/nvim/runtime/plugin/health.vim
+092.625  000.103  000.103: sourcing /usr/share/nvim/runtime/plugin/man.vim
+093.855  000.525  000.525: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+094.045  001.387  000.863: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+094.621  000.441  000.441: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+096.352  001.697  001.697: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+096.900  000.470  000.470: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+097.167  000.217  000.217: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+097.279  000.059  000.059: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+097.620  000.288  000.288: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+097.945  000.276  000.276: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+098.087  000.078  000.078: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+099.150  000.794  000.794: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+101.595  000.260  000.260: require('nvim-treesitter.statusline')
+102.112  000.504  000.504: require('nvim-treesitter.query_predicates')
+102.126  002.140  001.377: require('nvim-treesitter')
+104.689  000.713  000.713: require('vim.treesitter.highlighter')
+104.737  001.417  000.704: require('nvim-treesitter.highlight')
+105.249  005.552  001.995: sourcing /home/kesu/.vim/jetpack/pack/jetpack/opt/_/plugin/nvim-treesitter.lua
+105.977  000.109  000.109: sourcing /home/kesu/.local/share/nvim/site/pack/jetpack/opt/_/plugin/nvim-treesitter.lua
+106.271  005.202: loading rtp plugins
+106.532  000.260: loading packages
+106.541  000.009: loading after plugins
+106.591  000.050: inits 3
+111.482  004.891: reading ShaDa
+111.746  000.264: opening buffers
+111.809  000.063: BufEnter autocommands
+111.816  000.007: editing files in windows
