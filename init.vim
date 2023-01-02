@@ -85,7 +85,7 @@ map F <Jetpack>(easymotion-Fl)
 map T <Jetpack>(easymotion-Tl)
 
 " coc.nvim
-let g:coc_global_extensions = ['coc-vetur', 'coc-java', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-lists']
+let g:coc_global_extensions = ['@yaegassy/coc-volar','@yaegassy/coc-volar-tools', 'coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-lists']
 inoremap <silent> <expr> <C-Space> coc#refresh()
 nnoremap <silent> K       :<C-u>call <SID>show_documentation()<CR>
 nmap     <silent> [dev]rn <Jetpack>(coc-rename)
@@ -157,6 +157,7 @@ require('nvim-treesitter.configs').setup {
     "css",
     "java",
     "yaml",
+    "go",
   },
   highlight = {
     enable = true,
