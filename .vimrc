@@ -23,11 +23,11 @@ set softtabstop=2
 " インデントにスペースを使用
 set expandtab
 
-" 開業時に自動インデント
+" 改行時に自動インデント
 set autoindent
 set smartindent
 
-" 折返医sたときもインデント
+" 折返したときもインデント
 set breakindent
 
 " 折り返したときにインデントの深さを同じに
