@@ -32,6 +32,11 @@ if [ -d "$HOME/.deno/bin" ] ; then
     PATH="$HOME/.deno/bin:$PATH"
 fi
 
+# set PATH so if includes volta
+if [ -d "$HOME/.volta/bin" ] ; then
+    PATH="$HOME/.volta/bin:$PATH"
+fi
+
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 export VIMRC="$HOME/dotfiles/.vimrc"
