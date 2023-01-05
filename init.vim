@@ -47,8 +47,6 @@ Jetpack 'lambdalisue/fern.vim'
 Jetpack 'itchyny/lightline.vim'
 Jetpack 'itchyny/vim-gitbranch'
 
-Jetpack 'lambdalisue/gina.vim'
-
 Jetpack 'nvim-treesitter/nvim-treesitter'
 " nerdfont
 Jetpack 'lambdalisue/nerdfont.vim'
@@ -140,6 +138,13 @@ nnoremap <C-g> <cmd>Telescope live_grep<cr>
 " 不明
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" git message
+augroup select-commit-title
+  autocmd!
+  autocmd FileType *commit nnoremap <buffer> <CR><CR>
+        \  <Cmd>silent! execute 'normal! ^w"zdiw"_dip"zPA: ' <bar> startinsert!<CR>
+augroup END
 
 " treesitter
 lua <<EOF
