@@ -130,14 +130,22 @@ let g:lightline = {
  
 "" telescope
 " ファイル検索
-nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <C-p> <cmd>Telescope find_files<CR>
 " 文字列検索
-nnoremap <C-g> <cmd>Telescope live_grep<cr>
+nnoremap <C-g> <cmd>Telescope live_grep<CR>
 " 横断検索
-" nnoremap <C-f> <cmd>Telescope frecency<cr>
+" nnoremap <C-f> <cmd>Telescope frecency<CR>
 " 不明
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <leader>fh <cmd>Telescope help_tags<CR>
+
+"" gin
+nnoremap <leader>gs <cmd>Gin status<CR>
+nnoremap <leader>ga <cmd>Gin add .<CR>
+nnoremap <leader>gc <cmd>Gin commit<CR>
+nnoremap <leader>gp <cmd>Gin push<CR>
+nnoremap <leader>gf <cmd>Gin fetch<CR>
+nnoremap <leader>gl <cmd>Gin pull<CR>
 
 " git message
 augroup select-commit-title
