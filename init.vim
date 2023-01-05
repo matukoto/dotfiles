@@ -140,12 +140,12 @@ nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
 "" gin
-nnoremap <leader>gs <cmd>Gin status<CR>
+nnoremap <leader>gs <cmd>GinStatus<CR>
 nnoremap <leader>ga <cmd>Gin add .<CR>
 nnoremap <leader>gc <cmd>Gin commit<CR>
 nnoremap <leader>gp <cmd>Gin push<CR>
 nnoremap <leader>gf <cmd>Gin fetch<CR>
-nnoremap <leader>gl <cmd>Gin pull<CR>
+nnoremap <leader>gdiff <cmd>GinDiff<CR>
 
 " git message
 augroup select-commit-title
