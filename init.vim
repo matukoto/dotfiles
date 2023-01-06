@@ -140,7 +140,7 @@ nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
 "" gin
-nnoremap <leader>gs <cmd>GinStatus<CR>
+nnoremap <leader>gs <cmd>GinStatus ++opener=split<CR>
 nnoremap <leader>ga <cmd>Gin add .<CR>
 nnoremap <leader>gc <cmd>Gin commit<CR>
 nnoremap <leader>gp <cmd>Gin push<CR>
