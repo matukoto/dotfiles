@@ -69,6 +69,7 @@ Jetpack 'sainnhe/edge'
 Jetpack 'sainnhe/sonokai'
 Jetpack 'sainnhe/everforest'
 Jetpack 'edeneast/nightfox.nvim'
+" Jetpack 'folke/styler.nvim'
 call jetpack#end()
 
 " map prefix
@@ -114,7 +115,6 @@ nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
 set noshowmode
 " ステータスラインを表示する
 set laststatus=2
-" カラースキーム
 let g:lightline = {
    \ 'active': {
    \   'left': [
@@ -125,7 +125,8 @@ let g:lightline = {
    \ 'component_function': {
    \   'gitbranch': 'gitbranch#name',
    \   'cocstatus': 'coc#status',
-   \ }
+   \ },
+   \ 'colorscheme': 'edge',
 \ }
  
 "" telescope
