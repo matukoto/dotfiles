@@ -1,0 +1,10 @@
+[user]
+	email = keisuke.suke.san@gmail.com
+	name = Keisuke.Matsumoto
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
+[core]
+	editor = vim
+  commentChar = ";"
+[commit]
+	template = /home/keisuke/dotfiles/git/.gitmessage
