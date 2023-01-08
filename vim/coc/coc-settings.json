@@ -1,0 +1,13 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "vue",
+    "tsx",
+    "ts",
+    "go",
+    "md",
+    "yaml",
+    "json",
+    "vim",
+    "lua"
+  ]
+}
