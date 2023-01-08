@@ -28,15 +28,22 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # set PATH so if includes deno
-if [ -d "$HOME/.deno/bin" ] ; then
-    PATH="$HOME/.deno/bin:$PATH"
+export DENO_HOME=$HOME/.deno
+if [ -d "$DENO_HOME/bin" ] ; then
+    PATH="$DENO_HOME/bin:$PATH"
 fi
 
 # set PATH so if includes volta
-if [ -d "$HOME/.volta/bin" ] ; then
-    PATH="$HOME/.volta/bin:$PATH"
+export VOLTA_HOME=$HOME/.volta
+if [ -d "$VOLTA_HOME/bin" ] ; then
+    PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
+# set PATH so if includes go
+export GOPATH=$HOME/go
+if [ -d "$GOPATH/bin" ] ; then
+    PATH="$GOPATH/bin:$PATH"
+fi
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 export VIMRC="$HOME/dotfiles/.vimrc"
