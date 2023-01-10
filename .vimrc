@@ -43,6 +43,9 @@ set showmatch matchtime=1
 "検索をファイルの先頭へ循環しない
 set nowrapscan
 
+" ヘルプを日本語優先に
+set helplang=ja,en
+
 " ターミナルモード
 " esc
 tnoremap <ESC> <C-\><C-n>
