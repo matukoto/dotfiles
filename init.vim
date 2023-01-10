@@ -87,6 +87,7 @@ Jetpack 'vim-denops/denops.vim'
 " git
 Jetpack 'lambdalisue/gin.vim'
 
+Jetpack 'thinca/vim-quickrun'
 " カラースキーマ
 Jetpack 'sainnhe/gruvbox-material'
 Jetpack 'sainnhe/edge'
@@ -178,6 +179,9 @@ augroup select-commit-title
   autocmd FileType *commit nnoremap <buffer> <CR><CR>
         \  <Cmd>silent! execute 'normal! ^w"zdiw"_dip"zPA: ' <bar> startinsert!<CR>
 augroup END
+
+"quickrun
+nnoremap <Leader>qr <cmd>QuickRun <CR>
 
 " treesitter
 lua <<EOF
