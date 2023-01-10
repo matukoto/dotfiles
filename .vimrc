@@ -34,7 +34,8 @@ set breakindent
 set breakindentopt=shift:0
 
 " 全角文字専用の設定
-set ambiwidth=double
+" アプリと端末ソフトとフォントの扱っている幅が全部一致していないとずれるのでコメントアウト
+" set ambiwidth=double
 
 " 対応する括弧やブレースを表示
 set showmatch matchtime=1
