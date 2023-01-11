@@ -87,6 +87,7 @@ Jetpack 'vim-denops/denops.vim'
 " git
 Jetpack 'lambdalisue/gin.vim'
 
+Jetpack 'mattn/vim-sonictemplate'
 Jetpack 'thinca/vim-quickrun'
 " カラースキーマ
 Jetpack 'sainnhe/gruvbox-material'
@@ -134,6 +135,9 @@ let g:fern#renderer = 'nerdfont'
 " fern
 nnoremap <silent> <leader>e :<c-u>Fern . -drawer<cr>
 nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
+
+" sonictemplate
+let g:sonictemplate_vim_template_dir = '$HOME/dotfiles/vim/sonictemplate/'
 
 "" lightline
 " insert などを非表示に
