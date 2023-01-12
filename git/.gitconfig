@@ -6,5 +6,6 @@
 [core]
 	editor = vim
   commentChar = ";"
+  quotepath = false
 [commit]
 	template = /home/keisuke/dotfiles/git/.gitmessage
