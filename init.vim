@@ -89,6 +89,8 @@ Jetpack 'lambdalisue/gin.vim'
 
 Jetpack 'mattn/vim-sonictemplate'
 Jetpack 'thinca/vim-quickrun'
+Jetpack 'numToStr/comment.nvim'
+
 " カラースキーマ
 Jetpack 'sainnhe/gruvbox-material'
 Jetpack 'sainnhe/edge'
@@ -186,6 +188,11 @@ augroup END
 
 "quickrun
 nnoremap <Leader>qr <cmd>QuickRun <CR>
+
+" comment.nvim
+lua <<EOF
+require('Comment').setup()
+EOF
 
 " treesitter
 lua <<EOF
