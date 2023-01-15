@@ -106,17 +106,17 @@ nnoremap <Leader> <Nop>
 xnoremap <Leader> <Nop>
 
 " easymotion
-map f <Jetpack>(easymotion-fl)
-map t <Jetpack>(easymotion-ft)
-map F <Jetpack>(easymotion-Fl)
-map T <Jetpack>(easymotion-Tl)
+map f <Plug>(easymotion-fl)
+map t <Plug>(easymotion-ft)
+map F <Plug>(easymotion-Fl)
+map T <Plug>(easymotion-Tl)
 
 " coc.nvim
 let g:coc_global_extensions = ['@yaegassy/coc-volar', '@yaegassy/coc-volar-tools', 'coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-lists', 'coc-go']
 inoremap <silent> <expr> <C-Space> coc#refresh()
 nnoremap <silent> K       :<C-u>call <SID>show_documentation()<CR>
-nmap     <silent> [dev]rn <Jetpack>(coc-rename)
-nmap     <silent> [dev]a  <Jetpack>(coc-codeaction-selected)iw
+nmap     <silent> [dev]rn <Plug>(coc-rename)
+nmap     <silent> [dev]a  <Plug>(coc-codeaction-selected)iw
 
 function! s:coc_typescript_settings() abort
   nnoremap <silent> <buffer> [dev]f :<C-u>CocCommand eslint.executeAutofix<CR>:CocCommand prettier.formatFile<CR>
