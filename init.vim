@@ -83,6 +83,7 @@ Jetpack 'lambdalisue/gin.vim'
 Jetpack 'mattn/vim-sonictemplate'
 Jetpack 'thinca/vim-quickrun'
 Jetpack 'numToStr/comment.nvim'
+Jetpack 'mattn/vim-chatgpt'
 
 " カラースキーマ
 Jetpack 'sainnhe/gruvbox-material'
