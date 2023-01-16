@@ -121,4 +121,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# 環境変数 Key など GitHub上で保管しないほうがいいもの
+if [ -f ~/.api_key_environment ]; then
+  . ~/.api_key_environment
+fi
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
