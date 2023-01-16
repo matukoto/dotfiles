@@ -171,7 +171,7 @@ nnoremap <leader>ga <cmd>Gin add .<CR>
 nnoremap <leader>gc <cmd>Gin commit<CR>
 nnoremap <leader>gp <cmd>Gin push<CR>
 nnoremap <leader>gf <cmd>Gin fetch<CR>
-nnoremap <leader>gdiff <cmd>GinDiff<CR>
+nnoremap <leader>gd <cmd>GinDiff<CR>
 
 " git message
 augroup select-commit-title
