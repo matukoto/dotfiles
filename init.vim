@@ -81,6 +81,8 @@ Jetpack 'vim-denops/denops.vim'
 Jetpack 'lambdalisue/gin.vim'
 " chatgpt
 Jetpack 'lambdalisue/butler.vim'
+" 日本語検索
+Jetpack 'lambdalisue/kensaku.vim'
 
 Jetpack 'mattn/vim-sonictemplate'
 Jetpack 'thinca/vim-quickrun'
@@ -180,6 +182,9 @@ augroup select-commit-title
   autocmd FileType *commit nnoremap <buffer> <CR><CR>
         \  <Cmd>silent! execute 'normal! ^w"zdiw"_dip"zPA: ' <bar> startinsert!<CR>
 augroup END
+
+" kensaku 
+cnoremap <CR> <Plug>(kensaku-auto-replace)<CR>
 
 "quickrun
 nnoremap <Leader>qr <cmd>QuickRun <CR>
