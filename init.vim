@@ -74,6 +74,7 @@ Jetpack 'easymotion/vim-easymotion'
 Jetpack 'nvim-lua/plenary.nvim'
 Jetpack 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 " Jetpack 'nvim-telescope/telescope-frecency.nvim'
+" Jetpack 'kkharji/sqlite.lua'
 " denops
 Jetpack 'vim-denops/denops.vim'
 " markdown
@@ -134,7 +135,7 @@ endfunction
 let g:fern#renderer = 'nerdfont'
 
 " fern
-nnoremap <silent> <leader>e :<c-u>Fern . -drawer<cr>
+nnoremap <silent> <Leader>e :<c-u>Fern . -drawer<cr>
 nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
 
 " sonictemplate
@@ -172,12 +173,12 @@ nnoremap <C-b> <cmd>Telescope buffers<CR>
 cnoreabbrev H Telescope help_tags<CR>
 
 "" gin
-nnoremap <leader>gs <cmd>GinStatus ++opener=split<CR>
-nnoremap <leader>ga <cmd>Gin add .<CR>
-nnoremap <leader>gc <cmd>Gin commit<CR>
-nnoremap <leader>gp <cmd>Gin push<CR>
-nnoremap <leader>gf <cmd>Gin fetch<CR>
-nnoremap <leader>gd <cmd>GinDiff<CR>
+nnoremap <Leader>gs <cmd>GinStatus ++opener=split<CR>
+nnoremap <Leader>ga <cmd>Gin add .<CR>
+nnoremap <Leader>gc <cmd>Gin commit<CR>
+nnoremap <Leader>gp <cmd>Gin push<CR>
+nnoremap <Leader>gf <cmd>Gin fetch<CR>
+nnoremap <Leader>gd <cmd>GinDiff<CR>
 
 " git message
 augroup select-commit-title
@@ -186,9 +187,11 @@ augroup select-commit-title
         \  <Cmd>silent! execute 'normal! ^w"zdiw"_dip"zPA: ' <bar> startinsert!<CR>
 augroup END
 
-" kensaku 
-" cnoremap <CR> <Plug>(kensaku-auto-replace)<CR>
-" let g:fuzzy_motion_matchers = ['fzf', 'kensaku']
+" kensaku  fuzzy-motion
+let g:fuzzy_motion_matchers = ['fzf', 'kensaku']
+" fuzzy-motion
+nnoremap <C-f> <cmd>FuzzyMotion<CR>
+
 "quickrun
 nnoremap <Leader>qr <cmd>QuickRun <CR>
 
