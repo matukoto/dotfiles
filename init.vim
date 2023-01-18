@@ -169,7 +169,7 @@ nnoremap <C-g> <cmd>Telescope live_grep<CR>
 " バッファ検索
 nnoremap <C-b> <cmd>Telescope buffers<CR>
 " ヘルプ検索
-cnoreabbrev h Telescope help_tags<CR>
+cnoreabbrev H Telescope help_tags<CR>
 
 "" gin
 nnoremap <leader>gs <cmd>GinStatus ++opener=split<CR>
