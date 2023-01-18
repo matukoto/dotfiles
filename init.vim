@@ -73,6 +73,7 @@ Jetpack 'easymotion/vim-easymotion'
 " fzf
 Jetpack 'nvim-lua/plenary.nvim'
 Jetpack 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+" Jetpack 'nvim-telescope/telescope-frecency.nvim'
 " denops
 Jetpack 'vim-denops/denops.vim'
 " markdown
@@ -87,6 +88,7 @@ Jetpack 'lambdalisue/kensaku.vim'
 Jetpack 'mattn/vim-sonictemplate'
 Jetpack 'thinca/vim-quickrun'
 Jetpack 'numToStr/comment.nvim'
+Jetpack 'yuki-yano/fuzzy-motion.vim'
 
 " カラースキーマ
 Jetpack 'sainnhe/gruvbox-material'
@@ -112,8 +114,8 @@ map T <Plug>(easymotion-Tl)
 let g:coc_global_extensions = ['@yaegassy/coc-volar', '@yaegassy/coc-volar-tools', 'coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-lists', 'coc-go']
 inoremap <silent> <expr> <C-Space> coc#refresh()
 nnoremap <silent> K       :<C-u>call <SID>show_documentation()<CR>
-nmap     <silent> [dev]rn <Plug>(coc-rename)
-nmap     <silent> [dev]a  <Plug>(coc-codeaction-selected)iw
+nmap     <silent> [Leader]rn <Plug>(coc-rename)
+nmap     <silent> [Leader]a  <Plug>(coc-codeaction-selected)iw
 
 function! s:coc_typescript_settings() abort
   nnoremap <silent> <buffer> [dev]f :<C-u>CocCommand eslint.executeAutofix<CR>:CocCommand prettier.formatFile<CR>
@@ -164,9 +166,10 @@ nnoremap <C-p> <cmd>Telescope find_files<CR>
 nnoremap <C-g> <cmd>Telescope live_grep<CR>
 " 横断検索
 " nnoremap <C-f> <cmd>Telescope frecency<CR>
-" 不明
-nnoremap <leader>fb <cmd>Telescope buffers<CR>
-nnoremap <leader>fh <cmd>Telescope help_tags<CR>
+" バッファ検索
+nnoremap <C-b> <cmd>Telescope buffers<CR>
+" ヘルプ検索
+cnoreabbrev h Telescope help_tags<CR>
 
 "" gin
 nnoremap <leader>gs <cmd>GinStatus ++opener=split<CR>
@@ -184,8 +187,8 @@ augroup select-commit-title
 augroup END
 
 " kensaku 
-cnoremap <CR> <Plug>(kensaku-auto-replace)<CR>
-
+" cnoremap <CR> <Plug>(kensaku-auto-replace)<CR>
+" let g:fuzzy_motion_matchers = ['fzf', 'kensaku']
 "quickrun
 nnoremap <Leader>qr <cmd>QuickRun <CR>
 
