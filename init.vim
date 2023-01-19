@@ -77,8 +77,6 @@ Jetpack 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 " Jetpack 'kkharji/sqlite.lua'
 " denops
 Jetpack 'vim-denops/denops.vim'
-" markdown
-"Jetpack 'tani/glance-vim'
 " git
 Jetpack 'lambdalisue/gin.vim'
 " chatgpt
@@ -180,20 +178,13 @@ nnoremap <Leader>gp <cmd>Gin push<CR>
 nnoremap <Leader>gf <cmd>Gin fetch<CR>
 nnoremap <Leader>gd <cmd>GinDiff<CR>
 
-" git message
-augroup select-commit-title
-  autocmd!
-  autocmd FileType *commit nnoremap <buffer> <CR><CR>
-        \  <Cmd>silent! execute 'normal! ^w"zdiw"_dip"zPA: ' <bar> startinsert!<CR>
-augroup END
-
 " kensaku  fuzzy-motion
 let g:fuzzy_motion_matchers = ['fzf', 'kensaku']
 " fuzzy-motion
 nnoremap <C-f> <cmd>FuzzyMotion<CR>
 
 "quickrun
-nnoremap <Leader>qr <cmd>QuickRun <CR>
+nnoremap <Leader>qr <cmd>QuickRun<CR>
 
 " comment.nvim
 lua <<EOF

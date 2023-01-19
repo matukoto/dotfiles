@@ -96,3 +96,10 @@ nnoremap k gk
 set clipboard=unnamed,unnamedplus
 " マウスの入力を受け付ける
 set mouse=a
+
+" git message
+augroup select-commit-title
+  autocmd!
+  autocmd FileType *commit nnoremap <buffer> <CR><CR>
+        \  <Cmd>silent! execute 'normal! ^w"zdiw"_dip"zPA: ' <bar> startinsert!<CR>
+augroup END
