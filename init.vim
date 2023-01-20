@@ -81,6 +81,7 @@ Jetpack 'vim-denops/denops.vim'
 Jetpack 'lambdalisue/gin.vim'
 " chatgpt
 Jetpack 'lambdalisue/butler.vim'
+Jetpack 'yuki-yano/ai-review.vim'
 " 日本語検索
 Jetpack 'lambdalisue/kensaku.vim'
 
@@ -169,6 +170,10 @@ nnoremap <C-g> <cmd>Telescope live_grep<CR>
 nnoremap <C-b> <cmd>Telescope buffers<CR>
 " ヘルプ検索
 cnoreabbrev H Telescope help_tags<CR>
+
+" chatgpt
+cabbrev ai AiReview
+cabbrev gpt Butler<CR>
 
 "" gin
 nnoremap <Leader>gs <cmd>GinStatus ++opener=split<CR>
