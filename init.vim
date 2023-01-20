@@ -139,6 +139,7 @@ nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
 
 " sonictemplate
 let g:sonictemplate_vim_template_dir = '$HOME/dotfiles/vim/sonictemplate/'
+cabbrev tp Template
 
 "" lightline
 " insert などを非表示に
@@ -176,12 +177,12 @@ cabbrev ai AiReview
 cabbrev gpt Butler<CR>
 
 "" gin
-nnoremap <Leader>gs <cmd>GinStatus ++opener=split<CR>
-nnoremap <Leader>ga <cmd>Gin add .<CR>
-nnoremap <Leader>gc <cmd>Gin commit<CR>
-nnoremap <Leader>gp <cmd>Gin push<CR>
-nnoremap <Leader>gf <cmd>Gin fetch<CR>
-nnoremap <Leader>gd <cmd>GinDiff<CR>
+cabbrev gs GinStatus<CR>
+cabbrev ga <cmd>Gin add .<CR>
+cabbrev gc <cmd>Gin commit<CR>
+cabbrev gp <cmd>Gin push<CR>
+cabbrev gd <cmd>GinDiff<CR>
+cabbrev gb GinBranch
 
 " kensaku  fuzzy-motion
 let g:fuzzy_motion_matchers = ['fzf', 'kensaku']
@@ -189,7 +190,7 @@ let g:fuzzy_motion_matchers = ['fzf', 'kensaku']
 nnoremap <C-f> <cmd>FuzzyMotion<CR>
 
 "quickrun
-nnoremap <Leader>qr <cmd>QuickRun<CR>
+cabbrev qr QuickRun<CR>
 
 " comment.nvim
 lua <<EOF
