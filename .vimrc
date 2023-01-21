@@ -6,8 +6,8 @@ set fileencodings=utf-8
 set fileformat=unix
 
 " 新しいウィンドウを下､右に開く
-set splitbelow
-set splitright
+" set splitbelow
+" set splitright
 
 "  カーソルの位置を%で表示
 set ruler
@@ -62,6 +62,9 @@ set number
 "大文字小文字の区別なし
 set ignorecase
  
+" swap しない
+set noswapfile
+
 "検索時に大文字を含んでいたら大/小を区別
 set smartcase
  
