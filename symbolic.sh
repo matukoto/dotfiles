@@ -16,3 +16,4 @@ ln -s ~/dotfiles/vim/coc/coc-settings.json ~/.config/nvim/coc-settings.json
 
 # textlint
 ln -s ~/dotfiles/.textlintrc ~/.textlintrc
+ln -s ~/dotfiles/config/efm-langserver/config.yaml ~/.config/efm-langserver/config.yaml

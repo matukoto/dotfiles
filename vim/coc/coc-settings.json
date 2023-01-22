@@ -9,5 +9,12 @@
     "json",
     "vim",
     "lua"
-  ]
+  ],
+  "languageserver": {
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": ["markdown"]
+    }
+  }
 }
