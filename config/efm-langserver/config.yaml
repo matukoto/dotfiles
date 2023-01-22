@@ -12,6 +12,14 @@ tools:
     root-markers:
       - .textlintrc
 
+  vim-lint: &vim-vint
+    lint-command: "vint -"
+    lint-stdin: true
+    lint-formats:
+      - "%f:%l:%c: %m"
+
 languages:
   markdown:
     - <<: *markdown-textlint
+  vim:
+    - <<: *vim-lint
