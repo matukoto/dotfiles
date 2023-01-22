@@ -137,6 +137,12 @@ let g:fern#renderer = 'nerdfont'
 nnoremap <silent> <Leader>e :<c-u>Fern . -drawer<cr>
 nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
 
+" ウィンドウ移動
+nnoremap <silent> <Leader>h <C-w>h
+nnoremap <silent> <Leader>j <C-w>j
+nnoremap <silent> <Leader>k <C-w>k
+nnoremap <silent> <Leader>l <C-w>l
+
 " sonictemplate
 let g:sonictemplate_vim_template_dir = '$HOME/dotfiles/vim/sonictemplate/'
 cabbrev tp Template
