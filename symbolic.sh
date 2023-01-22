@@ -13,3 +13,6 @@ ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/config/nvim/after/ftplugin.vim ~/.config/nvim/after/ftplugin.vim
 ln -s ~/dotfiles/config/nvim/after/ftplugin/ ~/.config/nvim/after/
 ln -s ~/dotfiles/vim/coc/coc-settings.json ~/.config/nvim/coc-settings.json
+
+# textlint
+ln -s ~/dotfiles/.textlintrc ~/.textlintrc
