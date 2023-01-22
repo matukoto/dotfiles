@@ -13,8 +13,8 @@
   "languageserver": {
     "efm": {
       "command": "efm-langserver",
-      "args": ["-c", "$HOME/.config/efm-langserver/config.yaml"],
-      "filetypes": ["markdown, vim"]
+      "args": [],
+      "filetypes": ["markdown", "vim"]
     }
   }
 }

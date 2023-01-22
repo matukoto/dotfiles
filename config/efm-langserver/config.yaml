@@ -1,6 +1,6 @@
 version: 2
-root-markers:
-  - .git/
+# root-markers:
+#- .git/
 
 tools:
   markdown-textlint: &markdown-textlint
