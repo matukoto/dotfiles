@@ -64,6 +64,8 @@ Jetpack 'lambdalisue/fern.vim'
 Jetpack 'itchyny/lightline.vim'
 Jetpack 'itchyny/vim-gitbranch'
 
+" terminal
+Jetpack 'chomosuke/term-edit.nvim'
 Jetpack 'nvim-treesitter/nvim-treesitter'
 " nerdfont
 Jetpack 'lambdalisue/nerdfont.vim'
@@ -198,13 +200,17 @@ nnoremap <C-f> <cmd>FuzzyMotion<CR>
 "quickrun
 cabbrev qr QuickRun<CR>
 
-" comment.nvim
+" lua
 lua <<EOF
+-- comment.nvim
 require('Comment').setup()
-EOF
 
-" treesitter
-lua <<EOF
+-- term-edit
+require 'term-edit'.setup {
+  prompt_end = '%$ ',
+  }
+
+-- treesitter
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
     "typescript",
