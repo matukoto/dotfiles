@@ -60,7 +60,7 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-		PS1='\e[32m\u@\h \e[35m\t \e[34m\w \e[0m\$ '
+		PS1='\e[\e[35m\t \e[34m\w \e[0m\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -127,4 +127,3 @@ if [ -f ~/.api_key_environment ]; then
   . ~/.api_key_environment
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
