@@ -87,6 +87,7 @@ Jetpack 'yuki-yano/ai-review.vim'
 " 日本語検索
 Jetpack 'lambdalisue/kensaku.vim'
 
+Jetpack 'skanehira/gyazo.vim'
 Jetpack 'mattn/vim-sonictemplate'
 Jetpack 'thinca/vim-quickrun'
 Jetpack 'numToStr/comment.nvim'
@@ -179,6 +180,7 @@ nnoremap <C-g> <cmd>Telescope live_grep<CR>
 nnoremap <C-b> <cmd>Telescope buffers<CR>
 " ヘルプ検索
 cnoreabbrev H Telescope help_tags<CR>
+" telescope でウィンドウのだし分けをしたい エンターならカレントウィンドウ 、丸々ならスプリットなど
 
 " chatgpt
 cabbrev ai AiReview
