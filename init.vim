@@ -117,7 +117,8 @@ map T <Plug>(easymotion-Tl)
 let g:coc_global_extensions = ['@yaegassy/coc-volar', '@yaegassy/coc-volar-tools', 'coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-lists', 'coc-go']
 inoremap <silent> <expr> <C-Space> coc#refresh()
 nnoremap <silent> K       :<C-u>call <SID>show_documentation()<CR>
-nnoremap <silent> <C-t> :<C-u>call CocActionAsync('jumpDefinition', CocJumpAction())<CR>
+" nnoremap <silent> <C-t> :<C-u>call CocActionAsync('jumpDefinition', CocJumpAction())<CR>
+nnoremap <silent> <C-a> :<C-u>call CocActionAsync('jumpDefinition') vsplit<CR>
 
 function! s:show_documentation() abort
   if index(['vim','help'], &filetype) >= 0
@@ -132,21 +133,21 @@ endfunction
 "   {"text": "(n)ew", "value": "new"}
 " ]
 " NOTE: text must contains '()' to detect input and its must be 1 character
-function! ChoseAction(actions) abort
-  echo join(map(copy(a:actions), { _, v -> v.text }), ", ") .. ": "
-  let result = getcharstr()
-  let result = filter(a:actions, { _, v -> v.text =~# printf(".*\(%s\).*", result)})
-  return len(result) ? result[0].value : ""
-endfunction
-
-function! CocJumpAction() abort
-  let actions = [
-        \ {"text": "(s)plit", "value": "split"},
-        \ {"text": "(v)slit", "value": "vsplit"},
-        \ {"text": "(t)ab", "value": "tabedit"},
-        \ ]
-  return ChoseAction(actions)
-endfunction
+" function! ChoseAction(actions) abort
+"   echo join(map(copy(a:actions), { _, v -> v.text }), ", ") .. ": "
+"   let result = getcharstr()
+"   let result = filter(a:actions, { _, v -> v.text =~# printf(".*\(%s\).*", result)})
+"   return len(result) ? result[0].value : ""
+" endfunction
+"
+" function! CocJumpAction() abort
+"   let actions = [
+"         \ {"text": "(s)plit", "value": "split"},
+"         \ {"text": "(v)slit", "value": "vsplit"},
+"         \ {"text": "(t)ab", "value": "tabedit"},
+"         \ ]
+"   return ChoseAction(actions)
+" endfunction
 
 " nerdfont
 let g:fern#renderer = 'nerdfont'
