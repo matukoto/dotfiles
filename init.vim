@@ -87,7 +87,7 @@ Jetpack 'yuki-yano/ai-review.vim'
 " 日本語検索
 Jetpack 'lambdalisue/kensaku.vim'
 
-Jetpack 'skanehira/gyazo.vim'
+" Jetpack 'skanehira/gyazo.vim'
 Jetpack 'mattn/vim-sonictemplate'
 Jetpack 'thinca/vim-quickrun'
 Jetpack 'numToStr/comment.nvim'
@@ -117,12 +117,7 @@ map T <Plug>(easymotion-Tl)
 let g:coc_global_extensions = ['@yaegassy/coc-volar', '@yaegassy/coc-volar-tools', 'coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-lists', 'coc-go']
 inoremap <silent> <expr> <C-Space> coc#refresh()
 nnoremap <silent> K       :<C-u>call <SID>show_documentation()<CR>
-nmap     <silent> [Leader]rn <Plug>(coc-rename)
-nmap     <silent> [Leader]a  <Plug>(coc-codeaction-selected)iw
-
-function! s:coc_typescript_settings() abort
-  nnoremap <silent> <buffer> [dev]f :<C-u>CocCommand eslint.executeAutofix<CR>:CocCommand prettier.formatFile<CR>
-endfunction
+nnoremap <silent> <C-t> :<C-u>call CocActionAsync('jumpDefinition', CocJumpAction())<CR>
 
 function! s:show_documentation() abort
   if index(['vim','help'], &filetype) >= 0
@@ -132,6 +127,26 @@ function! s:show_documentation() abort
   endif
 endfunction
 
+" [
+"   {"text": "(e)dit", "value": "edit"}
+"   {"text": "(n)ew", "value": "new"}
+" ]
+" NOTE: text must contains '()' to detect input and its must be 1 character
+function! ChoseAction(actions) abort
+  echo join(map(copy(a:actions), { _, v -> v.text }), ", ") .. ": "
+  let result = getcharstr()
+  let result = filter(a:actions, { _, v -> v.text =~# printf(".*\(%s\).*", result)})
+  return len(result) ? result[0].value : ""
+endfunction
+
+function! CocJumpAction() abort
+  let actions = [
+        \ {"text": "(s)plit", "value": "split"},
+        \ {"text": "(v)slit", "value": "vsplit"},
+        \ {"text": "(t)ab", "value": "tabedit"},
+        \ ]
+  return ChoseAction(actions)
+endfunction
 
 " nerdfont
 let g:fern#renderer = 'nerdfont'
