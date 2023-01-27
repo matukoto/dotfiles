@@ -167,7 +167,11 @@ let g:lightline = {
  
 "" telescope
 " ファイル検索
-nnoremap <C-p> <cmd>Telescope find_files<CR>
+nnoremap <C-p> <cmd>Telescope find_files action=MyFileVsplit<CR>
+" function! MyFileVsplit(file)
+"   execute "vsplit " . a:file
+" endfunction
+
 " ドットファイル含む検索
 nnoremap <C-d> <cmd>Telescope git_files<CR>
 " 文字列検索
