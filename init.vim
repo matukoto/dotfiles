@@ -75,7 +75,7 @@ Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
 Jetpack 'easymotion/vim-easymotion'
 " fzf
 Jetpack 'nvim-lua/plenary.nvim'
-Jetpack 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Jetpack 'nvim-telescope/telescope.nvim'
 " Jetpack 'nvim-telescope/telescope-frecency.nvim'
 " Jetpack 'kkharji/sqlite.lua'
 " denops
@@ -168,6 +168,8 @@ let g:lightline = {
 "" telescope
 " ファイル検索
 nnoremap <C-p> <cmd>Telescope find_files<CR>
+" ドットファイル含む検索
+nnoremap <C-d> <cmd>Telescope git_files<CR>
 " 文字列検索
 nnoremap <C-g> <cmd>Telescope live_grep<CR>
 " 横断検索
