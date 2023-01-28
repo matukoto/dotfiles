@@ -89,10 +89,12 @@ Jetpack 'yuki-yano/ai-review.vim'
 Jetpack 'lambdalisue/kensaku.vim'
 
 " Jetpack 'skanehira/gyazo.vim'
+" 便利系
 Jetpack 'mattn/vim-sonictemplate'
 Jetpack 'thinca/vim-quickrun'
 Jetpack 'numToStr/comment.nvim'
 Jetpack 'yuki-yano/fuzzy-motion.vim'
+Jetpack 'ethanholz/nvim-lastplace'
 
 " カラースキーマ
 Jetpack 'sainnhe/gruvbox-material'
@@ -333,6 +335,13 @@ endfunction
 lua <<EOF
 -- comment.nvim
 require('Comment').setup()
+
+-- nvim-lastplace
+require'nvim-lastplace'.setup {
+  lastplace_ignore_buftype = {"quicfix", "nofile", "help"},
+  lastplace_ignore_filetype = {"gitcommit", "gitrebase"},
+  lastplace_open_folds = true
+  }
 
 -- modes.nvim
 -- require('modes').setup({
