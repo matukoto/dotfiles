@@ -1,6 +1,9 @@
 alias l='clear && ls'
 alias dia='cd ~/myself/diary/'
 alias dot='cd ~/dotfiles/'
+alias wsh='cd ~/work/sh-dev/'
+alias wgo='cd ~/work/go-dev/'
+alias wvi='cd ~/work/vim-dev/'
 
 alias cp='cp -i'
 alias mv='mv -i'
