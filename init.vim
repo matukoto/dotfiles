@@ -58,6 +58,7 @@ Jetpack 'tani/vim-jetpack', {'opt': 1}
 Jetpack 'vim-jp/vimdoc-ja'
 
 Jetpack 'neoclide/coc.nvim', {'branch': 'release'}
+Jetpack 'megalithic/zk.nvim'
 
 Jetpack 'lambdalisue/fern.vim'
 " ステータスラインプラグイン
@@ -184,6 +185,10 @@ nnoremap <C-g> <cmd>Telescope live_grep<CR>
 nnoremap <C-b> <cmd>Telescope buffers<CR>
 " ヘルプ検索
 cnoreabbrev H Telescope help_tags<CR>
+" zk
+nnoremap <leader>zn <cmd>lua require('telescope').extensions.zk.zk_notes()<CR>
+nnoremap <leader>zg <cmd>lua require('telescope').extensions.zk.zk_grep()<CR>
+
 " telescope でウィンドウのだし分けをしたい エンターならカレントウィンドウ 、丸々ならスプリットなど
 
 " chatgpt
@@ -335,6 +340,9 @@ endfunction
 lua <<EOF
 -- comment.nvim
 require('Comment').setup()
+
+-- zk
+require('telescope').load_extension('zk')
 
 -- nvim-lastplace
 require'nvim-lastplace'.setup {
