@@ -11,3 +11,4 @@
   quotepath = false
 [commit]
 	template = /home/keisuke/dotfiles/git/.gitmessage
+  verbose = true
