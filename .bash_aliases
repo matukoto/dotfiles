@@ -8,3 +8,5 @@ alias wvi='cd ~/work/vim-dev/'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+
+alias wezterm='/mnt/c/Program\ Files/WezTerm/wezterm.exe'
