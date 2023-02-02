@@ -185,6 +185,9 @@ nnoremap <C-g> <cmd>Telescope live_grep<CR>
 nnoremap <C-b> <cmd>Telescope buffers<CR>
 " ヘルプ検索
 cnoreabbrev H Telescope help_tags<CR>
+" quickfixhistory
+nnoremap <C-q> <cmd>Telescope quickfixhistory<CR>
+
 " zk
 nnoremap <leader>zn <cmd>lua require('telescope').extensions.zk.zk_notes()<CR>
 nnoremap <leader>zg <cmd>lua require('telescope').extensions.zk.zk_grep()<CR>
