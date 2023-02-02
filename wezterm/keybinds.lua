@@ -3,8 +3,8 @@ local act = wezterm.action
 
 return {
   keys = {
-    { key = '1', mods = 'ALT', action = act.ActivateTabRelative(1) },
-    { key = '2', mods = 'ALT', action = act.ActivateTabRelative(-1) },
+    { key = '2', mods = 'ALT', action = act.ActivateTabRelative(1) },
+    { key = '1', mods = 'ALT', action = act.ActivateTabRelative(-1) },
     { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
     -- { key = '1', mods = 'ALT', action = act.ActivateTab(0) },
     { key = '"', mods = 'ALT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
