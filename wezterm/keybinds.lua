@@ -3,13 +3,13 @@ local act = wezterm.action
 
 return {
   keys = {
-    { key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },
-    { key = 'Tab', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
+    { key = '1', mods = 'ALT', action = act.ActivateTabRelative(1) },
+    { key = '2', mods = 'ALT', action = act.ActivateTabRelative(-1) },
     { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
-    { key = '1', mods = 'ALT', action = act.ActivateTab(0) },
+    -- { key = '1', mods = 'ALT', action = act.ActivateTab(0) },
     { key = '"', mods = 'ALT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
     { key = '"', mods = 'SHIFT|ALT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
-    { key = '2', mods = 'ALT', action = act.ActivateTab(2) },
+    -- { key = '2', mods = 'ALT', action = act.ActivateTab(2) },
     { key = '$', mods = 'CTRL', action = act.ActivateTab(3) },
     { key = '$', mods = 'SHIFT|CTRL', action = act.ActivateTab(3) },
     { key = '%', mods = 'CTRL', action = act.ActivateTab(4) },
