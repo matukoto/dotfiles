@@ -1,10 +1,10 @@
 version: 2
-# root-markers:
-#- .git/
+  #root-markers:
+  #- .git/
 
 tools:
   markdown-textlint: &markdown-textlint
-    lint-command: "textlint --format unix --stdin --stdin-filename ${INPUT}"
+    lint-command: "npx --no-install textlint --format unix --stdin --stdin-filename ${INPUT}"
     lint-ignore-exit-code: true
     lint-stdin: true
     lint-formats:
