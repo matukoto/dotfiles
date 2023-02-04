@@ -50,13 +50,13 @@ set helplang=ja,en
 " esc
 tnoremap <ESC> <C-\><C-n>
 " " インサートモードで入る
- if has('nvim')
- 	autocmd WinEnter * if &buftype ==# 'terminal' | startinsert | endif
- else
- 	autocmd WinEnter * if &buftype ==# 'terminal' | normal i | endif
- endif
+" if has('nvim')
+" 	autocmd WinEnter * if &buftype ==# 'terminal' | startinsert | endif
+" else
+" 	autocmd WinEnter * if &buftype ==# 'terminal' | normal i | endif
+" endif
 
-nnoremap <silent> <C-t><C-m> :split<CR> <C-w>j :terminal<CR> :resize 6<CR> i
+" nnoremap <silent> <C-t><C-m> :split<CR> <C-w>j :terminal<CR> :resize 6<CR> i
 "行番号を表示
 set number
 "大文字小文字の区別なし
