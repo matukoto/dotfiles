@@ -1,4 +1,10 @@
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+
 alias l='clear && ls'
+alias v='nvim'
+
 alias dia='cd ~/myself/diary/'
 alias dot='cd ~/dotfiles/'
 alias wsh='cd ~/work/sh-dev/'
