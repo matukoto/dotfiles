@@ -7,12 +7,9 @@ return {
     { key = '2', mods = 'ALT', action = act.ActivateTabRelative(1) },
     { key = '1', mods = 'ALT', action = act.ActivateTabRelative(-1) },
     -- tab 追加
-    { key = 't', mods = 'SHIFT|CTRL', action = act.SpawnTab 'CurrentPaneDomain' },
-    { key = 'T', mods = 'CTRL', action = act.SpawnTab 'CurrentPaneDomain' },
-    { key = 'T', mods = 'SHIFT|CTRL', action = act.SpawnTab 'CurrentPaneDomain' },
+    { key = 't', mods = 'ALT', action = act.SpawnTab 'CurrentPaneDomain' }
     -- tab 閉じる
-    { key = 'W', mods = 'CTRL', action = act.CloseCurrentTab{ confirm = true } },
-    { key = 'W', mods = 'SHIFT|CTRL', action = act.CloseCurrentTab{ confirm = true } },
+    { key = 'w', mods = 'ALT', action = act.CloseCurrentTab{ confirm = true } },
     { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
     { key = '"', mods = 'ALT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
     { key = '"', mods = 'SHIFT|ALT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
