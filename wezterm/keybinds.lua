@@ -7,7 +7,7 @@ return {
     { key = '2', mods = 'ALT', action = act.ActivateTabRelative(1) },
     { key = '1', mods = 'ALT', action = act.ActivateTabRelative(-1) },
     -- tab 追加
-    { key = 't', mods = 'ALT', action = act.SpawnTab 'CurrentPaneDomain' }
+    { key = 't', mods = 'ALT', action = act.SpawnTab 'CurrentPaneDomain' },
     -- tab 閉じる
     { key = 'w', mods = 'ALT', action = act.CloseCurrentTab{ confirm = true } },
     { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
