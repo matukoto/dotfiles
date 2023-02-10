@@ -104,6 +104,7 @@ Jetpack 'sainnhe/edge'
 Jetpack 'sainnhe/sonokai'
 Jetpack 'sainnhe/everforest'
 Jetpack 'edeneast/nightfox.nvim'
+Jetpack 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 " Jetpack 'folke/styler.nvim'
 call jetpack#end()
 
@@ -166,7 +167,7 @@ let g:lightline = {
    \   'gitbranch': 'gitbranch#name',
    \   'cocstatus': 'coc#status',
    \ },
-   \ 'colorscheme': 'edge',
+   \ 'colorscheme': 'nightfly',
 \ }
  
 "" telescope
@@ -394,4 +395,4 @@ require('nvim-treesitter.configs').setup {
 EOF
 
 " colorscheme
-colorscheme edge
+colorscheme nightfox
