@@ -15,7 +15,7 @@
     "efm": {
       "command": "efm-langserver",
       "args": [],
-      "filetypes": ["markdown", "vim"]
+      "filetypes": ["markdown", "vim", "md", "vimwiki"]
     },
     "zk": {
       "command": "zk",
