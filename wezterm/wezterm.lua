@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm'
 return {
-  window_background_opacity = 0.85,
+  window_background_opacity = 0.85, -- 透過率
   default_prog = {"wsl.exe", "--cd", "~"},
   color_scheme = "Edge Dark (base16)",
   font = wezterm.font("UDEV Gothic 35NFLG"),
