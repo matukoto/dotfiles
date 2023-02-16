@@ -10,6 +10,8 @@ alias dot='cd ~/dotfiles/'
 alias wsh='cd ~/work/sh-dev/'
 alias wgo='cd ~/work/go-dev/'
 alias wvi='cd ~/work/vim-dev/'
+alias mhb='cd ~/myself/hobby/'
+alias mtb='cd ~/myself/tech/'
 
 alias cp='cp -i'
 alias mv='mv -i'
