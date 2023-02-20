@@ -99,6 +99,7 @@ Jetpack 'ethanholz/nvim-lastplace'
 Jetpack 'cohama/lexima.vim'
 
 " カラースキーマ
+Jetpack 'gen740/SmoothCursor.nvim'
 Jetpack 'sainnhe/gruvbox-material'
 Jetpack 'sainnhe/edge'
 Jetpack 'sainnhe/sonokai'
@@ -269,6 +270,9 @@ require'nvim-lastplace'.setup {
 -- 		visual = "#9745be",
 -- 	},
 -- })
+
+-- SmoothCursor
+require('smoothcursor').setup()
 
 -- term-edit
 require 'term-edit'.setup {
