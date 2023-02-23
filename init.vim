@@ -96,7 +96,7 @@ Jetpack 'thinca/vim-quickrun'
 Jetpack 'numToStr/comment.nvim'
 Jetpack 'yuki-yano/fuzzy-motion.vim'
 Jetpack 'ethanholz/nvim-lastplace'
-Jetpack 'cohama/lexima.vim'
+" Jetpack 'cohama/lexima.vim'
 
 " カラースキーマ
 Jetpack 'gen740/SmoothCursor.nvim'
