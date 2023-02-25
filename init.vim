@@ -156,6 +156,10 @@ nnoremap <silent> <Leader>j <C-w>j
 nnoremap <silent> <Leader>k <C-w>k
 nnoremap <silent> <Leader>l <C-w>l
 
+" タブ移動
+nnoremap <silent> <Leader>T :tabprevious<CR>
+nnoremap <silent> <Leader>t :tabnext<CR>
+
 " sonictemplate
 let g:sonictemplate_vim_template_dir = '$HOME/dotfiles/vim/sonictemplate/'
 cabbrev tp Template
