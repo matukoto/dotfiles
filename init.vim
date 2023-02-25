@@ -61,6 +61,8 @@ Jetpack 'neoclide/coc.nvim', {'branch': 'release'}
 Jetpack 'megalithic/zk.nvim'
 
 Jetpack 'lambdalisue/fern.vim'
+Jetpack 'yuki-yano/fern-preview.vim'
+
 " ステータスラインプラグイン
 Jetpack 'itchyny/lightline.vim'
 Jetpack 'itchyny/vim-gitbranch'
@@ -140,6 +142,12 @@ let g:fern#renderer = 'nerdfont'
 
 " fern
 nnoremap <silent> <Leader>e :<c-u>Fern . -drawer<cr>
+
+function! s:fern_settings() abort
+  nmap <silent> <buffer> <expr> <Plug>(fern-quit-or-close-preview) fern_preview#smart_preview("\<Plug>(fern-action-preview:close)", ":q\<CR>")
+  nmap <silent> <buffer> q <Plug>(fern-quit-or-close-preview)
+endfunction
+
 nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
 
 " ウィンドウ移動
