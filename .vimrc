@@ -83,13 +83,16 @@ vnoremap x "_x
 "vv で行末まで選択
 vnoremap v ^$h
  
+" インデントを手軽に変更
+nnoremap > >>
+nnoremap < <<
+
 "選択範囲のインデントを連続して変更
 vnoremap < <gv
 vnoremap > >gv
  
 "ノーマルモード中にEnterで改行
 noremap <CR> i<CR><Esc>
-
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk

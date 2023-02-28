@@ -2,11 +2,10 @@
 aliases: [{{_expr_:strftime('%Y/%m/%d')}},{{_expr_:strftime('%Y-%m-%d')}} ,{{_expr_:strftime('%Y%m%d')}}]
 tags: [{{_expr_:strftime('%Y/%m/%d')}}]
 ---
-* [ ] 自分の無能さを感じているか
-* [ ] 今日は良い仕事をしたか
 * [ ] 今日のお前は翌朝､鏡の中に見たい自分か
 * [ ] Toggle Track
-* [ ] commit
+* [ ] 7時に起きたか
+* [ ] めんどくさいと思ったことは直ぐにできたか
 * [ ] shell
 * [ ] 設計入門
 
