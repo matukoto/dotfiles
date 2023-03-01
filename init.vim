@@ -224,14 +224,14 @@ cabbrev gpt Butler<CR>
 
 "" gin
 cabbrev gs GinPreview<CR>
-cabbrev ga <cmd>Gin add .<CR>
-cabbrev gc <cmd>Gin commit<CR>
-cabbrev gp <cmd>Gin push<CR>
-cabbrev gd <cmd>GinDiff<CR>
+cabbrev ga Gin add .<CR>
+cabbrev gc Gin commit<CR>
+cabbrev gp Gin push<CR>
+cabbrev gd GinDiff<CR>
 cabbrev gb GinBranch
 
 " kensaku search
-cnoremap <CR> <Plug>(kensaku-search-replace)<CR>
+"cnoremap <CR> <Plug>(kensaku-search-replace)<CR>
 " kensaku  fuzzy-motion
 let g:fuzzy_motion_matchers = ['fzf', 'kensaku']
 " fuzzy-motion
