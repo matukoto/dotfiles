@@ -91,6 +91,7 @@ Jetpack 'lambdalisue/butler.vim'
 Jetpack 'yuki-yano/ai-review.vim'
 " 日本語検索
 Jetpack 'lambdalisue/kensaku.vim'
+Jetpack 'lambdalisue/kensaku-search.vim'
 
 " Jetpack 'skanehira/gyazo.vim'
 " 便利系
@@ -227,6 +228,8 @@ cabbrev gp <cmd>Gin push<CR>
 cabbrev gd <cmd>GinDiff<CR>
 cabbrev gb GinBranch
 
+" kensaku search
+cnoremap <CR> <Plug>(kensaku-search-replace)<CR>
 " kensaku  fuzzy-motion
 let g:fuzzy_motion_matchers = ['fzf', 'kensaku']
 " fuzzy-motion
