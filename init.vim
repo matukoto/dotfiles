@@ -147,6 +147,8 @@ let g:blamer_delay = 500
 let g:fern#renderer = 'nerdfont'
 
 " fern
+" .ファイルなどをデフォルトで表示
+let g:fern#default_hidden = 1
 nnoremap <silent> <Leader>e :<c-u>Fern . -drawer<cr>
 
 function! s:fern_settings() abort
