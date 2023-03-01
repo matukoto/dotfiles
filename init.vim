@@ -85,6 +85,7 @@ Jetpack 'nvim-telescope/telescope.nvim'
 Jetpack 'vim-denops/denops.vim'
 " git
 Jetpack 'lambdalisue/gin.vim'
+Jetpack 'APZelos/blamer.nvim'
 " chatgpt
 Jetpack 'lambdalisue/butler.vim'
 Jetpack 'yuki-yano/ai-review.vim'
@@ -137,6 +138,10 @@ function! s:show_documentation() abort
   endif
 endfunction
 
+" blamer
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+
 " nerdfont
 let g:fern#renderer = 'nerdfont'
 
@@ -149,6 +154,7 @@ function! s:fern_settings() abort
 endfunction
 
 nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
+
 
 " ウィンドウ移動
 nnoremap <silent> <Leader>h <C-w>h
