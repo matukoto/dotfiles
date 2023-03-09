@@ -12,3 +12,9 @@
 [commit]
 	template = /home/keisuke/dotfiles/git/.gitmessage
   verbose = true
+[fetch]
+  # fetch 時に自動で --prune を実行し、リモートで削除されたブランチをローカルでも削除してくれる
+  prune = true
+[rebase]
+  # rebase 時に自動で stash
+  autostash = true
