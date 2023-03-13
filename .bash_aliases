@@ -13,8 +13,8 @@ alias wvi='cd ~/work/vim-dev/'
 alias mhb='cd ~/myself/hobby/'
 alias mtb='cd ~/myself/tech/'
 
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
+# alias cp='cp -i'
+# alias mv='mv -i'
+# alias rm='rm -i'
 
 alias wezterm='/mnt/c/Program\ Files/WezTerm/wezterm.exe'
