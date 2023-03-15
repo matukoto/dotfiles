@@ -101,6 +101,8 @@ Jetpack 'thinca/vim-quickrun'
 Jetpack 'numToStr/comment.nvim'
 Jetpack 'yuki-yano/fuzzy-motion.vim'
 Jetpack 'ethanholz/nvim-lastplace'
+Jetpack 'skanehira/denops-docker.vim'
+Jetpack 'skanehira/k8s.vim'
 " Jetpack 'cohama/lexima.vim'
 
 " カラースキーマ
