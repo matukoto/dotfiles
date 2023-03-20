@@ -7,11 +7,14 @@ alias v='nvim'
 
 alias dia='cd ~/myself/diary/'
 alias dot='cd ~/dotfiles/'
-alias wsh='cd ~/work/sh-dev/'
-alias wgo='cd ~/work/go-dev/'
-alias wvi='cd ~/work/vim-dev/'
-alias mhb='cd ~/myself/hobby/'
-alias mtb='cd ~/myself/tech/'
+# work
+alias shd='cd ~/work/sh-dev/'
+alias god='cd ~/work/go-dev/'
+alias vimd='cd ~/work/vim-dev/'
+alias dockerd='cd ~/work/docker-dev/'
+# myself
+alias hobbyd='cd ~/myself/hobby/'
+alias techd='cd ~/myself/tech/'
 
 # alias cp='cp -i'
 # alias mv='mv -i'
