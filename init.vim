@@ -128,7 +128,7 @@ map F <Plug>(easymotion-Fl)
 map T <Plug>(easymotion-Tl)
 
 " coc.nvim
-let g:coc_global_extensions = ['@yaegassy/coc-volar', '@yaegassy/coc-volar-tools', 'coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-lists', 'coc-go', 'coc-sh']
+let g:coc_global_extensions = ['@yaegassy/coc-volar', '@yaegassy/coc-volar-tools', 'coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-lists', 'coc-go', 'coc-sh', 'coc-docker']
 inoremap <silent> <expr> <C-Space> coc#refresh()
 nnoremap <silent> K       :<C-u>call <SID>show_documentation()<CR>
 " 関数定義ジャンプ
