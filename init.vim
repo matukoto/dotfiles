@@ -191,7 +191,7 @@ let g:lightline = {
    \   'gitbranch': 'gitbranch#name',
    \   'cocstatus': 'coc#status',
    \ },
-   \ 'colorscheme': 'nightfly',
+   \ 'colorscheme': 'edge',
 \ }
  
 "" telescope
