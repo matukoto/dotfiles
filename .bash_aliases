@@ -12,13 +12,14 @@ alias shd='cd $HOME/work/sh-dev/'
 alias god='cd $HOME/work/go-dev/'
 alias vimd='cd $HOME/work/vim-dev/'
 alias dockerd='cd $HOME/work/docker-dev/'
+alias javad='cd $HOME/work/java-dev/'
 # myself
 alias hobbyd='cd $HOME/myself/hobby/'
 alias techd='cd $HOME/myself/tech/'
 # wealsoft
 alias forkd='cd $HOME/wealsoft/fork-tech-blog/'
 alias techblogd='cd $HOME/wealsoft/w-tech-blog/'
-alias frontd='cd $HOME/wealsoft/poc-frontend-app'
+alias pocd='cd $HOME/wealsoft/poc-frontend-app/'
 
 # alias cp='cp -i'
 # alias mv='mv -i'
