@@ -1,16 +1,16 @@
 [user]
-	email = keisuke.suke.san@gmail.com
-	name = Keisuke.Matsumoto
+  email = keisuke.suke.san@gmail.com
+  name = Keisuke.Matsumoto
 [credential]
-	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+  helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [init]
   defaultBranch = main
 [core]
-	editor = nvim
+  editor = nvim
   commentChar = ";"
   quotepath = false
 [commit]
-	template = /home/keisuke/dotfiles/git/.gitmessage
+  template = /home/keisuke/dotfiles/git/.gitmessage
   verbose = true
 [fetch]
   # fetch 時に自動で --prune を実行し、リモートで削除されたブランチをローカルでも削除してくれる
