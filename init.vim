@@ -86,6 +86,7 @@ Jetpack 'vim-denops/denops.vim'
 " git
 Jetpack 'lambdalisue/gin.vim'
 Jetpack 'APZelos/blamer.nvim'
+Jetpack 'iberianpig/tig-explorer.vim'
 " chatgpt
 Jetpack 'lambdalisue/butler.vim'
 Jetpack 'yuki-yano/ai-review.vim'
@@ -104,6 +105,7 @@ Jetpack 'ethanholz/nvim-lastplace'
 Jetpack 'skanehira/denops-docker.vim'
 Jetpack 'skanehira/k8s.vim'
 " Jetpack 'cohama/lexima.vim'
+Jetpack 'github/copilot.vim'
 
 " カラースキーマ
 Jetpack 'gen740/SmoothCursor.nvim'
@@ -126,6 +128,14 @@ map f <Plug>(easymotion-fl)
 map t <Plug>(easymotion-ft)
 map F <Plug>(easymotion-Fl)
 map T <Plug>(easymotion-Tl)
+
+
+" copilot
+imap <expr> <C-Space> copilot#expand()
+imap <Tab> copilot#Accept()
+imap <C-]> <plug>(copilot-dismiss)
+imap <n> <plug>(copilot-next)
+imap <N> <plug>(copilot-prev)
 
 " coc.nvim
 let g:coc_global_extensions = ['@yaegassy/coc-volar', '@yaegassy/coc-volar-tools', 'coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-lists', 'coc-go', 'coc-sh', 'coc-docker']
