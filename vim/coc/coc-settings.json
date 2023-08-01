@@ -23,6 +23,12 @@
       "args": ["lsp", "--log", "/tmp/zk-lsp.log"],
       "trace.server": "verbose",
       "filetypes": ["vimwiki", "markdown"]
+    },
+    "bufls": {
+      "command": "bufls",
+      "rootPatterns": ["buf.yaml"],
+      "args": ["serve"],
+      "filetypes": ["proto"]
     }
   }
 }
