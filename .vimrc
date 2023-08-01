@@ -27,6 +27,10 @@ set expandtab
 set autoindent
 set smartindent
 
+" Vim のビジュアルモードでは p を使うと、無名レジスタに選択したテキストがコピーされる
+xnoremap p P
+xnoremap P p
+
 " 折返したときもインデント
 set breakindent
 
