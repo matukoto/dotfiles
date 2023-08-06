@@ -88,8 +88,8 @@ Jetpack 'lambdalisue/gin.vim'
 Jetpack 'APZelos/blamer.nvim'
 Jetpack 'iberianpig/tig-explorer.vim'
 " chatgpt
-Jetpack 'lambdalisue/butler.vim'
-Jetpack 'yuki-yano/ai-review.vim'
+" Jetpack 'lambdalisue/butler.vim'
+" Jetpack 'yuki-yano/ai-review.vim'
 " 日本語検索
 Jetpack 'lambdalisue/kensaku.vim'
 Jetpack 'lambdalisue/kensaku-search.vim'
