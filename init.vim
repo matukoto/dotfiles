@@ -343,4 +343,4 @@ require('nvim-treesitter.configs').setup {
 EOF
 
 " colorscheme
-colorscheme nightfox
+colorscheme gruvbox-material
