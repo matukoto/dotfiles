@@ -132,7 +132,7 @@ map T <Plug>(easymotion-Tl)
 
 " copilot
 imap <expr> <C-Space> copilot#expand()
-imap <Tab> copilot#Accept()
+" imap <Tab> copilot#Accept()
 imap <C-]> <plug>(copilot-dismiss)
 imap <n> <plug>(copilot-next)
 imap <N> <plug>(copilot-prev)
