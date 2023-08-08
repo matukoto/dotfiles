@@ -111,6 +111,11 @@ set mouse=a
 " https://zenn.dev/vim_jp/articles/2023-06-30-vim-substitute-tips
 cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':s' ? [getchar(), ''][1] .. "%s///g<Left><Left>" : 's'
 
+" 大文字小文字を区別して検索(デフォルトは区別しない)
+" https://zenn.dev/igrep/articles/2023-08-vim-backslash-c
+nnoremap <Space>/ /\C
+nnoremap <Space>? ?\C
+
 " git message
 augroup select-commit-title
   autocmd!
