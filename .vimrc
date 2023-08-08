@@ -107,6 +107,10 @@ set clipboard=unnamed,unnamedplus
 " マウスの入力を受け付ける
 set mouse=a
 
+" 置換を簡単に monaqaさん
+" https://zenn.dev/vim_jp/articles/2023-06-30-vim-substitute-tips
+cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':s' ? [getchar(), ''][1] .. "%s///g<Left><Left>" : 's'
+
 " git message
 augroup select-commit-title
   autocmd!
