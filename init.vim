@@ -160,11 +160,11 @@ let g:blamer_delay = 500
 let g:fern#renderer = 'nerdfont'
 
 " fern
-" .ファイルなどをデフォルトで表示
+" ドットファイルなどをデフォルトで表示
 let g:fern#default_hidden = 1
 
-nnoremap <silent> <Leader>e :<C-u>Fern . -reveal=%<CR>
-nnoremap <silent> <Leader>E :<c-u>Fern .<cr>
+nnoremap <silent> <Leader>e :<C-u>Fern . -drawer<CR>
+nnoremap <silent> <Leader>E :<C-u>Fern . -reveal=%<CR>
 
 function! s:fern_settings() abort
   nmap <silent> <buffer> <expr> <Plug>(fern-quit-or-close-preview) fern_preview#smart_preview("\<Plug>(fern-action-preview:close)", ":q\<CR>")
