@@ -131,18 +131,18 @@ map T <Plug>(easymotion-Tl)
 
 
 " copilot
-imap <expr> <C-Space> copilot#expand()
+" imap <expr> <C-Space> copilot#expand()
 " imap <Tab> copilot#Accept()
-imap <C-]> <plug>(copilot-dismiss)
-imap <n> <plug>(copilot-next)
-imap <N> <plug>(copilot-prev)
+" imap <C-]> <plug>(copilot-dismiss)
+" imap <M-]> <plug>(copilot-next)
+" imap <M=[> <plug>(copilot-prev)
 
 " coc.nvim
 let g:coc_global_extensions = ['@yaegassy/coc-volar', '@yaegassy/coc-volar-tools', 'coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-lists', 'coc-go', 'coc-sh', 'coc-docker']
 inoremap <silent> <expr> <C-Space> coc#refresh()
 nnoremap <silent> K       :<C-u>call <SID>show_documentation()<CR>
 " 関数定義ジャンプ
-nnoremap <silent> <C-a> :<C-u>call CocActionAsync('jumpDefinition', 'vsplit')<CR>
+" nnoremap <silent> <C-a> :<C-u>call CocActionAsync('jumpDefinition', 'vsplit')<CR>
 
 function! s:show_documentation() abort
   if index(['vim','help'], &filetype) >= 0
