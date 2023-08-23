@@ -19,3 +19,6 @@ ln -s ~/dotfiles/vim/gin-preview.vim ~/.config/nvim/plugin/gin-preview.vim
 # textlint
 ln -s ~/dotfiles/.textlintrc ~/.textlintrc
 ln -s ~/dotfiles/config/efm-langserver/config.yaml ~/.config/efm-langserver/config.yaml
+
+# yazi
+ln -s ~/dotfiles/config/yazi ~/.config/
