@@ -104,6 +104,7 @@ Jetpack 'yuki-yano/fuzzy-motion.vim'
 Jetpack 'ethanholz/nvim-lastplace'
 Jetpack 'skanehira/denops-docker.vim'
 Jetpack 'skanehira/k8s.vim'
+Jetpack 'cshuaimin/ssr.nvim'
 " Jetpack 'cohama/lexima.vim'
 Jetpack 'github/copilot.vim'
 
