@@ -121,3 +121,5 @@ if [ -f ~/.api_key_environment ]; then
   . ~/.api_key_environment
 fi
 
+# starship
+eval "$(starship init bash)"
