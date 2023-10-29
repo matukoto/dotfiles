@@ -123,3 +123,4 @@ fi
 
 # starship
 eval "$(starship init bash)"
+

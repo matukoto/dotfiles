@@ -22,3 +22,6 @@ ln -s ~/dotfiles/config/efm-langserver/config.yaml ~/.config/efm-langserver/conf
 
 # yazi
 ln -s ~/dotfiles/config/yazi ~/.config/
+
+## starship
+ln -s ~/dotfiles/config/starship.toml ~/.config/starship.toml
