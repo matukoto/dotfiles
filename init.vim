@@ -57,6 +57,9 @@ Jetpack 'tani/vim-jetpack', {'opt': 1}
 
 Jetpack 'vim-jp/vimdoc-ja'
 
+" dd
+Jetpack 'shougo/ddc.vim'
+
 Jetpack 'lambdalisue/fern.vim'
 Jetpack 'yuki-yano/fern-preview.vim'
 
