@@ -73,11 +73,6 @@ Jetpack 'lambdalisue/nerdfont.vim'
 Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
 " easymotion
 Jetpack 'easymotion/vim-easymotion'
-" fzf
-Jetpack 'nvim-lua/plenary.nvim'
-Jetpack 'nvim-telescope/telescope.nvim'
-" Jetpack 'nvim-telescope/telescope-frecency.nvim'
-" Jetpack 'kkharji/sqlite.lua'
 " denops
 Jetpack 'vim-denops/denops.vim'
 " git
@@ -187,28 +182,6 @@ let g:lightline = {
    \ 'colorscheme': 'edge',
 \ }
  
-"" telescope
-" ファイル検索
-nnoremap <C-p> <cmd>Telescope find_files action=MyFileVsplit<CR>
-" function! MyFileVsplit(file)
-"   execute "vsplit " . a:file
-" endfunction
-
-" ドットファイル含む検索
-nnoremap <C-d> <cmd>Telescope git_files<CR>
-" 文字列検索
-nnoremap <C-g> <cmd>Telescope live_grep<CR>
-" 横断検索
-" nnoremap <C-f> <cmd>Telescope frecency<CR>
-" バッファ検索
-nnoremap <C-b> <cmd>Telescope buffers<CR>
-" ヘルプ検索
-cnoreabbrev H Telescope help_tags<CR>
-" quickfixhistory
-nnoremap <C-q> <cmd>Telescope quickfixhistory<CR>
-
-" telescope でウィンドウのだし分けをしたい エンターならカレントウィンドウ 、丸々ならスプリットなど
-
 " chatgpt
 cabbrev ai AiReview
 cabbrev gpt Butler<CR>
@@ -270,9 +243,6 @@ source ~/.config/nvim/plugin/gin-preview.vim
 lua <<EOF
 -- comment.nvim
 require('Comment').setup()
-
--- zk
-require('telescope').load_extension('zk')
 
 -- nvim-lastplace
 require'nvim-lastplace'.setup {
