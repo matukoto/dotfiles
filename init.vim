@@ -79,9 +79,6 @@ Jetpack 'vim-denops/denops.vim'
 Jetpack 'lambdalisue/gin.vim'
 Jetpack 'APZelos/blamer.nvim'
 Jetpack 'iberianpig/tig-explorer.vim'
-" chatgpt
-" Jetpack 'lambdalisue/butler.vim'
-" Jetpack 'yuki-yano/ai-review.vim'
 " 日本語検索
 Jetpack 'lambdalisue/kensaku.vim'
 Jetpack 'lambdalisue/kensaku-search.vim'
@@ -182,10 +179,6 @@ let g:lightline = {
    \ 'colorscheme': 'edge',
 \ }
  
-" chatgpt
-cabbrev ai AiReview
-cabbrev gpt Butler<CR>
-
 "" gin
 cabbrev gs GinPreview<CR>
 cabbrev ga Gin add .<CR>
