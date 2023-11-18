@@ -277,9 +277,9 @@ source ~/.config/nvim/plugin/gin-preview.vim
 source ~/.config/nvim/lua/init.lua
 
 "skk 
-call skkeleton#config({ 'globalJisyo': '/.skk/SKK-JISYO.L' })
-imap <C-j> <Plug>(skkelton-enable)
-cmap <C-j> <Plug>(skkelton-enable)
+call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
+imap <C-j> <Plug>(skkeleton-enable)
+cmap <C-j> <Plug>(skkeleton-enable)
 
 " colorscheme
 colorscheme gruvbox-material
