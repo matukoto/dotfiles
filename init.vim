@@ -179,8 +179,8 @@ nnoremap <silent> <Leader>k <C-w>k
 nnoremap <silent> <Leader>l <C-w>l
 
 " タブ移動
-nnoremap <silent> <Leader>T :tabprevious<CR>
-nnoremap <silent> <Leader>t :tabnext<CR>
+nnoremap <silent> <Leader>H :tabprevious<CR>
+nnoremap <silent> <Leader>L :tabnext<CR>
 
 " sonictemplate
 let g:sonictemplate_vim_template_dir = '$HOME/dotfiles/vim/sonictemplate/'
