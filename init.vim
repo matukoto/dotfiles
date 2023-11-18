@@ -220,6 +220,7 @@ cabbrev gc Gin commit<CR>
 cabbrev gp Gin push<CR>
 cabbrev gd GinDiff<CR>
 cabbrev gb GinBranch
+let g:gin_proxy_apply_without_confirm = 1
 
 " kensaku search
 "cnoremap <CR> <Plug>(kensaku-search-replace)<CR>
