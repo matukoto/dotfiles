@@ -57,7 +57,6 @@ Jetpack 'tani/vim-jetpack', {'opt': 1}
 
 Jetpack 'vim-jp/vimdoc-ja'
 
-Jetpack 'neoclide/coc.nvim', {'branch': 'release'}
 Jetpack 'megalithic/zk.nvim'
 
 Jetpack 'lambdalisue/fern.vim'
@@ -138,20 +137,6 @@ map T <Plug>(easymotion-Tl)
 " imap <M-]> <plug>(copilot-next)
 " imap <M=[> <plug>(copilot-prev)
 
-" coc.nvim
-let g:coc_global_extensions = ['@yaegassy/coc-volar', '@yaegassy/coc-volar-tools', 'coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-lists', 'coc-go', 'coc-sh', 'coc-docker', 'coc-deno']
-inoremap <silent> <expr> <C-Space> coc#refresh()
-nnoremap <silent> K       :<C-u>call <SID>show_documentation()<CR>
-" 関数定義ジャンプ
-" nnoremap <silent> <C-a> :<C-u>call CocActionAsync('jumpDefinition', 'vsplit')<CR>
-
-function! s:show_documentation() abort
-  if index(['vim','help'], &filetype) >= 0
-    execute 'h ' . expand('<cword>')
-  elseif coc#rpc#ready()
-    call CocActionAsync('doHover')
-  endif
-endfunction
 
 " blamer
 let g:blamer_enabled = 1
@@ -195,12 +180,11 @@ let g:lightline = {
    \ 'active': {
    \   'left': [
    \     [ 'mode', 'paste' ],
-   \     [ 'gitbranch', 'readonly', 'cocstatus', 'filename', 'method', 'modified' ]
+   \     [ 'gitbranch', 'readonly',  'filename', 'method', 'modified' ]
    \   ],
    \ },
    \ 'component_function': {
-   \   'gitbranch': 'gitbranch#name',
-   \   'cocstatus': 'coc#status',
+   \   'gitbranch': 'gitbranch#name'
    \ },
    \ 'colorscheme': 'edge',
 \ }
