@@ -237,10 +237,9 @@ augroup END
 source ~/.config/nvim/plugin/gin-preview.vim
 
 "skk 
-call skkeleton#config({ 'globalJisyo': '/.skk/SKK-JISYO.L' })
-imap <C-j> <Plug>(skkelton-enable)
-cmap <C-j> <Plug>(skkelton-enable)
-
+call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
+imap <C-j> <Plug>(skkeleton-enable)
+cmap <C-j> <Plug>(skkeleton-enable)
 " lua
 lua <<EOF
 -- comment.nvim
@@ -265,7 +264,6 @@ require'nvim-lastplace'.setup {
 
 -- SmoothCursor
 require('smoothcursor').setup()
-
 -- term-edit
 require 'term-edit'.setup {
   prompt_end = '%$ ',
