@@ -57,8 +57,6 @@ Jetpack 'tani/vim-jetpack', {'opt': 1}
 
 Jetpack 'vim-jp/vimdoc-ja'
 
-Jetpack 'megalithic/zk.nvim'
-
 Jetpack 'lambdalisue/fern.vim'
 Jetpack 'yuki-yano/fern-preview.vim'
 
@@ -208,10 +206,6 @@ nnoremap <C-b> <cmd>Telescope buffers<CR>
 cnoreabbrev H Telescope help_tags<CR>
 " quickfixhistory
 nnoremap <C-q> <cmd>Telescope quickfixhistory<CR>
-
-" zk
-nnoremap <leader>zn <cmd>lua require('telescope').extensions.zk.zk_notes()<CR>
-nnoremap <leader>zg <cmd>lua require('telescope').extensions.zk.zk_grep()<CR>
 
 " telescope でウィンドウのだし分けをしたい エンターならカレントウィンドウ 、丸々ならスプリットなど
 
