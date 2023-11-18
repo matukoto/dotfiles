@@ -82,10 +82,11 @@ Jetpack 'vim-denops/denops.vim'
 Jetpack 'lambdalisue/gin.vim'
 Jetpack 'APZelos/blamer.nvim'
 Jetpack 'iberianpig/tig-explorer.vim'
-" 日本語検索
+" 日本語
 Jetpack 'lambdalisue/kensaku.vim'
 Jetpack 'lambdalisue/kensaku-search.vim'
 Jetpack 'hrsh7th/vim-searchx'
+Jetpack 'vim-skk/skkeleton'
 
 " Jetpack 'skanehira/gyazo.vim'
 " 便利系
@@ -234,6 +235,11 @@ augroup markdown-insert-link
 augroup END
 
 source ~/.config/nvim/plugin/gin-preview.vim
+
+"skk 
+call skkeleton#config({ 'globalJisyo': '/.skk/SKK-JISYO.L' })
+imap <C-j> <Plug>(skkelton-enable)
+cmap <C-j> <Plug>(skkelton-enable)
 
 " lua
 lua <<EOF
