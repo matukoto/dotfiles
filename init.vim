@@ -82,10 +82,11 @@ Jetpack 'vim-denops/denops.vim'
 Jetpack 'lambdalisue/gin.vim'
 Jetpack 'APZelos/blamer.nvim'
 Jetpack 'iberianpig/tig-explorer.vim'
-" 日本語検索
+" 日本語
 Jetpack 'lambdalisue/kensaku.vim'
 Jetpack 'lambdalisue/kensaku-search.vim'
 Jetpack 'hrsh7th/vim-searchx'
+Jetpack 'vim-skk/skkeleton'
 
 " coc
 Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -274,6 +275,11 @@ inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<C
 source ~/.config/nvim/plugin/gin-preview.vim
 
 source ~/.config/nvim/lua/init.lua
+
+"skk 
+call skkeleton#config({ 'globalJisyo': '/.skk/SKK-JISYO.L' })
+imap <C-j> <Plug>(skkelton-enable)
+cmap <C-j> <Plug>(skkelton-enable)
 
 " colorscheme
 colorscheme gruvbox-material
