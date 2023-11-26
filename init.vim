@@ -87,6 +87,7 @@ Jetpack 'lambdalisue/kensaku.vim'
 Jetpack 'lambdalisue/kensaku-search.vim'
 Jetpack 'hrsh7th/vim-searchx'
 Jetpack 'vim-skk/skkeleton'
+Jetpack 'NI57721/skkeleton-state-popup'
 
 " Jetpack 'skanehira/gyazo.vim'
 " 便利系
@@ -240,6 +241,20 @@ source ~/.config/nvim/plugin/gin-preview.vim
 call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
+
+" skk-state-popup
+call skkeleton_state_popup#config(#{
+  \   labels: {
+  \     'input': #{hira: "あ", kata: 'ア', hankata: 'ｶﾅ', zenkaku: 'Ａ'},
+  \     'input:okurinasi': #{hira: '▽▽', kata: '▽▽', hankata: '▽▽', abbrev: 'ab'},
+  \     'input:okuriari': #{hira: '▽▽', kata: '▽▽', hankata: '▽▽'},
+  \     'henkan': #{hira: '▼▼', kata: '▼▼', hankata: '▼▼', abbrev: 'ab'},
+  \     'latin': '_A',
+  \   },
+  \   opts: #{relative: 'cursor', col: 0, row: 1, anchor: 'NW', style: 'minimal'},
+  \ })
+call skkeleton_state_popup#run()
+
 " lua
 lua <<EOF
 -- comment.nvim
