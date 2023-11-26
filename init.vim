@@ -87,6 +87,7 @@ Jetpack 'lambdalisue/kensaku.vim'
 Jetpack 'lambdalisue/kensaku-search.vim'
 Jetpack 'hrsh7th/vim-searchx'
 Jetpack 'vim-skk/skkeleton'
+Jetpack 'NI57721/skkeleton-state-popup'
 
 " coc
 Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -272,14 +273,27 @@ nnoremap <Leader>r <Plug>(coc-rename)<CR>
 " エンターで補完を確定
 inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-source ~/.config/nvim/plugin/gin-preview.vim
-
-source ~/.config/nvim/lua/init.lua
-
 "skk 
 call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
+
+" skk-state-popup
+call skkeleton_state_popup#config(#{
+  \   labels: {
+  \     'input': #{hira: "あ", kata: 'ア', hankata: 'ｶﾅ', zenkaku: 'Ａ'},
+  \     'input:okurinasi': #{hira: '▽▽', kata: '▽▽', hankata: '▽▽', abbrev: 'ab'},
+  \     'input:okuriari': #{hira: '▽▽', kata: '▽▽', hankata: '▽▽'},
+  \     'henkan': #{hira: '▼▼', kata: '▼▼', hankata: '▼▼', abbrev: 'ab'},
+  \     'latin': '_A',
+  \   },
+  \   opts: #{relative: 'cursor', col: 0, row: 1, anchor: 'NW', style: 'minimal'},
+  \ })
+call skkeleton_state_popup#run()
+
+source ~/.config/nvim/plugin/gin-preview.vim
+
+source ~/.config/nvim/lua/init.lua
 
 " colorscheme
 colorscheme gruvbox-material
