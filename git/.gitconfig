@@ -21,3 +21,6 @@
 # ghq で管理するディレクトリを指定
 [ghq]
   root = ~/work
+# git diff で difftastic を使う
+[diff]
+  external = difft
