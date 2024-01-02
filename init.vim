@@ -95,7 +95,7 @@ Jetpack 'skanehira/denops-docker.vim'
 Jetpack 'skanehira/k8s.vim'
 Jetpack 'cshuaimin/ssr.nvim'
 Jetpack 'shellRaining/hlchunk.nvim'
-" Jetpack 'cohama/lexima.vim'
+Jetpack 'stevearc/aerial.nvim'
 Jetpack 'github/copilot.vim'
 
 " カラースキーマ
@@ -292,6 +292,11 @@ require'nvim-lastplace'.setup {
 
 -- SmoothCursor
 require('smoothcursor').setup()
+
+-- aerial アウトラインを表示する
+require("aerial").setup()
+-- アウトラインを表示、非表示を切り替える
+vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 
 -- term-edit
 require 'term-edit'.setup {
