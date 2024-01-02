@@ -311,6 +311,7 @@ require('nvim-treesitter.configs').setup {
     "javascript",
     "vue",
     "vim",
+    "svelte",
     "json",
     "markdown",
     "lua",
