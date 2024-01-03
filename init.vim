@@ -98,6 +98,7 @@ Jetpack 'shellRaining/hlchunk.nvim'
 Jetpack 'stevearc/aerial.nvim'
 Jetpack 'github/copilot.vim'
 Jetpack 'tyru/capture.vim'
+Jetpack 'reireias/vim-cheatsheet'
 
 " カラースキーマ
 Jetpack 'gen740/SmoothCursor.nvim'
@@ -109,6 +110,13 @@ Jetpack 'edeneast/nightfox.nvim'
 Jetpack 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 " Jetpack 'folke/styler.nvim'
 call jetpack#end()
+
+" cheat sheet
+let g:cheatsheet#cheat_file = '$HOME/dotfiles/vim/cheatSheet/default.md'
+let g:cheatsheet#float_window = 1
+" you can change float window size.
+let g:cheatsheet#float_window_width_ratio = 0.6
+let g:cheatsheet#float_window_height_ratio = 0.5
 
 " map prefix
 let g:mapleader = "\<Space>"
