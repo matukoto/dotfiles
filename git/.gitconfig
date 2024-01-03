@@ -9,6 +9,8 @@
   editor = vim
   commentChar = ";"
   quotepath = false
+[pull]
+  merge = ff-only
 [commit]
   template = /home/keisuke/dotfiles/git/.gitmessage
   verbose = true
