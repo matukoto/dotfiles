@@ -97,6 +97,7 @@ Jetpack 'cshuaimin/ssr.nvim'
 Jetpack 'shellRaining/hlchunk.nvim'
 Jetpack 'stevearc/aerial.nvim'
 Jetpack 'github/copilot.vim'
+Jetpack 'tyru/capture.vim'
 
 " カラースキーマ
 Jetpack 'gen740/SmoothCursor.nvim'
