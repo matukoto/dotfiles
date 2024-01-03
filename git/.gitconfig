@@ -9,6 +9,8 @@
   editor = vim
   commentChar = ";"
   quotepath = false
+  eol = lf
+  autocrlf = input
 [pull]
   merge = ff-only
 [commit]
