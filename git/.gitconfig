@@ -21,7 +21,7 @@
   prune = true
 [rebase]
   # rebase 時に自動で stash
-    autostash = true
+  autostash = true
 # ghq で管理するディレクトリを指定
 [ghq]
   root = ~/work
