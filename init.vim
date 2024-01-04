@@ -96,9 +96,10 @@ Jetpack 'skanehira/k8s.vim'
 Jetpack 'cshuaimin/ssr.nvim'
 Jetpack 'shellRaining/hlchunk.nvim'
 Jetpack 'stevearc/aerial.nvim'
-Jetpack 'github/copilot.vim'
+" Jetpack 'github/copilot.vim'
 Jetpack 'tyru/capture.vim'
 Jetpack 'reireias/vim-cheatsheet'
+Jetpack 'itchyny/vim-cursorword'
 
 " カラースキーマ
 Jetpack 'gen740/SmoothCursor.nvim'
