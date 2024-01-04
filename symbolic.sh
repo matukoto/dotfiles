@@ -25,3 +25,6 @@ ln -s ~/dotfiles/config/yazi ~/.config/
 
 ## starship
 ln -s ~/dotfiles/config/starship.toml ~/.config/starship.toml
+
+# gitui
+ln -s ~/dotfiles/config/gitui/key_bindings.ron ~/.config/gitui/key_bindings.ron
