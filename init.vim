@@ -51,9 +51,9 @@ command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
 
 " install jetpackin
 packadd vim-jetpack
-call jetpack#begin('~/.vim/jetpack')  
+call jetpack#begin()
 
-Jetpack 'tani/vim-jetpack', {'opt': 1} 
+Jetpack 'tani/vim-jetpack'
 
 Jetpack 'vim-jp/vimdoc-ja'
 
@@ -96,7 +96,9 @@ Jetpack 'skanehira/k8s.vim'
 Jetpack 'cshuaimin/ssr.nvim'
 Jetpack 'shellRaining/hlchunk.nvim'
 Jetpack 'stevearc/aerial.nvim'
-" Jetpack 'github/copilot.vim'
+Jetpack 'tris203/hawtkeys.nvim'
+
+Jetpack 'github/copilot.vim'
 Jetpack 'tyru/capture.vim'
 Jetpack 'reireias/vim-cheatsheet'
 Jetpack 'itchyny/vim-cursorword'
