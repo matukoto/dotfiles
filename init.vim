@@ -61,8 +61,8 @@ Jetpack 'lambdalisue/fern.vim'
 Jetpack 'yuki-yano/fern-preview.vim'
 
 " ステータスラインプラグイン
-Jetpack 'itchyny/lightline.vim'
-Jetpack 'itchyny/vim-gitbranch'
+Jetpack 'nvim-lualine/lualine.nvim'
+Jetpack 'nvim-tree/nvim-web-devicons'
 " Jetpack 'mvllow/modes.nvim', { 'tag': 'v0.2.0' }
 
 " terminal
@@ -244,6 +244,9 @@ source ~/.config/nvim/plugin/gin-preview.vim
 
 " lua
 lua <<EOF
+-- lualine
+require('lualine').setup()
+
 -- comment.nvim
 require('Comment').setup()
 
