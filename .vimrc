@@ -3,7 +3,7 @@ set encoding=utf-8
 set fileencodings=utf-8
 "
 " 改行コードの自動認識
-set fileformat=unix
+set fileformats=unix,dos
 
 " 新しいウィンドウを下､右に開く
 " set splitbelow
