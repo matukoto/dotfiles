@@ -1,3 +1,41 @@
+-- teleport
+local actions = require("telescope.actions")
+require("telescope").setup {
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close,
+        -- Ctrl+Enterがマッピングされている
+        ["<F12>"] = actions.select_vertical,
+      },
+      n = { ["q"] = actions.close },
+    },
+    sorting_strategy = "ascending",
+    layout_strategy = "vertical",
+    layout_config = {
+      vertical = { width = 0.9 },
+      prompt_position = "top",
+      preview_cutoff = 1,
+    },
+  },
+  extensions = {
+    frecency = {
+      show_scores = true
+    },
+    coc = {
+      -- trueだと常にpreviewを経由する
+      prefer_locations = false,
+    }
+  }
+}
+-- telescope-frecency
+require('telescope').load_extension('frecency')
+-- telescope-coc
+require('telescope').load_extension('coc')
+-- telescope
+vim.keymap.set("n", "<leader>a", "<cmd>Telescope frecency<CR>")
+vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>")
+
 -- lualine
 require('lualine').setup()
 
