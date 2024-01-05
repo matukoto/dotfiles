@@ -10,11 +10,22 @@ return {
     { key = 't', mods = 'ALT', action = act.SpawnTab 'CurrentPaneDomain' },
     -- tab 閉じる
     { key = 'w', mods = 'ALT', action = act.CloseCurrentTab{ confirm = true } },
+    -- pane 移動
+    { key = 'LeftArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Left' },
+    { key = 'RightArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Right' },
+    { key = 'UpArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Up' },
+    { key = 'DownArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Down' },
+    -- pane select
+    { key = 'P', mods = 'SHIFT|CTRL', action = act.PaneSelect{ alphabet =  '', mode =  'Activate' } },
+    -- pane close
+    { key = 'W', mods = 'SHIFT|CTRL', action = act.ClosePane{ confirm = true } },
+    -- full screen
     { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
-    { key = '"', mods = 'ALT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
-    { key = '"', mods = 'SHIFT|ALT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
-    { key = '%', mods = 'ALT|CTRL', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
-    { key = '%', mods = 'SHIFT|ALT|CTRL', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
+    -- vsplit
+    { key = 'v', mods = 'ALT', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
+    -- hsplit
+    { key = 'h', mods = 'ALT', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
+    -- デフォルト設定
     { key = ')', mods = 'CTRL', action = act.ResetFontSize },
     { key = ')', mods = 'SHIFT|CTRL', action = act.ResetFontSize },
     { key = '+', mods = 'CTRL', action = act.IncreaseFontSize },
@@ -25,7 +36,6 @@ return {
     { key = '0', mods = 'CTRL', action = act.ResetFontSize },
     { key = '0', mods = 'SHIFT|CTRL', action = act.ResetFontSize },
     { key = '0', mods = 'SUPER', action = act.ResetFontSize },
-    { key = '5', mods = 'SHIFT|ALT|CTRL', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
     { key = '=', mods = 'CTRL', action = act.IncreaseFontSize },
     { key = '=', mods = 'SHIFT|CTRL', action = act.IncreaseFontSize },
     { key = '=', mods = 'SUPER', action = act.IncreaseFontSize },
@@ -41,8 +51,6 @@ return {
     { key = 'M', mods = 'SHIFT|CTRL', action = act.Hide },
     { key = 'N', mods = 'CTRL', action = act.SpawnWindow },
     { key = 'N', mods = 'SHIFT|CTRL', action = act.SpawnWindow },
-    { key = 'P', mods = 'CTRL', action = act.PaneSelect{ alphabet =  '', mode =  'Activate' } },
-    { key = 'P', mods = 'SHIFT|CTRL', action = act.PaneSelect{ alphabet =  '', mode =  'Activate' } },
     { key = 'R', mods = 'CTRL', action = act.ReloadConfiguration },
     { key = 'R', mods = 'SHIFT|CTRL', action = act.ReloadConfiguration },
     { key = 'U', mods = 'CTRL', action = act.CharSelect{ copy_on_select = true, copy_to =  'ClipboardAndPrimarySelection' } },
@@ -66,7 +74,6 @@ return {
     { key = 'm', mods = 'SUPER', action = act.Hide },
     { key = 'n', mods = 'SHIFT|CTRL', action = act.SpawnWindow },
     { key = 'n', mods = 'SUPER', action = act.SpawnWindow },
-    { key = 'p', mods = 'SHIFT|CTRL', action = act.PaneSelect{ alphabet =  '', mode =  'Activate' } },
     { key = 'r', mods = 'SHIFT|CTRL', action = act.ReloadConfiguration },
     { key = 'r', mods = 'SUPER', action = act.ReloadConfiguration },
     { key = 'u', mods = 'SHIFT|CTRL', action = act.CharSelect{ copy_on_select = true, copy_to =  'ClipboardAndPrimarySelection' } },
@@ -77,14 +84,6 @@ return {
     { key = 'phys:Space', mods = 'SHIFT|CTRL', action = act.QuickSelect },
     { key = 'PageUp', mods = 'SHIFT', action = act.ScrollByPage(-1) },
     { key = 'PageDown', mods = 'SHIFT', action = act.ScrollByPage(1) },
-    { key = 'LeftArrow', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection 'Left' },
-    { key = 'LeftArrow', mods = 'SHIFT|ALT|CTRL', action = act.AdjustPaneSize{ 'Left', 1 } },
-    { key = 'RightArrow', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection 'Right' },
-    { key = 'RightArrow', mods = 'SHIFT|ALT|CTRL', action = act.AdjustPaneSize{ 'Right', 1 } },
-    { key = 'UpArrow', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection 'Up' },
-    { key = 'UpArrow', mods = 'SHIFT|ALT|CTRL', action = act.AdjustPaneSize{ 'Up', 1 } },
-    { key = 'DownArrow', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection 'Down' },
-    { key = 'DownArrow', mods = 'SHIFT|ALT|CTRL', action = act.AdjustPaneSize{ 'Down', 1 } },
     { key = 'Insert', mods = 'SHIFT', action = act.PasteFrom 'PrimarySelection' },
     { key = 'Insert', mods = 'CTRL', action = act.CopyTo 'PrimarySelection' },
     { key = 'Copy', mods = 'NONE', action = act.CopyTo 'Clipboard' },
