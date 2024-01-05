@@ -84,6 +84,15 @@ Jetpack 'lambdalisue/kensaku.vim'
 Jetpack 'lambdalisue/kensaku-search.vim'
 Jetpack 'hrsh7th/vim-searchx'
 
+" coc
+Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
+
+" telescope
+Jetpack 'nvim-lua/plenary.nvim'
+Jetpack 'nvim-telescope/telescope.nvim'
+Jetpack 'nvim-telescope/telescope-frecency.nvim'
+Jetpack 'fannheyward/telescope-coc.nvim'
+
 " Jetpack 'skanehira/gyazo.vim'
 " 便利系
 Jetpack 'mattn/vim-sonictemplate'
