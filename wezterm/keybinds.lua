@@ -18,7 +18,7 @@ return {
     -- pane select
     { key = 'P', mods = 'SHIFT|CTRL', action = act.PaneSelect{ alphabet =  '', mode =  'Activate' } },
     -- pane close
-    { key = 'W', mods = 'SHIFT|CTRL', action = act.ClosePane{ confirm = true } },
+    { key = 'W', mods = 'SHIFT|CTRL', action = act.CloseCurrentPane{ confirm = true } },
     -- full screen
     { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
     -- vsplit
