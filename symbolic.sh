@@ -10,6 +10,7 @@ ln -s ~/dotfiles/.bash_aliases ~/.bash_aliases
 
 # vim
 ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
+ln -s ~/dotfiles/init.lua ~/.config/nvim/lua/init.lua
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/config/nvim/after/ftplugin.vim ~/.config/nvim/after/ftplugin.vim
 ln -s ~/dotfiles/config/nvim/after/ftplugin/ ~/.config/nvim/after/
