@@ -106,6 +106,7 @@ Jetpack 'cshuaimin/ssr.nvim'
 Jetpack 'shellRaining/hlchunk.nvim'
 Jetpack 'stevearc/aerial.nvim'
 Jetpack 'tris203/hawtkeys.nvim'
+Jetpack 'is0n/fm-nvim'
 
 Jetpack 'github/copilot.vim'
 Jetpack 'tyru/capture.vim'
