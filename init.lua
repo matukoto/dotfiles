@@ -33,7 +33,7 @@ require('telescope').load_extension('frecency')
 -- telescope-coc
 require('telescope').load_extension('coc')
 -- telescope
-vim.keymap.set("n", "<leader>a", "<cmd>Telescope frecency<CR>")
+vim.keymap.set("n", "<leader>s", "<cmd>Telescope frecency<CR>")
 vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>")
 
 -- lualine
@@ -96,6 +96,17 @@ require 'nvim-lastplace'.setup {
 -- 		visual = "#9745be",
 -- 	},
 -- })
+
+--hawtkeys
+require('hawtkeys').setup({
+  colors = {
+    normal = "#f5c359",
+    insert = "#78ccc5",
+    visual = "#9745be",
+    replace = "#c75c6a",
+    command = "#c75c6a",
+  },
+})
 
 -- SmoothCursor
 require('smoothcursor').setup()
