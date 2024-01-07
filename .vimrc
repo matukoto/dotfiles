@@ -95,8 +95,10 @@ nnoremap < <<
 vnoremap < <gv
 vnoremap > >gv
  
-"ノーマルモード中にEnterで改行
-" noremap <CR> i<CR><Esc>
+" ; と : の入れ替え
+nnoremap ; :
+nnoremap : ;
+
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk
