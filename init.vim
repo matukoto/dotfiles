@@ -253,6 +253,10 @@ augroup markdown-insert-link
   au FileType markdown vnoremap <buffer> <silent> p :<C-u>call InsertMarkdownLink()<CR>
 augroup END
 
+" coc.nvim
+let g:coc_global_extensions = ['coc-json','coc-yaml','coc-java','coc-go','coc-lua','coc-deno','coc-svelte','coc-snippets','@yaegassy/coc-marksman','coc-tsserver',]
+
+
 source ~/.config/nvim/plugin/gin-preview.vim
 
 source ~/.config/nvim/lua/init.lua

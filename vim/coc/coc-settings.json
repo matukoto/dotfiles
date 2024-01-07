@@ -4,12 +4,13 @@
     "tsx",
     "ts",
     "go",
-    "md",
-    // "yaml",
+    "yaml",
     "json",
     "vim",
     "lua",
-    "Dockerfile"
+    "Dockerfile",
+    "java",
+    "svelte"
   ],
   "suggest.invalidInsertCharacters": [],
   "languageserver": {
@@ -30,5 +31,6 @@
       "args": ["serve"],
       "filetypes": ["proto"]
     }
-  }
+  },
+  "snippets.ultisnips.pythonPrompt": false
 }
