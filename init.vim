@@ -255,7 +255,7 @@ augroup markdown-insert-link
 augroup END
 
 " coc.nvim
-let g:coc_global_extensions = ['coc-json','coc-yaml','coc-java','coc-go','coc-lua','coc-deno','coc-svelte','coc-snippets','@yaegassy/coc-marksman','coc-tsserver',]
+let g:coc_global_extensions = ['coc-json','coc-yaml','coc-java','coc-go','coc-deno','coc-svelte','coc-snippets','@yaegassy/coc-marksman','coc-tsserver',]
 
 "coc keymap
 " 定義ジャンプ
