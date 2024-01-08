@@ -259,9 +259,9 @@ let g:coc_global_extensions = ['coc-json','coc-yaml','coc-java','coc-go','coc-lu
 
 "coc keymap
 " 定義ジャンプ
-nnoremap <silent> <C-a> <Plug>(coc-definition)<CR>
+nnoremap  <Leader>d <Plug>(coc-definition)<CR>
 " 定義ジャンプを元に戻る
-nnoremap <silent> <Leader>o <Plug>(coc-jump-back)<CR>
+"nnoremap <silent> <Leader>o <Plug>(coc-jump-back)<CR>
 " import
 nnoremap <silent> <Leader>i <Plug>(coc-organize-imports)<CR>
 " snippest 展開
@@ -269,7 +269,7 @@ nnoremap <silent> <Leader>s <Plug>(coc-snippets-expand-jamp)<CR>
 " code action
 nnoremap <silent> <Leader>c <Plug>(coc-codeaction-cursor)<CR>
 " rename
-nnoremap <silent> <Leader>r <Plug>(coc-rename)<CR>
+nnoremap <Leader>r <Plug>(coc-rename)<CR>
 
 source ~/.config/nvim/plugin/gin-preview.vim
 
