@@ -19,17 +19,6 @@
   ],
   "suggest.invalidInsertCharacters": [],
   "languageserver": {
-    "efm": {
-      "command": "efm-langserver",
-      "args": [],
-      "filetypes": ["markdown", "vim", "md", "vimwiki"]
-    },
-    "zk": {
-      "command": "zk",
-      "args": ["lsp", "--log", "/tmp/zk-lsp.log"],
-      "trace.server": "verbose",
-      "filetypes": ["vimwiki", "markdown"]
-    },
     "bufls": {
       "command": "bufls",
       "rootPatterns": ["buf.yaml"],
