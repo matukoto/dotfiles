@@ -43,6 +43,8 @@
           "globals": ["vim", "use"]
         }
       }
+    }
+  },
   "list.source.symbols.excludes": ["**/node_modules/**"],
   "go.goplsOptions": {
     "staticcheck": true
@@ -76,6 +78,5 @@
   "snippets.ultisnips.pythonPrompt": false,
   "svelte.enable-ts-plugin": true,
   "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false,
-  "Lua.diagnostics.globals": ["vim"]
+  "diagnostic.virtualTextCurrentLineOnly": false
 }
