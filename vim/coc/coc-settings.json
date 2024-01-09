@@ -26,25 +26,23 @@
       "filetypes": ["proto"]
     },
     "lua": {
-      "command": "~/.local/share/lua-language-server/bin/lua-language-server",
-      "args": ["-E", "~/.local/share/lua-language-server/bin/main.lua"],
+      "command": "/home/keisuke/work/lua-language-server/bin/lua-language-server",
+      "args": ["-E", "/home/keisuke/work/lua-language-server/bin/main.lua"],
       "filetypes": ["lua"],
       "settings": {
-      "Lua": {
+        "Lua": {
+          "workspace": {
+            "library": {
+              "/home/linuxbrew/.linuxbrew/share/nvim/runtime/lua": true,
+              "/home/linuxbrew/.linuxbrew/share/nvim/runtime/lua/vim": true,
+              "/home/linuxbrew/.linuxbrew/share/nvim/runtime/lua/vim/lsp": true
+            }
+          }
+        },
         "diagnostics": {
-          "globals": ["vim"]
-        },
-        "workspace": {
-          "library": {
-            ["/usr/share/awesome/lib"]: true,
-            ["/usr/share/awesome/lib/"]: true,
-            ["/usr/share/awesome/lib/?.lua"]: true,
-            ["/usr/share/awesome/lib/?/init.lua"]: true
-          },
-        },
+          "globals": ["vim", "use"]
+        }
       }
-    }
-  },
   "list.source.symbols.excludes": ["**/node_modules/**"],
   "go.goplsOptions": {
     "staticcheck": true
