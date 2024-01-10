@@ -258,14 +258,10 @@ let g:coc_global_extensions = ['coc-json','coc-yaml','coc-java','coc-go','coc-de
 "coc keymap
 " 定義ジャンプ
 nnoremap  <Leader>d <Plug>(coc-definition)<CR>
-" 定義ジャンプを元に戻る
-"nnoremap <silent> <Leader>o <Plug>(coc-jump-back)<CR>
 " import
-nnoremap <silent> <Leader>i <Plug>(coc-organize-imports)<CR>
-" snippest 展開
-nnoremap <silent> <Leader>s <Plug>(coc-snippets-expand-jamp)<CR>
+nnoremap <Leader>i <Plug>(coc-organize-imports)<CR>
 " code action
-nnoremap <silent> <Leader>c <Plug>(coc-codeaction-cursor)<CR>
+nnoremap  <Leader>c <Plug>(coc-codeaction-cursor)<CR>
 " rename
 nnoremap <Leader>r <Plug>(coc-rename)<CR>
 
