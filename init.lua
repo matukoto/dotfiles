@@ -34,6 +34,7 @@ require('telescope').load_extension('frecency')
 require('telescope').load_extension('coc')
 -- telescope
 vim.keymap.set("n", "<leader>s", "<cmd>Telescope frecency<CR>")
+vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>")
 
 -- lualine
