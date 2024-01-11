@@ -266,7 +266,7 @@ nnoremap  <Leader>c <Plug>(coc-codeaction-cursor)<CR>
 nnoremap <Leader>r <Plug>(coc-rename)<CR>
 
 " エンターで補完を確定
-inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 source ~/.config/nvim/plugin/gin-preview.vim
 
