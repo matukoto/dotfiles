@@ -16,7 +16,9 @@ ln -s ~/dotfiles/config/nvim/after/ftplugin.vim ~/.config/nvim/after/ftplugin.vi
 ln -s ~/dotfiles/config/nvim/after/ftplugin/ ~/.config/nvim/after/
 ln -s ~/dotfiles/vim/coc/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -s ~/dotfiles/vim/gin-preview.vim ~/.config/nvim/plugin/gin-preview.vim
-ln -s ~/dotfiles/skk/SKK-JISYO.L ~/.skk/SKK-JISYO.L
+
+# skk
+ln -s ~/dotfiles/.skk/ ~/
 
 # textlint
 ln -s ~/dotfiles/.textlintrc ~/.textlintrc
