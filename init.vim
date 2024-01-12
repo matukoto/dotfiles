@@ -274,7 +274,7 @@ nnoremap <Leader>r <Plug>(coc-rename)<CR>
 inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " skk
-call skkeleton#config(#{globalDictionaries: ['~/.skk/SKK-JISYO.L']})
+call skkeleton#config({'globalDictionaries': ['~/.skk/SKK-JISYO.L']})
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
 
