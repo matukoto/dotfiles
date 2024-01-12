@@ -18,7 +18,11 @@ ln -s ~/dotfiles/vim/coc/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -s ~/dotfiles/vim/gin-preview.vim ~/.config/nvim/plugin/gin-preview.vim
 
 # skk
-ln -s ~/dotfiles/.skk/ ~/
+ln -s ~/dotfiles/.skk/SKK-JISYO.L ~/.skk/SKK-JISYO.L
+ln -s ~/dotfiles/.skk/SKK-JISYO.jinmei ~/.skk/SKK-JISYO.jinmei
+ln -s ~/dotfiles/.skk/SKK-JISYO.geo ~/.skk/SKK-JISYO.geo
+ln -s ~/dotfiles/.skk/SKK-JISYO.propernoun ~/.skk/SKK-JISYO.propernoun
+ln -s ~/dotfiles/.skk/SKK-JISYO.emoji.utf8 ~/.skk/SKK-JISYO.emoji.utf8
 
 # textlint
 ln -s ~/dotfiles/.textlintrc ~/.textlintrc
