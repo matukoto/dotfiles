@@ -274,7 +274,11 @@ nnoremap <Leader>r <Plug>(coc-rename)<CR>
 inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " skk
-call skkeleton#config({'globalDictionaries': ['~/.skk/SKK-JISYO.L']})
+call skkeleton#config({
+      \'globalDictionaries': ['~/.skk/SKK-JISYO.L','~/.skk/SKK-JISYO.emoji.utf8', '~/.skk/SKK-JISYO.geo', '~/.skk/SKK-JISYO.jinmei', '~/.skk/SKK-JISYO.propernoun'],
+      \'sources': ['deno_kv'],
+      \ 'databasePath': '~/.skk/skkeleton.db',
+      \})
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
 
