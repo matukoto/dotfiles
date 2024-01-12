@@ -273,8 +273,8 @@ nnoremap <Leader>r <Plug>(coc-rename)<CR>
 " エンターで補完を確定
 inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-"skk 
-call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
+" skk
+call skkeleton#config({ 'globalDictionaries': '~/.skk/SKK-JISYO.L' })
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
 
