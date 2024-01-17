@@ -59,6 +59,8 @@ Jetpack 'vim-jp/vimdoc-ja'
 
 " dd
 Jetpack 'shougo/ddc.vim'
+Jetpack 'shougo/ddc-matcher_head'
+Jetpack 'shougo/ddc-sorter_rank'
 
 Jetpack 'lambdalisue/fern.vim'
 Jetpack 'yuki-yano/fern-preview.vim'
@@ -282,6 +284,21 @@ call skkeleton#config({
       \})
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
+
+" ddc
+call ddc#custom#patch_global('sources',['skkeleton'])
+call ddc#custom#patch_global('sourceOptions',{
+      \ '_': {
+      \   'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank'],
+      \ },
+      \ 'skkeleton': {
+      \   'mark': 'skkeleton',
+      \  'matchers': ['skkeleton'],
+      \ 'sorters': [],
+      \ },
+      \})
+call ddc#enable()
 
 " skk-state-popup
 call skkeleton_state_popup#config(#{
