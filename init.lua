@@ -125,7 +125,7 @@ require("hlchunk").setup({
 })
 
 -- nvim-lastplace
-require 'nvim-lastplace'.setup {
+require('nvim-lastplace').setup {
   lastplace_ignore_buftype = { "quicfix", "nofile", "help" },
   lastplace_ignore_filetype = { "gitcommit", "gitrebase" },
   lastplace_open_folds = true
@@ -156,7 +156,14 @@ require('hawtkeys').setup({
 require('smoothcursor').setup()
 
 -- aerial アウトラインを表示する
-require("aerial").setup()
+require("aerial").setup({
+  on_attach = function(bufnr)
+    -- Jump forwards/backwards with '{' and '}'
+    vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+    vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+  end,
+})
+
 -- アウトラインを表示、非表示を切り替える
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 
