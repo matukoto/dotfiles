@@ -129,6 +129,9 @@ Jetpack 'sainnhe/sonokai'
 Jetpack 'sainnhe/everforest'
 Jetpack 'edeneast/nightfox.nvim'
 Jetpack 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
+Jetpack 'kyoh86/momiji'
+Jetpack 'taniarascia/new-moon.vim'
+Jetpack 'catppuccin/nvim', { 'as': 'catppuccin' }
 " Jetpack 'folke/styler.nvim'
 call jetpack#end()
 
@@ -318,4 +321,4 @@ source ~/.config/nvim/plugin/gin-preview.vim
 source ~/.config/nvim/lua/init.lua
 
 " colorscheme
-colorscheme gruvbox-material
+colorscheme sonokai
