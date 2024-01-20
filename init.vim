@@ -267,8 +267,8 @@ call skkeleton#config({
       \ 'databasePath': '~/.skk/skkeleton.db',
       \ 'eggLikeNewline': v:true,
       \})
-imap <C-j> <Plug>(skkeleton-enable)
-cmap <C-j> <Plug>(skkeleton-enable)
+imap <C-j> <Plug>(skkeleton-toggle)
+cmap <C-j> <Plug>(skkeleton-toggle)
 
 " ddc
 call ddc#custom#patch_global('sources',['skkeleton'])
