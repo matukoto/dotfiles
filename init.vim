@@ -90,6 +90,7 @@ Jetpack 'lambdalisue/kensaku-search.vim'
 Jetpack 'hrsh7th/vim-searchx'
 Jetpack 'vim-skk/skkeleton'
 Jetpack 'NI57721/skkeleton-state-popup'
+Jetpack 'delphinus/skkeleton_indicator.nvim'
 
 " coc
 Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
