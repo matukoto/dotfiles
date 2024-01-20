@@ -292,7 +292,7 @@ call skkeleton_state_popup#config(#{
   \     'input:okurinasi': #{hira: '▽▽', kata: '▽▽', hankata: '▽▽', abbrev: 'ab'},
   \     'input:okuriari': #{hira: '▽▽', kata: '▽▽', hankata: '▽▽'},
   \     'henkan': #{hira: '▼▼', kata: '▼▼', hankata: '▼▼', abbrev: 'ab'},
-  \     'latin': '_A',
+  \     'latin': 'A',
   \   },
   \   opts: #{relative: 'cursor', col: 0, row: 1, anchor: 'NW', style: 'minimal'},
   \ })
