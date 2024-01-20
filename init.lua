@@ -155,9 +155,6 @@ require('hawtkeys').setup({
 -- SmoothCursor
 require('smoothcursor').setup()
 
--- skkeleton_indicator
-require('skkeleton_indicator').setup()
-
 -- aerial アウトラインを表示する
 require("aerial").setup({
   on_attach = function(bufnr)
