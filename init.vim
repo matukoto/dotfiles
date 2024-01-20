@@ -193,24 +193,6 @@ nnoremap <silent> L :tabnext<CR>
 let g:sonictemplate_vim_template_dir = '$HOME/dotfiles/vim/sonictemplate/'
 cabbrev tp Template
 
-"" lightline
-" insert などを非表示に
-set noshowmode
-" ステータスラインを表示する
-set laststatus=2
-let g:lightline = {
-   \ 'active': {
-   \   'left': [
-   \     [ 'mode', 'paste' ],
-   \     [ 'gitbranch', 'readonly',  'filename', 'method', 'modified' ]
-   \   ],
-   \ },
-   \ 'component_function': {
-   \   'gitbranch': 'gitbranch#name'
-   \ },
-   \ 'colorscheme': 'edge',
-\ }
- 
 "" gin
 cabbrev gs GinPreview<CR>
 cabbrev ga Gin add .<CR>
