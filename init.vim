@@ -57,6 +57,9 @@ Jetpack 'tani/vim-jetpack'
 
 Jetpack 'vim-jp/vimdoc-ja'
 
+" denops
+Jetpack 'vim-denops/denops.vim'
+
 " dd
 Jetpack 'shougo/ddc.vim'
 Jetpack 'shougo/ddc-matcher_head'
@@ -76,10 +79,6 @@ Jetpack 'nvim-treesitter/nvim-treesitter'
 " nerdfont
 Jetpack 'lambdalisue/nerdfont.vim'
 Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
-" easymotion
-Jetpack 'easymotion/vim-easymotion'
-" denops
-Jetpack 'vim-denops/denops.vim'
 " git
 Jetpack 'lambdalisue/gin.vim'
 Jetpack 'APZelos/blamer.nvim'
@@ -100,7 +99,6 @@ Jetpack 'nvim-telescope/telescope.nvim'
 Jetpack 'nvim-telescope/telescope-frecency.nvim'
 Jetpack 'fannheyward/telescope-coc.nvim'
 
-" Jetpack 'skanehira/gyazo.vim'
 " 便利系
 Jetpack 'mattn/vim-sonictemplate'
 Jetpack 'thinca/vim-quickrun'
@@ -146,19 +144,10 @@ let g:mapleader = "\<Space>"
 nnoremap <Leader> <Nop>
 xnoremap <Leader> <Nop>
 
-" easymotion
-map f <Plug>(easymotion-fl)
-map t <Plug>(easymotion-ft)
-map F <Plug>(easymotion-Fl)
-map T <Plug>(easymotion-Tl)
-
 " copilot
-" imap <expr> <C-Space> copilot#expand()
-" imap <Tab> copilot#Accept()
-" imap <C-]> <plug>(copilot-dismiss)
-" imap <M-]> <plug>(copilot-next)
-" imap <M=[> <plug>(copilot-prev)
-
+imap <expr> <C-Space> copilot#expand()
+imap <Tab> copilot#Accept()
+imap <C-]> <plug>(copilot-dismiss)
 
 " blamer
 let g:blamer_enabled = 1
@@ -170,7 +159,6 @@ let g:fern#renderer = 'nerdfont'
 " fern
 " ドットファイルなどをデフォルトで表示
 let g:fern#default_hidden = 1
-
 nnoremap <silent> <Leader>e :<C-u>Fern . -drawer<CR>
 nnoremap <silent> <Leader>E :<C-u>Fern . -reveal=%<CR>
 
@@ -217,37 +205,10 @@ nnoremap <C-f> <cmd>FuzzyMotion<CR>
 "quickrun
 cabbrev qr QuickRun<CR>
 
-" 選択した文字列にリンクを追加
-let s:clipboard_register = has('linux') || has('unix') ? '+' : '*'
-function! InsertMarkdownLink() abort
-  " use register `9`
-  let old = getreg('9')
-  let link = trim(getreg(s:clipboard_register))
-  if link !~# '^http.*'
-    normal! gvp
-    return
-  endif
-
-  " replace `[text](link)` to selected text
-  normal! gv"9y
-  let word = getreg(9)
-  let newtext = printf('[%s](%s)', word, link)
-  call setreg(9, newtext)
-  normal! gv"9p
-
-  " restore old data
-  call setreg(9, old)
-endfunction
-
-augroup markdown-insert-link
-  au!
-  au FileType markdown vnoremap <buffer> <silent> p :<C-u>call InsertMarkdownLink()<CR>
-augroup END
-
 " coc.nvim
 let g:coc_global_extensions = ['coc-json','coc-yaml','coc-java','coc-go','coc-deno','coc-svelte','coc-snippets','@yaegassy/coc-marksman','coc-tsserver',]
 
-"coc keymap
+" coc keymap
 " 定義ジャンプ
 nnoremap  <Leader>d <Plug>(coc-definition)<CR>
 " import
