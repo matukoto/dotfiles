@@ -224,7 +224,7 @@ inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<C
 " skk
 call skkeleton#config({
       \'globalDictionaries': ['~/.skk/SKK-JISYO.L','~/.skk/SKK-JISYO.emoji.utf8', '~/.skk/SKK-JISYO.geo', '~/.skk/SKK-JISYO.jinmei', '~/.skk/SKK-JISYO.propernoun'],
-      \'sources': ['deno_kv'],
+      \'sources': ['deno_kv', 'google_japanese_input'],
       \ 'databasePath': '~/.skk/skkeleton.db',
       \ 'eggLikeNewline': v:true,
       \})
