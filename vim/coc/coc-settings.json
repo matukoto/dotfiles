@@ -15,7 +15,8 @@
     "lua",
     "Dockerfile",
     "java",
-    "svelte"
+    "svelte",
+    "toml"
   ],
   "suggest.invalidInsertCharacters": [],
   "typescript.suggest.completeFunctionCalls": false,
