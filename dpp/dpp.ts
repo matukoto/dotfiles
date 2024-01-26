@@ -13,7 +13,7 @@ export class Config extends BaseConfig {
     basePath: string;
     dpp: Dpp;
   }): Promise<{
-    Plugin: Plugin[];
+    plugins: Plugin[];
     stateLines: string[];
   }> {
     args.contextBuilder.setGlobal({
@@ -31,10 +31,10 @@ export class Config extends BaseConfig {
       stateLines: string[];
     };
 
-    const [context, options] = await arggs.contextBuilder.get(args.denops);
+    const [context, options] = await args.contextBuilder.get(args.denops);
     const dotfilesDir = "~/.config/nvim/dpp/";
 
-    const tomls = Toml[] = [];
+    const tomls: Toml[] = [];
     tomls.push(
       await args.dpp.extAction(
         args.denops,
@@ -69,9 +69,9 @@ export class Config extends BaseConfig {
 
     const recordPlugins: Record<string, Plugin> = {};
     const ftplugins: Record<string, string> = {};
-    const hooksFile: string[] = [];
+    const hooksFiles: string[] = [];
 
-    toml.forEach((toml) => {
+    tomls.forEach((toml) => {
 
       for (const plugin of toml.plugins) {
         recordPlugins[plugin.name] = plugin;
@@ -80,7 +80,7 @@ export class Config extends BaseConfig {
       if (toml.ftplugins) {
         for (const filetype of Object.keys(toml.ftplugins)) {
           if (ftplugins[filetype]) {
-            ftplugins[filetype] += '\n${toml.ftplugins[filetype]}';
+            ftplugins[filetype] += `\n${toml.ftplugins[filetype]}`;
           } else {
             ftplugins[filetype] = toml.ftplugins[filetype];
           }
@@ -88,7 +88,7 @@ export class Config extends BaseConfig {
       }
 
       if (toml.hooks_file) {
-        hooksFile.push(toml.hooks_file);
+        hooksFiles.push(toml.hooks_file);
       }
 
     });
