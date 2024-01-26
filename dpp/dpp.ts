@@ -14,7 +14,7 @@ export class Config extends BaseConfig {
     dpp: Dpp;
   }): Promise<{
     Plugin: Plugin[];
-    stateLines: stringp[];
+    stateLines: string[];
   }> {
     args.contextBuilder.setGlobal({
       protocols: ["git"],
@@ -43,7 +43,7 @@ export class Config extends BaseConfig {
         "toml",
         "load",
         {
-          path: await fn.expand(args.denops, dotfilesDir + "dein.toml"),
+          path: await fn.expand(args.denops, dotfilesDir + "dpp.toml"),
           options: {
             lazy: false,
           },
@@ -59,7 +59,7 @@ export class Config extends BaseConfig {
         "toml",
         "load",
         {
-          path: await fn.expand(args.denops, dotfilesDir + "dein_lazy.toml"),
+          path: await fn.expand(args.denops, dotfilesDir + "dpp_lazy.toml"),
           options: {
             lazy: true,
           },
