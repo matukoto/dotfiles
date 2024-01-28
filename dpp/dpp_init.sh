@@ -21,10 +21,10 @@ git clone https://github.com/vim-denops/denops.vim
 
 # create TS setting file
 # symlink
-ln -s ~/dotfiles/dpp/dpp.ts ~/.config/nvim
 mkdir ~/.config/nvim/dpp
-ln -s ~/dotfiles/dpp/dpp.ts ~/.config/nvim/dpp/dpp.ts
+ln -s ~/dotfiles/dpp/dpp.ts ~/.config/nvim/dpp.ts
 ln -s ~/dotfiles/dpp/dpp.toml ~/.config/nvim/dpp/dpp.toml
 ln -s ~/dotfiles/dpp/dpp_lazy.toml ~/.config/nvim/dpp/dpp_lazy.toml
 ln -s ~/dotfiles/dpp/init.lua ~/.config/nvim/dpp/init.lua
-unlink ~/.config/nvim/dpp
+ln -s ~/dotfiles/dpp/init.lua ~/.config/nvim/init.lua
+unlink ~/.config/nvim/init.vim

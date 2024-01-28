@@ -32,7 +32,7 @@ export class Config extends BaseConfig {
     };
 
     const [context, options] = await args.contextBuilder.get(args.denops);
-    const dotfilesDir = "~/.config/nvim/dpp/";
+    const dotfilesDir = "~/.config/nvim/";
 
     const tomls: Toml[] = [];
     tomls.push(

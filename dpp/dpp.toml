@@ -12,3 +12,6 @@ repo = 'Shougo/dpp-ext-istaller'
 
 [[plugins]]
 repo = 'Shougo/dpp-protocol-git'
+
+[[plugins]]
+repo = 'vim-skk/skkeleton'
