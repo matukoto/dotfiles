@@ -172,6 +172,8 @@ require 'term-edit'.setup {
   prompt_end = '%$ ',
 }
 
+require('full_visual_line').setup()
+
 -- treesitter
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
