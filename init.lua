@@ -174,6 +174,15 @@ require 'term-edit'.setup {
 
 require('full_visual_line').setup()
 
+vim.keymap.set('n', '*', function()
+  if vim.v.count > 0 then
+    return '*'
+  else
+    return ':silent execute "keepj norm! *" <Bar> call winrestview(' ..
+        vim.fn.string(vim.fn.winsaveview()) .. ')<CR>'
+  end
+end, { silent = true, expr = true })
+
 -- treesitter
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
