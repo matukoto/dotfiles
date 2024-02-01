@@ -92,6 +92,8 @@ Jetpack 'NI57721/skkeleton-state-popup'
 
 " coc
 Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
+" Obsidian
+Jetpack 'epwalsh/obsidian.nvim'
 
 " telescope
 Jetpack 'nvim-lua/plenary.nvim'
