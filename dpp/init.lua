@@ -20,6 +20,7 @@ vim.opt.runtimepath:append(ext_installer)
 
 vim.g.denops_server_addr = "127.0.0.1:34141"
 vim.g["denops#debug"] = 1
+vim.g["denops#trace"] = 1
 
 if dpp.load_state(dpp_base) then
   vim.opt.runtimepath:prepend(denops_src)
