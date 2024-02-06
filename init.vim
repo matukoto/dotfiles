@@ -216,6 +216,8 @@ cabbrev qr QuickRun<CR>
 " coc.nvim
 let g:coc_global_extensions = ['coc-json','coc-yaml','coc-java','coc-go','coc-deno','coc-svelte','coc-snippets','@yaegassy/coc-marksman','coc-tsserver','coc-toml']
 
+let g:denops#debug = 1
+
 " coc keymap
 " 定義ジャンプ
 nnoremap  <Leader>d <Plug>(coc-definition)<CR>
