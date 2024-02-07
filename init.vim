@@ -116,6 +116,7 @@ Jetpack 'tris203/hawtkeys.nvim'
 Jetpack 'is0n/fm-nvim'
 Jetpack 'kevinhwang91/nvim-hlslens'
 Jetpack '0xAdk/full_visual_line.nvim'
+Jetpack 'j-hui/fidget.nvim'
 
 Jetpack 'github/copilot.vim'
 Jetpack 'tyru/capture.vim'

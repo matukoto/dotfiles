@@ -40,6 +40,9 @@ vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>")
 -- obsidian
 -- require('obsidian').setup()
 
+-- fidget
+require('fidget').setup()
+
 -- lualine
 require('lualine').setup()
 
