@@ -13,6 +13,11 @@ local ext_lazy = "$HOME/.cache/dpp/repos/github.com/Shougo/dpp-ext-lazy"
 local ext_installer = "$HOME/.cache/dpp/repos/github.com/Shougo/dpp-ext-installer"
 local ext_git = "$HOME/.cache/dpp/repos/github.com/Shougo/dpp-protocol-git"
 
+-- nnoremap ; :
+vim.api.nvim_set_keymap("n", ";", ":", { noremap = true })
+-- nnoremap : ;
+vim.api.nvim_set_keymap("n", ":", ";", { noremap = true })
+
 vim.opt.runtimepath:append(ext_toml)
 vim.opt.runtimepath:append(ext_git)
 vim.opt.runtimepath:append(ext_lazy)
