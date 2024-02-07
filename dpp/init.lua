@@ -34,6 +34,9 @@ if dpp.load_state(dpp_base) then
   })
 end
 
+vim.api.nvim_create_user_command("DppInstall", "call dpp#async_ext_action('installer', 'install')", { nargs = 0 })
+vim.api.nvim_create_user_command("DppUpdate", "call dpp#async_ext_action('installer', 'update')", { nargs = 0 })
+
 -- これはなくても大丈夫です。
 vim.api.nvim_create_autocmd("User", {
   pattern = "Dpp:makeStatePost",
