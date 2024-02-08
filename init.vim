@@ -29,20 +29,6 @@ if has('vim_starting')
   let g:loaded_netrwFileHandlers = 1
 endif
 
-" クリップボード
-let g:clipboard = {
-    \   'name': 'myClipboard',
-    \   'copy': {
-    \      '+': 'win32yank.exe -i',
-    \      '*': 'win32yank.exe -i',
-    \    },
-    \   'paste': {
-    \      '+': 'win32yank.exe -o',
-    \      '*': 'win32yank.exe -o',
-    \   },
-    \   'cache_enabled': 1,
-    \ }
-
 " " terminal
 " :T で下部にターミナルを開く
 command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
