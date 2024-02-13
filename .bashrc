@@ -121,6 +121,9 @@ if [ -f ~/.api_key_environment ]; then
   . ~/.api_key_environment
 fi
 
+# capslock -> ctrl
+/usr/bin/setxkbmap -option "ctrl:nocaps"
+
 # starship
 eval "$(starship init bash)"
 
