@@ -55,7 +55,7 @@ vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>")
 
 -- obsidian
--- require('obsidian').setup()
+require('obsidian').setup()
 
 -- fidget
 require('fidget').setup()
