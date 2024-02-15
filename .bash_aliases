@@ -8,6 +8,9 @@ alias v='nvim'
 alias dia='cd $HOME/myself/diary/'
 alias dot='cd $HOME/dotfiles/'
 
+# Git
+alias gs='git status'
+
 # work
 alias shd='cd $HOME/work/sh-dev/'
 alias god='cd $HOME/work/go-dev/'
