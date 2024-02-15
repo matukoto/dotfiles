@@ -204,6 +204,12 @@ cabbrev qr QuickRun<CR>
 let g:coc_global_extensions = ['coc-json','coc-yaml','coc-java','coc-go','coc-deno','coc-svelte','coc-snippets','@yaegassy/coc-marksman','coc-tsserver','coc-toml']
 
 let g:denops#debug = 1
+let g:denops#server#deno_args = [
+      \ '-q',
+      \ '--no-lock',
+      \ '-A',
+      \ '--unstable-ffi'
+]
 
 " coc keymap
 " 定義ジャンプ
