@@ -103,11 +103,11 @@ Jetpack 'is0n/fm-nvim'
 Jetpack 'kevinhwang91/nvim-hlslens'
 Jetpack '0xAdk/full_visual_line.nvim'
 Jetpack 'j-hui/fidget.nvim'
-
 Jetpack 'github/copilot.vim'
 Jetpack 'tyru/capture.vim'
 Jetpack 'reireias/vim-cheatsheet'
 Jetpack 'itchyny/vim-cursorword'
+Jetpack 'tyru/open-browser.vim'
 
 " カラースキーマ
 Jetpack 'gen740/SmoothCursor.nvim'
@@ -250,6 +250,11 @@ call ddc#custom#patch_global('sourceOptions',{
       \ },
       \})
 call ddc#enable()
+
+" open browser
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
 
 " skk-state-popup
 call skkeleton_state_popup#config(#{
