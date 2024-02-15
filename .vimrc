@@ -91,10 +91,6 @@ vnoremap v ^$h
 nnoremap > >>
 nnoremap < <<
 
-"選択範囲のインデントを連続して変更
-vnoremap < <gv
-vnoremap > >gv
- 
 " ; と : の入れ替え
 nnoremap ; :
 nnoremap : ;
