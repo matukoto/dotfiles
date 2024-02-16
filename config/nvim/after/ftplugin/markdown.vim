@@ -12,3 +12,6 @@ setlocal comments=nb:>
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+
+" obsidian.nvim
+set conceallevel=1
