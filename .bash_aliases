@@ -28,4 +28,4 @@ alias forkd='cd $HOME/wealsoft/fork-tech-blog/'
 alias techblogd='cd $HOME/wealsoft/w-tech-blog/'
 alias pocd='cd $HOME/wealsoft/poc-frontend-app/'
 
-alias wezterm='/mnt/c/Program\ Files/WezTerm/wezterm.exe'
+# alias wezterm='/mnt/c/Program\ Files/WezTerm/wezterm.exe'

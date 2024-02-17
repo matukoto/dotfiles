@@ -37,3 +37,9 @@ ln -s ~/dotfiles/config/starship.toml ~/.config/starship.toml
 
 # gitui
 ln -s ~/dotfiles/config/gitui/key_bindings.ron ~/.config/gitui/key_bindings.ron
+
+# wezterm
+ln -s ~/dotfiles/config/wezterm/wezterm.lua ~/.wezterm.lua
+ln -s ~/dotfiles/config/wezterm/keybinds.lua ~/.config/wezterm/keybinds.lua
+
+
