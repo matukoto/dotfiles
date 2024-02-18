@@ -16,9 +16,9 @@ set softtabstop=2
 " obsidian.nvim
 set conceallevel=1
 
-nnoremap <buffer> <C-k> <Cmd>MarkdownCheckbox<CR>
-inoremap <buffer> <C-k> <Cmd>MarkdownCheckbox<CR>
-xnoremap <buffer> <C-k> <Cmd>MarkdownCheckbox<CR>
+nnoremap <buffer> <C-l> <Cmd>MarkdownCheckbox<CR>
+inoremap <buffer> <C-l> <Cmd>MarkdownCheckbox<CR>
+xnoremap <buffer> <C-l> <Cmd>MarkdownCheckbox<CR>
 
 " toggle checkbox function
 function! s:markdown_checkbox(from, to) abort
