@@ -46,11 +46,11 @@ if [ -d "$GOPATH/bin" ] ; then
 fi
 # set PATH so if inclueds java
 JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
-export JAVA_HOME
-PATH=$PATH:$JAVA_HOME/bin
-export PATH
+# export JAVA_HOME
+# PATH=$PATH:$JAVA_HOME/bin
+# export PATH
 
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 export VIMRC="$HOME/dotfiles/.vimrc"
 export INITVIM="$HOME/dotfiles/init.vim"
