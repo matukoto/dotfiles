@@ -5,6 +5,7 @@ ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
 
 # shell
 ln -s ~/dotfiles/.bashrc ~/.bashrc
+ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/dotfiles/.profile ~/.profile
 ln -s ~/dotfiles/.bash_aliases ~/.bash_aliases
 
