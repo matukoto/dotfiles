@@ -95,6 +95,9 @@ nnoremap < <<
 nnoremap ; :
 nnoremap : ;
 
+" 相対的な行番号を表示
+set relativenumber
+
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk
