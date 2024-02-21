@@ -10,4 +10,5 @@ return {
   -- keybind ファイル読み込み
   keys = require("keybinds").keys,
   key_tables = require("keybinds").key_tables,
+  use_ime = false,
 }
