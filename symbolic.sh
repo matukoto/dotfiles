@@ -3,6 +3,8 @@
 # git
 ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/git/.gitignore_global ~/.gitignore_global
+# jj
+ln -s ~/dotfiles/config/jj/config.toml ~/.config/jj/config.toml
 
 # shell
 ln -s ~/dotfiles/.bashrc ~/.bashrc
