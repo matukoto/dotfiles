@@ -13,6 +13,10 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+" mdの場合はない方が良い説
+nnoremap gj j
+nnoremap gk k
+
 " obsidian.nvim
 set conceallevel=1
 
