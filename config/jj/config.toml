@@ -3,3 +3,5 @@ name = "Keisuke.Matsumoto"
 email = "keisuke.suke.san@gmail.com"
 [ui]
 editor = "vim"
+[core]
+verbose = true
