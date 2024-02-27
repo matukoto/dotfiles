@@ -179,7 +179,8 @@ let g:sonictemplate_vim_template_dir = '$HOME/dotfiles/vim/sonictemplate/'
 cabbrev tp Template
 
 "" gin
-cabbrev gs GinPreview<CR>
+"cabbrev gs GinPreview<CR>
+
 cabbrev ga Gin add .<CR>
 cabbrev gc Gin commit<CR>
 cabbrev gp Gin push<CR>
