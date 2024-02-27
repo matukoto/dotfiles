@@ -45,6 +45,8 @@ Jetpack 'vim-jp/vimdoc-ja'
 
 " denops
 Jetpack 'vim-denops/denops.vim'
+" systemd 使えないとだめなので wsl ではコメントアウト
+" Jetpack 'vim-denops/denops-shared-server.vim'
 
 " dd
 Jetpack 'shougo/ddc.vim'
@@ -205,6 +207,9 @@ let g:coc_global_extensions = ['coc-json','coc-yaml','coc-java','coc-go','coc-de
 
 let g:denops#debug = 1
 let g:denops#server#deno_args = ['-q', '--no-lock', '-A', '--unstable-ffi']
+" denops-shared-server port
+" let g:denops_server_addr = "127.0.0.1:32123"
+" call denops_shared_server#install()
 
 " coc keymap
 " 定義ジャンプ
