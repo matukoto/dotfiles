@@ -113,6 +113,8 @@ Jetpack 'itchyny/vim-cursorword'
 Jetpack 'tyru/open-browser.vim'
 Jetpack 'lambdalisue/guise.vim'
 
+" DB
+Jetpack 'tpope/vim-dadbod'
 " カラースキーマ
 Jetpack 'gen740/SmoothCursor.nvim'
 Jetpack 'sainnhe/gruvbox-material'
