@@ -115,6 +115,8 @@ Jetpack 'lambdalisue/guise.vim'
 
 " DB
 Jetpack 'tpope/vim-dadbod'
+Jetpack 'kristijanhusak/vim-dadbod-ui'
+
 " カラースキーマ
 Jetpack 'gen740/SmoothCursor.nvim'
 Jetpack 'sainnhe/gruvbox-material'
