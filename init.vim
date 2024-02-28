@@ -111,6 +111,7 @@ Jetpack 'tyru/capture.vim'
 Jetpack 'reireias/vim-cheatsheet'
 Jetpack 'itchyny/vim-cursorword'
 Jetpack 'tyru/open-browser.vim'
+Jetpack 'lambdalisue/guise.vim'
 
 " カラースキーマ
 Jetpack 'gen740/SmoothCursor.nvim'
