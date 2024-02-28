@@ -95,6 +95,7 @@ Jetpack 'thinca/vim-quickrun'
 Jetpack 'numToStr/comment.nvim'
 Jetpack 'yuki-yano/fuzzy-motion.vim'
 Jetpack 'ethanholz/nvim-lastplace'
+Jetpack 'haya14busa/vim-edgemotion'
 "Jetpack 'skanehira/denops-docker.vim'
 "Jetpack 'skanehira/k8s.vim'
 Jetpack 'cshuaimin/ssr.nvim'
@@ -224,6 +225,10 @@ nnoremap <Leader>r <Plug>(coc-rename)<CR>
 
 " エンターで補完を確定
 inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" edge-motion
+nnoremap <C-j> <Plug>(edgemotion-j)
+nnoremap <C-k> <Plug>(edgemotion-k)
 
 " skk
 call skkeleton#config({
