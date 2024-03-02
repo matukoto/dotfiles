@@ -1,3 +1,7 @@
+## さんこう
+- [Manjaro インストール直後にやること12選 - In my mind](https://in-my-mind.hatenablog.jp/entry/12things-to-do-after-installing-manjaro-2020-04-18)
+- [Manjaro Linux 最初の一歩](https://zenn.dev/phoepsilonix/articles/5be4f3e3d78af7)
+sudo pacman-mirrors --fasttrack
 sudo pacman -Syyu
 sudo pacman -S yay
 yay -S vivaldi --noconfirm
@@ -38,3 +42,6 @@ yay -S --noconfirm obsidian
 rm .bash_profile 
 rm .bashrc
 rm .bash_profile
+sudo nvim etc/systemd/timesyncd.conf 
+# NTP=ntp.nict.jp
+timedatectl set-ntp true
