@@ -55,12 +55,12 @@ vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>")
 
 -- obsidian
-require('obsidian').setup({
-workspaces = {
-  { name = "my",
-  path = "~/obsidian"
-}}
-})
+--require('obsidian').setup({
+--workspaces = {
+--  { name = "my",
+--  path = "~/obsidian"
+--}}
+--})
 
 -- fidget
 require('fidget').setup()
