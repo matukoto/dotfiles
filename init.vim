@@ -194,6 +194,9 @@ cabbrev gd GinDiff<CR>
 cabbrev gb GinBranch
 let g:gin_proxy_apply_without_confirm = 1
 
+" dadbod
+let g:db_ui_save_location = '~/.vim/dadbod-ui'
+
 " kensaku search
 "cnoremap <CR> <Plug>(kensaku-search-replace)<CR>
 " kensaku searchx

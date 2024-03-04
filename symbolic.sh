@@ -24,6 +24,8 @@ ln -s ~/dotfiles/config/nvim/after/ftplugin/ ~/.config/nvim/after/
 ln -s ~/dotfiles/vim/coc/coc-settings.json ~/.config/nvim/coc-settings.json
 mkdir -p ~/.config/nvim/plugin
 ln -s ~/dotfiles/vim/gin-preview.vim ~/.config/nvim/plugin/gin-preview.vim
+mkdir -p ~/.vim/dadbod-ui
+ln -s ~/dotfiles/vim/dadbod-ui/connections.json ~/.vim/dadbod-ui/connections.json
 
 # skk
 mkdir ~/.skk
