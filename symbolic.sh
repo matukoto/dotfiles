@@ -26,6 +26,8 @@ mkdir -p ~/.config/nvim/plugin
 ln -s ~/dotfiles/vim/gin-preview.vim ~/.config/nvim/plugin/gin-preview.vim
 mkdir -p ~/.vim/dadbod-ui
 ln -s ~/dotfiles/vim/dadbod-ui/connections.json ~/.vim/dadbod-ui/connections.json
+mkdir -p ~/.config/sqls
+ln -s ~/dotfiles/config/sqls/config.yaml ~/.config/sqls/config.yaml
 
 # skk
 mkdir ~/.skk
