@@ -27,6 +27,12 @@
       "args": ["serve"],
       "filetypes": ["proto"]
     },
+    "sql": {
+      "command": "sqls",
+      "args": ["-config", "$HOME/.config/sqls/config.yaml"],
+      "filetypes": ["sql"],
+      "shell": true
+    },
     "lua": {
       "command": "/home/keisuke/work/lua-language-server/bin/lua-language-server",
       "args": ["-E", "/home/keisuke/work/lua-language-server/bin/main.lua"],
