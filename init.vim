@@ -112,6 +112,7 @@ Jetpack 'reireias/vim-cheatsheet'
 Jetpack 'itchyny/vim-cursorword'
 Jetpack 'tyru/open-browser.vim'
 Jetpack 'lambdalisue/guise.vim'
+Jetpack 'ryicoh/deepl.vim'
 
 " DB
 Jetpack 'tpope/vim-dadbod'
