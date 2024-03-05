@@ -1,0 +1,10 @@
+lowercaseKeywords: false
+connections:
+  - alias: my-postgresql-server
+    driver: postgresql
+    dataSourceName: postgresql://postgres:postgres@localhost:5432/postgres
+    # host: localhost
+    # port: 5432
+    # user: postgres
+    # passwd: postgres
+    # dbName: postgres
