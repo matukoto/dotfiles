@@ -273,6 +273,22 @@ call ddc#custom#patch_global('sourceOptions',{
       \})
 call ddc#enable()
 
+" deepl
+let g:deepl#endpoint = "https://api-free.deepl.com/v2/translate"
+let g:deepl#auth_key = "00000000-0000-0000-0000-000000000000:fx" " or readfile(expand('~/.config/deepl.auth_key'))[0]
+
+" replace a visual selection
+vmap t<C-e> <Cmd>call deepl#v("EN")<CR>
+vmap t<C-j> <Cmd>call deepl#v("JA")<CR>
+
+" translate a current line and display on a new line
+nmap t<C-e> yypV<Cmd>call deepl#v("EN")<CR>
+nmap t<C-j> yypV<Cmd>call deepl#v("JA")<CR>
+
+" specify the source language
+" translate from FR to EN
+" nmap t<C-e> yypV<Cmd>call deepl#v("EN", "FR")<CR>
+
 " open browser
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
