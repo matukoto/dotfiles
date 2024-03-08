@@ -70,6 +70,7 @@ Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
 " git
 Jetpack 'lambdalisue/gin.vim'
 Jetpack 'APZelos/blamer.nvim'
+Jetpack 'lewis6991/gitsigns.nvim'
 Jetpack 'iberianpig/tig-explorer.vim'
 " 日本語
 Jetpack 'lambdalisue/kensaku.vim'
