@@ -192,6 +192,10 @@ require("aerial").setup({
   end,
 })
 
+-- gitsigns
+require("gitsigns").setup{
+  numhl = true
+}
 -- アウトラインを表示、非表示を切り替える
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 
