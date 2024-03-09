@@ -6,7 +6,8 @@ alias l='clear && ls'
 alias v='nvim'
 
 alias dia='cd $HOME/myself/diary/'
-alias dot='cd $HOME/dotfiles/'
+#alias dot='cd $HOME/dotfiles/'
+alias dot='chezmoi cd'
 
 # Git
 alias gs='git status'
