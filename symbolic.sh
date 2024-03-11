@@ -43,7 +43,8 @@ ln -s ~/dotfiles/.skk/SKK-JISYO.emoji.utf8 ~/.skk/SKK-JISYO.emoji.utf8
 
 # yazi
 mkdir -p ~/.config/yazi
-ln -s ~/dotfiles/config/yazi ~/.config/
+ln -s ~/dotfiles/config/yazi/theme.toml ~/.config/yazi/theme.toml
+ln -s ~/dotfiles/config/yazi/yazi.toml ~/.config/yazi/yazi.toml
 
 ## starship
 
@@ -55,5 +56,3 @@ ln -s ~/dotfiles/config/gitui/key_bindings.ron ~/.config/gitui/key_bindings.ron
 # wezterm
 ln -s ~/dotfiles/wezterm/wezterm.lua ~/.wezterm.lua
 ln -s ~/dotfiles/wezterm/keybinds.lua ~/.config/wezterm/keybinds.lua
-
-
