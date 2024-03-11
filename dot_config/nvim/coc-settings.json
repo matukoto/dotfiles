@@ -1,0 +1,101 @@
+{
+  "diagnostic.enableHighlightLineNumber": false,
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.errorSign": "",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "vue",
+    "tsx",
+    "ts",
+    "go",
+    "yaml",
+    "json",
+    "vim",
+    "lua",
+    "Dockerfile",
+    "java",
+    "svelte",
+    "toml"
+  ],
+  "suggest.invalidInsertCharacters": [],
+  "typescript.suggest.completeFunctionCalls": false,
+  "languageserver": {
+    "bufls": {
+      "command": "bufls",
+      "rootPatterns": ["buf.yaml"],
+      "args": ["serve"],
+      "filetypes": ["proto"]
+    },
+    "sql": {
+      "command": "sqls",
+      "args": ["-config", "$HOME/.config/sqls/config.yaml"],
+      "filetypes": ["sql"],
+      "shell": true
+    },
+    "lua": {
+      "command": "/home/keisuke/work/lua-language-server/bin/lua-language-server",
+      "args": ["-E", "/home/keisuke/work/lua-language-server/bin/main.lua"],
+      "filetypes": ["lua"],
+      "settings": {
+        "Lua": {
+          "runtime": {
+            "version": "LuaJIT",
+            "pathStrict": true,
+            "path": "?.lua"
+          },
+          "workspace": {
+            "library": {
+              "/home/linuxbrew/.linuxbrew/share/nvim/runtime/lua": true,
+              "/home/linuxbrew/.linuxbrew/share/nvim/runtime/lua/vim": true,
+              "/home/linuxbrew/.linuxbrew/share/nvim/runtime/lua/vim/lsp": true,
+              "/home/keisuke/.vim/jetpack/pack/jetpack/src/github.com/nvim-telescope/telescope-frecency.nvim/lua/telescope/_extensions/frecency": true,
+              "/home/keisuke/.vim/jetpack/pack/jetpack/src/github.com/nvim-telescope/telescope-frecency.nvim/lua/telescope/_extensions": true,
+              "/home/keisuke/.vim/jetpack/pack/jetpack/src/github.com/nvim-telescope/telescope.nvim/lua/telescope": true,
+              "/home/keisuke/.vim/jetpack/pack/jetpack/src/github.com/nvim-telescope/telescope.nvim/lua/telescope/_extensions": true,
+              "/home/keisuke/.vim/jetpack/pack/jetpack/src/github.com/nvim-telescope/telescope.nvim/lua/telescope/_extensions/fzf": true
+            },
+            "checkThirdParty": "Disbable"
+          }
+        },
+        "diagnostics": {
+          "globals": ["vim", "use"]
+        }
+      }
+    }
+  },
+  "list.source.symbols.excludes": ["**/node_modules/**"],
+  "go.goplsOptions": {
+    "staticcheck": true
+  },
+  "suggest.floatConfig": {
+    "border": true,
+    "rounded": true,
+    "borderhighlight": "Grey"
+  },
+  "floatFactory.floatConfig": {
+    "border": true,
+    "rounded": true,
+    "borderhighlight": "Grey"
+  },
+  "suggest.completionItemKindLabels": {
+    "function": "󰊕 ",
+    "variable": " ",
+    "module": "󰕳 ",
+    "snippet": " ",
+    "struct": " ",
+    "keyword": " ",
+    "property": " ",
+    "method": " ",
+    "field": " ",
+    "interface": " ",
+    "folder": " ",
+    "file": " ",
+    "class": " ",
+    "constant": " "
+  },
+  "snippets.ultisnips.pythonPrompt": false,
+  "svelte.enable-ts-plugin": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false
+}
