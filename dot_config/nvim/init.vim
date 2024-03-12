@@ -113,6 +113,8 @@ Jetpack 'itchyny/vim-cursorword'
 Jetpack 'tyru/open-browser.vim'
 Jetpack 'lambdalisue/guise.vim'
 Jetpack 'ryicoh/deepl.vim'
+Jetpack 'lambdalisue/mr.vim'
+Jetpack 'lamdalisue/mr-quickfix.vim'
 
 " DB
 Jetpack 'tpope/vim-dadbod'
