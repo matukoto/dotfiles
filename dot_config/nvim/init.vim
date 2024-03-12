@@ -115,7 +115,7 @@ Jetpack 'lambdalisue/guise.vim'
 Jetpack 'ryicoh/deepl.vim'
 Jetpack 'lambdalisue/mr.vim'
 Jetpack 'lamdalisue/mr-quickfix.vim'
-
+Jetpack 'Bakudankun/BackAndForward.vim'
 " DB
 Jetpack 'tpope/vim-dadbod'
 Jetpack 'kristijanhusak/vim-dadbod-ui'
