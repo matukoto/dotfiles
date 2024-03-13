@@ -3,10 +3,10 @@ on:
   - push
 jobs:
   test:
-    name: test
+    name: ubuntu-test
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3
-      - name: Install dotfiles
-        run: sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply -S .
+      - name: Run chezmoi init and apply
+        run: ./install-chezmoi.sh
