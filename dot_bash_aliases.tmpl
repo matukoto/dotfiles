@@ -5,12 +5,9 @@ alias la='ls -A'
 alias l='clear && ls'
 alias v='nvim'
 
+{{ if eq .chezmoi.os "linux" }}
 alias dia='cd $HOME/myself/diary/'
 alias dot='cd $HOME/dotfiles/'
-
-# Git
-alias gs='git status'
-
 # work
 alias shd='cd $HOME/work/sh-dev/'
 alias god='cd $HOME/work/go-dev/'
@@ -22,10 +19,14 @@ alias grpcd='cd $HOME/work/grpc-dev/'
 # myself
 alias hobbyd='cd $HOME/myself/hobby/'
 alias techd='cd $HOME/myself/tech/'
+{{ end }}
 
 # wealsoft
 alias forkd='cd $HOME/wealsoft/fork-tech-blog/'
 alias techblogd='cd $HOME/wealsoft/w-tech-blog/'
 alias pocd='cd $HOME/wealsoft/poc-frontend-app/'
+
+# Git
+alias gs='git status'
 
 # alias wezterm='/mnt/c/Program\ Files/WezTerm/wezterm.exe'
