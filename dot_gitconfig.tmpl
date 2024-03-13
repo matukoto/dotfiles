@@ -1,13 +1,16 @@
 [user]
   email = keisuke.suke.san@gmail.com
   name = Keisuke.Matsumoto
+{{ if eq .chezmoi.os "linux" }}
 [credential "https://github.com"]
 	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !gh auth git-credential
-#[credential]
-  #helper = /usr/lib/git-core/git-credential-libsecret
-  #helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+{{ end }}
+{{ if eq .chezmoi.os "windows" }}
+[credential]
+  helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+{{ end }}
 [init]
   defaultBranch = main
 [core]
