@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run chezmoi init and apply
-        run: ./install-chezmoi.sh
+        run: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply
