@@ -1,0 +1,244 @@
+{
+  "chezmoi": {
+    "arch": "amd64",
+    "args": [
+      "chezmoi",
+      "data"
+    ],
+    "cacheDir": "/home/keisuke/.cache/chezmoi",
+    "command": "data",
+    "commandDir": "/home/keisuke/.local/share/chezmoi",
+    "config": {
+      "add": {
+        "encrypt": false,
+        "secrets": "warning",
+        "templateSymlinks": false
+      },
+      "age": {
+        "args": null,
+        "command": "age",
+        "identities": null,
+        "identity": "",
+        "passphrase": false,
+        "recipient": "",
+        "recipients": null,
+        "recipientsFile": "",
+        "recipientsFiles": null,
+        "suffix": ".age",
+        "symmetric": false,
+        "useBuiltin": false
+      },
+      "awsSecretsManager": {
+        "profile": "",
+        "region": ""
+      },
+      "azureKeyVault": {
+        "defaultVault": ""
+      },
+      "bitwarden": {
+        "command": "bw"
+      },
+      "bitwardenSecrets": {
+        "command": "bws"
+      },
+      "cacheDir": "/home/keisuke/.cache/chezmoi",
+      "cd": {
+        "args": null,
+        "command": ""
+      },
+      "color": "auto",
+      "completion": {
+        "custom": false
+      },
+      "dashlane": {
+        "args": null,
+        "command": "dcli"
+      },
+      "data": null,
+      "destDir": "/home/keisuke",
+      "diff": {
+        "args": null,
+        "command": "",
+        "exclude": [],
+        "pager": "",
+        "reverse": false,
+        "scriptContents": true
+      },
+      "doppler": {
+        "args": null,
+        "command": "doppler",
+        "config": "",
+        "project": ""
+      },
+      "edit": {
+        "apply": false,
+        "args": null,
+        "command": "nvim",
+        "hardlink": true,
+        "minDuration": 1000000000,
+        "watch": false
+      },
+      "ejson": {
+        "key": "",
+        "keyDir": "/opt/ejson/keys"
+      },
+      "encryption": "",
+      "env": null,
+      "format": "json",
+      "git": {
+        "autoadd": false,
+        "autocommit": false,
+        "autopush": false,
+        "command": "git",
+        "commitMessageTemplate": "",
+        "commitMessageTemplateFile": ""
+      },
+      "gitHub": {
+        "refreshPeriod": 60000000000
+      },
+      "gopass": {
+        "command": "gopass"
+      },
+      "gpg": {
+        "args": null,
+        "command": "gpg",
+        "recipient": "",
+        "recipients": null,
+        "suffix": ".asc",
+        "symmetric": false
+      },
+      "hcpVaultSecrets": {
+        "applicationName": "",
+        "args": null,
+        "command": "vlt",
+        "organizationId": "",
+        "projectId": ""
+      },
+      "hooks": null,
+      "interpreters": {},
+      "keepassxc": {
+        "args": null,
+        "command": "keepassxc-cli",
+        "database": "",
+        "mode": "cache-password",
+        "prompt": true
+      },
+      "keeper": {
+        "args": null,
+        "command": "keeper"
+      },
+      "lastpass": {
+        "command": "lpass"
+      },
+      "merge": {
+        "args": null,
+        "command": "vimdiff"
+      },
+      "mode": "symlink",
+      "onepassword": {
+        "command": "op",
+        "mode": "account",
+        "prompt": true
+      },
+      "pager": "",
+      "pass": {
+        "command": "pass"
+      },
+      "passhole": {
+        "args": null,
+        "command": "ph",
+        "prompt": true
+      },
+      "persistentState": "",
+      "pinentry": {
+        "args": null,
+        "command": "",
+        "options": [
+          "allow-external-password-cache"
+        ]
+      },
+      "progress": "auto",
+      "rbw": {
+        "command": "rbw"
+      },
+      "safe": true,
+      "scriptEnv": null,
+      "scriptTempDir": "",
+      "secret": {
+        "args": null,
+        "command": ""
+      },
+      "sourceDir": "/home/keisuke/.local/share/chezmoi",
+      "status": {
+        "exclude": [],
+        "pathStyle": "relative"
+      },
+      "template": {
+        "options": [
+          "missingkey=error"
+        ]
+      },
+      "textConv": null,
+      "umask": 18,
+      "update": {
+        "apply": true,
+        "args": null,
+        "command": "",
+        "recurseSubmodules": true
+      },
+      "useBuiltinAge": "auto",
+      "useBuiltinGit": "auto",
+      "vault": {
+        "command": "vault"
+      },
+      "verbose": false,
+      "verify": {
+        "exclude": []
+      },
+      "warnings": {
+        "configFileTemplateHasChanged": true
+      },
+      "workingTree": "/home/keisuke/.local/share/chezmoi"
+    },
+    "configFile": "/home/keisuke/.config/chezmoi/chezmoi.toml",
+    "executable": "/home/linuxbrew/.linuxbrew/Cellar/chezmoi/2.47.1/bin/chezmoi",
+    "fqdnHostname": "DesktopFractal.",
+    "gid": "1000",
+    "group": "keisuke",
+    "homeDir": "/home/keisuke",
+    "hostname": "DesktopFractal",
+    "kernel": {
+      "osrelease": "5.15.146.1-microsoft-standard-WSL2",
+      "ostype": "Linux",
+      "version": "#1 SMP Thu Jan 11 04:09:03 UTC 2024"
+    },
+    "os": "linux",
+    "osRelease": {
+      "bugReportURL": "https://bugs.launchpad.net/ubuntu/",
+      "homeURL": "https://www.ubuntu.com/",
+      "id": "ubuntu",
+      "idLike": "debian",
+      "name": "Ubuntu",
+      "prettyName": "Ubuntu 22.04.1 LTS",
+      "privacyPolicyURL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "supportURL": "https://help.ubuntu.com/",
+      "ubuntuCodename": "jammy",
+      "version": "22.04.1 LTS (Jammy Jellyfish)",
+      "versionCodename": "jammy",
+      "versionID": "22.04"
+    },
+    "pathListSeparator": ":",
+    "pathSeparator": "/",
+    "sourceDir": "/home/keisuke/.local/share/chezmoi",
+    "uid": "1000",
+    "username": "keisuke",
+    "version": {
+      "builtBy": "Homebrew",
+      "commit": "1ce6b2eeb0caf75bd91883e5a968e713a26e7be2",
+      "date": "2024-03-03T00:47:52Z",
+      "version": "2.47.1"
+    },
+    "windowsVersion": {},
+    "workingTree": "/home/keisuke/.local/share/chezmoi"
+  }
+}

@@ -70,7 +70,7 @@ Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
 " git
 Jetpack 'lambdalisue/gin.vim'
 Jetpack 'APZelos/blamer.nvim'
-Jetpack 'lewis6991/gitsigns.nvim'
+Jetpack 'iberianpig/tig-explorer.vim'
 " 日本語
 Jetpack 'lambdalisue/kensaku.vim'
 Jetpack 'lambdalisue/kensaku-search.vim'
@@ -113,7 +113,9 @@ Jetpack 'itchyny/vim-cursorword'
 Jetpack 'tyru/open-browser.vim'
 Jetpack 'lambdalisue/guise.vim'
 Jetpack 'ryicoh/deepl.vim'
-
+Jetpack 'lambdalisue/mr.vim'
+Jetpack 'lamdalisue/mr-quickfix.vim'
+Jetpack 'Bakudankun/BackAndForward.vim'
 " DB
 Jetpack 'tpope/vim-dadbod'
 Jetpack 'kristijanhusak/vim-dadbod-ui'

@@ -1,0 +1,12 @@
+name: chezmoi-test
+on:
+  - push
+jobs:
+  test:
+    name: ubuntu-test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run chezmoi init and apply
+        run: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply

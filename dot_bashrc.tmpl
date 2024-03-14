@@ -121,8 +121,10 @@ if [ -f ~/.api_key_environment ]; then
   . ~/.api_key_environment
 fi
 
+{{ if eq .chezmoi.osRelease.id "manjaro" }}
 # capslock -> ctrl
 /usr/bin/setxkbmap -option "ctrl:nocaps"
+{{ end }}
 
 # starship
 eval "$(starship init bash)"

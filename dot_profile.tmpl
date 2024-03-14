@@ -44,15 +44,23 @@ export GOPATH=$HOME/go
 if [ -d "$GOPATH/bin" ] ; then
     PATH="$GOPATH/bin:$PATH"
 fi
+# set cargo
+export CARGOPATH=$HOME/.cargo
+if [ -d "$CARGOPATH/bin" ] ; then
+    PATH="$CARGOPATH/bin:$PATH"
+fi
+
 # set PATH so if inclueds java
 JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 export JAVA_HOME
 PATH=$PATH:$JAVA_HOME/bin
 export PATH
 
+{{ if eq .chezmoi.osRelease.id "ubuntu" }}
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+{{ end }}
 
-export VIMRC="$HOME/dotfiles/.vimrc"
-export INITVIM="$HOME/dotfiles/init.vim"
+export VIMRC="$HOME/.vimrc"
+export INITVIM="$HOME/.config/nvim/init.vim"
 export OBSIDIAN="$HOME/myself/diary/"
 

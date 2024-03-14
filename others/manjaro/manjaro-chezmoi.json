@@ -1,0 +1,244 @@
+{
+  "chezmoi": {
+    "arch": "amd64",
+    "args": [
+      "chezmoi",
+      "data"
+    ],
+    "cacheDir": "/home/matukoto/.cache/chezmoi",
+    "command": "data",
+    "commandDir": "/home/matukoto/.local/share/chezmoi",
+    "config": {
+      "add": {
+        "encrypt": false,
+        "secrets": "warning",
+        "templateSymlinks": false
+      },
+      "age": {
+        "args": null,
+        "command": "age",
+        "identities": null,
+        "identity": "",
+        "passphrase": false,
+        "recipient": "",
+        "recipients": null,
+        "recipientsFile": "",
+        "recipientsFiles": null,
+        "suffix": ".age",
+        "symmetric": false,
+        "useBuiltin": false
+      },
+      "awsSecretsManager": {
+        "profile": "",
+        "region": ""
+      },
+      "azureKeyVault": {
+        "defaultVault": ""
+      },
+      "bitwarden": {
+        "command": "bw"
+      },
+      "bitwardenSecrets": {
+        "command": "bws"
+      },
+      "cacheDir": "/home/matukoto/.cache/chezmoi",
+      "cd": {
+        "args": null,
+        "command": ""
+      },
+      "color": "auto",
+      "completion": {
+        "custom": false
+      },
+      "dashlane": {
+        "args": null,
+        "command": "dcli"
+      },
+      "data": null,
+      "destDir": "/home/matukoto",
+      "diff": {
+        "args": null,
+        "command": "",
+        "exclude": [],
+        "pager": "",
+        "reverse": false,
+        "scriptContents": true
+      },
+      "doppler": {
+        "args": null,
+        "command": "doppler",
+        "config": "",
+        "project": ""
+      },
+      "edit": {
+        "apply": false,
+        "args": null,
+        "command": "nvim",
+        "hardlink": true,
+        "minDuration": 1000000000,
+        "watch": false
+      },
+      "ejson": {
+        "key": "",
+        "keyDir": "/opt/ejson/keys"
+      },
+      "encryption": "",
+      "env": null,
+      "format": "json",
+      "git": {
+        "autoadd": false,
+        "autocommit": false,
+        "autopush": false,
+        "command": "git",
+        "commitMessageTemplate": "",
+        "commitMessageTemplateFile": ""
+      },
+      "gitHub": {
+        "refreshPeriod": 60000000000
+      },
+      "gopass": {
+        "command": "gopass"
+      },
+      "gpg": {
+        "args": null,
+        "command": "gpg",
+        "recipient": "",
+        "recipients": null,
+        "suffix": ".asc",
+        "symmetric": false
+      },
+      "hcpVaultSecrets": {
+        "applicationName": "",
+        "args": null,
+        "command": "vlt",
+        "organizationId": "",
+        "projectId": ""
+      },
+      "hooks": null,
+      "interpreters": {},
+      "keepassxc": {
+        "args": null,
+        "command": "keepassxc-cli",
+        "database": "",
+        "mode": "cache-password",
+        "prompt": true
+      },
+      "keeper": {
+        "args": null,
+        "command": "keeper"
+      },
+      "lastpass": {
+        "command": "lpass"
+      },
+      "merge": {
+        "args": null,
+        "command": "vimdiff"
+      },
+      "mode": "file",
+      "onepassword": {
+        "command": "op",
+        "mode": "account",
+        "prompt": true
+      },
+      "pager": "",
+      "pass": {
+        "command": "pass"
+      },
+      "passhole": {
+        "args": null,
+        "command": "ph",
+        "prompt": true
+      },
+      "persistentState": "",
+      "pinentry": {
+        "args": null,
+        "command": "",
+        "options": [
+          "allow-external-password-cache"
+        ]
+      },
+      "progress": "auto",
+      "rbw": {
+        "command": "rbw"
+      },
+      "safe": true,
+      "scriptEnv": null,
+      "scriptTempDir": "",
+      "secret": {
+        "args": null,
+        "command": ""
+      },
+      "sourceDir": "/home/matukoto/.local/share/chezmoi",
+      "status": {
+        "exclude": [],
+        "pathStyle": "relative"
+      },
+      "template": {
+        "options": [
+          "missingkey=error"
+        ]
+      },
+      "textConv": null,
+      "umask": 18,
+      "update": {
+        "apply": true,
+        "args": null,
+        "command": "",
+        "recurseSubmodules": true
+      },
+      "useBuiltinAge": "auto",
+      "useBuiltinGit": "auto",
+      "vault": {
+        "command": "vault"
+      },
+      "verbose": false,
+      "verify": {
+        "exclude": []
+      },
+      "warnings": {
+        "configFileTemplateHasChanged": true
+      },
+      "workingTree": "/home/matukoto/.local/share/chezmoi"
+    },
+    "configFile": "/home/matukoto/.config/chezmoi/chezmoi.toml",
+    "executable": "/usr/bin/chezmoi",
+    "fqdnHostname": "matukoto-manjaro",
+    "gid": "1000",
+    "group": "matukoto",
+    "homeDir": "/home/matukoto",
+    "hostname": "matukoto-manjaro",
+    "kernel": {
+      "osrelease": "6.6.19-1-MANJARO",
+      "ostype": "Linux",
+      "version": "#1 SMP PREEMPT_DYNAMIC Fri Mar  1 18:16:16 UTC 2024"
+    },
+    "os": "linux",
+    "osRelease": {
+      "ansiColor": "32;1;24;144;200",
+      "bugReportURL": "https://docs.manjaro.org/reporting-bugs/",
+      "buildID": "rolling",
+      "documentationURL": "https://wiki.manjaro.org/",
+      "homeURL": "https://manjaro.org/",
+      "id": "manjaro",
+      "idLike": "arch",
+      "logo": "manjarolinux",
+      "name": "Manjaro Linux",
+      "prettyName": "Manjaro Linux",
+      "privacyPolicyURL": "https://manjaro.org/privacy-policy/",
+      "supportURL": "https://forum.manjaro.org/"
+    },
+    "pathListSeparator": ":",
+    "pathSeparator": "/",
+    "sourceDir": "/home/matukoto/.local/share/chezmoi",
+    "uid": "1000",
+    "username": "matukoto",
+    "version": {
+      "builtBy": "",
+      "commit": "",
+      "date": "2024-03-03T07:35:20Z",
+      "version": "2.47.1"
+    },
+    "windowsVersion": {},
+    "workingTree": "/home/matukoto/.local/share/chezmoi"
+  }
+}

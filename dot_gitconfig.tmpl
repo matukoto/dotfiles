@@ -1,0 +1,34 @@
+{{- if (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) -}}
+{{- include  "work/dot_gitconfig" -}}
+{{- else -}}
+{{- include "private_gitconfig" -}}
+{{- end -}}
+
+{{ if eq .chezmoi.os "linux" }}
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !gh auth git-credential
+{{ end }}
+{{ if eq .chezmoi.os "windows" }}
+[credential]
+  helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+{{ end }}
+[init]
+  defaultBranch = main
+[core]
+  editor = vim
+  commentChar = ";"
+  quotepath = false
+  eol = lf
+  autocrlf = input
+[pull]
+  merge = ff-only
+[commit]
+  template = ~/.local/share/chezmoi/vim/gitmessage
+  verbose = true
+[rebase]
+  # rebase 時に自動で stash
+  autostash = true
+[diff]
+  external = difft

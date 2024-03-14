@@ -1,0 +1,10 @@
+# https://www.chezmoi.io/user-guide/manage-machine-to-machine-differences/#use-completely-different-dotfiles-on-different-machines
+dpp/
+others/
+vim/
+wslconf/
+#{{ if (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) -}}
+#work/.gitconfig
+#{{ else -}}
+#.gitconfig
+#{{ end -}}
