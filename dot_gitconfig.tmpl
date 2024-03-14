@@ -1,6 +1,9 @@
-[user]
-  email = keisuke.suke.san@gmail.com
-  name = Keisuke.Matsumoto
+{{- if (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) -}}
+{{- include  "work/dot_gitconfig" -}}
+{{- else -}}
+{{- include "private_gitconfig" -}}
+{{- end -}}
+
 {{ if eq .chezmoi.os "linux" }}
 [credential "https://github.com"]
 	helper = !gh auth git-credential
@@ -24,15 +27,8 @@
 [commit]
   template = ~/.local/share/chezmoi/vim/gitmessage
   verbose = true
-[fetch]
-  # fetch 時に自動で --prune を実行し、リモートで削除されたブランチをローカルでも削除してくれる
-  prune = true
 [rebase]
   # rebase 時に自動で stash
   autostash = true
-# ghq で管理するディレクトリを指定
-[ghq]
-  root = ~/work
-# git diff で difftastic を使う
 [diff]
   external = difft
