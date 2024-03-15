@@ -226,7 +226,7 @@ require('nvim-treesitter.configs').setup {
     "html",
     "css",
     "java",
-    "yaml",
+    --"yaml",
     "go",
   },
   highlight = {
