@@ -1,7 +1,7 @@
 {{- if (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) -}}
 {{- include  "work/dot_gitconfig" -}}
 {{- else -}}
-{{- include "private_gitconfig" -}}
+{{- include "my_private_gitconfig" -}}
 {{- end -}}
 
 {{ if eq .chezmoi.os "linux" }}
