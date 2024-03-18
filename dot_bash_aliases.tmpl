@@ -1,13 +1,16 @@
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-
 alias l='clear && ls'
-alias v='nvim'
 
-{{ if eq .chezmoi.os "linux" }}
-alias dia='cd $HOME/myself/diary/'
+alias v='nvim'
 alias dot='chezmoi cd'
+
+{{ if (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) }}
+alias work='cd $HOME/work/workLig/'
+alias snsd='cd $HOME/repo/local-dev-env/ut-tools/'
+{{ else }}
+alias dia='cd $HOME/myself/diary/'
 # work
 alias shd='cd $HOME/work/sh-dev/'
 alias god='cd $HOME/work/go-dev/'
@@ -19,12 +22,12 @@ alias grpcd='cd $HOME/work/grpc-dev/'
 # myself
 alias hobbyd='cd $HOME/myself/hobby/'
 alias techd='cd $HOME/myself/tech/'
-{{ end }}
 
 # wealsoft
 alias forkd='cd $HOME/wealsoft/fork-tech-blog/'
 alias techblogd='cd $HOME/wealsoft/w-tech-blog/'
 alias pocd='cd $HOME/wealsoft/poc-frontend-app/'
+{{ end }}
 
 # Git
 alias gs='git status'
