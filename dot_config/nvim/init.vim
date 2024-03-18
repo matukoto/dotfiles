@@ -107,6 +107,7 @@ Jetpack 'kevinhwang91/nvim-hlslens'
 Jetpack '0xAdk/full_visual_line.nvim'
 Jetpack 'j-hui/fidget.nvim'
 Jetpack 'github/copilot.vim'
+Jetpack 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 Jetpack 'tyru/capture.vim'
 Jetpack 'reireias/vim-cheatsheet'
 Jetpack 'itchyny/vim-cursorword'
