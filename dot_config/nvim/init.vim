@@ -220,7 +220,7 @@ cabbrev qr QuickRun<CR>
 let g:coc_global_extensions = ['coc-json','coc-yaml','coc-java','coc-go','coc-deno','coc-svelte','coc-snippets','@yaegassy/coc-marksman','coc-tsserver','coc-toml']
 
 "let g:denops#debug = 1
-let g:denops#server#deno_args = ['-q', '--no-lock', '-A', '--unstable-ffi']
+let g:denops#server#deno_args = ['-q', '--no-lock', '-A', '--unstable-ffi', '--unstable-kv']
 " denops-shared-server port
 " let g:denops_server_addr = "127.0.0.1:32123"
 
