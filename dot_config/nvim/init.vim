@@ -31,7 +31,7 @@ endif
 
 " " terminal
 " :T で下部にターミナルを開く
-command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
+command! -nargs=* T split | wincmd j | resize 15 | terminal <args>
 " インサートモードでターミナルを開く
 " autocmd TermOpen * startinsert
 
