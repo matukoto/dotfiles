@@ -318,4 +318,4 @@ source ~/.config/nvim/plugin/gin-preview.vim
 source ~/.config/nvim/lua/init.lua
 
 " colorscheme
-colorscheme sonokai
+colorscheme everforest
