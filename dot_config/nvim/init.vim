@@ -117,6 +117,9 @@ Jetpack 'ryicoh/deepl.vim'
 Jetpack 'lambdalisue/mr.vim'
 Jetpack 'lamdalisue/mr-quickfix.vim'
 Jetpack 'Bakudankun/BackAndForward.vim'
+Jetpack 'MeanderingProgrammer/markdown.nvim'
+Jetpack 'mechatroner/rainbow_csv'
+
 " DB
 Jetpack 'tpope/vim-dadbod'
 Jetpack 'kristijanhusak/vim-dadbod-ui'
