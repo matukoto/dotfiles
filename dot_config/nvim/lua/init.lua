@@ -117,6 +117,9 @@ require('Comment').setup(
 -- hlslens
 require('hlslens').setup()
 
+-- markdown.nvim
+require('render-markdown').setup()
+
 -- hlchunk
 require("hlchunk").setup({
   chunk = {
