@@ -15,6 +15,9 @@ if vim.fn.has('wsl') == 1 then
   }
 end
 
+-- oil 
+require("oil").setup()
+
 -- telescope
 local actions = require("telescope.actions")
 require("telescope").setup {
@@ -118,7 +121,7 @@ require('Comment').setup(
 require('hlslens').setup()
 
 -- markdown.nvim
-require('render-markdown').setup()
+-- require('render-markdown').setup()
 
 -- hlchunk
 require("hlchunk").setup({
