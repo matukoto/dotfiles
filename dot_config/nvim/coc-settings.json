@@ -97,5 +97,6 @@
   "snippets.ultisnips.pythonPrompt": false,
   "svelte.enable-ts-plugin": true,
   "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "java.import.gradle.java.home": "/usr/lib/jvm/java-11-amazon-corretto"
 }
