@@ -53,9 +53,10 @@ Jetpack 'shougo/ddc.vim'
 Jetpack 'shougo/ddc-matcher_head'
 Jetpack 'shougo/ddc-sorter_rank'
 
-" Jetpack 'lambdalisue/fern.vim'
-" Jetpack 'yuki-yano/fern-preview.vim'
-Jetpack 'stevearc/oil.nvim'
+" ファイラ
+Jetpack 'lambdalisue/fern.vim'
+Jetpack 'yuki-yano/fern-preview.vim'
+" Jetpack 'stevearc/oil.nvim'
 
 " ステータスラインプラグイン
 Jetpack 'nvim-lualine/lualine.nvim'
@@ -67,7 +68,7 @@ Jetpack 'chomosuke/term-edit.nvim'
 Jetpack 'nvim-treesitter/nvim-treesitter'
 " nerdfont
 Jetpack 'lambdalisue/nerdfont.vim'
-" Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
+Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
 " git
 Jetpack 'lambdalisue/gin.vim'
 Jetpack 'APZelos/blamer.nvim'
@@ -164,18 +165,19 @@ let g:blamer_enabled = 1
 let g:blamer_delay = 500
 
 " nerdfont
-" let g:fern#renderer = 'nerdfont'
-"
-" " fern
-" " ドットファイルなどをデフォルトで表示
-" let g:fern#default_hidden = 1
-" nnoremap <silent> <Leader>e :<C-u>Fern . -drawer<CR>
-" nnoremap <silent> <Leader>E :<C-u>Fern . -reveal=%<CR>
-"
-" function! s:fern_settings() abort
-"   nmap <silent> <buffer> <expr> <Plug>(fern-quit-or-close-preview) fern_preview#smart_preview("\<Plug>(fern-action-preview:close)", ":q\<CR>")
-"   nmap <silent> <buffer> q <Plug>(fern-quit-or-close-preview)
-" endfunction
+let g:fern#renderer = 'nerdfont'
+
+" fern
+" ドットファイルなどをデフォルトで表示
+let g:fern#default_hidden = 1
+" drawer で開く
+nnoremap <silent> <Leader>E :<C-u>Fern . -drawer<CR>
+nnoremap <silent> <Leader>e :<C-u>Fern . -reveal=%<CR>
+
+function! s:fern_settings() abort
+  nmap <silent> <buffer> <expr> <Plug>(fern-quit-or-close-preview) fern_preview#smart_preview("\<Plug>(fern-action-preview:close)", ":q\<CR>")
+  nmap <silent> <buffer> q <Plug>(fern-quit-or-close-preview)
+endfunction
 
 " ウィンドウ移動
 nnoremap <silent> <Leader>h <C-w>h
