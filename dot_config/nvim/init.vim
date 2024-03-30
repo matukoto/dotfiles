@@ -208,6 +208,8 @@ cabbrev tp Template
 let g:gin_proxy_apply_without_confirm = 1
 nnoremap <C-g><C-s> <Cmd>GinPreview<CR>
 " バッファの差分を表示
+nnoremap <C-g>a <Cmd>Gin add --all<CR>
+nnoremap <C-g>c <Cmd>Gin commit<CR>
 nnoremap <C-g><C-p> <Cmd>GinPatch ++opener=tabnew %<CR>
 " nnoremap <C-g><C-d> <Cmd>GinDiff ++processor=delta\ --no-gitconfig\ --color-only<CR>
 nnoremap <C-g><C-l>  <Cmd>GinLog<CR>
