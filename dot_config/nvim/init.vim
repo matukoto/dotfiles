@@ -205,14 +205,22 @@ let g:sonictemplate_vim_template_dir = '$HOME/.vim/sonictemplate/'
 cabbrev tp Template
 
 "" gin
-"cabbrev gs GinPreview<CR>
-
-cabbrev ga Gin add .<CR>
-cabbrev gc Gin commit<CR>
-cabbrev gp Gin push<CR>
-cabbrev gd GinDiff<CR>
-cabbrev gb GinBranch
 let g:gin_proxy_apply_without_confirm = 1
+nnoremap <C-g><C-s> <Cmd>GinPreview<CR>
+" バッファの差分を表示
+nnoremap <C-g><C-p> <Cmd>GinPatch ++opener=tabnew %<CR>
+" nnoremap <C-g><C-d> <Cmd>GinDiff ++processor=delta\ --no-gitconfig\ --color-only<CR>
+nnoremap <C-g><C-l>  <Cmd>GinLog<CR>
+" nnoremap <C-g>l <Cmd>GinLog -- %<CR>
+nnoremap <C-g><C-b> <Cmd>GinBranch --all<CR>
+nnoremap <C-g><C-d> <Cmd>GinDiff<CR>
+
+" 
+if executable('delta')
+  let g:gin_diff_persistent_args = [
+        \ '++processor=delta --diff-highlight --keep-plus-minus-markers',
+        \]
+endif
 
 " dadbod
 let g:db_ui_save_location = '$HOME/.vim/dadbod-ui'
