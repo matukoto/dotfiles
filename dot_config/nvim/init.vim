@@ -201,7 +201,7 @@ nnoremap <silent> L :tabnext<CR>
 nnoremap qt <Cmd>tabclose<CR>
 
 " sonictemplate
-let g:sonictemplate_vim_template_dir = '$HOME/dotfiles/vim/sonictemplate/'
+let g:sonictemplate_vim_template_dir = '$HOME/.vim/sonictemplate/'
 cabbrev tp Template
 
 "" gin
@@ -215,7 +215,7 @@ cabbrev gb GinBranch
 let g:gin_proxy_apply_without_confirm = 1
 
 " dadbod
-let g:db_ui_save_location = '~/.vim/dadbod-ui'
+let g:db_ui_save_location = '$HOME/.vim/dadbod-ui'
 
 " kensaku search
 "cnoremap <CR> <Plug>(kensaku-search-replace)<CR>
