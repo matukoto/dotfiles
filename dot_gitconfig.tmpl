@@ -18,16 +18,34 @@
   defaultBranch = main
 [core]
   editor = vim
+	pager = delta
   commentChar = ";"
   quotepath = false
   eol = lf
   autocrlf = input
 [pull]
   merge = ff-only
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
 [commit]
   verbose = true
 [rebase]
   # rebase 時に自動で stash
   autostash = true
-[diff]
-  external = difft
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+[delta]
+	max-line-length = 0
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
+# [diff]
+# 	algorithm = histogram
+# 	colorMoved = dimmed-zebra
+# 	colorMovedWS = allow-indentation-change
+# [difftool]
+# 	prompt = false
