@@ -88,7 +88,6 @@ Jetpack 'epwalsh/obsidian.nvim'
 " telescope
 Jetpack 'nvim-lua/plenary.nvim'
 Jetpack 'nvim-telescope/telescope.nvim'
-Jetpack 'nvim-telescope/telescope-frecency.nvim'
 Jetpack 'fannheyward/telescope-coc.nvim'
 
 " 便利系
