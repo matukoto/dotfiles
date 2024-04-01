@@ -176,6 +176,9 @@ nnoremap <silent> <Leader>e :<C-u>Fern . -reveal=%<CR>
 
 function! s:fern_settings() abort
   nmap <silent> <buffer> D     <Plug>(fern-action-remove)
+  nmap <silent> <buffer> n     <Plug>(fern-action-new-file)
+  nmap <silent> <buffer> N     <Plug>(fern-action-new-dir)
+  nmap <silent> <buffer> h     <Plug>(fern-action-leave)
   nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
   nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
   nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
