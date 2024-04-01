@@ -208,16 +208,16 @@ cabbrev tp Template
 
 "" gin
 let g:gin_proxy_apply_without_confirm = 1
-nnoremap <C-g><C-s> <Cmd>GinPreview<CR>
+nnoremap <Leader>g<C-s> <Cmd>GinPreview<CR>
 " バッファの差分を表示
-nnoremap <C-g>a <Cmd>Gin add --all<CR>
-nnoremap <C-g>c <Cmd>Gin commit<CR>
-nnoremap <C-g><C-p> <Cmd>GinPatch ++opener=tabnew %<CR>
-" nnoremap <C-g><C-d> <Cmd>GinDiff ++processor=delta\ --no-gitconfig\ --color-only<CR>
-nnoremap <C-g><C-l>  <Cmd>GinLog<CR>
-" nnoremap <C-g>l <Cmd>GinLog -- %<CR>
-nnoremap <C-g><C-b> <Cmd>GinBranch --all<CR>
-nnoremap <C-g><C-d> <Cmd>GinDiff<CR>
+nnoremap <Leader>ga <Cmd>Gin add --all<CR>
+nnoremap <Leader>gc <Cmd>Gin commit<CR>
+nnoremap <Leader>g<C-p> <Cmd>GinPatch ++opener=tabnew %<CR>
+" nnoremap <Lieader>g<C-d> <Cmd>GinDiff ++processor=delta\ --no-gitconfig\ --color-only<CR>
+nnoremap <Leader>g<C-l>  <Cmd>GinLog<CR>
+" nnoremap <Lieader>gl <Cmd>GinLog -- %<CR>
+nnoremap <Leader>g<C-b> <Cmd>GinBranch --all<CR>
+nnoremap <Leader>g<C-d> <Cmd>GinDiff<CR>
 
 " 
 if executable('delta')
