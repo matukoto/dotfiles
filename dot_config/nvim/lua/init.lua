@@ -36,14 +36,19 @@ require("telescope").setup {
     },
   },
   extensions = {
+    fzy_native = {
+      override_generic_sorter = false,
+      override_file_sorter = true,
+    },
     coc = {
       -- trueだと常にpreviewを経由する
       prefer_locations = false,
     }
   }
 }
--- telescope-coc
 require('telescope').load_extension('coc')
+require('telescope').load_extension('fzy_native')
+
 -- telescope
 vim.keymap.set("n", "<leader>d", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>")
