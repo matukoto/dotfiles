@@ -89,6 +89,8 @@ Jetpack 'epwalsh/obsidian.nvim'
 Jetpack 'nvim-lua/plenary.nvim'
 Jetpack 'nvim-telescope/telescope.nvim'
 Jetpack 'fannheyward/telescope-coc.nvim'
+Jetpack 'kkharji/sqlite.lua'
+Jetpack 'danielfalk/smart-open.nvim'
 
 " 便利系
 Jetpack 'mattn/vim-sonictemplate'
