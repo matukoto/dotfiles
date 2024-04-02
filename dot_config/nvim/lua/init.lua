@@ -36,9 +36,6 @@ require("telescope").setup {
     },
   },
   extensions = {
-    frecency = {
-      show_scores = true
-    },
     coc = {
       -- trueだと常にpreviewを経由する
       prefer_locations = false,
