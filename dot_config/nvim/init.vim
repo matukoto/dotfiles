@@ -209,16 +209,16 @@ cabbrev tp Template
 
 "" gin
 let g:gin_proxy_apply_without_confirm = 1
-nnoremap <Leader>g<C-s> <Cmd>GinPreview<CR>
+nnoremap <Leader>gs <Cmd>GinPreview<CR>
 " バッファの差分を表示
 nnoremap <Leader>ga <Cmd>Gin add --all<CR>
 nnoremap <Leader>gc <Cmd>Gin commit<CR>
-nnoremap <Leader>g<C-p> <Cmd>GinPatch ++opener=tabnew %<CR>
+nnoremap <Leader>gp <Cmd>GinPatch ++opener=tabnew %<CR>
 " nnoremap <Lieader>g<C-d> <Cmd>GinDiff ++processor=delta\ --no-gitconfig\ --color-only<CR>
-nnoremap <Leader>g<C-l>  <Cmd>GinLog<CR>
+nnoremap <Leader>gl  <Cmd>GinLog<CR>
 " nnoremap <Lieader>gl <Cmd>GinLog -- %<CR>
-nnoremap <Leader>g<C-b> <Cmd>GinBranch --all<CR>
-nnoremap <Leader>g<C-d> <Cmd>GinDiff<CR>
+nnoremap <Leader>gb <Cmd>GinBranch --all<CR>
+nnoremap <Leader>gd <Cmd>GinDiff<CR>
 
 " 
 if executable('delta')
