@@ -73,6 +73,8 @@ Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
 Jetpack 'lambdalisue/gin.vim'
 Jetpack 'APZelos/blamer.nvim'
 Jetpack 'iberianpig/tig-explorer.vim'
+Jetpack 'lewis6991/gitsigns.nvim'
+
 " 日本語
 Jetpack 'lambdalisue/kensaku.vim'
 Jetpack 'lambdalisue/kensaku-search.vim'
@@ -80,6 +82,7 @@ Jetpack 'hrsh7th/vim-searchx'
 Jetpack 'vim-skk/skkeleton'
 Jetpack 'NI57721/skkeleton-state-popup'
 
+Jetpack 'peteriho/nvim-scrollbar'
 " coc
 Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
 " Obsidian

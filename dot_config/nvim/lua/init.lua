@@ -154,6 +154,10 @@ require("hlchunk").setup({
   }
 })
 
+require('gitsigns').setup()
+
+-- require('scrollbar').setup()
+
 -- nvim-lastplace
 require('nvim-lastplace').setup {
   lastplace_ignore_buftype = { "quicfix", "nofile", "help" },
