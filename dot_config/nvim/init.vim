@@ -216,7 +216,7 @@ let g:gin_proxy_apply_without_confirm = 1
 nnoremap <Leader>gs <Cmd>GinPreview<CR>
 " バッファの差分を表示
 nnoremap <Leader>ga <Cmd>Gin add --all<CR>
-nnoremap <Leader>gc <Cmd>Gin commit<CR>
+nnoremap <Leader>gc <Cmd>Gin commit --quiet<CR>
 nnoremap <Leader>gp <Cmd>GinPatch ++opener=tabnew %<CR>
 " nnoremap <Lieader>g<C-d> <Cmd>GinDiff ++processor=delta\ --no-gitconfig\ --color-only<CR>
 nnoremap <Leader>gl  <Cmd>GinLog<CR>
