@@ -179,7 +179,7 @@ nnoremap <silent> <Leader>E :<C-u>Fern . -drawer<CR>
 nnoremap <silent> <Leader>e :<C-u>Fern . -reveal=%<CR>
 
 function! s:fern_settings() abort
-  nmap <silent> <buffer> D     <Plug>(fern-action-remove)
+  nmap <silent> <buffer> D     <Plug>(fern-action-remove=)y<CR>
   nmap <silent> <buffer> n     <Plug>(fern-action-new-file)
   nmap <silent> <buffer> N     <Plug>(fern-action-new-dir)
   nmap <silent> <buffer> h     <Plug>(fern-action-leave)
