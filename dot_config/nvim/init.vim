@@ -232,7 +232,7 @@ if executable('delta')
 endif
 
 " dadbod
-let g:db_ui_save_location = '$HOME/.vim/dadbod-ui'
+let g:db_ui_save_location = '~/.vim/dadbod-ui'
 
 " kensaku search
 "cnoremap <CR> <Plug>(kensaku-search-replace)<CR>
