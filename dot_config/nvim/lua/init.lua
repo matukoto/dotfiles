@@ -2,16 +2,16 @@
 -- for wsl2
 if vim.fn.has('wsl') == 1 then
   vim.g.clipboard = {
-    name = 'win32yank',
+    name = 'WslClipboard',
     copy = {
-      ['+'] = 'win32yank.exe -i --crlf',
-      ['*'] = 'win32yank.exe -i --crlf',
+      ['+'] = 'xsel -bi',
+      ['*'] = 'xsel -bi',
     },
     paste = {
-      ['+'] = 'win32yank.exe -o --lf',
-      ['*'] = 'win32yank.exe -o --lf',
+      ['+'] = function() return vim.fn.systemlist('xsel -bo | tr -d "\r"') end,
+      ['*'] = function() return vim.fn.systemlist('xsel -bo | tr -d "\r"') end,
     },
-    cache_enabled = 0,
+    cache_enabled = 1,
   }
 end
 
