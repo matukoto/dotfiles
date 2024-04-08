@@ -224,6 +224,18 @@ nnoremap <Leader>gl  <Cmd>GinLog<CR>
 nnoremap <Leader>gb <Cmd>GinBranch --all<CR>
 nnoremap <Leader>gd <Cmd>GinDiff<CR>
 
+function! s:my_gin_log() abort
+  nnoremap <buffer> if <Plug>(gin-action-fixup:instant-fixup)
+  nnoremap <buffer> ir <Plug>(gin-action-fixup:instant-reword)
+  setl cursorline
+endfunction
+
+augroup my-gin
+  autocmd!
+  autocmd User GinComponentPost redrawtabline
+  autocmd FileType gin-log silent! call s:my_gin_log()
+augroup END
+
 " 
 if executable('delta')
   let g:gin_diff_persistent_args = [
