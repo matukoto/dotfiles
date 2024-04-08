@@ -103,6 +103,7 @@ Jetpack 'numToStr/comment.nvim'
 Jetpack 'yuki-yano/fuzzy-motion.vim'
 Jetpack 'ethanholz/nvim-lastplace'
 Jetpack 'haya14busa/vim-edgemotion'
+Jetpack 'gamoutatsumi/gyazoupload.vim'
 "Jetpack 'skanehira/denops-docker.vim'
 "Jetpack 'skanehira/k8s.vim'
 Jetpack 'cshuaimin/ssr.nvim'
@@ -342,6 +343,9 @@ nmap t<C-j> yypV<Cmd>call deepl#v("JA")<CR>
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
+
+" gyazoupload
+g:gyazo#token = '$GYAZO_TOKEN'
 
 " skk-state-popup
 call skkeleton_state_popup#config(#{
