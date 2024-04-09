@@ -345,7 +345,7 @@ nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 " gyazoupload
-g:gyazo#token = '$GYAZO_TOKEN'
+let g:gyazo#token = '$GYAZO_TOKEN'
 
 " skk-state-popup
 call skkeleton_state_popup#config(#{
