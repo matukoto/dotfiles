@@ -301,8 +301,8 @@ call skkeleton#config({
       \ 'registerConvertResult': v:true,
       \ 'showCandidatesCount': 2,
       \})
-imap <C-j> <Plug>(skkeleton-toggle)
-cmap <C-j> <Plug>(skkeleton-toggle)
+imap <C-j> <Plug>(skkeleton-toggle);
+cmap <C-j> <Plug>(skkeleton-toggle);
 
       " \ 'skkServerHost': '127.0.0.1',
       " \ 'skkServerPort': 55100,
