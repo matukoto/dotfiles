@@ -4,12 +4,12 @@ if vim.fn.has('wsl') == 1 then
   vim.g.clipboard = {
     name = 'WslClipboard',
     copy = {
-      ['+'] = 'xsel -bi',
-      ['*'] = 'xsel -bi',
+      ['+'] = 'xclip -selection clipboard',
+      ['*'] = 'xclip -selection clipboard',
     },
     paste = {
-      ['+'] = function() return vim.fn.systemlist('xsel -bo | tr -d "\r"') end,
-      ['*'] = function() return vim.fn.systemlist('xsel -bo | tr -d "\r"') end,
+      ['+'] = function() return vim.fn.systemlist('xclip -selection clipboard -o') end,
+      ['*'] = function() return vim.fn.systemlist('xclip -selection clipboard -o') end,
     },
     cache_enabled = 1,
   }
