@@ -1,5 +1,3 @@
--- wsl
--- for wsl2
 if vim.fn.has('wsl') == 1 then
   vim.g.clipboard = {
     name = 'WslClipboard',
@@ -8,8 +6,8 @@ if vim.fn.has('wsl') == 1 then
       ['*'] = 'xclip -selection clipboard',
     },
     paste = {
-      ['+'] = function() return vim.fn.systemlist('xclip -selection clipboard -o') end,
-      ['*'] = function() return vim.fn.systemlist('xclip -selection clipboard -o') end,
+      ['+'] = 'xclip -selection clipboard -o | tr -d "\r"',
+      ['*'] = 'xclip -selection clipboard -o | tr -d "\r"',
     },
     cache_enabled = 1,
   }
