@@ -36,10 +36,10 @@ require("telescope").setup {
     },
   },
   extensions = {
-    -- fzy_native = {
-    -- override_generic_sorter = false,
-    -- override_file_sorter = true,
-    -- },
+    fzy_native = {
+    override_generic_sorter = false,
+    override_file_sorter = true,
+    },
     coc = {
       -- trueだと常にpreviewを経由する
       prefer_locations = false,
@@ -47,7 +47,7 @@ require("telescope").setup {
   }
 }
 require('telescope').load_extension('coc')
--- require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('fzy_native')
 
 -- telescope
 vim.keymap.set("n", "<leader>d", "<cmd>Telescope live_grep<CR>")
@@ -156,7 +156,7 @@ require("hlchunk").setup({
 
 require('gitsigns').setup()
 
--- require('scrollbar').setup()
+require('scrollbar').setup()
 
 -- nvim-lastplace
 require('nvim-lastplace').setup {
