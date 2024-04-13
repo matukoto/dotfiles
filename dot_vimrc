@@ -104,7 +104,7 @@ nnoremap k gk
 
 " 動作環境との統合
 " OSのクリップボードをレジスタ指定無しで Yank, Put 出来るようにする
-set clipboard=unnamed,unnamedplus
+set clipboard=unnamedplus
 " マウスの入力を受け付ける
 set mouse=a
 
