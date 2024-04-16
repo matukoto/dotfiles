@@ -305,7 +305,19 @@ call skkeleton#config({
 imap <C-j> <Plug>(skkeleton-enable);
 cmap <C-j> <Plug>(skkeleton-enable);
 
+" statusline_skk
 let g:lightline_skk_announce = v:true
+call statusline_skk#option('display', {
+  \ 'hiragana': 'あ',
+  \ 'katakana': 'ア',
+  \ 'hankaku-katakana': 'ｱ',
+  \ 'zenkaku-alphabet': 'Ａ',
+  \ 'alphabet': 'A',
+  \ })
+call statusline_skk#option('enable_mode', {
+  \ 'INSERT': v:true,
+  \ 'COMMAND': v:false,
+  \ })
 
       " \ 'skkServerHost': '127.0.0.1',
       " \ 'skkServerPort': 55100,
