@@ -81,6 +81,7 @@ Jetpack 'lambdalisue/kensaku-search.vim'
 Jetpack 'hrsh7th/vim-searchx'
 Jetpack 'vim-skk/skkeleton'
 "Jetpack 'NI57721/skkeleton-state-popup'
+Jetpack 'yasunori0418/statusline_skk.vim'
 
 Jetpack 'peteriho/nvim-scrollbar'
 " coc
@@ -303,6 +304,8 @@ call skkeleton#config({
       \})
 imap <C-j> <Plug>(skkeleton-enable);
 cmap <C-j> <Plug>(skkeleton-enable);
+
+let g:lightline_skk_announce = v:true
 
       " \ 'skkServerHost': '127.0.0.1',
       " \ 'skkServerPort': 55100,
