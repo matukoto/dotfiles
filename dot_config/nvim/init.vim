@@ -80,7 +80,7 @@ Jetpack 'lambdalisue/kensaku.vim'
 Jetpack 'lambdalisue/kensaku-search.vim'
 Jetpack 'hrsh7th/vim-searchx'
 Jetpack 'vim-skk/skkeleton'
-Jetpack 'NI57721/skkeleton-state-popup'
+"Jetpack 'NI57721/skkeleton-state-popup'
 
 Jetpack 'peteriho/nvim-scrollbar'
 " coc
@@ -346,19 +346,6 @@ vmap gx <Plug>(openbrowser-smart-search)
 
 " gyazoupload
 let g:gyazo#token = '$GYAZO_TOKEN'
-
-" skk-state-popup
-call skkeleton_state_popup#config(#{
-  \   labels: {
-  \     'input': #{hira: "あ", kata: 'ア', hankata: 'ｶﾅ', zenkaku: 'Ａ'},
-  \     'input:okurinasi': #{hira: '▽▽', kata: '▽▽', hankata: '▽▽', abbrev: 'ab'},
-  \     'input:okuriari': #{hira: '▽▽', kata: '▽▽', hankata: '▽▽'},
-  \     'henkan': #{hira: '▼▼', kata: '▼▼', hankata: '▼▼', abbrev: 'ab'},
-  \     'latin': 'A',
-  \   },
-  \   opts: #{relative: 'cursor', col: 0, row: 1, anchor: 'NW', style: 'minimal'},
-  \ })
-call skkeleton_state_popup#run()
 
 source ~/.config/nvim/plugin/gin-preview.vim
 
