@@ -123,7 +123,19 @@ require('lualine').setup {
   sections = {
     lualine_a = { 'mode', 'statusline_skk#mode' },
     lualine_b = { 'branch', 'diff', 'diagnostics' },
-    lualine_c = { 'filename' },
+    lualine_c = {
+      {
+        'filename',
+        path = 1,
+        file_status = true,
+        shorting_target = 40,
+        symbols = {
+          modified = ' [+]',
+          readonly = ' [RO]',
+          unnamed = 'Untitled',
+        }
+      }
+    },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
