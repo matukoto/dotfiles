@@ -56,7 +56,7 @@ Jetpack 'shougo/ddc-sorter_rank'
 " ファイラ
 Jetpack 'lambdalisue/fern.vim'
 Jetpack 'yuki-yano/fern-preview.vim'
-" Jetpack 'stevearc/oil.nvim'
+Jetpack 'stevearc/oil.nvim'
 
 " ステータスラインプラグイン
 Jetpack 'nvim-lualine/lualine.nvim'

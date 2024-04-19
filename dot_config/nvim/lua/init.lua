@@ -100,6 +100,7 @@ vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>")
 -- fidget
 require('fidget').setup()
 
+require('oil').setup()
 -- lualine
 require('lualine').setup {
   options = {
