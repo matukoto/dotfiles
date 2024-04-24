@@ -1,3 +1,6 @@
+-- statusline を常に1つにする
+vim.opt.laststatus = 3
+
 if vim.fn.has('wsl') == 1 then
   vim.g.clipboard = {
     name = 'WslClipboard',
