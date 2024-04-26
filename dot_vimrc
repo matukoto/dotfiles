@@ -32,7 +32,8 @@ xnoremap p P
 xnoremap P p
 
 " vim diff
-set diffopt+=algorithm:histogram
+"- [vimdiffでより賢いアルゴリズム (patience, histogram) を使う #Git - Qiita](https://qiita.com/takaakikasai/items/3d4f8a4867364a46dfa3)
+set diffopt=internal,filler,algorithm:histogram,indent-heuristic
 
 " 折返したときもインデント
 set breakindent
