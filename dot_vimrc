@@ -31,6 +31,9 @@ set smartindent
 xnoremap p P
 xnoremap P p
 
+" vim diff
+set diffopt+=algorithm:histogram
+
 " 折返したときもインデント
 set breakindent
 
