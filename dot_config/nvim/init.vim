@@ -127,6 +127,7 @@ Jetpack 'lambdalisue/mr-quickfix.vim'
 Jetpack 'Bakudankun/BackAndForward.vim'
 Jetpack 'MeanderingProgrammer/markdown.nvim'
 Jetpack 'mechatroner/rainbow_csv'
+Jetpack 'tkmpypy/chowcho.nvim'
 
 " DB
 Jetpack 'tpope/vim-dadbod'
