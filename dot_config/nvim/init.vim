@@ -216,16 +216,16 @@ cabbrev tp Template
 
 "" gin
 let g:gin_proxy_apply_without_confirm = 1
-nnoremap <Leader>gs <Cmd>GinPreview<CR>
+nnoremap <C-g>s <Cmd>GinPreview<CR>
 " バッファの差分を表示
-nnoremap <Leader>ga <Cmd>Gin add --all<CR>
-nnoremap <Leader>gc <Cmd>Gin commit --quiet<CR>
-nnoremap <Leader>gp <Cmd>GinPatch ++opener=tabnew %<CR>
+nnoremap <C-g>a <Cmd>Gin add --all<CR>
+nnoremap <C-g>c <Cmd>Gin commit --quiet<CR>
+nnoremap <C-g>p <Cmd>GinPatch ++opener=tabnew %<CR>
 " nnoremap <Lieader>g<C-d> <Cmd>GinDiff ++processor=delta\ --no-gitconfig\ --color-only<CR>
-nnoremap <Leader>gl  <Cmd>GinLog<CR>
+nnoremap <C-g>l  <Cmd>GinLog<CR>
 " nnoremap <Lieader>gl <Cmd>GinLog -- %<CR>
-nnoremap <Leader>gb <Cmd>GinBranch --all<CR>
-nnoremap <Leader>gd <Cmd>GinDiff<CR>
+nnoremap <C-g>b <Cmd>GinBranch --all<CR>
+nnoremap <C-g>d <Cmd>GinDiff<CR>
 
 function! s:my_gin_log() abort
   nnoremap <buffer> if <Plug>(gin-action-fixup:instant-fixup)
