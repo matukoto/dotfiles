@@ -50,6 +50,7 @@ Jetpack 'vim-denops/denops.vim'
 
 " dd
 Jetpack 'shougo/ddc.vim'
+Jetpack 'shougo/ddc-ui-native'
 Jetpack 'shougo/ddc-matcher_head'
 Jetpack 'shougo/ddc-sorter_rank'
 
@@ -320,23 +321,18 @@ call statusline_skk#option('enable_mode', {
   \ 'COMMAND': v:false,
   \ })
 
-      " \ 'skkServerHost': '127.0.0.1',
-      " \ 'skkServerPort': 55100,
-      " \ 'useSkkServer': v:true,
-
 " ddc
-call ddc#custom#patch_global('sources',['skkeleton'])
-call ddc#custom#patch_global('sourceOptions',{
-      \ '_': {
-      \   'matchers': ['matcher_head'],
-      \   'sorters': ['sorter_rank'],
-      \ },
+call ddc#custom#patch_global('ui', 'native')
+call ddc#custom#patch_global('sources', ['skkeleton'])
+call ddc#custom#patch_global('sourceOptions', {
       \ 'skkeleton': {
-      \   'mark': 'skkeleton',
-      \  'matchers': ['skkeleton'],
-      \ 'sorters': [],
-      \ },
-      \})
+      \     'isVolatile': v:true,
+      \     'mark': 'skkeleton',
+      \     'matchers': ['skkeleton'],
+      \     'sorters': [],
+      \     'minAutoCompleteLength': 2,
+      \   },
+      \ })
 call ddc#enable()
 
 " deepl
