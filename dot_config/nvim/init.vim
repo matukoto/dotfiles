@@ -85,15 +85,12 @@ Jetpack 'vim-skk/skkeleton'
 Jetpack 'yasunori0418/statusline_skk.vim'
 
 Jetpack 'peteriho/nvim-scrollbar'
-" coc
-Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
 " Obsidian
 Jetpack 'epwalsh/obsidian.nvim'
 
 " telescope
 Jetpack 'nvim-lua/plenary.nvim'
 Jetpack 'nvim-telescope/telescope.nvim'
-Jetpack 'fannheyward/telescope-coc.nvim'
 Jetpack 'nvim-telescope/telescope-fzf-native.nvim'
 Jetpack 'kkharji/sqlite.lua'
 Jetpack 'danielfalk/smart-open.nvim'
@@ -266,9 +263,6 @@ nnoremap <C-f> <cmd>FuzzyMotion<CR>
 "quickrun
 cabbrev qr QuickRun<CR>
 
-" coc.nvim
-let g:coc_global_extensions = ['coc-json','coc-yaml','coc-java','coc-go','coc-deno','coc-svelte','coc-snippets','@yaegassy/coc-marksman','coc-tsserver','coc-toml']
-
 "let g:denops#debug = 1
 let g:denops#server#deno_args = ['-q', '--no-lock', '-A', '--unstable-ffi', '--unstable-kv']
 " denops-shared-server port
@@ -276,19 +270,6 @@ let g:denops#server#deno_args = ['-q', '--no-lock', '-A', '--unstable-ffi', '--u
 
 " denops-shared-server install 後、初回のみ実行すれば良い
 " call denops_shared_server#install()
-
-" coc keymap
-" 定義ジャンプ
-nnoremap  <Leader>d <Plug>(coc-definition)<CR>
-" import
-nnoremap <Leader>i <Plug>(coc-organize-imports)<CR>
-" code action
-nnoremap  <Leader>c <Plug>(coc-codeaction-cursor)<CR>
-" rename
-nnoremap <Leader>r <Plug>(coc-rename)<CR>
-
-" エンターで補完を確定
-inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " edge-motion
 nnoremap <C-j> <Plug>(edgemotion-j)

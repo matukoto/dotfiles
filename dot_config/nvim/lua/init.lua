@@ -79,13 +79,8 @@ require("telescope").setup {
     -- override_generic_sorter = false,
     -- override_file_sorter = true,
     -- },
-    coc = {
-      -- trueだと常にpreviewを経由する
-      prefer_locations = false,
-    }
   }
 }
-require('telescope').load_extension('coc')
 -- require('telescope').load_extension('fzy_native')
 
 -- telescope
