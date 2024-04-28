@@ -1,3 +1,9 @@
+
+" :p でフルパスを取得
+" :h でディレクトリのみを取得
+let $VIMHOME = expand('<sfile>:p:h')
+let s:is_windows = has('win32')
+
 " vimrc  を読み込む
 if has('win64')
     source ~\_vimrc
@@ -35,115 +41,8 @@ command! -nargs=* T split | wincmd j | resize 15 | terminal <args>
 " インサートモードでターミナルを開く
 autocmd TermOpen * startinsert
 
-" install jetpackin
-packadd vim-jetpack
-call jetpack#begin()
-
-Jetpack 'tani/vim-jetpack'
-
-Jetpack 'vim-jp/vimdoc-ja'
-
-" denops
-Jetpack 'vim-denops/denops.vim'
-" systemd 使えないとだめなので wsl ではコメントアウト
-" Jetpack 'vim-denops/denops-shared-server.vim'
-
-" dd
-Jetpack 'shougo/ddc.vim'
-Jetpack 'shougo/ddc-ui-native'
-Jetpack 'shougo/ddc-matcher_head'
-Jetpack 'shougo/ddc-sorter_rank'
-
-" ファイラ
-Jetpack 'lambdalisue/fern.vim'
-Jetpack 'yuki-yano/fern-preview.vim'
-Jetpack 'stevearc/oil.nvim'
-
-" ステータスラインプラグイン
-Jetpack 'nvim-lualine/lualine.nvim'
-Jetpack 'nvim-tree/nvim-web-devicons'
-" Jetpack 'mvllow/modes.nvim', { 'tag': 'v0.2.0' }
-
-" terminal
-Jetpack 'chomosuke/term-edit.nvim'
-Jetpack 'nvim-treesitter/nvim-treesitter'
-" nerdfont
-Jetpack 'lambdalisue/nerdfont.vim'
-Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
-" git
-Jetpack 'lambdalisue/gin.vim'
-Jetpack 'APZelos/blamer.nvim'
-Jetpack 'iberianpig/tig-explorer.vim'
-Jetpack 'lewis6991/gitsigns.nvim'
-
-" 日本語
-Jetpack 'lambdalisue/kensaku.vim'
-Jetpack 'lambdalisue/kensaku-search.vim'
-Jetpack 'hrsh7th/vim-searchx'
-Jetpack 'vim-skk/skkeleton'
-"Jetpack 'NI57721/skkeleton-state-popup'
-Jetpack 'yasunori0418/statusline_skk.vim'
-
-Jetpack 'peteriho/nvim-scrollbar'
-" Obsidian
-Jetpack 'epwalsh/obsidian.nvim'
-
-" telescope
-Jetpack 'nvim-lua/plenary.nvim'
-Jetpack 'nvim-telescope/telescope.nvim'
-Jetpack 'nvim-telescope/telescope-fzf-native.nvim'
-Jetpack 'kkharji/sqlite.lua'
-Jetpack 'danielfalk/smart-open.nvim'
-
-" 便利系
-Jetpack 'mattn/vim-sonictemplate'
-Jetpack 'thinca/vim-quickrun'
-Jetpack 'numToStr/comment.nvim'
-Jetpack 'yuki-yano/fuzzy-motion.vim'
-Jetpack 'ethanholz/nvim-lastplace'
-Jetpack 'haya14busa/vim-edgemotion'
-Jetpack 'gamoutatsumi/gyazoupload.vim'
-"Jetpack 'skanehira/denops-docker.vim'
-"Jetpack 'skanehira/k8s.vim'
-Jetpack 'cshuaimin/ssr.nvim'
-Jetpack 'shellRaining/hlchunk.nvim'
-Jetpack 'stevearc/aerial.nvim'
-Jetpack 'tris203/hawtkeys.nvim'
-Jetpack 'kevinhwang91/nvim-hlslens'
-Jetpack '0xAdk/full_visual_line.nvim'
-Jetpack 'j-hui/fidget.nvim'
-Jetpack 'github/copilot.vim'
-Jetpack 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
-Jetpack 'tyru/capture.vim'
-Jetpack 'reireias/vim-cheatsheet'
-Jetpack 'itchyny/vim-cursorword'
-Jetpack 'tyru/open-browser.vim'
-Jetpack 'lambdalisue/guise.vim'
-Jetpack 'ryicoh/deepl.vim'
-Jetpack 'lambdalisue/mr.vim'
-Jetpack 'lambdalisue/mr-quickfix.vim'
-Jetpack 'Bakudankun/BackAndForward.vim'
-Jetpack 'MeanderingProgrammer/markdown.nvim'
-Jetpack 'mechatroner/rainbow_csv'
-Jetpack 'tkmpypy/chowcho.nvim'
-
-" DB
-Jetpack 'tpope/vim-dadbod'
-Jetpack 'kristijanhusak/vim-dadbod-ui'
-
-" カラースキーマ
-Jetpack 'gen740/SmoothCursor.nvim'
-Jetpack 'sainnhe/gruvbox-material'
-Jetpack 'sainnhe/edge'
-Jetpack 'sainnhe/sonokai'
-Jetpack 'sainnhe/everforest'
-Jetpack 'edeneast/nightfox.nvim'
-Jetpack 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
-Jetpack 'kyoh86/momiji'
-Jetpack 'taniarascia/new-moon.vim'
-Jetpack 'catppuccin/nvim', { 'as': 'catppuccin' }
-" Jetpack 'folke/styler.nvim'
-call jetpack#end()
+" Plugin
+source $VIMHOME/jetpack.vim
 
 " cheat sheet
 let g:cheatsheet#cheat_file = '$HOME/dotfiles/vim/cheatSheet/default.md'
