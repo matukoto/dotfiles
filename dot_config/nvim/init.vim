@@ -55,11 +55,6 @@ let g:cheatsheet#float_window = 1
 let g:cheatsheet#float_window_width_ratio = 0.6
 let g:cheatsheet#float_window_height_ratio = 0.5
 
-" map prefix
-let g:mapleader = "\<Space>"
-nnoremap <Leader> <Nop>
-xnoremap <Leader> <Nop>
-
 " copilot
 imap <expr> <C-Space> copilot#expand()
 imap <Tab> copilot#Accept()
