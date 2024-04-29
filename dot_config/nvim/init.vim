@@ -35,6 +35,11 @@ if has('vim_starting')
   let g:loaded_netrwFileHandlers = 1
 endif
 
+" map prefix
+let g:mapleader = "\<Space>"
+nnoremap <Leader> <Nop>
+xnoremap <Leader> <Nop>
+
 " " terminal
 " :T で下部にターミナルを開く
 command! -nargs=* T split | wincmd j | resize 15 | terminal <args>
