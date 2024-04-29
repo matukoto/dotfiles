@@ -81,7 +81,6 @@ function! s:init() abort
   call jetpack#add('itchyny/vim-cursorword')
   call jetpack#add('tyru/open-browser.vim')
   call jetpack#add('lambdalisue/guise.vim')
-  call jetpack#add('ryicoh/deepl.vim')
   call jetpack#add('lambdalisue/mr.vim')
   call jetpack#add('lambdalisue/mr-quickfix.vim')
   call jetpack#add('Bakudankun/BackAndForward.vim')
