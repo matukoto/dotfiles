@@ -1,10 +1,12 @@
-
 " :p でフルパスを取得
 " :h でディレクトリのみを取得
 let $VIMHOME = expand('<sfile>:p:h')
 let s:is_windows = has('win32')
 
+" statusline を常に1つにする
+set laststatus=3
 " vimrc  を読み込む
+
 if has('win64')
     source ~\_vimrc
 else
@@ -46,9 +48,6 @@ command! -nargs=* T split | wincmd j | resize 15 | terminal <args>
 " インサートモードでターミナルを開く
 autocmd TermOpen * startinsert
 
-" Plugin
-source $VIMHOME/jetpack.vim
-
 " ウィンドウ移動
 nnoremap <silent> <Leader>h <C-w>h
 nnoremap <silent> <Leader>j <C-w>j
@@ -60,9 +59,8 @@ nnoremap <silent> H :tabprevious<CR>
 nnoremap <silent> L :tabnext<CR>
 nnoremap qt <Cmd>tabclose<CR>
 
-source ~/.config/nvim/plugin/gin-preview.vim
-
-source ~/.config/nvim/lua/init.lua
+" Plugin
+source $VIMHOME/jetpack.vim
 
 " colorscheme
 colorscheme everforest
