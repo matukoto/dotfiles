@@ -117,4 +117,24 @@ function! s:ensure() abort
   packadd vim-jetpack
 endfunction
 
+function! s:configure() abort
+  call s:load_configurations()
+  if has('nvim')
+    call s:load_lua_configurations()
+  endif
+endfunction
+
+function! s:load_configurations() abort
+  for path in glob('$VIMHOME/plugin.d/*.vim', 1, 1, 1)
+    execute printf('source %s', fnameescape(path))
+  endfor
+endfunction
+
+function! s:load_lua_configurations() abort
+  for path in glob('$VIMHOME/plugin.d/*.lua', 1, 1, 1)
+    execute printf('luafile %s', fnameescape(path))
+  endfor
+endfunction
+
 call s:init()
+call s:configure()
