@@ -32,6 +32,7 @@ function! s:init() abort
   " nerdfont
   call jetpack#add('lambdalisue/nerdfont.vim')
   call jetpack#add('lambdalisue/fern-renderer-nerdfont.vim')
+  call jetpack#add('lambdalisue/fern-git-status.vim')
   " git
   call jetpack#add('lambdalisue/gin.vim')
   call jetpack#add('APZelos/blamer.nvim')
