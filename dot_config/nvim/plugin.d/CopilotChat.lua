@@ -1,5 +1,6 @@
 local select = require("CopilotChat.select")
 local prompts = require("CopilotChat.prompts")
+
 require("CopilotChat").setup {
   debug = false, -- Enable debug logging
   proxy = nil, -- [protocol://]host[:port] Use this proxy
@@ -119,3 +120,10 @@ require("CopilotChat").setup {
     },
   },
 }
+
+function ShowCopilotChatActionPrompt()
+  local actions = require("CopilotChat.actions")
+  require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+end
+
+vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>lua ShowCopilotChatActionPrompt()<cr>", { noremap = true, silent = true })
