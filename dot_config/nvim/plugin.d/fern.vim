@@ -1,9 +1,9 @@
 " ドットファイルなどをデフォルトで表示
 let g:fern#default_hidden = 1
 " drawer で開く
-nnoremap <silent> <Leader>E :<C-u>Fern . -drawer<CR>
-nnoremap <silent> <Leader>e :<C-u>Fern . -reveal=%<CR>
-
+nnoremap <silent> <Leader>E  :<C-u>Fern . -drawer<CR>
+nnoremap <silent> <Leader>e  :<C-u>Fern . -reveal=%<CR>
+nnoremap <silent> <Leader>ce :<C-u>Fern %:h<CR>
 function! s:fern_settings() abort
   nmap <silent> <buffer> D     <Plug>(fern-action-remove=)y<CR>
   nmap <silent> <buffer> n     <Plug>(fern-action-new-file)
