@@ -40,20 +40,20 @@ require("CopilotChat").setup {
         -- see config.lua for implementation
       end,
     },
+   Tests = {
+      prompt = '/COPILOT_TESTS カーソル上のコードの詳細な単体テスト関数を書いてください。',
+    },
     Fix = {
-      prompt = '/COPILOT_GENERATE There is a problem in this code. Rewrite the code to show it with the bug fixed.',
+      prompt = '/COPILOT_FIX このコードには問題があります。バグを修正したコードに書き換えてください。',
     },
     Optimize = {
-      prompt = '/COPILOT_GENERATE Optimize the selected code to improve performance and readablilty.',
+      prompt = '/COPILOT_REFACTOR 選択したコードを最適化し、パフォーマンスと可読性を向上させてください。',
     },
     Docs = {
-      prompt = '/COPILOT_GENERATE Please add documentation comment for the selection.',
-    },
-    Tests = {
-      prompt = '/COPILOT_GENERATE Please generate tests for my code.',
+      prompt = '/COPILOT_REFACTOR 選択したコードのドキュメントを書いてください。ドキュメントをコメントとして追加した元のコードを含むコードブロックで回答してください。使用するプログラミング言語に最も適したドキュメントスタイルを使用してください（例：JavaScriptのJSDoc、Pythonのdocstringsなど）',
     },
     FixDiagnostic = {
-      prompt = 'Please assist with the following diagnostic issue in file:',
+      prompt = 'ファイル内の次のような診断上の問題を解決してください：',
       selection = select.diagnostics,
     },
     Commit = {
