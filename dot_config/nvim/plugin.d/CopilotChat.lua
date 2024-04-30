@@ -32,10 +32,10 @@ require("CopilotChat").setup {
   -- default prompts
   prompts = {
     Explain = {
-      prompt = '/COPILOT_EXPLAIN Write an explanation for the active selection as paragraphs of text.',
+      prompt = '/COPILOT_EXPLAIN Write an explanation for the active selection as paragraphs of text in Japanese.',
     },
     Review = {
-      prompt = '/COPILOT_REVIEW Review the selected code.',
+      prompt = '/COPILOT_REVIEW Review the selected code in Japanese.',
       callback = function(response, source)
         -- see config.lua for implementation
       end,
