@@ -21,6 +21,7 @@ function! s:init() abort
   call jetpack#add('shougo/ddc-ui-native')
   call jetpack#add('shougo/ddc-matcher_head')
   call jetpack#add('shougo/ddc-sorter_rank')
+  call jetpack#add('shougo/ddc-source-lsp')
 
   " ファイラ
   call jetpack#add('lambdalisue/fern.vim')
