@@ -1,11 +1,16 @@
 local actions = require("telescope.actions")
 require("telescope").setup {
   defaults = {
+    initial_mode = "insert",
     mappings = {
       i = {
-        ["<esc>"] = actions.close,
-        -- Ctrl+Enterがマッピングされている
-        ["<F12>"] = actions.select_vertical,
+        -- ["<C-n>"] = actions.move_selection_next,
+        -- ["<C-p>"] = actions.move_selection_previous,
+        ["<C-t>"] = actions.select_tab,
+        ["<C-s>"] = actions.select_horizontal,
+        -- "<C-h>"] = actions.select_horizontal,
+        ["<C-v>"] = actions.select_vertical,
+        ["<C-c>"] = actions.close,
       },
       n = { ["q"] = actions.close },
     },
