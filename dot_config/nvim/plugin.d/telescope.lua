@@ -16,6 +16,12 @@ require("telescope").setup {
       prompt_position = "top",
       preview_cutoff = 1,
     },
+    path_display = {
+      "trancate",
+      filename_first = {
+        reverse_directories = false,
+      }
+    },
     extensions = {
       fzy_native = {
       override_generic_sorter = false,
