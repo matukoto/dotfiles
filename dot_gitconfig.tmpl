@@ -1,7 +1,14 @@
 {{- if (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) -}}
 {{- include  "work/dot_gitconfig" -}}
 {{- else -}}
-{{- include "my_private_gitconfig" -}}
+[user]
+  email = keisuke.suke.san@gmail.com
+  name = Keisuke.Matsumoto
+[fetch]
+  # fetch 時に自動で --prune を実行し、リモートで削除されたブランチをローカルでも削除してくれる
+  prune = true
+[commit]
+  template = ~/.vim/gitmessage
 {{- end -}}
 
 {{ if eq .chezmoi.os "linux" }}
