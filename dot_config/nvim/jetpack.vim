@@ -10,6 +10,12 @@ function! s:init() abort
   " systemd 使えないとだめなので wsl ではコメントアウト
   " call jetpack#add('vim-denops/denops-shared-server.vim')
 
+  " lsp
+  call jetpack#add('neovim/nvim-lspconfig')
+  call jetpack#add('nvim-lua/lsp-status.nvim')
+  call jetpack#add('williamboman/mason.nvim')
+  call jetpack#add('williamboman/mason-lspconfig.nvim')
+
   " dd
   call jetpack#add('shougo/ddc.vim')
   call jetpack#add('shougo/ddc-ui-native')
