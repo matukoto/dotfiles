@@ -22,7 +22,6 @@ require("telescope").setup {
       preview_cutoff = 1,
     },
     path_display = {
-      "trancate",
       filename_first = {
         reverse_directories = false,
       }
@@ -36,7 +35,6 @@ require("telescope").setup {
   },
 }
 -- require('telescope').load_extension('fzy_native')
-
 -- telescope
 vim.keymap.set("n", "<leader>d", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>")

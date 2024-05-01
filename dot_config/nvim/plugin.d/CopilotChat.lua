@@ -126,5 +126,43 @@ function ShowCopilotChatActionPrompt()
   require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
 end
 
+-- バッファの内容全体を使って Copilot とチャットする
+function CopilotChatBuffer()
+  local input = vim.fn.input("Quick Chat: ")
+  if input ~= "" then
+    require("CopilotChat").ask(input, { selection = select.buffer })
+  end
+end
+
 vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>lua ShowCopilotChatActionPrompt()<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<leader>cp", "<cmd>lua ShowCopilotChatActionPrompt()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>cq", "<cmd>lua CopilotChatBuffer()<cr>", { noremap = true, silent = true })
+
+-- vim.api.nvim_create_autocmd('BufEnter', {
+--     pattern = 'copilot-*',
+--     callback = function()
+--         vim.opt_local.relativenumber = true
+--
+--         -- C-p to print last response
+--         vim.keymap.set('n', '<C-p>', function()
+--           print(require("CopilotChat").response())
+--         end, { buffer = true, remap = true })
+--     end
+-- })
+
+-- function ShowCopilotChatActionPromptVisualSelection()
+--   -- Get the start and end line of the visual selection
+--   local start_line, end_line = unpack(vim.fn.getpos("'<"), 2, 3), unpack(vim.fn.getpos("'>"), 2, 3)
+--   
+--   -- Get the text in the visual selection
+--   local lines = vim.api.nvim_buf_get_lines(0, start_line - 1, end_line, false)
+--   
+--   -- Join the lines into a single string
+--   local input = table.concat(lines, "\n")
+--   
+--   -- Send the input to ShowCopilotChatActionPrompt
+--   if input ~= "" then
+--     require("CopilotChat").ShowCopilotChatActionPrompt(input, { selection = select.visual })
+--   end
+-- end
+--
+-- vim.api.nvim_set_keymap("v", "<leader>cv", "<cmd>lua ShowCopilotChatActionPromptVisualSelection()<cr>", { noremap = true, silent = true })
