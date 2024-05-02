@@ -1,1 +1,1 @@
-let g:gyazo#token = '$GYAZO_TOKEN'
+"let g:gyazo#token = '$GYAZO_TOKEN'

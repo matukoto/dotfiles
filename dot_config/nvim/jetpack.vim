@@ -72,7 +72,7 @@ function! s:init() abort
   call jetpack#add('yuki-yano/fuzzy-motion.vim')
   call jetpack#add('ethanholz/nvim-lastplace')
   call jetpack#add('haya14busa/vim-edgemotion')
-  call jetpack#add('gamoutatsumi/gyazoupload.vim')
+  "call jetpack#add('gamoutatsumi/gyazoupload.vim')
   "call jetpack#add('skanehira/denops-docker.vim')
   "call jetpack#add('skanehira/k8s.vim')
   call jetpack#add('cshuaimin/ssr.nvim')
