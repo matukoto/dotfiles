@@ -33,9 +33,20 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { buffer = true })
   end,
 })
+-- https://github.com/uga-rosa/dotfiles/blob/12d4eebe8814092e7d1f4cfc8bf028bca0620ab9/nvim/lua/rc/plugins/lsp/lua_ls.lua
+-- local helper = require("rc.helper.lsp")
+-- local formatter = require("rc.helper.formatter")
+-- helper.on_attach("lua_ls", function(_, bufnr)
+--   vim.api.nvim_buf_create_user_command(bufnr, "Format", function()
+--     local cmd = ("stylua -f %s -"):format(vim.fs.normalize("~/.config/stylua.toml"))
+--     if vim.fs.isfile("stylua.toml") or vim.fs.isfile(".stylua.toml") then
+--       cmd = "stylua -"
+--     end
+--     formatter.stdin(cmd)
+--   end, {})
+-- end)
 
 local lspconfig = require('lspconfig')
-
 lspconfig.lua_ls.setup({
   settings = {
     Lua = {
