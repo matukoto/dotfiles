@@ -11,6 +11,7 @@ require("telescope").setup {
         -- "<C-h>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-c>"] = actions.close,
+        ["q"] = actions.close,
       },
       n = { ["q"] = actions.close },
     },
@@ -33,8 +34,16 @@ require("telescope").setup {
       },
     }
   },
+  pickers = {
+    buffers = {
+      initial_mode = 'normal',
+      sort_mru = true,
+      ignore_current_buffer = true,
+    },
+  }
 }
 -- require('telescope').load_extension('fzy_native')
 -- telescope
 vim.keymap.set("n", "<leader>d", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<CR>")
