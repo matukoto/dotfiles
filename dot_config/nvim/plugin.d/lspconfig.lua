@@ -1,3 +1,16 @@
+require('mason').setup()
+require('mason-lspconfig').setup()
+
+local capabilities = require('ddc_source_lsp').make_client_capabilities()
+
+require('mason-lspconfig').setup_handlers{
+  function(server_name)
+    return require('lspconfig')[server_name].setup{
+    capabilities = capabilities,
+  }
+  end
+}
+
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ctx)
     local set = vim.keymap.set
@@ -20,16 +33,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { buffer = true })
   end,
 })
+
 local lspconfig = require('lspconfig')
 
 lspconfig.lua_ls.setup({
   settings = {
     Lua = {
-      -- runtime = {
-      --   version = "LuaJIT",
-      --   pathStrict = true,
-      --   path = { "?.lua", "?/init.lua" },
-      -- },
+      runtime = {
+        version = "LuaJIT",
+        pathStrict = true,
+        path = { "?.lua", "?/init.lua" },
+      },
       workspace = {
         library = vim.list_extend(vim.api.nvim_get_runtime_file("lua", true), {
           "${3rd}/luv/library",
