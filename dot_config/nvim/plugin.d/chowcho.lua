@@ -34,3 +34,5 @@ require('chowcho').setup {
     },
   },
 }
+
+vim.keymap.set("n", "<Leader><Leader>", "<cmd>lua require('chowcho').run()<CR>")
