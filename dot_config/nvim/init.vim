@@ -63,4 +63,4 @@ nnoremap qt <Cmd>tabclose<CR>
 source $VIMHOME/jetpack.vim
 
 " colorscheme
-colorscheme everforest
+" colorscheme everforest
