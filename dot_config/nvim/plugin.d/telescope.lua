@@ -27,12 +27,16 @@ require("telescope").setup {
         reverse_directories = false,
       }
     },
-    extensions = {
-      fzy_native = {
-      override_generic_sorter = false,
-      override_file_sorter = true,
-      },
-    }
+  },
+  extensions = {
+    fzy_native = {
+    override_generic_sorter = false,
+    override_file_sorter = true,
+    },
+    smart_open = {
+      match_algorithm = 'fzf',
+      disable_devicons = false,
+    },
   },
   pickers = {
     buffers = {
@@ -42,8 +46,9 @@ require("telescope").setup {
     },
   }
 }
--- require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('smart_open')
 -- telescope
 vim.keymap.set("n", "<leader>d", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>o", "<cmd>Telescope smart_open<CR>")
 vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<CR>")
