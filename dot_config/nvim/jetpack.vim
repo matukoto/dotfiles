@@ -103,15 +103,15 @@ function! s:init() abort
 
   " カラースキーマ
   call jetpack#add('gen740/SmoothCursor.nvim')
-  call jetpack#add('sainnhe/gruvbox-material')
-  call jetpack#add('sainnhe/edge')
-  call jetpack#add('sainnhe/sonokai')
-  call jetpack#add('sainnhe/everforest')
+  " call jetpack#add('sainnhe/gruvbox-material')
+  " call jetpack#add('sainnhe/edge')
+  " call jetpack#add('sainnhe/sonokai')
+  " call jetpack#add('sainnhe/everforest')
   call jetpack#add('edeneast/nightfox.nvim')
-  call jetpack#add('bluz71/vim-nightfly-colors', { 'as': 'nightfly' })
-  call jetpack#add('kyoh86/momiji')
-  call jetpack#add('taniarascia/new-moon.vim')
-  call jetpack#add('catppuccin/nvim', { 'as': 'catppuccin' })
+  " call jetpack#add('bluz71/vim-nightfly-colors', { 'as': 'nightfly' })
+  " call jetpack#add('kyoh86/momiji')
+  " call jetpack#add('taniarascia/new-moon.vim')
+  " call jetpack#add('catppuccin/nvim', { 'as': 'catppuccin' })
 
   call jetpack#end()
 endfunction
