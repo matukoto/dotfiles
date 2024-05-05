@@ -1,3 +1,3 @@
-require ("term-edit").setup {
-  prompt_end = "%$ ",
-}
+require('term-edit').setup({
+  prompt_end = '%$ ',
+})

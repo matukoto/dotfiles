@@ -1,4 +1,4 @@
-require('lualine').setup {
+require('lualine').setup({
   options = {
     icons_enabled = true,
     theme = 'auto',
@@ -15,7 +15,7 @@ require('lualine').setup {
       statusline = 1000,
       tabline = 1000,
       winbar = 1000,
-    }
+    },
   },
   sections = {
     lualine_a = { 'mode', 'statusline_skk#mode' },
@@ -30,8 +30,8 @@ require('lualine').setup {
           modified = ' [+]',
           readonly = ' [RO]',
           unnamed = 'Untitled',
-        }
-      }
+        },
+      },
     },
     lualine_x = { 'searchcount' },
     --{
@@ -55,7 +55,7 @@ require('lualine').setup {
     --   always_visible = false,
     -- },
     lualine_y = { 'encoding', 'fileformat', 'filetype' },
-    lualine_z = { 'location', 'progress' }
+    lualine_z = { 'location', 'progress' },
   },
   inactive_sections = {
     lualine_a = {},
@@ -63,10 +63,10 @@ require('lualine').setup {
     lualine_c = { 'filename' },
     lualine_x = { 'location' },
     lualine_y = {},
-    lualine_z = {}
+    lualine_z = {},
   },
   tabline = {},
   winbar = {},
   inactive_winbar = {},
-  extensions = {}
-}
+  extensions = {},
+})

@@ -1,11 +1,11 @@
-require("oil").setup({
+require('oil').setup({
   -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
   -- Set to false if you still want to use netrw.
   default_file_explorer = true,
   -- Id is automatically added at the beginning, and name at the end
   -- See :help oil-columns
   columns = {
-    "icon",
+    'icon',
     -- "permissions",
     -- "size",
     -- "mtime",
@@ -13,18 +13,18 @@ require("oil").setup({
   -- Buffer-local options to use for oil buffers
   buf_options = {
     buflisted = false,
-    bufhidden = "hide",
+    bufhidden = 'hide',
   },
   -- Window-local options to use for oil buffers
   win_options = {
     wrap = false,
-    signcolumn = "no",
+    signcolumn = 'no',
     cursorcolumn = false,
-    foldcolumn = "0",
+    foldcolumn = '0',
     spell = false,
     list = false,
     conceallevel = 3,
-    concealcursor = "nvic",
+    concealcursor = 'nvic',
   },
   -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
   delete_to_trash = false,
@@ -46,7 +46,7 @@ require("oil").setup({
   },
   -- Constrain the cursor to the editable parts of the oil buffer
   -- Set to `false` to disable, or "name" to keep it on the file names
-  constrain_cursor = "editable",
+  constrain_cursor = 'editable',
   -- Set to true to watch the filesystem for changes and reload oil
   experimental_watch_for_changes = false,
   -- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap
@@ -56,28 +56,28 @@ require("oil").setup({
   -- Set to `false` to remove a keymap
   -- See :help oil-actions for a list of all available actions
   keymaps = {
-    ["?"] = "actions.show_help",
-    ["<CR>"] = "actions.select",
-    ["<C-s>"] = "actions.select_vsplit",
-    ["<C-h>"] = "actions.select_split",
+    ['?'] = 'actions.show_help',
+    ['<CR>'] = 'actions.select',
+    ['<C-s>'] = 'actions.select_vsplit',
+    ['<C-h>'] = 'actions.select_split',
     -- ディレクトリを開く
-    ["l"] = "actions.select",
-    ["<C-t>"] = "actions.select_tab",
-    ["<C-p>"] = "actions.preview",
-    ["<C-c>"] = "actions.close",
-    ["<C-l>"] = "actions.refresh",
-    ["-"] = "actions.parent",
-    ["_"] = "actions.open_cwd",
-    ["`"] = "actions.cd",
-    ["~"] = "actions.tcd",
-    ["gs"] = "actions.change_sort",
-    ["ge"] = "actions.open_external",
-    ["g."] = "actions.toggle_hidden",
-    ["g\\"] = "actions.toggle_trash",
+    ['l'] = 'actions.select',
+    ['<C-t>'] = 'actions.select_tab',
+    ['<C-p>'] = 'actions.preview',
+    ['<C-c>'] = 'actions.close',
+    ['<C-l>'] = 'actions.refresh',
+    ['-'] = 'actions.parent',
+    ['_'] = 'actions.open_cwd',
+    ['`'] = 'actions.cd',
+    ['~'] = 'actions.tcd',
+    ['gs'] = 'actions.change_sort',
+    ['ge'] = 'actions.open_external',
+    ['g.'] = 'actions.toggle_hidden',
+    ['g\\'] = 'actions.toggle_trash',
   },
   -- Configuration for the floating keymaps help window
   keymaps_help = {
-    border = "rounded",
+    border = 'rounded',
   },
   -- Set to false to disable all of the above keymaps
   use_default_keymaps = false,
@@ -86,7 +86,7 @@ require("oil").setup({
     show_hidden = false,
     -- This function defines what is considered a "hidden" file
     is_hidden_file = function(name, bufnr)
-      return vim.startswith(name, ".")
+      return vim.startswith(name, '.')
     end,
     -- This function defines what will never be shown, even when `show_hidden` is set
     is_always_hidden = function(name, bufnr)
@@ -98,8 +98,8 @@ require("oil").setup({
     sort = {
       -- sort order can be "asc" or "desc"
       -- see :help oil-columns to see which columns are sortable
-      { "type", "asc" },
-      { "name", "asc" },
+      { 'type', 'asc' },
+      { 'name', 'asc' },
     },
   },
   -- EXPERIMENTAL support for performing file operations with git
@@ -121,7 +121,7 @@ require("oil").setup({
     padding = 2,
     max_width = 0,
     max_height = 0,
-    border = "rounded",
+    border = 'rounded',
     win_options = {
       winblend = 0,
     },
@@ -149,7 +149,7 @@ require("oil").setup({
     min_height = { 5, 0.1 },
     -- optionally define an integer/float for the exact height of the preview window
     height = nil,
-    border = "rounded",
+    border = 'rounded',
     win_options = {
       winblend = 0,
     },
@@ -164,14 +164,14 @@ require("oil").setup({
     max_height = { 10, 0.9 },
     min_height = { 5, 0.1 },
     height = nil,
-    border = "rounded",
-    minimized_border = "none",
+    border = 'rounded',
+    minimized_border = 'none',
     win_options = {
       winblend = 0,
     },
   },
   -- Configuration for the floating SSH window
   ssh = {
-    border = "rounded",
+    border = 'rounded',
   },
 })
