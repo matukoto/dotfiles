@@ -13,8 +13,6 @@ function! s:init() abort
   " lsp
   call jetpack#add('neovim/nvim-lspconfig')
   call jetpack#add('nvim-lua/lsp-status.nvim')
-  call jetpack#add('williamboman/mason.nvim')
-  call jetpack#add('williamboman/mason-lspconfig.nvim')
   call jetpack#add('nvimtools/none-ls.nvim')
 
   " dd
