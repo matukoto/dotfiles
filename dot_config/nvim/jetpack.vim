@@ -95,6 +95,7 @@ function! s:init() abort
   call jetpack#add('mechatroner/rainbow_csv')
   call jetpack#add('tkmpypy/chowcho.nvim')
   call jetpack#add('folke/styler.nvim')
+  call jetpack#add('b0o/incline.nvim')
 
   " DB
   call jetpack#add('tpope/vim-dadbod')
