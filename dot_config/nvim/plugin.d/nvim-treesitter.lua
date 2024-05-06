@@ -8,6 +8,7 @@ require('nvim-treesitter.configs').setup({
     'svelte',
     'json',
     'markdown',
+    'markdown_inline',
     'lua',
     'html',
     'css',

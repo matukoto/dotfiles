@@ -97,6 +97,7 @@ function! s:init() abort
   call jetpack#add('folke/styler.nvim')
   call jetpack#add('b0o/incline.nvim')
   call jetpack#add('ahmedkhalf/project.nvim')
+  call jetpack#add('MeanderingProgrammer/markdown.nvim')
   " DB
   call jetpack#add('tpope/vim-dadbod')
   call jetpack#add('kristijanhusak/vim-dadbod-ui')
