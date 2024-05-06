@@ -7,6 +7,6 @@
 curl https://mise.run | sh
 
 # yay
-yay -S --noconfirm sqlite
-yay -S --noconfirm jq
-yay -S --noconfirm ripgrep
+# yay -S --noconfirm sqlite
+# yay -S --noconfirm jq
+# yay -S --noconfirm ripgrep
