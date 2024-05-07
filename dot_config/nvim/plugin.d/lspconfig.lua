@@ -43,8 +43,8 @@ lspconfig.lua_ls.setup({
   capabilities = capabilities,
 })
 
-lspconfig.typos_lsp.setup({
-  init_options = {
-    config = '~/.config/typos/typos.toml',
-  },
-})
+-- lspconfig.typos_lsp.setup({
+--   init_options = {
+--     config = '~/.config/typos/typos.toml',
+--   },
+-- })
