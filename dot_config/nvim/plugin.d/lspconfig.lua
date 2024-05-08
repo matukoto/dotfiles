@@ -1,3 +1,11 @@
+require('mason').setup()
+require('java').setup({})
+require('mason-lspconfig').setup_handlers({
+  function(server_name)
+    require('lspconfig')[server_name].setup({})
+  end,
+})
+
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ctx)
     local set = vim.keymap.set
@@ -43,8 +51,9 @@ lspconfig.lua_ls.setup({
   capabilities = capabilities,
 })
 
--- lspconfig.typos_lsp.setup({
---   init_options = {
---     config = '~/.config/typos/typos.toml',
---   },
--- })
+lspconfig.jdtls.setup({})
+lspconfig.typos_lsp.setup({
+  init_options = {
+    config = '~/.config/typos/typos.toml',
+  },
+})
