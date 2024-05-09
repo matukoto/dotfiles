@@ -4,13 +4,24 @@ require('mason').setup({
     'github:mason-org/mason-registry',
   },
 })
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    'svelte',
+    'lua_ls',
+    'sqls',
+    'typos_lsp',
+    'bashls',
+    'marksman',
+  },
+})
 
-require('java').setup({})
 require('mason-lspconfig').setup_handlers({
   function(server_name)
     require('lspconfig')[server_name].setup({})
   end,
 })
+
+require('java').setup({})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ctx)
@@ -58,6 +69,7 @@ lspconfig.lua_ls.setup({
 })
 
 lspconfig.jdtls.setup({})
+
 lspconfig.typos_lsp.setup({
   init_options = {
     config = '~/.config/typos/typos.toml',
