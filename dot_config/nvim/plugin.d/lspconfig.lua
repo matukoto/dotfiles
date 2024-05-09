@@ -1,4 +1,10 @@
-require('mason').setup()
+require('mason').setup({
+  registries = {
+    'github:nvim-java/mason-registry',
+    'github:mason-org/mason-registry',
+  },
+})
+
 require('java').setup({})
 require('mason-lspconfig').setup_handlers({
   function(server_name)
