@@ -7,5 +7,5 @@ call skkeleton#config({
       \ 'registerConvertResult': v:true,
       \ 'showCandidatesCount': 2,
       \})
-imap <C-j> <Plug>(skkeleton-enable);
-cmap <C-j> <Plug>(skkeleton-enable);
+imap <C-j> <Plug>(skkeleton-enable)
+cmap <C-j> <Plug>(skkeleton-enable)
