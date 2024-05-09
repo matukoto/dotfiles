@@ -36,7 +36,7 @@ function! s:init() abort
   call jetpack#add('shougo/ddc-source-lsp')
 
   " ファイラ
-  call jetpack#add('lambdalisue/fern.vim')
+  call jetpack#add('lambdalisue/vim-fern')
   call jetpack#add('yuki-yano/fern-preview.vim')
   call jetpack#add('stevearc/oil.nvim')
 
@@ -49,18 +49,18 @@ function! s:init() abort
   call jetpack#add('chomosuke/term-edit.nvim')
   call jetpack#add('nvim-treesitter/nvim-treesitter')
   " nerdfont
-  call jetpack#add('lambdalisue/nerdfont.vim')
-  call jetpack#add('lambdalisue/fern-renderer-nerdfont.vim')
-  call jetpack#add('lambdalisue/fern-git-status.vim')
+  call jetpack#add('lambdalisue/vim-nerdfont')
+  call jetpack#add('lambdalisue/vim-fern-renderer-nerdfont')
+  call jetpack#add('lambdalisue/vim-fern-git-status')
   " git
-  call jetpack#add('lambdalisue/gin.vim')
+  call jetpack#add('lambdalisue/vim-gin')
   call jetpack#add('APZelos/blamer.nvim')
   call jetpack#add('iberianpig/tig-explorer.vim')
   call jetpack#add('lewis6991/gitsigns.nvim')
 
   " 日本語
-  call jetpack#add('lambdalisue/kensaku.vim')
-  call jetpack#add('lambdalisue/kensaku-search.vim')
+  call jetpack#add('lambdalisue/vim-kensaku')
+  call jetpack#add('lambdalisue/vim-kensaku-search')
   call jetpack#add('hrsh7th/vim-searchx')
   call jetpack#add('vim-skk/skkeleton')
   "call jetpack#add('NI57721/skkeleton-state-popup')
@@ -100,9 +100,9 @@ function! s:init() abort
   call jetpack#add('reireias/vim-cheatsheet')
   call jetpack#add('itchyny/vim-cursorword')
   call jetpack#add('tyru/open-browser.vim')
-  call jetpack#add('lambdalisue/guise.vim')
-  call jetpack#add('lambdalisue/mr.vim')
-  call jetpack#add('lambdalisue/mr-quickfix.vim')
+  call jetpack#add('lambdalisue/vim-guise')
+  call jetpack#add('lambdalisue/vim-mr')
+  call jetpack#add('lambdalisue/vim-mr-quickfix')
   call jetpack#add('Bakudankun/BackAndForward.vim')
   call jetpack#add('MeanderingProgrammer/markdown.nvim')
   call jetpack#add('mechatroner/rainbow_csv')
