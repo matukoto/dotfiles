@@ -55,5 +55,7 @@ lspconfig.jdtls.setup({})
 lspconfig.typos_lsp.setup({
   init_options = {
     config = '~/.config/typos/typos.toml',
+    -- How typos are rendered in the editor, can be one of an Error, Warning, Info or Hint.
+    diagnosticSeverity = 'Hint',
   },
 })
