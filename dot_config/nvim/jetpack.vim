@@ -25,8 +25,6 @@ function! s:init() abort
   call jetpack#add('nvim-java/nvim-java')
   call jetpack#add('williamboman/mason.nvim')
   call jetpack#add('williamboman/mason-lspconfig.nvim')
-  call jetpack#add('nvim-java/mason-registry')
-  call jetpack#add('mason-org/mason-registry')
 
   " dd
   call jetpack#add('shougo/ddc.vim')
