@@ -59,6 +59,7 @@ nnoremap <silent> H :tabprevious<CR>
 nnoremap <silent> L :tabnext<CR>
 nnoremap qt <Cmd>tabclose<CR>
 
+nnoremap <silent> <Leader>p "*p
 " Plugin
 source $VIMHOME/jetpack.vim
 
