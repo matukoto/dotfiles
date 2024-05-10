@@ -23,6 +23,11 @@ nnoremap <buffer> <C-l> <Cmd>MarkdownCheckbox<CR>
 inoremap <buffer> <C-l> <Cmd>MarkdownCheckbox<CR>
 xnoremap <buffer> <C-l> <Cmd>MarkdownCheckbox<CR>
 
+" skkeleton
+call skkeleton#config({
+      \ 'keepState': v:true,
+      \ })
+
 " toggle checkbox function
 function! s:markdown_checkbox(from, to) abort
   let from = a:from
