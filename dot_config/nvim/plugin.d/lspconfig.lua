@@ -13,6 +13,7 @@ require('mason-lspconfig').setup({
     'typos_lsp',
     'bashls',
     'marksman',
+    'vimls',
   },
 })
 
@@ -71,6 +72,7 @@ lspconfig.lua_ls.setup({
 
 lspconfig.jdtls.setup({})
 
+lspconfig.vimls.setup({})
 lspconfig.sqls.setup({
   on_attach = function(client, bufnr)
     require('sqls').on_attach(client, bufnr)
