@@ -5,6 +5,7 @@ alias l='clear && ls'
 
 alias v='nvim'
 alias dot='chezmoi cd'
+alias conf='cd $HOME/.config'
 
 {{ if (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) }}
 alias work='cd $HOME/work/workLog/'
