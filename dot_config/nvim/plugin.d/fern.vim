@@ -1,5 +1,5 @@
-" ドットファイルなどをデフォルトで表示
-let g:fern#default_hidden = 1
+" ドットファイルなどをデフォルトで表示しない
+let g:fern#default_hidden = 0
 " drawer で開く
 nnoremap <silent> <Leader>E  :<C-u>Fern . -drawer<CR>
 nnoremap <silent> <Leader>e  :<C-u>Fern . -reveal=%<CR>
