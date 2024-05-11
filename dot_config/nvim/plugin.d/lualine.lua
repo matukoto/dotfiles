@@ -18,7 +18,7 @@ require('lualine').setup({
     },
   },
   sections = {
-    lualine_a = { 'mode', 'statusline_skk#mode' },
+    lualine_a = { 'mode' },
     lualine_b = { 'branch', 'diff', 'diagnostics' },
     lualine_c = {
       {
