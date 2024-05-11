@@ -7,6 +7,7 @@ require('mason').setup({
 require('mason-lspconfig').setup({
   ensure_installed = {
     'svelte',
+    'vtsls',
     'lua_ls',
     'sqls',
     'typos_lsp',
