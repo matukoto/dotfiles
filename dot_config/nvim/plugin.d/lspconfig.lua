@@ -71,6 +71,26 @@ lspconfig.lua_ls.setup({
 
 lspconfig.jdtls.setup({})
 
+lspconfig.sqls.setup({
+  on_attach = function(client, bufnr)
+    require('sqls').on_attach(client, bufnr)
+  end,
+  settings = {
+    sqls = {
+      connections = {
+        -- {
+        --   driver = 'mysql',
+        --   dataSourceName = 'root:root@tcp(127.0.0.1:13306)/world',
+        -- },
+        {
+          driver = 'postgresql',
+          dataSourceName = 'postgresql://postgres:postgres@localhost:5432/postgres',
+        },
+      },
+    },
+  },
+})
+
 lspconfig.typos_lsp.setup({
   init_options = {
     config = '~/.config/typos/typos.toml',
