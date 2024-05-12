@@ -16,7 +16,6 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'lsp': {
       \   'mark': 'lsp',
       \   'isVolatile': v:true,
-      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
       \   'minAutoCompleteLength': 2,
       \ },
       \ 'file': {
