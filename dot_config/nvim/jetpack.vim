@@ -29,10 +29,11 @@ function! s:init() abort
 
   " dd
   call jetpack#add('shougo/ddc.vim')
-  call jetpack#add('shougo/ddc-ui-native')
   call jetpack#add('shougo/ddc-matcher_head')
   call jetpack#add('shougo/ddc-sorter_rank')
   call jetpack#add('shougo/ddc-source-lsp')
+  call jetpack#add('shougo/ddc-ui-pum')
+  call jetpack#add('shougo/pum.vim')
 
   " ファイラ
   call jetpack#add('lambdalisue/vim-fern')
