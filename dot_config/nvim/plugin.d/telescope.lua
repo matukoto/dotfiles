@@ -4,8 +4,8 @@ require('telescope').setup({
     initial_mode = 'insert',
     mappings = {
       i = {
-        ['<C-j>'] = actions.move_selection_next,
-        ['<C-k>'] = actions.move_selection_previous,
+        ['<C-n>'] = actions.move_selection_next,
+        ['<C-p>'] = actions.move_selection_previous,
         ['<C-t>'] = actions.select_tab,
         ['<C-h>'] = actions.select_horizontal,
         ['<C-v>'] = actions.select_vertical,
