@@ -1,5 +1,5 @@
 call ddc#custom#patch_global('ui', 'pum')
-call ddc#custom#patch_global('sources', ['skkeleton','lsp','file'])
+call ddc#custom#patch_global('sources', ['skkeleton','copilot','lsp','file'])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_fuzzy'],
@@ -7,15 +7,15 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'converters': ['converter_fuzzy']
       \ },
       \ 'skkeleton': {
-      \   'isVolatile': v:true,
       \   'mark': 'skk',
+      \   'isVolatile': v:true,
       \   'matchers': ['skkeleton'],
       \   'sorters': ['sorter_rank'],
       \   'minAutoCompleteLength': 2,
       \ },
       \ 'lsp': {
-      \   'isVolatile': v:true,
       \   'mark': 'lsp',
+      \   'isVolatile': v:true,
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
       \   'minAutoCompleteLength': 2,
       \ },
@@ -23,6 +23,12 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'mark': 'F',
       \   'isVolatile': v:true,
       \   'forceCompletionPattern': '\S/\S*',
+      \   'minAutoCompleteLength': 2,
+      \ },
+      \ 'copilot': {
+      \   'mark': 'copilot',
+      \   'isVolatile': v:true,
+      \   'minAutoCompleteLength': 0,
       \ },
       \ })
 
