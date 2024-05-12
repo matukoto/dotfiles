@@ -1,20 +1,30 @@
 call ddc#custom#patch_global('ui', 'pum')
-call ddc#custom#patch_global('sources', ['skkeleton','lsp'])
+call ddc#custom#patch_global('sources', ['skkeleton','lsp','file'])
 call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+      \   'converters': ['converter_fuzzy']
+      \ },
       \ 'skkeleton': {
-      \     'isVolatile': v:true,
-      \     'mark': 'skk',
-      \     'matchers': ['skkeleton'],
-      \     'sorters': ['sorter_rank'],
-      \     'minAutoCompleteLength': 2,
-      \   },
+      \   'isVolatile': v:true,
+      \   'mark': 'skk',
+      \   'matchers': ['skkeleton'],
+      \   'sorters': ['sorter_rank'],
+      \   'minAutoCompleteLength': 2,
+      \ },
       \ 'lsp': {
-      \     'isVolatile': v:true,
-      \     'mark': 'lsp',
-      \     'forceCompletionPattern': '\.\w*|:\w*|->\w*',
-      \     'matchers': ['matcher_head'],
-      \     'sorters': ['sorter_rank'],
-      \     'minAutoCompleteLength': 2,
+      \   'isVolatile': v:true,
+      \   'mark': 'lsp',
+      \   'matchers': ['matcher_fuzzy'],
+      \   'sorters': ['sorter_fuzzy'],
+      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+      \   'minAutoCompleteLength': 2,
+      \ },
+      \ 'file': {
+      \   'mark': 'F',
+      \   'isVolatile': v:true,
+      \   'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank'],
+      \   'forceCompletionPattern': '\S/\S*',
       \ },
       \ })
 

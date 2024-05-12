@@ -27,13 +27,18 @@ function! s:init() abort
   call jetpack#add('williamboman/mason-lspconfig.nvim')
   call jetpack#add('nanotee/sqls.nvim')
 
-  " dd
+  " ddc
   call jetpack#add('shougo/ddc.vim')
+  " filter
   call jetpack#add('shougo/ddc-matcher_head')
   call jetpack#add('shougo/ddc-sorter_rank')
-  call jetpack#add('shougo/ddc-source-lsp')
+  call jetpack#add('tani/ddc-fuzzy')
+  " ui
   call jetpack#add('shougo/ddc-ui-pum')
   call jetpack#add('shougo/pum.vim')
+  " sources
+  call jetpack#add('shougo/ddc-source-lsp')
+  call jetpack#add('LumaKernel/ddc-source-file')
 
   " ファイラ
   call jetpack#add('lambdalisue/vim-fern')
