@@ -7,7 +7,9 @@ if vim.fn.has('wsl') == 1 then
     },
     paste = {
       ['+'] = 'xsel -bo',
-      ['*'] = function() return vim.fn.systemlist('xsel -bo | tr -d "\r"') end,
+      ['*'] = function()
+        return vim.fn.systemlist('xsel -bo | tr -d "\r"')
+      end,
     },
     cache_enabled = 1,
   }
