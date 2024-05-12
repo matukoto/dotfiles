@@ -11,6 +11,7 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'isVolatile': v:true,
       \   'matchers': ['skkeleton'],
       \   'sorters': ['sorter_rank'],
+      \   'converters': [],
       \   'minAutoCompleteLength': 2,
       \ },
       \ 'lsp': {
