@@ -1,5 +1,5 @@
 call ddc#custom#patch_global('ui', 'pum')
-call ddc#custom#patch_global('sources', ['skkeleton','copilot','lsp','file'])
+call ddc#custom#patch_global('sources', ['skkeleton','lsp','file'])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_fuzzy'],
@@ -33,14 +33,6 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'mark': 'F',
       \   'isVolatile': v:true,
       \   'forceCompletionPattern': '\S/\S*',
-      \   'minAutoCompleteLength': 0,
-      \ },
-      \ })
-
-call ddc#custom#patch_global('sourceOptions', {
-      \ 'copilot': {
-      \   'mark': 'copilot',
-      \   'isVolatile': v:true,
       \   'minAutoCompleteLength': 0,
       \ },
       \ })

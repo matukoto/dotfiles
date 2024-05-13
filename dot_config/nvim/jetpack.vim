@@ -39,7 +39,7 @@ function! s:init() abort
   " sources
   call jetpack#add('shougo/ddc-source-lsp')
   call jetpack#add('LumaKernel/ddc-source-file')
-  call jetpack#add('shougo/ddc-source-copilot')
+  " call jetpack#add('shougo/ddc-source-copilot')
   " popup
   call jetpack#add('matsui54/denops-popup-preview.vim')
   call jetpack#add('matsui54/denops-signature_help')
