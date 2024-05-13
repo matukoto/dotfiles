@@ -17,7 +17,8 @@ require('mason-lspconfig').setup({
   },
 })
 
-local capabilities = require('ddc_source_lsp').make_client_capabilities()
+require('ddc_source_lsp_setup').setup()
+-- local capabilities = require('ddc_source_lsp').make_client_capabilities()
 require('mason-lspconfig').setup_handlers({
   function(server_name)
     require('lspconfig')[server_name].setup({})
@@ -68,16 +69,11 @@ lspconfig.lua_ls.setup({
       },
     },
   },
-  capabilities = capabilities,
 })
 
-lspconfig.jdtls.setup({
-  capabilities = capabilities,
-})
+lspconfig.jdtls.setup({})
 
-lspconfig.vimls.setup({
-  capabilities = capabilities,
-})
+lspconfig.vimls.setup({})
 lspconfig.sqls.setup({
   on_attach = function(client, bufnr)
     require('sqls').on_attach(client, bufnr)
@@ -96,7 +92,6 @@ lspconfig.sqls.setup({
       },
     },
   },
-  capabilities = capabilities,
 })
 
 lspconfig.typos_lsp.setup({
