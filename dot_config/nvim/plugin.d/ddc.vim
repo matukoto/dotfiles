@@ -4,27 +4,40 @@ call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_fuzzy'],
       \   'sorters': ['sorter_fuzzy'],
-      \   'converters': ['converter_fuzzy']
-      \ },
+      \   'converters': ['converter_fuzzy'],
+      \ }
+      \ })
+
+call ddc#custom#patch_global('sourceOptions', {
       \ 'skkeleton': {
       \   'mark': 'skk',
       \   'isVolatile': v:true,
       \   'matchers': ['skkeleton'],
-      \   'sorters': ['sorter_rank'],
+      \   'sorters': [],
       \   'converters': [],
-      \   'minAutoCompleteLength': 2,
+      \   'minAutoCompleteLength': 1,
       \ },
+      \ })
+
+call ddc#custom#patch_global('sourceOptions', {
       \ 'lsp': {
       \   'mark': 'lsp',
       \   'isVolatile': v:true,
+      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
       \   'minAutoCompleteLength': 2,
       \ },
+      \ })
+
+call ddc#custom#patch_global('sourceOptions', {
       \ 'file': {
       \   'mark': 'F',
       \   'isVolatile': v:true,
       \   'forceCompletionPattern': '\S/\S*',
-      \   'minAutoCompleteLength': 2,
+      \   'minAutoCompleteLength': 0,
       \ },
+      \ })
+
+call ddc#custom#patch_global('sourceOptions', {
       \ 'copilot': {
       \   'mark': 'copilot',
       \   'isVolatile': v:true,
