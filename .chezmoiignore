@@ -3,5 +3,6 @@ dpp/
 others/
 run/
 wslconf/
+windows/
 my_private*
 README.md
