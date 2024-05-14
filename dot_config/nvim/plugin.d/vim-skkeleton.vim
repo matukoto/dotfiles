@@ -6,6 +6,7 @@ call skkeleton#config({
       \ 'immediatelyCancel': v:false,
       \ 'registerConvertResult': v:true,
       \ 'showCandidatesCount': 2,
+      \ 'debug': v:false,
       \})
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
