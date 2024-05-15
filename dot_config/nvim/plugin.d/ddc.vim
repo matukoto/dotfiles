@@ -33,7 +33,7 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'mark': 'F',
       \   'isVolatile': v:true,
       \   'forceCompletionPattern': '\S/\S*',
-      \   'minAutoCompleteLength': 0,
+      \   'minAutoCompleteLength': 1,
       \ },
       \ })
 
