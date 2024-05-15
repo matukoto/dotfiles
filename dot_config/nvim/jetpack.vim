@@ -76,7 +76,7 @@ function! s:init() abort
   call jetpack#add('NI57721/skkeleton-state-popup')
   " call jetpack#add('yasunori0418/statusline_skk.vim')
 
-  call jetpack#add('peteriho/nvim-scrollbar')
+  call jetpack#add('petertriho/nvim-scrollbar')
   " Obsidian
   " call jetpack#add('epwalsh/obsidian.nvim')
 
