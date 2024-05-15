@@ -1,5 +1,5 @@
 call ddc#custom#patch_global('ui', 'pum')
-call ddc#custom#patch_global('sources', ['skkeleton','lsp','file'])
+call ddc#custom#patch_global('sources', ['skkeleton','lsp','around','file'])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_fuzzy'],
@@ -16,6 +16,13 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'sorters': [],
       \   'converters': [],
       \   'minAutoCompleteLength': 1,
+      \ },
+      \ })
+
+call ddc#custom#patch_global('sourceOptions', {
+      \ 'around': {
+      \ 'mark': 'A',
+      \ 'minAutoCompleteLength': 2,
       \ },
       \ })
 

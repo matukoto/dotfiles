@@ -38,6 +38,7 @@ function! s:init() abort
   call jetpack#add('shougo/pum.vim')
   " sources
   call jetpack#add('shougo/ddc-source-lsp')
+  call jetpack#add('shougo/ddc-source-around')
   call jetpack#add('LumaKernel/ddc-source-file')
   " call jetpack#add('shougo/ddc-source-copilot')
   call jetpack#add('uga-rosa/ddc-source-lsp-setup')
