@@ -55,9 +55,9 @@ nnoremap <silent> <Leader>k <C-w>k
 nnoremap <silent> <Leader>l <C-w>l
 
 " タブ
-nnoremap <silent> H :tabprevious<CR>
-nnoremap <silent> L :tabnext<CR>
-nnoremap qt <Cmd>tabclose<CR>
+nnoremap <silent> H <Cmd>tabprevious<CR>
+nnoremap <silent> L <Cmd>tabnext<CR>
+nnoremap <silent> Q <Cmd>tabclose<CR>
 
 nnoremap <silent> <Leader>p "*p
 " Plugin
