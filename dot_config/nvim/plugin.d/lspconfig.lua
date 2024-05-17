@@ -49,7 +49,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { buffer = true })
   end,
 })
-
+vim.lsp.set_log_level('debug')
 local lspconfig = require('lspconfig')
 lspconfig.lua_ls.setup({
   settings = {
@@ -87,7 +87,7 @@ lspconfig.sqls.setup({
         -- },
         {
           driver = 'postgresql',
-          dataSourceName = 'postgresql://postgres:postgres@localhost:5432/postgres',
+          dataSourceName = 'host=127.0.0.1 port=5432 user=postgres password=postgres dbname=postgres sslmode=disable',
         },
       },
     },
