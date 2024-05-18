@@ -20,9 +20,9 @@ require('mason-lspconfig').setup({
 require('ddc_source_lsp_setup').setup()
 -- local capabilities = require('ddc_source_lsp').make_client_capabilities()
 require('mason-lspconfig').setup_handlers({
-  function(server_name)
-    require('lspconfig')[server_name].setup({})
-  end,
+  -- function(server_name)
+  --   require('lspconfig')[server_name].setup({})
+  -- end,
 })
 
 require('java').setup({})
@@ -49,7 +49,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { buffer = true })
   end,
 })
+
 vim.lsp.set_log_level('debug')
+
 local lspconfig = require('lspconfig')
 lspconfig.lua_ls.setup({
   settings = {
