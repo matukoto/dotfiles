@@ -54,6 +54,7 @@ function! s:init() abort
   " ステータスラインプラグイン
   call jetpack#add('nvim-lualine/lualine.nvim')
   call jetpack#add('nvim-tree/nvim-web-devicons')
+  call jetpack#add('nvim-treesitter/playground')
   " call jetpack#add('mvllow/modes.nvim', { 'tag': 'v0.2.0' })
 
   " terminal
