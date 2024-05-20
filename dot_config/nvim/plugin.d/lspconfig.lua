@@ -19,11 +19,11 @@ require('mason-lspconfig').setup({
 
 require('ddc_source_lsp_setup').setup()
 -- local capabilities = require('ddc_source_lsp').make_client_capabilities()
-require('mason-lspconfig').setup_handlers({
-  -- function(server_name)
-  --   require('lspconfig')[server_name].setup({})
-  -- end,
-})
+-- require('mason-lspconfig').setup_handlers({
+--   function(server_name)
+--     require('lspconfig')[server_name].setup({})
+--   end,
+-- })
 
 require('java').setup({})
 
@@ -47,8 +47,54 @@ vim.api.nvim_create_autocmd('LspAttach', {
     set('n', '<Leader>d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', { buffer = true })
     -- set("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", { buffer = true })
     -- set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { buffer = true })
+
+    -- -- 保存時に自動フォーマット
+    -- local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
+    -- local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    --
+    -- if client.supports_method('textDocument/formatting') then
+    --   local set_auto_format = function(lsp_name, pattern)
+    --     if client.name == lsp_name then
+    --       print(string.format('[%s] Enable auto-format on save', lsp_name))
+    --       vim.api.nvim_clear_autocmds({ group = augroup })
+    --       vim.api.nvim_create_autocmd('BufWritePre', {
+    --         group = augroup,
+    --         pattern = pattern,
+    --         callback = function()
+    --           print('[LSP] ' .. client.name .. ' format')
+    --           vim.lsp.buf.format({ buffer = ev.buf, async = false })
+    --         end,
+    --       })
+    --     end
+    --   end
+    --
+    --   set_auto_format('rust_analyzer', { '*.rs' })
+    --   set_auto_format('ruff_lsp', { '*.py' })
+    --   set_auto_format('denols', { '*.ts', '*.js' })
+    -- end
+    vim.diagnostic.config({ severity_sort = true })
   end,
 })
+
+local on_attach = function(client, bufnr)
+  -- ここで `bufnr` は現在のバッファ番号を指す
+  if client.server_capabilities.document_formatting then
+    vim.api.nvim_create_augroup('LspFormatting', { clear = true })
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      group = 'LspFormatting',
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({ async = false })
+      end,
+    })
+  end
+end
+
+local signs = { Error = ' ', Warn = ' ', Hint = '󱩎 ', Info = ' ' }
+for type, icon in pairs(signs) do
+  local hl = 'DiagnosticSign' .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl })
+end
 
 vim.lsp.set_log_level('debug')
 
@@ -73,9 +119,23 @@ lspconfig.lua_ls.setup({
   },
 })
 
-lspconfig.jdtls.setup({})
+lspconfig.jdtls.setup({
+  on_attach = on_attach,
+})
+lspconfig.bashls.setup({
+  on_attach = on_attach,
+})
+lspconfig.marksman.setup({
+  on_attach = on_attach,
+})
+lspconfig.svelte.setup({
+  on_attach = on_attach,
+})
+-- lspconfig.vtsls.setup({})
+lspconfig.vimls.setup({
+  on_attach = on_attach,
+})
 
-lspconfig.vimls.setup({})
 lspconfig.sqls.setup({
   on_attach = function(client, bufnr)
     require('sqls').on_attach(client, bufnr)
