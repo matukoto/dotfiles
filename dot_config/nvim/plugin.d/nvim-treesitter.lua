@@ -1,22 +1,30 @@
 require('nvim-treesitter.configs').setup({
   ensure_installed = {
+    -- Neovim
+    'query',
+    'vimdoc',
+    'vim',
+    'lua',
+    -- フロント
     'typescript',
     'tsx',
     'javascript',
     'vue',
-    'vim',
     'svelte',
-    'json',
-    'markdown',
-    'markdown_inline',
-    'lua',
     'html',
     'css',
+    --
     'java',
-    'yaml',
-    'dot',
-    'query',
+    'bash',
     'go',
+    -- 'nu',
+    'markdown',
+    'markdown_inline',
+    -- ファイル
+    'dot',
+    'json',
+    'yaml',
+    'toml',
   },
   highlight = {
     enable = true,
