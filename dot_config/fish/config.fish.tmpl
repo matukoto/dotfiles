@@ -1,17 +1,22 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-    starship init fish | source
-    # git
-    abbr --add gst 'git status'
-    abbr --add ga 'git add'
-    abbr --add gc 'git commit'
-    abbr --add gp 'git push'
-    abbr --add gpu 'git push --upstream-origin origin HEAD'
-    abbr --add gl 'git pull'
-    abbr --add gs 'git switch'
-    abbr --add gsc 'git switch -c'
-    # 
-    #
+
+set PATH ~/bin ~/.local/bin ~/.deno/bin ~/go/bin ~/.cargo/bin $PATH
+
+{{ if eq .chezmoi.osRelease.id "ubuntu" }}
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+{{ end }}
+
+starship init fish | source
+# git
+abbr --add gst 'git status'
+abbr --add ga 'git add'
+abbr --add gc 'git commit'
+abbr --add gp 'git push'
+abbr --add gpu 'git push --upstream-origin origin HEAD'
+abbr --add gl 'git pull'
+abbr --add gs 'git switch'
+abbr --add gsc 'git switch -c'
+
 # some more ls aliases
 abbr --add ll 'ls -alF'
 abbr --add la 'ls -A'
