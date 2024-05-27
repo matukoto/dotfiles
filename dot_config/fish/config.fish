@@ -1,4 +1,42 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     starship init fish | source
+    # git
+    abbr --add gst 'git status'
+    abbr --add ga 'git add'
+    abbr --add gc 'git commit'
+    abbr --add gp 'git push'
+    abbr --add gpu 'git push --upstream-origin origin HEAD'
+    abbr --add gl 'git pull'
+    abbr --add gs 'git switch'
+    abbr --add gsc 'git switch -c'
+    # 
+    #
+# some more ls aliases
+abbr --add ll 'ls -alF'
+abbr --add la 'ls -A'
+abbr --add l 'clear && ls'
+
+abbr --add v 'nvim'
+abbr --add va 'nvim ~/work/workLog/a.md'
+abbr --add dot 'chezmoi cd'
+abbr --add conf 'cd $HOME/.config'
+
+{{ if (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) }}
+# work
+abbr --add work 'cd $HOME/work/workLog/'
+abbr --add snsd 'cd $HOME/repo/local-dev-env/ut-tools/'
+{{ else }}
+# private
+abbr --add dia 'cd $HOME/myself/diary/'
+abbr --add shd 'cd $HOME/work/sh-dev/'
+abbr --add god 'cd $HOME/work/go-dev/'
+abbr --add vimd 'cd $HOME/work/vim-dev/'
+abbr --add dockerd 'cd $HOME/work/docker-dev/'
+abbr --add javad 'cd $HOME/work/java-dev/'
+abbr --add grpcd 'cd $HOME/work/grpc-dev/'
+abbr --add hobbyd 'cd $HOME/myself/hobby/'
+abbr --add techd 'cd $HOME/myself/tech/'
+{{ end }}
+
 end
