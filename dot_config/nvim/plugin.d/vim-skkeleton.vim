@@ -8,5 +8,13 @@ call skkeleton#config({
       \ 'showCandidatesCount': 2,
       \ 'debug': v:false,
       \})
+call skkeleton#register_kanatable('rom', {
+      \   '-': ['-',''],
+      \   '--': ['ー',''],
+      \   '.': ['.',''],
+      \   '..': ['。',''],
+      \   ',,': [',',''],
+      \   '/': ['/',''],
+      \ })
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
