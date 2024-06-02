@@ -1,7 +1,7 @@
 function ghf
-  if set -l d ( ghq list -p | fzf ); and test -n "$d"
-    echo "cd $d"
-  else
-    echo cd ( pwd )
+  if set -l d ( ghq list -p | fzf )
+    if test -n "$d"
+      eval cd $d
+    end
   end
 end
