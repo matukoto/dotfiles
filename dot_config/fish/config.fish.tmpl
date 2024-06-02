@@ -6,7 +6,18 @@ set PATH ~/bin ~/.local/bin ~/.deno/bin ~/go/bin ~/.cargo/bin $PATH
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 {{ end }}
 
-starship init fish | source
+# XDG Base Directory
+set -x XDG_CONFIG_HOME $HOME/.config
+set -x XDG_CACHE_HOME $HOME/.cache
+set -x XDG_DATA_HOME $HOME/.local/share
+set -x XDG_STATE_HOME $HOME/.local/state
+
+# Fish paths
+set -x FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
+#set -x FISH_COMPLETIONS_DIR $FISH_CONFIG_DIR/completions
+set -x FISH_FUNCTIONS_DIR $FISH_CONFIG_DIR/functions
+set -x FISH_CACHE_DIR $XDG_CACHE_HOME/fish
+
 abbr --add f ghf
 
 # git
@@ -50,4 +61,6 @@ abbr --add techd 'cd $HOME/myself/tech/'
 {{ end }}
 # vi
 fish_vi_key_bindings
+
+starship init fish | source
 end
