@@ -8,23 +8,6 @@ require('gitsigns').setup({
       vim.keymap.set(mode, l, r, opts)
     end
 
-    -- Navigation
-    map('n', ']c', function()
-      if vim.wo.diff then
-        vim.cmd.normal({ ']c', bang = true })
-      else
-        gitsigns.nav_hunk('next')
-      end
-    end)
-
-    map('n', '[c', function()
-      if vim.wo.diff then
-        vim.cmd.normal({ '[c', bang = true })
-      else
-        gitsigns.nav_hunk('prev')
-      end
-    end)
-
     -- Actions
     map('n', '<leader>hs', gitsigns.stage_hunk)
     map('n', '<leader>hr', gitsigns.reset_hunk)
@@ -52,3 +35,17 @@ require('gitsigns').setup({
     map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end,
 })
+
+-- hunk を移動する
+vim.api.nvim_set_keymap(
+  'n',
+  '<C-g>j',
+  '&diff ? "]c" : "<cmd>Gitsigns next_hunk<CR>"',
+  { expr = true, noremap = true }
+)
+vim.api.nvim_set_keymap(
+  'n',
+  '<C-g>k',
+  '&diff ? "[c" : "<cmd>Gitsigns prev_hunk<CR>"',
+  { expr = true, noremap = true }
+)
