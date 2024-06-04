@@ -26,6 +26,7 @@ function! s:init() abort
   call jetpack#add('williamboman/mason.nvim')
   call jetpack#add('williamboman/mason-lspconfig.nvim')
   call jetpack#add('nanotee/sqls.nvim')
+  call jetpack#add('stevearc/conform.nvim')
 
   " ddc
   call jetpack#add('shougo/ddc.vim')
