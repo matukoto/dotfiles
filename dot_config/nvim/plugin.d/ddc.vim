@@ -1,10 +1,11 @@
 call ddc#custom#patch_global('ui', 'pum')
-call ddc#custom#patch_global('sources', ['skkeleton','lsp','around','file'])
+call ddc#custom#patch_global('sources', ['skkeleton','file','around','lsp'])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_fuzzy'],
       \   'sorters': ['sorter_fuzzy'],
       \   'converters': ['converter_fuzzy'],
+      \   'maxItems': [50],
       \ }
       \ })
 
