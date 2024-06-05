@@ -1,16 +1,16 @@
-(list_item
-  (list_marker_minus)
-  (task_list_marker_checked) @symbol
-  (paragraph
-    (inline (_) @name)
-  )
-  (block_continuation)
-(#set! "kind" "Interface")
-) @symbol
+; (list_item
+;   (list_marker_minus)
+;   (task_list_marker_checked) @symbol
+;   (paragraph
+;     (inline (_) @name)
+;   )
+;   (block_continuation)
+; (#set! "kind" "Interface")
+; ) @symbol
 
 (atx_heading
   [(atx_h1_marker) (atx_h2_marker) (atx_h3_marker) (atx_h4_marker) (atx_h5_marker) (atx_h6_marker)] @level
-  ;heading_content: (_) @name
+  heading_content: (_) @name
   (#set! "kind" "Class")
   ) @symbol
 
