@@ -2,6 +2,7 @@ local jsFormatter = { { 'biome', 'prettierd', 'prettier' } }
 
 require('conform').setup({
   formatters_by_ft = {
+    lua = { 'stylua' }, -- 特に設定しなくても ~/.config/stylua/stylua.toml を見てくれる
     json = jsFormatter,
     javascript = jsFormatter,
     javascriptreact = jsFormatter,
