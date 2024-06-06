@@ -1,6 +1,6 @@
 require('chowcho').setup({
   -- Must be a single character. The length of the array is the maximum number of windows that can be moved.
-  labels = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I' },
+  labels = { 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L' },
   use_exclude_default = true,
   ignore_case = true,
   exclude = function(buf, win)
