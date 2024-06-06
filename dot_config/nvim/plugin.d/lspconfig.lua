@@ -127,9 +127,9 @@ lspconfig.jdtls.setup({
 lspconfig.bashls.setup({
   on_attach = on_attach,
 })
-lspconfig.marksman.setup({
-  on_attach = on_attach,
-})
+-- lspconfig.marksman.setup({
+--   on_attach = on_attach,
+-- })
 lspconfig.svelte.setup({
   on_attach = on_attach,
 })
