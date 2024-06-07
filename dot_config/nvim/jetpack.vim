@@ -125,6 +125,7 @@ function! s:init() abort
   call jetpack#add('ahmedkhalf/project.nvim')
   call jetpack#add('MeanderingProgrammer/markdown.nvim')
   call jetpack#add('monaqa/dial.nvim')
+  call jetpack#add('nanotee/zoxide.vim')
 
   " DB
   call jetpack#add('tpope/vim-dadbod')
