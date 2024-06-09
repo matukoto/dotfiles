@@ -5,4 +5,5 @@ imap <C-]> <plug>(copilot-dismiss)
 let g:copilot_filetypes = {
       \ '*': v:true,
       \ 'java': v:false,
+      \ 'sql' : v:false,
       \ }
