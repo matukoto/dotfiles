@@ -1,7 +1,7 @@
 require('hlchunk').setup({
   chunk = {
     enable = true,
-    notify = true,
+    notify = false,
     use_treesitter = true,
     -- details about support_filetypes and exclude_filetypes in https://github.com/shellRaining/hlchunk.nvim/blob/main/lua/hlchunk/utils/filetype.lua
     -- support_filetypes = ft.support_filetypes,
