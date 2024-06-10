@@ -104,7 +104,7 @@ function! s:init() abort
   call jetpack#add('shellRaining/hlchunk.nvim')
   call jetpack#add('stevearc/aerial.nvim')
   call jetpack#add('tris203/hawtkeys.nvim')
-  call jetpack#add('kevinhwang91/nvim-hlslens')
+  " call jetpack#add('kevinhwang91/nvim-hlslens')
   call jetpack#add('0xAdk/full_visual_line.nvim')
   call jetpack#add('j-hui/fidget.nvim')
   call jetpack#add('github/copilot.vim')
