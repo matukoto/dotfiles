@@ -1,7 +1,7 @@
 -- require など簡単な設定をまとめたファイル
 
 -- キーストロークを表示する
-require('keycastr').setup()
+require('keycastr')
 
 -- LSP の諸々を表示する
 require('fidget').setup()
