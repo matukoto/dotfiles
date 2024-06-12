@@ -1,15 +1,15 @@
 -- require など簡単な設定をまとめたファイル
 
 -- キーストロークを表示する
-local keycastr = require('keycastr')
-keycastr.enable()
-keycastr.show()
-keycastr.config.set({
-  win_config = {
-    width = 100,
-    height = 10,
-  },
-})
+-- local keycastr = require('keycastr')
+-- keycastr.enable()
+-- keycastr.show()
+-- keycastr.config.set({
+--   win_config = {
+--     width = 100,
+--     height = 10,
+--   },
+-- })
 
 -- LSP の諸々を表示する
 require('fidget').setup()
