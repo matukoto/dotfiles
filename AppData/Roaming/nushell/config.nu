@@ -1,2 +1,1 @@
-
-{{ - include "dot_config/nushell/config.nu" -}}
+{{- include "dot_config/nushell/config.nu" -}}

@@ -1,1 +1,1 @@
-{{ include "dot_config/nushell/env.nu" -}}
+{{- include "dot_config/nushell/env.nu" -}}
