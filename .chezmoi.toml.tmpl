@@ -1,4 +1,6 @@
+{{ if eq .chezmoi.os "linux" }}
 mode = "symlink"
+{{ end }}
 [edit]
 command = "nvim"
 
