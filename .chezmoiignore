@@ -7,7 +7,19 @@ windows/
 my_private*
 README.md
 {{ if eq .chezmoi.os "windows" -}}
-.config
+.config/efm-langserver
+.config/fish
+.config/git
+.config/gitui
+.config/mise
+.config/nushell
+.config/nvim
+.config/jj
+.config/sqls
+.config/stylua
+.config/typos
+.config/yazi
+starship.toml
 .skk
 windows
 {{ else -}}
