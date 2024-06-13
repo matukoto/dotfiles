@@ -1,0 +1,2 @@
+
+{{ - include "dot_config/nushell/config.nu" -}}
