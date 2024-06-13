@@ -38,10 +38,10 @@
     <key name="backincenter" value="1" />
     <key name="addcandktkn" value="1" />
     <key name="entogglekana" value="1" />
-    <key name="setbydirect" value="0" />
+    <key name="setbydirect" value="1" />
     <key name="compmultinum" value="9" />
-    <key name="stacompmulti" value="1" />
-    <key name="dynamiccomp" value="1" />
+    <key name="stacompmulti" value="0" />
+    <key name="dynamiccomp" value="0" />
     <key name="dyncompmulti" value="1" />
     <key name="compuserdic" value="1" />
     <key name="compincback" value="0" />
@@ -65,7 +65,7 @@
     <key name="drawapi" value="1" />
     <key name="colorfont" value="1" />
     <key name="untilcandlist" value="3" />
-    <key name="pagecandnum" value="7" />
+    <key name="pagecandnum" value="9" />
     <key name="dispcandno" value="0" />
     <key name="verticalcand" value="1" />
     <key name="annotation" value="1" />
