@@ -6,3 +6,10 @@ wslconf/
 windows/
 my_private*
 README.md
+{{ if eq .chezmoi.os "windows" -}}
+.config
+.skk
+windows
+{{ else -}}
+AppData
+{{ end -}}
