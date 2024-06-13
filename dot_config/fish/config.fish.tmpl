@@ -1,6 +1,6 @@
 if status is-interactive
 
-set PATH ~/bin ~/.local/bin ~/.deno/bin ~/go/bin ~/.cargo/bin $PATH
+set PATH ~/bin ~/.local/bin ~/.deno/bin ~/go/bin ~/.cargo/bin  ~/.local/share/nvim/mason/bin $PATH
 
 {{ if eq .chezmoi.osRelease.id "ubuntu" }}
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
