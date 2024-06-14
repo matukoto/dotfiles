@@ -1,5 +1,5 @@
 call ddc#custom#patch_global('ui', 'pum')
-call ddc#custom#patch_global('sources', ['skkeleton','file','around','lsp'])
+call ddc#custom#patch_global('sources', ['skkeleton','file','buffer','around','lsp','cmdline','cmdline-history'])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_fuzzy'],
@@ -37,6 +37,20 @@ call ddc#custom#patch_global('sourceOptions', {
       \ })
 
 call ddc#custom#patch_global('sourceOptions', {
+    \ '_': {'matchers': ['matcher_head']},
+    \ 'buffer': {'mark': 'B'},
+    \ })
+
+call ddc#custom#patch_global('sourceParams', {
+    \ 'buffer': {
+    \   'requireSameFiletype': v:false,
+    \   'limitBytes': 5000000,
+    \   'fromAltBuf': v:true,
+    \   'forceCollect': v:true,
+    \ },
+    \ })
+
+call ddc#custom#patch_global('sourceOptions', {
       \ 'file': {
       \   'mark': 'F',
       \   'isVolatile': v:true,
@@ -55,6 +69,15 @@ call ddc#custom#patch_global('sourceParams', #{
       \   }
       \ })
 
+call ddc#custom#patch_global('sourceOptions', #{
+      \   cmdline: #{
+      \     mark: 'cmdline',
+      \   }
+      \ })
+
+call ddc#custom#patch_global('sourceOptions', #{
+      \   cmdline-history: #{ mark: 'history' },
+      \ })
 call ddc#enable()
 inoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
 inoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
