@@ -1,5 +1,5 @@
 call ddc#custom#patch_global('ui', 'pum')
-call ddc#custom#patch_global('sources', ['skkeleton','file','buffer','around','lsp','cmdline','cmdline-history'])
+call ddc#custom#patch_global('sources', ['skkeleton','file','around','buffer','lsp','cmdline','cmdline-history'])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_fuzzy'],
