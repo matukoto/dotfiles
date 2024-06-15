@@ -19,6 +19,7 @@
   "UseGlyphIcons": true,
   "UseAnimation": false,
   "UseSound": true,
+  "SoundVolume": 50,
   "UseClock": true,
   "UseDate": false,
   "TimeFormat": "hh:mm tt",
@@ -105,7 +106,7 @@
   "CustomWindowLeft": 0,
   "CustomWindowTop": 0,
   "MaxResultsToShow": 10,
-  "ActivateTimes": 844,
+  "ActivateTimes": 869,
   "CustomPluginHotkeys": [],
   "CustomShortcuts": [],
   "DontPromptUpdateMsg": false,
@@ -130,7 +131,7 @@
   "AnimationSpeed": "Medium",
   "CustomAnimationLength": 360,
   "PluginSettings": {
-    "PythonExecutablePath": "C:\\Users\\Keisuke.Matsumoto\\AppData\\Local\\FlowLauncher\\app-1.17.2\\UserData\\Environments\\Python\\PythonEmbeddable-v3.11.4\\pythonw.exe",
+    "PythonExecutablePath": "C:\\Users\\Keisuke.Matsumoto\\AppData\\Local\\FlowLauncher\\app-1.18.0\\UserData\\Environments\\Python\\PythonEmbeddable-v3.11.4\\pythonw.exe",
     "NodeExecutablePath": "",
     "Plugins": {
       "0ECADE17459B49F587BF81DC3A125110": {
