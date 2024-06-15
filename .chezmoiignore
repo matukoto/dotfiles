@@ -19,9 +19,11 @@ README.md
 .config/stylua
 .config/typos
 .config/yazi
-starship.toml
+.config/starship.toml
 .skk
 windows
+.vimrc
 {{ else -}}
 AppData
+_vimrc
 {{ end -}}
