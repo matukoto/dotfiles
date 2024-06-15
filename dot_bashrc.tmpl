@@ -118,7 +118,7 @@ if [ -f ~/.api_key_environment ]; then
   . ~/.api_key_environment
 fi
 
-{{ if eq .chezmoi.osRelease.id "manjaro" }}
+{{ if (and (eq .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) }}
 # capslock -> ctrl
 /usr/bin/setxkbmap -option "ctrl:nocaps"
 {{ end }}
