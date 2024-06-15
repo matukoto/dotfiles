@@ -1,15 +1,13 @@
-{{ if eq .chezmoi.os "windows" -}}
-local home = os.getenv("USERPROFILE")
-vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
-{{ else }}
+{{ if ne .chezmoi.os "windows" -}}
 {{- include "dot_config/nvim/plugin.d/blamer.lua" -}}
 {{ end }}
 
-{{- include "dot_config/nvim/plugin.d/CopilotChat.lua" -}}
+local home = os.getenv("USERPROFILE")
+vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
+
 {{- include "dot_config/nvim/plugin.d/aerial.lua" -}}
 {{- include "dot_config/nvim/plugin.d/chowcho.lua" -}}
 {{- include "dot_config/nvim/plugin.d/comment.lua" -}}
-{{- include "dot_config/nvim/plugin.d/conform.lua" -}}
 {{- include "dot_config/nvim/plugin.d/dial.lua" -}}
 {{- include "dot_config/nvim/plugin.d/smartbufs.lua" -}}
 {{- include "dot_config/nvim/plugin.d/styler.lua" -}}
@@ -21,9 +19,7 @@ vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
 {{- include "dot_config/nvim/plugin.d/hlchunk.lua" -}}
 {{- include "dot_config/nvim/plugin.d/hlslens.lua" -}}
 {{- include "dot_config/nvim/plugin.d/incline.lua" -}}
-{{- include "dot_config/nvim/plugin.d/lspconfig.lua" -}}
 {{- include "dot_config/nvim/plugin.d/lualine.lua" -}}
-{{- include "dot_config/nvim/plugin.d/none-ls.lua" -}}
 {{- include "dot_config/nvim/plugin.d/nvim-lastplace.lua" -}}
 {{- include "dot_config/nvim/plugin.d/nvim-treesitter.lua" -}}
 {{- include "dot_config/nvim/plugin.d/oil.lua" -}}
