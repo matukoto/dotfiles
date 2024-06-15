@@ -1,6 +1,12 @@
+{{ if eq .chezmoi.os "windows" -}}
+local home = os.getenv("USERPROFILE")
+vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
+{{ else }}
+{{- include "dot_config/nvim/plugin.d/blamer.lua" -}}
+{{ end }}
+
 {{- include "dot_config/nvim/plugin.d/CopilotChat.lua" -}}
 {{- include "dot_config/nvim/plugin.d/aerial.lua" -}}
-{{- include "dot_config/nvim/plugin.d/blamer.lua" -}}
 {{- include "dot_config/nvim/plugin.d/chowcho.lua" -}}
 {{- include "dot_config/nvim/plugin.d/comment.lua" -}}
 {{- include "dot_config/nvim/plugin.d/conform.lua" -}}
