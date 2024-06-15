@@ -1,6 +1,6 @@
 [tools]
 java = "corretto-17.0.11.9.1"
-node = "20.12.2"
+node = "22.3.0"
 typos = "latest"
 rust = "latest"
 go = "latest"
