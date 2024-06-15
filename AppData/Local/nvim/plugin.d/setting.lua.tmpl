@@ -1,4 +1,5 @@
 {{ if ne .chezmoi.os "windows" -}}
+# blamer は Windows では動かないので削除
 {{- include "dot_config/nvim/plugin.d/blamer.lua" -}}
 {{ end }}
 
