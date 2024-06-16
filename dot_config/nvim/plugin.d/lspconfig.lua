@@ -23,12 +23,12 @@ require('ddc_source_lsp_setup').setup()
 -- require('mason-lspconfig').setup_handlers({
 --   function(server_name)
 --     require('lspconfig')[server_name].setup({
---       capabilities = capabilities,
 --     })
 --   end,
 -- })
 
-require('java').setup({})
+require('java').setup({
+})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ctx)
@@ -164,6 +164,5 @@ lspconfig.typos_lsp.setup({
 
 lspconfig.markdown_oxide.setup({
   on_attach = on_attach,
-  capabilities = capabilities,
 })
 -- vim.lsp.set_log_level('debug')
