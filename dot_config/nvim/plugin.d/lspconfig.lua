@@ -12,8 +12,9 @@ require('mason-lspconfig').setup({
     'sqls',
     'typos_lsp',
     'bashls',
-    'marksman',
+    -- 'marksman',
     'vimls',
+    'markdown_oxide',
   },
 })
 
@@ -125,9 +126,6 @@ lspconfig.jdtls.setup({
 lspconfig.bashls.setup({
   on_attach = on_attach,
 })
--- lspconfig.marksman.setup({
---   on_attach = on_attach,
--- })
 lspconfig.svelte.setup({
   on_attach = on_attach,
 })
@@ -164,4 +162,8 @@ lspconfig.typos_lsp.setup({
   },
 })
 
+lspconfig.markdown_oxide.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
 -- vim.lsp.set_log_level('debug')
