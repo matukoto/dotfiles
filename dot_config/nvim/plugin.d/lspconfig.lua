@@ -98,8 +98,6 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl })
 end
 
-vim.lsp.set_log_level('debug')
-
 local lspconfig = require('lspconfig')
 lspconfig.lua_ls.setup({
   settings = {
@@ -165,3 +163,5 @@ lspconfig.typos_lsp.setup({
     diagnosticSeverity = 'Hint',
   },
 })
+
+-- vim.lsp.set_log_level('debug')
