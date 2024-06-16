@@ -6,6 +6,7 @@ kensaku_actions.live_grep = function()
   builtin.live_grep({
     ---@param prompt string
     ---@return { prompt?: string, updated_finder?: TelescopeFinder }
+    prompt_title = 'Kensaku',
     on_input_filter_cb = function(prompt)
       return {
         prompt = vim.fn['kensaku#query'](prompt, {
