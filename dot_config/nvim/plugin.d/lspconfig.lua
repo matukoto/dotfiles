@@ -162,7 +162,7 @@ lspconfig.typos_lsp.setup({
   },
 })
 
-lspconfig.markdown_oxide.setup({
-  on_attach = on_attach,
-})
+-- lspconfig.markdown_oxide.setup({
+--   on_attach = on_attach,
+-- })
 -- vim.lsp.set_log_level('debug')
