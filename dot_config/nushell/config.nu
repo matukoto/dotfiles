@@ -842,3 +842,6 @@ $env.config = {
         }
     ]
 }
+
+alias v = nvim
+def l [] {clear | ls -l}
