@@ -25,3 +25,8 @@ require('render-markdown').setup()
 
 -- カーソル移動を可視化する
 require('smoothcursor').setup()
+
+-- dmacro
+require('dmacro').setup({
+  dmacro_key = '<C-t>',
+})
