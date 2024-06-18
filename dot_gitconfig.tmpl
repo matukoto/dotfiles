@@ -9,6 +9,8 @@
   prune = true
 [commit]
   template = ~/.vim/gitmessage
+[ghq]
+  root = ~/work
 {{- end -}}
 
 {{ if eq .chezmoi.os "linux" }}
@@ -55,8 +57,6 @@
 [diff]
   algorithm = histogram
   indentHeuristic = true
-[ghq]
-  root = ~/work
 [column]
   ui = auto
 [branch]
