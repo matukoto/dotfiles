@@ -13,16 +13,16 @@
   root = ~/work
 {{- end -}}
 
-# {{ if eq .chezmoi.os "linux" }}
+{{ if eq .chezmoi.os "linux" }}
 [credential "https://github.com"]
 	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !gh auth git-credential
-# {{ end }}
-# {{ if eq .chezmoi.os "windows" }}
-# [credential]
-#   helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
-# {{ end }}
+{{ end }}
+{{ if eq .chezmoi.os "windows" }}
+[credential]
+        helper = manager
+{{ end }}
 [init]
   defaultBranch = main
 [core]
