@@ -62,9 +62,9 @@ vim.keymap.set('n', '<leader>g', '<cmd>Telescope live_grep<CR>')
 vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<CR>')
 vim.keymap.set('n', '<leader>o', '<cmd>Telescope smart_open<CR>')
 vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<CR>')
-vim.api.nvim_set_keymap(
-  'n',
-  '<leader>k',
-  ':lua require("telescope").extensions.kensaku.kensaku{}<CR>',
-  { noremap = true, silent = true }
-)
+-- vim.api.nvim_set_keymap(
+--   'n',
+--   '<leader>k',
+--   ':lua require("telescope").extensions.kensaku.kensaku{}<CR>',
+--   { noremap = true, silent = true }
+-- )
