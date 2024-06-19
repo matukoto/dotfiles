@@ -27,8 +27,7 @@ require('ddc_source_lsp_setup').setup()
 --   end,
 -- })
 
-require('java').setup({
-})
+require('java').setup({})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ctx)
@@ -160,6 +159,11 @@ lspconfig.typos_lsp.setup({
     -- How typos are rendered in the editor, can be one of an Error, Warning, Info or Hint.
     diagnosticSeverity = 'Hint',
   },
+})
+
+-- Typst LSP
+lspconfig.tinymist.setup({
+  on_attach = on_attach,
 })
 
 -- lspconfig.markdown_oxide.setup({
