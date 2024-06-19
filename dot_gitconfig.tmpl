@@ -9,8 +9,6 @@
   prune = true
 [commit]
   template = ~/.vim/gitmessage
-[ghq]
-  root = ~/work
 {{- end -}}
 
 {{ if eq .chezmoi.os "linux" }}
@@ -18,10 +16,14 @@
 	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !gh auth git-credential
+[ghq]
+  root = ~/work
 {{ end }}
 {{ if eq .chezmoi.os "windows" }}
 [credential]
         helper = manager
+[ghq]
+  root = ~/Documents/workspace
 {{ end }}
 [init]
   defaultBranch = main
