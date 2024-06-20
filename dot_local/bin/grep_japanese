@@ -1,6 +1,20 @@
 #!/bin/bash
 
-input_file="$1"
+# -----------------------------------------------------------
+# 機能概要）
+#   日本語文字列を検索し、そのファイル名と行番号を出力する。
+#   // や * を含む行はコメント行であるため除外して出力する.
+# 起動形式）
+#   ディレクトリ下のファイルを全件検索 grep_japanese .
+#   ファイル指定して検索               grep_japanese hogehoge.java
+#   ファイル形式を指定                 grep_japanese ./**java
+# 依存)
+#    ripgrep PCRE2 に依存する
+#    `$rg --pcre2-version` で以下のように available と表示されれば OK
+#     PCRE2 10.42 is available (JIT is available)
+#------------------------------------------------------------
 
+# 引数 dirname or filename
+input_files="$1"
 
 rg -P --line-number --with-filename '[\x{3040}-\x{30FF}\x{4E00}-\x{9FFF}]' "$input_files" | rg -v -e '//' -e '\*'
