@@ -6,7 +6,7 @@ require('conform').setup({
     sql = { 'sql_formatter' },
     java = { 'google-java-format' },
     sh = { 'shellcheck', 'shfmt' },
-    json = jsFormatter,
+    json = { 'jq' },
     javascript = jsFormatter,
     javascriptreact = jsFormatter,
     typescript = jsFormatter,
