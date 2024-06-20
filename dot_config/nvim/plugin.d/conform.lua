@@ -5,6 +5,7 @@ require('conform').setup({
     lua = { 'stylua' }, -- 特に設定しなくても ~/.config/stylua/stylua.toml を見てくれる
     sql = { 'sql_formatter' },
     java = { 'google-java-format' },
+    sh = { 'shellcheck', 'shfmt' },
     json = jsFormatter,
     javascript = jsFormatter,
     javascriptreact = jsFormatter,
