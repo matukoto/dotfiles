@@ -2,9 +2,6 @@
 #
 # version = "0.91.0"
 
-alias l = (clear | ls -l)
-alias v = nvim
-
 # For more information on defining custom themes, see
 # https://www.nushell.sh/book/coloring_and_theming.html
 # And here is the theme collection
