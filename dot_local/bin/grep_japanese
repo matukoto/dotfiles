@@ -1,0 +1,7 @@
+#!/bin/bash
+
+input_file="$1"
+
+grep --perl-regexp '[\x{3040}-\x{30FF}\x{4E00}-\x{9FFF}]' "$input_file" | grep -v -e '//' -e '\*' 
+#| awk -v filename="$input_file" '{print filename ":" $0}'
+
