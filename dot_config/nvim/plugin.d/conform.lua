@@ -11,6 +11,8 @@ require('conform').setup({
     javascriptreact = jsFormatter,
     typescript = jsFormatter,
     typescriptreact = jsFormatter,
+    -- ['*'] = { 'typos' }, -- 勝手に訂正されてしまうので、状況次第では有用
+    markdown = { 'typos', 'markdownlint-cli2' },
   },
   format_on_save = {
     timeout_ms = 1000,
