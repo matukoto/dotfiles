@@ -13,5 +13,11 @@ local config = {
   key_tables = require('keybinds').key_tables,
   use_ime = false,
 }
+local mux = wezterm.mux
+
+wezterm.on('gui-startup', function()
+  local _, _, window = mux.spawn_window({ args = { 'wsl.exe' } })
+  window:spawn_tab({ args = { 'pwsh.exe', '-NoLogo' } })
+end)
 
 return config
