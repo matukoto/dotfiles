@@ -19,9 +19,9 @@ nnoremap k k
 " obsidian.nvim
 set conceallevel=1
 
-nnoremap <buffer> <C-l> <Cmd>MarkdownCheckbox<CR>
-inoremap <buffer> <C-l> <Cmd>MarkdownCheckbox<CR>
-xnoremap <buffer> <C-l> <Cmd>MarkdownCheckbox<CR>
+nnoremap <buffer> <C-]> <Cmd>MarkdownCheckbox<CR>
+inoremap <buffer> <C-]> <Cmd>MarkdownCheckbox<CR>
+xnoremap <buffer> <C-]> <Cmd>MarkdownCheckbox<CR>
 
 " skkeleton
 call skkeleton#config({
