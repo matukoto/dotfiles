@@ -50,6 +50,11 @@ require('telescope').setup({
   pickers = {
     buffers = {
       initial_mode = 'normal',
+      mappings = {
+        n = {
+          ['d'] = actions.delete_buffer,
+        },
+      },
       sort_mru = true,
       ignore_current_buffer = true,
     },
