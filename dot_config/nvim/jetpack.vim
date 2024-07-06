@@ -98,7 +98,7 @@ function! s:init() abort
   call jetpack#add('kkharji/sqlite.lua')
   call jetpack#add('danielfalk/smart-open.nvim')
 
-  " 便利系
+  " 便利系 useful
   call jetpack#add('mattn/vim-sonictemplate')
   call jetpack#add('thinca/vim-quickrun')
   call jetpack#add('numToStr/comment.nvim')
@@ -113,6 +113,7 @@ function! s:init() abort
   call jetpack#add('stevearc/aerial.nvim')
   call jetpack#add('tris203/hawtkeys.nvim')
   call jetpack#add('kevinhwang91/nvim-hlslens')
+  call jetpack#add('haya14busa/vim-asterisk')
   call jetpack#add('0xAdk/full_visual_line.nvim')
   call jetpack#add('j-hui/fidget.nvim')
   call jetpack#add('github/copilot.vim')
