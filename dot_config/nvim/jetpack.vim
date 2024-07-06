@@ -14,6 +14,7 @@ function! s:init() abort
   call jetpack#add('neovim/nvim-lspconfig')
   call jetpack#add('nvim-lua/lsp-status.nvim')
   " call jetpack#add('nvimtools/none-ls.nvim')
+  " java
   call jetpack#add('nvim-java/lua-async-await')
   call jetpack#add('nvim-java/nvim-java-refactor')
   call jetpack#add('nvim-java/nvim-java-core')
@@ -22,7 +23,9 @@ function! s:init() abort
   call jetpack#add('MunifTanjim/nui.nvim')
   call jetpack#add('neovim/nvim-lspconfig')
   call jetpack#add('mfussenegger/nvim-dap')
+  call jetpack#add('JavaHello/spring-boot.nvim', { 'commit': '218c0c26c14d99feca778e4d13f5ec3e8b1b60f0' })
   call jetpack#add('nvim-java/nvim-java')
+
   call jetpack#add('williamboman/mason.nvim')
   call jetpack#add('williamboman/mason-lspconfig.nvim')
   call jetpack#add('nanotee/sqls.nvim')
