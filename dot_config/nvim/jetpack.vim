@@ -66,7 +66,9 @@ function! s:init() abort
 
   " terminal
   call jetpack#add('chomosuke/term-edit.nvim')
+  " treesitter
   call jetpack#add('nvim-treesitter/nvim-treesitter')
+  call jetpack#add('nvim-treesitter/nvim-treesitter-context')
   " nerdfont
   call jetpack#add('lambdalisue/vim-nerdfont')
   call jetpack#add('lambdalisue/vim-fern-renderer-nerdfont')
