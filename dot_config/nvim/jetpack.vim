@@ -140,6 +140,8 @@ function! s:init() abort
   " call jetpack#add('4513ECHO/nvim-keycastr')
   call jetpack#add('tani/dmacro.nvim')
   call jetpack#add('famiu/bufdelete.nvim')
+  call jetpack#add('renerocksai/telekasten.nvim')
+  call jetpack#add('jakewvincent/mkdnflow.nvim')
 
   " DB
   call jetpack#add('tpope/vim-dadbod')
