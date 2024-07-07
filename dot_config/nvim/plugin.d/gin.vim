@@ -3,7 +3,7 @@ nnoremap <C-g>s <Cmd>GinPreview<CR>
 " バッファの差分を表示
 nnoremap <C-g>a <Cmd>Gin add --all<CR>
 nnoremap <C-g>c <Cmd>Gin commit --quiet<CR>
-nnoremap <C-g>P <Cmd>GinPatch ++opener=tabnew %<CR>
+nnoremap <C-g>P <Cmd>GinPatch ++opener=tabnew ++no-head %<CR>
 nnoremap <C-g>p <Cmd>Gin push --quiet<CR>
 " nnoremap <Lieader>g<C-d> <Cmd>GinDiff ++processor=delta\ --no-gitconfig\ --color-only<CR>
 nnoremap <C-g>l  <Cmd>GinLog<CR>
@@ -17,10 +17,16 @@ function! s:my_gin_log() abort
   setl cursorline
 endfunction
 
+function! s:my_gin_patch() abort
+  nnoremap <buffer> dp <Plug>(gin-diffput)
+  nnoremap <buffer> do <Plug>(gin-diffget)
+endfunction
+
 augroup my-gin
   autocmd!
   autocmd User GinComponentPost redrawtabline
   autocmd FileType gin-log silent! call s:my_gin_log()
+  autocmd BufRead ginedit://* silent! call s:my_gin_patch()
 augroup END
 
 if executable('delta')
