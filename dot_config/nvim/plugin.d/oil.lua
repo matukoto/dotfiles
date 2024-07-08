@@ -61,7 +61,6 @@ require('oil').setup({
     ['<C-s>'] = 'actions.select_vsplit',
     ['<C-h>'] = 'actions.select_split',
     -- ディレクトリを開く
-    ['l'] = 'actions.select',
     ['<C-t>'] = 'actions.select_tab',
     ['<C-p>'] = 'actions.preview',
     ['<C-c>'] = 'actions.close',
