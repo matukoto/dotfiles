@@ -840,5 +840,7 @@ $env.config = {
     ]
 }
 
+use ~/.cache/starship/init.nu
+
 alias v = nvim
 def l [] {clear | ls -l}
