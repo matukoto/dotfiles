@@ -10,8 +10,17 @@ function update_skk_dict
 
     # Git 操作の実行
     git add my-skk-dict
-    git commit --message "($current_date) add dictionary" --quiet 
-    git push --quiet
+    if not git commit -m "feat: add skk dictionary $current_date" --quiet
+        echo "エラー: git commit に失敗しました。変更がないか確認してください。" >&2
+        cd $current_dir
+        return 1
+    end
+
+    if not git push --quiet
+        echo "エラー: git push に失敗しました。ネットワーク接続やリモートリポジトリの状態を確認してください。" >&2
+        cd $current_dir
+        return 1
+    end
 
     # 元のディレクトリへ戻る
     cd $current_dir
