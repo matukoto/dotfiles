@@ -27,6 +27,4 @@ require('render-markdown').setup()
 require('smoothcursor').setup()
 
 -- dmacro
-require('dmacro').setup({
-  dmacro_key = '<C-t>',
-})
+vim.keymap.set({ 'i', 'n' }, '<C-y>', '<Plug>(dmacro-play-macro)')
