@@ -142,7 +142,7 @@ function! s:init() abort
   call jetpack#add('famiu/bufdelete.nvim')
   call jetpack#add('renerocksai/telekasten.nvim')
   call jetpack#add('jakewvincent/mkdnflow.nvim')
-
+  call jetpack#add('mrjones2014/smart-splits.nvim')
   " DB
   call jetpack#add('tpope/vim-dadbod')
   call jetpack#add('kristijanhusak/vim-dadbod-ui')
