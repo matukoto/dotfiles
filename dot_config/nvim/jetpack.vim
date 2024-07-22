@@ -13,6 +13,7 @@ function! s:init() abort
   " lsp
   call jetpack#add('neovim/nvim-lspconfig')
   call jetpack#add('nvim-lua/lsp-status.nvim')
+  call jetpack#add('nvimdev/lspsaga.nvim')
   " call jetpack#add('nvimtools/none-ls.nvim')
   " java
   call jetpack#add('nvim-java/lua-async-await')
