@@ -6,8 +6,8 @@ set fileencodings=utf-8
 set fileformats=unix,dos
 
 " 新しいウィンドウを下､右に開く
-" set splitbelow
-" set splitright
+set splitbelow
+set splitright
 
 "  カーソルの位置を%で表示
 set ruler
