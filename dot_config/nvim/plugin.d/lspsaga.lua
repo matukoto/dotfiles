@@ -1,8 +1,4 @@
-local api = vim.api
-local saga = {}
-saga.saga_augroup = api.nvim_create_augroup('Lspsaga', { clear = true })
-
-local default_config = {
+require('lspsaga').setup({
   ui = {
     border = 'rounded',
     devicon = true,
@@ -183,33 +179,13 @@ local default_config = {
     height = 0.7,
     width = 0.7,
   },
-}
+})
 
-function saga.setup(opts)
-  opts = opts or {}
-  saga.config = vim.tbl_deep_extend('force', default_config, opts)
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
 
-  require('lspsaga.highlight'):init_highlight()
-  if saga.config.lightbulb.enable then
-    require('lspsaga.codeaction.lightbulb').lb_autocmd()
-  end
-
-  if vim.version().minor >= 10 and vim.fn.exists('##LspNotify') ~= 0 then
-    require('lspsaga.symbol.head'):register_module()
-  else
-    if vim.version().minor >= 10 then
-      print(
-        "[lspsaga.nvim] you're running outdated nightly version, you'll need LspNotify autocmd event to enable improved symbol"
-      )
-    end
-    require('lspsaga.symbol'):register_module()
-  end
-
-  if saga.config.diagnostic.diagnostic_only_current then
-    require('lspsaga.diagnostic.virt').diag_on_current()
-  end
-end
-
--- vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc')
-
-return saga
+map('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', opts)
+map('n', 'gr', '<cmd>Lspsaga rename<CR>', opts)
+map('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opts)
+map('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
+map('n', 'ga', '<cmd>Lspsaga code_action<CR>', opts)
