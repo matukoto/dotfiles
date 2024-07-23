@@ -181,11 +181,11 @@ require('lspsaga').setup({
   },
 })
 
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+-- local map = vim.api.nvim_set_keymap
+-- local opts = { noremap = true, silent = true }
 
-map('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', opts)
-map('n', 'gr', '<cmd>Lspsaga rename<CR>', opts)
-map('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opts)
-map('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
-map('n', 'ga', '<cmd>Lspsaga code_action<CR>', opts)
+-- map('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', opts)
+-- map('n', 'gr', '<cmd>Lspsaga rename<CR>', opts)
+-- map('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opts)
+-- map('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
+-- map('n', 'ga', '<cmd>Lspsaga code_action<CR>', opts)

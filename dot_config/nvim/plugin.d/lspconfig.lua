@@ -32,48 +32,35 @@ require('java').setup({})
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ctx)
     local set = vim.keymap.set
+    local opts = { buffer = ctx.buffer }
+    -- 宣言ジャンプ
     -- set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { buffer = true })
-    -- set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { buffer = true })
-    -- set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { buffer = true })
-    -- set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', { buffer = true })
-    -- set("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { buffer = true })
-    -- set("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", { buffer = true })
-    -- set("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", { buffer = true })
-    -- set("n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", { buffer = true })
-    -- set("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { buffer = true })
-    -- set("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { buffer = true })
-    -- set("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { buffer = true })
-    -- set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', { buffer = true })
-    -- set("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", { buffer = true })
-    -- set('n', '<Leader>D', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', { buffer = true })
-    -- set('n', '<Leader>d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', { buffer = true })
-    -- set("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", { buffer = true })
-    -- set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { buffer = true })
+    -- 定義ジャンプ
+    set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    set('n', 'gD', function()
+      vim.cmd([[ vsplit ]])
+      vim.lsp.buf.definition()
+    end, opts)
+    -- 定義ホバー
+    set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { buffer = true })
+    -- 実装へ移動
+    set('n', 'gj', vim.lsp.buf.implementation, opts)
+    -- 実装をホバー
+    set('n', 'gJ', '<cmd>Lspsaga peek_definition<CR>', opts)
+    -- 型の実装をホバー
+    set('n', 'gt', '<cmd>Lspsaga peek_type_definition<CR>', opts)
+    -- 呼び出し元の表示
+    set('n', 'gf', '<cmd>Lspsaga finder ref<CR>', opts)
+    -- リネーム
+    set('n', 'gr', '<cmd>Lspsaga rename<CR>', opts)
+    -- Code action
+    set('n', 'ga', '<cmd>Lspsaga code_action<CR>', opts)
+    -- 次の診断へ移動
+    set('n', 'g[', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+    -- 前の診断へ移動
+    set('n', 'g]', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
 
-    -- -- 保存時に自動フォーマット
-    -- local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
-    -- local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    --
-    -- if client.supports_method('textDocument/formatting') then
-    --   local set_auto_format = function(lsp_name, pattern)
-    --     if client.name == lsp_name then
-    --       print(string.format('[%s] Enable auto-format on save', lsp_name))
-    --       vim.api.nvim_clear_autocmds({ group = augroup })
-    --       vim.api.nvim_create_autocmd('BufWritePre', {
-    --         group = augroup,
-    --         pattern = pattern,
-    --         callback = function()
-    --           print('[LSP] ' .. client.name .. ' format')
-    --           vim.lsp.buf.format({ buffer = ev.buf, async = false })
-    --         end,
-    --       })
-    --     end
-    --   end
-    --
-    --   set_auto_format('rust_analyzer', { '*.rs' })
-    --   set_auto_format('ruff_lsp', { '*.py' })
-    --   set_auto_format('denols', { '*.ts', '*.js' })
-    -- end
+    -- 深刻度によるソート
     vim.diagnostic.config({ severity_sort = true })
   end,
 })
