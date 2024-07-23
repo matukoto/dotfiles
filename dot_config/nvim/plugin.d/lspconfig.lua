@@ -121,6 +121,16 @@ lspconfig.lua_ls.setup({
 
 lspconfig.jdtls.setup({
   on_attach = on_attach,
+  settings = {
+    java = {
+      format = {
+        settings = {
+          url = 'https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml',
+          profile = 'GoogleStyle',
+        },
+      },
+    },
+  },
 })
 lspconfig.bashls.setup({
   on_attach = on_attach,
