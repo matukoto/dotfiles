@@ -77,7 +77,6 @@ function! s:init() abort
   " git
   call jetpack#add('lambdalisue/vim-gin')
   call jetpack#add('APZelos/blamer.nvim')
-  call jetpack#add('iberianpig/tig-explorer.vim')
   call jetpack#add('lewis6991/gitsigns.nvim')
 
   " 日本語
