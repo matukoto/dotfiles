@@ -7,6 +7,7 @@ call skkeleton#config({
       \ 'registerConvertResult': v:true,
       \ 'showCandidatesCount': 2,
       \ 'debug': v:false,
+      \ 'keepState': v:false,
       \ 'userDictionary': '~/.skk/my-skk-dict'
       \})
 call skkeleton#register_kanatable('rom', {
