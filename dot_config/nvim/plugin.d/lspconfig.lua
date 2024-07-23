@@ -65,19 +65,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-local on_attach = function(client, bufnr)
-  -- ここで `bufnr` は現在のバッファ番号を指す
-  if client.server_capabilities.document_formatting then
-    vim.api.nvim_create_augroup('LspFormatting', { clear = true })
-    vim.api.nvim_create_autocmd('BufWritePre', {
-      group = 'LspFormatting',
-      buffer = bufnr,
-      callback = function()
-        vim.lsp.buf.format({ async = false })
-      end,
-    })
-  end
-end
+-- 保存時自動フォーマット
+-- local on_attach = function(client, bufnr)
+--   -- ここで `bufnr` は現在のバッファ番号を指す
+--   if client.server_capabilities.document_formatting then
+--     vim.api.nvim_create_augroup('LspFormatting', { clear = true })
+--     vim.api.nvim_create_autocmd('BufWritePre', {
+--       group = 'LspFormatting',
+--       buffer = bufnr,
+--       callback = function()
+--         vim.lsp.buf.format({ async = false })
+--       end,
+--     })
+--   end
+-- end
 
 local signs = { Error = ' ', Warn = ' ', Hint = '󱩎 ', Info = ' ' }
 for type, icon in pairs(signs) do
