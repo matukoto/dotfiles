@@ -8,7 +8,7 @@ call skkeleton#config({
       \ 'showCandidatesCount': 2,
       \ 'debug': v:false,
       \ 'keepState': v:false,
-      \ 'userDictionary': '~/.skk/my-skk-dict'
+      \ 'userDictionary': '~/.skk/userdict.txt'
       \})
 call skkeleton#register_kanatable('rom', {
       \   '--': ['-',''],
