@@ -39,19 +39,19 @@ require('lspsaga').setup({
   },
   code_action = {
     num_shortcut = true,
-    show_server_name = false,
-    extend_gitsigns = false,
+    show_server_name = true,
+    extend_gitsigns = true,
     only_in_cursor = true,
     max_height = 0.3,
     cursorline = true,
     keys = {
-      quit = 'q',
+      quit = '<ESC>',
       exec = '<CR>',
     },
   },
   lightbulb = {
-    enable = true,
-    sign = true,
+    enable = false,
+    sign = false,
     debounce = 10,
     sign_priority = 40,
     virtual_text = true,
@@ -180,12 +180,3 @@ require('lspsaga').setup({
     width = 0.7,
   },
 })
-
--- local map = vim.api.nvim_set_keymap
--- local opts = { noremap = true, silent = true }
-
--- map('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', opts)
--- map('n', 'gr', '<cmd>Lspsaga rename<CR>', opts)
--- map('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opts)
--- map('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
--- map('n', 'ga', '<cmd>Lspsaga code_action<CR>', opts)
