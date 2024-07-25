@@ -45,7 +45,7 @@ require('lspsaga').setup({
     max_height = 0.3,
     cursorline = true,
     keys = {
-      quit = '<ESC>',
+      quit = { '<ESC>', 'q' },
       exec = '<CR>',
     },
   },
