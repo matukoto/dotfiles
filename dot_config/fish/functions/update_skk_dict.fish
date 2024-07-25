@@ -9,7 +9,7 @@ function update_skk_dict
     set current_date (date +"%Y-%m-%d")
 
     # Git 操作の実行
-    git add my-skk-dict
+    git add userdict.txt
     if not git commit -m "feat: add skk dictionary $current_date" --quiet
         echo "エラー: git commit に失敗しました。変更がないか確認してください。" >&2
         cd $current_dir
