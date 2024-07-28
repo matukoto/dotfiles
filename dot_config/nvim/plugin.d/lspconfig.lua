@@ -13,6 +13,7 @@ require('mason-lspconfig').setup({
     'typos_lsp',
     'bashls',
     -- 'marksman',
+    'zk',
     'vimls',
     'markdown_oxide',
   },
@@ -120,8 +121,26 @@ lspconfig.jdtls.setup({
     },
   },
 })
-lspconfig.bashls.setup({
-  on_attach = on_attach,
+require('zk').setup({
+  -- can be "telescope", "fzf", "fzf_lua", "minipick", or "select" (`vim.ui.select`)
+  -- it's recommended to use "telescope", "fzf", "fzf_lua", or "minipick"
+  picker = 'telescope',
+
+  lsp = {
+    -- `config` is passed to `vim.lsp.start_client(config)`
+    config = {
+      cmd = { 'zk', 'lsp' },
+      name = 'zk',
+      -- on_attach = ...
+      -- etc, see `:h vim.lsp.start_client()`
+    },
+
+    -- automatically attach buffers in a zk notebook that match the given filetypes
+    auto_attach = {
+      enabled = true,
+      filetypes = { 'markdown' },
+    },
+  },
 })
 lspconfig.svelte.setup({
   on_attach = on_attach,
@@ -161,6 +180,10 @@ lspconfig.typos_lsp.setup({
 
 -- Typst LSP
 lspconfig.tinymist.setup({
+  on_attach = on_attach,
+})
+
+lspconfig.zk.setup({
   on_attach = on_attach,
 })
 

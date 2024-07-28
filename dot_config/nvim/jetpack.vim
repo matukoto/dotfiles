@@ -26,7 +26,9 @@ function! s:init() abort
   call jetpack#add('mfussenegger/nvim-dap')
   call jetpack#add('JavaHello/spring-boot.nvim', { 'commit': '218c0c26c14d99feca778e4d13f5ec3e8b1b60f0' })
   call jetpack#add('nvim-java/nvim-java')
-
+  " call jetpack#add('renerocksai/telekasten.nvim')
+  " call jetpack#add('jakewvincent/mkdnflow.nvim')
+  call jetpack#add('zk-org/zk-nvim')
   call jetpack#add('williamboman/mason.nvim')
   call jetpack#add('williamboman/mason-lspconfig.nvim')
   call jetpack#add('nanotee/sqls.nvim')
@@ -140,8 +142,6 @@ function! s:init() abort
   " call jetpack#add('4513ECHO/nvim-keycastr')
   call jetpack#add('tani/dmacro.nvim')
   call jetpack#add('famiu/bufdelete.nvim')
-  " call jetpack#add('renerocksai/telekasten.nvim')
-  " call jetpack#add('jakewvincent/mkdnflow.nvim')
   call jetpack#add('mrjones2014/smart-splits.nvim')
   call jetpack#add('bkad/CamelCaseMotion')
 
