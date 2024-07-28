@@ -17,7 +17,7 @@ local mux = wezterm.mux
 
 wezterm.on('gui-startup', function()
   local _, _, window = mux.spawn_window({ args = { 'wsl.exe', '--cd', '~' } })
-  -- window:spawn_tab({ args = { 'pwsh.exe', '-NoLogo' } })
+  window:spawn_tab({ args = { 'pwsh.exe', '-NoLogo' } })
 end)
 
 return config

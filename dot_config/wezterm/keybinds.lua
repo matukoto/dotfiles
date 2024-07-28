@@ -37,6 +37,11 @@ return {
       mods = 'ALT',
       action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
     },
+    {
+      key = '1',
+      modes = 'CTRL|SHIFT',
+      action = wezterm.action({ SpawnCommandInNewTab = { args = { 'pwsh.exe', '-NoLogo' } } }),
+    },
     -- デフォルト設定
     { key = ')', mods = 'CTRL', action = act.ResetFontSize },
     { key = ')', mods = 'SHIFT|CTRL', action = act.ResetFontSize },
