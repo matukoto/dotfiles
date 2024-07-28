@@ -105,7 +105,7 @@ require('lspsaga').setup({
     project_max_width = 0.5,
     project_max_height = 0.5,
     keys = {
-      quit = '<C-k>',
+      quit = { '<ESC>', 'q' },
       exec = '<CR>',
       select = 'x',
     },
