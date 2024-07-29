@@ -1,3 +1,4 @@
+local qfs_actions = require('qfscope.actions')
 local actions = require('telescope.actions')
 require('telescope').setup({
   defaults = {
@@ -12,6 +13,10 @@ require('telescope').setup({
         ['<C-h>'] = actions.select_horizontal,
         ['<C-v>'] = actions.select_vertical,
         ['<esc>'] = actions.close,
+        ['<C-g><C-f>'] = qfs_actions.qfscope_search_filename,
+        ['<C-g><C-g>'] = qfs_actions.qfscope_grep_filename,
+        ['<C-g><C-l>'] = qfs_actions.qfscope_grep_line,
+        ['<C-g><C-t>'] = qfs_actions.qfscope_grep_text,
       },
       n = {
         ['<C-j>'] = actions.move_selection_next,
