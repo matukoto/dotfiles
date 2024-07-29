@@ -9,8 +9,8 @@ function pull_skk_dict
     git fetch
 
     # Git 操作の実行
-    if not git rebase origin/main
-        echo "エラー: git rebaseに失敗しました。" >&2
+    if not git pull --rebase origin main
+        echo "エラー: git pull --rebase に失敗しました。" >&2
         cd $current_dir
         return 1
     end
