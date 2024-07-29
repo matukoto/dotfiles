@@ -21,17 +21,17 @@ require('lualine').setup({
     lualine_a = { 'mode' },
     lualine_b = { 'branch', 'diff', 'diagnostics' },
     lualine_c = {
-      {
-        'filename',
-        path = 1,
-        file_status = true,
-        shorting_target = 40,
-        symbols = {
-          modified = ' [+]',
-          readonly = ' [RO]',
-          unnamed = 'Untitled',
-        },
-      },
+      -- {
+      --   'filename',
+      --   path = 1,
+      --   file_status = true,
+      --   shorting_target = 40,
+      --   symbols = {
+      --     modified = ' [+]',
+      --     readonly = ' [RO]',
+      --     unnamed = 'Untitled',
+      --   },
+      -- },
     },
     lualine_x = { 'searchcount' },
     --{
