@@ -134,7 +134,7 @@ function! s:init() abort
   call jetpack#add('mechatroner/rainbow_csv')
   call jetpack#add('tkmpypy/chowcho.nvim')
   call jetpack#add('folke/styler.nvim')
-  call jetpack#add('b0o/incline.nvim')
+  " call jetpack#add('b0o/incline.nvim')
   call jetpack#add('ahmedkhalf/project.nvim')
   call jetpack#add('MeanderingProgrammer/markdown.nvim')
   call jetpack#add('monaqa/dial.nvim')
