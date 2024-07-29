@@ -12,7 +12,7 @@
 -- })
 
 -- LSP の諸々を表示する
-require('fidget').setup()
+-- require('fidget').setup()
 
 -- visual mode で行全体をマ-キングする
 require('full_visual_line').setup()
