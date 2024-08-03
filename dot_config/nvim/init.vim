@@ -46,7 +46,7 @@ xnoremap <Leader> <Nop>
 " :T で下部にターミナルを開く
 command! -nargs=* T split | wincmd j | resize 15 | terminal <args>
 " インサートモードでターミナルを開く
-autocmd TermOpen * startinsert
+"autocmd TermOpen * startinsert
 
 " ウィンドウ移動
 nnoremap <silent> <Leader>h <C-w>h
