@@ -10,7 +10,7 @@ require('telescope').setup({
         ['<C-n>'] = actions.move_selection_next,
         ['<C-p>'] = actions.move_selection_previous,
         ['<C-t>'] = actions.select_tab,
-        ['<C-h>'] = actions.select_horizontal,
+        ['<C-l>'] = actions.select_horizontal,
         ['<C-v>'] = actions.select_vertical,
         ['<esc>'] = actions.close,
         ['<C-g><C-f>'] = qfs_actions.qfscope_search_filename,
