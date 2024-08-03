@@ -144,7 +144,10 @@ function! s:init() abort
   call jetpack#add('tani/dmacro.nvim')
   call jetpack#add('famiu/bufdelete.nvim')
   call jetpack#add('mrjones2014/smart-splits.nvim')
+  " キャメルケース単位でのオブジェクト指定
   call jetpack#add('bkad/CamelCaseMotion')
+  " 閉じ括弧の自動挿入
+  call jetpack#add('cohama/lexima.vim')
 
   " DB
   call jetpack#add('tpope/vim-dadbod')
