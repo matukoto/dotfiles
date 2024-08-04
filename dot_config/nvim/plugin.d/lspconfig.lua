@@ -30,6 +30,19 @@ require('ddc_source_lsp_setup').setup()
 
 require('java').setup({})
 
+on_attach = function(client, bufnr)
+  require('lsp_signature').on_attach({
+    bind = true,
+    hint_enable = true,
+    floating_window = true,
+    hint_prefix = '🐼 ',
+    hi_parameter = 'LspSignatureActiveParameter',
+    handler_opts = {
+      border = 'rounded',
+    },
+  }, bufnr)
+end
+
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ctx)
     local set = vim.keymap.set
@@ -61,6 +74,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- 前の診断へ移動
     set('n', 'g]', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
 
+    -- inlay hint
+    -- if client.supports_method('textDocument/inlayHint') then
+    --   vim.lsp.inlay_hint.enable()
+    -- end
+
     -- 深刻度によるソート
     vim.diagnostic.config({ severity_sort = true })
   end,
@@ -89,6 +107,12 @@ end
 
 local lspconfig = require('lspconfig')
 lspconfig.lua_ls.setup({
+  on_attach = on_attach,
+  hint = {
+    enable = true,
+    paramName = 'Disable',
+    semicolon = 'Disable',
+  },
   settings = {
     Lua = {
       runtime = {
@@ -191,3 +215,4 @@ lspconfig.zk.setup({
 --   on_attach = on_attach,
 -- })
 -- vim.lsp.set_log_level('debug')
+vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { bg = '#888888', fg = '#efef33' })
