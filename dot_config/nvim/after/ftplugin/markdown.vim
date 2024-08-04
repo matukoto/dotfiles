@@ -75,3 +75,8 @@ function! s:markdown_checkbox(from, to) abort
   call setcursorcharpos(curpos[1], curpos[2])
 endfunction
 command! -buffer -range MarkdownCheckbox call s:markdown_checkbox(<line1>, <line2>)
+
+augroup MarkdownAerial
+  autocmd!
+  autocmd FileType markdown AerialOpen
+augroup END
