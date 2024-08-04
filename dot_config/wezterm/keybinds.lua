@@ -4,8 +4,8 @@ local act = wezterm.action
 return {
   keys = {
     -- tab 移動
-    { key = '2', mods = 'ALT', action = act.ActivateTabRelative(1) },
-    { key = '1', mods = 'ALT', action = act.ActivateTabRelative(-1) },
+    { key = '3', mods = 'ALT', action = act.ActivateTabRelative(1) },
+    { key = '2', mods = 'ALT', action = act.ActivateTabRelative(-1) },
     -- tab 追加
     { key = 't', mods = 'ALT', action = act.SpawnTab('CurrentPaneDomain') },
     -- tab 閉じる
