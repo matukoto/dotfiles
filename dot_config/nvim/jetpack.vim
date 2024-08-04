@@ -148,6 +148,8 @@ function! s:init() abort
   call jetpack#add('bkad/CamelCaseMotion')
   " 閉じ括弧の自動挿入
   call jetpack#add('cohama/lexima.vim')
+  " 閉じタグの自動挿入
+  call jetpack#add('windwp/nvim-ts-autotag')
 
   " DB
   call jetpack#add('tpope/vim-dadbod')
