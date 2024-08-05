@@ -58,9 +58,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- 定義ホバー
     set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { buffer = true })
     -- 実装へ移動
-    set('n', 'gj', vim.lsp.buf.implementation, opts)
+    set('n', 'gl', vim.lsp.buf.implementation, opts)
     -- 実装をホバー
-    set('n', 'gJ', '<cmd>Lspsaga peek_definition<CR>', opts)
+    set('n', 'gL', '<cmd>Lspsaga peek_definition<CR>', opts)
     -- 型の実装をホバー
     set('n', 'gt', '<cmd>Lspsaga peek_type_definition<CR>', opts)
     -- 呼び出し元の表示
@@ -136,11 +136,22 @@ lspconfig.jdtls.setup({
   on_attach = on_attach,
   settings = {
     java = {
+      import = {
+        gradle = {
+          enabled = true,
+        },
+        maven = {
+          enabled = true,
+        },
+      },
       format = {
         settings = {
           url = 'https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml',
           profile = 'GoogleStyle',
         },
+      },
+      saveActions = {
+        organizeImports = true,
       },
     },
   },
