@@ -44,6 +44,18 @@
 --     return ''
 --   end,
 -- })
+
+-- 現在時刻を表示する
+-- 参考 https://github.com/archibate/lualine-time/blob/main/lua/lualine/components/ctime.lua
+local CTimeLine = require('lualine.component'):extend()
+local jst = 9 * 60 * 60
+CTimeLine.init = function(self, options)
+  CTimeLine.super.init(self, options)
+end
+CTimeLine.update_status = function(self)
+  return os.date(self.options.format or '%H:%M', os.time() + jst)
+end
+
 require('lualine').setup({
   options = {
     icons_enabled = true,
@@ -96,18 +108,14 @@ require('lualine').setup({
       -- },
     },
     lualine_x = {
-      -- function()
-      -- invoke `progress` here.
-      --return require('lsp-progress').progress()
-      -- end,
-      '',
-    },
-    lualine_y = {
       --'encoding',
       'fileformat',
       'filetype',
     },
-    lualine_z = { 'location', 'progress' },
+    lualine_y = { 'location', 'progress' },
+    lualine_z = {
+      CTimeLine,
+    },
   },
   -- inactive_sections = {
   --   lualine_a = {},
