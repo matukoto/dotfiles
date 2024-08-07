@@ -10,8 +10,8 @@ function! s:fern_settings() abort
   nmap <silent> <buffer> D     <Plug>(fern-action-remove=)y<CR>
   nmap <silent> <buffer> <C-f> <Plug>(fern-action-new-file)
   nmap <silent> <buffer> <C-d> <Plug>(fern-action-new-dir)
-  nmap <silent> <buffer> H     <Plug>(fern-action-leave)
-  nmap <silent> <buffer> L     <Plug>(fern-action-expand)
+  nmap <silent> <buffer> h     <Plug>(fern-action-leave)
+  nmap <silent> <buffer> l     <Plug>(fern-action-expand)
   nmap <silent> <buffer> <CR>  <Plug>(fern-action-open)
   nmap <silent> <buffer> <C-v> <Plug>(fern-action-open:vsplit)
   nmap <silent> <buffer> !   <Plug>(fern-action-hidden:toggle)
