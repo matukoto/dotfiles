@@ -48,12 +48,11 @@
 -- 現在時刻を表示する
 -- 参考 https://github.com/archibate/lualine-time/blob/main/lua/lualine/components/ctime.lua
 local CTimeLine = require('lualine.component'):extend()
-local jst = 9 * 60 * 60
 CTimeLine.init = function(self, options)
   CTimeLine.super.init(self, options)
 end
 CTimeLine.update_status = function(self)
-  return os.date(self.options.format or '%H:%M', os.time() + jst)
+  return os.date(self.options.format or '%H:%M', os.time())
 end
 
 require('lualine').setup({
