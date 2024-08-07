@@ -151,6 +151,8 @@ function! s:init() abort
   call jetpack#add('cohama/lexima.vim')
   " 閉じタグの自動挿入
   call jetpack#add('windwp/nvim-ts-autotag')
+  " WakaTime コーディング時間を計測してくれる
+  call jetpack#add('wakatime/vim-wakatime')
 
   " DB
   call jetpack#add('tpope/vim-dadbod')
