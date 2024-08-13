@@ -151,6 +151,11 @@ function! s:init() abort
   call jetpack#add('cohama/lexima.vim')
   " 閉じタグの自動挿入
   call jetpack#add('windwp/nvim-ts-autotag')
+  " 前回作業時の画面を復元
+  call jetpack#add('folke/persistence.nvim')
+  " Neovim 起動時に dashboard を開く
+  call jetpack#add('nvimdev/dashboard-nvim')
+
   " WakaTime コーディング時間を計測してくれる
   call jetpack#add('wakatime/vim-wakatime')
 
