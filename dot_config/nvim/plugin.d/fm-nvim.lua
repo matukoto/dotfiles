@@ -73,3 +73,5 @@ require('fm-nvim').setup({
   -- Path to broot config
   -- broot_conf = vim.fn.stdpath('data') .. '/site/pack/packer/start/fm-nvim/assets/broot_conf.hjson',
 })
+
+vim.cmd('cabbrev G Gitui')
