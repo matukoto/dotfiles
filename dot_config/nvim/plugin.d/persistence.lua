@@ -5,11 +5,3 @@ require('persistence').setup({
   need = 1,
   branch = true, -- use git branch to save session
 })
-
-require('dashboard').setup()
-
-vim.api.nvim_create_autocmd('VimEnter', {
-  callback = function()
-    require('persistence').load()
-  end,
-})
