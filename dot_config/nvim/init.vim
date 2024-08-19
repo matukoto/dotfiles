@@ -60,6 +60,9 @@ nnoremap <silent> L <Cmd>tabnext<CR>
 cabbrev qq TCL
 
 nnoremap <silent> <Leader>p "*p
+
+cabbrev cm <Cmd>Capture message<CR>
+
 " Plugin
 source $VIMHOME/jetpack.vim
 
