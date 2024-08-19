@@ -57,6 +57,7 @@ nnoremap <silent> <Leader>l <C-w>l
 " タブ
 nnoremap <silent> H <Cmd>tabprevious<CR>
 nnoremap <silent> L <Cmd>tabnext<CR>
+nnoremap <silent> Q <Cmd>TCL<CR>
 cabbrev qq TCL
 
 nnoremap <silent> <Leader>p "*p
