@@ -25,15 +25,15 @@ return {
     { key = 'W', mods = 'SHIFT|CTRL', action = act.CloseCurrentPane({ confirm = true }) },
     -- full screen
     { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
-    -- vsplit
+    -- split
     {
-      key = 'v',
+      key = 'h',
       mods = 'ALT',
       action = act.SplitVertical({ domain = 'CurrentPaneDomain' }),
     },
-    -- hsplit
+    -- vsplit
     {
-      key = 'h',
+      key = 'v',
       mods = 'ALT',
       action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
     },
