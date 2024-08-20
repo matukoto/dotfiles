@@ -20,13 +20,13 @@ nnoremap k k
 set conceallevel=1
 
 nnoremap <buffer> <C-m> <Cmd>MarkdownCheckbox<CR>
-inoremap <buffer> <C-m> <Cmd>MarkdownCheckbox<CR>
+" inoremap <buffer> <C-m> <Cmd>MarkdownCheckbox<CR>
 xnoremap <buffer> <C-m> <Cmd>MarkdownCheckbox<CR>
 
 " skkeleton
-call skkeleton#config({
-      \ 'keepState': v:true,
-      \ })
+" call skkeleton#config({
+"       \ 'keepState': v:true,
+"       \ })
 
 " toggle checkbox function
 function! s:markdown_checkbox(from, to) abort
