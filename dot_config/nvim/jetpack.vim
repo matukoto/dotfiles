@@ -12,10 +12,12 @@ function! s:init() abort
 
   " lsp
   call jetpack#add('neovim/nvim-lspconfig')
-  call jetpack#add('nvim-lua/lsp-status.nvim')
+  " call jetpack#add('nvim-lua/lsp-status.nvim')
   call jetpack#add('nvimdev/lspsaga.nvim')
   call jetpack#add('williamboman/mason.nvim')
   call jetpack#add('williamboman/mason-lspconfig.nvim')
+  call jetpack#add('neovim/nvim-lspconfig')
+  call jetpack#add('j-hui/fidget.nvim')
   call jetpack#add('ray-x/lsp_signature.nvim')
   " call jetpack#add('nvimtools/none-ls.nvim')
   " java
@@ -25,7 +27,6 @@ function! s:init() abort
   call jetpack#add('nvim-java/nvim-java-test')
   call jetpack#add('nvim-java/nvim-java-dap')
   call jetpack#add('MunifTanjim/nui.nvim')
-  call jetpack#add('neovim/nvim-lspconfig')
   call jetpack#add('mfussenegger/nvim-dap')
   call jetpack#add('JavaHello/spring-boot.nvim')
   call jetpack#add('nvim-java/nvim-java')
@@ -61,11 +62,11 @@ function! s:init() abort
   call jetpack#add('lambdalisue/vim-fern')
   call jetpack#add('yuki-yano/fern-preview.vim')
   call jetpack#add('stevearc/oil.nvim')
+  call jetpack#add('lambdalisue/vim-fern-git-status')
 
   " ステータスラインプラグイン
   call jetpack#add('nvim-lualine/lualine.nvim')
   call jetpack#add('nvim-tree/nvim-web-devicons')
-  call jetpack#add('nvim-treesitter/playground')
   " call jetpack#add('mvllow/modes.nvim', { 'tag': 'v0.2.0' })
 
   " terminal
@@ -77,7 +78,6 @@ function! s:init() abort
   " nerdfont
   call jetpack#add('lambdalisue/vim-nerdfont')
   call jetpack#add('lambdalisue/vim-fern-renderer-nerdfont')
-  call jetpack#add('lambdalisue/vim-fern-git-status')
   " git
   call jetpack#add('lambdalisue/vim-gin')
   call jetpack#add('APZelos/blamer.nvim')
@@ -86,7 +86,7 @@ function! s:init() abort
   " 日本語
   call jetpack#add('lambdalisue/vim-kensaku')
   call jetpack#add('lambdalisue/vim-kensaku-search')
-  call jetpack#add('hrsh7th/vim-searchx')
+  " call jetpack#add('hrsh7th/vim-searchx')
   call jetpack#add('vim-skk/skkeleton')
   call jetpack#add('NI57721/skkeleton-state-popup')
   " call jetpack#add('yasunori0418/statusline_skk.vim')
@@ -113,23 +113,22 @@ function! s:init() abort
   "call jetpack#add('gamoutatsumi/gyazoupload.vim')
   "call jetpack#add('skanehira/denops-docker.vim')
   "call jetpack#add('skanehira/k8s.vim')
-  call jetpack#add('cshuaimin/ssr.nvim')
+  "call jetpack#add('cshuaimin/ssr.nvim')
   call jetpack#add('shellRaining/hlchunk.nvim')
   call jetpack#add('stevearc/aerial.nvim')
-  call jetpack#add('tris203/hawtkeys.nvim')
+  " call jetpack#add('tris203/hawtkeys.nvim')
   call jetpack#add('kevinhwang91/nvim-hlslens')
   call jetpack#add('haya14busa/vim-asterisk')
   call jetpack#add('0xAdk/full_visual_line.nvim')
-  call jetpack#add('j-hui/fidget.nvim')
   call jetpack#add('github/copilot.vim')
   call jetpack#add('CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' })
   call jetpack#add('tyru/capture.vim')
-  call jetpack#add('reireias/vim-cheatsheet')
+  " call jetpack#add('reireias/vim-cheatsheet')
   call jetpack#add('itchyny/vim-cursorword')
   call jetpack#add('tyru/open-browser.vim')
   call jetpack#add('lambdalisue/vim-guise')
-  call jetpack#add('lambdalisue/vim-mr')
-  call jetpack#add('lambdalisue/vim-mr-quickfix')
+  " call jetpack#add('lambdalisue/vim-mr')
+  " call jetpack#add('lambdalisue/vim-mr-quickfix')
   " call jetpack#add('Bakudankun/BackAndForward.vim')
   call jetpack#add('johann2357/nvim-smartbufs')
   call jetpack#add('MeanderingProgrammer/markdown.nvim')
