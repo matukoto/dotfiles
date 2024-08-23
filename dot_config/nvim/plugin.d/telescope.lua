@@ -2,30 +2,46 @@ local qfs_actions = require('qfscope.actions')
 local actions = require('telescope.actions')
 require('telescope').setup({
   defaults = {
+    -- tepescope を開いたときの最初のモード
     initial_mode = 'insert',
     mappings = {
+      -- インサートモードでのマッピング
       i = {
+        -- 次の候補へ移動
         ['<C-j>'] = actions.move_selection_next,
-        ['<C-k>'] = actions.move_selection_previous,
         ['<C-n>'] = actions.move_selection_next,
+        -- 前の候補へ移動
+        ['<C-k>'] = actions.move_selection_previous,
         ['<C-p>'] = actions.move_selection_previous,
+        -- タブで開く
         ['<C-t>'] = actions.select_tab,
+        -- 水平分割で開く
         ['<C-l>'] = actions.select_horizontal,
+        -- 垂直分割で開く
         ['<C-v>'] = actions.select_vertical,
+        -- telescope をクローズ
         ['<esc>'] = actions.close,
+        -- live_grep の後、さらに絞り込む
         ['<C-g><C-f>'] = qfs_actions.qfscope_search_filename,
         ['<C-g><C-g>'] = qfs_actions.qfscope_grep_filename,
         ['<C-g><C-l>'] = qfs_actions.qfscope_grep_line,
         ['<C-g><C-t>'] = qfs_actions.qfscope_grep_text,
       },
+      -- ノーマルモードでのマッピング
       n = {
+        -- 次の候補へ移動
         ['<C-j>'] = actions.move_selection_next,
-        ['<C-k>'] = actions.move_selection_previous,
         ['<C-n>'] = actions.move_selection_next,
+        -- 前の候補へ移動
+        ['<C-k>'] = actions.move_selection_previous,
         ['<C-p>'] = actions.move_selection_previous,
+        -- タブで開く
         ['<C-t>'] = actions.select_tab,
-        ['<C-h>'] = actions.select_horizontal,
+        -- 水平分割で開く
+        ['<C-l>'] = actions.select_horizontal,
+        -- 垂直分割で開く
         ['<C-v>'] = actions.select_vertical,
+        -- telescope をクローズ
         ['q'] = actions.close,
       },
     },
