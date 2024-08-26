@@ -156,7 +156,7 @@ function! s:init() abort
   " Neovim 起動時に dashboard を開く
   call jetpack#add('nvimdev/dashboard-nvim')
   " tui アプリを Neovim で開ける Gitui しか使っていないが
-  call jetpack#add('is0n/fm-nvim')
+  call jetpack#add('matukoto/fm-nvim')
 
   " WakaTime コーディング時間を計測してくれる
   call jetpack#add('wakatime/vim-wakatime')
