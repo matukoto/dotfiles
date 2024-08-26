@@ -1,4 +1,4 @@
-{{- if (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) -}}
+{{- if (and (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) (ne .chezmoi.hostname "ThinkPadE14")) -}}
 {{- include  "work/dot_gitconfig" -}}
 {{- else -}}
 [user]
