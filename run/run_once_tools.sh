@@ -6,6 +6,9 @@
 # rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# chezmoi
+sh -c "$(curl -fsLS get.chezmoi.io)"
+
 # mise
 curl https://mise.run | sh
 mise i
