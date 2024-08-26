@@ -6,6 +6,7 @@ wslconf/
 windows/
 my_private*
 README.md
+*time
 {{ if eq .chezmoi.os "windows" -}}
 .config/efm-langserver
 .config/fish
