@@ -23,10 +23,16 @@ nnoremap <buffer> <C-m> <Cmd>MarkdownCheckbox<CR>
 " inoremap <buffer> <C-m> <Cmd>MarkdownCheckbox<CR>
 xnoremap <buffer> <C-m> <Cmd>MarkdownCheckbox<CR>
 
-" skkeleton
-" call skkeleton#config({
-"       \ 'keepState': v:true,
-"       \ })
+" skkeleton がモードの状態を保持するように修正
+function! s:skkeleton_markdown_init() abort
+  call skkeleton#config({
+    \ 'keepState': v:true
+    \ })
+endfunction
+augroup skkeleton-enable-previous-markdown
+  autocmd!
+  autocmd User skkeleton-enable-pre call s:skkeleton_markdown_init()
+augroup END
 
 " toggle checkbox function
 function! s:markdown_checkbox(from, to) abort

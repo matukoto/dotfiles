@@ -10,6 +10,7 @@ call skkeleton#config({
       \ 'keepState': v:false,
       \ 'userDictionary': '~/.skk/userdict.txt'
       \})
+
 call skkeleton#register_kanatable('rom', {
       \   '--': ['-',''],
       \   '-': ['ー',''],
@@ -23,5 +24,17 @@ call skkeleton#register_kanatable('rom', {
       \   ']': [']',''],
       \   ']]': ['」',''],
       \ })
+
+" skkeleton がモードの状態を保持しないように修正
+function! s:skkeleton_init() abort
+  call skkeleton#config({
+    \ 'keepState': v:false
+    \ })
+endfunction
+augroup skkeleton-enable-previous
+  autocmd!
+  autocmd User skkeleton-enable-pre call s:skkeleton_init()
+augroup END
+
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
