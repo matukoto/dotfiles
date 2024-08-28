@@ -1,7 +1,7 @@
 require('oil').setup({
   -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
   -- Set to false if you still want to use netrw.
-  default_file_explorer = true,
+  default_file_explorer = false,
   -- Id is automatically added at the beginning, and name at the end
   -- See :help oil-columns
   columns = {
@@ -71,7 +71,7 @@ require('oil').setup({
     ['~'] = 'actions.tcd',
     ['gs'] = 'actions.change_sort',
     ['ge'] = 'actions.open_external',
-    ['g.'] = 'actions.toggle_hidden',
+    ['!'] = 'actions.toggle_hidden',
     ['g\\'] = 'actions.toggle_trash',
   },
   -- Configuration for the floating keymaps help window
