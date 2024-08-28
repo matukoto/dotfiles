@@ -362,7 +362,7 @@ vim.api.nvim_create_autocmd('BufRead', {
   pattern = { '*.md' },
   callback = function()
     aerial.open({
-      focus = true,
+      focus = false,
       direction = 'left',
     })
   end,
