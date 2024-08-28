@@ -1,11 +1,21 @@
 [tools]
+# editor
+neovim = "0.10.1"
+# language runtime
 java = "corretto-17.0.11.9.1"
-node = "22.3.0"
-typos = "latest"
 rust = "latest"
 go = "latest"
-neovim = "0.10.1"
+node = "22.3.0"
 deno = "latest"
-ghq = "1.6.2"
-github-cli = "2.55.0"
+# git
+ghq = "latest"
+github-cli = "latest"
+delta = "latest"
+gitui = "latest"
+# tool
 zoxide = "0.9.4"
+jq = "latest"
+yq = "latest"
+ripgrep = "latest"
+bat = "latest"
+typos = "latest"
