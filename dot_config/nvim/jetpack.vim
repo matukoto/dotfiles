@@ -82,6 +82,7 @@ function! s:init() abort
   call jetpack#add('lambdalisue/vim-fern-renderer-nerdfont')
   " git
   call jetpack#add('lambdalisue/vim-gin')
+  call jetpack#add('ogaken-1/nvim-gin-preview')
   call jetpack#add('APZelos/blamer.nvim')
   call jetpack#add('lewis6991/gitsigns.nvim')
 
