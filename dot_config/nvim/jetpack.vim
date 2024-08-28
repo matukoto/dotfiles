@@ -154,9 +154,9 @@ function! s:init() abort
   " 閉じタグの自動挿入
   call jetpack#add('windwp/nvim-ts-autotag')
   " 前回作業時の画面を復元
-  call jetpack#add('folke/persistence.nvim')
+  " call jetpack#add('folke/persistence.nvim')
   " Neovim 起動時に dashboard を開く
-  call jetpack#add('nvimdev/dashboard-nvim')
+  " call jetpack#add('nvimdev/dashboard-nvim')
   " tui アプリを Neovim で開ける Gitui しか使っていないが
   call jetpack#add('matukoto/fm-nvim')
 
