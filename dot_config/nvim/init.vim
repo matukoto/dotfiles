@@ -69,3 +69,39 @@ source $VIMHOME/jetpack.vim
 
 " colorscheme
 " colorscheme everforest
+
+
+lua << EOF
+-- nvim 起動時に :GinStatus を実行する {{{
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'DenopsPluginPost:gin',
+  callback = function()
+    local buf_name = vim.api.nvim_buf_get_name(0)
+    if #buf_name > 0 then
+      return
+    end
+    -- lualine のブランチ名取得でも良いけど、依存が増えるでボツ
+    -- local branch = require('lualine.components.branch.git_branch').get_branch()
+    -- if #branch > 0 then
+    --     vim.schedule(function() vim.fn.execute('GinStatus') end)
+    -- end
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'GinComponentPost',
+      callback = function()
+        vim.schedule(function()
+          -- local worktree_name = vim.fn['gin#internal#component#get']('component:worktree:name')
+          local worktree_name = vim.fn['gin#component#worktree#name']()
+          if #worktree_name ~= 0 then
+            vim.fn.execute('GinStatus')
+          end
+        end)
+      end,
+      once = true,
+    })
+    -- 空バッファだとUser GinComponentPost イベントが発行されない！？ので無理やり更新させる
+    -- (遅延ロードさせているのが原因かも)
+    vim.fn['gin#internal#component#update']('component:worktree:name')
+  end,
+  once = true,
+})
+-- }}}
