@@ -1,5 +1,6 @@
 -- Call the setup function to change the default behavior
-require('aerial').setup({
+local aerial = require('aerial')
+aerial.setup({
   -- Priority list of preferred backends for aerial.
   -- This can be a filetype map (see :help aerial-filetype-map)
   backends = { 'treesitter', 'lsp', 'markdown', 'asciidoc', 'man' },
@@ -354,6 +355,17 @@ require('aerial').setup({
     -- How long to wait (in ms) after a buffer change before updating
     update_delay = 300,
   },
+})
+
+-- markdown を開いたときはアウトラインを表示して開く
+vim.api.nvim_create_autocmd('BufRead', {
+  pattern = { '*.md' },
+  callback = function()
+    aerial.open({
+      focus = true,
+      direction = 'left',
+    })
+  end,
 })
 
 -- アウトラインを表示、非表示を切り替える
