@@ -19,6 +19,26 @@ require('mason-lspconfig').setup({
   },
 })
 
+require('mason-tool-installer').setup({
+  ensure_installed = {
+    -- you can pin a tool to a particular version
+    --{ 'golangci-lint', version = 'v1.47.0' },
+    'stylua',
+    'shellcheck',
+    'typos',
+    'shellcheck',
+    'shfmt',
+    'sql-formatter',
+    'biome',
+    'prettierd',
+    'prettier',
+    'eslint',
+    'markdownlint-cli2',
+  },
+  auto_update = false,
+  run_on_start = true,
+})
+
 require('ddc_source_lsp_setup').setup()
 -- local capabilities = require('ddc_source_lsp').make_client_capabilities()
 -- require('mason-lspconfig').setup_handlers({

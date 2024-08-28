@@ -16,6 +16,7 @@ function! s:init() abort
   call jetpack#add('nvimdev/lspsaga.nvim')
   call jetpack#add('williamboman/mason.nvim')
   call jetpack#add('williamboman/mason-lspconfig.nvim')
+  call jetpack#add('WhoIsSethDaniel/mason-tool-installer.nvim')
   call jetpack#add('neovim/nvim-lspconfig')
   call jetpack#add('j-hui/fidget.nvim')
   call jetpack#add('ray-x/lsp_signature.nvim')
