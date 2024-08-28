@@ -64,6 +64,7 @@ function! s:init() abort
   call jetpack#add('yuki-yano/fern-preview.vim')
   call jetpack#add('stevearc/oil.nvim')
   call jetpack#add('lambdalisue/vim-fern-git-status')
+  call jetpack#add('lambdalisue/vim-fern-hijack')
 
   " ステータスラインプラグイン
   call jetpack#add('nvim-lualine/lualine.nvim')
