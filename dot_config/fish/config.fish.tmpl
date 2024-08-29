@@ -26,7 +26,11 @@ set -x FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
 #set -x FISH_COMPLETIONS_DIR $FISH_CONFIG_DIR/completions
 set -x FISH_FUNCTIONS_DIR $FISH_CONFIG_DIR/functions
 set -x FISH_CACHE_DIR $XDG_CACHE_HOME/fish
+
 set -x BROWSER wslview
+set -x EDITOR 'nvim'
+set -x MANPAGER 'nvim +Man!'
+set -x SYSTEMD_EDITOR "$EDITOR"
 set -x TZ 'Asia/Tokyo'
 
 abbr --add f ghf
