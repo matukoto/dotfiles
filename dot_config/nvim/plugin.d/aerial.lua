@@ -357,6 +357,14 @@ aerial.setup({
   },
 })
 
+-- markdown 以外を開いたときはアウトラインを閉じる
+vim.api.nvim_create_autocmd('BufRead', {
+  pattern = { '*' },
+  callback = function()
+    aerial.close()
+  end,
+})
+
 -- markdown を開いたときはアウトラインを表示して開く
 vim.api.nvim_create_autocmd('BufRead', {
   pattern = { '*.md' },
