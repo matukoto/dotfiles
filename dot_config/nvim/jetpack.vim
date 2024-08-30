@@ -154,6 +154,8 @@ function! s:init() abort
   call jetpack#add('cohama/lexima.vim')
   " 閉じタグの自動挿入
   call jetpack#add('windwp/nvim-ts-autotag')
+  " "(などで囲える
+  call jetpack#add('tpope/vim-surround')
   " 前回作業時の画面を復元
   " call jetpack#add('folke/persistence.nvim')
   " Neovim 起動時に dashboard を開く
