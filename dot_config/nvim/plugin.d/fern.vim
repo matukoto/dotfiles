@@ -20,6 +20,8 @@ function! s:fern_settings() abort
   nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
   nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
   nmap <silent> <buffer> R     <Plug>(fern-action-rename:vsplit)
+  nmap <silent> <buffer> yp    <Plug>(fern-action-yank:path)
+  nmap <silent> <buffer> yf    <Plug>(fern-action-yank:label)
   nmap <silent> <buffer> <expr> <Plug>(fern-quit-or-close-preview) fern_preview#smart_preview("\<Plug>(fern-action-preview:close)", ":q\<CR>")
   nmap <silent> <buffer> <ESC> <Plug>(fern-quit-or-close-preview)
   nmap <silent> <buffer> q <Plug>(fern-quit-or-close-preview)
