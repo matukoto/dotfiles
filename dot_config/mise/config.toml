@@ -3,7 +3,7 @@
 neovim = "0.10.1"
 # language runtime
 java = "corretto-17.0.12+7"
-rust = "1.80.0"
+rust = "1.80.1"
 go = "1.23.0"
 node = "22.7.0"
 deno = "1.46.2"
