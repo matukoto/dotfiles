@@ -5,9 +5,6 @@
     "github>aquaproj/aqua-renovate-config:file#2.3.1(aqua/.*\\.ya?ml)"
   ],
   "timezone": "Asia/Tokyo",
-  "schedule": [
-    "before 5pm"
-  ],
   "automerge": true,
   "dependencyDashboard": false,
   "packageRules": [
