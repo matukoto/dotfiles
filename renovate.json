@@ -19,8 +19,8 @@
       "matchFileNames": [
         "mise/config.toml"
       ],
-      "matchPackageNames": [
-        "/mise/"
+      "enabledManagers": [
+        "mise"
       ],
       "groupName": "mise"
     }
