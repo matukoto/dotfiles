@@ -2,8 +2,8 @@
 # editor
 neovim = "0.10.1"
 # language runtime
-java = "corretto-21.0.2"
+java = "corretto-21.0.0"
 rust = "latest"
 go = "latest"
-node = "22.7.0"
+node = "22.3.0"
 deno = "latest"
