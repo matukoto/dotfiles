@@ -6,7 +6,7 @@
   ],
   "timezone": "Asia/Tokyo",
   "schedule": [
-    "every day"
+    "before 5pm"
   ],
   "automerge": true,
   "dependencyDashboard": false,
