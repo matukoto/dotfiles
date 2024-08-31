@@ -7,5 +7,14 @@
   "timezone": "Asia/Tokyo",
   "schedule": [
     "every day"
+  ],
+  "packageRules": [
+    {
+      "matchFileNames": [
+        "aqua.yaml",
+        "renovate.json"
+      ],
+      "groupName": "aqua"
+    }
   ]
 }
