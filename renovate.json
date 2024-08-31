@@ -9,6 +9,7 @@
     "every day"
   ],
   "automerge": true,
+  "dependencyDashboard": false,
   "packageRules": [
     {
       "matchFileNames": [
