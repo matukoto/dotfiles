@@ -17,6 +17,7 @@ require('mason-lspconfig').setup({
     'vimls',
     'markdown_oxide',
     'jsonls',
+    'yamlls',
   },
 })
 
@@ -217,6 +218,10 @@ lspconfig.lua_ls.setup({
 })
 
 lspconfig.jsonls.setup({
+  on_attach = on_attach,
+})
+
+lspconfig.yamlls.setup({
   on_attach = on_attach,
 })
 
