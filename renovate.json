@@ -1,6 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    "github>aquaproj/aqua-renovate-config:file#2.3.1(aqua/.*\\.ya?ml)"
+  ],
+  "timezone": "Asia/Tokyo",
+  "schedule": [
+    "every day"
   ]
 }
