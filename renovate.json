@@ -8,6 +8,7 @@
   "schedule": [
     "every day"
   ],
+  "automerge": true,
   "packageRules": [
     {
       "matchFileNames": [
