@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Run chezmoi init and apply
         run: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply
