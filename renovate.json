@@ -15,6 +15,12 @@
         "renovate.json"
       ],
       "groupName": "aqua"
+    },
+    {
+      "matchFileNames": [
+        "mise/config.toml"
+      ],
+      "groupName": "mise"
     }
   ]
 }
