@@ -13,6 +13,10 @@
         "aqua.yaml",
         "renovate.json"
       ],
+      "matchPackageNames": [
+        "aquaproj/aqua-registry",
+        "aquaproj/aqua"
+      ],
       "groupName": "aqua"
     },
     {
