@@ -22,6 +22,9 @@
       "matchFileNames": [
         "mise/config.toml"
       ],
+      "matchPackageNames": [
+        "/mise/"
+      ],
       "groupName": "mise"
     }
   ]
