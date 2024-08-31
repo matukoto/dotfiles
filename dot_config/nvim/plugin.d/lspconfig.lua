@@ -16,6 +16,7 @@ require('mason-lspconfig').setup({
     'zk',
     'vimls',
     'markdown_oxide',
+    'jsonls',
   },
 })
 
@@ -213,6 +214,10 @@ lspconfig.lua_ls.setup({
       },
     },
   },
+})
+
+lspconfig.jsonls.setup({
+  on_attach = on_attach,
 })
 
 lspconfig.jdtls.setup({
