@@ -24,8 +24,9 @@ bash <(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh)
 
 # nu starship
 git clone https://github.com/nushell/nushell.git
-cd nushell
-cargo build --release --workspace; cargo run --release
+cd nushell || exit
+cargo build --release --workspace
+cargo run --release
 
 curl -sS https://starship.rs/install.sh | sh
 mkdir ~/.cache/starship
