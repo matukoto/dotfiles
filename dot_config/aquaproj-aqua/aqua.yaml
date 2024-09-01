@@ -15,3 +15,4 @@ packages:
 - name: junegunn/fzf@v0.55.0
 - name: sharkdp/fd@v10.2.0
 - name: jqlang/jq@jq-1.7.1
+- name: jesseduffield/lazygit@v0.43.1
