@@ -56,7 +56,7 @@ require('fm-nvim').setup({
     gitui_cmd = 'gitui',
     -- ranger_cmd = 'ranger',
     -- joshuto_cmd = 'joshuto',
-    -- lazygit_cmd = 'lazygit',
+    lazygit_cmd = 'lazygit',
     -- neomutt_cmd = 'neomutt',
     -- taskwarrior_cmd = 'taskwarrior-tui',
   },
