@@ -23,8 +23,8 @@ require('fm-nvim').setup({
       blend = 0,
 
       -- Num from 0 - 1 for measurements
-      height = 0.8,
-      width = 0.8,
+      height = 1,
+      width = 1,
 
       -- X and Y Axis of Window
       x = 0.7,
