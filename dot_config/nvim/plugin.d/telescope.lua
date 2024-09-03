@@ -43,6 +43,7 @@ require('telescope').setup({
         ['<C-v>'] = actions.select_vertical,
         -- telescope をクローズ
         ['q'] = actions.close,
+        ['<esc>'] = actions.close,
       },
     },
     sorting_strategy = 'ascending',
