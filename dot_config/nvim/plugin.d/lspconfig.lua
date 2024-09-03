@@ -18,6 +18,7 @@ require('mason-lspconfig').setup({
     'markdown_oxide',
     'jsonls',
     'yamlls',
+    'lemminx',
   },
 })
 
@@ -312,6 +313,10 @@ lspconfig.tinymist.setup({
 })
 
 lspconfig.zk.setup({
+  on_attach = on_attach,
+})
+
+lspconfig.lemminx.setup({
   on_attach = on_attach,
 })
 
