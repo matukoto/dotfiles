@@ -7,6 +7,8 @@ require('conform').setup({
     java = { lsp_format = 'fallback', stop_after_first = true },
     sh = { 'shellcheck', 'shfmt', stop_after_first = false },
     json = { 'jq' },
+    html = jsFormatter,
+    css = jsFormatter,
     javascript = jsFormatter,
     javascriptreact = jsFormatter,
     typescript = jsFormatter,
