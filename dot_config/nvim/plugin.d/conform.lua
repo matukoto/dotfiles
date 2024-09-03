@@ -16,8 +16,10 @@ require('conform').setup({
   },
   format_on_save = {
     timeout_ms = 1000,
-    lsp_fallback = true, -- LSP のフォーマッタを使う
     quiet = false,
     stop_after_first = false,
+  },
+  default_format_opts = {
+    lsp_format = 'never',
   },
 })
