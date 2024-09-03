@@ -274,7 +274,11 @@ require('zk').setup({
 lspconfig.svelte.setup({
   on_attach = on_attach,
 })
--- lspconfig.vtsls.setup({})
+
+lspconfig.vtsls.setup({
+  on_attach = on_attach,
+})
+
 lspconfig.vimls.setup({
   on_attach = on_attach,
 })
