@@ -83,3 +83,33 @@ inoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
 inoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
 inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
 inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+
+" cmdline 補完
+call ddc#custom#patch_global(#{
+        \   ui: 'pum',
+        \   autoCompleteEvents: [
+        \     'InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged',
+        \   ],
+        \   cmdlineSources: {
+        \     ':': ['cmdline', 'cmdline-history', 'around']
+        \   },
+        \ })
+nnoremap ;       <Cmd>call CommandlinePre()<CR>:
+
+function! CommandlinePre() abort
+    cnoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
+    cnoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
+    cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+    cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+
+    autocmd User DDCCmdlineLeave ++once call CommandlinePost()
+
+    " Enable command line completion for the buffer
+    call ddc#enable_cmdline_completion()
+endfunction
+function! CommandlinePost() abort
+    silent! cunmap <C-n>
+    silent! cunmap <C-p>
+    silent! cunmap <C-y>
+    silent! cunmap <C-e>
+endfunction
