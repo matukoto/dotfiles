@@ -162,7 +162,9 @@ function! s:init() abort
   " call jetpack#add('nvimdev/dashboard-nvim')
   " tui アプリを Neovim で開ける Gitui しか使っていないが
   call jetpack#add('matukoto/fm-nvim')
-
+  " easymotion
+  call jetpack#add('folke/flash.nvim')
+  call jetpack#add('machakann/vim-sandwich')
   " WakaTime コーディング時間を計測してくれる
   call jetpack#add('wakatime/vim-wakatime')
 
