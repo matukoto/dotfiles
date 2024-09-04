@@ -4,7 +4,7 @@ require('conform').setup({
   formatters_by_ft = {
     lua = { 'stylua' }, -- 特に設定しなくても ~/.config/stylua/stylua.toml を見てくれる
     sql = { 'sql_formatter' },
-    java = { lsp_format = 'fallback', stop_after_first = true },
+    java = { lsp_format = 'fallback' },
     sh = { 'shellcheck', 'shfmt', stop_after_first = false },
     json = { 'jq' },
     svelte = { lsp_format = 'fallback' },
@@ -22,6 +22,7 @@ require('conform').setup({
     quiet = false,
     stop_after_first = false,
   },
+  -- conform にファイルタイプを指定しないとフォーマットがかからないようにする
   default_format_opts = {
     lsp_format = 'never',
   },
