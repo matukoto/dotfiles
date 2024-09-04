@@ -52,19 +52,6 @@ require('ddc_source_lsp_setup').setup()
 -- })
 
 require('java').setup({
-  --  list of file that exists in root of the project
-  root_markers = {
-    'settings.gradle',
-    'settings.gradle.kts',
-    'pom.xml',
-    'build.gradle',
-    'mvnw',
-    'gradlew',
-    'build.gradle',
-    'build.gradle.kts',
-    '.git',
-  },
-
   -- load java test plugins
   java_test = {
     enable = true,
