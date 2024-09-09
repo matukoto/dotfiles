@@ -6,7 +6,7 @@ packages:
 - name: x-motemen/ghq@v1.6.2
 - name: dandavison/delta@0.18.1
 - name: extrawurst/gitui@v0.26.3
-- name: BurntSushi/ripgrep@14.1.0
+- name: BurntSushi/ripgrep@14.1.1
 - name: ajeetdsouza/zoxide@v0.9.4
 - name: mikefarah/yq@v4.44.3
 - name: sharkdp/bat@v0.24.0
