@@ -79,8 +79,8 @@ set smartcase
 "検索対象をハイライト
 "ハイライトを消す場合は:noh[l]
 set hlsearch
-" Escの2回押しでハイライト消去
-nnoremap <silent> <Space>, :nohlsearch<CR><ESC>
+" Escでハイライト消去
+nnoremap <silent> <ESC> :nohlsearch<CR><ESC>
 "スクロール時に表示を10行確保
 set scrolloff=10
  
