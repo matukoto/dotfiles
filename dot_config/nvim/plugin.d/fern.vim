@@ -10,9 +10,9 @@ function! s:fern_settings() abort
   " 削除
   nmap <silent> <buffer> <C-d> <Plug>(fern-action-remove=)y<CR>
   " 新規ファイル作成
-  nmap <silent> <buffer> f     <Plug>(fern-action-new-file)
+  nmap <silent> <buffer> F     <Plug>(fern-action-new-file)
   " 新規ディレクトリ作成
-  nmap <silent> <buffer> d     <Plug>(fern-action-new-dir)
+  nmap <silent> <buffer> D     <Plug>(fern-action-new-dir)
   " 一階層上に移動
   nmap <silent> <buffer> h     <Plug>(fern-action-leave)
   " 一階層下に移動
