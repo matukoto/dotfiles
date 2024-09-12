@@ -3,7 +3,7 @@
     "atuin"
   ],
   "binary_aliases": {},
-  "install_prefix": "~/.atuin/bin",
+  "install_prefix": "~/.local/share/aquaproj-aqua/bin",
   "provider": {
     "source": "cargo-dist",
     "version": "0.15.0"
