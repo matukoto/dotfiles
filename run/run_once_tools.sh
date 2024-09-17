@@ -16,11 +16,11 @@ chmod +x aqua-installer
 ./aqua-installer
 
 # mise
-curl https://mise.run | sh
+# curl https://mise.run | sh
 mise i
 
 # atuin
-bash <(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh)
+# bash <(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh)
 
 # nu starship
 git clone https://github.com/nushell/nushell.git
