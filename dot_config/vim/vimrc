@@ -145,3 +145,5 @@ endfunction
 
 " :TCL コマンドでカスタム関数を実行
 command! TCL call CloseTabAndMoveLeft()
+
+
