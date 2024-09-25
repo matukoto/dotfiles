@@ -6,3 +6,9 @@ go = "1.23.1"
 node = "22.9.0"
 deno = "1.46.3"
 lua = "5.4.7"
+"npm:pnpm" = "9.11.0"
+"npm:vite" = "5.4.8"
+"go:github.com/rhysd/vim-startuptime" = "latest"
+
+[settings]
+experimental = true
