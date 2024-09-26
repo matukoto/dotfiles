@@ -37,7 +37,9 @@ local config = {
   window_background_gradient = {
     colors = { '#000000' },
   },
+  leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 2000 },
 }
+
 local mux = wezterm.mux
 
 wezterm.on('gui-startup', function()
@@ -55,7 +57,7 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
   if tab.is_active then
     background = '#78CDD1'
     foreground = '#000000'
-    edge_background ='#78CDD1'
+    edge_background = '#78CDD1'
   end
   local edge_foreground = background
   local title = '   ' .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. '   '
