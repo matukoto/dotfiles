@@ -13,8 +13,8 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
-nnoremap j j
-nnoremap k k
+nnoremap <buffer> j j
+nnoremap <buffer> k k
 
 " obsidian.nvim
 set conceallevel=1
