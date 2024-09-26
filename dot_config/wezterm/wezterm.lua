@@ -37,7 +37,7 @@ local config = {
   window_background_gradient = {
     colors = { '#000000' },
   },
-  leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 2000 },
+  leader = { key = 'j', mods = 'ALT', timeout_milliseconds = 2000 },
 }
 
 local mux = wezterm.mux
