@@ -21,7 +21,7 @@ local config = {
   -- タブの追加ボタンを非表示
   show_new_tab_button_in_tab_bar = false,
   -- タブのクローズボタンを非表示
-  show_close_tab_button_in_tabs = false,
+  -- show_close_tab_button_in_tabs = false,
   -- タブ同士の境界線を非表示
   colors = {
     tab_bar = {
@@ -45,16 +45,17 @@ wezterm.on('gui-startup', function()
   window:spawn_tab({ args = { 'wsl.exe', '--cd', '~' } })
 end)
 
-local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
-local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
+local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
+local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_lower_left_triangle
 
 wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
   local background = '#5c6d74'
   local foreground = '#FFFFFF'
   local edge_background = 'none'
   if tab.is_active then
-    background = '#ae8b2d'
-    foreground = '#FFFFFF'
+    background = '#78CDD1'
+    foreground = '#000000'
+    edge_background ='#78CDD1'
   end
   local edge_foreground = background
   local title = '   ' .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. '   '
