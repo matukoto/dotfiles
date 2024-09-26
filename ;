@@ -14,28 +14,18 @@ local config = {
   use_ime = false,
   -- タイトルバーの非表示
   window_decorations = 'RESIZE',
-  -- タブバーの表示
-  show_tabs_in_tab_bar = true,
+-- タブバーの表示
+show_tabs_in_tab_bar = true
   -- タブバーが1つしかない場合非表示
+  hide_tab_bar_if_only_one_tab = true,
   hide_tab_bar_if_only_one_tab = true,
   -- タブの追加ボタンを非表示
   show_new_tab_button_in_tab_bar = false,
-  -- タブのクローズボタンを非表示
-  show_close_tab_button_in_tabs = false,
   -- タブ同士の境界線を非表示
   colors = {
     tab_bar = {
       inactive_tab_edge = 'none',
     },
-  },
-  -- タブバーを透過
-  window_frame = {
-    inactive_titlebar_bg = 'none',
-    active_titlebar_bg = 'none',
-  },
-  -- タブの背景色と同じ色
-  window_background_gradient = {
-    colors = { '#000000' },
   },
 }
 local mux = wezterm.mux
