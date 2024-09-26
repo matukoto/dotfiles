@@ -208,5 +208,6 @@ cabbrev cm <Cmd>Capture message<CR>
 " Plugin
 source $VIMHOME/jetpack.vim
 
+autocmd CursorMoved * normal! zz
 " colorscheme
 " colorscheme everforest
