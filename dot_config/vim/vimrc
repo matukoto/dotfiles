@@ -146,4 +146,46 @@ endfunction
 " :TCL コマンドでカスタム関数を実行
 command! TCL call CloseTabAndMoveLeft()
 
+let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
+let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+if !filereadable(s:jetpackfile)
+  call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
+endif
 
+packadd vim-jetpack
+call jetpack#begin()
+  call jetpack#add('tani/vim-jetpack')
+  call jetpack#add('vim-jp/vimdoc-ja')
+  " denops
+  call jetpack#add('vim-denops/denops.vim')
+  call jetpack#add('lambdalisue/vim-kensaku')
+  call jetpack#add('lambdalisue/vim-kensaku-search')
+  call jetpack#add('vim-skk/skkeleton')
+  call jetpack#add('NI57721/skkeleton-state-popup')
+  call jetpack#add('lambdalisue/vim-gin')
+  call jetpack#add('ogaken-1/nvim-gin-preview')
+  call jetpack#add('tpope/vim-surround')
+
+  call jetpack#add('lambdalisue/vim-fern')
+  call jetpack#add('yuki-yano/fern-preview.vim')
+  call jetpack#add('lambdalisue/vim-fern-git-status')
+  call jetpack#add('lambdalisue/vim-fern-hijack')
+  call jetpack#add('bkad/CamelCaseMotion')
+
+  call jetpack#add('shougo/ddc-ui-pum')
+  call jetpack#add('shougo/pum.vim')
+  call jetpack#add('shougo/ddc.vim')
+  " filter
+  call jetpack#add('shougo/ddc-matcher_head')
+  call jetpack#add('shougo/ddc-sorter_rank')
+  call jetpack#add('tani/ddc-fuzzy')
+  call jetpack#add('tyru/capture.vim')
+  call jetpack#add('tyru/open-browser.vim')
+  call jetpack#add('haya14busa/vim-asterisk')
+  call jetpack#add('lambdalisue/vim-guise')
+  call jetpack#add('lambdalisue/vim-suda')
+  call jetpack#add('sainnhe/gruvbox-material')
+  call jetpack#add('sainnhe/edge')
+call jetpack#end()
+
+colorscheme gruvbox-material
