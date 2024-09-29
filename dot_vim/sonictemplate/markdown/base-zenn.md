@@ -1,13 +1,12 @@
 ---
 title: ""
-emoji: "📀"
+emoji: "🔔"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["javascript", "react"]
+topics: ["javascript"]
 published: false
 ---
-はじめに
+## はじめに
 
 ## 内容
 
 ## まとめ
-
