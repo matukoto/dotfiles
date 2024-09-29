@@ -8,11 +8,11 @@ deno = "1.46.3"
 lua = "5.4.7"
 "npm:pnpm" = "9.11.0"
 "npm:vite" = "5.4.8"
-"go:github.com/rhysd/vim-startuptime" = "latest"
-"cargo:leetcode-cli" = "latest"
 "npm:zenn-cli" = "latest"
 "npm:@marp-team/marp-cli" = "latest"
 "npm:browser-sync" = "latest"
+"go:github.com/rhysd/vim-startuptime" = "latest"
+"cargo:leetcode-cli" = "latest"
 
 [settings]
 experimental = true
