@@ -17,6 +17,7 @@ require('nvim-treesitter.configs').setup({
     'java',
     'bash',
     'go',
+    'sql',
     -- 'nu',
     'markdown',
     'markdown_inline',
