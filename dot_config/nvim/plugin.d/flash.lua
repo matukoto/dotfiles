@@ -1,60 +1,25 @@
 require('flash').setup({
-  -- labels = "abcdefghijklmnopqrstuvwxyz",
+  -- 検索時のラベル
   labels = 'asdfghjklqwertyuiopzxcvbnm',
   search = {
-    -- search/jump in all windows
+    -- ウィンドウをまたいでの検索
     multi_window = true,
-    -- search direction
-    forward = true,
-    -- when `false`, find only matches in the given direction
+    forward = false,
+    -- false のときは方向を決めて検索する (ex: f ▼後方検索, F ▲後方検索)
     wrap = true,
-    ---@type Flash.Pattern.Mode
-    -- Each mode will take ignorecase and smartcase into account.
-    -- * exact: exact match
-    -- * search: regular search
-    -- * fuzzy: fuzzy search
-    -- * fun(str): custom function that returns a pattern
-    --   For example, to only match at the beginning of a word:
-    --   mode = function(str)
-    --     return "\\<" .. str
-    --   end,
+    -- fuzzy, exact, search
     mode = 'exact',
-    -- behave like `incsearch`
     incremental = false,
-    -- Excluded filetypes and custom window filters
-    ---@type (string|fun(win:window))[]
-    exclude = {
-      'notify',
-      'cmp_menu',
-      'noice',
-      'flash_prompt',
-      function(win)
-        -- exclude non-focusable windows
-        return not vim.api.nvim_win_get_config(win).focusable
-      end,
-    },
-    -- Optional trigger character that needs to be typed before
-    -- a jump label can be used. It's NOT recommended to set this,
-    -- unless you know what you're doing
-    trigger = '',
-    -- max pattern length. If the pattern length is equal to this
-    -- labels will no longer be skipped. When it exceeds this length
-    -- it will either end in a jump or terminate the search
-    max_length = false, ---@type number|false
   },
   jump = {
-    -- save location in the jumplist
+    -- ジャンプリストに登録する
     jumplist = true,
-    -- jump position
+    -- ジャンプ位置
     pos = 'start', ---@type "start" | "end" | "range"
-    -- add pattern to search history
-    history = false,
-    -- add pattern to search register
-    register = false,
     -- clear highlight after jump
-    nohlsearch = false,
+    nohlsearch = true,
     -- automatically jump when there is only one match
-    autojump = false,
+    autojump = true,
     -- You can force inclusive/exclusive jumps by setting the
     -- `inclusive` option. By default it will be automatically
     -- set based on the mode.
@@ -67,16 +32,11 @@ require('flash').setup({
   label = {
     -- allow uppercase labels
     uppercase = true,
-    -- add any labels with the correct case here, that you want to exclude
-    exclude = '',
-    -- add a label for the first match in the current window.
-    -- you can always jump to the first match with `<CR>`
     current = true,
-    -- show the label after the match
-    after = true, ---@type boolean|number[]
+    after = false, ---@type boolean|number[]
     -- show the label before the match
-    before = false, ---@type boolean|number[]
-    -- position of the label extmark
+    before = true, ---@type boolean|number[]
+    -- ラベル位置
     style = 'overlay', ---@type "eol" | "overlay" | "right_align" | "inline"
     -- flash tries to re-use labels that were already assigned to a position,
     -- when typing more characters. By default only lower-case labels are re-used.
@@ -89,29 +49,12 @@ require('flash').setup({
     -- Enable this to use rainbow colors to highlight labels
     -- Can be useful for visualizing Treesitter ranges.
     rainbow = {
-      enabled = false,
+      enabled = true,
       -- number between 1 and 9
       shade = 5,
     },
-    -- With `format`, you can change how the label is rendered.
-    -- Should return a list of `[text, highlight]` tuples.
-    ---@class Flash.Format
-    ---@field state Flash.State
-    ---@field match Flash.Match
-    ---@field hl_group string
-    ---@field after boolean
-    ---@type fun(opts:Flash.Format): string[][]
-    format = function(opts)
-      return { { opts.match.label, opts.hl_group } }
-    end,
   },
   highlight = {
-    -- show a backdrop with hl FlashBackdrop
-    backdrop = true,
-    -- Highlight the search matches
-    matches = true,
-    -- extmark priority
-    priority = 5000,
     groups = {
       match = 'FlashMatch',
       current = 'FlashCurrent',
@@ -119,17 +62,6 @@ require('flash').setup({
       label = 'FlashLabel',
     },
   },
-  -- action to perform when picking a label.
-  -- defaults to the jumping logic depending on the mode.
-  ---@type fun(match:Flash.Match, state:Flash.State)|nil
-  action = nil,
-  -- initial pattern to use when opening flash
-  pattern = '',
-  -- When `true`, flash will try to continue the last search
-  continue = false,
-  -- Set config to a function to dynamically change the config
-  config = nil, ---@type fun(opts:Flash.Config)|nil
-  -- You can override the default options for a specific mode.
   -- Use it with `require("flash").jump({mode = "forward"})`
   ---@type table<string, Flash.Config>
   modes = {
@@ -138,8 +70,8 @@ require('flash').setup({
     search = {
       -- when `true`, flash will be activated during regular search by default.
       -- You can always toggle when searching with `require("flash").toggle()`
-      enabled = false,
-      highlight = { backdrop = false },
+      enabled = true,
+      highlight = { backdrop = true },
       jump = { history = true, register = true, nohlsearch = true },
       search = {
         -- `forward` will be automatically set to the search direction
@@ -259,11 +191,10 @@ vim.keymap.set('n', 'f', function()
   require('flash').jump()
 end)
 
--- keys = {
---     { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
---     { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
---     { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
---     { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
---     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
---   },
--- }
+vim.keymap.set('n', 't', function()
+  require('flash').treesitter()
+end)
+
+vim.keymap.set('n', 'T', function()
+  require('flash').treesitter_search()
+end)
