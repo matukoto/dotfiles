@@ -11,14 +11,19 @@ git rebase origin/master
 
 cd src/ || exit
 
-# make distclean |
-#   tee vim_make_distclean.log
+make distclean |
+  tee vim_make_distclean.log
 
 ./configure \
   --enable-cscope \
   --enable-fail-if-missing \
   --enable-luainterp=yes \
+  --enable-perlinterp=yes \
+  --enable-python3interp=yes \
+  --with-python3-command=python \
+  --enable-rubyinterp=yes \
   --prefix="${INSTALL_DIR}" \
+  --with-tlib=ncurses |
   tee vim_configure.log
 
 make |
