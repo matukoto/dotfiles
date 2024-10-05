@@ -184,8 +184,13 @@ call jetpack#begin()
   call jetpack#add('haya14busa/vim-asterisk')
   call jetpack#add('lambdalisue/vim-guise')
   call jetpack#add('lambdalisue/vim-suda')
-  call jetpack#add('sainnhe/gruvbox-material')
-  call jetpack#add('sainnhe/edge')
+  " call jetpack#add('sainnhe/gruvbox-material')
+  " call jetpack#add('sainnhe/edge')
+  call jetpack#add('cocopon/iceberg.vim/')
 call jetpack#end()
+syntax enable
 
-colorscheme gruvbox-material
+let g:denops_disable_version_check = 1
+
+colorscheme iceberg
+set background=dark
