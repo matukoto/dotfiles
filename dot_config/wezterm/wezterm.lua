@@ -43,7 +43,7 @@ local config = {
 local mux = wezterm.mux
 
 wezterm.on('gui-startup', function()
-  local _, _, window = mux.spawn_window({ args = { 'nu.exe', '-NoLogo' } })
+  local _, _, window = mux.spawn_window({ args = { 'nu.exe' } })
   window:spawn_tab({ args = { 'wsl.exe', '--cd', '~' } })
 end)
 
