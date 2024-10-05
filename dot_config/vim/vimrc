@@ -5,6 +5,30 @@ set fileencodings=utf-8
 " 改行コードの自動認識
 set fileformats=unix,dos
 
+if has('vim_starting')
+" Disable unnecessary default plugins
+  let g:loaded_gzip              = 1
+  let g:loaded_tar               = 1
+  let g:loaded_tarPlugin         = 1
+  let g:loaded_zip               = 1
+  let g:loaded_zipPlugin         = 1
+  let g:loaded_rrhelper          = 1
+  let g:loaded_2html_plugin      = 1
+  let g:loaded_vimball           = 1
+  let g:loaded_vimballPlugin     = 1
+  let g:loaded_getscript         = 1
+  let g:loaded_getscriptPlugin   = 1
+  let g:loaded_logipat           = 1
+  let g:loaded_matchparen        = 1
+  let g:loaded_man               = 1
+  " NOTE:
+  " The Netrw is use to download a missing spellfile
+  let g:loaded_netrw             = 1
+  let g:loaded_netrwPlugin       = 1
+  let g:loaded_netrwSettings     = 1
+  let g:loaded_netrwFileHandlers = 1
+endif
+
 " 新しいウィンドウを下､右に開く
 set splitbelow
 set splitright
@@ -26,6 +50,25 @@ set expandtab
 " 改行時に自動インデント
 set autoindent
 set smartindent
+
+" map prefix
+let g:mapleader = "\<Space>"
+nnoremap <Leader> <Nop>
+xnoremap <Leader> <Nop>
+
+" ウィンドウ移動
+nnoremap <silent> <Leader>h <C-w>h
+nnoremap <silent> <Leader>j <C-w>j
+nnoremap <silent> <Leader>k <C-w>k
+nnoremap <silent> <Leader>l <C-w>l
+
+" タブ
+nnoremap <silent> H <Cmd>tabprevious<CR>
+nnoremap <silent> L <Cmd>tabnext<CR>
+nnoremap <silent> Q <Cmd>TCL<CR>
+cabbrev qq TCL
+
+nnoremap <silent> <Leader>p "*p
 
 " Vim のビジュアルモードでは p を使うと、無名レジスタに選択したテキストがコピーされる
 xnoremap p P
@@ -175,6 +218,11 @@ call jetpack#begin()
   call jetpack#add('shougo/ddc-ui-pum')
   call jetpack#add('shougo/pum.vim')
   call jetpack#add('shougo/ddc.vim')
+  call jetpack#add('shougo/ddc-source-around')
+  call jetpack#add('LumaKernel/ddc-source-file')
+  call jetpack#add('matsui54/ddc-source-buffer')
+
+  call jetpack#add('github/copilot.vim')
   " filter
   call jetpack#add('shougo/ddc-matcher_head')
   call jetpack#add('shougo/ddc-sorter_rank')
@@ -191,6 +239,246 @@ call jetpack#end()
 syntax enable
 
 let g:denops_disable_version_check = 1
+let g:denops#server#deno_args = ['-q', '--no-lock', '-A', '--unstable-ffi', '--unstable-kv']
+
+" skkeleton
+call skkeleton#config({
+      \ 'globalDictionaries': ['~/.skk/SKK-JISYO.L','~/.skk/SKK-JISYO.emoji.utf8', '~/.skk/SKK-JISYO.geo', '~/.skk/SKK-JISYO.jinmei', '~/.skk/SKK-JISYO.propernoun'],
+      \ 'sources': ['deno_kv', 'google_japanese_input'],
+      \ 'databasePath': '~/.skk/skkeleton.db',
+      \ 'eggLikeNewline': v:false,
+      \ 'immediatelyCancel': v:false,
+      \ 'registerConvertResult': v:true,
+      \ 'showCandidatesCount': 2,
+      \ 'debug': v:false,
+      \ 'keepState': v:false,
+      \ 'userDictionary': '~/.skk/userdict.txt'
+      \})
+
+call skkeleton#register_kanatable('rom', {
+      \   '--': ['-',''],
+      \   '-': ['ー',''],
+      \   '..': ['.',''],
+      \   '.': ['。',''],
+      \   ',,': [',',''],
+      \   '/': ['/',''],
+      \   '//': ['・',''],
+      \   '[': ['[',''],
+      \   '[[': ['「',''],
+      \   ']': [']',''],
+      \   ']]': ['」',''],
+      \ })
+
+" skkeleton がモードの状態を保持しないように修正
+function! s:skkeleton_init() abort
+  call skkeleton#config({
+    \ 'keepState': v:false
+    \ })
+endfunction
+augroup skkeleton-enable-previous
+  autocmd!
+  autocmd User skkeleton-enable-pre call s:skkeleton_init()
+augroup END
+
+imap <C-j> <Plug>(skkeleton-enable)
+cmap <C-j> <Plug>(skkeleton-enable)
+
+let s:opts = #{pos: 'botleft', line: 'cursor+1', col: 'cursor', highlight: 'WildMenu'}
+
+call skkeleton_state_popup#config(#{
+  \   labels: {
+  \     'input': #{hira: 'あ', kata: 'ア', hankata: 'ｶﾅ', zenkaku: 'Ａ'},
+  \     'input:okurinasi': #{hira: '▽▽', kata: '▽▽', hankata: '▽▽', abbrev: 'ab'},
+  \     'input:okuriari': #{hira: '▽▽', kata: '▽▽', hankata: '▽▽'},
+  \     'henkan': #{hira: '▼▼', kata: '▼▼', hankata: '▼▼', abbrev: 'ab'},
+  \   },
+  \   opts: s:opts,
+  \ })
+call skkeleton_state_popup#run()
+
+" ddc
+call ddc#custom#patch_global('ui', 'pum')
+call ddc#custom#patch_global('sources', ['skkeleton','file','around','buffer'])
+call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+      \   'matchers': ['matcher_fuzzy'],
+      \   'sorters': ['sorter_fuzzy'],
+      \   'converters': ['converter_fuzzy'],
+      \   'maxItems': [50],
+      \ }
+      \ })
+
+call ddc#custom#patch_global('sourceOptions', {
+      \ 'skkeleton': {
+      \   'mark': 'skk',
+      \   'isVolatile': v:true,
+      \   'converters': [],
+      \   'minAutoCompleteLength': 1,
+      \ },
+      \ })
+
+call ddc#custom#patch_global('sourceOptions', {
+      \ 'around': {
+      \ 'mark': 'A',
+      \ 'minAutoCompleteLength': 2,
+      \ },
+      \ })
+
+call ddc#custom#patch_global('sourceOptions', {
+    \ '_': {'matchers': ['matcher_head']},
+    \ 'buffer': {'mark': 'B'},
+    \ })
+
+call ddc#custom#patch_global('sourceParams', {
+    \ 'buffer': {
+    \   'requireSameFiletype': v:false,
+    \   'limitBytes': 5000000,
+    \   'fromAltBuf': v:true,
+    \   'forceCollect': v:true,
+    \ },
+    \ })
+
+call ddc#custom#patch_global('sourceOptions', {
+      \ 'file': {
+      \   'mark': 'F',
+      \   'isVolatile': v:true,
+      \   'forceCompletionPattern': '\S/\S*',
+      \   'minAutoCompleteLength': 1,
+      \ },
+      \ })
+
+call ddc#enable()
+inoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
+inoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
+inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+
+" ドットファイルなどをデフォルトで表示
+let g:fern#default_hidden = 1
+" drawer で開く
+nnoremap <silent> <Leader>E  :<C-u>Fern . -drawer<CR>
+nnoremap <silent> <Leader>e  :<C-u>Fern . -reveal=%<CR>
+nnoremap <silent> <Leader>ce :<C-u>Fern %:h<CR>
+
+
+function! s:fern_settings() abort
+  " 削除
+  nmap <silent> <buffer> <C-d> <Plug>(fern-action-remove=)y<CR>
+  " 新規ファイル作成
+  nmap <silent> <buffer> F     <Plug>(fern-action-new-file)
+  " 新規ディレクトリ作成
+  nmap <silent> <buffer> D     <Plug>(fern-action-new-dir)
+  " 一階層上に移動
+  nmap <silent> <buffer> h     <Plug>(fern-action-leave)
+  " 一階層下に移動
+  nmap <silent> <buffer> l     <Plug>(fern-action-expand)
+  " ファイルを開く
+  nmap <silent> <buffer> <CR>  <Plug>(fern-action-open)
+  " ファイルを開く 垂直
+  nmap <silent> <buffer> <C-v> <Plug>(fern-action-open:vsplit)
+  " 隠しファイルの表示切り替え
+  nmap <silent> <buffer> !   <Plug>(fern-action-hidden:toggle)
+  " ファイルを開く 水平
+  nmap <silent> <buffer> <C-h> <Plug>(fern-action-open:split)
+  " ファイルを開く タブ
+  nmap <silent> <buffer> <C-t> <Plug>(fern-action-open:tabedit)
+  " プレビュー
+  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+  nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
+  " ファイル名変更
+  nmap <silent> <buffer> R     <Plug>(fern-action-rename:vsplit)
+  " path をヤンク
+  nmap <silent> <buffer> yp    <Plug>(fern-action-yank:path)
+  " ファイル名をヤンク
+  nmap <silent> <buffer> yf    <Plug>(fern-action-yank:label)
+  nmap <silent> <buffer> <expr> <Plug>(fern-quit-or-close-preview) fern_preview#smart_preview("\<Plug>(fern-action-preview:close)", ":q\<CR>")
+  " プレビューを閉じる
+  nmap <silent> <buffer> <ESC> <Plug>(fern-quit-or-close-preview)
+  nmap <silent> <buffer> q <Plug>(fern-quit-or-close-preview)
+endfunction
+
+augroup fern-settings
+  autocmd!
+  autocmd FileType fern call s:fern_settings()
+augroup END
+
+" nerdfont
+let g:fern#renderer = 'nerdfont'
+let g:fern#disable_default_mappings = 1
+
+let g:fern_git_status#disable_ignored = 1
+let g:fern_git_status#disable_untracked = 0
+let g:fern_git_status#disable_submodules = 1
+let g:fern_git_status#disable_directories = 0
+
+" kensaku  fuzzy-motion
+let g:fuzzy_motion_matchers = ['fzf', 'kensaku']
+" fuzzy-motion
+nnoremap <C-f> <cmd>FuzzyMotion<CR>
+
+let g:camelcasemotion_key = '['
+
+imap <expr> <C-Space> copilot#expand()
+imap <C-]> <plug>(copilot-dismiss)
+
+
+" Gin
+let g:gin_proxy_apply_without_confirm = 1
+nnoremap <C-g>s <Cmd>GinStatus<CR>
+" バッファの差分を表示
+nnoremap <C-g>a <Cmd>Gin add --all<CR>
+nnoremap <C-g>c <Cmd>Gin commit --quiet<CR>
+nnoremap <C-g>P <Cmd>GinPatch ++opener=tabnew ++no-head %<CR>
+nnoremap <C-g>p <Cmd>Gin push --quiet<CR>
+" nnoremap <Lieader>g<C-d> <Cmd>GinDiff ++processor=delta\ --no-gitconfig\ --color-only<CR>
+nnoremap <C-g>l  <Cmd>GinLog ++opener=tabnew<CR>
+" nnoremap <Lieader>gl <Cmd>GinLog -- %<CR>
+nnoremap <C-g>b <Cmd>GinBranch --all<CR>
+nnoremap <C-g>d <Cmd>GinDiff<CR>
+
+function! s:my_gin_log() abort
+  nnoremap <buffer> if <Plug>(gin-action-fixup:instant-fixup)
+  nnoremap <buffer> ir <Plug>(gin-action-fixup:instant-reword)
+  nnoremap <buffer> <CR> <Plug>(gin-action-show:vsplit)
+  setl cursorline
+endfunction
+
+function! s:gin_checkout_current_file() abort
+ " 現在行のファイル名を取得（行の先頭のステータスを無視）
+  let l:file = matchstr(getline('.'), '\v^\s*[A-Z]+\s+\zs\S+')
+  " Gin checkout コマンドを実行
+  if !empty(l:file)
+    execute 'Gin checkout -- ' . l:file
+  else
+    echo "No file found on the current line"
+  endif
+endfunction
+
+function! s:my_gin_status() abort
+  "nnoremap <buffer> co :Gin checkout -- <C-r>=expand('<cfile>')<CR><CR>
+  nnoremap <buffer> co :call <SID>gin_checkout_current_file()<CR>
+endfunction
+
+function! s:my_gin_patch() abort
+  nnoremap <buffer> dp <Plug>(gin-diffput)
+  nnoremap <buffer> do <Plug>(gin-diffget)
+endfunction
+
+augroup my-gin
+  autocmd!
+  autocmd User GinComponentPost redrawtabline
+  autocmd FileType gin-log silent! call s:my_gin_log()
+  autocmd FileType gin-status silent! call s:my_gin_status()
+  autocmd BufRead ginedit://* silent! call s:my_gin_patch()
+augroup END
+
+if executable('delta')
+  let g:gin_diff_persistent_args = [
+        \ '++processor=delta --diff-highlight --keep-plus-minus-markers',
+        \]
+endif
+
 
 colorscheme iceberg
 set background=dark
+
