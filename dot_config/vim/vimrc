@@ -1,10 +1,10 @@
 " 文字コードの自動判別
 set encoding=utf-8
 set fileencodings=utf-8
-"
 " 改行コードの自動認識
 set fileformats=unix,dos
 
+set nocompatible
 if has('vim_starting')
 " Disable unnecessary default plugins
   let g:loaded_gzip              = 1
@@ -312,6 +312,8 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'skkeleton': {
       \   'mark': 'skk',
       \   'isVolatile': v:true,
+      \   'matchers': [],
+      \   'sorters': [],
       \   'converters': [],
       \   'minAutoCompleteLength': 1,
       \ },
@@ -325,8 +327,10 @@ call ddc#custom#patch_global('sourceOptions', {
       \ })
 
 call ddc#custom#patch_global('sourceOptions', {
-    \ '_': {'matchers': ['matcher_head']},
-    \ 'buffer': {'mark': 'B'},
+    \ 'buffer': {
+    \ 'matchers': ['matcher_head'],
+    \ 'mark': 'B',
+    \ },
     \ })
 
 call ddc#custom#patch_global('sourceParams', {

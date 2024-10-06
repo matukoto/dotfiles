@@ -13,7 +13,7 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'skkeleton': {
       \   'mark': 'skk',
       \   'isVolatile': v:true,
-      \   'matchers': ['skkeleton'],
+      \   'matchers': [],
       \   'sorters': [],
       \   'converters': [],
       \   'minAutoCompleteLength': 1,
