@@ -238,7 +238,7 @@ call jetpack#begin()
 call jetpack#end()
 syntax enable
 
-let g:denops_disable_version_check = 1
+" let g:denops_disable_version_check = 1
 let g:denops#server#deno_args = ['-q', '--no-lock', '-A', '--unstable-ffi', '--unstable-kv']
 
 " skkeleton
