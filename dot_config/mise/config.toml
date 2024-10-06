@@ -13,6 +13,7 @@ lua = "5.4.7"
 "npm:@marp-team/marp-cli" = "latest"
 "npm:browser-sync" = "latest"
 "go:github.com/rhysd/vim-startuptime" = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
 "cargo:leetcode-cli" = "latest"
 vim = "latest"
 [settings]

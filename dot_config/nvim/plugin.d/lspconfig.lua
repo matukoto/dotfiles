@@ -179,6 +179,20 @@ for type, icon in pairs(signs) do
 end
 
 local lspconfig = require('lspconfig')
+
+lspconfig.gopls.setup({
+  on_attach = on_attach,
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+      },
+      staticcheck = true,
+    },
+  },
+})
+
 lspconfig.lua_ls.setup({
   on_attach = on_attach,
   hint = {
