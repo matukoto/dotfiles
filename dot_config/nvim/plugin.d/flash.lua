@@ -4,7 +4,7 @@ require('flash').setup({
   search = {
     -- ウィンドウをまたいでの検索
     multi_window = true,
-    forward = false,
+    forward = true,
     -- false のときは方向を決めて検索する (ex: f ▼後方検索, F ▲後方検索)
     wrap = true,
     -- fuzzy, exact, search
@@ -17,7 +17,7 @@ require('flash').setup({
     -- ジャンプ位置
     pos = 'start', ---@type "start" | "end" | "range"
     -- clear highlight after jump
-    nohlsearch = true,
+    nohearch = true,
     -- automatically jump when there is only one match
     autojump = true,
     -- You can force inclusive/exclusive jumps by setting the
@@ -188,6 +188,18 @@ require('flash').setup({
 })
 
 vim.keymap.set('n', 'f', function()
+  require('flash').jump({
+    search = { forward = true, wrap = false, multi_window = false },
+  })
+end)
+
+vim.keymap.set('n', 'F', function()
+  require('flash').jump({
+    search = { forward = false, wrap = false, multi_window = false },
+  })
+end)
+
+vim.keymap.set('n', 's', function()
   require('flash').jump()
 end)
 
