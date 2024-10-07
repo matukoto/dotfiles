@@ -22,6 +22,7 @@ require('render-markdown').setup()
 
 -- カーソル移動を可視化する
 require('smoothcursor').setup()
+require('todo-comments').setup()
 
 -- dmacro
 vim.keymap.set({ 'i', 'n' }, '<C-y>', '<Plug>(dmacro-play-macro)')

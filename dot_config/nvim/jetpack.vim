@@ -110,6 +110,7 @@ function! s:init() abort
   call jetpack#add('mattn/vim-sonictemplate')
   call jetpack#add('thinca/vim-quickrun')
   call jetpack#add('numToStr/comment.nvim')
+  call jetpack#add('folke/todo-comments.nvim')
   call jetpack#add('yuki-yano/fuzzy-motion.vim')
   call jetpack#add('ethanholz/nvim-lastplace')
   call jetpack#add('haya14busa/vim-edgemotion')
