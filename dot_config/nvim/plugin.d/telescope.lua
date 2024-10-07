@@ -74,7 +74,7 @@ require('telescope').setup({
       initial_mode = 'normal',
       mappings = {
         n = {
-          ['D'] = actions.delete_buffer,
+          ['<C-w>'] = actions.delete_buffer,
         },
       },
       sort_mru = true,
