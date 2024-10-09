@@ -2,5 +2,19 @@
 Thumbs.db
 Desktop.ini
 
+# macOS
+.DS_Store
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
 # Vim
 **/.vim/**
+.*.sw[a-z]
+*.un~
+
+# env
+.envrc
+.venv
+.env
