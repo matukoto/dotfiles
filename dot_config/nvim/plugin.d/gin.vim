@@ -5,9 +5,7 @@ nnoremap <C-g>a <Cmd>Gin add --all<CR>
 nnoremap <C-g>c <Cmd>Gin commit --quiet<CR>
 nnoremap <C-g>P <Cmd>GinPatch ++opener=tabnew ++no-head %<CR>
 nnoremap <C-g>p <Cmd>Gin push --quiet<CR>
-" nnoremap <Lieader>g<C-d> <Cmd>GinDiff ++processor=delta\ --no-gitconfig\ --color-only<CR>
-nnoremap <C-g>l  <Cmd>GinLog ++opener=tabnew<CR>
-" nnoremap <Lieader>gl <Cmd>GinLog -- %<CR>
+nnoremap <C-g>l <Cmd>GinLog ++opener=tabnew<CR>
 nnoremap <C-g>b <Cmd>GinBranch --all<CR>
 nnoremap <C-g>d <Cmd>GinDiff<CR>
 
@@ -49,6 +47,6 @@ augroup END
 
 if executable('delta')
   let g:gin_diff_persistent_args = [
-        \ '++processor=delta --diff-highlight --keep-plus-minus-markers',
+        \ '++processor=delta --diff-highlight --no-gitconfig --color-only'
         \]
 endif
