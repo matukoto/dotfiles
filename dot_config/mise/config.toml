@@ -1,7 +1,7 @@
 [tools]
 # language runtime
 java = "corretto-17.0.13+11"
-rust = "1.81.0"
+rust = "1.82.0"
 go = "1.23.2"
 node = "22.10.0"
 deno = "2.0.1"
