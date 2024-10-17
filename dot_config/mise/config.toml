@@ -3,7 +3,7 @@
 java = "corretto-17.0.12"
 rust = "1.81.0"
 go = "1.23.2"
-node = "22.9.0"
+node = "22.10.0"
 deno = "2.0.1"
 lua = "5.4.7"
 "npm:pnpm" = "9.12.0"
