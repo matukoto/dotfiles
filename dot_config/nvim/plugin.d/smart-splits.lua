@@ -53,7 +53,7 @@ require('smart-splits').setup({
   -- resize mode options
   resize_mode = {
     -- key to exit persistent resize mode
-    quit_key = '<ESC>',
+    quit_key = 'q',
     -- keys to use for moving in resize mode
     -- in order of left, down, up' right
     resize_keys = { 'h', 'j', 'k', 'l' },
@@ -92,4 +92,4 @@ require('smart-splits').setup({
   -- default logging level, one of: 'trace'|'debug'|'info'|'warn'|'error'|'fatal'
   log_level = 'info',
 })
-vim.keymap.set('n', '<leader>r', require('smart-splits').start_resize_mode)
+-- vim.keymap.set('n', '<leader>q', require('smart-splits').start_resize_mode)
