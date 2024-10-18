@@ -68,6 +68,18 @@ require('telescope').setup({
       match_algorithm = 'fzf',
       disable_devicons = false,
     },
+    repo = {
+      list = {
+        fd_opts = {
+          '--no-ignore-vcs',
+        },
+        search_dirs = {
+          '~/work',
+          '~/.local/share/chezmoi',
+        },
+        tail_path = true,
+      },
+    },
   },
   pickers = {
     buffers = {
@@ -85,6 +97,7 @@ require('telescope').setup({
 require('telescope').load_extension('smart_open')
 require('telescope').load_extension('kensaku')
 require('telescope').load_extension('zk')
+require('telescope').load_extension('repo')
 -- telescope
 vim.keymap.set('n', '<leader>g', '<cmd>Telescope live_grep<CR>')
 vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<CR>')
@@ -93,6 +106,7 @@ vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<CR>')
 vim.keymap.set('n', '<Leader>zk', '<cmd>Telescope zk notes<CR>')
 vim.keymap.set('n', '<Leader>zd', '<cmd>Telescope zk notes createdAfter=3 days ago<CR>')
 vim.keymap.set('n', '<Leader>zt', '<cmd>Telescope zk tags<CR>')
+vim.keymap.set('n', '<Leader>r', '<cmd>Telescope repo list<CR>')
 -- vim.keymap.set('n', '<Leader>zk', '<cmd>Telescope zk tags created=today<CR>')
 -- vim.api.nvim_set_keymap(
 --   'n',

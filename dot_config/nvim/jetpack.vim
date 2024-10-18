@@ -107,6 +107,7 @@ function! s:init() abort
   call jetpack#add('kkharji/sqlite.lua')
   call jetpack#add('danielfalk/smart-open.nvim')
   call jetpack#add('atusy/qfscope.nvim')
+  call jetpack#add('cljoly/telescope-repo.nvim')
 
   " 便利系 useful
   call jetpack#add('mattn/vim-sonictemplate')
