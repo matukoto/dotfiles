@@ -189,11 +189,11 @@ endfunction
 " :TCL コマンドでカスタム関数を実行
 command! TCL call CloseTabAndMoveLeft()
 
-let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
-let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
-if !filereadable(s:jetpackfile)
-  call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
-endif
+" let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
+" let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+" if !filereadable(s:jetpackfile)
+"   call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
+" endif
 
 packadd vim-jetpack
 call jetpack#begin()
@@ -234,7 +234,7 @@ call jetpack#begin()
   call jetpack#add('lambdalisue/vim-suda')
   " call jetpack#add('sainnhe/gruvbox-material')
   " call jetpack#add('sainnhe/edge')
-  call jetpack#add('cocopon/iceberg.vim/')
+  call jetpack#add('cocopon/iceberg.vim')
 call jetpack#end()
 syntax enable
 
