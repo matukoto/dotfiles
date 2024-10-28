@@ -152,7 +152,6 @@ function! s:init() abort
   " call jetpack#add('4513ECHO/nvim-keycastr')
   call jetpack#add('tani/dmacro.nvim')
   call jetpack#add('famiu/bufdelete.nvim')
-  call jetpack#add('mrjones2014/smart-splits.nvim')
   call jetpack#add('simeji/winresizer')
   " キャメルケース単位でのオブジェクト指定
   call jetpack#add('bkad/CamelCaseMotion')
