@@ -14,9 +14,6 @@
 -- visual mode で行全体をマ-キングする
 require('full_visual_line').setup()
 
--- scroll bar を表示する
-require('scrollbar').setup()
-
 -- markdown をレンダリングする
 require('render-markdown').setup()
 
