@@ -133,6 +133,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     set('n', 'gb', '<cmd>Lspsaga show_buf_diagnostics<CR>', opts)
     set('n', 'gw', '<cmd>Lspsaga show_workspace_diagnostics<CR>', opts)
     set('n', 'ge', vim.diagnostic.open_float, { desc = 'diagnostic open_float' })
+    set('n', 'gq', vim.diagnostic.setqflist, { desc = 'LSP diagnostic setqflist' })
     -- 次の診断へ移動
     set('n', 'g[', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
     -- 前の診断へ移動
