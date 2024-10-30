@@ -145,7 +145,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- diagnostic
     set('n', 'gb', '<cmd>Lspsaga show_buf_diagnostics<CR>', opts)
     set('n', 'gw', '<cmd>Lspsaga show_workspace_diagnostics<CR>', opts)
-    set('n', 'ge', '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
+    set('n', 'ge', vim.diagnostic.open_float, { desc = 'diagnostic open_float' })
     -- 次の診断へ移動
     set('n', 'g[', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
     -- 前の診断へ移動
@@ -156,8 +156,26 @@ vim.api.nvim_create_autocmd('LspAttach', {
     --   vim.lsp.inlay_hint.enable()
     -- end
 
-    -- 深刻度によるソート
-    vim.diagnostic.config({ severity_sort = true })
+    vim.diagnostic.config({
+      -- 深刻度によるソート
+      severity_sort = true,
+      vertual_text = {
+        severity = { min = 'Warn' },
+      },
+      float = {
+        border = 'single',
+        title = 'Diagnostics',
+        header = {},
+        suffix = {},
+        format = function(diag)
+          if diag.code then
+            return string.format('[%s](%s): %s', diag.source, diag.code, diag.message)
+          else
+            return string.format('[%s]: %s', diag.source, diag.message)
+          end
+        end,
+      },
+    })
   end,
 })
 
