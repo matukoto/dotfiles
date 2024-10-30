@@ -103,19 +103,6 @@ require('java').setup({
   },
 })
 
-on_attach = function(client, bufnr)
-  require('lsp_signature').on_attach({
-    bind = true,
-    hint_enable = true,
-    floating_window = true,
-    hint_prefix = '🐼 ',
-    hi_parameter = 'LspSignatureActiveParameter',
-    handler_opts = {
-      border = 'rounded',
-    },
-  }, bufnr)
-end
-
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ctx)
     local set = vim.keymap.set
