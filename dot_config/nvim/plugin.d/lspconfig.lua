@@ -159,12 +159,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.diagnostic.config({
       -- 深刻度によるソート
       severity_sort = true,
-      vertual_text = {
-        severity = { min = 'Warn' },
-      },
+      -- vertual_text = {
+      --   severity = { min = 'Warn' },
+      -- },
       float = {
         border = 'single',
-        title = 'Diagnostics',
         header = {},
         suffix = {},
         format = function(diag)
