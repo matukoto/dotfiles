@@ -18,3 +18,4 @@ packages:
 - name: jesseduffield/lazygit@v0.44.1
 - name: jdx/mise@v2024.10.13
 - name: atuinsh/atuin@v18.3.0
+- name: sxyazi/yazi@v0.3.3
