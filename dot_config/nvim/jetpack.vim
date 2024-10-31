@@ -109,6 +109,7 @@ function! s:init() abort
   call jetpack#add('prochri/telescope-all-recent.nvim')
 
   " 便利系 useful
+  call jetpack#add('kevinhwang91/nvim-bqf')
   call jetpack#add('mattn/vim-sonictemplate')
   call jetpack#add('thinca/vim-quickrun')
   call jetpack#add('numToStr/comment.nvim')
