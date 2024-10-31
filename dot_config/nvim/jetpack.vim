@@ -106,6 +106,7 @@ function! s:init() abort
   call jetpack#add('danielfalk/smart-open.nvim')
   call jetpack#add('atusy/qfscope.nvim')
   call jetpack#add('cljoly/telescope-repo.nvim')
+  call jetpack#add('prochri/telescope-all-recent.nvim')
 
   " 便利系 useful
   call jetpack#add('mattn/vim-sonictemplate')
