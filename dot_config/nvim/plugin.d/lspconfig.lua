@@ -166,21 +166,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- 保存時自動フォーマット
--- local on_attach = function(client, bufnr)
---   -- ここで `bufnr` は現在のバッファ番号を指す
---   if client.server_capabilities.document_formatting then
---     vim.api.nvim_create_augroup('LspFormatting', { clear = true })
---     vim.api.nvim_create_autocmd('BufWritePre', {
---       group = 'LspFormatting',
---       buffer = bufnr,
---       callback = function()
---         vim.lsp.buf.format({ async = false })
---       end,
---     })
---   end
--- end
-
 local signs = { Error = ' ', Warn = ' ', Hint = '󱩎 ', Info = ' ' }
 for type, icon in pairs(signs) do
   local hl = 'DiagnosticSign' .. type
@@ -190,7 +175,6 @@ end
 local lspconfig = require('lspconfig')
 
 lspconfig.gopls.setup({
-  on_attach = on_attach,
   settings = {
     gopls = {
       analyses = {
@@ -203,7 +187,6 @@ lspconfig.gopls.setup({
 })
 
 lspconfig.lua_ls.setup({
-  on_attach = on_attach,
   hint = {
     enable = true,
     paramName = 'Disable',
@@ -228,24 +211,15 @@ lspconfig.lua_ls.setup({
   },
 })
 
-lspconfig.jsonls.setup({
-  on_attach = on_attach,
-})
+lspconfig.jsonls.setup({})
 
-lspconfig.bashls.setup({
-  on_attach = on_attach,
-})
+lspconfig.bashls.setup({})
 
-lspconfig.rust_analyzer.setup({
-  on_attach = on_attach,
-})
+lspconfig.rust_analyzer.setup({})
 
-lspconfig.yamlls.setup({
-  on_attach = on_attach,
-})
+lspconfig.yamlls.setup({})
 
 lspconfig.jdtls.setup({
-  on_attach = on_attach,
   settings = {
     java = {
       import = {
@@ -278,7 +252,6 @@ require('zk').setup({
     config = {
       cmd = { 'zk', 'lsp' },
       name = 'zk',
-      -- on_attach = ...
       -- etc, see `:h vim.lsp.start_client()`
     },
 
@@ -289,17 +262,11 @@ require('zk').setup({
     },
   },
 })
-lspconfig.svelte.setup({
-  on_attach = on_attach,
-})
+lspconfig.svelte.setup({})
 
-lspconfig.vtsls.setup({
-  on_attach = on_attach,
-})
+lspconfig.vtsls.setup({})
 
-lspconfig.vimls.setup({
-  on_attach = on_attach,
-})
+lspconfig.vimls.setup({})
 
 lspconfig.sqls.setup({
   on_attach = function(client, bufnr)
@@ -330,20 +297,13 @@ lspconfig.typos_lsp.setup({
 })
 
 -- Typst LSP
-lspconfig.tinymist.setup({
-  on_attach = on_attach,
-})
+lspconfig.tinymist.setup({})
 
-lspconfig.zk.setup({
-  on_attach = on_attach,
-})
+lspconfig.zk.setup({})
 
-lspconfig.lemminx.setup({
-  on_attach = on_attach,
-})
+lspconfig.lemminx.setup({})
 
 -- lspconfig.markdown_oxide.setup({
---   on_attach = on_attach,
 -- })
 -- vim.lsp.set_log_level('debug')
 vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { bg = '#888888', fg = '#efef33' })
