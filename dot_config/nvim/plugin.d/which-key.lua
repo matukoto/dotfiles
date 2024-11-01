@@ -3,7 +3,7 @@ require('which-key').setup({})
 -- キーマップの登録
 local wk = require('which-key')
 
-wk.add({
+wk.register({
   g = {
     name = 'LSP',
     d = { '<cmd>lua vim.lsp.buf.definition()<CR>', 'Go to Definition' },
@@ -21,9 +21,6 @@ wk.add({
     ['['] = { '<cmd>Lspsaga diagnostic_jump_next<CR>', 'Next Diagnostic' },
     [']'] = { '<cmd>Lspsaga diagnostic_jump_prev<CR>', 'Previous Diagnostic' },
   },
-}, { prefix = 'g' })
-
-wk.add({
   ['<C-g>'] = {
     name = 'Gin',
     s = 'GinStatus',
@@ -35,4 +32,4 @@ wk.add({
     b = 'GinBranch --all',
     d = 'GinDiff',
   },
-}, { prefix = '<C-g>' })
+})
