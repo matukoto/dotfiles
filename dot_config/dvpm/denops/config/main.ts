@@ -1,71 +1,68 @@
-import * as fn from "https://deno.land/x/denops_std@v5.0.0/function/mod.ts";
-import * as mapping from "https://deno.land/x/denops_std@v5.0.0/mapping/mod.ts";
-import { Denops } from "https://deno.land/x/denops_std@v5.0.0/mod.ts";
-import { ensureString } from "https://deno.land/x/unknownutil@v2.1.1/mod.ts";
-import { execute } from "https://deno.land/x/denops_std@v5.0.0/helper/mod.ts";
-import { globals } from "https://deno.land/x/denops_std@v5.0.0/variable/mod.ts";
+import type { Denops } from "jsr:@denops/std";
+import * as fn from "jsr:@denops/std/function";
+import * as mapping from "jsr:@denops/std/mapping";
+import * as vars from "jsr:@denops/std/variable";
+import { ensure, is } from "jsr:@core/unknownutil";
+import { execute } from "jsr:@denops/std/helper";
 
-import { Dvpm } from "https://deno.land/x/dvpm@1.0.0/mod.ts";
+import { Dvpm } from "jsr:@yukimemi/dvpm";
 
 export async function main(denops: Denops): Promise<void> {
-  // プラグインをインストールするベースとなるパスです。
   const base_path = (await fn.has(denops, "nvim"))
     ? "~/.cache/nvim/dvpm"
     : "~/.cache/vim/dvpm";
-  const base = ensureString(await fn.expand(denops, base_path));
+  const base = ensure(await fn.expand(denops, base_path), is.String);
 
-  // ベースパスを引数に、 Dvpm.begin を実行して、 `dvpm` インスタンスを取得します。
+  // First, call Dvpm.begin with denops object and base path.
   const dvpm = await Dvpm.begin(denops, { base });
 
-  // 以降は `dvpm.add` を用いて必要なプラグインを追加していきます。
-  await dvpm.add({ url: "yukimemi/dps-autocursor" });
-
-  // ブランチを指定することもできます。
+  // URL only (GitHub).
+  await dvpm.add({ url: "yukimemi/autocursor.vim" });
+  // URL only (not GitHub).
+  await dvpm.add({ url: "https://notgithub.com/some/other/plugin" });
+  // With branch.
   // await dvpm.add({ url: "neoclide/coc.nvim", branch: "release" });
-
-  // build オプションでは、 `install` か `update` 実施後に実行する処理を記載できます。
-  // `Denops` オブジェクト以外に、 `PlugInfo` オブジェクトを引数に取ることもできます。
-  // 含まれている情報については README を参照ください。
+  // build option. Execute after install or update.
   await dvpm.add({
     url: "neoclide/coc.nvim",
     branch: "master",
     build: async ({ info }) => {
+      if (!info.isUpdate || !info.isLoad) {
+        // build option is called after git pull, even if there are no changes
+        // so you need to check for changes
+        return;
+      }
       const args = ["install", "--frozen-lockfile"];
-      const cmd = new Deno.Command("yarn", { args, cwd: info?.dst });
+      const cmd = new Deno.Command("yarn", { args, cwd: info.dst });
       const output = await cmd.output();
       console.log(new TextDecoder().decode(output.stdout));
     },
   });
-
-  // `before` はプラグインが runtimepath へ追加される前に実行されます。
+  // shalow clone.
+  await dvpm.add({ url: "yukimemi/chronicle.vim", depth: 1 });
+  // before setting.
   await dvpm.add({
-    url: "yukimemi/dps-autobackup",
+    url: "yukimemi/silentsaver.vim",
     before: async ({ denops }) => {
-      // `denops_std` の関数で Vim のグローバル変数をセットしています。
-      // let g:autobackup_dir = "~/.cache/autobackup" と等価。
-      await globals.set(
+      await vars.g.set(
         denops,
-        "autobackup_dir",
-        ensureString(await fn.expand(denops, "~/.cache/autobackup")),
+        "silentsaver_dir",
+        ensure(await fn.expand(denops, "~/.cache/nvim/silentsaver"), is.String),
       );
     },
   });
-  // `after` はプラグインを runtimepath へ追加した後に実行されます。
+  // after setting.
   await dvpm.add({
     url: "folke/which-key.nvim",
     after: async ({ denops }) => {
-      // `denops_std` の関数 `execute` では Vim のコマンドがなんでも実行可能です。
       await execute(denops, `lua require("which-key").setup()`);
     },
   });
-
-  // `dst` でベースパスとは別の場所にプラグインを clone することも可能です。
-  // 開発時などに便利。
+  // dst setting. (for develop)
   await dvpm.add({
-    url: "yukimemi/dps-randomcolorscheme",
-    dst: "~/src/github.com/yukimemi/dps-randomcolorscheme",
+    url: "yukimemi/spectrism.vim",
+    dst: "~/src/github.com/yukimemi/spectrism.vim",
     before: async ({ denops }) => {
-      // `denops_std` の `mapping` 用関数を利用するとキーマッピング設定ができます。
       await mapping.map(denops, "<space>ro", "<cmd>ChangeColorscheme<cr>", {
         mode: "n",
       });
@@ -83,23 +80,31 @@ export async function main(denops: Denops): Promise<void> {
       });
     },
   });
-  //  プラグインの 有効 / 無効は `enabled` で切り替えることができます。
+  // Disable setting.
   await dvpm.add({
-    url: "yukimemi/dps-hitori",
+    url: "yukimemi/hitori.vim",
     enabled: false,
   });
-  // `enabled` には関数指定もできるので 下記のように Vim だけ有効などの指定が可能です。
+  // Disable with function.
   await dvpm.add({
     url: "editorconfig/editorconfig-vim",
     enabled: async ({ denops }) => !(await fn.has(denops, "nvim")),
   });
-  // `dependencies` を指定することで、プラグインが runtimepath へ追加される順序を制御することができます。
+  // With dependencies. dependencies plugin must be added.
+  await dvpm.add({ url: "lambdalisue/askpass.vim" });
+  await dvpm.add({ url: "lambdalisue/guise.vim" });
   await dvpm.add({
-    url: "kana/vim-textobj-entire",
-    dependencies: [{ url: "kana/vim-textobj-user" }],
+    url: "lambdalisue/gin.vim",
+    dependencies: ["lambdalisue/askpass.vim", "lambdalisue/guise.vim"],
+  });
+  // Load from file. ( `.lua` or `.vim` )
+  await dvpm.add({
+    url: "rcarriga/nvim-notify",
+    beforeFile: "~/.config/nvim/rc/before/nvim-notify.lua",
+    afterFile: "~/.config/nvim/rc/after/nvim-notify.lua",
   });
 
-  // 最後に dvpm.end を呼べば完了です。
+  // Finally, call Dvpm.end.
   await dvpm.end();
 
   console.log("Load completed !");
