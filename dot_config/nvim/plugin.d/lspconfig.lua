@@ -262,10 +262,6 @@ require('zk').setup({
     },
   },
 })
-lspconfig.svelte.setup({})
-
-lspconfig.vtsls.setup({})
-
 lspconfig.vimls.setup({})
 
 lspconfig.sqls.setup({
@@ -298,6 +294,32 @@ lspconfig.typos_lsp.setup({
 
 -- Typst LSP
 lspconfig.tinymist.setup({})
+
+-- node , deno 使い分け
+local is_node_dir = function()
+  return lspconfig.util.root_pattern('package.json')(vim.fn.getcwd())
+end
+
+-- ts_ls
+local ts_opts = {}
+ts_opts.on_attach = function(client)
+  if not is_node_dir() then
+    client.stop(true)
+  end
+end
+lspconfig.vtsls.setup(ts_opts)
+
+-- denols
+local deno_opts = {}
+deno_opts.on_attach = function(client)
+  if is_node_dir() then
+    client.stop(true)
+  end
+end
+
+lspconfig.denols.setup(deno_opts)
+
+lspconfig.svelte.setup({})
 
 lspconfig.zk.setup({})
 
