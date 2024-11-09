@@ -1,0 +1,1 @@
+cabbrev qr QuickRun<CR>

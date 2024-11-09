@@ -206,8 +206,40 @@ nnoremap <silent> <Leader>p "*p
 cabbrev cm <Cmd>Capture message<CR>
 
 " Plugin
-source $VIMHOME/dvpm.ts
+" dvpmの初期化
+if !exists('g:loaded_dvpm')
+  let s:denops = expand('~/.cache/vim/dvpm/github.com/vim-denops/denops.vim')
+  if !isdirectory(s:denops)
+    execute 'silent! !git clone https://github.com/vim-denops/denops.vim ' .. s:denops
+  endif
+  execute 'set runtimepath^=' . substitute(fnamemodify(s:denops, ':p'), '[/\\]$', '', '')
+endif
 
+let g:dvpm_typescript_file = expand('~/.config/dvpm/denops/config/dvpm.ts')
+" TypeScriptファイルの読み込み
+if exists('g:dvpm_typescript_file') && filereadable(g:dvpm_typescript_file)
+  call denops#plugin#load('dvpm')
+  call denops#notify('dvpm', 'load', [g:dvpm_typescript_file])
+endif
+
+function! s:configure() abort
+  call s:load_configurations()
+  if has('nvim')
+    call s:load_lua_configurations()
+  endif
+endfunction
+
+function! s:load_configurations() abort
+  for path in glob('$VIMHOME/plugin.d/*.vim', 1, 1, 1)
+    execute printf('source %s', fnameescape(path))
+  endfor
+endfunction
+
+function! s:load_lua_configurations() abort
+  for path in glob('$VIMHOME/plugin.d/*.lua', 1, 1, 1)
+    execute printf('luafile %s', fnameescape(path))
+  endfor
+endfunction
 
 " リドゥ
 nnoremap U <C-r>
