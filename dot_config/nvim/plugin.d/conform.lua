@@ -1,5 +1,13 @@
 local jsFormatter = { 'biome', 'prettierd', 'prettier', stop_after_first = true }
 
+local tsFormatter = function()
+  if vim.fs.root(0, 'package.json') then
+    return jsFormatter
+  else
+    return { 'deno_fmt' }
+  end
+end
+
 require('conform').setup({
   formatters_by_ft = {
     lua = { 'stylua' }, -- 特に設定しなくても ~/.config/stylua/stylua.toml を見てくれる
@@ -12,7 +20,7 @@ require('conform').setup({
     css = jsFormatter,
     javascript = jsFormatter,
     javascriptreact = jsFormatter,
-    typescript = jsFormatter,
+    typescript = tsFormatter,
     typescriptreact = jsFormatter,
     go = { 'gofmt' },
     -- ['*'] = { 'typos' }, -- 勝手に訂正されてしまうので、状況次第では有用
