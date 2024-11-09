@@ -307,7 +307,10 @@ ts_opts.on_attach = function(client)
     client.stop(true)
   end
 end
-lspconfig.vtsls.setup(ts_opts)
+lspconfig.vtsls.setup({
+  on_attach = ts_opts.on_attach,
+  single_file_support = false,
+})
 
 -- denols
 local deno_opts = {}
@@ -317,7 +320,10 @@ deno_opts.on_attach = function(client)
   end
 end
 
-lspconfig.denols.setup(deno_opts)
+lspconfig.denols.setup({
+  on_attach = deno_opts.on_attach,
+  single_file_support = true,
+})
 
 lspconfig.svelte.setup({})
 
