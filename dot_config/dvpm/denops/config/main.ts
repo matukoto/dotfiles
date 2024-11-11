@@ -67,7 +67,10 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({ url: "matsui54/denops-signature_help" });
 
   //ファイラ
-  await dvpm.add({ url: "lambdalisue/vim-fern" });
+  await dvpm.add({
+    url: "lambdalisue/vim-fern",
+    afterFile: "~/.config/nvim/plugin.d/fern.vim",
+  });
   await dvpm.add({ url: "yuki-yano/fern-preview.vim" });
   await dvpm.add({ url: "stevearc/oil.nvim" });
   await dvpm.add({ url: "lambdalisue/vim-fern-git-status" });
@@ -202,7 +205,14 @@ export async function main(denops: Denops): Promise<void> {
   //await dvpm.add({ url: 'kyoh86/momiji'});
   //await dvpm.add({ url: 'taniarascia/new-moon.vim'});
   //await dvpm.add({ url: 'catppuccin/nvim', { 'as': 'catppuccin' }});
-  // Finally, call Dvpm.end.
+
+  // Load from file. ( `.lua` or `.vim` )
+  // await dvpm.add({
+  //   url: "rcarriga/nvim-notify",
+  //   beforeFile: "~/.config/nvim/rc/before/nvim-notify.lua",
+  //   afterFile: "~/.config/nvim/rc/after/nvim-notify.lua",
+  // });
+
   await dvpm.end();
 
   console.log("Load completed !");
