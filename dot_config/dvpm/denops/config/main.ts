@@ -66,11 +66,12 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({
     url: "lambdalisue/vim-fern",
     dependencies: [
-   "yuki-yano/fern-preview.vim" ,
-   "lambdalisue/vim-fern-git-status" ,
-   "lambdalisue/vim-fern-hijack" ,
-   "lambdalisue/vim-nerdfont" ,
-   "lambdalisue/vim-fern-renderer-nerdfont" ],
+      "yuki-yano/fern-preview.vim",
+      "lambdalisue/vim-fern-git-status",
+      "lambdalisue/vim-fern-hijack",
+      "lambdalisue/vim-nerdfont",
+      "lambdalisue/vim-fern-renderer-nerdfont",
+    ],
     afterFile: "~/.config/nvim/plugin.d/fern.vim",
   });
   await dvpm.add({ url: "stevearc/oil.nvim" });
@@ -150,7 +151,7 @@ export async function main(denops: Denops): Promise<void> {
   //await dvpm.add({ url: 'Decodetalkers/csv-tools.lua'});
   await dvpm.add({ url: "mechatroner/rainbow_csv" });
   await dvpm.add({ url: "tkmpypy/chowcho.nvim" });
-  await dvpm.add({ url: "folke/styler.nvim" });
+  await dvpm.add({ url: "folke/styler.nvim", dependencies: [""edeneast/nightfox.nvim" "] });
   //await dvpm.add({ url: 'b0o/incline.nvim'});
   await dvpm.add({ url: "ahmedkhalf/project.nvim" });
   await dvpm.add({ url: "MeanderingProgrammer/markdown.nvim" });
@@ -186,20 +187,20 @@ export async function main(denops: Denops): Promise<void> {
 
   //カラースキーマ
   await dvpm.add({ url: "gen740/SmoothCursor.nvim" });
-  await dvpm.add({ url: 'sainnhe/gruvbox-material'});
-  await dvpm.add({ url: 'sainnhe/edge'});
-  await dvpm.add({ url: 'sainnhe/sonokai'});
-  await dvpm.add({ url: 'sainnhe/everforest'});
+  await dvpm.add({ url: "sainnhe/gruvbox-material" });
+  await dvpm.add({ url: "sainnhe/edge" });
+  await dvpm.add({ url: "sainnhe/sonokai" });
+  await dvpm.add({ url: "sainnhe/everforest" });
   await dvpm.add({ url: "edeneast/nightfox.nvim" });
-  await dvpm.add({ url: 'AlexvZyl/nordic.nvim'});
-  await dvpm.add({ url: 'folke/tokyonight.nvim'});
-  await dvpm.add({ url: 'tanvirtin/monokai.nvim'});
-  await dvpm.add({ url: 'hachy/eva01.vim'});
-  await dvpm.add({ url: 'ray-x/aurora'});
-  await dvpm.add({ url: 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }});
-  await dvpm.add({ url: 'kyoh86/momiji'});
-  await dvpm.add({ url: 'taniarascia/new-moon.vim'});
-  await dvpm.add({ url: 'catppuccin/nvim', { 'as': 'catppuccin' }});
+  await dvpm.add({ url: "AlexvZyl/nordic.nvim" });
+  await dvpm.add({ url: "folke/tokyonight.nvim" });
+  await dvpm.add({ url: "tanvirtin/monokai.nvim" });
+  await dvpm.add({ url: "hachy/eva01.vim" });
+  await dvpm.add({ url: "ray-x/aurora" });
+  // await dvpm.add({ url: 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }});
+  // await dvpm.add({ url: 'kyoh86/momiji'});
+  // await dvpm.add({ url: 'taniarascia/new-moon.vim'});
+  // await dvpm.add({ url: 'catppuccin/nvim', { 'as': 'catppuccin' }});
 
   // Load from file. ( `.lua` or `.vim` )
   // await dvpm.add({
