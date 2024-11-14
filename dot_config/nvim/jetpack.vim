@@ -82,7 +82,6 @@ function! s:init() abort
   " git
   call jetpack#add('lambdalisue/vim-gin')
   call jetpack#add('ogaken-1/nvim-gin-preview')
-  call jetpack#add('APZelos/blamer.nvim')
   call jetpack#add('lewis6991/gitsigns.nvim')
   call jetpack#add('isakbm/gitgraph.nvim')
   call jetpack#add('sindrets/diffview.nvim')
