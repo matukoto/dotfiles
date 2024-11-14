@@ -42,67 +42,6 @@ require('mason-tool-installer').setup({
   run_on_start = true,
 })
 
-require('ddc_source_lsp_setup').setup()
--- local capabilities = require('ddc_source_lsp').make_client_capabilities()
--- require('mason-lspconfig').setup_handlers({
---   function(server_name)
---     require('lspconfig')[server_name].setup({
---     })
---   end,
--- })
-
-require('java').setup({
-  -- load java test plugins
-  java_test = {
-    enable = true,
-  },
-
-  -- load java debugger plugins
-  java_debug_adapter = {
-    enable = true,
-  },
-
-  spring_boot_tools = {
-    enable = false,
-  },
-
-  jdk = {
-    -- install jdk using mason.nvim
-    auto_install = true,
-  },
-
-  notifications = {
-    -- enable 'Configuring DAP' & 'DAP configured' messages on start up
-    dap = false,
-  },
-
-  -- We do multiple verifications to make sure things are in place to run this
-  -- plugin
-  verification = {
-    -- nvim-java checks for the order of execution of following
-    -- * require('java').setup()
-    -- * require('lspconfig').jdtls.setup()
-    -- IF they are not executed in the correct order, you will see a error
-    -- notification.
-    -- Set following to false to disable the notification if you know what you
-    -- are doing
-    invalid_order = true,
-
-    -- nvim-java checks if the require('java').setup() is called multiple
-    -- times.
-    -- IF there are multiple setup calls are executed, an error will be shown
-    -- Set following property value to false to disable the notification if
-    -- you know what you are doing
-    duplicate_setup_calls = true,
-
-    -- nvim-java checks if nvim-java/mason-registry is added correctly to
-    -- mason.nvim plugin.
-    -- IF it's not registered correctly, an error will be thrown and nvim-java
-    -- will stop setup
-    invalid_mason_registry = true,
-  },
-})
-
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ctx)
     local set = vim.keymap.set
@@ -219,49 +158,26 @@ lspconfig.rust_analyzer.setup({})
 
 lspconfig.yamlls.setup({})
 
-lspconfig.jdtls.setup({
-  settings = {
-    java = {
-      import = {
-        gradle = {
-          enabled = true,
-        },
-        maven = {
-          enabled = true,
-        },
-      },
-      format = {
-        settings = {
-          url = 'https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml',
-          profile = 'GoogleStyle',
-        },
-      },
-      saveActions = {
-        organizeImports = true,
-      },
-    },
-  },
-})
-require('zk').setup({
-  -- can be "telescope", "fzf", "fzf_lua", "minipick", or "select" (`vim.ui.select`)
-  -- it's recommended to use "telescope", "fzf", "fzf_lua", or "minipick"
-  picker = 'telescope',
-
-  lsp = {
-    -- `config` is passed to `vim.lsp.start_client(config)`
-    config = {
-      cmd = { 'zk', 'lsp' },
-      name = 'zk',
-      -- etc, see `:h vim.lsp.start_client()`
-    },
-
-    -- automatically attach buffers in a zk notebook that match the given filetypes
-    auto_attach = {
-      enabled = true,
-      filetypes = { 'markdown' },
-    },
-  },
-})
+-- require('zk').setup({
+--   -- can be "telescope", "fzf", "fzf_lua", "minipick", or "select" (`vim.ui.select`)
+--   -- it's recommended to use "telescope", "fzf", "fzf_lua", or "minipick"
+--   picker = 'telescope',
+--
+--   lsp = {
+--     -- `config` is passed to `vim.lsp.start_client(config)`
+--     config = {
+--       cmd = { 'zk', 'lsp' },
+--       name = 'zk',
+--       -- etc, see `:h vim.lsp.start_client()`
+--     },
+--
+--     -- automatically attach buffers in a zk notebook that match the given filetypes
+--     auto_attach = {
+--       enabled = true,
+--       filetypes = { 'markdown' },
+--     },
+--   },
+-- })
 lspconfig.vimls.setup({})
 
 lspconfig.sqls.setup({
