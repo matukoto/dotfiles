@@ -136,8 +136,8 @@ require('telescope').setup({
 })
 
 require('telescope').load_extension('smart_open')
-require('telescope').load_extension('kensaku')
-require('telescope').load_extension('zk')
+-- require('telescope').load_extension('kensaku')
+-- require('telescope').load_extension('zk')
 require('telescope').load_extension('repo')
 -- telescope
 vim.keymap.set('n', '<leader>g', '<cmd>Telescope live_grep<CR>')
