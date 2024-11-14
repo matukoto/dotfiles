@@ -62,10 +62,10 @@ require('telescope').setup({
         -- telescope をクローズ
         ['<esc>'] = actions.close,
         -- live_grep の後、さらに絞り込む
-        ['<C-g><C-f>'] = qfs_actions.qfscope_search_filename,
-        ['<C-g><C-g>'] = qfs_actions.qfscope_grep_filename,
-        ['<C-g><C-l>'] = qfs_actions.qfscope_grep_line,
-        ['<C-g><C-t>'] = qfs_actions.qfscope_grep_text,
+        -- ['<C-g><C-f>'] = qfs_actions.qfscope_search_filename,
+        -- ['<C-g><C-g>'] = qfs_actions.qfscope_grep_filename,
+        -- ['<C-g><C-l>'] = qfs_actions.qfscope_grep_line,
+        -- ['<C-g><C-t>'] = qfs_actions.qfscope_grep_text,
       },
       -- ノーマルモードでのマッピング
       n = {
