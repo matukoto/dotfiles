@@ -1,6 +1,6 @@
 -- Vimホームディレクトリの設定
-vim.g.VIMHOME = vim.fn.expand('<sfile>:p:h')
-local is_windows = vim.fn.has('win32') == 1
+-- vim.g.VIMHOME = vim.fn.expand('<sfile>:p:h')
+-- local is_windows = vim.fn.has('win32') == 1
 
 -- ステータスラインを常に1つにする
 vim.opt.laststatus = 3
@@ -81,6 +81,7 @@ vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', 'J', 'gJ')
 
+vim.keymap.set('n', '<ESC>', '<Cmd>nohlsearch<CR><ESC>')
 -- クリップボード連携
 vim.opt.clipboard = 'unnamedplus'
 
