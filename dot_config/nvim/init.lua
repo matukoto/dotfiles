@@ -191,5 +191,22 @@ vim.api.nvim_create_autocmd('CursorMoved', {
   command = 'normal! zz',
 })
 
+vim.api.nvim_create_autocmd({ 'BufWinLeave' }, {
+  pattern = '*',
+  callback = function()
+    if vim.bo.filetype ~= '' and vim.fn.expand('%') ~= '' then
+      vim.cmd('mkview')
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
+  pattern = '*',
+  callback = function()
+    if vim.bo.filetype ~= '' and vim.fn.expand('%') ~= '' then
+      vim.cmd('silent! loadview')
+    end
+  end,
+})
 -- カラースキーム
 -- vim.cmd('colorscheme everforest')
