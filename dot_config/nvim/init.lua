@@ -188,7 +188,11 @@ vim.keymap.set('n', 'U', '<C-r>')
 -- カーソル移動時に中央に
 vim.api.nvim_create_autocmd('CursorMoved', {
   pattern = '*',
-  command = 'normal! zz',
+  callback = function()
+    if vim.bo.filetype ~= '' and vim.fn.expand('%') ~= '' then
+      vim.cmd('normal! zz')
+    end
+  end,
 })
 
 vim.api.nvim_create_autocmd({ 'BufWinLeave' }, {
