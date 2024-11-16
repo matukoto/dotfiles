@@ -18,7 +18,126 @@ export async function main(denops: Denops): Promise<void> {
 
   //systemd 使えないとだめなので wsl ではコメントアウト
   //await dvpm.add({ url: 'vim-denops/denops-shared-server.vim'});
+  await dvpm.add({ url: "nvim-lua/plenary.nvim" });
+  await dvpm.add({ url: "kkharji/sqlite.lua" });
+  await dvpm.add({ url: "danielfalk/smart-open.nvim" });
+  await dvpm.add({ url: "atusy/qfscope.nvim" });
+  await dvpm.add({ url: "cljoly/telescope-repo.nvim" });
+  await dvpm.add({ url: "williamboman/mason.nvim" });
+  await dvpm.add({ url: "williamboman/mason-lspconfig.nvim" });
+  await dvpm.add({ url: "WhoIsSethDaniel/mason-tool-installer.nvim" });
+  await dvpm.add({ url: "nvim-java/lua-async-await" });
+  await dvpm.add({ url: "nvim-java/nvim-java-refactor" });
+  await dvpm.add({ url: "nvim-java/nvim-java-core" });
+  await dvpm.add({ url: "nvim-java/nvim-java-test" });
+  await dvpm.add({ url: "nvim-java/nvim-java-dap" });
+  await dvpm.add({ url: "MunifTanjim/nui.nvim" });
+  await dvpm.add({ url: "mfussenegger/nvim-dap" });
+  await dvpm.add({ url: "JavaHello/spring-boot.nvim" });
+  await dvpm.add({ url: "zk-org/zk-nvim" });
+  await dvpm.add({ url: "nanotee/sqls.nvim" });
+  await dvpm.add({ url: "shougo/ddc-matcher_head" });
+  await dvpm.add({ url: "shougo/ddc-sorter_rank" });
+  await dvpm.add({ url: "tani/ddc-fuzzy" });
+  //ui
+  await dvpm.add({ url: "shougo/ddc-ui-pum" });
+  await dvpm.add({ url: "shougo/pum.vim" });
+  //sources
+  await dvpm.add({ url: "shougo/ddc-source-lsp" });
+  await dvpm.add({ url: "shougo/ddc-source-around" });
+  await dvpm.add({ url: "LumaKernel/ddc-source-file" });
+  await dvpm.add({ url: "matsui54/ddc-source-buffer" });
+  await dvpm.add({ url: "uga-rosa/ddc-source-nvim-lua" });
+  await dvpm.add({ url: "shougo/ddc-source-cmdline" });
+  await dvpm.add({ url: "shougo/ddc-source-cmdline-history" });
+  //popup
+  await dvpm.add({ url: "matsui54/denops-popup-preview.vim" });
+  await dvpm.add({ url: "matsui54/denops-signature_help" });
+  await dvpm.add({
+    url: "yuki-yano/fern-preview.vim",
+    dependencies: ["lambdalisue/vim-fern"],
+  });
+  await dvpm.add({ url: "lambdalisue/vim-fern-git-status" });
+  // await dvpm.add({ url: "lambdalisue/vim-fern-hijack" });
+  await dvpm.add({ url: "lambdalisue/vim-nerdfont" });
+  await dvpm.add({ url: "mikavilpas/yazi.nvim" });
+  await dvpm.add({ url: "sainnhe/gruvbox-material" });
+  await dvpm.add({ url: "sainnhe/edge" });
+  await dvpm.add({ url: "sainnhe/sonokai" });
+  await dvpm.add({ url: "sainnhe/everforest" });
+  await dvpm.add({ url: "edeneast/nightfox.nvim" });
+  await dvpm.add({ url: "AlexvZyl/nordic.nvim" });
+  await dvpm.add({ url: "folke/tokyonight.nvim" });
+  await dvpm.add({ url: "tanvirtin/monokai.nvim" });
+  await dvpm.add({ url: "hachy/eva01.vim" });
+  await dvpm.add({ url: "ray-x/aurora" });
 
+  await dvpm.add({ url: "haya14busa/vim-asterisk" });
+  await dvpm.add({
+    url: "0xAdk/full_visual_line.nvim",
+    after: async ({ denops }) => {
+      await denops.call(`luaeval`, `require('full_visual_line').setup()`);
+    },
+  });
+  await dvpm.add({ url: "kevinhwang91/nvim-ufo" });
+  await dvpm.add({
+    url: "mattn/vim-sonictemplate",
+    afterFile: "~/.config/nvim/plugin.d/vim-sonictemplate.vim",
+  });
+  await dvpm.add({
+    url: "thinca/vim-quickrun",
+    after: async ({ denops }) =>
+      await execute(denops, `cabbrev qr QuickRun<CR>`),
+  });
+  await dvpm.add({
+    url: "numToStr/comment.nvim",
+    afterFile: "~/.config/nvim/plugin.d/comment.lua",
+  });
+  await dvpm.add({
+    url: "folke/todo-comments.nvim",
+    after: async ({ denops }) => {
+      await denops.call(
+        `luaeval`,
+        `require('todo-comments').setup()`,
+      );
+    },
+  });
+  await dvpm.add({
+    url: "yuki-yano/fuzzy-motion.vim",
+    afterFile: "~/.config/nvim/plugin.d/fuzzy-motion.vim",
+  });
+  await dvpm.add({
+    url: "ethanholz/nvim-lastplace",
+    afterFile: "~/.config/nvim/plugin.d/nvim-lastplace.lua",
+  });
+  await dvpm.add({
+    url: "haya14busa/vim-edgemotion",
+    afterFile: "~/.config/nvim/plugin.d/vim-edgemotion.vim",
+  });
+  await dvpm.add({
+    url: "shellRaining/hlchunk.nvim",
+    afterFile: "~/.config/nvim/plugin.d/hlchunk.lua",
+  });
+  await dvpm.add({
+    url: "uga-rosa/ddc-source-lsp-setup",
+    dependencies: ["neovim/nvim-lspconfig"],
+    after: async ({ denops }) => {
+      await denops.call(
+        `luaeval`,
+        `require('ddc_source_lsp_setup').setup()`,
+      );
+    },
+  });
+  await dvpm.add({
+    url: "nvimdev/lspsaga.nvim",
+    afterFile: "~/.config/nvim/plugin.d/lspsaga.lua",
+  });
+  await dvpm.add({
+    url: "j-hui/fidget.nvim",
+    afterFile: "~/.config/nvim/plugin.d/fidget.lua",
+  });
+
+  // 依存あり
   //lsp
   await dvpm.add({
     url: "neovim/nvim-lspconfig",
@@ -29,18 +148,6 @@ export async function main(denops: Denops): Promise<void> {
     ],
     afterFile: "~/.config/nvim/plugin.d/lspconfig.lua",
   });
-  await dvpm.add({ url: "williamboman/mason.nvim" });
-  await dvpm.add({ url: "williamboman/mason-lspconfig.nvim" });
-  await dvpm.add({ url: "WhoIsSethDaniel/mason-tool-installer.nvim" });
-  await dvpm.add({
-    url: "nvimdev/lspsaga.nvim",
-    afterFile: "~/.config/nvim/plugin.d/lspsaga.lua",
-  });
-  await dvpm.add({
-    url: "j-hui/fidget.nvim",
-    afterFile: "~/.config/nvim/plugin.d/fidget.lua",
-  });
-
   //java
   await dvpm.add({
     url: "nvim-java/nvim-java",
@@ -57,21 +164,12 @@ export async function main(denops: Denops): Promise<void> {
     ],
     afterFile: "~/.config/nvim/plugin.d/jdtls.lua",
   });
-  await dvpm.add({ url: "nvim-java/lua-async-await" });
-  await dvpm.add({ url: "nvim-java/nvim-java-refactor" });
-  await dvpm.add({ url: "nvim-java/nvim-java-core" });
-  await dvpm.add({ url: "nvim-java/nvim-java-test" });
-  await dvpm.add({ url: "nvim-java/nvim-java-dap" });
-  await dvpm.add({ url: "MunifTanjim/nui.nvim" });
-  await dvpm.add({ url: "mfussenegger/nvim-dap" });
-  await dvpm.add({ url: "JavaHello/spring-boot.nvim" });
-  await dvpm.add({ url: "zk-org/zk-nvim" });
-  await dvpm.add({ url: "nanotee/sqls.nvim" });
-
   await dvpm.add({
     url: "stevearc/conform.nvim",
+    dependencies: ["williamboman/mason.nvim"],
     afterFile: "~/.config/nvim/plugin.d/conform.lua",
   });
+
   //ddc
   await dvpm.add({
     url: "shougo/ddc.vim",
@@ -93,62 +191,28 @@ export async function main(denops: Denops): Promise<void> {
     afterFile: "~/.config/nvim/plugin.d/ddc.vim",
   });
   //filter
-  await dvpm.add({ url: "shougo/ddc-matcher_head" });
-  await dvpm.add({ url: "shougo/ddc-sorter_rank" });
-  await dvpm.add({ url: "tani/ddc-fuzzy" });
-  //ui
-  await dvpm.add({ url: "shougo/ddc-ui-pum" });
-  await dvpm.add({ url: "shougo/pum.vim" });
-  //sources
-  await dvpm.add({ url: "shougo/ddc-source-lsp" });
-  await dvpm.add({ url: "shougo/ddc-source-around" });
-  await dvpm.add({ url: "LumaKernel/ddc-source-file" });
-  await dvpm.add({ url: "matsui54/ddc-source-buffer" });
-  await dvpm.add({ url: "uga-rosa/ddc-source-nvim-lua" });
-  await dvpm.add({ url: "shougo/ddc-source-cmdline" });
-  await dvpm.add({ url: "shougo/ddc-source-cmdline-history" });
-  await dvpm.add({
-    url: "uga-rosa/ddc-source-lsp-setup",
-    dependencies: ["neovim/nvim-lspconfig"],
-    after: async ({ denops }) => {
-      await denops.call(
-        `luaeval`,
-        `require('ddc_source_lsp_setup').setup()`,
-      );
-    },
-  });
-
-  //popup
-  await dvpm.add({ url: "matsui54/denops-popup-preview.vim" });
-  await dvpm.add({ url: "matsui54/denops-signature_help" });
 
   //ファイラ
   await dvpm.add({
     url: "lambdalisue/vim-fern",
     dependencies: [
       "lambdalisue/vim-fern-git-status",
-      "lambdalisue/vim-fern-hijack",
+      //"lambdalisue/vim-fern-hijack",
     ],
     afterFile: "~/.config/nvim/plugin.d/fern.vim",
   });
-
   await dvpm.add({
     url: "lambdalisue/vim-fern-renderer-nerdfont",
     dependencies: ["lambdalisue/vim-nerdfont"],
     after: async ({ denops }) =>
       await execute(denops, `let g:fern#renderer = "nerdfont"`),
   });
-
-  await dvpm.add({ url: "yuki-yano/fern-preview.vim" });
-  await dvpm.add({ url: "lambdalisue/vim-fern-git-status" });
-  await dvpm.add({ url: "lambdalisue/vim-fern-hijack" });
-  await dvpm.add({ url: "lambdalisue/vim-nerdfont" });
-
   await dvpm.add({
     url: "stevearc/oil.nvim",
     dependencies: ["nvim-tree/nvim-web-devicons"],
     afterFile: "~/.config/nvim/plugin.d/oil.lua",
   });
+
   //ステータスラインプラグイン
   await dvpm.add({
     url: "nvim-lualine/lualine.nvim",
@@ -203,6 +267,7 @@ export async function main(denops: Denops): Promise<void> {
   });
   await dvpm.add({
     url: "NI57721/skkeleton-state-popup",
+    dependencies: ["vim-skk/skkeleton"],
     afterFile: "~/.config/nvim/plugin.d/skkeleton_state_popup.vim",
   });
 
@@ -223,83 +288,43 @@ export async function main(denops: Denops): Promise<void> {
       "nvim-telescope/telescope.nvim",
       "atusy/qfscope.nvim",
       "nvim-lua/plenary.nvim",
-      "cljoly/telescope-repo.nvim",
+      //"cljoly/telescope-repo.nvim",
     ],
     afterFile: "~/.config/nvim/plugin.d/telescope.lua",
   });
 
-  await dvpm.add({ url: "nvim-lua/plenary.nvim" });
-  await dvpm.add({ url: "kkharji/sqlite.lua" });
-  await dvpm.add({ url: "danielfalk/smart-open.nvim" });
-  await dvpm.add({ url: "atusy/qfscope.nvim" });
-  await dvpm.add({ url: "cljoly/telescope-repo.nvim" });
-
   //便利系 useful
   await dvpm.add({ url: "kevinhwang91/nvim-bqf" });
   // key
-  await dvpm.add({
-    url: "folke/which-key.nvim",
-    afterFile: "~/.config/nvim/plugin.d/which-key.lua",
-  });
-  await dvpm.add({
-    url: "mattn/vim-sonictemplate",
-    afterFile: "~/.config/nvim/plugin.d/vim-sonictemplate.vim",
-  });
-  await dvpm.add({
-    url: "thinca/vim-quickrun",
-    after: async ({ denops }) =>
-      await execute(denops, `cabbrev qr QuickRun<CR>`),
-  });
-  await dvpm.add({
-    url: "numToStr/comment.nvim",
-    afterFile: "~/.config/nvim/plugin.d/comment.lua",
-  });
-  await dvpm.add({
-    url: "folke/todo-comments.nvim",
-    after: async ({ denops }) => {
-      await denops.call(
-        `luaeval`,
-        `require('todo-comments').setup()`,
-      );
-    },
-  });
-  await dvpm.add({
-    url: "yuki-yano/fuzzy-motion.vim",
-    afterFile: "~/.config/nvim/plugin.d/fuzzy-motion.vim",
-  });
-  await dvpm.add({
-    url: "ethanholz/nvim-lastplace",
-    afterFile: "~/.config/nvim/plugin.d/nvim-lastplace.lua",
-  });
-  await dvpm.add({
-    url: "haya14busa/vim-edgemotion",
-    afterFile: "~/.config/nvim/plugin.d/vim-edgemotion.vim",
-  });
-  await dvpm.add({
-    url: "shellRaining/hlchunk.nvim",
-    afterFile: "~/.config/nvim/plugin.d/hlchunk.lua",
-  });
+  // await dvpm.add({
+  //   url: "folke/which-key.nvim",
+  //   afterFile: "~/.config/nvim/plugin.d/which-key.lua",
+  //   enabled: false,
+  // });
   await dvpm.add({
     url: "stevearc/aerial.nvim",
+    dependencies: ["nvim-treesitter/nvim-treesitter"],
     afterFile: "~/.config/nvim/plugin.d/aerial.lua",
   });
+  // await dvpm.add({
+  //   url: "kevinhwang91/nvim-hlslens",
+  //   // after: async ({ denops }) => {
+  //   //   await denops.call(`luaeval`, `require('hlslens').setup()`);
+  //   // },
+  //   afterFile: "~/.config/nvim/plugin.d/hlslens.lua",
+  //   enabled: false,
+  // });
   await dvpm.add({
-    url: "kevinhwang91/nvim-hlslens",
-    // after: async ({ denops }) => {
-    //   await denops.call(`luaeval`, `require('hlslens').setup()`);
-    // },
-    afterFile: "~/.config/nvim/plugin.d/hlslens.lua",
+    url: "https://github.com/github/copilot.vim",
+    afterFile: "~/.config/nvim/plugin.d/copilot.vim",
   });
-  await dvpm.add({ url: "haya14busa/vim-asterisk" });
-  await dvpm.add({
-    url: "0xAdk/full_visual_line.nvim",
-    after: async ({ denops }) => {
-      await denops.call(`luaeval`, `require('full_visual_line').setup()`);
-    },
-  });
-  // await dvpm.add({ url: "github/copilot.vim" });
   await dvpm.add({
     url: "CopilotC-Nvim/CopilotChat.nvim",
+    branch: "canary",
+    dependencies: [
+      "https://github.com/github/copilot.vim",
+      "nvim-lua/plenary.nvim",
+    ],
     afterFile: "~/.config/nvim/plugin.d/CopilotChat.lua",
   });
   await dvpm.add({ url: "tyru/capture.vim" });
@@ -383,16 +408,6 @@ export async function main(denops: Denops): Promise<void> {
       await denops.call(`luaeval`, `require('smoothcursor').setup()`);
     },
   });
-  await dvpm.add({ url: "sainnhe/gruvbox-material" });
-  await dvpm.add({ url: "sainnhe/edge" });
-  await dvpm.add({ url: "sainnhe/sonokai" });
-  await dvpm.add({ url: "sainnhe/everforest" });
-  await dvpm.add({ url: "edeneast/nightfox.nvim" });
-  await dvpm.add({ url: "AlexvZyl/nordic.nvim" });
-  await dvpm.add({ url: "folke/tokyonight.nvim" });
-  await dvpm.add({ url: "tanvirtin/monokai.nvim" });
-  await dvpm.add({ url: "hachy/eva01.vim" });
-  await dvpm.add({ url: "ray-x/aurora" });
 
   await dvpm.end();
 
