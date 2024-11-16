@@ -34,6 +34,9 @@ require('nvim-treesitter.configs').setup({
   endwise = {
     enable = true,
   },
+  indent = {
+    enable = true,
+  },
 })
 
 -- default settings

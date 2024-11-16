@@ -79,7 +79,15 @@ export async function main(denops: Denops): Promise<void> {
       await denops.call(`luaeval`, `require('full_visual_line').setup()`);
     },
   });
-  await dvpm.add({ url: "kevinhwang91/nvim-ufo" });
+  await dvpm.add({ url: "kevinhwang91/promise-async" });
+  await dvpm.add({
+    url: "kevinhwang91/nvim-ufo",
+    dependencies: [
+      "nvim-treesitter/nvim-treesitter",
+      "kevinhwang91/promise-async",
+    ],
+    afterFile: "~/.config/nvim/plugin.d/ufo.lua",
+  });
   await dvpm.add({
     url: "mattn/vim-sonictemplate",
     afterFile: "~/.config/nvim/plugin.d/vim-sonictemplate.vim",
