@@ -34,7 +34,7 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({ url: "MunifTanjim/nui.nvim" });
   await dvpm.add({ url: "mfussenegger/nvim-dap" });
   await dvpm.add({ url: "JavaHello/spring-boot.nvim" });
-  await dvpm.add({ url: "zk-org/zk-nvim" });
+  //await dvpm.add({ url: "zk-org/zk-nvim" });
   await dvpm.add({ url: "nanotee/sqls.nvim" });
   await dvpm.add({ url: "shougo/ddc-matcher_head" });
   await dvpm.add({ url: "shougo/ddc-sorter_rank" });
@@ -58,7 +58,7 @@ export async function main(denops: Denops): Promise<void> {
     dependencies: ["lambdalisue/vim-fern"],
   });
   await dvpm.add({ url: "lambdalisue/vim-fern-git-status" });
-  // await dvpm.add({ url: "lambdalisue/vim-fern-hijack" });
+  await dvpm.add({ url: "lambdalisue/vim-fern-hijack" });
   await dvpm.add({ url: "lambdalisue/vim-nerdfont" });
   await dvpm.add({
     url: "mikavilpas/yazi.nvim",
@@ -156,6 +156,8 @@ export async function main(denops: Denops): Promise<void> {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
+      "nvimdev/lspsaga.nvim",
+      "nanotee/sqls.nvim",
     ],
     afterFile: "~/.config/nvim/plugin.d/lspconfig.lua",
   });
@@ -208,7 +210,6 @@ export async function main(denops: Denops): Promise<void> {
     url: "lambdalisue/vim-fern",
     dependencies: [
       "lambdalisue/vim-fern-git-status",
-      //"lambdalisue/vim-fern-hijack",
     ],
     afterFile: "~/.config/nvim/plugin.d/fern.vim",
   });
@@ -299,7 +300,6 @@ export async function main(denops: Denops): Promise<void> {
       "nvim-telescope/telescope.nvim",
       "atusy/qfscope.nvim",
       "nvim-lua/plenary.nvim",
-      //"cljoly/telescope-repo.nvim",
     ],
     afterFile: "~/.config/nvim/plugin.d/telescope.lua",
   });
@@ -310,28 +310,24 @@ export async function main(denops: Denops): Promise<void> {
   // await dvpm.add({
   //   url: "folke/which-key.nvim",
   //   afterFile: "~/.config/nvim/plugin.d/which-key.lua",
-  //   enabled: false,
+  //  enabled: false,
   // });
   await dvpm.add({
     url: "stevearc/aerial.nvim",
     dependencies: ["nvim-treesitter/nvim-treesitter"],
     afterFile: "~/.config/nvim/plugin.d/aerial.lua",
   });
-  // await dvpm.add({
-  //   url: "kevinhwang91/nvim-hlslens",
-  //   // after: async ({ denops }) => {
-  //   //   await denops.call(`luaeval`, `require('hlslens').setup()`);
-  //   // },
-  //   afterFile: "~/.config/nvim/plugin.d/hlslens.lua",
-  //   enabled: false,
-  // });
+  await dvpm.add({
+    url: "kevinhwang91/nvim-hlslens",
+    afterFile: "~/.config/nvim/plugin.d/hlslens.lua",
+    // enabled: false,
+  });
   await dvpm.add({
     url: "https://github.com/github/copilot.vim",
     afterFile: "~/.config/nvim/plugin.d/copilot.vim",
   });
   await dvpm.add({
     url: "CopilotC-Nvim/CopilotChat.nvim",
-    branch: "canary",
     dependencies: [
       "https://github.com/github/copilot.vim",
       "nvim-lua/plenary.nvim",

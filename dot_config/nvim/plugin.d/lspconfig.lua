@@ -243,7 +243,7 @@ lspconfig.denols.setup({
 
 lspconfig.svelte.setup({})
 
-lspconfig.zk.setup({})
+-- lspconfig.zk.setup({})
 
 lspconfig.lemminx.setup({})
 
