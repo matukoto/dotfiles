@@ -60,7 +60,10 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({ url: "lambdalisue/vim-fern-git-status" });
   // await dvpm.add({ url: "lambdalisue/vim-fern-hijack" });
   await dvpm.add({ url: "lambdalisue/vim-nerdfont" });
-  await dvpm.add({ url: "mikavilpas/yazi.nvim" });
+  await dvpm.add({
+    url: "mikavilpas/yazi.nvim",
+    afterFile: "~/.config/nvim/plugin.d/yazi.lua",
+  });
   await dvpm.add({ url: "sainnhe/gruvbox-material" });
   await dvpm.add({ url: "sainnhe/edge" });
   await dvpm.add({ url: "sainnhe/sonokai" });
