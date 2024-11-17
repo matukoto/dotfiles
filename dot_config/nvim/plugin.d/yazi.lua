@@ -16,6 +16,6 @@ require('yazi').setup({
     change_working_directory = '<c-\\>',
   },
 })
-vim.keymap.set('n', '<leader>-', function()
+vim.keymap.set('n', '<leader>y', function()
   require('yazi').yazi()
 end)
