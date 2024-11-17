@@ -74,7 +74,22 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({ url: "tanvirtin/monokai.nvim" });
   await dvpm.add({ url: "hachy/eva01.vim" });
   await dvpm.add({ url: "ray-x/aurora" });
+  await dvpm.add({ url: "antoinemadec/FixCursorHold.nvim" });
+  await dvpm.add({ url: "marilari88/neotest-vitest" });
+  await dvpm.add({ url: "nvim-neotest/nvim-nio" });
 
+  // neotest
+  await dvpm.add({
+    url: "nvim-neotest/neotest",
+    dependencies: [
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "marilari88/neotest-vitest",
+    ],
+    afterFile: "~/.config/nvim/plugin.d/neotest.lua",
+  });
   await dvpm.add({ url: "haya14busa/vim-asterisk" });
   await dvpm.add({
     url: "0xAdk/full_visual_line.nvim",
