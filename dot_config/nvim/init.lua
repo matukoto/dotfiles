@@ -14,6 +14,15 @@ vim.opt.fileformats = { 'unix', 'dos' }
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+-- 折り畳んだあとの行数
+vim.o.foldcolumn = '1'
+-- 自動的に開かれる折り畳みレベル
+vim.o.foldlevel = 99
+-- 開始時の折り畳みレベル
+vim.o.foldlevelstart = 99
+-- 折り畳みを有効にする
+vim.o.foldenable = true
+
 -- カーソル位置の表示
 vim.opt.ruler = true
 vim.opt.cursorline = true

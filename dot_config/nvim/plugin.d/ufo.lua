@@ -3,18 +3,10 @@ require('ufo').setup({
     return { 'treesitter', 'indent' }
   end,
 })
--- 折り畳んだあとの行数
-vim.o.foldcolumn = '1'
--- 自動的に開かれる折り畳みレベル
-vim.o.foldlevel = 99
--- 開始時の折り畳みレベル
-vim.o.foldlevelstart = 99
--- 折り畳みを有効にする
-vim.o.foldenable = true
 -- ハイライトする
-vim.o.foldtext = 'v:lua.vim.treesitter.foldtext()'
+vim.o.foldtext = 'nvim_treesitter.foldtext()'
 -- 折り畳みの設定 treesitter式の折り畳み
-vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.o.foldexpr = 'nvim_treesitter.foldexpr()'
 -- 折り畳み方法 expr を設定すると foldexpr で設定した折り畳み方法を使用する
 vim.o.foldmethod = 'expr'
 
