@@ -223,3 +223,12 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
 })
 -- カラースキーム
 -- vim.cmd('colorscheme everforest')
+
+vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/nvim-telescope/telescope.nvim')
+vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/nvim-lua/plenary.nvim')
+vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/kkharji/sqlite.lua')
+vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/danielfalk/smart-open.nvim')
+vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/cljoly/telescope-repo.nvim')
+vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/atusy/qfscope.nvim')
+vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/prochri/telescope-all-recent.nvim')
+require('setting')

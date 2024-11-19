@@ -16,20 +16,20 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({ url: "vim-jp/vimdoc-ja" });
 
-  await dvpm.add({ url: "nvim-lua/plenary.nvim" });
+  await dvpm.add({ url: "nvim-lua/plenary.nvim", enabled: false });
 
-  await dvpm.add({ url: "kkharji/sqlite.lua" });
+  await dvpm.add({ url: "kkharji/sqlite.lua", enabled: false });
 
-  await dvpm.add({ url: "danielfalk/smart-open.nvim" });
+  await dvpm.add({ url: "danielfalk/smart-open.nvim", enabled: false });
 
-  await dvpm.add({ url: "atusy/qfscope.nvim" });
+  await dvpm.add({ url: "atusy/qfscope.nvim", enabled: false });
 
   await dvpm.add({
     url: "vim-skk/skkeleton",
     afterFile: "~/.config/nvim/plugin.d/vim-skkeleton.vim",
   });
 
-  await dvpm.add({ url: "cljoly/telescope-repo.nvim" });
+  await dvpm.add({ url: "cljoly/telescope-repo.nvim", enabled: false });
 
   await dvpm.add({ url: "williamboman/mason.nvim" });
 
@@ -335,11 +335,11 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({
     url: "nvim-telescope/telescope.nvim",
     dependencies: [
-      "danielfalk/smart-open.nvim",
       "kkharji/sqlite.lua",
       "danielfalk/smart-open.nvim",
       "cljoly/telescope-repo.nvim",
     ],
+    enabled: false,
   });
 
   await dvpm.add({
@@ -349,16 +349,17 @@ export async function main(denops: Denops): Promise<void> {
       "atusy/qfscope.nvim",
       "nvim-lua/plenary.nvim",
     ],
-    afterFile: "~/.config/nvim/plugin.d/telescope.lua",
+    enabled: false,
+    //afterFile: "~/.config/nvim/plugin.d/telescope.lua",
   });
 
   await dvpm.add({ url: "kevinhwang91/nvim-bqf" });
 
-  // await dvpm.add({
-  //   url: "folke/which-key.nvim",
-  //   afterFile: "~/.config/nvim/plugin.d/which-key.lua",
-  //  enabled: false,
-  // });
+  await dvpm.add({
+    url: "folke/which-key.nvim",
+    afterFile: "~/.config/nvim/plugin.d/which-key.lua",
+    enabled: true,
+  });
 
   await dvpm.add({
     url: "stevearc/aerial.nvim",
