@@ -22,6 +22,14 @@ set ruler
 
 " カーソル行の背景色変更
 set cursorline
+" 折り畳んだあとの行数
+set foldcolumn=1
+" 自動的に開かれる折り畳みレベル
+set foldlevel=99
+" 開始時の折り畳みレベル
+set foldlevelstart=99
+" 折り畳みを有効にする
+set foldenable
 
 " タブ
 set tabstop=2

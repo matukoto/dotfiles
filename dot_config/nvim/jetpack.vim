@@ -36,6 +36,18 @@ function! s:init() abort
   call jetpack#add('nanotee/sqls.nvim')
   call jetpack#add('stevearc/conform.nvim')
 
+  " neotest
+  call jetpack#add('nvim-neotest/neotest')
+  call jetpack#add('nvim-neotest/nvim-nio')
+  call jetpack#add('nvim-lua/plenary.nvim')
+  call jetpack#add('nvim-treesitter/nvim-treesitter')
+  call jetpack#add('antoinemadec/FixCursorHold.nvim')
+  call jetpack#add('marilari88/neotest-vitest')
+
+   call jetpack#add('kevinhwang91/nvim-ufo')
+   call jetpack#add('nvim-treesitter/nvim-treesitter')
+   call jetpack#add('kevinhwang91/promise-async')
+
   " ddc
   call jetpack#add('shougo/ddc.vim')
   " filter
@@ -165,6 +177,7 @@ function! s:init() abort
   " call jetpack#add('folke/persistence.nvim')
   " Neovim 起動時に dashboard を開く
   " call jetpack#add('nvimdev/dashboard-nvim')
+
   " tui アプリを Neovim で開ける Gitui しか使っていないが
   call jetpack#add('matukoto/fm-nvim')
   " easymotion
@@ -172,6 +185,7 @@ function! s:init() abort
   call jetpack#add('machakann/vim-sandwich')
   " WakaTime コーディング時間を計測してくれる
   call jetpack#add('wakatime/vim-wakatime')
+    call jetpack#add('mikavilpas/yazi.nvim')
 
   " DB
   call jetpack#add('tpope/vim-dadbod')
@@ -212,7 +226,6 @@ function! s:configure() abort
     call s:load_lua_configurations()
   endif
 endfunction
-
 function! s:load_configurations() abort
   for path in glob('$VIMHOME/plugin.d/*.vim', 1, 1, 1)
     execute printf('source %s', fnameescape(path))
