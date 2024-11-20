@@ -133,3 +133,12 @@ error_symbol = '[❯❯❯](bold red)'
 [time]
 format = '[$time](bold yellow)'
 disabled = false
+
+[custom.svelte]
+command = """
+grep -oP '(?<="version": ").+(?=")' node_modules/svelte/package.json
+"""
+detect_files = ['svelte.config.js']
+format = 'on [$symbol(v$output)]($style)'
+style = 'bold red'
+symbol = ' '
