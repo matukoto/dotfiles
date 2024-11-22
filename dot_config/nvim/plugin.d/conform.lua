@@ -15,7 +15,7 @@ require('conform').setup({
     java = { lsp_format = 'fallback' },
     sh = { 'shellcheck', 'shfmt', stop_after_first = false },
     json = { 'jq' },
-    svelte = { lsp_format = 'fallback' },
+    svelte = { 'eslint' },
     html = jsFormatter,
     css = jsFormatter,
     javascript = jsFormatter,
