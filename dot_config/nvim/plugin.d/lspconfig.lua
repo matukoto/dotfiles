@@ -323,6 +323,7 @@ require('lspconfig').jdtls.setup({
   },
 })
 
+require('lspconfig').tailwindcss.setup({})
 -- lspconfig.markdown_oxide.setup({
 -- })
 -- vim.lsp.set_log_level('debug')
