@@ -37,21 +37,21 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({ url: "WhoIsSethDaniel/mason-tool-installer.nvim" });
 
-  await dvpm.add({ url: "nvim-java/lua-async-await" });
+  // await dvpm.add({ url: "nvim-java/lua-async-await" });
+  //
+  // await dvpm.add({ url: "nvim-java/nvim-java-refactor" });
+  //
+  // await dvpm.add({ url: "nvim-java/nvim-java-core" });
+  //
+  // await dvpm.add({ url: "nvim-java/nvim-java-test" });
+  //
+  // await dvpm.add({ url: "nvim-java/nvim-java-dap" });
 
-  await dvpm.add({ url: "nvim-java/nvim-java-refactor" });
-
-  await dvpm.add({ url: "nvim-java/nvim-java-core" });
-
-  await dvpm.add({ url: "nvim-java/nvim-java-test" });
-
-  await dvpm.add({ url: "nvim-java/nvim-java-dap" });
-
-  await dvpm.add({ url: "MunifTanjim/nui.nvim" });
-
-  await dvpm.add({ url: "mfussenegger/nvim-dap" });
-
-  await dvpm.add({ url: "JavaHello/spring-boot.nvim" });
+  // await dvpm.add({ url: "MunifTanjim/nui.nvim" });
+  //
+  // await dvpm.add({ url: "mfussenegger/nvim-dap" });
+  //
+  // await dvpm.add({ url: "JavaHello/spring-boot.nvim" });
 
   await dvpm.add({ url: "nanotee/sqls.nvim" });
 
@@ -114,6 +114,18 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({ url: "antoinemadec/FixCursorHold.nvim" });
   await dvpm.add({ url: "marilari88/neotest-vitest" });
   await dvpm.add({ url: "nvim-neotest/nvim-nio" });
+  await dvpm.add({ url: "mfussenegger/nvim-jdtls" });
+  await dvpm.add({ url: "mfussenegger/nvim-dap" });
+  await dvpm.add({ url: "theHamsta/nvim-dap-virtual-text" });
+  await dvpm.add({
+    url: "rcasia/neotest-java",
+    dependencies: [
+      "mfussenegger/nvim-jdtls",
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+      "theHamsta/nvim-dap-virtual-text",
+    ],
+  });
 
   await dvpm.add({ url: "haya14busa/vim-asterisk" });
 
@@ -205,21 +217,21 @@ export async function main(denops: Denops): Promise<void> {
     },
   });
 
-  await dvpm.add({
-    url: "nvim-java/nvim-java",
-    dependencies: [
-      "nvim-java/lua-async-await",
-      "nvim-java/nvim-java-refactor",
-      "nvim-java/nvim-java-core",
-      "nvim-java/nvim-java-test",
-      "nvim-java/nvim-java-dap",
-      "MunifTanjim/nui.nvim",
-      "mfussenegger/nvim-dap",
-      "JavaHello/spring-boot.nvim",
-      "neovim/nvim-lspconfig",
-    ],
-    afterFile: "~/.config/nvim/plugin.d/jdtls.lua",
-  });
+  // await dvpm.add({
+  //   url: "nvim-java/nvim-java",
+  //   dependencies: [
+  //     "nvim-java/lua-async-await",
+  //     "nvim-java/nvim-java-refactor",
+  //     "nvim-java/nvim-java-core",
+  //     "nvim-java/nvim-java-test",
+  //     "nvim-java/nvim-java-dap",
+  //     "MunifTanjim/nui.nvim",
+  //     "mfussenegger/nvim-dap",
+  //     "JavaHello/spring-boot.nvim",
+  //     "neovim/nvim-lspconfig",
+  //   ],
+  //   afterFile: "~/.config/nvim/plugin.d/jdtls.lua",
+  // });
 
   await dvpm.add({
     url: "stevearc/conform.nvim",
@@ -385,6 +397,7 @@ export async function main(denops: Denops): Promise<void> {
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
       "marilari88/neotest-vitest",
+      "rcasia/neotest-java",
     ],
     afterFile: "~/.config/nvim/plugin.d/neotest.lua",
   });

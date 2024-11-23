@@ -1,6 +1,10 @@
 require('neotest').setup({
   adapters = {
     require('neotest-vitest'),
+    ['neotest-java'] = {
+      junit_jar = nil, -- default: stdpath("data") .. /nvim/neotest-java/junit-platform-console-standalone-[version].jar
+      incremental_build = false,
+    },
   },
 })
 
