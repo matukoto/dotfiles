@@ -21,20 +21,36 @@ function! s:init() abort
   call jetpack#add('j-hui/fidget.nvim')
   " call jetpack#add('nvimtools/none-ls.nvim')
   " java
-  call jetpack#add('nvim-java/lua-async-await')
-  call jetpack#add('nvim-java/nvim-java-refactor')
-  call jetpack#add('nvim-java/nvim-java-core')
-  call jetpack#add('nvim-java/nvim-java-test')
-  call jetpack#add('nvim-java/nvim-java-dap')
-  call jetpack#add('MunifTanjim/nui.nvim')
-  call jetpack#add('mfussenegger/nvim-dap')
-  call jetpack#add('JavaHello/spring-boot.nvim')
-  call jetpack#add('nvim-java/nvim-java')
+  " call jetpack#add('nvim-java/lua-async-await')
+  " call jetpack#add('nvim-java/nvim-java-refactor')
+  " call jetpack#add('nvim-java/nvim-java-core')
+  " call jetpack#add('nvim-java/nvim-java-test')
+  " call jetpack#add('nvim-java/nvim-java-dap')
+  " call jetpack#add('MunifTanjim/nui.nvim')
+  " call jetpack#add('JavaHello/spring-boot.nvim')
+  " call jetpack#add('nvim-java/nvim-java')
   " call jetpack#add('renerocksai/telekasten.nvim')
   " call jetpack#add('jakewvincent/mkdnflow.nvim')
   call jetpack#add('zk-org/zk-nvim')
   call jetpack#add('nanotee/sqls.nvim')
   call jetpack#add('stevearc/conform.nvim')
+
+  " neotest
+  call jetpack#add('nvim-neotest/neotest')
+  call jetpack#add('nvim-neotest/nvim-nio')
+  call jetpack#add('nvim-lua/plenary.nvim')
+  call jetpack#add('nvim-treesitter/nvim-treesitter')
+  call jetpack#add('antoinemadec/FixCursorHold.nvim')
+  call jetpack#add('marilari88/neotest-vitest')
+  call jetpack#add('mfussenegger/nvim-jdtls')
+  call jetpack#add('rcasia/neotest-java')
+  call jetpack#add('mfussenegger/nvim-dap')
+  call jetpack#add('rcarriga/nvim-dap-ui')
+  call jetpack#add('theHamsta/nvim-dap-virtual-text')
+
+   call jetpack#add('kevinhwang91/nvim-ufo')
+   call jetpack#add('nvim-treesitter/nvim-treesitter')
+   call jetpack#add('kevinhwang91/promise-async')
 
   " ddc
   call jetpack#add('shougo/ddc.vim')
@@ -109,7 +125,7 @@ function! s:init() abort
 
   " 便利系 useful
   call jetpack#add('kevinhwang91/nvim-bqf')
-  call jetpack#add ('folke/which-key.nvim')
+  " call jetpack#add ('folke/which-key.nvim')
   call jetpack#add('mattn/vim-sonictemplate')
   call jetpack#add('thinca/vim-quickrun')
   call jetpack#add('numToStr/comment.nvim')
@@ -117,6 +133,7 @@ function! s:init() abort
   call jetpack#add('yuki-yano/fuzzy-motion.vim')
   call jetpack#add('ethanholz/nvim-lastplace')
   call jetpack#add('haya14busa/vim-edgemotion')
+  call jetpack#add('uga-rosa/ccc.nvim')
   "call jetpack#add('gamoutatsumi/gyazoupload.vim')
   "call jetpack#add('skanehira/denops-docker.vim')
   "call jetpack#add('skanehira/k8s.vim')
@@ -165,6 +182,7 @@ function! s:init() abort
   " call jetpack#add('folke/persistence.nvim')
   " Neovim 起動時に dashboard を開く
   " call jetpack#add('nvimdev/dashboard-nvim')
+
   " tui アプリを Neovim で開ける Gitui しか使っていないが
   call jetpack#add('matukoto/fm-nvim')
   " easymotion
@@ -172,6 +190,7 @@ function! s:init() abort
   call jetpack#add('machakann/vim-sandwich')
   " WakaTime コーディング時間を計測してくれる
   call jetpack#add('wakatime/vim-wakatime')
+    call jetpack#add('mikavilpas/yazi.nvim')
 
   " DB
   call jetpack#add('tpope/vim-dadbod')
@@ -212,7 +231,6 @@ function! s:configure() abort
     call s:load_lua_configurations()
   endif
 endfunction
-
 function! s:load_configurations() abort
   for path in glob('$VIMHOME/plugin.d/*.vim', 1, 1, 1)
     execute printf('source %s', fnameescape(path))

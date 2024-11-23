@@ -22,6 +22,14 @@ set ruler
 
 " カーソル行の背景色変更
 set cursorline
+" 折り畳んだあとの行数
+set foldcolumn=1
+" 自動的に開かれる折り畳みレベル
+set foldlevel=99
+" 開始時の折り畳みレベル
+set foldlevelstart=99
+" 折り畳みを有効にする
+set foldenable
 
 " タブ
 set tabstop=2
@@ -210,6 +218,21 @@ source $VIMHOME/jetpack.vim
 
 " リドゥ
 nnoremap U <C-r>
+
+nnoremap g<C-a> ggVG
+nnoremap g<C-a>y ggVGy
+
+" au BufWinLeave * mkview
+" au BufWinEnter * silent loadview
+augroup SaveViewOnLeave
+  autocmd!
+  autocmd BufWinLeave * if &filetype != '' && expand('%') != '' | mkview | endif
+augroup END
+
+augroup RestoreViewOnEnter
+  autocmd!
+  autocmd BufWinEnter * if &filetype != '' && expand('%') != '' | silent! loadview | endif
+augroup END
 
 autocmd CursorMoved * normal! zz
 " colorscheme

@@ -15,6 +15,7 @@ require('nvim-treesitter.configs').setup({
     'css',
     --
     'java',
+    'groovy',
     'bash',
     'go',
     'sql',
