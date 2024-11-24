@@ -8,13 +8,17 @@ require('neotest').setup({
   },
 })
 
-vim.keymap.set('n', '<leader>tr', function()
+vim.keymap.set('n', '<leader>tt', function()
   require('neotest').run.run()
 end, { desc = 'Run nearest test' })
 
 vim.keymap.set('n', '<leader>tf', function()
   require('neotest').run.run(vim.fn.expand('%'))
 end, { desc = 'Run current file' })
+
+vim.keymap.set('n', '<leader>ta', function()
+  require('neotest').run.run(vim.loop.cwd())
+end, { desc = 'Run All Tests in Directory' })
 
 vim.keymap.set('n', '<leader>ts', function()
   require('neotest').summary.toggle()
