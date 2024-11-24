@@ -16,20 +16,20 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({ url: "vim-jp/vimdoc-ja" });
 
-  await dvpm.add({ url: "nvim-lua/plenary.nvim", enabled: false });
+  await dvpm.add({ url: "nvim-lua/plenary.nvim", enabled: true });
 
-  await dvpm.add({ url: "kkharji/sqlite.lua", enabled: false });
+  await dvpm.add({ url: "kkharji/sqlite.lua", enabled: true });
 
-  await dvpm.add({ url: "danielfalk/smart-open.nvim", enabled: false });
+  await dvpm.add({ url: "danielfalk/smart-open.nvim", enabled: true });
 
-  await dvpm.add({ url: "atusy/qfscope.nvim", enabled: false });
+  await dvpm.add({ url: "atusy/qfscope.nvim", enabled: true });
 
   await dvpm.add({
     url: "vim-skk/skkeleton",
     afterFile: "~/.config/nvim/plugin.d/vim-skkeleton.vim",
   });
 
-  await dvpm.add({ url: "cljoly/telescope-repo.nvim", enabled: false });
+  await dvpm.add({ url: "cljoly/telescope-repo.nvim", enabled: true });
 
   await dvpm.add({ url: "williamboman/mason.nvim" });
 
@@ -90,6 +90,7 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({
     url: "mikavilpas/yazi.nvim",
+    dependencies: ["nvim-lua/plenary.nvim"],
     afterFile: "~/.config/nvim/plugin.d/yazi.lua",
   });
 
@@ -111,12 +112,28 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({ url: "hachy/eva01.vim" });
 
+  // neotest
   await dvpm.add({ url: "antoinemadec/FixCursorHold.nvim" });
   await dvpm.add({ url: "marilari88/neotest-vitest" });
   await dvpm.add({ url: "nvim-neotest/nvim-nio" });
   await dvpm.add({ url: "mfussenegger/nvim-jdtls" });
   await dvpm.add({ url: "mfussenegger/nvim-dap" });
   await dvpm.add({ url: "theHamsta/nvim-dap-virtual-text" });
+  await dvpm.add({ url: "rcarriga/nvim-dap-ui" });
+
+  await dvpm.add({
+    url: "nvim-neotest/neotest",
+    dependencies: [
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "marilari88/neotest-vitest",
+      // "rcasia/neotest-java",
+    ],
+    // afterFile: "~/.config/nvim/plugin.d/neotest.lua",
+  });
+
   await dvpm.add({
     url: "rcasia/neotest-java",
     dependencies: [
@@ -124,7 +141,9 @@ export async function main(denops: Denops): Promise<void> {
       "mfussenegger/nvim-dap",
       "rcarriga/nvim-dap-ui",
       "theHamsta/nvim-dap-virtual-text",
+      "nvim-neotest/neotest",
     ],
+    afterFile: "~/.config/nvim/plugin.d/neotest.lua",
   });
 
   await dvpm.add({ url: "haya14busa/vim-asterisk" });
@@ -351,7 +370,7 @@ export async function main(denops: Denops): Promise<void> {
       "danielfalk/smart-open.nvim",
       "cljoly/telescope-repo.nvim",
     ],
-    enabled: false,
+    enabled: true,
   });
 
   await dvpm.add({
@@ -361,8 +380,8 @@ export async function main(denops: Denops): Promise<void> {
       "atusy/qfscope.nvim",
       "nvim-lua/plenary.nvim",
     ],
-    enabled: false,
-    //afterFile: "~/.config/nvim/plugin.d/telescope.lua",
+    enabled: true,
+    afterFile: "~/.config/nvim/plugin.d/telescope.lua",
   });
 
   await dvpm.add({ url: "kevinhwang91/nvim-bqf" });
@@ -388,20 +407,6 @@ export async function main(denops: Denops): Promise<void> {
     afterFile: "~/.config/nvim/plugin.d/ufo.lua",
   });
 
-  // neotest
-  await dvpm.add({
-    url: "nvim-neotest/neotest",
-    dependencies: [
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim",
-      "marilari88/neotest-vitest",
-      "rcasia/neotest-java",
-    ],
-    afterFile: "~/.config/nvim/plugin.d/neotest.lua",
-  });
-
   await dvpm.add({
     url: "kevinhwang91/nvim-hlslens",
     afterFile: "~/.config/nvim/plugin.d/hlslens.lua",
@@ -410,7 +415,7 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({
     url: "https://github.com/github/copilot.vim",
     afterFile: "~/.config/nvim/plugin.d/copilot.vim",
-    enabled: false,
+    enabled: true,
   });
   await dvpm.add({
     url: "CopilotC-Nvim/CopilotChat.nvim",
@@ -484,7 +489,7 @@ export async function main(denops: Denops): Promise<void> {
   });
   await dvpm.add({ url: "machakann/vim-sandwich" });
   //WakaTime コーディング時間を計測してくれる
-  await dvpm.add({ url: "wakatime/vim-wakatime", enabled: false });
+  await dvpm.add({ url: "wakatime/vim-wakatime", enabled: true });
 
   //DB
   await dvpm.add({ url: "tpope/vim-dadbod" });

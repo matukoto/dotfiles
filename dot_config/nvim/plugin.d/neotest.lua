@@ -1,17 +1,13 @@
 require('neotest').setup({
   adapters = {
     require('neotest-vitest'),
-    ['neotest-java'] = {
+    require('neotest-java')({
       junit_jar = nil, -- default: stdpath("data") .. /nvim/neotest-java/junit-platform-console-standalone-[version].jar
-      incremental_build = false,
-    },
+      incremental_build = true,
+    }),
   },
 })
 
---   ['neotest-java'] = {
---     junit_jar = nil, -- default: stdpath("data") .. /nvim/neotest-java/junit-platform-console-standalone-[version].jar
---     incremental_build = false,
---   },
 vim.keymap.set('n', '<leader>tr', function()
   require('neotest').run.run()
 end, { desc = 'Run nearest test' })
