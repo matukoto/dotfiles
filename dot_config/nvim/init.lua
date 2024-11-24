@@ -110,12 +110,13 @@ vim.keymap.set('n', '<Space>?', '?\\C')
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*commit',
   callback = function()
-    vim.keymap.set(
-      'n',
-      '<CR><CR>',
-      '<Cmd>silent! execute \'normal! ^w"zdiw"_dip"zPA: \' | startinsert!<CR>',
-      { buffer = true }
-    )
+    vim.keymap.set('n', '<CR><CR>', function()
+      vim.cmd('normal! ^w"zdiw')
+      vim.cmd('normal! "_dip')
+      vim.cmd('normal! "zPA(): ')
+      vim.cmd('normal! 2h')
+      vim.api.nvim_command('startinsert')
+    end, { buffer = true })
   end,
 })
 
