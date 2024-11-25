@@ -4,6 +4,7 @@ require('neotest').setup({
     require('neotest-java')({
       junit_jar = nil, -- default: stdpath("data") .. /nvim/neotest-java/junit-platform-console-standalone-[version].jar
       incremental_build = true,
+      root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', 'mvnw' }, { upward = true })[1]),
     }),
   },
 })

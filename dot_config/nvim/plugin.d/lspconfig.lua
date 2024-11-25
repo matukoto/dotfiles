@@ -299,29 +299,29 @@ lspconfig.lemminx.setup({})
 --   },
 -- })
 --
-require('lspconfig').jdtls.setup({
-  settings = {
-    java = {
-      import = {
-        gradle = {
-          enabled = true,
-        },
-        maven = {
-          enabled = true,
-        },
-      },
-      format = {
-        settings = {
-          url = 'https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml',
-          profile = 'GoogleStyle',
-        },
-      },
-      saveActions = {
-        organizeImports = true,
-      },
-    },
-  },
-})
+-- require('lspconfig').jdtls.setup({
+--   settings = {
+--     java = {
+--       import = {
+--         gradle = {
+--           enabled = true,
+--         },
+--         maven = {
+--           enabled = true,
+--         },
+--       },
+--       format = {
+--         settings = {
+--           url = 'https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml',
+--           profile = 'GoogleStyle',
+--         },
+--       },
+--       saveActions = {
+--         organizeImports = true,
+--       },
+--     },
+--   },
+-- })
 
 require('lspconfig').tailwindcss.setup({})
 -- lspconfig.markdown_oxide.setup({
