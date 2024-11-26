@@ -51,8 +51,6 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({ url: "mfussenegger/nvim-dap" });
 
-  await dvpm.add({ url: "JavaHello/spring-boot.nvim" });
-
   await dvpm.add({ url: "nanotee/sqls.nvim" });
 
   await dvpm.add({ url: "shougo/ddc-matcher_head" });
@@ -85,6 +83,10 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({ url: "lambdalisue/vim-fern-git-status" });
 
   await dvpm.add({ url: "lambdalisue/vim-fern-hijack" });
+  await dvpm.add({
+    url: "uga-rosa/ccc.nvim",
+    afterFile: "~/.config/nvim/plugin.d/ccc.lua",
+  });
 
   await dvpm.add({ url: "lambdalisue/vim-nerdfont" });
 
@@ -116,12 +118,7 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({ url: "antoinemadec/FixCursorHold.nvim" });
   await dvpm.add({ url: "marilari88/neotest-vitest" });
   await dvpm.add({ url: "nvim-neotest/nvim-nio" });
-  await dvpm.add({
-    url: "mfussenegger/nvim-jdtls",
-    // dependencies: ["neovim/nvim-lspconfig"],
-    // afterFile: "~/.config/nvim/plugin.d/jdtls.lua",
-  });
-  // await dvpm.add({ url: "mfussenegger/nvim-dap" });
+  await dvpm.add({ url: "mfussenegger/nvim-jdtls" });
   await dvpm.add({ url: "theHamsta/nvim-dap-virtual-text" });
   await dvpm.add({ url: "rcarriga/nvim-dap-ui" });
 
@@ -133,9 +130,7 @@ export async function main(denops: Denops): Promise<void> {
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
       "marilari88/neotest-vitest",
-      // "rcasia/neotest-java",
     ],
-    // afterFile: "~/.config/nvim/plugin.d/neotest.lua",
   });
 
   await dvpm.add({
@@ -224,7 +219,6 @@ export async function main(denops: Denops): Promise<void> {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
-      // "nvimdev/lspsaga.nvim",
       "nanotee/sqls.nvim",
     ],
     afterFile: "~/.config/nvim/plugin.d/lspconfig.lua",
@@ -251,7 +245,6 @@ export async function main(denops: Denops): Promise<void> {
       "nvim-java/nvim-java-dap",
       "MunifTanjim/nui.nvim",
       "mfussenegger/nvim-dap",
-      "JavaHello/spring-boot.nvim",
       "neovim/nvim-lspconfig",
     ],
     afterFile: "~/.config/nvim/plugin.d/jdtls.lua",
