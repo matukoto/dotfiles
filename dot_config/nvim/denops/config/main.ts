@@ -18,18 +18,18 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({ url: "nvim-lua/plenary.nvim", enabled: true });
 
-  await dvpm.add({ url: "kkharji/sqlite.lua", enabled: true });
+  // await dvpm.add({ url: "kkharji/sqlite.lua", enabled: true });
 
-  await dvpm.add({ url: "danielfalk/smart-open.nvim", enabled: true });
+  // await dvpm.add({ url: "danielfalk/smart-open.nvim", enabled: true });
 
-  await dvpm.add({ url: "atusy/qfscope.nvim", enabled: true });
+  // await dvpm.add({ url: "atusy/qfscope.nvim", enabled: true });
 
   await dvpm.add({
     url: "vim-skk/skkeleton",
     afterFile: "~/.config/nvim/plugin.d/vim-skkeleton.vim",
   });
 
-  await dvpm.add({ url: "cljoly/telescope-repo.nvim", enabled: true });
+  // await dvpm.add({ url: "cljoly/telescope-repo.nvim", enabled: true });
 
   await dvpm.add({ url: "williamboman/mason.nvim" });
 
@@ -361,26 +361,26 @@ export async function main(denops: Denops): Promise<void> {
     afterFile: "~/.config/nvim/plugin.d/skkeleton_state_popup.vim",
   });
 
-  await dvpm.add({
-    url: "nvim-telescope/telescope.nvim",
-    dependencies: [
-      "kkharji/sqlite.lua",
-      "danielfalk/smart-open.nvim",
-      "cljoly/telescope-repo.nvim",
-    ],
-    enabled: true,
-  });
+  // await dvpm.add({
+  //   url: "nvim-telescope/telescope.nvim",
+  //   dependencies: [
+  //     "kkharji/sqlite.lua",
+  //     "danielfalk/smart-open.nvim",
+  //     "cljoly/telescope-repo.nvim",
+  //   ],
+  //   enabled: true,
+  // });
 
-  await dvpm.add({
-    url: "prochri/telescope-all-recent.nvim",
-    dependencies: [
-      "nvim-telescope/telescope.nvim",
-      "atusy/qfscope.nvim",
-      "nvim-lua/plenary.nvim",
-    ],
-    enabled: true,
-    afterFile: "~/.config/nvim/plugin.d/telescope.lua",
-  });
+  // await dvpm.add({
+  //   url: "prochri/telescope-all-recent.nvim",
+  //   dependencies: [
+  //     "nvim-telescope/telescope.nvim",
+  //     "atusy/qfscope.nvim",
+  //     "nvim-lua/plenary.nvim",
+  //   ],
+  //   enabled: true,
+  //   afterFile: "~/.config/nvim/plugin.d/telescope.lua",
+  // });
 
   await dvpm.add({ url: "kevinhwang91/nvim-bqf" });
 
