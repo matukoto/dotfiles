@@ -1,5 +1,5 @@
 -- Vimホームディレクトリの設定
--- vim.g.VIMHOME = vim.fn.expand('<sfile>:p:h')
+vim.g.VIMHOME = vim.fn.expand('<sfile>:p:h')
 -- local is_windows = vim.fn.has('win32') == 1
 
 -- ステータスラインを常に1つにする
@@ -178,20 +178,6 @@ vim.keymap.set('n', '<Leader>p', '"*p', { silent = true })
 
 vim.cmd('cabbrev cm <Cmd>Capture message<CR>')
 
--- dvpmの初期化
-vim.g['denops#server#deno_args'] = { '-q', '--no-lock', '-A', '--unstable-ffi', '--unstable-kv' }
-local denops = vim.fn.expand('~/.cache/nvim/dvpm/github.com/vim-denops/denops.vim')
-if not vim.loop.fs_stat(denops) then
-  vim.fn.system({ 'git', 'clone', 'https://github.com/vim-denops/denops.vim', denops })
-end
-vim.opt.runtimepath:prepend(denops)
-
-vim.g.dvpm_typescript_file = vim.fn.expand('~/.config/dvpm/denops/config/dvpm.ts')
-if vim.g.dvpm_typescript_file and vim.fn.filereadable(vim.g.dvpm_typescript_file) == 1 then
-  vim.fn['denops#plugin#load']('dvpm')
-  vim.fn['denops#notify']('dvpm', 'load', { vim.g.dvpm_typescript_file })
-end
-
 -- リドゥ
 vim.keymap.set('n', 'U', '<C-r>')
 
@@ -222,14 +208,6 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
     end
   end,
 })
--- カラースキーム
--- vim.cmd('colorscheme everforest')
 
-vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/nvim-telescope/telescope.nvim')
-vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/nvim-lua/plenary.nvim')
-vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/kkharji/sqlite.lua')
-vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/danielfalk/smart-open.nvim')
-vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/cljoly/telescope-repo.nvim')
-vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/atusy/qfscope.nvim')
-vim.opt.runtimepath:append('~/.cache/nvim/dvpm/github.com/prochri/telescope-all-recent.nvim')
-require('setting')
+-- jetpack.vimの読み込み
+vim.cmd('source ' .. vim.g.VIMHOME .. '/jetpack.vim')
