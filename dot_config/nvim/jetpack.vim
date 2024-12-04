@@ -145,7 +145,7 @@ function! s:init() abort
   call jetpack#add('haya14busa/vim-asterisk')
   call jetpack#add('0xAdk/full_visual_line.nvim')
   call jetpack#add('github/copilot.vim')
-  call jetpack#add('CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' })
+  call jetpack#add('CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' })
   call jetpack#add('tyru/capture.vim')
   " call jetpack#add('reireias/vim-cheatsheet')
   call jetpack#add('itchyny/vim-cursorword')
