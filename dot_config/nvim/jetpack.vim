@@ -35,21 +35,7 @@ function! s:init() abort
   call jetpack#add('nanotee/sqls.nvim')
   call jetpack#add('stevearc/conform.nvim')
 
-  " neotest
-  call jetpack#add('nvim-neotest/neotest')
-  call jetpack#add('nvim-neotest/nvim-nio')
-  call jetpack#add('nvim-lua/plenary.nvim')
-  call jetpack#add('nvim-treesitter/nvim-treesitter')
-  call jetpack#add('antoinemadec/FixCursorHold.nvim')
-  call jetpack#add('marilari88/neotest-vitest')
-  " call jetpack#add('mfussenegger/nvim-jdtls')
-  " call jetpack#add('rcasia/neotest-java')
-  " call jetpack#add('mfussenegger/nvim-dap')
-  " call jetpack#add('rcarriga/nvim-dap-ui')
-  " call jetpack#add('theHamsta/nvim-dap-virtual-text')
-
    call jetpack#add('kevinhwang91/nvim-ufo')
-   call jetpack#add('nvim-treesitter/nvim-treesitter')
    call jetpack#add('kevinhwang91/promise-async')
 
   " ddc
@@ -101,6 +87,17 @@ function! s:init() abort
   call jetpack#add('lewis6991/gitsigns.nvim')
   call jetpack#add('isakbm/gitgraph.nvim')
   call jetpack#add('sindrets/diffview.nvim')
+
+  " neotest
+  call jetpack#add('nvim-neotest/neotest')
+  call jetpack#add('nvim-neotest/nvim-nio')
+  call jetpack#add('antoinemadec/FixCursorHold.nvim')
+  call jetpack#add('marilari88/neotest-vitest')
+  " call jetpack#add('mfussenegger/nvim-jdtls')
+  " call jetpack#add('rcasia/neotest-java')
+  " call jetpack#add('mfussenegger/nvim-dap')
+  " call jetpack#add('rcarriga/nvim-dap-ui')
+  " call jetpack#add('theHamsta/nvim-dap-virtual-text')
 
   " 日本語
   call jetpack#add('lambdalisue/vim-kensaku')
