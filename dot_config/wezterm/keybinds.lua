@@ -62,11 +62,11 @@ return {
     { key = 'w', mods = 'ALT', action = act({ CloseCurrentTab = { confirm = true } }) },
 
     -- 画面フルスクリーン切り替え
-    { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
+    -- { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
 
     -- コピーモード
-    -- { key = 'X', mods = 'LEADER', action = act.ActivateKeyTable{ name = 'copy_mode', one_shot =false }, },
-    { key = 'j', mods = 'LEADER', action = act.ActivateCopyMode },
+    { key = 'Enter', mods = 'ALT', action = act.ActivateKeyTable{ name = 'copy_mode', one_shot =false }, },
+    -- { key = 'j', mods = 'LEADER', action = act.ActivateCopyMode },
     -- コピー
     { key = 'c', mods = 'CTRL|SHIFT', action = act.CopyTo('Clipboard') },
     -- 貼り付け
