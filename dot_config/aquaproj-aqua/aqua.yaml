@@ -8,7 +8,7 @@ packages:
 - name: extrawurst/gitui@v0.26.3
 - name: BurntSushi/ripgrep@14.1.1
 - name: ajeetdsouza/zoxide@v0.9.6
-- name: mikefarah/yq@v4.44.5
+- name: mikefarah/yq@v4.44.6
 - name: sharkdp/bat@v0.24.0
 - name: eza-community/eza@v0.20.11
 - name: starship/starship@v1.21.1
