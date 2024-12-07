@@ -142,12 +142,21 @@ cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':s' ? [getchar(), ''][1] 
 nnoremap <Space>/ /\C
 nnoremap <Space>? ?\C
 
-" git message
-augroup select-commit-title
-  autocmd!
-  autocmd FileType *commit nnoremap <buffer> <CR><CR>
-        \  <Cmd>silent! execute 'normal! ^w"zdiw"_dip"zPA: ' <bar> startinsert!<CR>
-augroup END
+" git commit message
+lua << lua
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*commit',
+  callback = function()
+    vim.keymap.set('n', '<CR><CR>', function()
+      vim.cmd('normal! ^w"zdiw')
+      vim.cmd('normal! "_dip')
+      vim.cmd('normal! "zPA(): ')
+      vim.cmd('normal! 2h')
+      vim.api.nvim_command('startinsert')
+    end, { buffer = true })
+  end,
+})
+lua
 
 " タブを閉じた後に左のタブに移動するコマンド
 function! CloseTabAndMoveLeft()

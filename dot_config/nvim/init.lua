@@ -209,5 +209,15 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
   end,
 })
 
--- jetpack.vimの読み込み
-vim.cmd('source ' .. vim.g.VIMHOME .. '/jetpack.vim')
+vim.g['denops#server#deno_args'] = { '-q', '--no-lock', '-A', '--unstable-ffi', '--unstable-kv' }
+local denops = vim.fn.expand('~/.cache/nvim/dvpm/github.com/vim-denops/denops.vim')
+if not vim.loop.fs_stat(denops) then
+  vim.fn.system({ 'git', 'clone', 'https://github.com/vim-denops/denops.vim', denops })
+end
+vim.opt.runtimepath:prepend(denops)
+
+-- vim.g.dvpm_typescript_file = vim.fn.expand('~/.config/dvpm/denops/config/dvpm.ts')
+-- if vim.g.dvpm_typescript_file and vim.fn.filereadable(vim.g.dvpm_typescript_file) == 1 then
+--   vim.fn['denops#plugin#load']('dvpm')
+--   vim.fn['denops#notify']('dvpm', 'load', { vim.g.dvpm_typescript_file })
+-- end

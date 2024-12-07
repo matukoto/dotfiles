@@ -1,9 +1,9 @@
-import type { Denops } from "jsr:@denops/std";
-import * as fn from "jsr:@denops/std/function";
+import type { Denops } from "jsr:@denops/std@7.4.0";
+import * as fn from "jsr:@denops/std@7.4.0/function";
 import { ensure, is } from "jsr:@core/unknownutil";
-import { execute } from "jsr:@denops/std/helper";
+import { execute } from "jsr:@denops/std@7.4.0/helper";
 
-import { Dvpm } from "jsr:@yukimemi/dvpm";
+import { Dvpm } from "jsr:@yukimemi/dvpm@5.5.2";;
 
 export async function main(denops: Denops): Promise<void> {
   const base_path = (await fn.has(denops, "nvim"))
@@ -18,18 +18,18 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({ url: "nvim-lua/plenary.nvim", enabled: true });
 
-  // await dvpm.add({ url: "kkharji/sqlite.lua", enabled: true });
+  await dvpm.add({ url: "kkharji/sqlite.lua", enabled: true });
 
-  // await dvpm.add({ url: "danielfalk/smart-open.nvim", enabled: true });
+  await dvpm.add({ url: "danielfalk/smart-open.nvim", enabled: true });
 
-  // await dvpm.add({ url: "atusy/qfscope.nvim", enabled: true });
+  await dvpm.add({ url: "atusy/qfscope.nvim", enabled: true });
 
   await dvpm.add({
     url: "vim-skk/skkeleton",
     afterFile: "~/.config/nvim/plugin.d/vim-skkeleton.vim",
   });
 
-  // await dvpm.add({ url: "cljoly/telescope-repo.nvim", enabled: true });
+  await dvpm.add({ url: "cljoly/telescope-repo.nvim", enabled: true });
 
   await dvpm.add({ url: "williamboman/mason.nvim" });
 
@@ -247,7 +247,7 @@ export async function main(denops: Denops): Promise<void> {
       "mfussenegger/nvim-dap",
       "neovim/nvim-lspconfig",
     ],
-    afterFile: "~/.config/nvim/plugin.d/jdtls.lua",
+    // afterFile: "~/.config/nvim/plugin.d/jdtls.lua",
   });
 
   await dvpm.add({
@@ -361,26 +361,26 @@ export async function main(denops: Denops): Promise<void> {
     afterFile: "~/.config/nvim/plugin.d/skkeleton_state_popup.vim",
   });
 
-  // await dvpm.add({
-  //   url: "nvim-telescope/telescope.nvim",
-  //   dependencies: [
-  //     "kkharji/sqlite.lua",
-  //     "danielfalk/smart-open.nvim",
-  //     "cljoly/telescope-repo.nvim",
-  //   ],
-  //   enabled: true,
-  // });
+  await dvpm.add({
+    url: "nvim-telescope/telescope.nvim",
+    dependencies: [
+      "kkharji/sqlite.lua",
+      "danielfalk/smart-open.nvim",
+      "cljoly/telescope-repo.nvim",
+    ],
+    enabled: true,
+  });
 
-  // await dvpm.add({
-  //   url: "prochri/telescope-all-recent.nvim",
-  //   dependencies: [
-  //     "nvim-telescope/telescope.nvim",
-  //     "atusy/qfscope.nvim",
-  //     "nvim-lua/plenary.nvim",
-  //   ],
-  //   enabled: true,
-  //   afterFile: "~/.config/nvim/plugin.d/telescope.lua",
-  // });
+  await dvpm.add({
+    url: "prochri/telescope-all-recent.nvim",
+    dependencies: [
+      "nvim-telescope/telescope.nvim",
+      "atusy/qfscope.nvim",
+      "nvim-lua/plenary.nvim",
+    ],
+    enabled: true,
+    afterFile: "~/.config/nvim/plugin.d/telescope.lua",
+  });
 
   await dvpm.add({ url: "kevinhwang91/nvim-bqf" });
 
@@ -413,10 +413,11 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({
     url: "https://github.com/github/copilot.vim",
     afterFile: "~/.config/nvim/plugin.d/copilot.vim",
-    enabled: false,
+    enabled: true,
   });
   await dvpm.add({
     url: "CopilotC-Nvim/CopilotChat.nvim",
+    branch: "main",
     dependencies: [
       "https://github.com/github/copilot.vim",
       "nvim-lua/plenary.nvim",
@@ -487,7 +488,7 @@ export async function main(denops: Denops): Promise<void> {
   });
   await dvpm.add({ url: "machakann/vim-sandwich" });
   //WakaTime コーディング時間を計測してくれる
-  await dvpm.add({ url: "wakatime/vim-wakatime", enabled: false });
+  await dvpm.add({ url: "wakatime/vim-wakatime", enabled: true });
 
   //DB
   await dvpm.add({ url: "tpope/vim-dadbod" });
