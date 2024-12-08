@@ -18,5 +18,5 @@ packages:
 - name: jesseduffield/lazygit@v0.44.1
 - name: jdx/mise@v2024.12.3
 - name: atuinsh/atuin@v18.3.0
-- name: sxyazi/yazi@v0.3.3
+- name: sxyazi/yazi@v0.4.0
 - name: denoland/deno@v2.1.3
