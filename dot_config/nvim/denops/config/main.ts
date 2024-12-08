@@ -3,16 +3,23 @@ import * as fn from "jsr:@denops/std@7.4.0/function";
 import { ensure, is } from "jsr:@core/unknownutil";
 import { execute } from "jsr:@denops/std@7.4.0/helper";
 
-import { Dvpm } from "jsr:@yukimemi/dvpm@5.5.2";;
+import { Dvpm } from "jsr:@yukimemi/dvpm@5.5.2";
 
 export async function main(denops: Denops): Promise<void> {
   const base_path = (await fn.has(denops, "nvim"))
     ? "~/.cache/nvim/dvpm"
     : "~/.cache/vim/dvpm";
   const base = ensure(await fn.expand(denops, base_path), is.String);
+  const cache_path = (await fn.has(denops, "nvim"))
+    ? "~/.config/nvim/plugin/dvpm_plugin_cache.vim"
+    : "~/.config/vim/plugin/dvpm_plugin_cache.vim";
+  // This cache path must be pre-appended to the runtimepath.
+  // Add it in vimrc or init.lua by yourself, or specify the path originally added to
+  // runtimepath of Vim / Neovim.
+  const cache = ensure(await fn.expand(denops, cache_path), is.String);
 
-  // First, call Dvpm.begin with denops object and base path.
-  const dvpm = await Dvpm.begin(denops, { base });
+  // Specify `cache` to Dvpm.begin.
+  const dvpm = await Dvpm.begin(denops, { base, cache });
 
   await dvpm.add({ url: "vim-jp/vimdoc-ja" });
 
@@ -89,7 +96,6 @@ export async function main(denops: Denops): Promise<void> {
   });
 
   await dvpm.add({ url: "lambdalisue/vim-nerdfont" });
-
   await dvpm.add({
     url: "mikavilpas/yazi.nvim",
     dependencies: ["nvim-lua/plenary.nvim"],
@@ -281,7 +287,13 @@ export async function main(denops: Denops): Promise<void> {
     dependencies: [
       "lambdalisue/vim-fern-git-status",
     ],
-    afterFile: "~/.config/nvim/plugin.d/fern.vim",
+    cache: { afterFile: "~/.config/nvim/plugin.d/fern.vim" },
+  });
+
+  await dvpm.add({
+    url: "lambdalisue/vim-fern-renderer-nerdfont",
+    dependencies: ["lambdalisue/vim-nerdfont", "lambdalisue/vim-fern"],
+    cache: { afterFile: "~/.config/nvim/plugin.d/fern-renderer-nerdfont.vim" },
   });
 
   await dvpm.add({
@@ -289,12 +301,6 @@ export async function main(denops: Denops): Promise<void> {
     dependencies: ["lambdalisue/vim-fern"],
   });
 
-  await dvpm.add({
-    url: "lambdalisue/vim-fern-renderer-nerdfont",
-    dependencies: ["lambdalisue/vim-nerdfont"],
-    after: async ({ denops }) =>
-      await execute(denops, `let g:fern#renderer = "nerdfont"`),
-  });
   await dvpm.add({ url: "nvim-tree/nvim-web-devicons" });
 
   await dvpm.add({
@@ -378,8 +384,7 @@ export async function main(denops: Denops): Promise<void> {
       "atusy/qfscope.nvim",
       "nvim-lua/plenary.nvim",
     ],
-    enabled: true,
-    afterFile: "~/.config/nvim/plugin.d/telescope.lua",
+    cache: { afterFile: "~/.config/nvim/plugin.d/telescope.lua" },
   });
 
   await dvpm.add({ url: "kevinhwang91/nvim-bqf" });
@@ -417,7 +422,7 @@ export async function main(denops: Denops): Promise<void> {
   });
   await dvpm.add({
     url: "CopilotC-Nvim/CopilotChat.nvim",
-    branch: "main",
+    // branch: "main",
     dependencies: [
       "https://github.com/github/copilot.vim",
       "nvim-lua/plenary.nvim",

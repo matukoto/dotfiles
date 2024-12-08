@@ -47,6 +47,4 @@ augroup fern-settings
   autocmd FileType fern call s:fern_settings()
 augroup END
 
-" nerdfont
-let g:fern#renderer = 'nerdfont'
 let g:fern#disable_default_mappings = 1
