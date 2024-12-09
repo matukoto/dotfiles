@@ -33,7 +33,7 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({
     url: "vim-skk/skkeleton",
-    afterFile: "~/.config/nvim/plugin.d/vim-skkeleton.vim",
+    afterFile: "~/.config/nvim/rc/vim-skkeleton.vim",
   });
 
   await dvpm.add({ url: "cljoly/telescope-repo.nvim", enabled: true });
@@ -92,14 +92,14 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({ url: "lambdalisue/vim-fern-hijack" });
   await dvpm.add({
     url: "uga-rosa/ccc.nvim",
-    afterFile: "~/.config/nvim/plugin.d/ccc.lua",
+    afterFile: "~/.config/nvim/rc/ccc.lua",
   });
 
   await dvpm.add({ url: "lambdalisue/vim-nerdfont" });
   await dvpm.add({
     url: "mikavilpas/yazi.nvim",
     dependencies: ["nvim-lua/plenary.nvim"],
-    afterFile: "~/.config/nvim/plugin.d/yazi.lua",
+    afterFile: "~/.config/nvim/rc/yazi.lua",
   });
 
   await dvpm.add({ url: "sainnhe/gruvbox-material" });
@@ -149,7 +149,7 @@ export async function main(denops: Denops): Promise<void> {
       "theHamsta/nvim-dap-virtual-text",
       "nvim-neotest/neotest",
     ],
-    afterFile: "~/.config/nvim/plugin.d/neotest.lua",
+    afterFile: "~/.config/nvim/rc/neotest.lua",
   });
 
   await dvpm.add({ url: "haya14busa/vim-asterisk" });
@@ -165,7 +165,7 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({
     url: "mattn/vim-sonictemplate",
-    afterFile: "~/.config/nvim/plugin.d/vim-sonictemplate.vim",
+    afterFile: "~/.config/nvim/rc/vim-sonictemplate.vim",
   });
 
   await dvpm.add({
@@ -176,7 +176,7 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({
     url: "numToStr/comment.nvim",
-    afterFile: "~/.config/nvim/plugin.d/comment.lua",
+    afterFile: "~/.config/nvim/rc/comment.lua",
   });
 
   await dvpm.add({
@@ -191,32 +191,32 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({
     url: "yuki-yano/fuzzy-motion.vim",
-    afterFile: "~/.config/nvim/plugin.d/fuzzy-motion.vim",
+    afterFile: "~/.config/nvim/rc/fuzzy-motion.vim",
   });
 
   await dvpm.add({
     url: "ethanholz/nvim-lastplace",
-    afterFile: "~/.config/nvim/plugin.d/nvim-lastplace.lua",
+    afterFile: "~/.config/nvim/rc/nvim-lastplace.lua",
   });
 
   await dvpm.add({
     url: "haya14busa/vim-edgemotion",
-    afterFile: "~/.config/nvim/plugin.d/vim-edgemotion.vim",
+    afterFile: "~/.config/nvim/rc/vim-edgemotion.vim",
   });
 
   await dvpm.add({
     url: "shellRaining/hlchunk.nvim",
-    afterFile: "~/.config/nvim/plugin.d/hlchunk.lua",
+    afterFile: "~/.config/nvim/rc/hlchunk.lua",
   });
 
   await dvpm.add({
     url: "nvimdev/lspsaga.nvim",
-    afterFile: "~/.config/nvim/plugin.d/lspsaga.lua",
+    afterFile: "~/.config/nvim/rc/lspsaga.lua",
   });
 
   await dvpm.add({
     url: "j-hui/fidget.nvim",
-    afterFile: "~/.config/nvim/plugin.d/fidget.lua",
+    afterFile: "~/.config/nvim/rc/fidget.lua",
   });
 
   await dvpm.add({
@@ -227,7 +227,7 @@ export async function main(denops: Denops): Promise<void> {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       "nanotee/sqls.nvim",
     ],
-    afterFile: "~/.config/nvim/plugin.d/lspconfig.lua",
+    afterFile: "~/.config/nvim/rc/lspconfig.lua",
   });
 
   await dvpm.add({
@@ -253,13 +253,13 @@ export async function main(denops: Denops): Promise<void> {
       "mfussenegger/nvim-dap",
       "neovim/nvim-lspconfig",
     ],
-    // afterFile: "~/.config/nvim/plugin.d/jdtls.lua",
+    // afterFile: "~/.config/nvim/rc/jdtls.lua",
   });
 
   await dvpm.add({
     url: "stevearc/conform.nvim",
     dependencies: ["williamboman/mason.nvim"],
-    afterFile: "~/.config/nvim/plugin.d/conform.lua",
+    afterFile: "~/.config/nvim/rc/conform.lua",
   });
 
   await dvpm.add({
@@ -279,7 +279,7 @@ export async function main(denops: Denops): Promise<void> {
       "shougo/ddc-source-cmdline-history",
       "vim-skk/skkeleton",
     ],
-    afterFile: "~/.config/nvim/plugin.d/ddc.vim",
+    afterFile: "~/.config/nvim/rc/ddc.vim",
   });
 
   await dvpm.add({
@@ -287,13 +287,13 @@ export async function main(denops: Denops): Promise<void> {
     dependencies: [
       "lambdalisue/vim-fern-git-status",
     ],
-    cache: { afterFile: "~/.config/nvim/plugin.d/fern.vim" },
+    cache: { afterFile: "~/.config/nvim/rc/fern.vim" },
   });
 
   await dvpm.add({
     url: "lambdalisue/vim-fern-renderer-nerdfont",
     dependencies: ["lambdalisue/vim-nerdfont", "lambdalisue/vim-fern"],
-    cache: { afterFile: "~/.config/nvim/plugin.d/fern-renderer-nerdfont.vim" },
+    cache: { afterFile: "~/.config/nvim/rc/fern-renderer-nerdfont.vim" },
   });
 
   await dvpm.add({
@@ -306,13 +306,13 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({
     url: "stevearc/oil.nvim",
     dependencies: ["nvim-tree/nvim-web-devicons"],
-    afterFile: "~/.config/nvim/plugin.d/oil.lua",
+    afterFile: "~/.config/nvim/rc/oil.lua",
   });
 
   await dvpm.add({
     url: "nvim-lualine/lualine.nvim",
     dependencies: ["nvim-tree/nvim-web-devicons"],
-    afterFile: "~/.config/nvim/plugin.d/lualine.lua",
+    afterFile: "~/.config/nvim/rc/lualine.lua",
   });
 
   await dvpm.add({
@@ -327,26 +327,26 @@ export async function main(denops: Denops): Promise<void> {
 
   await dvpm.add({
     url: "akinsho/toggleterm.nvim",
-    afterFile: "~/.config/nvim/plugin.d/toggleterm.lua",
+    afterFile: "~/.config/nvim/rc/toggleterm.lua",
   });
 
   await dvpm.add({ url: "nvim-treesitter/nvim-treesitter-context" });
   await dvpm.add({
     url: "nvim-treesitter/nvim-treesitter",
     dependencies: ["nvim-treesitter/nvim-treesitter-context"],
-    afterFile: "~/.config/nvim/plugin.d/nvim-treesitter.lua",
+    afterFile: "~/.config/nvim/rc/nvim-treesitter.lua",
   });
 
   await dvpm.add({
     url: "lambdalisue/vim-gin",
-    afterFile: "~/.config/nvim/plugin.d/gin.vim",
+    afterFile: "~/.config/nvim/rc/gin.vim",
   });
 
   await dvpm.add({ url: "ogaken-1/nvim-gin-preview" });
 
   await dvpm.add({
     url: "lewis6991/gitsigns.nvim",
-    afterFile: "~/.config/nvim/plugin.d/gitsigns.lua",
+    afterFile: "~/.config/nvim/rc/gitsigns.lua",
   });
 
   await dvpm.add({ url: "sindrets/diffview.nvim" });
@@ -354,7 +354,7 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({
     url: "isakbm/gitgraph.nvim",
     dependencies: ["sindrets/diffview.nvim"],
-    afterFile: "~/.config/nvim/plugin.d/gitgraph.lua",
+    afterFile: "~/.config/nvim/rc/gitgraph.lua",
   });
 
   await dvpm.add({ url: "lambdalisue/vim-kensaku" });
@@ -364,7 +364,7 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({
     url: "NI57721/skkeleton-state-popup",
     // dependencies: ["vim-skk/skkeleton"],
-    afterFile: "~/.config/nvim/plugin.d/skkeleton_state_popup.vim",
+    afterFile: "~/.config/nvim/rc/skkeleton_state_popup.vim",
   });
 
   await dvpm.add({
@@ -384,21 +384,21 @@ export async function main(denops: Denops): Promise<void> {
       "atusy/qfscope.nvim",
       "nvim-lua/plenary.nvim",
     ],
-    cache: { afterFile: "~/.config/nvim/plugin.d/telescope.lua" },
+    cache: { afterFile: "~/.config/nvim/rc/telescope.lua" },
   });
 
   await dvpm.add({ url: "kevinhwang91/nvim-bqf" });
 
   await dvpm.add({
     url: "folke/which-key.nvim",
-    afterFile: "~/.config/nvim/plugin.d/which-key.lua",
+    afterFile: "~/.config/nvim/rc/which-key.lua",
     enabled: true,
   });
 
   await dvpm.add({
     url: "stevearc/aerial.nvim",
     dependencies: ["nvim-treesitter/nvim-treesitter"],
-    afterFile: "~/.config/nvim/plugin.d/aerial.lua",
+    afterFile: "~/.config/nvim/rc/aerial.lua",
   });
 
   await dvpm.add({
@@ -407,17 +407,17 @@ export async function main(denops: Denops): Promise<void> {
       "nvim-treesitter/nvim-treesitter",
       "kevinhwang91/promise-async",
     ],
-    afterFile: "~/.config/nvim/plugin.d/ufo.lua",
+    afterFile: "~/.config/nvim/rc/ufo.lua",
   });
 
   await dvpm.add({
     url: "kevinhwang91/nvim-hlslens",
-    afterFile: "~/.config/nvim/plugin.d/hlslens.lua",
+    afterFile: "~/.config/nvim/rc/hlslens.lua",
   });
 
   await dvpm.add({
     url: "https://github.com/github/copilot.vim",
-    afterFile: "~/.config/nvim/plugin.d/copilot.vim",
+    afterFile: "~/.config/nvim/rc/copilot.vim",
     enabled: true,
   });
   await dvpm.add({
@@ -427,7 +427,7 @@ export async function main(denops: Denops): Promise<void> {
       "https://github.com/github/copilot.vim",
       "nvim-lua/plenary.nvim",
     ],
-    afterFile: "~/.config/nvim/plugin.d/CopilotChat.lua",
+    afterFile: "~/.config/nvim/rc/CopilotChat.lua",
   });
   await dvpm.add({ url: "tyru/capture.vim" });
   await dvpm.add({ url: "itchyny/vim-cursorword" });
@@ -436,21 +436,21 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({ url: "lambdalisue/vim-suda" });
   await dvpm.add({
     url: "johann2357/nvim-smartbufs",
-    afterFile: "~/.config/nvim/plugin.d/smartbufs.lua",
+    afterFile: "~/.config/nvim/rc/smartbufs.lua",
   });
   await dvpm.add({ url: "mechatroner/rainbow_csv" });
   await dvpm.add({
     url: "tkmpypy/chowcho.nvim",
-    afterFile: "~/.config/nvim/plugin.d/chowcho.lua",
+    afterFile: "~/.config/nvim/rc/chowcho.lua",
   });
   await dvpm.add({
     url: "folke/styler.nvim",
     dependencies: ["edeneast/nightfox.nvim"],
-    afterFile: "~/.config/nvim/plugin.d/styler.lua",
+    afterFile: "~/.config/nvim/rc/styler.lua",
   });
   await dvpm.add({
     url: "ahmedkhalf/project.nvim",
-    afterFile: "~/.config/nvim/plugin.d/project.lua",
+    afterFile: "~/.config/nvim/rc/project.lua",
   });
   await dvpm.add({
     url: "MeanderingProgrammer/markdown.nvim",
@@ -460,7 +460,7 @@ export async function main(denops: Denops): Promise<void> {
   });
   await dvpm.add({
     url: "monaqa/dial.nvim",
-    afterFile: "~/.config/nvim/plugin.d/dial.lua",
+    afterFile: "~/.config/nvim/rc/dial.lua",
   });
   await dvpm.add({ url: "tani/dmacro.nvim" });
   await dvpm.add({ url: "famiu/bufdelete.nvim" });
@@ -468,28 +468,28 @@ export async function main(denops: Denops): Promise<void> {
   //キャメルケース単位でのオブジェクト指定
   await dvpm.add({
     url: "bkad/CamelCaseMotion",
-    afterFile: "~/.config/nvim/plugin.d/CamelCaseMotion.vim",
+    afterFile: "~/.config/nvim/rc/CamelCaseMotion.vim",
   });
   //閉じ括弧の自動挿入
   await dvpm.add({
     url: "cohama/lexima.vim",
-    afterFile: "~/.config/nvim/plugin.d/lexima.vim",
+    afterFile: "~/.config/nvim/rc/lexima.vim",
   });
   //閉じタグの自動挿入
   await dvpm.add({
     url: "windwp/nvim-ts-autotag",
-    afterFile: "~/.config/nvim/plugin.d/nvim-ts-autotag.lua",
+    afterFile: "~/.config/nvim/rc/nvim-ts-autotag.lua",
   });
   //"(などで囲える
   await dvpm.add({ url: "tpope/vim-surround" });
   await dvpm.add({
     url: "matukoto/fm-nvim",
-    afterFile: "~/.config/nvim/plugin.d/fm-nvim.lua",
+    afterFile: "~/.config/nvim/rc/fm-nvim.lua",
   });
   //easymotion
   await dvpm.add({
     url: "folke/flash.nvim",
-    afterFile: "~/.config/nvim/plugin.d/flash.lua",
+    afterFile: "~/.config/nvim/rc/flash.lua",
   });
   await dvpm.add({ url: "machakann/vim-sandwich" });
   //WakaTime コーディング時間を計測してくれる
@@ -500,7 +500,7 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({
     url: "kristijanhusak/vim-dadbod-ui",
     dependencies: ["tpope/vim-dadbod"],
-    afterFile: "~/.config/nvim/plugin.d/vim-dadbod.vim",
+    afterFile: "~/.config/nvim/rc/vim-dadbod.vim",
   });
 
   //カラースキーマ
