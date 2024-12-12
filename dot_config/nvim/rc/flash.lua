@@ -189,7 +189,7 @@ require('flash').setup({
 
 vim.keymap.set('n', 'f', function()
   require('flash').jump({
-    search = { forward = true, wrap = false, multi_window = false },
+    search = { forward = true, wrap = true, multi_window = false },
   })
 end)
 
