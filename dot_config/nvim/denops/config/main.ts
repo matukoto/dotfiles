@@ -253,7 +253,7 @@ export async function main(denops: Denops): Promise<void> {
       "mfussenegger/nvim-dap",
       "neovim/nvim-lspconfig",
     ],
-    // afterFile: "~/.config/nvim/rc/jdtls.lua",
+    afterFile: "~/.config/nvim/rc/jdtls.lua",
   });
 
   await dvpm.add({
@@ -370,6 +370,7 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({
     url: "nvim-telescope/telescope.nvim",
     dependencies: [
+      "nvim-tree/nvim-web-devicons",
       "kkharji/sqlite.lua",
       "danielfalk/smart-open.nvim",
       "cljoly/telescope-repo.nvim",
@@ -418,11 +419,11 @@ export async function main(denops: Denops): Promise<void> {
   await dvpm.add({
     url: "https://github.com/github/copilot.vim",
     afterFile: "~/.config/nvim/rc/copilot.vim",
-    enabled: true,
+    enabled: false,
   });
   await dvpm.add({
     url: "CopilotC-Nvim/CopilotChat.nvim",
-    // branch: "main",
+    branch: "main",
     dependencies: [
       "https://github.com/github/copilot.vim",
       "nvim-lua/plenary.nvim",
@@ -493,7 +494,7 @@ export async function main(denops: Denops): Promise<void> {
   });
   await dvpm.add({ url: "machakann/vim-sandwich" });
   //WakaTime コーディング時間を計測してくれる
-  await dvpm.add({ url: "wakatime/vim-wakatime", enabled: true });
+  // await dvpm.add({ url: "wakatime/vim-wakatime", enabled: true });
 
   //DB
   await dvpm.add({ url: "tpope/vim-dadbod" });
