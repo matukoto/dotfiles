@@ -6,5 +6,6 @@ let g:copilot_filetypes = {
       \ '*': v:true,
       \ 'java': v:false,
       \ 'sql' : v:false,
-      \ 'svelte': v:false,
+      \ 'svelte': v:false, 
+      \ 'typescript': v:false,
       \ }
