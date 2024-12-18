@@ -21,4 +21,4 @@ packages:
 - name: sxyazi/yazi@v0.4.1
 - name: denoland/deno@v2.1.4
 - name: kubernetes/kubectl@v1.29.0
-- name: kubernetes-sigs/kind@v0.20.0
+- name: kubernetes-sigs/kind@v0.26.0
