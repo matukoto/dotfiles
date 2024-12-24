@@ -22,3 +22,5 @@ packages:
 - name: denoland/deno@v2.1.4
 - name: kubernetes/kubectl@v1.32.0
 - name: kubernetes-sigs/kind@v0.26.0
+- name: docker/cli@v27.4.1
+- name: docker/compose@v2.32.1
