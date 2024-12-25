@@ -244,5 +244,6 @@ augroup RestoreViewOnEnter
 augroup END
 
 autocmd CursorMoved * normal! zz
+
 " colorscheme
 " colorscheme everforest

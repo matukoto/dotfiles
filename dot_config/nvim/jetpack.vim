@@ -21,16 +21,16 @@ function! s:init() abort
   call jetpack#add('j-hui/fidget.nvim')
   " call jetpack#add('nvimtools/none-ls.nvim')
   " java
-  " call jetpack#add('nvim-java/lua-async-await')
-  " call jetpack#add('nvim-java/nvim-java-refactor')
-  " call jetpack#add('nvim-java/nvim-java-core')
-  " call jetpack#add('nvim-java/nvim-java-test')
-  " call jetpack#add('nvim-java/nvim-java-dap')
-  " call jetpack#add('MunifTanjim/nui.nvim')
-  " call jetpack#add('JavaHello/spring-boot.nvim')
-  " call jetpack#add('nvim-java/nvim-java')
-  " call jetpack#add('renerocksai/telekasten.nvim')
-  " call jetpack#add('jakewvincent/mkdnflow.nvim')
+  call jetpack#add('nvim-java/lua-async-await')
+  call jetpack#add('nvim-java/nvim-java-refactor')
+  call jetpack#add('nvim-java/nvim-java-core')
+  call jetpack#add('nvim-java/nvim-java-test')
+  call jetpack#add('nvim-java/nvim-java-dap')
+  call jetpack#add('MunifTanjim/nui.nvim')
+  call jetpack#add('JavaHello/spring-boot.nvim')
+  call jetpack#add('nvim-java/nvim-java')
+  call jetpack#add('renerocksai/telekasten.nvim')
+  call jetpack#add('jakewvincent/mkdnflow.nvim')
   call jetpack#add('zk-org/zk-nvim')
   call jetpack#add('nanotee/sqls.nvim')
   call jetpack#add('stevearc/conform.nvim')
@@ -95,8 +95,8 @@ function! s:init() abort
   call jetpack#add('marilari88/neotest-vitest')
   " call jetpack#add('mfussenegger/nvim-jdtls')
   " call jetpack#add('rcasia/neotest-java')
-  " call jetpack#add('mfussenegger/nvim-dap')
-  " call jetpack#add('rcarriga/nvim-dap-ui')
+  call jetpack#add('mfussenegger/nvim-dap')
+  call jetpack#add('rcarriga/nvim-dap-ui')
   " call jetpack#add('theHamsta/nvim-dap-virtual-text')
 
   " 日本語
@@ -229,13 +229,13 @@ function! s:configure() abort
   endif
 endfunction
 function! s:load_configurations() abort
-  for path in glob('$VIMHOME/plugin.d/*.vim', 1, 1, 1)
+  for path in glob('$VIMHOME/rc/*.vim', 1, 1, 1)
     execute printf('source %s', fnameescape(path))
   endfor
 endfunction
 
 function! s:load_lua_configurations() abort
-  for path in glob('$VIMHOME/plugin.d/*.lua', 1, 1, 1)
+  for path in glob('$VIMHOME/rc/*.lua', 1, 1, 1)
     execute printf('luafile %s', fnameescape(path))
   endfor
 endfunction
