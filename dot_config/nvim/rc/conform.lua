@@ -24,35 +24,35 @@ require('conform').setup({
     typescriptreact = jsFormatter,
     go = { 'gofmt' },
     -- ['*'] = { 'typos' }, -- 勝手に訂正されてしまうので、状況次第では有用
-    markdown = { 'textlint', 'typos', 'markdownlint-cli2', stop_after_first = false },
+    markdown = { 'typos', 'markdownlint-cli2', stop_after_first = false },
   },
   format_on_save = {
-    timeout_ms = 5000,
+    timeout_ms = 1000,
     quiet = false,
     stop_after_first = false,
   },
-  formatters = {
-    textlint = {
-      meta = {
-        url = 'https://github.com/textlint/textlint',
-        description = 'The pluggable natural language linter for text and markdown.',
-      },
-      command = require('conform.util').from_node_modules('textlint'),
-      stdin = true,
-      args = {
-        '--fix',
-        '--stdin',
-        '--stdin-filename',
-        '$FILENAME',
-        '--format',
-        'fixed-result',
-        '--dry-run',
-      },
-      cwd = require('conform.util').root_file({
-        'package.json',
-      }),
-    },
-  },
+  -- formatters = {
+  --   textlint = {
+  --     meta = {
+  --       url = 'https://github.com/textlint/textlint',
+  --       description = 'The pluggable natural language linter for text and markdown.',
+  --     },
+  --     command = require('conform.util').from_node_modules('textlint'),
+  --     stdin = true,
+  --     args = {
+  --       '--fix',
+  --       '--stdin',
+  --       '--stdin-filename',
+  --       '$FILENAME',
+  --       '--format',
+  --       'fixed-result',
+  --       '--dry-run',
+  --     },
+  --     cwd = require('conform.util').root_file({
+  --       'package.json',
+  --     }),
+  --   },
+  -- },
   -- conform にファイルタイプを指定しないとフォーマットがかからないようにする
   default_format_opts = {
     lsp_format = 'never',
