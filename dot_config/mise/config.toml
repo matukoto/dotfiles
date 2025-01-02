@@ -1,10 +1,10 @@
 [tools]
 # language runtime
 "java" = { version = "corretto-17.0.13.11", release_type = "ga" }
-rust = "1.83.0"
-go = "1.23.4"
-node = "22.12.0"
-lua = "5.4.7"
+"rust" = "1.83.0"
+"go" = "1.23.4"
+"node" = "22.12.0"
+"lua" = "5.4.7"
 "npm:pnpm" = "9.12.0"
 "npm:vite" = "5.4.7"
 "npm:vitest" = "2.1.1"
@@ -19,6 +19,6 @@ lua = "5.4.7"
 "go:github.com/rhysd/vim-startuptime" = "latest"
 "go:golang.org/x/tools/gopls" = "0.16.2"
 "cargo:leetcode-cli" = "latest"
-vim = "latest"
+"vim" = "latest"
 [settings]
 experimental = true
