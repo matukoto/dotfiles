@@ -1,15 +1,3 @@
-vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
-  callback = function()
-    local filepath = vim.fn.expand('%:p') -- 現在編集中のファイルパスを取得
-    -- .github/workflows/ディレクトリ内のファイルのみLintを実行
-    if
-      filepath:match('%.github/workflows/.*%.yml$')
-      or filepath:match('%.github/workflows/.*%.yaml$')
-    then
-      require('lint').try_lint('actionlint')
-    end
-  end,
-})
 require('lint').linters_by_ft = {
   yaml = { 'actionlint' },
 }
