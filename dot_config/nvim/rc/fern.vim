@@ -24,7 +24,7 @@ function! s:fern_settings() abort
   " 隠しファイルの表示切り替え
   nmap <silent> <buffer> !   <Plug>(fern-action-hidden:toggle)
   " ファイルを開く 水平
-  nmap <silent> <buffer> <C-h> <Plug>(fern-action-open:split)
+  nmap <silent> <buffer> <C-l> <Plug>(fern-action-open:split)
   " ファイルを開く タブ
   nmap <silent> <buffer> <C-t> <Plug>(fern-action-open:tabedit)
   " プレビュー
