@@ -241,13 +241,20 @@ lspconfig.denols.setup({
   single_file_support = true,
 })
 
-lspconfig.svelte.setup({})
+lspconfig.svelte.setup({
+  on_attach = ts_opts.on_attach,
+})
 
 -- lspconfig.zk.setup({})
 
-lspconfig.lemminx.setup({})
+lspconfig.lemminx.setup({
+  on_attach = ts_opts.on_attach,
+})
 
-require('lspconfig').tailwindcss.setup({})
+require('lspconfig').tailwindcss.setup({
+  on_attach = ts_opts.on_attach,
+  filetypes = { 'css', 'svelte' },
+})
 -- lspconfig.markdown_oxide.setup({
 -- })
 -- vim.lsp.set_log_level('debug')
