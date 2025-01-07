@@ -50,3 +50,5 @@ if executable('delta')
         \ '++processor=delta --diff-highlight --no-gitconfig --color-only'
         \]
 endif
+
+cabbrev gsc Gin switch -c
