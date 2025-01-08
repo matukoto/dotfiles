@@ -12,6 +12,7 @@ require('conform').setup({
   formatters_by_ft = {
     lua = { 'stylua' }, -- 特に設定しなくても ~/.config/stylua/stylua.toml を見てくれる
     sql = { 'sql_formatter' },
+    yaml = { 'yamlfmt' },
     java = { lsp_format = 'fallback' },
     sh = { 'shellcheck', 'shfmt', stop_after_first = false },
     json = { 'jq' },
