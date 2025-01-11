@@ -1,7 +1,7 @@
 [tools]
 # language runtime
 "java" = { version = "corretto-17.0.13.11", release_type = "ga" }
-"rust" = "1.83.0"
+"rust" = "1.84.0"
 "go" = "1.23.4"
 "node" = "22.13.0"
 "lua" = "5.4.7"
