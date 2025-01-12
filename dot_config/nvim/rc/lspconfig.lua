@@ -251,7 +251,7 @@ lspconfig.lemminx.setup({
   on_attach = ts_opts.on_attach,
 })
 
-require('lspconfig').tailwindcss.setup({
+lspconfig.tailwindcss.setup({
   on_attach = ts_opts.on_attach,
   filetypes = { 'css', 'svelte' },
 })
