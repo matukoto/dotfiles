@@ -244,16 +244,19 @@ lspconfig.denols.setup({
 
 lspconfig.svelte.setup({
   on_attach = ts_opts.on_attach,
+  filetypes = { 'svelte' },
 })
 
 -- lspconfig.zk.setup({})
 
 lspconfig.lemminx.setup({
   on_attach = ts_opts.on_attach,
+  filetypes = { 'xml' },
 })
 
 lspconfig.fsautocomplete.setup({
   on_attach = ts_opts.on_attach,
+  filetypes = { 'fsharp' },
 })
 
 lspconfig.tailwindcss.setup({
