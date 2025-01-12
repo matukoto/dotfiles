@@ -13,6 +13,7 @@ require('mason-lspconfig').setup({
     'typos_lsp',
     'bashls',
     -- 'marksman',
+    'fsautocomplete',
     'zk',
     'vimls',
     'markdown_oxide',
@@ -248,6 +249,10 @@ lspconfig.svelte.setup({
 -- lspconfig.zk.setup({})
 
 lspconfig.lemminx.setup({
+  on_attach = ts_opts.on_attach,
+})
+
+lspconfig.fsautocomplete.setup({
   on_attach = ts_opts.on_attach,
 })
 
