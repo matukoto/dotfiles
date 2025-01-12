@@ -34,6 +34,7 @@ function! s:init() abort
   call jetpack#add('zk-org/zk-nvim')
   call jetpack#add('nanotee/sqls.nvim')
   call jetpack#add('stevearc/conform.nvim')
+  call jetpack#add('ionide/Ionide-vim')
 
    call jetpack#add('kevinhwang91/nvim-ufo')
    call jetpack#add('kevinhwang91/promise-async')
