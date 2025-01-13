@@ -5,6 +5,7 @@ require('nvim-treesitter.configs').setup({
     'vimdoc',
     'vim',
     'lua',
+    'fsharp',
     -- フロント
     'typescript',
     'tsx',
