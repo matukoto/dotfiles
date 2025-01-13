@@ -17,6 +17,7 @@ require('conform').setup({
     sh = { 'shellcheck', 'shfmt', stop_after_first = false },
     json = { 'jq' },
     svelte = { 'eslint' },
+    fsharp = { 'fantomas' },
     html = jsFormatter,
     css = jsFormatter,
     javascript = jsFormatter,
