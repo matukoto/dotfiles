@@ -223,7 +223,11 @@ nnoremap <silent> <Leader>p "*p
 cabbrev cm <Cmd>Capture message<CR>
 
 " Plugin
-source $VIMHOME/jetpack.vim
+if  exists('g:vscode')
+    " VSCode extension
+else
+  source $VIMHOME/jetpack.vim
+endif
 
 " リドゥ
 nnoremap U <C-r>
