@@ -29,7 +29,8 @@ require('conform').setup({
     markdown = { 'typos', 'markdownlint-cli2', stop_after_first = false },
   },
   format_on_save = {
-    timeout_ms = 1000,
+    async = true,
+    timeout_ms = 3000,
     quiet = false,
     stop_after_first = false,
   },
