@@ -28,7 +28,7 @@ require('conform').setup({
     -- ['*'] = { 'typos' }, -- 勝手に訂正されてしまうので、状況次第では有用
     markdown = { 'typos', 'markdownlint-cli2', stop_after_first = false },
   },
-  format_on_save = {
+  format_after_save = {
     async = true,
     timeout_ms = 3000,
     quiet = false,
