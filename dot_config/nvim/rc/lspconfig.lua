@@ -151,7 +151,7 @@ lspconfig.lua_ls.setup({
   },
 })
 
-lspconfig.jsonls.setup({})
+-- lspconfig.jsonls.setup({})
 
 lspconfig.bashls.setup({})
 
@@ -226,6 +226,14 @@ ts_opts.on_attach = function(client)
 end
 lspconfig.vtsls.setup({
   on_attach = ts_opts.on_attach,
+  filetypes = {
+    'json',
+    'jsonc',
+    'javascript',
+    'javascriptreact',
+    'typescript',
+    'typescriptreact',
+  },
   single_file_support = false,
 })
 
@@ -239,6 +247,14 @@ end
 
 lspconfig.denols.setup({
   on_attach = deno_opts.on_attach,
+  filetypes = {
+    'json',
+    'jsonc',
+    'javascript',
+    'javascriptreact',
+    'typescript',
+    'typescriptreact',
+  },
   single_file_support = true,
 })
 
