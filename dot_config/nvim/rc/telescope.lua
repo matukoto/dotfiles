@@ -147,7 +147,8 @@ vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<CR>')
 vim.keymap.set('n', '<Leader>zk', '<cmd>Telescope zk notes<CR>')
 vim.keymap.set('n', '<Leader>zd', '<cmd>Telescope zk notes createdAfter=3 days ago<CR>')
 vim.keymap.set('n', '<Leader>zt', '<cmd>Telescope zk tags<CR>')
-vim.keymap.set('n', '<Leader>r', '<cmd>Telescope repo list<CR>')
+vim.keymap.set('n', '<Leader>R', '<cmd>Telescope repo list<CR>')
+vim.keymap.set('n', '<Leader>r', '<cmd>Telescope registers<CR>')
 -- vim.keymap.set('n', '<Leader>zk', '<cmd>Telescope zk tags created=today<CR>')
 -- vim.api.nvim_set_keymap(
 --   'n',
