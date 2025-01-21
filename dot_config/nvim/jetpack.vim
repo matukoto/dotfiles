@@ -124,7 +124,7 @@ function! s:init() abort
   " 便利系 useful
   call jetpack#add('kevinhwang91/nvim-bqf')
   call jetpack#add('mfussenegger/nvim-lint')
-  " call jetpack#add ('folke/which-key.nvim')
+  call jetpack#add ('folke/which-key.nvim')
   call jetpack#add('mattn/vim-sonictemplate')
   call jetpack#add('thinca/vim-quickrun')
   call jetpack#add('numToStr/comment.nvim')
