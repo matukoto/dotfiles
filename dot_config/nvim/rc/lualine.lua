@@ -60,7 +60,10 @@ require('lualine').setup({
       -- },
     },
     lualine_x = {
-      --'encoding',
+      {
+        'copilot',
+        show_colors = false,
+      },
       'fileformat',
       'filetype',
     },
