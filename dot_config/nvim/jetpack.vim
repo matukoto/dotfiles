@@ -127,6 +127,7 @@ function! s:init() abort
   call jetpack#add('mfussenegger/nvim-lint')
   call jetpack#add ('folke/which-key.nvim')
   call jetpack#add('folke/trouble.nvim')
+  call jetpack#add('folke/lazydev.nvim')
   call jetpack#add('mattn/vim-sonictemplate')
   call jetpack#add('thinca/vim-quickrun')
   call jetpack#add('numToStr/comment.nvim')
