@@ -14,7 +14,11 @@ require('conform').setup({
     sql = { 'sql_formatter' },
     yaml = { 'yamlfmt' },
     java = { lsp_format = 'fallback' },
-    sh = { 'shellcheck', 'shfmt', stop_after_first = false },
+    sh = {
+      'shellcheck',
+      'shfmt',
+      stop_after_first = false,
+    },
     json = tsFormatter,
     jsonc = tsFormatter,
     svelte = { 'eslint' },
@@ -27,7 +31,11 @@ require('conform').setup({
     typescriptreact = jsFormatter,
     go = { 'gofmt' },
     -- ['*'] = { 'typos' }, -- 勝手に訂正されてしまうので、状況次第では有用
-    markdown = { 'typos', 'markdownlint-cli2', stop_after_first = false },
+    markdown = {
+      'typos',
+      'markdownlint-cli2',
+      stop_after_first = false,
+    },
   },
   format_after_save = {
     async = true,
