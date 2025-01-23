@@ -32,6 +32,7 @@ require('conform').setup({
     go = { 'gofmt' },
     -- ['*'] = { 'typos' }, -- 勝手に訂正されてしまうので、状況次第では有用
     markdown = {
+      'injected',
       'typos',
       'markdownlint-cli2',
       stop_after_first = false,
