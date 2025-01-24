@@ -234,6 +234,7 @@ nnoremap U <C-r>
 
 nnoremap g<C-a> ggVG
 nnoremap g<C-a>y ggVGy
+nnoremap <C-z> <Cmd>wq<CR>
 
 " au BufWinLeave * mkview
 " au BufWinEnter * silent loadview
