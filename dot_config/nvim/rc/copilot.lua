@@ -44,3 +44,6 @@ require('copilot').setup({
   copilot_node_command = 'node', -- Node.js version must be > 18.x
   server_opts_overrides = {},
 })
+
+vim.cmd('cabbrev ce <Cmd>Copilot enable<CR>')
+vim.cmd('cabbrev cd <Cmd>Copilot disable<CR>')
