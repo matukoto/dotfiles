@@ -193,14 +193,10 @@ vim.keymap.set('n', 'f', function()
   })
 end)
 
-vim.keymap.set('n', 'F', function()
-  require('flash').jump({
-    search = { forward = false, wrap = false, multi_window = false },
-  })
-end)
-
 vim.keymap.set('n', 's', function()
-  require('flash').jump()
+  require('flash').jump({
+    search = { forward = true, wrap = true, multi_window = true },
+  })
 end)
 
 vim.keymap.set('n', 't', function()
