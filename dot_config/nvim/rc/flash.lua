@@ -1,188 +1,200 @@
 require('flash').setup({
-  -- 検索時のラベル
+  -- 検索時に利用するラベル文字列
+  -- ここで指定した文字の中からジャンプ候補にアサインされる
   labels = 'asdfghjklqwertyuiopzxcvbnm',
+
   search = {
-    -- ウィンドウをまたいでの検索
+    -- 他のウィンドウもまたいで検索を行うか
     multi_window = true,
+    -- 検索方向（true なら前方検索、false なら後方検索）
     forward = true,
-    -- false のときは方向を決めて検索する (ex: f ▼後方検索, F ▲後方検索)
+    -- 検索の折り返し。true で行末から行頭に折り返して検索
     wrap = true,
-    -- fuzzy, exact, search
+    -- 検索モード(fuzzy|exact|search)。ここでは完全一致を意味する 'exact'
     mode = 'exact',
+    -- 増分検索を利用するかどうか
     incremental = false,
   },
+
   jump = {
-    -- ジャンプリストに登録する
+    -- ジャンプリストに登録するかどうか
     jumplist = true,
-    -- ジャンプ位置
-    pos = 'start', ---@type "start" | "end" | "range"
-    -- clear highlight after jump
+    -- ジャンプ先の位置を "start", "end", "range" のどこにするか
+    pos = 'start',
+    -- ジャンプ後にハイライトをクリアするかどうか
     nohearch = true,
-    -- automatically jump when there is only one match
+    -- マッチが一つだけだった場合に自動的にジャンプするかどうか
     autojump = true,
-    -- You can force inclusive/exclusive jumps by setting the
-    -- `inclusive` option. By default it will be automatically
-    -- set based on the mode.
-    inclusive = nil, ---@type boolean?
-    -- jump position offset. Not used for range jumps.
-    -- 0: default
-    -- 1: when pos == "end" and pos < current position
-    offset = nil, ---@type number
+    -- ジャンプ位置の範囲を含めるかどうか
+    inclusive = nil,
+    -- ジャンプ位置へのオフセット
+    offset = nil,
   },
+
   label = {
-    -- allow uppercase labels
+    -- 大文字のラベルを許可するか
     uppercase = true,
+    -- カーソル下の現在位置もラベル表示をするかどうか
     current = true,
-    after = false, ---@type boolean|number[]
-    -- show the label before the match
-    before = true, ---@type boolean|number[]
-    -- ラベル位置
-    style = 'overlay', ---@type "eol" | "overlay" | "right_align" | "inline"
-    -- flash tries to re-use labels that were already assigned to a position,
-    -- when typing more characters. By default only lower-case labels are re-used.
-    reuse = 'lowercase', ---@type "lowercase" | "all" | "none"
-    -- for the current window, label targets closer to the cursor first
+    -- マッチの後ろ側にラベルを表示するか（数字や boolean でも細かい指定が可能）
+    after = false,
+    -- マッチの前側にラベルを表示するか
+    before = true,
+    -- ラベルの表示位置 ("eol","overlay","right_align","inline")
+    style = 'overlay',
+    -- ラベル再利用の制限 ("lowercase","all","none")
+    reuse = 'lowercase',
+    -- カーソルから近いマッチに優先的にラベルを割り振るか
     distance = true,
-    -- minimum pattern length to show labels
-    -- Ignored for custom labelers.
+    -- ラベルを表示する際に必要なパターンの最小長
     min_pattern_length = 0,
-    -- Enable this to use rainbow colors to highlight labels
-    -- Can be useful for visualizing Treesitter ranges.
+    -- レインボーカラーでラベルを表示するかと、その濃淡
     rainbow = {
       enabled = true,
-      -- number between 1 and 9
       shade = 5,
     },
   },
+
   highlight = {
     groups = {
+      -- マッチ箇所全般に使うハイライトグループ
       match = 'FlashMatch',
+      -- カーソル下のマッチ箇所に使うハイライトグループ
       current = 'FlashCurrent',
+      -- マッチしていない部分（背景）のハイライトグループ
       backdrop = 'FlashBackdrop',
+      -- ラベル表示に使うハイライトグループ
       label = 'FlashLabel',
     },
   },
-  -- Use it with `require("flash").jump({mode = "forward"})`
-  ---@type table<string, Flash.Config>
+
+  -- Flash の各モードにおける設定
   modes = {
-    -- options used when flash is activated through
-    -- a regular search with `/` or `?`
+
+    -- / や ? での検索時に発火するモード
     search = {
-      -- when `true`, flash will be activated during regular search by default.
-      -- You can always toggle when searching with `require("flash").toggle()`
+      -- true ならデフォルトの検索でも Flash が発火
       enabled = true,
       highlight = { backdrop = true },
-      jump = { history = true, register = true, nohlsearch = true },
+      jump = {
+        history = true, -- 検索履歴を残す
+        register = true, -- レジスタに記録
+        nohlsearch = true, -- 検索後に hlsearch をオフにする
+      },
       search = {
-        -- `forward` will be automatically set to the search direction
-        -- `mode` is always set to `search`
-        -- `incremental` is set to `true` when `incsearch` is enabled
+        -- forward, mode, incremental などは自動で設定される
       },
     },
-    -- options used when flash is activated through
-    -- `f`, `F`, `t`, `T`, `;` and `,` motions
+
+    -- f, F, t, T, ;, , といったキャラクタモーション時の設定
     char = {
       enabled = true,
-      -- dynamic configuration for ftFT motions
       config = function(opts)
-        -- autohide flash when in operator-pending mode
+        -- operator-pending モード時、自動的に Flash を隠すかどうか
         opts.autohide = opts.autohide or (vim.fn.mode(true):find('no') and vim.v.operator == 'y')
 
-        -- disable jump labels when not enabled, when using a count,
-        -- or when recording/executing registers
+        -- count が指定されている場合やレジスタ実行中はジャンプラベルを出さない
         opts.jump_labels = opts.jump_labels
           and vim.v.count == 0
           and vim.fn.reg_executing() == ''
           and vim.fn.reg_recording() == ''
-
-        -- Show jump labels only in operator-pending mode
-        -- opts.jump_labels = vim.v.count == 0 and vim.fn.mode(true):find("o")
       end,
-      -- hide after jump when not using jump labels
+      -- ジャンプ後に flash を隠すかどうか
       autohide = false,
-      -- show jump labels
+      -- ジャンプラベルを表示するかどうか
       jump_labels = false,
-      -- set to `false` to use the current line only
-      multi_line = true,
-      -- When using jump labels, don't use these keys
-      -- This allows using those keys directly after the motion
+      -- 複数行を跨ぐかどうか（false なら現在行のみ）
+      multi_line = false,
+      -- ラベルとして使わないキーの指定
       label = { exclude = 'hjkliardc' },
-      -- by default all keymaps are enabled, but you can disable some of them,
-      -- by removing them from the list.
-      -- If you rather use another key, you can map them
-      -- to something else, e.g., { [";"] = "L", [","] = H }
+      -- 有効にするモーションキーの一覧
       keys = { 'f', 'F', 't', 'T', ';', ',' },
-      ---@alias Flash.CharActions table<string, "next" | "prev" | "right" | "left">
-      -- The direction for `prev` and `next` is determined by the motion.
-      -- `left` and `right` are always left and right.
+      -- 文字ごとのアクション設定
       char_actions = function(motion)
         return {
-          [';'] = 'next', -- set to `right` to always go right
-          [','] = 'prev', -- set to `left` to always go left
-          -- clever-f style
+          [';'] = 'next',
+          [','] = 'prev',
           [motion:lower()] = 'next',
           [motion:upper()] = 'prev',
-          -- jump2d style: same case goes next, opposite case goes prev
-          -- [motion] = "next",
-          -- [motion:match("%l") and motion:upper() or motion:lower()] = "prev",
         }
       end,
+      -- 検索での wrap の有無などの設定
       search = { wrap = false },
       highlight = { backdrop = true },
       jump = {
         register = false,
-        -- when using jump labels, set to 'true' to automatically jump
-        -- or execute a motion when there is only one match
         autojump = false,
       },
     },
-    -- options used for treesitter selections
-    -- `require("flash").treesitter()`
+
+    -- treesitter を用いたテキストオブジェクト選択などのモード
     treesitter = {
       labels = 'abcdefghijklmnopqrstuvwxyz',
-      jump = { pos = 'range', autojump = true },
-      search = { incremental = false },
-      label = { before = true, after = true, style = 'inline' },
+      jump = {
+        pos = 'range',
+        autojump = true,
+      },
+      search = {
+        incremental = false,
+      },
+      label = {
+        before = true,
+        after = true,
+        style = 'inline',
+      },
       highlight = {
         backdrop = false,
         matches = false,
       },
     },
+
+    -- treesitter ベースの検索モード
     treesitter_search = {
       jump = { pos = 'range' },
-      search = { multi_window = true, wrap = true, incremental = false },
+      search = {
+        multi_window = true,
+        wrap = true,
+        incremental = false,
+      },
       remote_op = { restore = true },
-      label = { before = true, after = true, style = 'inline' },
+      label = {
+        before = true,
+        after = true,
+        style = 'inline',
+      },
     },
-    -- options used for remote flash
+
+    -- リモート操作（別ウィンドウに対する操作）時の設定
     remote = {
-      remote_op = { restore = true, motion = true },
+      remote_op = {
+        restore = true, -- 操作後に元の状態に戻すかどうか
+        motion = true,
+      },
     },
   },
-  -- options for the floating window that shows the prompt,
-  -- for regular jumps
-  -- `require("flash").prompt()` is always available to get the prompt text
+
+  -- 検索プロンプトを出す際のウィンドウ設定
   prompt = {
     enabled = true,
     prefix = { { '⚡', 'FlashPromptIcon' } },
     win_config = {
+      -- relative = 'editor' でエディタ全体を基準にウィンドウを表示
       relative = 'editor',
-      width = 1, -- when <=1 it's a percentage of the editor width
+      -- width が 1 以下ならエディタ幅に対しての割合
+      width = 1,
       height = 1,
-      row = -1, -- when negative it's an offset from the bottom
-      col = 0, -- when negative it's an offset from the right
+      -- 負数の場合はエディタ下端からのオフセット
+      row = -1,
+      col = 0,
       zindex = 1000,
     },
   },
-  -- options for remote operator pending mode
+
+  -- リモートオペレータペンディングモード用の設定
   remote_op = {
-    -- restore window views and cursor position
-    -- after doing a remote operation
+    -- リモート操作後にウィンドウビューやカーソル位置を復元するかどうか
     restore = false,
-    -- For `jump.pos = "range"`, this setting is ignored.
-    -- `true`: always enter a new motion when doing a remote operation
-    -- `false`: use the window's cursor position and jump target
-    -- `nil`: act as `true` for remote windows, `false` for the current window
+    -- pos = "range" のときは無効
     motion = false,
   },
 })
@@ -193,7 +205,7 @@ vim.keymap.set('n', 'f', function()
   })
 end)
 
-vim.keymap.set('n', 's', function()
+vim.keymap.set('n', 'F', function()
   require('flash').jump({
     search = { forward = true, wrap = true, multi_window = true },
   })
