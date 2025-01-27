@@ -1,3 +1,5 @@
+-- Flash.nvimの設定（高速な画面内移動を提供するプラグイン）
+
 require('flash').setup({
   -- 検索時に利用するラベル文字列
   -- ここで指定した文字の中からジャンプ候補にアサインされる
@@ -199,22 +201,28 @@ require('flash').setup({
   },
 })
 
+-- カスタムキーマッピング
+
+-- 現在のウィンドウ内でのみジャンプ
 vim.keymap.set('n', 'f', function()
   require('flash').jump({
     search = { forward = true, wrap = true, multi_window = false },
   })
 end)
 
+-- 全てのウィンドウを対象にジャンプ
 vim.keymap.set('n', 'F', function()
   require('flash').jump({
     search = { forward = true, wrap = true, multi_window = true },
   })
 end)
 
+-- Treesitterベースのテキストオブジェクト選択
 vim.keymap.set('n', 't', function()
   require('flash').treesitter()
 end)
 
+-- Treesitterベースの高度な検索
 vim.keymap.set('n', 'T', function()
   require('flash').treesitter_search()
 end)

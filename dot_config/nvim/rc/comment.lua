@@ -1,43 +1,69 @@
+-- コメント操作プラグイン（Comment.nvim）の設定
 require('Comment').setup({
-  ---Add a space b/w comment and the line
+  -- コメント記号と行の間にスペースを追加するかどうか
+  -- 例: "-- コメント" vs "--コメント"
   padding = true,
-  ---Whether the cursor should stay at its position
+
+  -- コメントトグル後にカーソル位置を維持するかどうか
+  -- true: 位置を維持、false: コメント後の適切な位置に移動
   sticky = true,
-  ---Lines to be ignored while (un)comment
+
+  -- コメント操作時に無視する行のパターン
+  -- nilの場合は全ての行を対象とする
   ignore = nil,
-  ---LHS of toggle mappings in NORMAL mode
+
+  -- ノーマルモードでのトグルキーマップ設定
   toggler = {
-    ---Line-comment toggle keymap
+    -- 行コメントのトグルキーマップ
+    -- 例: gcc で現在行のコメントをトグル
     line = 'gcc',
-    ---Block-comment toggle keymap
+    
+    -- ブロックコメントのトグルキーマップ
+    -- 例: gbc でブロックコメントをトグル
     block = 'gbc',
   },
-  ---LHS of operator-pending mappings in NORMAL and VISUAL mode
+
+  -- ノーマル・ビジュアルモードでのオペレータ待機キーマップ
   opleader = {
-    ---Line-comment keymap
+    -- 行コメント用のキーマップ
+    -- 例: gc[移動コマンド] で指定範囲を行コメント
     line = 'gc',
-    ---Block-comment keymap
+    
+    -- ブロックコメント用のキーマップ
+    -- 例: gb[移動コマンド] で指定範囲をブロックコメント
     block = 'gb',
   },
-  ---LHS of extra mappings
+
+  -- 追加のキーマップ設定
   extra = {
-    ---Add comment on the line above
+    -- 上の行にコメントを追加
+    -- 例: gcO で現在行の上にコメント行を追加
     above = 'gcO',
-    ---Add comment on the line below
+    
+    -- 下の行にコメントを追加
+    -- 例: gco で現在行の下にコメント行を追加
     below = 'gco',
-    ---Add comment at the end of line
+    
+    -- 行末にコメントを追加
+    -- 例: gcA で現在行の末尾にコメントを追加
     eol = 'gcA',
   },
-  ---Enable keybindings
-  ---NOTE: If given `false` then the plugin won't create any mappings
+
+  -- キーマッピングの有効/無効設定
+  -- falseを指定するとプラグインはキーマップを作成しない
   mappings = {
-    ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
+    -- 基本的なマッピング（gcc, gbc, gc[count]{motion}, gb[count]{motion}）
     basic = true,
-    ---Extra mapping; `gco`, `gcO`, `gcA`
+    
+    -- 追加のマッピング（gco, gcO, gcA）
     extra = true,
   },
-  ---Function to call before (un)comment
+
+  -- コメント操作前に実行する関数
+  -- nilの場合は何も実行しない
   pre_hook = nil,
-  ---Function to call after (un)comment
+
+  -- コメント操作後に実行する関数
+  -- nilの場合は何も実行しない
   post_hook = nil,
 })

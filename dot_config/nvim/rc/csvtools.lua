@@ -1,10 +1,19 @@
+-- CSVファイル操作プラグイン（csvtools.nvim）の設定
+-- 現在は設定が無効化されています（必要に応じてコメントアウトを解除してください）
+
 -- require('csvtools').setup({
+--   -- カーソル位置の前に表示する行数
 --   before = 10,
+--
+--   -- カーソル位置の後に表示する行数
 --   after = 10,
+--
+--   -- カーソル移動後にハイライトをクリアするかどうか
 --   clearafter = true,
---   -- this will clear the highlight of buf after move
+--
+--   -- オーバーフロー（表示範囲外）の内容を表示するかどうか
 --   showoverflow = true,
---   -- this will provide a overflow show
+--
+--   -- 単独のタイトル行を追加するかどうか
 --   titelflow = true,
---   -- add an alone title
 -- })
