@@ -126,6 +126,7 @@ function! s:init() abort
   call jetpack#add('j-morano/buffer_manager.nvim')
   call jetpack#add('johann2357/nvim-smartbufs')
   call jetpack#add('famiu/bufdelete.nvim')
+  " call jetpack#add('backdround/tabscope.nvim')
   call jetpack#add('romgrk/barbar.nvim')
 
   " 便利系 useful
