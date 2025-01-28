@@ -1,15 +1,15 @@
--- Call the setup function to change the default behavior
+-- Aerialの設定を変更するためにsetup関数を呼び出す
 local aerial = require('aerial')
 aerial.setup({
-  -- Priority list of preferred backends for aerial.
-  -- This can be a filetype map (see :help aerial-filetype-map)
+  -- シンボル情報を取得するためのバックエンドの優先順位リスト
+  -- ファイルタイプごとに設定可能 (see :help aerial-filetype-map)
   backends = { 'treesitter', 'lsp', 'markdown', 'asciidoc', 'man' },
 
   layout = {
-    -- These control the width of the aerial window.
-    -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
-    -- min_width and max_width can be a list of mixed types.
-    -- max_width = {40, 0.2} means "the lesser of 40 columns or 20% of total"
+    -- Aerialウィンドウの幅を制御する設定
+    -- 整数または0から1の間の小数で指定可能 (例: 0.4 で40%)
+    -- min_widthとmax_widthは混合タイプのリストとして指定可能
+    -- max_width = {40, 0.2} は "40列または全体の20%のうち小さい方" を意味する
     max_width = { 40, 0.2 },
     width = nil,
     min_width = 10,
@@ -35,9 +35,9 @@ aerial.setup({
     preserve_equality = false,
   },
 
-  -- Determines how the aerial window decides which buffer to display symbols for
-  --   window - aerial window will display symbols for the buffer in the window from which it was opened
-  --   global - aerial window will display symbols for the current window
+  -- Aerialウィンドウがどのバッファのシンボルを表示するかを決定する
+  --   window - Aerialウィンドウを開いたウィンドウのバッファのシンボルを表示
+  --   global - 現在のウィンドウのバッファのシンボルを表示
   attach_mode = 'window',
 
   -- List of enum values that configure when to auto-close the aerial window
@@ -90,15 +90,15 @@ aerial.setup({
   -- Defaults to true, unless `on_attach` is provided, then it defaults to false
   lazy_load = true,
 
-  -- Disable aerial on files with this many lines
+  -- この行数以上のファイルではAerialを無効化
   disable_max_lines = 10000,
 
-  -- Disable aerial on files this size or larger (in bytes)
-  disable_max_size = 2000000, -- Default 2MB
+  -- このサイズ以上のファイルではAerialを無効化 (バイト単位)
+  disable_max_size = 2000000, -- デフォルト2MB
 
-  -- A list of all symbols to display. Set to false to display all symbols.
-  -- This can be a filetype map (see :help aerial-filetype-map)
-  -- To see all available values, see :help SymbolKind
+  -- 表示するシンボルの種類のリスト。falseを設定すると全シンボルを表示
+  -- ファイルタイプごとに設定可能 (see :help aerial-filetype-map)
+  -- 利用可能な値は :help SymbolKind を参照
   filter_kind = {
     'Class',
     'Constructor',
