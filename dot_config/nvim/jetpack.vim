@@ -123,8 +123,10 @@ function! s:init() abort
   call jetpack#add('prochri/telescope-all-recent.nvim')
 
   " バッファ
+  call jetpack#add('j-morano/buffer_manager.nvim')
   call jetpack#add('johann2357/nvim-smartbufs')
   call jetpack#add('famiu/bufdelete.nvim')
+  call jetpack#add('romgrk/barbar.nvim')
 
   " 便利系 useful
   call jetpack#add('kevinhwang91/nvim-bqf')
