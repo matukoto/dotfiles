@@ -122,6 +122,10 @@ function! s:init() abort
   call jetpack#add('cljoly/telescope-repo.nvim')
   call jetpack#add('prochri/telescope-all-recent.nvim')
 
+  " バッファ
+  call jetpack#add('johann2357/nvim-smartbufs')
+  call jetpack#add('famiu/bufdelete.nvim')
+
   " 便利系 useful
   call jetpack#add('kevinhwang91/nvim-bqf')
   call jetpack#add('mfussenegger/nvim-lint')
@@ -158,7 +162,6 @@ function! s:init() abort
   " call jetpack#add('lambdalisue/vim-mr')
   " call jetpack#add('lambdalisue/vim-mr-quickfix')
   " call jetpack#add('Bakudankun/BackAndForward.vim')
-  call jetpack#add('johann2357/nvim-smartbufs')
   call jetpack#add('MeanderingProgrammer/markdown.nvim')
   " call jetpack#add('Decodetalkers/csv-tools.lua')
   call jetpack#add('mechatroner/rainbow_csv')
@@ -171,7 +174,6 @@ function! s:init() abort
   call jetpack#add('nanotee/zoxide.vim')
   " call jetpack#add('4513ECHO/nvim-keycastr')
   call jetpack#add('tani/dmacro.nvim')
-  call jetpack#add('famiu/bufdelete.nvim')
   call jetpack#add('simeji/winresizer')
   " キャメルケース単位でのオブジェクト指定
   call jetpack#add('bkad/CamelCaseMotion')
