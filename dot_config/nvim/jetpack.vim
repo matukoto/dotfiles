@@ -125,6 +125,7 @@ function! s:init() abort
   " バッファ
   call jetpack#add('johann2357/nvim-smartbufs')
   call jetpack#add('famiu/bufdelete.nvim')
+  call jetpack#add('tiagovla/scope.nvim')
   call jetpack#add('akinsho/bufferline.nvim')
 
   " 便利系 useful
