@@ -1,5 +1,5 @@
 let g:gin_proxy_apply_without_confirm = 1
-nnoremap <C-g>s <Cmd>GinStatus<CR>
+nnoremap <C-g>s <Cmd>GinStatus ++opener=edit<CR>
 " バッファの差分を表示
 nnoremap <C-g>a <Cmd>Gin add --all<CR>
 nnoremap <C-g>c <Cmd>Gin commit --quiet<CR>
