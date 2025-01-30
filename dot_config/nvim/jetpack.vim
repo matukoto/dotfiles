@@ -148,6 +148,7 @@ function! s:init() abort
   "call jetpack#add('skanehira/k8s.vim')
   "call jetpack#add('cshuaimin/ssr.nvim')
   call jetpack#add('shellRaining/hlchunk.nvim')
+  call jetpack#add('stevearc/quicker.nvim')
   call jetpack#add('stevearc/aerial.nvim')
   " call jetpack#add('tris203/hawtkeys.nvim')
   call jetpack#add('kevinhwang91/nvim-hlslens')
