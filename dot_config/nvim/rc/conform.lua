@@ -1,5 +1,12 @@
+-- コードフォーマッタープラグイン（conform.nvim）の設定
+
+-- JavaScriptのフォーマッタ設定
+-- biome → prettierd → prettier の順で利用可能なフォーマッタを使用
 local jsFormatter = { 'biome', 'prettierd', 'prettier', stop_after_first = true }
 
+-- TypeScriptのフォーマッタ設定
+-- package.jsonが存在する場合はJavaScriptと同じフォーマッタを使用
+-- 存在しない場合はdeno_fmtを使用
 local tsFormatter = function()
   if vim.fs.root(0, 'package.json') then
     return jsFormatter
@@ -9,18 +16,21 @@ local tsFormatter = function()
 end
 
 require('conform').setup({
+  -- ファイルタイプごとのフォーマッタ設定
   formatters_by_ft = {
     lua = { 'stylua' }, -- 特に設定しなくても ~/.config/stylua/stylua.toml を見てくれる
     sql = { 'sql_formatter' },
     yaml = { 'yamlfmt' },
-    java = { lsp_format = 'fallback' },
+    java = { lsp_format = 'fallback' }, -- LSPフォーマッタをフォールバックとして使用
     sh = {
-      'shellcheck',
-      'shfmt',
-      stop_after_first = false,
+      'shellcheck', -- シェルスクリプトの静的解析
+      'shfmt',      -- シェルスクリプトのフォーマット
+      stop_after_first = false, -- 全てのフォーマッタを実行
     },
+    -- JSON関連のファイルタイプ設定
     json = tsFormatter,
     jsonc = tsFormatter,
+    -- フロントエンド関連のファイルタイプ設定
     svelte = { 'eslint' },
     fsharp = { 'fantomas' },
     html = jsFormatter,
@@ -32,18 +42,22 @@ require('conform').setup({
     go = { 'gofmt' },
     -- ['*'] = { 'typos' }, -- 勝手に訂正されてしまうので、状況次第では有用
     markdown = {
-      'injected',
-      'typos',
-      'markdownlint-cli2',
-      stop_after_first = false,
+      'injected',           -- 埋め込みコードのフォーマット
+      'typos',             -- タイプミスの修正
+      'markdownlint-cli2', -- Markdownのリント
+      stop_after_first = false, -- 全てのフォーマッタを実行
     },
   },
+
+  -- 保存時の自動フォーマット設定
   format_after_save = {
-    async = true,
-    timeout_ms = 3000,
-    quiet = false,
-    stop_after_first = false,
+    async = true,         -- 非同期でフォーマットを実行
+    timeout_ms = 3000,    -- タイムアウト時間（ミリ秒）
+    quiet = false,        -- フォーマット時のメッセージを表示
+    stop_after_first = false, -- エラーがあっても全てのフォーマッタを実行
   },
+
+  -- カスタムフォーマッタの設定例（現在はコメントアウト）
   -- formatters = {
   --   textlint = {
   --     meta = {
@@ -66,7 +80,9 @@ require('conform').setup({
   --     }),
   --   },
   -- },
-  -- conform にファイルタイプを指定しないとフォーマットがかからないようにする
+
+  -- conformにファイルタイプを指定しないとフォーマットがかからないようにする
+  -- LSPのフォーマットは使用しない設定
   default_format_opts = {
     lsp_format = 'never',
   },

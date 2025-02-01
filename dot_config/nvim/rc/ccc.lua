@@ -1,10 +1,13 @@
+-- カラーピッカー/カラーエディタプラグイン（ccc.nvim）の設定
+
+-- TrueColorサポートを有効化（カラーピッカーの正確な色表示に必要）
 vim.opt.termguicolors = true
 
 require('ccc').setup({
-  -- Your preferred settings
-  -- Example: enable highlighter
+  -- プラグインの基本設定
   highlighter = {
-    auto_enable = true,
-    lsp = true,
+    -- カラーハイライターの設定
+    auto_enable = true,  -- ファイルを開いた時に自動的にハイライトを有効化
+    lsp = true,         -- LSPのカラー情報を使用してハイライトを行う
   },
 })
