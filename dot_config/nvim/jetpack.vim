@@ -56,7 +56,7 @@ function! s:init() abort
   call jetpack#add('matsui54/ddc-source-buffer')
   call jetpack#add('uga-rosa/ddc-source-nvim-lua')
   call jetpack#add('shougo/ddc-source-cmdline')
-  call jetpack#add('shougo/ddc-source-cmdline-history')
+  call jetpack#add('shougo/ddc-source-cmdline_history')
   " popup
   call jetpack#add('matsui54/denops-popup-preview.vim')
   call jetpack#add('matsui54/denops-signature_help')

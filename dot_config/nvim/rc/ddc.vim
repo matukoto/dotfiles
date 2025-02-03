@@ -10,8 +10,8 @@ call ddc#custom#patch_global('ui', 'pum')
 " buffer: バッファ内の単語
 " lsp: Language Server
 " cmdline: コマンドライン補完
-" cmdline-history: コマンドライン履歴
-call ddc#custom#patch_global('sources', ['skkeleton','file','around','buffer','lsp','cmdline','cmdline-history'])
+" cmdline_history: コマンドライン履歴
+call ddc#custom#patch_global('sources', ['skkeleton','file','around','buffer','lsp','cmdline','cmdline_history'])
 
 " 全ソース共通のデフォルト設定
 call ddc#custom#patch_global('sourceOptions', {
@@ -99,7 +99,7 @@ call ddc#custom#patch_global('sourceOptions', #{
 
 " コマンドライン履歴の設定
 call ddc#custom#patch_global('sourceOptions', #{
-      \   cmdline-history: #{ mark: 'history' },  
+      \   cmdline_history: #{ mark: 'history' },  
       \ })
 
 " ddc.vimを有効化
@@ -121,7 +121,7 @@ call ddc#custom#patch_global(#{
         \     'CmdlineChanged',   
         \   ],
         \   cmdlineSources: {
-        \     ':': ['cmdline', 'cmdline-history', 'around']  
+        \     ':': ['cmdline', 'cmdline_history', 'around']  
         \   },
         \ })
 
