@@ -106,10 +106,10 @@ call ddc#custom#patch_global('sourceOptions', #{
 call ddc#enable()
 
 " 補完メニューのキーマッピング
-inoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>  " 次の候補を選択
-inoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>  " 前の候補を選択
-inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>           " 候補を確定
-inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>            " 補完をキャンセル
+inoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
+inoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
+inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 
 " コマンドライン補完の詳細設定
 call ddc#custom#patch_global(#{
@@ -131,10 +131,10 @@ nnoremap ;       <Cmd>call CommandlinePre()<CR>:
 " コマンドラインモード開始時の設定
 function! CommandlinePre() abort
     " コマンドラインモードでのキーマッピング
-    cnoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>  " 次の候補を選択
-    cnoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>  " 前の候補を選択
-    cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>           " 候補を確定
-    cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>            " 補完をキャンセル
+    cnoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
+    cnoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
+    cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+    cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 
     " コマンドラインモード終了時に後処理を実行
     autocmd User DDCCmdlineLeave ++once call CommandlinePost()
