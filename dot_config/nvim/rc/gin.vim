@@ -3,9 +3,9 @@ nnoremap <C-g>s <Cmd>GinStatus ++opener=edit<CR>
 " バッファの差分を表示
 nnoremap <C-g>a <Cmd>Gin add --all<CR>
 nnoremap <C-g>c <Cmd>Gin commit --quiet<CR>
-nnoremap <C-g>P <Cmd>GinPatch ++opener=tabnew ++no-head %<CR>
+nnoremap <C-g>P <Cmd>GinPatch ++no-head %<CR>
 nnoremap <C-g>p <Cmd>Gin push --quiet<CR>
-nnoremap <C-g>l <Cmd>GinLog ++opener=tabnew<CR>
+nnoremap <C-g>l <Cmd>GinLog<CR>
 nnoremap <C-g>b <Cmd>GinBranch --all<CR>
 nnoremap <C-g>d <Cmd>GinDiff<CR>
 
