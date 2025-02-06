@@ -37,9 +37,9 @@ require('toggleterm').setup({
   start_in_insert = true,
   --insert_mappings = true, -- whether or not the open mapping applies in insert mode
   --terminal_mappings = true, -- whether or not the open mapping applies in the opened terminals
-  persist_size = false,
-  persist_mode = false, -- if set to true (default) the previous terminal mode will be remembered
-  direction = 'horizontal',
+  persist_size = true,
+  persist_mode = true, -- if set to true (default) the previous terminal mode will be remembered
+  direction = 'float',
   --'float',
   --'vertical' | 'horizontal' | 'tab' |
   --close_on_exit = true, -- close the terminal window when the process exits
@@ -72,4 +72,5 @@ require('toggleterm').setup({
   -- },
 })
 
-vim.cmd('cabbrev t lua require("toggleterm").toggle()')
+-- vim.cmd('cabbrev t lua require("toggleterm").toggle()')
+vim.keymap.set('n', '<Leader>u', '<cmd>lua require("toggleterm").toggle()<CR>')
