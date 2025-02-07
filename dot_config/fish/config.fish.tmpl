@@ -1,115 +1,115 @@
 if status is-interactive
 
-fish_add_path "$HOME/bin"
-fish_add_path "$HOME/.local/bin"
-fish_add_path "$HOME/go/bin"
-fish_add_path "$HOME/.cargo/bin"
-fish_add_path "$HOME/.rustup/toolchains/*/bin"
-fish_add_path "$HOME/.deno/bin"
-fish_add_path "$HOME/.local/share/nvim/mason/bin"
-fish_add_path "$HOME/.local/share/mise/shims"
-fish_add_path "$HOME/.local/share/aquaproj-aqua/bin"
+    fish_add_path "$HOME/bin"
+    fish_add_path "$HOME/.local/bin"
+    fish_add_path "$HOME/go/bin"
+    fish_add_path "$HOME/.cargo/bin"
+    fish_add_path "$HOME/.rustup/toolchains/*/bin"
+    fish_add_path "$HOME/.deno/bin"
+    fish_add_path "$HOME/.local/share/nvim/mason/bin"
+    fish_add_path "$HOME/.local/share/mise/shims"
+    fish_add_path "$HOME/.local/share/aquaproj-aqua/bin"
 
 {{ if eq .chezmoi.osRelease.id "ubuntu" }}
-# eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 {{ end }}
 
-# XDG Base Directory
-set -x XDG_CONFIG_HOME $HOME/.config
-set -x XDG_CACHE_HOME $HOME/.cache
-set -x XDG_DATA_HOME $HOME/.local/share
-set -x XDG_STATE_HOME $HOME/.local/state
-set -x INITVIM $XDG_CONFIG_HOME/nvim/init.vim
-set -x VIMRC $HOME/.vimrc
-set -x AQUA_GLOBAL_CONFIG $XDG_CONFIG_HOME/aquaproj-aqua/aqua.yaml
+    # XDG Base Directory
+    set -x XDG_CONFIG_HOME $HOME/.config
+    set -x XDG_CACHE_HOME $HOME/.cache
+    set -x XDG_DATA_HOME $HOME/.local/share
+    set -x XDG_STATE_HOME $HOME/.local/state
+    set -x INITVIM $XDG_CONFIG_HOME/nvim/init.vim
+    set -x VIMRC $HOME/.vimrc
+    set -x AQUA_GLOBAL_CONFIG $XDG_CONFIG_HOME/aquaproj-aqua/aqua.yaml
 
-# Fish paths
-set -x FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
-#set -x FISH_COMPLETIONS_DIR $FISH_CONFIG_DIR/completions
-set -x FISH_FUNCTIONS_DIR $FISH_CONFIG_DIR/functions
-set -x FISH_CACHE_DIR $XDG_CACHE_HOME/fish
+    # Fish paths
+    set -x FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
+    #set -x FISH_COMPLETIONS_DIR $FISH_CONFIG_DIR/completions
+    set -x FISH_FUNCTIONS_DIR $FISH_CONFIG_DIR/functions
+    set -x FISH_CACHE_DIR $XDG_CACHE_HOME/fish
 
-set -x BROWSER wslview
-set -x EDITOR 'nvim'
-#set -x MANPAGER 'nvim +Man!'
-set -x SYSTEMD_EDITOR "$EDITOR"
-set -x TZ 'Asia/Tokyo'
+    set -x BROWSER wslview
+    set -x EDITOR nvim
+    #set -x MANPAGER 'nvim +Man!'
+    set -x SYSTEMD_EDITOR "$EDITOR"
+    set -x TZ Asia/Tokyo
 
-abbr --add f ghf
-abbr --add skkadd update_skk_dict
-abbr --add skkpull pull_skk_dict
-abbr --add skk 'cd ~/.skk'
-abbr --add fsi 'dotnet fsi'
+    abbr --add f ghf
+    abbr --add skkadd update_skk_dict
+    abbr --add skkpull pull_skk_dict
+    abbr --add skk 'cd ~/.skk'
+    abbr --add fsi 'dotnet fsi'
 
-# git
-abbr --add s 'git status'
-abbr --add ga 'git add'
-abbr --add gc 'git commit'
-abbr --add gp 'git push'
-abbr --add gpu 'git push --upstream-origin origin HEAD'
-abbr --add gl 'git pull'
-abbr --add gs 'git switch'
-abbr --add gsc 'git switch -c'
-abbr --add gcp 'git cherry-pick'
-abbr --add groot 'cd (git rev-parse --show-toplevel)'
+    # git
+    abbr --add s 'git status'
+    abbr --add ga 'git add'
+    abbr --add gc 'git commit'
+    abbr --add gp 'git push'
+    abbr --add gpu 'git push --upstream-origin origin HEAD'
+    abbr --add gl 'git pull'
+    abbr --add gs 'git switch'
+    abbr --add gsc 'git switch -c'
+    abbr --add gcp 'git cherry-pick'
+    abbr --add groot 'cd (git rev-parse --show-toplevel)'
 
-# gh
-abbr --add gas 'gh auth switch'
+    # gh
+    abbr --add gas 'gh auth switch'
 
-# some more ls aliases
-abbr --add ll 'eza -alF --time-style "+%Y/%m/%d %H:%M"'
-abbr --add la 'eza -A'
-abbr --add l 'clear && eza'
-abbr --add ls 'eza'
-abbr --add lc 'leetcode'
+    # some more ls aliases
+    abbr --add ll 'eza -alF --time-style "+%Y/%m/%d %H:%M"'
+    abbr --add la 'eza -A'
+    abbr --add l 'clear && eza'
+    abbr --add ls eza
+    abbr --add lc leetcode
 
-abbr --add v 'nvim'
-abbr --add va 'nvim ~/work/workLog/a.md'
-abbr --add v. 'nvim .' 
-abbr --add vr 'nvim ./README.md'
-abbr --add dot 'chezmoi cd'
-abbr --add cu 'pull_skk_dict | chezmoi update'
-abbr --add ca 'chezmoi apply'
-abbr --add conf 'cd $HOME/.config'
+    abbr --add v nvim
+    abbr --add va 'nvim ~/work/workLog/a.md'
+    abbr --add v. 'nvim .'
+    abbr --add vr 'nvim ./README.md'
+    abbr --add dot 'chezmoi cd'
+    abbr --add cu 'pull_skk_dict | chezmoi update'
+    abbr --add ca 'chezmoi apply'
+    abbr --add conf 'cd $HOME/.config'
 
-abbr --add ob 'cd $HOME/obsidian/'
-# abbr --add zenn 'deno run -A --unstable-fs npm:zenn-cli@latest'
-# abbr --add marp 'deno run npm:@marp-team/marp-cli'
-# abbr --add browser-sync 'deno run -A --unstable npm:browser-sync'
-abbr --add browser-html 'deno run -A --unstable npm:browser-sync  start --server --files "*.html"'
-abbr --add startuptime 'vim-startuptime -count 100 -vimpath nvim'
-abbr --add a 'aqua'
+    abbr --add ob 'cd $HOME/obsidian/'
+    # abbr --add zenn 'deno run -A --unstable-fs npm:zenn-cli@latest'
+    # abbr --add marp 'deno run npm:@marp-team/marp-cli'
+    # abbr --add browser-sync 'deno run -A --unstable npm:browser-sync'
+    abbr --add browser-html 'deno run -A --unstable npm:browser-sync  start --server --files "*.html"'
+    abbr --add startuptime 'vim-startuptime -count 100 -vimpath nvim'
+    abbr --add a aqua
 
 {{ if (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) }}
-# work
-abbr --add work 'cd $HOME/work/workLog/'
-abbr --add snsd 'cd $HOME/repo/local-dev-env/ut-tools/'
+    # work
+    abbr --add work 'cd $HOME/work/workLog/'
+    abbr --add snsd 'cd $HOME/repo/local-dev-env/ut-tools/'
 {{ else }}
-# private
-abbr --add dia 'cd $HOME/myself/diary/'
-abbr --add shd 'cd $HOME/work/sh-dev/'
-abbr --add god 'cd $HOME/work/go-dev/'
-abbr --add vimd 'cd $HOME/work/vim-dev/'
-abbr --add dockerd 'cd $HOME/work/docker-dev/'
-abbr --add javad 'cd $HOME/work/java-dev/'
-abbr --add grpcd 'cd $HOME/work/grpc-dev/'
-abbr --add hobbyd 'cd $HOME/myself/hobby/'
-abbr --add techd 'cd $HOME/myself/tech/'
+    # private
+    abbr --add dia 'cd $HOME/myself/diary/'
+    abbr --add shd 'cd $HOME/work/sh-dev/'
+    abbr --add god 'cd $HOME/work/go-dev/'
+    abbr --add vimd 'cd $HOME/work/vim-dev/'
+    abbr --add dockerd 'cd $HOME/work/docker-dev/'
+    abbr --add javad 'cd $HOME/work/java-dev/'
+    abbr --add grpcd 'cd $HOME/work/grpc-dev/'
+    abbr --add hobbyd 'cd $HOME/myself/hobby/'
+    abbr --add techd 'cd $HOME/myself/tech/'
 {{ end }}
 
 {{ if (and (eq .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) }}
-# capslock -> ctrl
-/usr/bin/setxkbmap -option "ctrl:nocaps"
+    # capslock -> ctrl
+    /usr/bin/setxkbmap -option "ctrl:nocaps"
 {{ end }}
 
-# vi
-fish_vi_key_bindings
+    # vi
+    fish_vi_key_bindings
 
-~/.local/share/aquaproj-aqua/bin/mise activate fish | source
+    ~/.local/share/aquaproj-aqua/bin/mise activate fish | source
 
-zoxide init fish | source
+    zoxide init fish | source
 
-atuin init --disable-up-arrow fish | source
+    atuin init --disable-up-arrow fish | source
 
-starship init fish | source
+    starship init fish | source
 end
