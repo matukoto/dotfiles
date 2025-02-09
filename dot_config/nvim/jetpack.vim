@@ -19,6 +19,7 @@ function! s:init() abort
   call jetpack#add('WhoIsSethDaniel/mason-tool-installer.nvim')
   call jetpack#add('neovim/nvim-lspconfig')
   call jetpack#add('j-hui/fidget.nvim')
+  call jetpack#add('nanotee/sqls.nvim')
   " call jetpack#add('nvimtools/none-ls.nvim')
   " java
   call jetpack#add('nvim-java/lua-async-await')
@@ -29,8 +30,6 @@ function! s:init() abort
   call jetpack#add('MunifTanjim/nui.nvim')
   call jetpack#add('JavaHello/spring-boot.nvim')
   call jetpack#add('nvim-java/nvim-java')
-  call jetpack#add('nanotee/sqls.nvim')
-  call jetpack#add('stevearc/conform.nvim')
 
    call jetpack#add('kevinhwang91/nvim-ufo')
    call jetpack#add('kevinhwang91/promise-async')
@@ -184,7 +183,7 @@ function! s:init() abort
   " call jetpack#add('folke/persistence.nvim')
   " Neovim 起動時に dashboard を開く
   " call jetpack#add('nvimdev/dashboard-nvim')
-
+  call jetpack#add('stevearc/conform.nvim')
   " tui アプリを Neovim で開ける Gitui しか使っていないが
   call jetpack#add('matukoto/fm-nvim')
   " easymotion
