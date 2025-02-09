@@ -14,7 +14,6 @@ require('mason-lspconfig').setup({
     'bashls',
     -- 'marksman',
     'fsautocomplete',
-    'zk',
     'vimls',
     'markdown_oxide',
     'jsonls',
@@ -159,26 +158,6 @@ lspconfig.rust_analyzer.setup({})
 
 lspconfig.yamlls.setup({})
 
--- require('zk').setup({
---   -- can be "telescope", "fzf", "fzf_lua", "minipick", or "select" (`vim.ui.select`)
---   -- it's recommended to use "telescope", "fzf", "fzf_lua", or "minipick"
---   picker = 'telescope',
---
---   lsp = {
---     -- `config` is passed to `vim.lsp.start_client(config)`
---     config = {
---       cmd = { 'zk', 'lsp' },
---       name = 'zk',
---       -- etc, see `:h vim.lsp.start_client()`
---     },
---
---     -- automatically attach buffers in a zk notebook that match the given filetypes
---     auto_attach = {
---       enabled = true,
---       filetypes = { 'markdown' },
---     },
---   },
--- })
 lspconfig.vimls.setup({})
 
 lspconfig.sqls.setup({
@@ -234,7 +213,7 @@ lspconfig.vtsls.setup({
     'typescript',
     'typescriptreact',
   },
-  single_file_support = false,
+  single_file_support = true,
 })
 
 -- denols
@@ -262,8 +241,6 @@ lspconfig.svelte.setup({
   on_attach = ts_opts.on_attach,
   filetypes = { 'svelte' },
 })
-
--- lspconfig.zk.setup({})
 
 lspconfig.lemminx.setup({
   on_attach = ts_opts.on_attach,

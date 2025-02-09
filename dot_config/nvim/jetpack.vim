@@ -31,7 +31,6 @@ function! s:init() abort
   call jetpack#add('nvim-java/nvim-java')
   call jetpack#add('renerocksai/telekasten.nvim')
   call jetpack#add('jakewvincent/mkdnflow.nvim')
-  call jetpack#add('zk-org/zk-nvim')
   call jetpack#add('nanotee/sqls.nvim')
   call jetpack#add('stevearc/conform.nvim')
   call jetpack#add('ionide/Ionide-vim')
