@@ -7,6 +7,14 @@ require('neotest').setup({
     --   root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', 'mvnw' }, { upward = true })[1]),
     -- }),
   },
+  -- vim-guiseとの競合を避けるための設定
+  discovery = {
+    enabled = false, -- 自動ディスカバリーを無効化
+  },
+  output = {
+    open_on_run = false, -- テスト実行時の自動ウィンドウオープンを無効化
+  },
+  enter = false,
 })
 
 vim.keymap.set('n', '<leader>tt', function()
@@ -22,5 +30,9 @@ vim.keymap.set('n', '<leader>ta', function()
 end, { desc = 'Run All Tests in Directory' })
 
 vim.keymap.set('n', '<leader>ts', function()
-  require('neotest').summary.toggle()
-end, { desc = 'Toggle test summary' })
+  require('neotest').summary.open({
+    enter = true,
+    position = 'right',
+    win_options = { winbar = false },
+  })
+end, { desc = 'Open test summary for current file' })
