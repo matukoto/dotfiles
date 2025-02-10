@@ -221,6 +221,10 @@ cabbrev qq TCL
 nnoremap <silent> <Leader>p "*p
 
 cabbrev cm <Cmd>Capture message<CR>
+" autocmd CmdlineEnter [wW][aAqQ]* silent let g:silent_write = 1
+" autocmd CmdlineLeave [wW][aAqQ]* if exists('g:silent_write') | unlet g:silent_write | endif
+cabbrev w  <Cmd>silent w<CR>
+cabbrev wa  <Cmd>silent wa<CR>
 
 " Plugin
 if  exists('g:vscode')
