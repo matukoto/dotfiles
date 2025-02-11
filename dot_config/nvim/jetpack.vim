@@ -22,14 +22,14 @@ function! s:init() abort
   call jetpack#add('nanotee/sqls.nvim')
   " call jetpack#add('nvimtools/none-ls.nvim')
   " java
-  call jetpack#add('nvim-java/lua-async-await')
-  call jetpack#add('nvim-java/nvim-java-refactor')
-  call jetpack#add('nvim-java/nvim-java-core')
-  call jetpack#add('nvim-java/nvim-java-test')
-  call jetpack#add('nvim-java/nvim-java-dap')
-  call jetpack#add('MunifTanjim/nui.nvim')
-  call jetpack#add('JavaHello/spring-boot.nvim')
-  call jetpack#add('nvim-java/nvim-java')
+  " call jetpack#add('nvim-java/lua-async-await')
+  " call jetpack#add('nvim-java/nvim-java-refactor')
+  " call jetpack#add('nvim-java/nvim-java-core')
+  " call jetpack#add('nvim-java/nvim-java-test')
+  " call jetpack#add('nvim-java/nvim-java-dap')
+  " call jetpack#add('MunifTanjim/nui.nvim')
+  " call jetpack#add('JavaHello/spring-boot.nvim')
+  " call jetpack#add('nvim-java/nvim-java')
 
    call jetpack#add('kevinhwang91/nvim-ufo')
    call jetpack#add('kevinhwang91/promise-async')
@@ -92,8 +92,8 @@ function! s:init() abort
   call jetpack#add('marilari88/neotest-vitest')
   " call jetpack#add('mfussenegger/nvim-jdtls')
   " call jetpack#add('rcasia/neotest-java')
-  call jetpack#add('mfussenegger/nvim-dap')
-  call jetpack#add('rcarriga/nvim-dap-ui')
+  " call jetpack#add('mfussenegger/nvim-dap')
+  " call jetpack#add('rcarriga/nvim-dap-ui')
   " call jetpack#add('theHamsta/nvim-dap-virtual-text')
 
   " 日本語
