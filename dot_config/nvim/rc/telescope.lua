@@ -100,12 +100,36 @@ require('telescope').setup({
     },
   },
   extensions = {
-    fzy_native = {
-      override_generic_sorter = false,
-      override_file_sorter = true,
+    ['zf-native'] = {
+      -- options for sorting file-like items
+      file = {
+        -- override default telescope file sorter
+        enable = true,
+        -- highlight matching text in results
+        highlight_results = true,
+        -- enable zf filename match priority
+        match_filename = true,
+        -- optional function to define a sort order when the query is empty
+        initial_sort = nil,
+        -- set to false to enable case sensitive matching
+        smart_case = true,
+      },
+      -- options for sorting all other items
+      generic = {
+        -- override default telescope generic item sorter
+        enable = true,
+        -- highlight matching text in results
+        highlight_results = true,
+        -- disable zf filename match priority
+        match_filename = false,
+        -- optional function to define a sort order when the query is empty
+        initial_sort = nil,
+        -- set to false to enable case sensitive matching
+        smart_case = true,
+      },
     },
     smart_open = {
-      match_algorithm = 'fzf',
+      match_algorithm = 'zf',
       disable_devicons = false,
     },
     repo = {
@@ -135,9 +159,9 @@ require('telescope').setup({
   },
 })
 
+require('telescope').load_extension('zf-native')
 require('telescope').load_extension('smart_open')
 -- require('telescope').load_extension('kensaku')
--- require('telescope').load_extension('zk')
 require('telescope').load_extension('repo')
 -- telescope
 vim.keymap.set('n', '<leader>g', '<cmd>Telescope live_grep<CR>')

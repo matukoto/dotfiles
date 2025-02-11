@@ -110,9 +110,9 @@ function! s:init() abort
   " telescope
   call jetpack#add('nvim-lua/plenary.nvim')
   call jetpack#add('nvim-telescope/telescope.nvim')
-  call jetpack#add('nvim-telescope/telescope-fzf-native.nvim')
+  call jetpack#add('natecraddock/telescope-zf-native.nvim')
   call jetpack#add('kkharji/sqlite.lua')
-  call jetpack#add('danielfalk/smart-open.nvim')
+  call jetpack#add('matukoto/smart-open.nvim')
   call jetpack#add('atusy/qfscope.nvim')
   call jetpack#add('cljoly/telescope-repo.nvim')
   call jetpack#add('prochri/telescope-all-recent.nvim')
