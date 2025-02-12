@@ -3,7 +3,7 @@
 "java" = { version = "corretto-17.0.14.7", release_type = "ga" }
 "rust" = "1.84.1"
 "go" = "1.24.0"
-"node" = "22.13.1"
+"node" = "22.14.0"
 "lua" = "5.4.7"
 "npm:pnpm" = "9.12.0"
 "npm:vite" = "5.4.7"
