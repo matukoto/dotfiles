@@ -10,7 +10,6 @@ require('toggleterm').setup({
   -- open_mapping = [[<c-\>]], -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
   -- on_create = fun(t: Terminal), -- function to run when the terminal is first created
   on_open = function(term) -- function to run when the terminal opens
-    vim.cmd('startinsert!')
     vim.api.nvim_buf_set_keymap(
       term.bufnr,
       'n',
