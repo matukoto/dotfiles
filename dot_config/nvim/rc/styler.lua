@@ -1,7 +1,7 @@
 -- 設定
 -- styler.set_themeに与えるカラースキームはLua製な必要あり
-DEFAULT_COLORSCHEME = 'duskfox'
-INACTIVE_COLORSCHEME = 'nordfox'
+DEFAULT_COLORSCHEME = 'nekonight-nord'
+INACTIVE_COLORSCHEME = 'nekonight-onedark'
 -- require('styler').setup()
 
 -- カラースキームの適用

@@ -199,11 +199,12 @@ function! s:init() abort
 
   " カラースキーマ
   call jetpack#add('gen740/SmoothCursor.nvim')
+  call jetpack#add('neko-night/nvim')
   " call jetpack#add('sainnhe/gruvbox-material')
   " call jetpack#add('sainnhe/edge')
   " call jetpack#add('sainnhe/sonokai')
   " call jetpack#add('sainnhe/everforest')
-  call jetpack#add('edeneast/nightfox.nvim')
+  " call jetpack#add('edeneast/nightfox.nvim')
   " call jetpack#add('AlexvZyl/nordic.nvim')
   " call jetpack#add('folke/tokyonight.nvim')
   " call jetpack#add('tanvirtin/monokai.nvim')
