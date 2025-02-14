@@ -129,8 +129,8 @@ require('telescope').setup({
       },
     },
     smart_open = {
-      match_algorithm = 'zf',
-      disable_devicons = false,
+      -- match_algorithm = 'zf',
+      disable_devicons = true,
     },
     repo = {
       list = {
