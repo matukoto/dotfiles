@@ -78,11 +78,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- 前の診断へ移動
     set('n', 'g]', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
 
-    -- inlay hint
-    -- if client.supports_method('textDocument/inlayHint') then
-    --   vim.lsp.inlay_hint.enable()
-    -- end
-
     vim.diagnostic.config({
       -- 深刻度によるソート
       severity_sort = true,
@@ -126,25 +121,26 @@ lspconfig.gopls.setup({
 })
 
 lspconfig.lua_ls.setup({
-  hint = {
-    enable = true,
-    paramName = 'Disable',
-    semicolon = 'Disable',
-  },
   settings = {
     Lua = {
       runtime = {
         version = 'LuaJIT',
-        pathStrict = true,
-        path = { '?.lua', '?/init.lua' },
       },
       workspace = {
-        library = vim.list_extend(vim.api.nvim_get_runtime_file('lua', true), {
-          '${3rd}/luv/library',
-          '${3rd}/busted/library',
-          '${3rd}/luassert/library',
-        }),
-        checkThirdParty = 'Disable',
+        checkThirdParty = false,
+      },
+      hint = {
+        enable = true,
+        await = true,
+        paramName = 'All',
+        paramType = true,
+        semicolon = 'Disable',
+        arrayIndex = 'Disable',
+      },
+      diagnostics = {
+        groupFileStatus = {
+          await = 'Opened',
+        },
       },
     },
   },
@@ -346,3 +342,13 @@ vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { bg = '#888888', fg = '#e
 --     },
 --   },
 -- })
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client.server_capabilities.inlayHintProvider then
+      if vim.lsp.inlay_hint then
+        vim.lsp.inlay_hint.enable(true)
+      end
+    end
+  end,
+})
