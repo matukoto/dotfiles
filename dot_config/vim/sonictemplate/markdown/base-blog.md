@@ -1,8 +1,8 @@
 ---
 title: ''
-image: ''
-created: 2024-11-01
-updated: 2024-12-12
+image: '/assets/'
+created: {{_expr_:strftime('%Y-%m-%d')}}
+updated: {{_expr_:strftime('%Y-%m-%d')}}
 tags:
   - ''
 # flags: // custom flags
