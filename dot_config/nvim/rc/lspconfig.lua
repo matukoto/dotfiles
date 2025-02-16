@@ -377,6 +377,12 @@ vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { bg = '#888888', fg = '#e
 -- require('lspconfig').jdtls.setup({
 --   settings = {
 --     java = {
+--       inlayHints = {
+--         parameterNames = {
+--           enabled = 'all',
+--           exclusions = { 'this' },
+--         },
+--       },
 --       import = {
 --         gradle = {
 --           enabled = true,
