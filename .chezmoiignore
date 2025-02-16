@@ -8,6 +8,7 @@ my_private*
 README.md
 *time
 renovate.json
+minimal_init.lua
 {{ if eq .chezmoi.os "windows" -}}
 .config/efm-langserver
 .config/fish
