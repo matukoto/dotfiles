@@ -155,7 +155,6 @@ function! s:init() abort
   " call jetpack#add('reireias/vim-cheatsheet')
   call jetpack#add('itchyny/vim-cursorword')
   call jetpack#add('tyru/open-browser.vim')
-  call jetpack#add('lambdalisue/vim-guise')
   call jetpack#add('lambdalisue/vim-suda')
   " call jetpack#add('lambdalisue/vim-mr')
   " call jetpack#add('lambdalisue/vim-mr-quickfix')
