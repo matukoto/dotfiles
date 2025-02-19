@@ -141,7 +141,7 @@ lspconfig.lua_ls.setup({
       hint = {
         enable = true,
         await = true,
-        paramName = 'All',
+        paramName = 'Literal',
         paramType = true,
         semicolon = 'Disable',
         arrayIndex = 'Disable',
