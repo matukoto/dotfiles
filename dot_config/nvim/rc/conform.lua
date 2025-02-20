@@ -42,8 +42,8 @@ require('conform').setup({
     go = { 'gofmt' },
     -- ['*'] = { 'typos' }, -- 勝手に訂正されてしまうので、状況次第では有用
     markdown = {
-      'injected',           -- 埋め込みコードのフォーマット
-      'typos',             -- タイプミスの修正
+      'injected', -- 埋め込みコードのフォーマット
+      'typos', -- タイプミスの修正
       'markdownlint-cli2', -- Markdownのリント
       stop_after_first = false, -- 全てのフォーマッタを実行
     },
@@ -51,9 +51,9 @@ require('conform').setup({
 
   -- 保存時の自動フォーマット設定
   format_after_save = {
-    async = true,         -- 非同期でフォーマットを実行
-    timeout_ms = 3000,    -- タイムアウト時間（ミリ秒）
-    quiet = false,        -- フォーマット時のメッセージを表示
+    async = true, -- 非同期でフォーマットを実行
+    timeout_ms = 3000, -- タイムアウト時間（ミリ秒）
+    quiet = false, -- フォーマット時のメッセージを表示
     stop_after_first = false, -- エラーがあっても全てのフォーマッタを実行
   },
 
