@@ -150,7 +150,11 @@ require('telescope').setup({
       initial_mode = 'normal',
       mappings = {
         n = {
-          ['<C-d>'] = actions.delete_buffer,
+          ['<C-d>'] = function(prompt_bufnr)
+            local entry = require('telescope.actions.state').get_selected_entry()
+            local bufnr = entry.bufnr
+            vim.cmd('bdelete ' .. bufnr)
+          end,
         },
       },
       sort_mru = true,
