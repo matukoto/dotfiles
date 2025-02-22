@@ -101,8 +101,6 @@ function! s:init() abort
   call jetpack#add('lambdalisue/vim-kensaku-search')
   " call jetpack#add('hrsh7th/vim-searchx')
   call jetpack#add('vim-skk/skkeleton')
-  call jetpack#add('NI57721/skkeleton-state-popup')
-  " call jetpack#add('yasunori0418/statusline_skk.vim')
 
   " Obsidian
   " call jetpack#add('epwalsh/obsidian.nvim')
