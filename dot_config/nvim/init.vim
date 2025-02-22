@@ -225,6 +225,7 @@ cabbrev cm <Cmd>Capture message<CR>
 " autocmd CmdlineLeave [wW][aAqQ]* if exists('g:silent_write') | unlet g:silent_write | endif
 cabbrev w  <Cmd>silent w<CR>
 cabbrev wa  <Cmd>silent wa<CR>
+cabbrev h tab help
 
 " Plugin
 if  exists('g:vscode')
