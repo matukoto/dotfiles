@@ -12,10 +12,10 @@ require('skkeleton_indicator').setup({
   zenkakuText = 'ＡＺ',
   abbrevText = 'abbr',
   -- border = 'rounded',
-  row = 0,
-  col = 1,
+  row = 1,
+  col = 0,
   zindex = nil,
   alwaysShown = false,
-  fadeOutMs = 3000,
+  fadeOutMs = 0,
   ignoreFt = {},
 })
