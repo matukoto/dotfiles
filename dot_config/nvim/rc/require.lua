@@ -21,5 +21,6 @@ require('render-markdown').setup()
 require('smoothcursor').setup()
 require('todo-comments').setup()
 
+require('mini.test').setup()
 -- dmacro
 vim.keymap.set({ 'i', 'n' }, '<C-y>', '<Plug>(dmacro-play-macro)')

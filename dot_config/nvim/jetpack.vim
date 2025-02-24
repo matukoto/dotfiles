@@ -191,6 +191,7 @@ function! s:init() abort
   " WakaTime コーディング時間を計測してくれる
   call jetpack#add('wakatime/vim-wakatime')
     call jetpack#add('mikavilpas/yazi.nvim')
+  call jetpack#add('echasnovski/mini.test')
 
   " DB
   call jetpack#add('tpope/vim-dadbod')
