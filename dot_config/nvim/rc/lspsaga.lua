@@ -180,3 +180,4 @@ require('lspsaga').setup({
     width = 0.7,
   },
 })
+vim.keymap.set('n', '<Leader>u', '<cmd>Lspsaga term_toggle<CR>')
