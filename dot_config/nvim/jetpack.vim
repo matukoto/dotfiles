@@ -71,6 +71,7 @@ function! s:init() abort
 
   " terminal
   call jetpack#add('chomosuke/term-edit.nvim')
+  call jetpack#add('akinsho/toggleterm.nvim')
   " treesitter
   call jetpack#add('nvim-treesitter/nvim-treesitter')
   call jetpack#add('nvim-treesitter/nvim-treesitter-context')
