@@ -113,5 +113,48 @@ if status is-interactive
 
     atuin init --disable-up-arrow fish | source
 
-    starship init fish | source
+    #starship init fish | source
+end
+
+# 見た目
+function fish_prompt
+    # 時間
+    set -l last_status $status
+    set_color blue
+    echo -n (date "+%H:%M")
+    echo -n ' '
+    # Gitブランチ情報
+    if git rev-parse --is-inside-work-tree >/dev/null 2>&1
+        set_color yellow
+        echo -n '  '(git branch --show-current)
+        set_color normal
+
+        # ステージング情報
+        set -l staged (git diff --cached --name-only | wc -l | string trim)
+        set -l unstaged (git diff --name-only | wc -l | string trim)
+
+        if test $staged -gt 0
+            set_color green
+            echo -n " +$staged "
+        end
+
+        if test $unstaged -gt 0
+            set_color red
+            echo -n " -$unstaged "
+        end
+
+        set_color normal
+    end
+
+    set_color $fish_color_cwd
+    echo -n (prompt_pwd)
+    set_color normal
+    echo
+    if test $last_status -ne 0
+        set_color red
+    else
+        set_color green
+    end
+    echo -n '> '
+    set_color normal
 end
