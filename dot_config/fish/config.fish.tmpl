@@ -113,5 +113,7 @@ if status is-interactive
 
     atuin init --disable-up-arrow fish | source
 
+    if test "$TERM_PROGRAM" != "toggleterm"
+        starship init fish | source
     end
 end
