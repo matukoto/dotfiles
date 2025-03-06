@@ -175,4 +175,4 @@ require('oil').setup({
   },
 })
 
-vim.keymap.set('x', 'oil', '<cmd>Oil<CR>')
+vim.keymap.set('n', '<Leader>n', '<cmd>Oil --float<CR>')
