@@ -55,17 +55,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.buf.definition()
     end, opts)
     -- 定義ホバー
-    set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { buffer = true })
+    set('n', 'K', '<cmd>LspUI hover<CR>', { buffer = true })
     -- 実装へ移動
-    set('n', 'gl', vim.lsp.buf.implementation, opts)
+    set('n', 'gl', '<cmd>LspUI implementation<CR>', opts)
     -- 実装をホバー
-    set('n', 'gL', '<cmd>Lspsaga peek_definition<CR>', opts)
+    set('n', 'gL', '<cmd>LspUI definition<CR>', opts)
     -- 型の実装をホバー
-    set('n', 'gt', '<cmd>Lspsaga peek_type_definition<CR>', opts)
+    set('n', 'gt', '<cmd>LspUI type_definition<CR>', opts)
     -- 呼び出し元の表示
-    set('n', 'gf', '<cmd>Lspsaga finder ref<CR>', opts)
+    set('n', 'gf', '<cmd>LspUI finder ref<CR>', opts)
     -- リネーム
-    set('n', 'gr', '<cmd>Lspsaga rename<CR>', opts)
+    set('n', 'gr', '<cmd>LspUI rename<CR>', opts)
     -- Code action
     set('n', 'ga', '<cmd>Lspsaga code_action<CR>', opts)
     -- diagnostic
@@ -74,9 +74,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     set('n', 'ge', vim.diagnostic.open_float, { desc = 'diagnostic open_float' })
     set('n', 'gq', vim.diagnostic.setqflist, { desc = 'LSP diagnostic setqflist' })
     -- 次の診断へ移動
-    set('n', 'g[', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+    set('n', 'g[', '<cmd>LspUI diagnostic prev<CR>', opts)
     -- 前の診断へ移動
-    set('n', 'g]', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
+    set('n', 'g]', '<cmd>LspUI diagnostic next<CR>', opts)
 
     vim.diagnostic.config({
       -- 深刻度によるソート
