@@ -53,6 +53,7 @@ function! s:init() abort
   call jetpack#add('uga-rosa/ddc-source-nvim-lua')
   call jetpack#add('shougo/ddc-source-cmdline')
   call jetpack#add('shougo/ddc-source-cmdline_history')
+  call jetpack#add('shougo/ddc-filter-converter_remove_overlap')
   " popup
   call jetpack#add('matsui54/denops-popup-preview.vim')
   call jetpack#add('matsui54/denops-signature_help')

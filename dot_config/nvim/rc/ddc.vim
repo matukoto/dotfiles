@@ -13,12 +13,23 @@ call ddc#custom#patch_global('ui', 'pum')
 " cmdline_history: コマンドライン履歴
 call ddc#custom#patch_global('sources', ['skkeleton','file','around','buffer','lsp','cmdline','cmdline_history'])
 
+call ddc#custom#patch_global('filterParams', {
+    \ 'matcher_fuzzy': {
+    \   'splitMode': 'word',
+    \ }
+    \ })
+call ddc#custom#patch_global('filterParams', {
+    \ 'converter_fuzzy': {
+    \   'hlGroup': 'SpellBad'
+    \ }
+    \ })
+
 " 全ソース共通のデフォルト設定
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_fuzzy'],    
       \   'sorters': ['sorter_fuzzy'],      
-      \   'converters': ['converter_fuzzy'], 
+      \   'converters': ['converter_remove_overlap'],
       \   'maxItems': [50],                 
       \ }
       \ })
