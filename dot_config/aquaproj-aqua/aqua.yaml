@@ -26,3 +26,4 @@ packages:
   - name: docker/compose@v2.33.1
   - name: natecraddock/zf@0.10.2
   - name: nushell/nushell@0.102.0
+  - name: duckdb/duckdb@v1.2.1
