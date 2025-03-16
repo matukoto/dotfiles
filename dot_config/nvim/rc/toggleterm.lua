@@ -7,7 +7,7 @@ require('toggleterm').setup({
       return vim.o.columns * 0.4
     end
   end,
-  -- open_mapping = [[<c-\>]], -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
+  open_mapping = [[<c-\>]], -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
   -- on_create = fun(t: Terminal), -- function to run when the terminal is first created
   on_open = function(term) -- function to run when the terminal opens
     vim.api.nvim_buf_set_keymap(
