@@ -4,10 +4,14 @@
 [user]
   email = keisuke.suke.san@gmail.com
   name = MATSUMOTO Keisuke
+  signingkey = 3341DFDA70AD7C39
 [fetch]
   # fetch 時に自動で --prune を実行し、リモートで削除されたブランチをローカルでも削除してくれる
   prune = true
+[gpg]
+  program = /usr/bin/gpg
 [commit]
+  gpgsign = true
   template = ~/.config/vim/gitmessage
 {{- end -}}
 
@@ -19,6 +23,7 @@
 [ghq]
   root = ~/work
 {{ end }}
+
 {{ if eq .chezmoi.os "windows" }}
 [credential]
   helper = manager
