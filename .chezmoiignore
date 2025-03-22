@@ -7,6 +7,7 @@ windows/
 my_private*
 README.md
 *time
+*.key
 renovate.json
 minimal_init.lua
 {{ if eq .chezmoi.os "windows" -}}

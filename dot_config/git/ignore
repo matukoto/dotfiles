@@ -21,3 +21,4 @@ Icon?
 .envrc
 .venv
 .env
+*.key
