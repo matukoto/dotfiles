@@ -21,6 +21,7 @@ function! s:init() abort
   call jetpack#add('jinzhongjia/LspUI.nvim')
   call jetpack#add('j-hui/fidget.nvim')
   call jetpack#add('nanotee/sqls.nvim')
+  call jetpack#add('rachartier/tiny-code-action.nvim')
   call jetpack#add('rachartier/tiny-inline-diagnostic.nvim')
   " call jetpack#add('nvimtools/none-ls.nvim')
   " java
@@ -58,7 +59,6 @@ function! s:init() abort
   " popup
   call jetpack#add('matsui54/denops-popup-preview.vim')
   call jetpack#add('matsui54/denops-signature_help')
-
   " ファイラ
   call jetpack#add('lambdalisue/vim-fern')
   call jetpack#add('yuki-yano/fern-preview.vim')
