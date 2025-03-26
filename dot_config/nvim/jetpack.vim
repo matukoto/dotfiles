@@ -21,6 +21,7 @@ function! s:init() abort
   call jetpack#add('jinzhongjia/LspUI.nvim')
   call jetpack#add('j-hui/fidget.nvim')
   call jetpack#add('nanotee/sqls.nvim')
+  call jetpack#add('rachartier/tiny-inline-diagnostic.nvim')
   " call jetpack#add('nvimtools/none-ls.nvim')
   " java
   " call jetpack#add('nvim-java/lua-async-await')
