@@ -117,6 +117,8 @@ function! s:init() abort
   call jetpack#add('atusy/qfscope.nvim')
   call jetpack#add('cljoly/telescope-repo.nvim')
   call jetpack#add('prochri/telescope-all-recent.nvim')
+  " snacks
+  call jetpack#add('folke/snacks.nvim')
 
   " バッファ
   call jetpack#add('johann2357/nvim-smartbufs')
