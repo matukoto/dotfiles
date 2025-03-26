@@ -16,3 +16,7 @@ require('snacks').setup({
     },
   },
 })
+
+vim.keymap.set('n', '<leader>b', function()
+  Snacks.picker.buffers()
+end)
