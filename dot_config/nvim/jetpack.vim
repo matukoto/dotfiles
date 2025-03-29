@@ -197,6 +197,7 @@ function! s:init() abort
   " AI
   call jetpack#add('zbirenbaum/copilot.lua')
   call jetpack#add('CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' })
+  call jetpack#add('olimorris/codecompanion.nvim')
 
   " DB
   call jetpack#add('tpope/vim-dadbod')
