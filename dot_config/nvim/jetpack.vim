@@ -152,9 +152,6 @@ function! s:init() abort
   call jetpack#add('kevinhwang91/nvim-hlslens')
   call jetpack#add('haya14busa/vim-asterisk')
   call jetpack#add('0xAdk/full_visual_line.nvim')
-  call jetpack#add('zbirenbaum/copilot.lua')
-  " call jetpack#add('github/copilot.vim')
-  call jetpack#add('CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' })
   call jetpack#add('tyru/capture.vim')
   " call jetpack#add('reireias/vim-cheatsheet')
   call jetpack#add('itchyny/vim-cursorword')
@@ -197,6 +194,9 @@ function! s:init() abort
   call jetpack#add('wakatime/vim-wakatime')
   call jetpack#add('mikavilpas/yazi.nvim')
   call jetpack#add('echasnovski/mini.test')
+  " AI
+  call jetpack#add('zbirenbaum/copilot.lua')
+  call jetpack#add('CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' })
 
   " DB
   call jetpack#add('tpope/vim-dadbod')
