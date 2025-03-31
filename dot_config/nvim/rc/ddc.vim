@@ -11,29 +11,30 @@ call ddc#custom#patch_global('ui', 'pum')
 " lsp: Language Server
 " cmdline: コマンドライン補完
 " cmdline_history: コマンドライン履歴
-call ddc#custom#patch_global('sources', ['skkeleton','file','around','buffer','lsp','cmdline','cmdline_history'])
+call ddc#custom#patch_global('sources', ['skkeleton'])
+",'file','around','buffer','lsp','cmdline','cmdline_history'])
 
-call ddc#custom#patch_global('filterParams', {
-    \ 'matcher_fuzzy': {
-    \   'splitMode': 'word',
-    \ }
-    \ })
-call ddc#custom#patch_global('filterParams', {
-    \ 'converter_fuzzy': {
-    \   'hlGroup': 'SpellBad'
-    \ }
-    \ })
-
-" 全ソース共通のデフォルト設定
-call ddc#custom#patch_global('sourceOptions', {
-      \ '_': {
-      \   'matchers': ['matcher_fuzzy'],    
-      \   'sorters': ['sorter_fuzzy'],      
-      \   'converters': ['converter_remove_overlap'],
-      \   'maxItems': [50],                 
-      \ }
-      \ })
-
+" call ddc#custom#patch_global('filterParams', {
+"     \ 'matcher_fuzzy': {
+"     \   'splitMode': 'word',
+"     \ }
+"     \ })
+" call ddc#custom#patch_global('filterParams', {
+"     \ 'converter_fuzzy': {
+"     \   'hlGroup': 'SpellBad'
+"     \ }
+"     \ })
+"
+" " 全ソース共通のデフォルト設定
+" call ddc#custom#patch_global('sourceOptions', {
+"       \ '_': {
+"       \   'matchers': ['matcher_fuzzy'],    
+"       \   'sorters': ['sorter_fuzzy'],      
+"       \   'converters': ['converter_remove_overlap'],
+"       \   'maxItems': [50],                 
+"       \ }
+"       \ })
+"
 " skkeletonソースの設定
 call ddc#custom#patch_global('sourceOptions', {
       \ 'skkeleton': {
@@ -47,71 +48,71 @@ call ddc#custom#patch_global('sourceOptions', {
       \ })
 
 " aroundソースの設定（カーソル周辺の単語を補完）
-call ddc#custom#patch_global('sourceOptions', {
-      \ 'around': {
-      \ 'mark': 'A',                       
-      \ 'minAutoCompleteLength': 2,        
-      \ },
-      \ })
-
-" LSPソースの設定
-call ddc#custom#patch_global('sourceOptions', {
-      \ 'lsp': {
-      \   'mark': 'lsp',                  
-      \   'isVolatile': v:true,           
-      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
-      \   'minAutoCompleteLength': 2,    
-      \ },
-      \ })
-
-" バッファソースの設定
-call ddc#custom#patch_global('sourceOptions', {
-      \ '_': {'matchers': ['matcher_head']},
-    \ 'buffer': {'mark': 'B'},             
-    \ })
-
-" バッファソースのパラメータ設定
-call ddc#custom#patch_global('sourceParams', {
-    \ 'buffer': {
-    \   'requireSameFiletype': v:false,   
-    \   'limitBytes': 5000000,            
-    \   'fromAltBuf': v:true,             
-    \   'forceCollect': v:true,           
-    \ },
-    \ })
-
-" ファイルパス補完の設定
-call ddc#custom#patch_global('sourceOptions', {
-      \ 'file': {
-      \   'mark': 'F',                     
-      \   'isVolatile': v:true,            
-      \   'forceCompletionPattern': '\S/\S*',
-      \   'minAutoCompleteLength': 1,       
-      \ },
-      \ })
-
-" LSPソースのスニペット設定
-call ddc#custom#patch_global('sourceParams', #{
-      \   lsp: #{
-      \     snippetEngine: denops#callback#register({
-      \           body -> vsnip#anonymous(body)
-      \     }),
-      \     enableResolveItem: v:true,      
-      \     enableAdditionalTextEdit: v:true, 
-      \   }
-      \ })
-
-" コマンドライン補完の設定
-call ddc#custom#patch_global('sourceOptions', #{
-      \   cmdline: #{
-      \     mark: 'cmdline', 
-      \   }
-      \ })
-
-" コマンドライン履歴の設定
-call ddc#custom#patch_global('sourceOptions', #{
-      \   cmdline_history: #{ mark: 'history' },  
-      \ })
+" call ddc#custom#patch_global('sourceOptions', {
+"       \ 'around': {
+"       \ 'mark': 'A',                       
+"       \ 'minAutoCompleteLength': 2,        
+"       \ },
+"       \ })
+"
+" " LSPソースの設定
+" call ddc#custom#patch_global('sourceOptions', {
+"       \ 'lsp': {
+"       \   'mark': 'lsp',                  
+"       \   'isVolatile': v:true,           
+"       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+"       \   'minAutoCompleteLength': 2,    
+"       \ },
+"       \ })
+"
+" " バッファソースの設定
+" call ddc#custom#patch_global('sourceOptions', {
+"       \ '_': {'matchers': ['matcher_head']},
+"     \ 'buffer': {'mark': 'B'},             
+"     \ })
+"
+" " バッファソースのパラメータ設定
+" call ddc#custom#patch_global('sourceParams', {
+"     \ 'buffer': {
+"     \   'requireSameFiletype': v:false,   
+"     \   'limitBytes': 5000000,            
+"     \   'fromAltBuf': v:true,             
+"     \   'forceCollect': v:true,           
+"     \ },
+"     \ })
+"
+" " ファイルパス補完の設定
+" call ddc#custom#patch_global('sourceOptions', {
+"       \ 'file': {
+"       \   'mark': 'F',                     
+"       \   'isVolatile': v:true,            
+"       \   'forceCompletionPattern': '\S/\S*',
+"       \   'minAutoCompleteLength': 1,       
+"       \ },
+"       \ })
+"
+" " LSPソースのスニペット設定
+" call ddc#custom#patch_global('sourceParams', #{
+"       \   lsp: #{
+"       \     snippetEngine: denops#callback#register({
+"       \           body -> vsnip#anonymous(body)
+"       \     }),
+"       \     enableResolveItem: v:true,      
+"       \     enableAdditionalTextEdit: v:true, 
+"       \   }
+"       \ })
+"
+" " コマンドライン補完の設定
+" call ddc#custom#patch_global('sourceOptions', #{
+"       \   cmdline: #{
+"       \     mark: 'cmdline', 
+"       \   }
+"       \ })
+"
+" " コマンドライン履歴の設定
+" call ddc#custom#patch_global('sourceOptions', #{
+"       \   cmdline_history: #{ mark: 'history' },  
+"       \ })
 
 " ddc.vimを有効化
 call ddc#enable()
@@ -123,42 +124,42 @@ inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
 inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 
 " コマンドライン補完の詳細設定
-call ddc#custom#patch_global(#{
-        \   ui: 'pum',
-        \   autoCompleteEvents: [ 
-        \     'InsertEnter',      
-        \     'TextChangedI',     
-        \     'TextChangedP',     
-        \     'CmdlineChanged',   
-        \   ],
-        \   cmdlineSources: {
-        \     ':': ['cmdline', 'cmdline_history', 'around']  
-        \   },
-        \ })
-
-" コマンドラインモード開始のマッピング
-nnoremap ;       <Cmd>call CommandlinePre()<CR>:
-
-" コマンドラインモード開始時の設定
-function! CommandlinePre() abort
-    " コマンドラインモードでのキーマッピング
-    cnoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
-    cnoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
-    cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
-    cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
-
-    " コマンドラインモード終了時に後処理を実行
-    autocmd User DDCCmdlineLeave ++once call CommandlinePost()
-
-    " コマンドライン補完を有効化
-    call ddc#enable_cmdline_completion()
-endfunction
-
-" コマンドラインモード終了時の後処理
-function! CommandlinePost() abort
-    " キーマッピングを解除
-    silent! cunmap <C-n>
-    silent! cunmap <C-p>
-    silent! cunmap <C-y>
-    silent! cunmap <C-e>
-endfunction
+" call ddc#custom#patch_global(#{
+"         \   ui: 'pum',
+"         \   autoCompleteEvents: [ 
+"         \     'InsertEnter',      
+"         \     'TextChangedI',     
+"         \     'TextChangedP',     
+"         \     'CmdlineChanged',   
+"         \   ],
+"         \   cmdlineSources: {
+"         \     ':': ['cmdline', 'cmdline_history', 'around']  
+"         \   },
+"         \ })
+"
+" " コマンドラインモード開始のマッピング
+" nnoremap ;       <Cmd>call CommandlinePre()<CR>:
+"
+" " コマンドラインモード開始時の設定
+" function! CommandlinePre() abort
+"     " コマンドラインモードでのキーマッピング
+"     cnoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
+"     cnoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
+"     cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+"     cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+"
+"     " コマンドラインモード終了時に後処理を実行
+"     autocmd User DDCCmdlineLeave ++once call CommandlinePost()
+"
+"     " コマンドライン補完を有効化
+"     call ddc#enable_cmdline_completion()
+" endfunction
+"
+" " コマンドラインモード終了時の後処理
+" function! CommandlinePost() abort
+"     " キーマッピングを解除
+"     silent! cunmap <C-n>
+"     silent! cunmap <C-p>
+"     silent! cunmap <C-y>
+"     silent! cunmap <C-e>
+" endfunction
