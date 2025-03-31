@@ -1,9 +1,20 @@
+local lspconfig = require('lspconfig')
+local function server_register(server_name)
+  local opts = {}
+  local success, req_opts = pcall(require, 'plugins.lsp.servers.' .. server_name)
+  if success then
+    opts = req_opts
+  end
+  opts.capabilities = require('blink.cmp').get_lsp_capabilities(opts.capabilities)
+  lspconfig[server_name].setup(opts)
+end
 require('mason').setup({
   registries = {
     'github:nvim-java/mason-registry',
     'github:mason-org/mason-registry',
   },
 })
+require('mason-lspconfig').setup_handlers({ server_register })
 require('mason-lspconfig').setup({
   ensure_installed = {
     'svelte',
@@ -105,8 +116,6 @@ for type, icon in pairs(signs) do
   local hl = 'DiagnosticSign' .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl })
 end
-
-local lspconfig = require('lspconfig')
 
 lspconfig.gopls.setup({
   settings = {

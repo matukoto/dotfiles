@@ -39,6 +39,7 @@ function! s:init() abort
 
   " ddc
   call jetpack#add('shougo/ddc.vim')
+  call jetpack#add('saghen/blink.cmp',{'build':'cargo build --release'})
   " filter
   call jetpack#add('shougo/ddc-matcher_head')
   call jetpack#add('shougo/ddc-sorter_rank')
