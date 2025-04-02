@@ -20,3 +20,8 @@ require('snacks').setup({
 vim.keymap.set('n', '<leader>b', function()
   Snacks.picker.buffers()
 end)
+
+vim.keymap.set('n', '<leader>k', function()
+  require('snacks.picker.config.sources').kensaku = require('plugins/snacks/sources/kensaku')
+  Snacks.picker.kensaku()
+end)
