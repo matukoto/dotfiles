@@ -1,5 +1,13 @@
 require('snacks').setup({
   picker = {
+    layout = {
+      preset = 'dropdown',
+      layout = {
+        width = 0.8,
+        min_width = 100,
+        height = 0.9,
+      },
+    },
     win = {
       input = {
         keys = {
