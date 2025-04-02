@@ -38,6 +38,7 @@ require('blink.cmp').setup({
     menu = {
       -- Don't automatically show the completion menu
       auto_show = true,
+      border = 'rounded',
 
       -- nvim-cmp style menu
       draw = {
@@ -49,7 +50,7 @@ require('blink.cmp').setup({
     },
 
     -- Show documentation when selecting a completion item
-    documentation = { auto_show = true, auto_show_delay_ms = 1000 },
+    documentation = { window = { border = 'double' }, auto_show = true, auto_show_delay_ms = 1000 },
 
     -- Display a preview of the selected item on the current line
     ghost_text = { enabled = true },
@@ -64,6 +65,6 @@ require('blink.cmp').setup({
   snippets = { preset = 'default' },
 
   -- Experimental signature help support
-  signature = { enabled = true },
+  signature = { window = { border = 'solid' }, enabled = true },
   fuzzy = { implementation = 'lua' },
 })
