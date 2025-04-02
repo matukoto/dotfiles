@@ -58,8 +58,8 @@ function! s:init() abort
   " call jetpack#add('shougo/ddc-source-cmdline_history')
   " call jetpack#add('shougo/ddc-filter-converter_remove_overlap')
   " popup
-  call jetpack#add('matsui54/denops-popup-preview.vim')
-  call jetpack#add('matsui54/denops-signature_help')
+  " call jetpack#add('matsui54/denops-popup-preview.vim')
+  " call jetpack#add('matsui54/denops-signature_help')
   " ファイラ
   call jetpack#add('lambdalisue/vim-fern')
   call jetpack#add('yuki-yano/fern-preview.vim')
