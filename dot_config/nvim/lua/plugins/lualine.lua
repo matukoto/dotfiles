@@ -1,0 +1,95 @@
+-- dot_config/nvim/lua/plugins/lualine.lua
+
+-- Define the custom component in the module scope
+local CTimeLine = require('lualine.component'):extend()
+CTimeLine.init = function(self, options)
+  CTimeLine.super.init(self, options)
+end
+CTimeLine.update_status = function(self)
+  return os.date(self.options.format or '%H:%M', os.time())
+end
+
+return {
+  -- Plugin specification for lazy.nvim
+  -- The name 'nvim-lualine/lualine.nvim' should match the entry in the main plugins list
+  -- lazy.nvim automatically merges this specification.
+
+  -- opts will be passed to require('lualine').setup() by lazy.nvim
+  opts = {
+    options = {
+      icons_enabled = true,
+      theme = 'auto',
+      component_separators = { left = '', right = '' },
+      section_separators = { left = '', right = '' },
+      disabled_filetypes = {
+        statusline = {},
+        winbar = {},
+      },
+      ignore_focus = {},
+      always_divide_middle = true,
+      globalstatus = true,
+      refresh = {
+        statusline = 1000,
+        tabline = 1000,
+        winbar = 1000,
+      },
+    },
+    sections = {
+      lualine_a = { 'mode' },
+      lualine_b = { 'branch', 'diff' },
+      lualine_c = {
+        'diagnostics',
+        -- Note: Original had commented out sub-options for diagnostics
+        -- sources = { 'nvim_lsp' },
+        -- sections = { 'error', 'warn', 'info', 'hint' },
+        -- symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
+      },
+      lualine_x = {
+        {
+          'copilot',
+          show_colors = false, -- Specific config for copilot component
+        },
+        'fileformat',
+        'filetype',
+      },
+      lualine_y = { 'location', 'progress' },
+      lualine_z = { CTimeLine }, -- Reference the custom component defined above
+    },
+    inactive_sections = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = { 'filename' },
+      lualine_x = { 'location' },
+      lualine_y = {},
+      lualine_z = {},
+    },
+    tabline = {},
+    winbar = {},
+    inactive_winbar = {},
+    extensions = {}, -- Add extensions like 'nvim-tree', 'toggleterm' if needed
+  },
+  -- config function runs *after* setup(opts) because opts is defined
+  config = function(_, opts)
+    -- Apply the options using setup
+    require('lualine').setup(opts)
+
+    -- Place the autocmd here, as it needs lualine to be loaded
+    -- Use a specific augroup name to avoid conflicts
+    vim.api.nvim_create_augroup('LualineLspProgress', { clear = true })
+    vim.api.nvim_create_autocmd('User', {
+      group = 'LualineLspProgress',
+      pattern = 'LspProgressStatusUpdated',
+      callback = function()
+        -- Ensure lualine is loaded before calling refresh
+        -- Using pcall is safer in autocmds
+        local lualine_ok, lualine = pcall(require, 'lualine')
+        if lualine_ok then
+          lualine.refresh()
+        else
+          vim.notify("Lualine refresh failed in autocmd", vim.log.levels.WARN)
+        end
+      end,
+    })
+    -- print("Lualine config executed.") -- For debugging if needed
+  end,
+}
