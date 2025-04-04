@@ -7,8 +7,8 @@ return {
     -- 'nvim-lua/plenary.nvim', -- May be needed by some features
   },
   -- Load lazily, often triggered by LSP events or specific commands/keymaps
-  event = "LspAttach",
-  cmd = { "Lspsaga" }, -- Expose the main command
+  event = 'LspAttach',
+  cmd = { 'Lspsaga' }, -- Expose the main command
   -- opts table passes configuration directly to setup()
   opts = {
     ui = {
@@ -151,16 +151,28 @@ return {
       layout = 'float',
       left_width = 0.2,
       keys = {
-        edit = 'e', vsplit = 's', split = 'i', tabe = 't',
-        close = '<C-c>k', quit = 'q', shuttle = '[w', toggle_or_req = 'u',
+        edit = 'e',
+        vsplit = 's',
+        split = 'i',
+        tabe = 't',
+        close = '<C-c>k',
+        quit = 'q',
+        shuttle = '[w',
+        toggle_or_req = 'u',
       },
     },
     typehierarchy = {
       layout = 'float',
       left_width = 0.2,
       keys = {
-        edit = 'e', vsplit = 's', split = 'i', tabe = 't',
-        close = '<C-c>k', quit = 'q', shuttle = '[w', toggle_or_req = 'u',
+        edit = 'e',
+        vsplit = 's',
+        split = 'i',
+        tabe = 't',
+        close = '<C-c>k',
+        quit = 'q',
+        shuttle = '[w',
+        toggle_or_req = 'u',
       },
     },
     implement = {
@@ -184,19 +196,29 @@ return {
   -- Define keymaps using the 'keys' table (optional, can also be in lspconfig)
   -- These are common mappings often associated with lspsaga
   keys = {
-     -- LSP Navigation / Actions (ensure these don't conflict with lspconfig mappings)
-     { "gh", "<cmd>Lspsaga lsp_finder<CR>", desc = "LSP Finder" },
-     { "ga", "<cmd>Lspsaga code_action<CR>", mode = {"n", "v"}, desc = "Code Action" },
-     { "K",  "<cmd>Lspsaga hover_doc<CR>", mode = "n", desc = "Hover Doc" },
-     { "gd", "<cmd>Lspsaga peek_definition<CR>", mode = "n", desc = "Peek Definition" },
-     { "gr", "<cmd>Lspsaga rename<CR>", mode = "n", desc = "Rename" },
-     -- Diagnostics
-     { "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", mode = "n", desc = "Prev Diagnostic" },
-     { "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", mode = "n", desc = "Next Diagnostic" },
-     { "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>", mode = "n", desc = "Show Line Diagnostics" },
-     { "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>", mode = "n", desc = "Show Buffer Diagnostics" },
-     -- Outline
-     { "<leader>so", "<cmd>Lspsaga outline<CR>", mode = "n", desc = "Outline" },
+    -- LSP Navigation / Actions (ensure these don't conflict with lspconfig mappings)
+    { 'gh', '<cmd>Lspsaga lsp_finder<CR>', desc = 'LSP Finder' },
+    { 'ga', '<cmd>Lspsaga code_action<CR>', mode = { 'n', 'v' }, desc = 'Code Action' },
+    { 'K', '<cmd>Lspsaga hover_doc<CR>', mode = 'n', desc = 'Hover Doc' },
+    { 'gd', '<cmd>Lspsaga peek_definition<CR>', mode = 'n', desc = 'Peek Definition' },
+    { 'gr', '<cmd>Lspsaga rename<CR>', mode = 'n', desc = 'Rename' },
+    -- Diagnostics
+    { '[e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', mode = 'n', desc = 'Prev Diagnostic' },
+    { ']e', '<cmd>Lspsaga diagnostic_jump_next<CR>', mode = 'n', desc = 'Next Diagnostic' },
+    {
+      '<leader>sl',
+      '<cmd>Lspsaga show_line_diagnostics<CR>',
+      mode = 'n',
+      desc = 'Show Line Diagnostics',
+    },
+    {
+      '<leader>sb',
+      '<cmd>Lspsaga show_buf_diagnostics<CR>',
+      mode = 'n',
+      desc = 'Show Buffer Diagnostics',
+    },
+    -- Outline
+    { '<leader>so', '<cmd>Lspsaga outline<CR>', mode = 'n', desc = 'Outline' },
   },
   -- No explicit config function needed if opts and keys are sufficient
   -- config = function(_, opts)

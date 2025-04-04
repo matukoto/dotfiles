@@ -5,8 +5,8 @@ return {
   -- Dependencies: plenary is often needed
   dependencies = { 'nvim-lua/plenary.nvim' },
   -- Load lazily, triggered by command or keymap
-  cmd = { "Yazi" },
-  event = "VeryLazy",
+  cmd = { 'Yazi' },
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   opts = {
     -- Keymaps within the yazi buffer
@@ -30,13 +30,15 @@ return {
   -- Define global keymaps using the 'keys' table
   keys = {
     {
-      "<leader>y",
+      '<leader>y',
       function()
         -- Ensure yazi is loaded before calling
-        local ok, yazi = pcall(require, "yazi")
-        if ok then yazi.yazi() end
+        local ok, yazi = pcall(require, 'yazi')
+        if ok then
+          yazi.yazi()
+        end
       end,
-      desc = "Open Yazi File Manager",
+      desc = 'Open Yazi File Manager',
     },
   },
   -- No explicit config function needed if opts and keys are sufficient

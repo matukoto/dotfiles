@@ -3,8 +3,8 @@
 return {
   'echasnovski/mini.test',
   -- Load lazily, perhaps only when running tests or specific commands
-  cmd = { "MiniTest" }, -- Expose the main command if needed
-  event = "VeryLazy",
+  cmd = { 'MiniTest' }, -- Expose the main command if needed
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   opts = {
     -- Configure test discovery, execution, reporting, etc.

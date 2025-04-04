@@ -5,8 +5,8 @@ return {
   -- Dependencies: Telescope is often used as the picker backend
   dependencies = { 'nvim-telescope/telescope.nvim' },
   -- Load lazily, triggered by commands or keymaps
-  cmd = { "SnacksOpen", "SnacksClose", "SnacksHide", "SnacksShow", "SnacksPicker" },
-  event = "VeryLazy",
+  cmd = { 'SnacksOpen', 'SnacksClose', 'SnacksHide', 'SnacksShow', 'SnacksPicker' },
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   opts = {
     -- Configure the picker UI (likely Telescope)
@@ -45,24 +45,24 @@ return {
   -- Define global keymaps using the 'keys' table
   keys = {
     {
-      "<leader>b", -- Original keymap for buffer picker
+      '<leader>b', -- Original keymap for buffer picker
       function()
         -- Ensure snacks is loaded before calling picker
-        local ok, snacks = pcall(require, "snacks")
+        local ok, snacks = pcall(require, 'snacks')
         if ok then
           snacks.picker.buffers()
         else
-          vim.notify("snacks.nvim not loaded.", vim.log.levels.WARN)
+          vim.notify('snacks.nvim not loaded.', vim.log.levels.WARN)
         end
       end,
-      desc = "Pick Buffers (Snacks)",
+      desc = 'Pick Buffers (Snacks)',
     },
     {
-      "<leader>k", -- Original keymap for kensaku picker
+      '<leader>k', -- Original keymap for kensaku picker
       function()
-        local snacks_ok, snacks = pcall(require, "snacks")
+        local snacks_ok, snacks = pcall(require, 'snacks')
         if not snacks_ok then
-          vim.notify("snacks.nvim not loaded.", vim.log.levels.WARN)
+          vim.notify('snacks.nvim not loaded.', vim.log.levels.WARN)
           return
         end
         -- Attempt to load the custom kensaku source
@@ -73,16 +73,16 @@ return {
           -- This might need to be done in the config function instead for reliability
           local sources_ok, sources = pcall(require, 'snacks.picker.config.sources')
           if sources_ok then
-             sources.kensaku = kensaku_source
-             snacks.picker.kensaku()
+            sources.kensaku = kensaku_source
+            snacks.picker.kensaku()
           else
-             vim.notify("Failed to access snacks sources.", vim.log.levels.WARN)
+            vim.notify('Failed to access snacks sources.', vim.log.levels.WARN)
           end
         else
-          vim.notify("Failed to load custom kensaku source.", vim.log.levels.WARN)
+          vim.notify('Failed to load custom kensaku source.', vim.log.levels.WARN)
         end
       end,
-      desc = "Pick Kensaku (Snacks)",
+      desc = 'Pick Kensaku (Snacks)',
     },
   },
   -- config function can be used for setup that requires the plugin to be loaded

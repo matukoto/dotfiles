@@ -3,7 +3,7 @@ return {
   'j-hui/fidget.nvim',
   tag = 'legacy', -- Specify the tag used in the main plugins list
   -- Load lazily, typically when LSP starts attaching
-  event = "LspAttach",
+  event = 'LspAttach',
   -- opts table passes configuration directly to setup()
   opts = {
     progress = {
@@ -36,10 +36,14 @@ return {
         skip_history = true,
         -- format_message requires fidget to be loaded, safe within opts
         format_message = function(...)
-            return require('fidget.progress.display').default_format_message(...)
+          return require('fidget.progress.display').default_format_message(...)
         end,
-        format_annote = function(msg) return msg.title end,
-        format_group_name = function(group) return tostring(group) end,
+        format_annote = function(msg)
+          return msg.title
+        end,
+        format_group_name = function(group)
+          return tostring(group)
+        end,
       },
       lsp = {
         progress_ringbuf_size = 0,
@@ -59,10 +63,10 @@ return {
       redirect = function(msg, level, opts)
         -- Example: Redirect to nvim-notify if available and on_open is used
         if opts and opts.on_open then
-           local notify_ok, nvim_notify = pcall(require, 'fidget.integration.nvim-notify')
-           if notify_ok then
-              return nvim_notify.delegate(msg, level, opts)
-           end
+          local notify_ok, nvim_notify = pcall(require, 'fidget.integration.nvim-notify')
+          if notify_ok then
+            return nvim_notify.delegate(msg, level, opts)
+          end
         end
         -- Default behavior (no redirection)
         return nil

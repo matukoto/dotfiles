@@ -2,8 +2,8 @@
 return {
   'zbirenbaum/copilot.lua',
   -- Load when entering insert mode or specific commands are used
-  event = "InsertEnter",
-  cmd = { "Copilot", "CopilotAuth", "CopilotPanel", "CopilotSuggestion" },
+  event = 'InsertEnter',
+  cmd = { 'Copilot', 'CopilotAuth', 'CopilotPanel', 'CopilotSuggestion' },
   -- opts table passes configuration directly to setup()
   opts = {
     panel = {
@@ -27,18 +27,18 @@ return {
       hide_during_completion = true,
       debounce = 75,
       keymap = {
-        accept = '<Tab>',      -- サジェストを確定（Tab）
-        accept_word = false,   -- 単語単位での確定を無効化
-        accept_line = false,   -- 行単位での確定を無効化
-        next = '<M-]>',       -- 次のサジェストに移動（Alt+]）
-        prev = '<M-[>',       -- 前のサジェストに移動（Alt+[）
-        dismiss = '<C-]>',     -- サジェストを閉じる（Ctrl+]）
+        accept = '<Tab>', -- サジェストを確定（Tab）
+        accept_word = false, -- 単語単位での確定を無効化
+        accept_line = false, -- 行単位での確定を無効化
+        next = '<M-]>', -- 次のサジェストに移動（Alt+]）
+        prev = '<M-[>', -- 前のサジェストに移動（Alt+[）
+        dismiss = '<C-]>', -- サジェストを閉じる（Ctrl+]）
         -- expand = '<C-Space>', -- Vim script設定から追加 (copilot#expand() は直接呼べないため、代替手段が必要か確認)
       },
     },
     -- filetypes from copilot.vim (empty in this case, but merging logic shown)
     -- Merge with existing filetypes, Vim script settings take precedence if defined
-    filetypes = vim.tbl_deep_extend("force", {
+    filetypes = vim.tbl_deep_extend('force', {
       yaml = false,
       markdown = true,
       help = false,

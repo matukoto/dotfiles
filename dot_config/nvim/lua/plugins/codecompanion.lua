@@ -8,8 +8,8 @@ return {
     'nvim-telescope/telescope.nvim', -- For default picker
   },
   -- Load lazily, triggered by commands or keymaps
-  cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionInline" },
-  event = "VeryLazy",
+  cmd = { 'CodeCompanion', 'CodeCompanionChat', 'CodeCompanionInline' },
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   -- Note: The original config had setup({ opts = { ... } }),
   -- so we use the inner table directly as lazy.nvim's opts.
@@ -51,13 +51,28 @@ return {
   },
   -- Define keymaps using the 'keys' table for discoverability
   keys = {
-     { "<leader>ca", "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanion Actions" },
-     { "<leader>cc", "<cmd>CodeCompanionChat<cr>", desc = "CodeCompanion Chat" },
-     { "<leader>ci", "<cmd>CodeCompanionInline<cr>", desc = "CodeCompanion Inline" },
-     -- Add visual mode mappings if desired
-     { "<leader>ca", "<cmd>CodeCompanionActions<cr>", mode = "v", desc = "CodeCompanion Actions (Visual)" },
-     { "<leader>cc", "<cmd>CodeCompanionChat<cr>", mode = "v", desc = "CodeCompanion Chat (Visual)" },
-     { "<leader>ci", "<cmd>CodeCompanionInline<cr>", mode = "v", desc = "CodeCompanion Inline (Visual)" },
+    { '<leader>ca', '<cmd>CodeCompanionActions<cr>', desc = 'CodeCompanion Actions' },
+    { '<leader>cc', '<cmd>CodeCompanionChat<cr>', desc = 'CodeCompanion Chat' },
+    { '<leader>ci', '<cmd>CodeCompanionInline<cr>', desc = 'CodeCompanion Inline' },
+    -- Add visual mode mappings if desired
+    {
+      '<leader>ca',
+      '<cmd>CodeCompanionActions<cr>',
+      mode = 'v',
+      desc = 'CodeCompanion Actions (Visual)',
+    },
+    {
+      '<leader>cc',
+      '<cmd>CodeCompanionChat<cr>',
+      mode = 'v',
+      desc = 'CodeCompanion Chat (Visual)',
+    },
+    {
+      '<leader>ci',
+      '<cmd>CodeCompanionInline<cr>',
+      mode = 'v',
+      desc = 'CodeCompanion Inline (Visual)',
+    },
   },
   -- No explicit config function needed if opts and keys are sufficient
   -- config = function(_, opts)

@@ -1,7 +1,7 @@
 -- dot_config/nvim/lua/plugins/gitsigns.lua
 return {
   'lewis6991/gitsigns.nvim',
-  event = { "BufReadPre", "BufNewFile" }, -- Load when opening a file or creating a new one
+  event = { 'BufReadPre', 'BufNewFile' }, -- Load when opening a file or creating a new one
   opts = {
     -- signs = { ... }, -- Default signs are usually fine
     -- signcolumn = true, -- Show signs in the signcolumn
@@ -36,8 +36,12 @@ return {
       end
 
       -- Actions
-      map('n', '<C-g><', function() gs.stage_hunk() end, { desc = 'GitSigns Stage Hunk' })
-      map('n', '<C-g>>', function() gs.undo_stage_hunk() end, { desc = 'GitSigns Undo Stage Hunk' })
+      map('n', '<C-g><', function()
+        gs.stage_hunk()
+      end, { desc = 'GitSigns Stage Hunk' })
+      map('n', '<C-g>>', function()
+        gs.undo_stage_hunk()
+      end, { desc = 'GitSigns Undo Stage Hunk' })
       -- map('v', '<C-g><', function() gs.stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end, { desc = 'GitSigns Stage Hunk (Visual)'}) -- Example visual mode mapping
 
       -- Optional mappings (uncomment if needed)
@@ -62,22 +66,30 @@ return {
     {
       '<C-g>j',
       function()
-        if vim.wo.diff then return ']c' end
-        vim.schedule(function() require('gitsigns').next_hunk() end)
+        if vim.wo.diff then
+          return ']c'
+        end
+        vim.schedule(function()
+          require('gitsigns').next_hunk()
+        end)
         return '<Ignore>'
       end,
       expr = true,
-      desc = "GitSigns Next Hunk",
+      desc = 'GitSigns Next Hunk',
     },
     {
       '<C-g>k',
       function()
-        if vim.wo.diff then return '[c' end
-        vim.schedule(function() require('gitsigns').prev_hunk() end)
+        if vim.wo.diff then
+          return '[c'
+        end
+        vim.schedule(function()
+          require('gitsigns').prev_hunk()
+        end)
         return '<Ignore>'
       end,
       expr = true,
-      desc = "GitSigns Prev Hunk",
+      desc = 'GitSigns Prev Hunk',
     },
   },
   -- config function to set up autocmd after plugin loads
@@ -103,7 +115,7 @@ return {
     })
     -- Initial highlight setting in case ColorScheme event doesn't fire immediately
     if vim.fn.hlexists('GitSignsCurrentLineBlame') == 1 then
-       vim.api.nvim_set_hl(0, 'GitSignsCurrentLineBlame', { fg = '#888888', nocombine = true })
+      vim.api.nvim_set_hl(0, 'GitSignsCurrentLineBlame', { fg = '#888888', nocombine = true })
     end
   end,
 }

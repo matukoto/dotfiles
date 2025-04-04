@@ -5,8 +5,17 @@ return {
   -- Dependencies: Requires vim-dadbod
   dependencies = { 'tpope/vim-dadbod' },
   -- Load lazily, triggered by commands or keymaps
-  cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUIDeleteBuffer", "DBUISaveQuery", "DBUILastQueryInfo" },
-  event = "VeryLazy",
+  cmd = {
+    'DBUIToggle',
+    'DBUI',
+    'DBUIAddConnection',
+    'DBUIFindBuffer',
+    'DBUIRenameBuffer',
+    'DBUIDeleteBuffer',
+    'DBUISaveQuery',
+    'DBUILastQueryInfo',
+  },
+  event = 'VeryLazy',
   -- init function to set global variables before loading
   init = function()
     -- Set the location for saved queries
@@ -18,7 +27,7 @@ return {
   end,
   -- Define global keymaps using the 'keys' table
   keys = {
-    { "<Leader>w", "<Plug>(DBUI_SaveQuery)", mode = "n", desc = "DBUI Save Query" },
+    { '<Leader>w', '<Plug>(DBUI_SaveQuery)', mode = 'n', desc = 'DBUI Save Query' },
     -- Add other keymaps if desired
     -- { "<leader>db", "<cmd>DBUIToggle<cr>", desc = "Toggle DBUI" },
   },

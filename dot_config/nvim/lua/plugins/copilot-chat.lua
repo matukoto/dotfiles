@@ -9,8 +9,18 @@ return {
     'nvim-telescope/telescope.nvim', -- Needed for the custom prompt picker
   },
   -- Load lazily, triggered by commands or keymaps
-  cmd = { "CopilotChat", "CopilotChatBuffer", "CopilotChatExplain", "CopilotChatReview", "CopilotChatFix", "CopilotChatOptimize", "CopilotChatDocs", "CopilotChatTests", "CopilotChatFixDiagnostic" },
-  event = "VeryLazy",
+  cmd = {
+    'CopilotChat',
+    'CopilotChatBuffer',
+    'CopilotChatExplain',
+    'CopilotChatReview',
+    'CopilotChatFix',
+    'CopilotChatOptimize',
+    'CopilotChatDocs',
+    'CopilotChatTests',
+    'CopilotChatFixDiagnostic',
+  },
+  event = 'VeryLazy',
   opts = {
     debug = false, -- Disable debug logging
 
@@ -94,7 +104,7 @@ return {
     local select = require('CopilotChat.select')
     -- Update the FixDiagnostic prompt selection here after require
     if opts.prompts and opts.prompts.FixDiagnostic then
-        opts.prompts.FixDiagnostic.selection = select.diagnostics
+      opts.prompts.FixDiagnostic.selection = select.diagnostics
     end
 
     -- Call the setup function
@@ -109,7 +119,7 @@ return {
         local actions = require('CopilotChat.actions')
         telescope.pick(actions.prompt_actions())
       else
-        vim.notify("Telescope integration for CopilotChat not found.", vim.log.levels.WARN)
+        vim.notify('Telescope integration for CopilotChat not found.', vim.log.levels.WARN)
       end
     end
 
@@ -121,10 +131,19 @@ return {
     end
 
     -- Define keymaps after setup and function definitions
-    vim.keymap.set('n', '<leader>cp', '<cmd>lua _G.ShowCopilotChatActionPrompt()<cr>', { noremap = true, silent = true, desc = "CopilotChat Actions" })
-    vim.keymap.set('n', '<leader>cq', '<cmd>lua _G.CopilotChatBuffer()<cr>', { noremap = true, silent = true, desc = "CopilotChat Quick (Buffer)" })
+    vim.keymap.set(
+      'n',
+      '<leader>cp',
+      '<cmd>lua _G.ShowCopilotChatActionPrompt()<cr>',
+      { noremap = true, silent = true, desc = 'CopilotChat Actions' }
+    )
+    vim.keymap.set(
+      'n',
+      '<leader>cq',
+      '<cmd>lua _G.CopilotChatBuffer()<cr>',
+      { noremap = true, silent = true, desc = 'CopilotChat Quick (Buffer)' }
+    )
     -- Add visual mode mapping if needed
     -- vim.keymap.set('v', '<leader>cp', '<cmd>lua _G.ShowCopilotChatActionPrompt()<cr>', { noremap = true, silent = true, desc = "CopilotChat Actions (Visual)" })
-
   end,
 }

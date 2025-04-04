@@ -4,8 +4,8 @@ return {
   -- Dependencies: Uses Diffview for commit diffs
   dependencies = { 'sindrets/diffview.nvim' },
   -- Load lazily, triggered by the keymap or command
-  cmd = { "GitGraph" },
-  event = "VeryLazy",
+  cmd = { 'GitGraph' },
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   opts = {
     hooks = {
@@ -20,7 +20,7 @@ return {
           vim.cmd(':DiffviewOpen ' .. commit.hash .. '^!')
           vim.notify('DiffviewOpen ' .. commit.hash .. '^!') -- Optional notification
         else
-          vim.notify("Diffview not loaded.", vim.log.levels.WARN)
+          vim.notify('Diffview not loaded.', vim.log.levels.WARN)
         end
       end,
       on_select_range_commit = function(from, to)
@@ -29,7 +29,7 @@ return {
           vim.cmd(':DiffviewOpen ' .. from.hash .. '~1..' .. to.hash)
           vim.notify('DiffviewOpen ' .. from.hash .. '~1..' .. to.hash) -- Optional notification
         else
-          vim.notify("Diffview not loaded.", vim.log.levels.WARN)
+          vim.notify('Diffview not loaded.', vim.log.levels.WARN)
         end
       end,
     },
@@ -38,27 +38,43 @@ return {
       commit = '●',
       merge_commit_end = '○',
       commit_end = '●',
-      GVER = '│', GHOR = '─', GCLD = '╮', GCRD = '╭', GCLU = '╯', GCRU = '╰',
-      GLRU = '┴', GLRD = '┬', GLUD = '┤', GRUD = '├', GFORKU = '┼', GFORKD = '┼',
-      GRUDCD = '├', GRUDCU = '┡', GLUDCD = '┪', GLUDCU = '┩', GLRDCL = '┬',
-      GLRDCR = '┬', GLRUCL = '┴', GLRUCR = '┴',
+      GVER = '│',
+      GHOR = '─',
+      GCLD = '╮',
+      GCRD = '╭',
+      GCLU = '╯',
+      GCRU = '╰',
+      GLRU = '┴',
+      GLRD = '┬',
+      GLUD = '┤',
+      GRUD = '├',
+      GFORKU = '┼',
+      GFORKD = '┼',
+      GRUDCD = '├',
+      GRUDCU = '┡',
+      GLUDCD = '┪',
+      GLUDCU = '┩',
+      GLRDCL = '┬',
+      GLRDCR = '┬',
+      GLRUCL = '┴',
+      GLRUCR = '┴',
     },
     -- Other options like filetype, colors, etc. can be added here
   },
   -- Define keymaps using the 'keys' table
   keys = {
     {
-      "<C-g>g", -- Original keymap
+      '<C-g>g', -- Original keymap
       function()
         -- Ensure gitgraph is loaded before drawing
         local ok, gitgraph = pcall(require, 'gitgraph')
         if ok then
           gitgraph.draw({}, { all = true, max_count = 5000 })
         else
-          vim.notify("gitgraph.nvim not loaded.", vim.log.levels.WARN)
+          vim.notify('gitgraph.nvim not loaded.', vim.log.levels.WARN)
         end
       end,
-      desc = "Open Git Graph",
+      desc = 'Open Git Graph',
     },
   },
   -- No explicit config function needed if opts and keys are sufficient

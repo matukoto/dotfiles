@@ -210,7 +210,7 @@ vim.cmd('cabbrev h tab help')
 -- Plugin Management (Lazy.nvim)
 -- This section will be populated later after creating lazy.lua
 if vim.g.vscode then
-  -- VSCode extension specific settings (if any)
+-- VSCode extension specific settings (if any)
 else
   -- Plugin loading is handled at the end of the file by lazy.nvim setup
 end

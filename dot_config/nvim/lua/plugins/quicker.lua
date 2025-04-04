@@ -2,20 +2,24 @@
 return {
   'stevearc/quicker.nvim',
   -- Load lazily, triggered by command or keymap
-  cmd = { "QuickerToggle" },
-  event = "VeryLazy",
+  cmd = { 'QuickerToggle' },
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   opts = {
     -- Keymaps specific to the quickfix buffer
     keys = {
       {
         '>',
-        function() require('quicker').expand({ before = 2, after = 2, add_to_existing = true }) end,
+        function()
+          require('quicker').expand({ before = 2, after = 2, add_to_existing = true })
+        end,
         desc = 'Expand quickfix context',
       },
       {
         '<',
-        function() require('quicker').collapse() end,
+        function()
+          require('quicker').collapse()
+        end,
         desc = 'Collapse quickfix context',
       },
       -- Add other quickfix-specific keymaps here if needed
@@ -53,8 +57,12 @@ return {
     },
     borders = { -- Border characters for context lines
       vert = '┃',
-      strong_header = '━', strong_cross = '╋', strong_end = '┫',
-      soft_header = '╌', soft_cross = '╂', soft_end = '┨',
+      strong_header = '━',
+      strong_cross = '╋',
+      strong_end = '┫',
+      soft_header = '╌',
+      soft_cross = '╂',
+      soft_end = '┨',
     },
     trim_leading_whitespace = 'common', -- Trim common leading whitespace
     max_filename_width = function()
@@ -67,9 +75,11 @@ return {
   -- Define global keymaps using the 'keys' table
   keys = {
     {
-      "<leader>q",
-      function() require("quicker").toggle() end,
-      desc = "Toggle Quickfix List (Quicker)",
+      '<leader>q',
+      function()
+        require('quicker').toggle()
+      end,
+      desc = 'Toggle Quickfix List (Quicker)',
     },
     -- Example for loclist (uncomment if needed)
     -- {

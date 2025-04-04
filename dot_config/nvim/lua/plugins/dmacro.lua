@@ -3,14 +3,13 @@
 return {
   'tani/dmacro.nvim',
   -- Load lazily, triggered by keymaps or commands
-  cmd = { "DmacroStart", "DmacroStop", "DmacroToggle", "DmacroPlay" },
-  event = "VeryLazy",
-  -- No specific opts needed for default setup
-  opts = {},
+  cmd = { 'DmacroStart', 'DmacroStop', 'DmacroToggle', 'DmacroPlay' },
+  event = 'VeryLazy',
+  -- No opts needed
   -- Define keymaps using the 'keys' table
   keys = {
     -- Play macro mapping from original config
-    { "<C-y>", "<Plug>(dmacro-play-macro)", mode = {"i", "n"}, desc = "Play Macro (dmacro)" },
+    { '<C-y>', '<Plug>(dmacro-play-macro)', mode = { 'i', 'n' }, desc = 'Play Macro (dmacro)' },
     -- Add other dmacro keymaps if desired
     -- { "q", "<cmd>DmacroToggle<cr>", mode = "n", desc = "Toggle Macro Recording" },
     -- { "@", "<cmd>DmacroPlay<cr>", mode = "n", desc = "Play Macro" }, -- Example, might conflict

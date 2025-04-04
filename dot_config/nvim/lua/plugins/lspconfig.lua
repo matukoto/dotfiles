@@ -70,20 +70,19 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       local cmp_caps_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
       if cmp_caps_ok then
-         capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
-         -- print("Using nvim-cmp capabilities")
+        capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+      -- print("Using nvim-cmp capabilities")
       else
-         -- Fallback or check for blink.cmp if used
-         local blink_ok, blink_cmp = pcall(require, 'blink.cmp')
-         if blink_ok then
-            capabilities = blink_cmp.get_lsp_capabilities(capabilities)
-            -- print("Using blink.cmp capabilities")
-         else
-            -- print("Using default LSP capabilities")
-         end
+        -- Fallback or check for blink.cmp if used
+        local blink_ok, blink_cmp = pcall(require, 'blink.cmp')
+        if blink_ok then
+          capabilities = blink_cmp.get_lsp_capabilities(capabilities)
+        -- print("Using blink.cmp capabilities")
+        else
+          -- print("Using default LSP capabilities")
+        end
       end
       opts.capabilities = capabilities
-
 
       -- Setup the server using lspconfig
       lspconfig[server_name].setup(opts)
@@ -151,7 +150,10 @@ return {
 
         -- Go to Definition
         set('n', 'gd', vim.lsp.buf.definition, opts)
-        set('n', 'gD', function() vim.cmd([[ vsplit ]]); vim.lsp.buf.definition() end, opts) -- Split definition
+        set('n', 'gD', function()
+          vim.cmd([[ vsplit ]])
+          vim.lsp.buf.definition()
+        end, opts) -- Split definition
 
         -- Go to Implementation
         if lspui_ok then
@@ -198,11 +200,11 @@ return {
         set('n', 'ge', vim.diagnostic.open_float, opts)
         set('n', 'gq', vim.diagnostic.setqflist, opts)
         if lspui_ok then
-           set('n', 'g[', '<cmd>LspUI diagnostic prev<CR>', opts)
-           set('n', 'g]', '<cmd>LspUI diagnostic next<CR>', opts)
+          set('n', 'g[', '<cmd>LspUI diagnostic prev<CR>', opts)
+          set('n', 'g]', '<cmd>LspUI diagnostic next<CR>', opts)
         else
-           set('n', '[d', vim.diagnostic.goto_prev, opts) -- Standard mapping
-           set('n', ']d', vim.diagnostic.goto_next, opts) -- Standard mapping
+          set('n', '[d', vim.diagnostic.goto_prev, opts) -- Standard mapping
+          set('n', ']d', vim.diagnostic.goto_next, opts) -- Standard mapping
         end
 
         -- Configure diagnostics appearance
@@ -237,13 +239,13 @@ return {
         -- Inlay Hints (if server supports it)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
         if client and client.server_capabilities.inlayHintProvider then
-           -- Check if inlay hint function exists (Neovim 0.10+)
-           if vim.lsp.inlay_hint then
-              vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
-           -- Legacy check for older Neovim versions (if needed)
-           -- elseif vim.lsp.buf.inlay_hint then
-           --    vim.lsp.buf.inlay_hint(ev.buf, true)
-           end
+          -- Check if inlay hint function exists (Neovim 0.10+)
+          if vim.lsp.inlay_hint then
+            vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
+            -- Legacy check for older Neovim versions (if needed)
+            -- elseif vim.lsp.buf.inlay_hint then
+            --    vim.lsp.buf.inlay_hint(ev.buf, true)
+          end
         end
 
         -- Optional: Format on save
@@ -259,7 +261,6 @@ return {
     -- Highlight for active signature parameter
     vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { bg = '#888888', fg = '#efef33' })
 
-
     -- Specific Server Settings (Applied *after* the default handler runs)
     -- These settings will be merged with the defaults provided by mason-lspconfig
 
@@ -269,8 +270,12 @@ return {
           analyses = { unusedparams = true, shadow = true },
           staticcheck = true,
           hints = {
-            rangeVariableTypes = true, parameterNames = true, constantValues = true,
-            assignVariableTypes = true, compositeLiteralFields = true, compositeLiteralTypes = true,
+            rangeVariableTypes = true,
+            parameterNames = true,
+            constantValues = true,
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            compositeLiteralTypes = true,
             functionTypeParameters = true,
           },
         },
@@ -281,10 +286,17 @@ return {
       settings = {
         Lua = {
           runtime = { version = 'LuaJIT' },
-          workspace = { checkThirdParty = false, library = vim.api.nvim_get_runtime_file("", true) }, -- Include vim runtime paths
-          hint = { enable = true, await = true, paramName = 'Literal', paramType = true, semicolon = 'Disable', arrayIndex = 'Disable' },
+          workspace = { checkThirdParty = false, library = vim.api.nvim_get_runtime_file('', true) }, -- Include vim runtime paths
+          hint = {
+            enable = true,
+            await = true,
+            paramName = 'Literal',
+            paramType = true,
+            semicolon = 'Disable',
+            arrayIndex = 'Disable',
+          },
           diagnostics = { globals = { 'vim' }, groupFileStatus = { await = 'Opened' } }, -- Recognize vim global
-          completion = { callSnippet = "Replace" } -- Better snippet handling
+          completion = { callSnippet = 'Replace' }, -- Better snippet handling
         },
       },
     })
@@ -319,16 +331,24 @@ return {
     local shared_ts_js_settings = {
       typescript = {
         inlayHints = {
-          parameterNames = { enabled = 'all' }, parameterTypes = { enabled = true }, variableTypes = { enabled = true },
-          propertyDeclarationTypes = { enabled = true }, functionLikeReturnTypes = { enabled = true }, enumMemberValues = { enabled = true },
+          parameterNames = { enabled = 'all' },
+          parameterTypes = { enabled = true },
+          variableTypes = { enabled = true },
+          propertyDeclarationTypes = { enabled = true },
+          functionLikeReturnTypes = { enabled = true },
+          enumMemberValues = { enabled = true },
         },
       },
       javascript = { -- Also apply hints to JS if desired
-         inlayHints = {
-          parameterNames = { enabled = 'all' }, parameterTypes = { enabled = true }, variableTypes = { enabled = true },
-          propertyDeclarationTypes = { enabled = true }, functionLikeReturnTypes = { enabled = true }, enumMemberValues = { enabled = true },
+        inlayHints = {
+          parameterNames = { enabled = 'all' },
+          parameterTypes = { enabled = true },
+          variableTypes = { enabled = true },
+          propertyDeclarationTypes = { enabled = true },
+          functionLikeReturnTypes = { enabled = true },
+          enumMemberValues = { enabled = true },
         },
-      }
+      },
     }
 
     lspconfig.vtsls.setup({
@@ -337,15 +357,16 @@ return {
         if not is_node_dir() then
           -- print("Stopping vtsls in non-node directory: " .. vim.api.nvim_buf_get_name(bufnr))
           client.stop()
-          -- Optionally detach completely if stop doesn't prevent further interaction
-          -- vim.lsp.buf_detach_client(bufnr, client.id)
+        -- Optionally detach completely if stop doesn't prevent further interaction
+        -- vim.lsp.buf_detach_client(bufnr, client.id)
         else
           -- print("Attaching vtsls in node directory: " .. vim.api.nvim_buf_get_name(bufnr))
           -- Call the global attach function if you still want the keymaps etc.
           -- Find the UserLspConfig autocmd callback and call it
-          local group_id = vim.api.nvim_get_autocmds({ group = 'UserLspConfig', event = 'LspAttach' })
+          local group_id =
+            vim.api.nvim_get_autocmds({ group = 'UserLspConfig', event = 'LspAttach' })
           if group_id and group_id[1] and group_id[1].callback then
-             group_id[1].callback({buf=bufnr, data = { client_id = client.id }})
+            group_id[1].callback({ buf = bufnr, data = { client_id = client.id } })
           end
         end
       end,
@@ -354,29 +375,30 @@ return {
 
     lspconfig.denols.setup({
       -- on_attach handled globally, but add conditional logic here if needed
-       on_attach = function(client, bufnr)
+      on_attach = function(client, bufnr)
         if is_node_dir() then
           -- print("Stopping denols in node directory: " .. vim.api.nvim_buf_get_name(bufnr))
           client.stop()
-          -- vim.lsp.buf_detach_client(bufnr, client.id)
+        -- vim.lsp.buf_detach_client(bufnr, client.id)
         else
           -- print("Attaching denols in non-node directory: " .. vim.api.nvim_buf_get_name(bufnr))
-          local group_id = vim.api.nvim_get_autocmds({ group = 'UserLspConfig', event = 'LspAttach' })
+          local group_id =
+            vim.api.nvim_get_autocmds({ group = 'UserLspConfig', event = 'LspAttach' })
           if group_id and group_id[1] and group_id[1].callback then
-             group_id[1].callback({buf=bufnr, data = { client_id = client.id }})
+            group_id[1].callback({ buf = bufnr, data = { client_id = client.id } })
           end
         end
       end,
-      root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+      root_dir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc'),
       init_options = {
         lint = true,
         unstable = true,
         suggest = {
           imports = {
             hosts = {
-              ["https://deno.land"] = true,
-              ["https://cdn.skypack.dev"] = true,
-              ["https://esm.sh"] = true,
+              ['https://deno.land'] = true,
+              ['https://cdn.skypack.dev'] = true,
+              ['https://esm.sh'] = true,
             },
           },
         },
@@ -392,11 +414,15 @@ return {
         javascript = shared_ts_js_settings.javascript,
         svelte = {
           inlayHints = {
-            parameterNames = { enabled = 'all' }, parameterTypes = { enabled = true }, variableTypes = { enabled = true },
-            propertyDeclarationTypes = { enabled = true }, functionLikeReturnTypes = { enabled = true }, enumMemberValues = { enabled = true },
+            parameterNames = { enabled = 'all' },
+            parameterTypes = { enabled = true },
+            variableTypes = { enabled = true },
+            propertyDeclarationTypes = { enabled = true },
+            functionLikeReturnTypes = { enabled = true },
+            enumMemberValues = { enabled = true },
           },
         },
-      }
+      },
     })
 
     -- Other servers with default settings (already handled by mason_lspconfig default handler)

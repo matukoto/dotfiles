@@ -3,7 +3,7 @@ return {
   'numToStr/Comment.nvim',
   -- Load lazily, usually on keypress or specific events.
   -- 'VeryLazy' is a safe default, or you could use `keys` to trigger loading.
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- opts table directly passes configuration to the setup function
   opts = {
     -- Add space b/w comment and the line

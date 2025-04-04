@@ -5,8 +5,8 @@ return {
   -- Dependencies: Telescope for the picker UI
   dependencies = { 'nvim-telescope/telescope.nvim' },
   -- Load when LSP attaches or the command/keymap is used
-  event = "LspAttach",
-  cmd = { "TinyCodeAction" },
+  event = 'LspAttach',
+  cmd = { 'TinyCodeAction' },
   -- opts table passes configuration directly to setup()
   opts = {
     backend = 'delta', -- Use 'delta' for diff view (ensure delta is installed)
@@ -55,14 +55,16 @@ return {
   -- Define keymaps using the 'keys' table
   keys = {
     {
-      "<leader>ca", -- Original keymap
+      '<leader>ca', -- Original keymap
       function()
         -- Ensure the plugin is loaded before calling
-        local ok, tca = pcall(require, "tiny-code-action")
-        if ok then tca.code_action() end
+        local ok, tca = pcall(require, 'tiny-code-action')
+        if ok then
+          tca.code_action()
+        end
       end,
-      mode = {"n", "v"}, -- Normal and Visual mode
-      desc = "Code Action (Tiny)",
+      mode = { 'n', 'v' }, -- Normal and Visual mode
+      desc = 'Code Action (Tiny)',
     },
   },
   -- No explicit config function needed if opts and keys are sufficient

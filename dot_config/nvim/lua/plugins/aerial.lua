@@ -3,12 +3,12 @@ return {
   'stevearc/aerial.nvim',
   -- Dependencies like treesitter and devicons are important
   dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    "nvim-tree/nvim-web-devicons"
+    'nvim-treesitter/nvim-treesitter',
+    'nvim-tree/nvim-web-devicons',
   },
   -- Load lazily, triggered by commands, keymaps, or events
-  cmd = { "AerialToggle", "AerialOpen", "AerialInfo" },
-  event = "VeryLazy", -- Or specific BufRead events if preferred
+  cmd = { 'AerialToggle', 'AerialOpen', 'AerialInfo' },
+  event = 'VeryLazy', -- Or specific BufRead events if preferred
   opts = {
     -- Backend priority list
     backends = { 'treesitter', 'lsp', 'markdown', 'asciidoc', 'man' },
@@ -69,8 +69,14 @@ return {
 
     -- Filter shown symbol kinds
     filter_kind = {
-      'Class', 'Constructor', 'Enum', 'Function',
-      'Interface', 'Module', 'Method', 'Struct',
+      'Class',
+      'Constructor',
+      'Enum',
+      'Function',
+      'Interface',
+      'Module',
+      'Method',
+      'Struct',
     },
 
     highlight_mode = 'split_width',
@@ -118,7 +124,9 @@ return {
       max_height = 0.9,
       height = nil,
       min_height = { 8, 0.1 },
-      override = function(conf, source_winid) return conf end,
+      override = function(conf, source_winid)
+        return conf
+      end,
     },
 
     -- Nav settings (for floating nav window, if used)
@@ -164,12 +172,12 @@ return {
   },
   -- Define global keymaps using the 'keys' table
   keys = {
-    { "<leader>a", "<cmd>AerialToggle!<CR>", desc = "Toggle Aerial Outline" },
+    { '<leader>a', '<cmd>AerialToggle!<CR>', desc = 'Toggle Aerial Outline' },
   },
   -- config function to define autocmds after setup
   config = function(_, opts)
     -- Call the setup function with the options
-    require("aerial").setup(opts)
+    require('aerial').setup(opts)
 
     -- Autocmd to open aerial automatically for markdown files
     vim.api.nvim_create_autocmd('BufRead', {

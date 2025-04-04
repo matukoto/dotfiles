@@ -3,7 +3,7 @@
 return {
   'folke/styler.nvim',
   -- Load lazily, triggered by window events defined in config
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- init function runs before the plugin is loaded
   init = function()
     -- Define global colorscheme variables
@@ -15,7 +15,10 @@ return {
     -- Use pcall for safety in case the colorscheme isn't available immediately
     local ok, _ = pcall(vim.cmd, 'colorscheme ' .. _G.DEFAULT_COLORSCHEME)
     if not ok then
-      vim.notify("Failed to set initial colorscheme: " .. _G.DEFAULT_COLORSCHEME, vim.log.levels.WARN)
+      vim.notify(
+        'Failed to set initial colorscheme: ' .. _G.DEFAULT_COLORSCHEME,
+        vim.log.levels.WARN
+      )
     end
   end,
   -- No specific opts needed for default setup
@@ -29,7 +32,9 @@ return {
     local function inactivate(win)
       -- Ensure styler is loaded
       local styler_ok, styler = pcall(require, 'styler')
-      if not styler_ok then return end
+      if not styler_ok then
+        return
+      end
 
       -- Skip invalid or floating windows
       if not vim.api.nvim_win_is_valid(win) or vim.api.nvim_win_get_config(win).relative ~= '' then
@@ -40,11 +45,14 @@ return {
       -- Access window-local theme data safely
       local current_theme = vim.w[win] and vim.w[win].theme
       if not current_theme or current_theme.colorscheme ~= _G.INACTIVE_COLORSCHEME then
-         -- Use pcall for safety in case the inactive colorscheme isn't valid
-         local ok, _ = pcall(styler.set_theme, win, { colorscheme = _G.INACTIVE_COLORSCHEME })
-         if not ok then
-            vim.notify("Failed to set inactive colorscheme: " .. _G.INACTIVE_COLORSCHEME, vim.log.levels.WARN)
-         end
+        -- Use pcall for safety in case the inactive colorscheme isn't valid
+        local ok, _ = pcall(styler.set_theme, win, { colorscheme = _G.INACTIVE_COLORSCHEME })
+        if not ok then
+          vim.notify(
+            'Failed to set inactive colorscheme: ' .. _G.INACTIVE_COLORSCHEME,
+            vim.log.levels.WARN
+          )
+        end
       end
     end
 
@@ -58,7 +66,9 @@ return {
         vim.schedule(function()
           -- Ensure styler is loaded
           local styler_ok, styler = pcall(require, 'styler')
-          if not styler_ok then return end
+          if not styler_ok then
+            return
+          end
 
           local win_pre = vim.fn.win_getid(vim.fn.winnr('#')) -- Previous window ID
           local win_cursor = vim.api.nvim_get_current_win() -- Current window ID
@@ -67,7 +77,7 @@ return {
           -- Access window-local theme data safely
           local cursor_theme = vim.w[win_cursor] and vim.w[win_cursor].theme
           if cursor_theme and cursor_theme.colorscheme then
-             pcall(styler.clear, win_cursor)
+            pcall(styler.clear, win_cursor)
           end
 
           -- Inactivate the previous window if it's valid and not the current one
@@ -78,7 +88,7 @@ return {
           -- Inactivate the event window if it's valid and not the current one
           -- This handles cases like closing a window (WinLeave fires on the closed win)
           if win_event ~= win_cursor and vim.api.nvim_win_is_valid(win_event) then
-             inactivate(win_event)
+            inactivate(win_event)
           end
         end)
       end,

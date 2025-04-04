@@ -2,7 +2,7 @@
 return {
   'ahmedkhalf/project.nvim',
   -- Load early to detect project root on startup/buffer enter
-  event = { "BufEnter" },
+  event = { 'BufEnter' },
   -- opts table passes configuration directly to setup()
   opts = {
     -- Manual mode doesn't automatically change root directory
@@ -31,7 +31,7 @@ return {
     scope_chdir = 'global',
 
     -- Path for storing project history (used by Telescope integration)
-    datapath = vim.fn.stdpath('data') .. "/project_nvim", -- Ensure subdirectory exists
+    datapath = vim.fn.stdpath('data') .. '/project_nvim', -- Ensure subdirectory exists
 
     -- Configure Telescope integration (optional, requires telescope.nvim)
     -- telescope = { ... }
@@ -41,9 +41,9 @@ return {
     require('project_nvim').setup(opts)
 
     -- Optional: Load the Telescope extension if Telescope is installed
-    local telescope_ok, telescope = pcall(require, "telescope")
+    local telescope_ok, telescope = pcall(require, 'telescope')
     if telescope_ok then
-      pcall(telescope.load_extension, "projects")
+      pcall(telescope.load_extension, 'projects')
       -- Add keymap for Telescope projects picker
       vim.keymap.set('n', '<leader>fp', '<cmd>Telescope projects<CR>', { desc = 'Find Projects' })
     end

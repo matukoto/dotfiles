@@ -2,7 +2,7 @@
 return {
   'tkmpypy/chowcho.nvim',
   -- Load lazily, triggered by the keymap
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   opts = {
     -- Window selection labels (single characters)
@@ -35,16 +35,16 @@ return {
         icon_enabled = true,
         color = {
           label = {
-            active = '#c8cfff',    -- Active window label color
-            inactive = '#ababab',   -- Inactive window label color
+            active = '#c8cfff', -- Active window label color
+            inactive = '#ababab', -- Inactive window label color
           },
           text = {
-            active = '#fefefe',    -- Active window text color
-            inactive = '#d0d0d0',  -- Inactive window text color
+            active = '#fefefe', -- Active window text color
+            inactive = '#d0d0d0', -- Inactive window text color
           },
           border = {
-            active = '#b400c8',    -- Active window border color
-            inactive = '#fefefe',  -- Inactive window border color
+            active = '#b400c8', -- Active window border color
+            inactive = '#fefefe', -- Inactive window border color
           },
         },
         zindex = 100, -- Ensure it appears above most other floats
@@ -54,11 +54,11 @@ return {
   -- Define keymaps using the 'keys' table
   keys = {
     {
-      "<Leader><Leader>", -- Trigger window selection
+      '<Leader><Leader>', -- Trigger window selection
       function()
-        require("chowcho").run()
+        require('chowcho').run()
       end,
-      desc = "Select Window (Chowcho)",
+      desc = 'Select Window (Chowcho)',
     },
   },
   -- No explicit config function needed if opts and keys are sufficient

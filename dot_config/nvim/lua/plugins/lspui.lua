@@ -4,12 +4,19 @@ return {
   -- Dependencies: Icons are often used
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   -- Load when LSP attaches or specific commands are used
-  event = "LspAttach",
+  event = 'LspAttach',
   cmd = {
-    "LspUI", "LspUIRename", "LspUICodeAction", "LspUIHover",
-    "LspUIDiagnostic", "LspUIDefinition", "LspUITypeDefinition",
-    "LspUIDeclaration", "LspUIReference", "LspUIImplementation",
-    "LspUIInlayHint",
+    'LspUI',
+    'LspUIRename',
+    'LspUICodeAction',
+    'LspUIHover',
+    'LspUIDiagnostic',
+    'LspUIDefinition',
+    'LspUITypeDefinition',
+    'LspUIDeclaration',
+    'LspUIReference',
+    'LspUIImplementation',
+    'LspUIInlayHint',
   },
   -- opts table passes configuration directly to setup()
   opts = {

@@ -5,7 +5,7 @@ return {
   -- Dependencies: Requires skkeleton
   dependencies = { 'vim-skk/skkeleton' },
   -- Load when skkeleton is potentially active or UI is ready
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   opts = {
     -- Highlight group names for different modes

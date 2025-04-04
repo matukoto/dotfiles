@@ -8,8 +8,8 @@ return {
     'lambdalisue/vim-kensaku', -- If using kensaku matcher
   },
   -- Load lazily, triggered by keymap or command
-  cmd = { "FuzzyMotion" },
-  event = "VeryLazy",
+  cmd = { 'FuzzyMotion' },
+  event = 'VeryLazy',
   -- init function to set global variables before loading
   init = function()
     -- Set the preferred matchers
@@ -18,7 +18,7 @@ return {
   end,
   -- Define global keymaps using the 'keys' table
   keys = {
-    { "<C-f>", "<cmd>FuzzyMotion<CR>", mode = "n", desc = "Fuzzy Motion Jump" },
+    { '<C-f>', '<cmd>FuzzyMotion<CR>', mode = 'n', desc = 'Fuzzy Motion Jump' },
     -- Add other keymaps if desired
   },
   -- No opts or config needed

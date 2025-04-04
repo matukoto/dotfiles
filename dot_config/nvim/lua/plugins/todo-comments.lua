@@ -5,8 +5,8 @@ return {
   -- Dependencies: Telescope for searching
   dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
   -- Load lazily, triggered by commands or events
-  cmd = { "TodoTrouble", "TodoTelescope" },
-  event = { "BufReadPost", "BufNewFile" },
+  cmd = { 'TodoTrouble', 'TodoTelescope' },
+  event = { 'BufReadPost', 'BufNewFile' },
   -- opts table passes configuration directly to setup()
   opts = {
     -- signs = true, -- Show signs in the signcolumn
@@ -16,13 +16,13 @@ return {
     -- highlight = { ... }, -- Customize highlighting
     -- colors = { ... }, -- Customize colors
     search = {
-      command = "rg", -- Use ripgrep for searching
+      command = 'rg', -- Use ripgrep for searching
       args = {
-        "--color=never",
-        "--no-heading",
-        "--with-filename",
-        "--line-number",
-        "--column",
+        '--color=never',
+        '--no-heading',
+        '--with-filename',
+        '--line-number',
+        '--column',
       },
       -- Regex pattern for searching TODO comments
       -- pattern = [[\b(KEYWORDS):]], -- Example pattern
@@ -31,23 +31,23 @@ return {
   -- Define keymaps using the 'keys' table
   keys = {
     {
-      "]t", -- Jump to next TODO comment
+      ']t', -- Jump to next TODO comment
       function()
-        require("todo-comments").jump_next()
+        require('todo-comments').jump_next()
       end,
-      desc = "Next TODO Comment",
+      desc = 'Next TODO Comment',
     },
     {
-      "[t", -- Jump to previous TODO comment
+      '[t', -- Jump to previous TODO comment
       function()
-        require("todo-comments").jump_prev()
+        require('todo-comments').jump_prev()
       end,
-      desc = "Previous TODO Comment",
+      desc = 'Previous TODO Comment',
     },
     {
-      "<leader>st", -- Search TODO comments with Telescope
-      "<cmd>TodoTelescope<cr>",
-      desc = "Search TODOs (Telescope)",
+      '<leader>st', -- Search TODO comments with Telescope
+      '<cmd>TodoTelescope<cr>',
+      desc = 'Search TODOs (Telescope)',
     },
     -- Optional: Integrate with trouble.nvim
     -- { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "TODOs in Trouble" },

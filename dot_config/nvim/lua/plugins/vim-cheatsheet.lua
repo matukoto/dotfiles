@@ -3,8 +3,8 @@
 return {
   'reireias/vim-cheatsheet',
   -- Load lazily, triggered by command or keymap
-  cmd = { "Cheatsheet" },
-  event = "VeryLazy",
+  cmd = { 'Cheatsheet' },
+  event = 'VeryLazy',
   -- init function to set global variables before loading
   init = function()
     -- Set the path to the cheat sheet file

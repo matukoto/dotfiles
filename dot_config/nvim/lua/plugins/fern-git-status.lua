@@ -5,7 +5,7 @@ return {
   -- Dependencies: Requires fern.vim
   dependencies = { 'lambdalisue/vim-fern' },
   -- Load when fern is loaded or specifically requested
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- init function runs before the plugin is loaded, suitable for setting globals
   init = function()
     -- Disable status for ignored files (performance)

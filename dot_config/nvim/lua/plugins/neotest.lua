@@ -13,8 +13,8 @@ return {
     -- 'rcarriga/nvim-dap-ui', -- Uncomment if DAP integration is needed
   },
   -- Load lazily, triggered by commands or keymaps
-  cmd = { "Neotest" },
-  event = "VeryLazy",
+  cmd = { 'Neotest' },
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   opts = {
     -- IMPORTANT: Ensure adapters are required *within* the opts table or config function
@@ -27,7 +27,7 @@ return {
       if vitest_ok then
         table.insert(adapters, vitest_adapter)
       else
-        vim.notify("neotest-vitest adapter not found.", vim.log.levels.WARN)
+        vim.notify('neotest-vitest adapter not found.', vim.log.levels.WARN)
       end
 
       -- Example for Java adapter (uncomment if needed)
@@ -89,23 +89,83 @@ return {
   },
   -- Define keymaps using the 'keys' table
   keys = {
-    { "<leader>tt", function() require("neotest").run.run() end, desc = "Run Nearest Test" },
-    { "<leader>tf", function() require("neotest").run.run(vim.fn.expand('%')) end, desc = "Run Current File" },
-    { "<leader>ta", function() require("neotest").run.run(vim.loop.cwd()) end, desc = "Run All Tests (Directory)" },
-    { "<leader>tS", function() require("neotest").run.stop() end, desc = "Stop Test Run" },
-    { "<leader>ts", function() require("neotest").summary.toggle() end, desc = "Toggle Test Summary" }, -- Use toggle instead of open
-    { "<leader>to", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Test Output" },
-    { "<leader>tO", function() require("neotest").output.open({ enter = true, auto_close = false, last_run = true }) end, desc = "Show Last Test Output (Keep Open)" },
-    { "<leader>tw", function() require("neotest").watch.toggle(vim.fn.expand('%')) end, desc = "Toggle Watch Mode (File)" },
-    { "[t", function() require("neotest").jump.prev({ status = "failed" }) end, desc = "Prev Failed Test" },
-    { "]t", function() require("neotest").jump.next({ status = "failed" }) end, desc = "Next Failed Test" },
+    {
+      '<leader>tt',
+      function()
+        require('neotest').run.run()
+      end,
+      desc = 'Run Nearest Test',
+    },
+    {
+      '<leader>tf',
+      function()
+        require('neotest').run.run(vim.fn.expand('%'))
+      end,
+      desc = 'Run Current File',
+    },
+    {
+      '<leader>ta',
+      function()
+        require('neotest').run.run(vim.loop.cwd())
+      end,
+      desc = 'Run All Tests (Directory)',
+    },
+    {
+      '<leader>tS',
+      function()
+        require('neotest').run.stop()
+      end,
+      desc = 'Stop Test Run',
+    },
+    {
+      '<leader>ts',
+      function()
+        require('neotest').summary.toggle()
+      end,
+      desc = 'Toggle Test Summary',
+    }, -- Use toggle instead of open
+    {
+      '<leader>to',
+      function()
+        require('neotest').output.open({ enter = true, auto_close = true })
+      end,
+      desc = 'Show Test Output',
+    },
+    {
+      '<leader>tO',
+      function()
+        require('neotest').output.open({ enter = true, auto_close = false, last_run = true })
+      end,
+      desc = 'Show Last Test Output (Keep Open)',
+    },
+    {
+      '<leader>tw',
+      function()
+        require('neotest').watch.toggle(vim.fn.expand('%'))
+      end,
+      desc = 'Toggle Watch Mode (File)',
+    },
+    {
+      '[t',
+      function()
+        require('neotest').jump.prev({ status = 'failed' })
+      end,
+      desc = 'Prev Failed Test',
+    },
+    {
+      ']t',
+      function()
+        require('neotest').jump.next({ status = 'failed' })
+      end,
+      desc = 'Next Failed Test',
+    },
   },
   -- config function can be used for more complex setup logic
   config = function(_, opts)
-     -- Ensure adapters are resolved correctly before setup
-     if type(opts.adapters) == "function" then
-       opts.adapters = opts.adapters()
-     end
-     require('neotest').setup(opts)
+    -- Ensure adapters are resolved correctly before setup
+    if type(opts.adapters) == 'function' then
+      opts.adapters = opts.adapters()
+    end
+    require('neotest').setup(opts)
   end,
 }

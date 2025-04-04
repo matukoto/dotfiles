@@ -5,7 +5,10 @@ local jsFormatter = { 'biome', 'prettierd', 'prettier', stop_after_first = true 
 
 local tsFormatter = function(bufnr) -- Pass bufnr for context
   -- Use vim.fs.find instead of vim.fs.root for better root detection flexibility
-  local pkg_json_path = vim.fs.find('package.json', { upward = true, path = vim.api.nvim_buf_get_name(bufnr), stop = vim.loop.os_homedir() })
+  local pkg_json_path = vim.fs.find(
+    'package.json',
+    { upward = true, path = vim.api.nvim_buf_get_name(bufnr), stop = vim.loop.os_homedir() }
+  )
   if pkg_json_path and #pkg_json_path > 0 then
     -- print("Using Node formatter (biome/prettierd/prettier) for:", vim.api.nvim_buf_get_name(bufnr))
     return jsFormatter
@@ -18,10 +21,10 @@ end
 return {
   'stevearc/conform.nvim',
   -- Load lazily, formatting is often triggered on save or manually
-  event = { "BufWritePre" }, -- Trigger load right before saving
+  event = { 'BufWritePre' }, -- Trigger load right before saving
   -- Or use 'VeryLazy' and rely on keymaps/commands
   -- event = "VeryLazy",
-  cmd = "ConformInfo", -- Load when ConformInfo command is used
+  cmd = 'ConformInfo', -- Load when ConformInfo command is used
   opts = {
     -- Define formatters and their configurations
     formatters_by_ft = {
@@ -46,7 +49,7 @@ return {
       -- Markdown formatting
       markdown = {
         'injected', -- Format code blocks inside markdown
-        'typos',    -- Fix typos (can be aggressive)
+        'typos', -- Fix typos (can be aggressive)
         'markdownlint-cli2', -- Lint markdown
         stop_after_first = false,
       },
@@ -62,16 +65,16 @@ return {
     },
     -- Recommended: Use format_after_save for asynchronous formatting
     format_after_save = {
-       lsp_fallback = true, -- Fallback to LSP if conform fails
-       async = true,
-       timeout_ms = 3000, -- Adjust timeout as needed
-       quiet = false, -- Show messages during formatting
-       -- stop_after_first = false, -- Run all formatters even if one fails (handled by formatter definition now)
+      lsp_fallback = true, -- Fallback to LSP if conform fails
+      async = true,
+      timeout_ms = 3000, -- Adjust timeout as needed
+      quiet = false, -- Show messages during formatting
+      -- stop_after_first = false, -- Run all formatters even if one fails (handled by formatter definition now)
     },
 
     -- Default options for formatters
     default_format_opts = {
-      lsp_format = "never", -- Don't use LSP formatting by default (prefer conform)
+      lsp_format = 'never', -- Don't use LSP formatting by default (prefer conform)
       -- timeout_ms = 3000, -- Default timeout for formatters
     },
 
@@ -89,12 +92,12 @@ return {
   -- Define keymaps using the 'keys' table
   keys = {
     {
-      "<leader>cf", -- Keymap for manual formatting
+      '<leader>cf', -- Keymap for manual formatting
       function()
-        require("conform").format({ async = true, lsp_fallback = true })
+        require('conform').format({ async = true, lsp_fallback = true })
       end,
-      mode = { "n", "v" }, -- Normal and Visual mode
-      desc = "Format buffer",
+      mode = { 'n', 'v' }, -- Normal and Visual mode
+      desc = 'Format buffer',
     },
   },
   -- No explicit config function needed if opts and keys are sufficient

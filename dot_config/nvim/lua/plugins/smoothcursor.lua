@@ -3,7 +3,7 @@
 return {
   'gen740/SmoothCursor.nvim',
   -- Load very early or on demand
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   opts = {
     -- type = "default", -- "default" | "exp" (experimental)

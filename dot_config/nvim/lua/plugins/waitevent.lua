@@ -11,7 +11,7 @@ return {
     -- Ensure waitevent is loaded before configuring editors
     local waitevent_ok, waitevent = pcall(require, 'waitevent')
     if not waitevent_ok then
-      vim.notify("waitevent.nvim not loaded, cannot configure editors.", vim.log.levels.WARN)
+      vim.notify('waitevent.nvim not loaded, cannot configure editors.', vim.log.levels.WARN)
       return
     end
 

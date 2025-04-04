@@ -11,7 +11,7 @@ return {
     'lambdalisue/vim-fern-renderer-nerdfont', -- Optional, for icons
   },
   -- Load immediately to ensure variables are set for dependencies like fern-preview
-  cmd = { "Fern" },
+  cmd = { 'Fern' },
   lazy = false,
   -- init function to set global variables before loading
   init = function()
@@ -22,9 +22,9 @@ return {
   end,
   -- Define global keymaps using the 'keys' table
   keys = {
-    { "<Leader>E", "<Cmd>Fern . -drawer<CR>", desc = "Open Fern Drawer" },
-    { "<Leader>e", "<Cmd>Fern . -reveal=%<CR>", desc = "Open Fern (Reveal Current)" },
-    { "<Leader>ce", "<Cmd>Fern %:h<CR>", desc = "Open Fern (Current Dir)" },
+    { '<Leader>E', '<Cmd>Fern . -drawer<CR>', desc = 'Open Fern Drawer' },
+    { '<Leader>e', '<Cmd>Fern . -reveal=%<CR>', desc = 'Open Fern (Reveal Current)' },
+    { '<Leader>ce', '<Cmd>Fern %:h<CR>', desc = 'Open Fern (Current Dir)' },
   },
   -- config function to define autocmds after loading
   config = function()

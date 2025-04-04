@@ -8,11 +8,11 @@ return {
   init = function()
     -- Set Deno arguments for the Denops server
     vim.g['denops#server#deno_args'] = {
-      '-q',             -- Quiet mode
-      '--no-lock',      -- Disable lock file
-      '-A',             -- Allow all permissions
+      '-q', -- Quiet mode
+      '--no-lock', -- Disable lock file
+      '-A', -- Allow all permissions
       '--unstable-ffi', -- Enable unstable FFI API
-      '--unstable-kv'   -- Enable unstable KV store API
+      '--unstable-kv', -- Enable unstable KV store API
     }
 
     -- Optional: Debug mode (uncomment if needed)

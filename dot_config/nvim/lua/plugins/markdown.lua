@@ -3,7 +3,7 @@
 return {
   'MeanderingProgrammer/markdown.nvim',
   -- Load for markdown filetypes
-  ft = { "markdown" },
+  ft = { 'markdown' },
   -- Dependencies (ensure treesitter and its markdown parser are installed)
   dependencies = { 'nvim-treesitter/nvim-treesitter' },
   -- opts table passes configuration directly to setup()

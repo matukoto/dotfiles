@@ -4,7 +4,7 @@ return {
   -- Dependencies: Integrates with vim-asterisk
   dependencies = { 'haya14busa/vim-asterisk' },
   -- Load lazily, triggered by search keymaps
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- opts table for hlslens specific configuration (using defaults here)
   opts = {
     -- Default options are generally good, customize if needed
@@ -23,7 +23,9 @@ return {
         vim.cmd('execute("normal! " .. v:count1 .. "n")')
         -- Use pcall for safety in keymaps
         local ok, hlslens = pcall(require, 'hlslens')
-        if ok then hlslens.start() end
+        if ok then
+          hlslens.start()
+        end
       end,
       desc = 'Next Search Result (Hlslens)',
     },
@@ -33,7 +35,9 @@ return {
       function()
         vim.cmd('execute("normal! " .. v:count1 .. "N")')
         local ok, hlslens = pcall(require, 'hlslens')
-        if ok then hlslens.start() end
+        if ok then
+          hlslens.start()
+        end
       end,
       desc = 'Previous Search Result (Hlslens)',
     },
@@ -44,7 +48,9 @@ return {
       function()
         vim.cmd([[normal! <Plug>(asterisk-z*)]])
         local ok, hlslens = pcall(require, 'hlslens')
-        if ok then hlslens.start() end
+        if ok then
+          hlslens.start()
+        end
       end,
       mode = 'n',
       desc = 'Search Word Forward (Hlslens)',
@@ -54,7 +60,9 @@ return {
       function()
         vim.cmd([[normal! <Plug>(asterisk-z#)]])
         local ok, hlslens = pcall(require, 'hlslens')
-        if ok then hlslens.start() end
+        if ok then
+          hlslens.start()
+        end
       end,
       mode = 'n',
       desc = 'Search Word Backward (Hlslens)',
@@ -64,7 +72,9 @@ return {
       function()
         vim.cmd([[normal! <Plug>(asterisk-gz*)]])
         local ok, hlslens = pcall(require, 'hlslens')
-        if ok then hlslens.start() end
+        if ok then
+          hlslens.start()
+        end
       end,
       mode = 'n',
       desc = 'Search Word Forward (Partial) (Hlslens)',
@@ -74,7 +84,9 @@ return {
       function()
         vim.cmd([[normal! <Plug>(asterisk-gz#)]])
         local ok, hlslens = pcall(require, 'hlslens')
-        if ok then hlslens.start() end
+        if ok then
+          hlslens.start()
+        end
       end,
       mode = 'n',
       desc = 'Search Word Backward (Partial) (Hlslens)',
@@ -85,7 +97,9 @@ return {
       function()
         vim.cmd([[<Plug>(asterisk-z*)]]) -- Let vim-asterisk handle visual selection
         local ok, hlslens = pcall(require, 'hlslens')
-        if ok then hlslens.start() end
+        if ok then
+          hlslens.start()
+        end
       end,
       mode = 'x',
       desc = 'Search Visual Selection Forward (Hlslens)',
@@ -95,7 +109,9 @@ return {
       function()
         vim.cmd([[<Plug>(asterisk-z#)]])
         local ok, hlslens = pcall(require, 'hlslens')
-        if ok then hlslens.start() end
+        if ok then
+          hlslens.start()
+        end
       end,
       mode = 'x',
       desc = 'Search Visual Selection Backward (Hlslens)',
@@ -105,7 +121,9 @@ return {
       function()
         vim.cmd([[<Plug>(asterisk-gz*)]])
         local ok, hlslens = pcall(require, 'hlslens')
-        if ok then hlslens.start() end
+        if ok then
+          hlslens.start()
+        end
       end,
       mode = 'x',
       desc = 'Search Visual Selection Forward (Partial) (Hlslens)',
@@ -115,7 +133,9 @@ return {
       function()
         vim.cmd([[<Plug>(asterisk-gz#)]])
         local ok, hlslens = pcall(require, 'hlslens')
-        if ok then hlslens.start() end
+        if ok then
+          hlslens.start()
+        end
       end,
       mode = 'x',
       desc = 'Search Visual Selection Backward (Partial) (Hlslens)',

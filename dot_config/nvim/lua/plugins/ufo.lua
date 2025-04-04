@@ -8,7 +8,7 @@ return {
     'nvim-treesitter/nvim-treesitter', -- Needed for treesitter provider
   },
   -- Load after Treesitter or when needed
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- init function to set folding options early
   init = function()
     -- Set options required for UFO + Treesitter folding
@@ -47,24 +47,32 @@ return {
   -- Define keymaps using the 'keys' table
   keys = {
     {
-      "zR",
-      function() require("ufo").openAllFolds() end,
-      desc = "Open All Folds (UFO)",
+      'zR',
+      function()
+        require('ufo').openAllFolds()
+      end,
+      desc = 'Open All Folds (UFO)',
     },
     {
-      "zM",
-      function() require("ufo").closeAllFolds() end,
-      desc = "Close All Folds (UFO)",
+      'zM',
+      function()
+        require('ufo').closeAllFolds()
+      end,
+      desc = 'Close All Folds (UFO)',
     },
     {
-      "zr",
-      function() require("ufo").openFoldsExceptKinds() end,
-      desc = "Open Folds Except Kinds (UFO)",
+      'zr',
+      function()
+        require('ufo').openFoldsExceptKinds()
+      end,
+      desc = 'Open Folds Except Kinds (UFO)',
     },
     {
-      "zm",
-      function() require("ufo").closeFoldsWith(0) end, -- closeAllFolds == closeFoldsWith(0)
-      desc = "Close Folds With Level (UFO)",
+      'zm',
+      function()
+        require('ufo').closeFoldsWith(0)
+      end, -- closeAllFolds == closeFoldsWith(0)
+      desc = 'Close Folds With Level (UFO)',
     },
   },
   -- config function ensures setup is called after loading

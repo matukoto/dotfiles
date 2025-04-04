@@ -85,7 +85,7 @@ return {
         if lualine_ok then
           lualine.refresh()
         else
-          vim.notify("Lualine refresh failed in autocmd", vim.log.levels.WARN)
+          vim.notify('Lualine refresh failed in autocmd', vim.log.levels.WARN)
         end
       end,
     })

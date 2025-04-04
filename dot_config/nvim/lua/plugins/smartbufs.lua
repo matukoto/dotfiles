@@ -5,33 +5,37 @@ return {
   -- Dependencies: Needs bufdelete.nvim for the <C-w> mapping
   dependencies = { 'famiu/bufdelete.nvim' },
   -- Load lazily, triggered by keymaps
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- No opts needed
   -- Define keymaps using the 'keys' table
   keys = {
     {
-      "<C-l>", -- Go to next buffer
+      '<C-l>', -- Go to next buffer
       function()
         -- Use pcall for safety in keymaps
-        local ok, smartbufs = pcall(require, "nvim-smartbufs")
-        if ok then smartbufs.goto_next_buffer() end
+        local ok, smartbufs = pcall(require, 'nvim-smartbufs')
+        if ok then
+          smartbufs.goto_next_buffer()
+        end
       end,
-      desc = "Next Buffer (Smartbufs)",
+      desc = 'Next Buffer (Smartbufs)',
     },
     {
-      "<C-h>", -- Go to previous buffer
+      '<C-h>', -- Go to previous buffer
       function()
-        local ok, smartbufs = pcall(require, "nvim-smartbufs")
-        if ok then smartbufs.goto_prev_buffer() end
+        local ok, smartbufs = pcall(require, 'nvim-smartbufs')
+        if ok then
+          smartbufs.goto_prev_buffer()
+        end
       end,
-      desc = "Previous Buffer (Smartbufs)",
+      desc = 'Previous Buffer (Smartbufs)',
     },
     {
-      "<C-w>", -- Close current buffer using Bdelete
-      "<cmd>Bdelete<CR>",
-      mode = "n", -- Only in normal mode
+      '<C-w>', -- Close current buffer using Bdelete
+      '<cmd>Bdelete<CR>',
+      mode = 'n', -- Only in normal mode
       nowait = true, -- Don't wait for confirmation
-      desc = "Close Buffer (Bdelete)",
+      desc = 'Close Buffer (Bdelete)',
     },
   },
   -- No explicit config function needed

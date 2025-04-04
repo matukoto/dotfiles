@@ -2,36 +2,36 @@
 return {
   'monaqa/dial.nvim',
   -- Load lazily, triggered by keymaps
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- Define keymaps using the 'keys' table
   -- These keymaps will automatically load the plugin when triggered
   keys = {
     {
-      "<C-a>", -- Increment in Normal mode
+      '<C-a>', -- Increment in Normal mode
       function()
         -- Ensure the module is loaded before calling
         local dial_map_ok, dial_map = pcall(require, 'dial.map')
         if dial_map_ok then
           dial_map.manipulate('increment', 'normal')
         else
-          vim.notify("dial.nvim not loaded correctly", vim.log.levels.WARN)
+          vim.notify('dial.nvim not loaded correctly', vim.log.levels.WARN)
         end
       end,
-      mode = "n",
-      desc = "Increment (Dial)",
+      mode = 'n',
+      desc = 'Increment (Dial)',
     },
     {
-      "<C-x>", -- Decrement in Normal mode
+      '<C-x>', -- Decrement in Normal mode
       function()
         local dial_map_ok, dial_map = pcall(require, 'dial.map')
         if dial_map_ok then
           dial_map.manipulate('decrement', 'normal')
         else
-          vim.notify("dial.nvim not loaded correctly", vim.log.levels.WARN)
+          vim.notify('dial.nvim not loaded correctly', vim.log.levels.WARN)
         end
       end,
-      mode = "n",
-      desc = "Decrement (Dial)",
+      mode = 'n',
+      desc = 'Decrement (Dial)',
     },
     -- Add visual mode mappings if desired
     -- {

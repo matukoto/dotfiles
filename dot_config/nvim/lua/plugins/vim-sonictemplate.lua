@@ -3,8 +3,8 @@
 return {
   'mattn/vim-sonictemplate',
   -- Load lazily, triggered by command or potentially on InsertEnter if used often
-  cmd = { "Template" },
-  event = "VeryLazy",
+  cmd = { 'Template' },
+  event = 'VeryLazy',
   -- init function to set global variables before loading
   init = function()
     -- Set the template directory path

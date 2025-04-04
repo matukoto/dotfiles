@@ -3,7 +3,7 @@
 return {
   '0xAdk/full_visual_line.nvim',
   -- Load when entering visual mode or specific events
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- No specific opts needed for default setup
   opts = {},
   -- config function ensures setup is called after loading

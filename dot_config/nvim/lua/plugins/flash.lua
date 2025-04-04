@@ -2,7 +2,7 @@
 return {
   'folke/flash.nvim',
   -- Load lazily, triggered by keymaps or commands
-  event = "VeryLazy",
+  event = 'VeryLazy',
   ---@type Flash.Config
   opts = {
     labels = 'asdfghjklqwertyuiopzxcvbnm',
@@ -138,36 +138,36 @@ return {
 
     -- Custom keymaps from the original config
     {
-      "f", -- Custom jump within current window only
-      mode = "n",
+      'f', -- Custom jump within current window only
+      mode = 'n',
       function()
-        require("flash").jump({ search = { multi_window = false } })
+        require('flash').jump({ search = { multi_window = false } })
       end,
-      desc = "Flash Jump (Current Window)",
+      desc = 'Flash Jump (Current Window)',
     },
     {
-      "F", -- Custom jump across all windows
-      mode = "n",
+      'F', -- Custom jump across all windows
+      mode = 'n',
       function()
-        require("flash").jump({ search = { multi_window = true } }) -- Default behavior, but explicit
+        require('flash').jump({ search = { multi_window = true } }) -- Default behavior, but explicit
       end,
-      desc = "Flash Jump (All Windows)",
+      desc = 'Flash Jump (All Windows)',
     },
     {
-      "t", -- Custom Treesitter jump/select
-      mode = { "n", "x", "o" }, -- Available in multiple modes
+      't', -- Custom Treesitter jump/select
+      mode = { 'n', 'x', 'o' }, -- Available in multiple modes
       function()
-        require("flash").treesitter()
+        require('flash').treesitter()
       end,
-      desc = "Flash Treesitter",
+      desc = 'Flash Treesitter',
     },
     {
-      "T", -- Custom Treesitter search
-      mode = { "o", "x" }, -- Operator-pending and Visual modes
+      'T', -- Custom Treesitter search
+      mode = { 'o', 'x' }, -- Operator-pending and Visual modes
       function()
-        require("flash").treesitter_search()
+        require('flash').treesitter_search()
       end,
-      desc = "Flash Treesitter Search",
+      desc = 'Flash Treesitter Search',
     },
   },
   -- No explicit config function needed if opts and keys are sufficient

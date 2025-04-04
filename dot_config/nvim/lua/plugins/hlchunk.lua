@@ -2,7 +2,7 @@
 return {
   'shellRaining/hlchunk.nvim',
   -- Load when a buffer is entered or modified
-  event = { "BufReadPost", "BufNewFile", "BufEnter" },
+  event = { 'BufReadPost', 'BufNewFile', 'BufEnter' },
   -- opts table passes configuration directly to setup()
   opts = {
     chunk = {
@@ -51,7 +51,10 @@ return {
     if opts.chunk and opts.chunk.enable and opts.chunk.use_treesitter then
       local ts_ok, _ = pcall(require, 'nvim-treesitter')
       if not ts_ok then
-        vim.notify("hlchunk.nvim requires nvim-treesitter when use_treesitter is enabled.", vim.log.levels.WARN)
+        vim.notify(
+          'hlchunk.nvim requires nvim-treesitter when use_treesitter is enabled.',
+          vim.log.levels.WARN
+        )
         opts.chunk.use_treesitter = false -- Fallback if treesitter isn't loaded
       end
     end

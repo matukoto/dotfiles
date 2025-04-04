@@ -3,7 +3,7 @@
 return {
   'tiagovla/scope.nvim',
   -- Load early to manage UI elements correctly
-  event = "VeryLazy", -- Or "UIEnter" if needed earlier
+  event = 'VeryLazy', -- Or "UIEnter" if needed earlier
   -- opts table passes configuration directly to setup()
   opts = {
     hooks = {

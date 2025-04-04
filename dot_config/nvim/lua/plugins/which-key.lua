@@ -1,13 +1,13 @@
 -- dot_config/nvim/lua/plugins/which-key.lua
 return {
   'folke/which-key.nvim',
-  event = "VeryLazy", -- Load on demand when a key is pressed
+  event = 'VeryLazy', -- Load on demand when a key is pressed
   opts = {
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
     plugins = { spelling = true }, -- Enable spelling suggestions
-    triggers = "auto", -- Automatically show hints
+    triggers = 'auto', -- Automatically show hints
     -- triggers = {"<leader>", "g"}, -- Specify trigger keys
     -- window = { border = "rounded" }, -- Example: customize window border
     notify = false, -- Disable notifications (as per original config)
@@ -53,23 +53,23 @@ return {
       },
       -- Leader mappings can also be registered here
       ['<leader>'] = {
-         -- Example: Add mappings defined in telescope.lua here for display
-         g = { ":Telescope live_grep<CR>", "Grep" },
-         f = { ":Telescope find_files<CR>", "Find File" },
-         o = { ":Telescope smart_open<CR>", "Smart Open" },
-         b = { ":Telescope buffers<CR>", "Buffers" },
-         h = { ":Telescope help_tags<CR>", "Help Tags" },
-         u = { "<cmd>ToggleTerm<CR>", "Terminal" }, -- From toggleterm.lua
-         R = { "<cmd>Telescope repo list<CR>", "Repo List" },
-         r = { "<cmd>Telescope registers<CR>", "Registers" },
-         -- Add other leader mappings...
-         z = {
-           name = "+Zk",
-           k = { "<cmd>Telescope zk notes<CR>", "Notes" },
-           d = { "<cmd>Telescope zk notes createdAfter=3 days ago<CR>", "Recent Notes" },
-           t = { "<cmd>Telescope zk tags<CR>", "Tags" },
-         }
-      }
+        -- Example: Add mappings defined in telescope.lua here for display
+        g = { ':Telescope live_grep<CR>', 'Grep' },
+        f = { ':Telescope find_files<CR>', 'Find File' },
+        o = { ':Telescope smart_open<CR>', 'Smart Open' },
+        b = { ':Telescope buffers<CR>', 'Buffers' },
+        h = { ':Telescope help_tags<CR>', 'Help Tags' },
+        u = { '<cmd>ToggleTerm<CR>', 'Terminal' }, -- From toggleterm.lua
+        R = { '<cmd>Telescope repo list<CR>', 'Repo List' },
+        r = { '<cmd>Telescope registers<CR>', 'Registers' },
+        -- Add other leader mappings...
+        z = {
+          name = '+Zk',
+          k = { '<cmd>Telescope zk notes<CR>', 'Notes' },
+          d = { '<cmd>Telescope zk notes createdAfter=3 days ago<CR>', 'Recent Notes' },
+          t = { '<cmd>Telescope zk tags<CR>', 'Tags' },
+        },
+      },
       -- Add other prefixes like ']' or '[' if needed
     })
   end,

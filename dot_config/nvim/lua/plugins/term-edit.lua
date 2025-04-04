@@ -3,8 +3,8 @@
 return {
   'chomosuke/term-edit.nvim',
   -- Load when needed, likely triggered by a command or keymap
-  cmd = { "TermEdit" },
-  event = "VeryLazy",
+  cmd = { 'TermEdit' },
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   opts = {
     -- Prompt end pattern to detect command line end

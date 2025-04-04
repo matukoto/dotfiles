@@ -2,7 +2,7 @@
 return {
   'mechatroner/rainbow_csv',
   -- Load specifically for csv and tsv files
-  ft = { "csv", "tsv", "txt" }, -- Add other delimiters if needed, e.g., "psv" for pipe
+  ft = { 'csv', 'tsv', 'txt' }, -- Add other delimiters if needed, e.g., "psv" for pipe
   -- init function runs before the plugin is loaded, suitable for setting globals
   init = function()
     -- Define the color pairs for columns

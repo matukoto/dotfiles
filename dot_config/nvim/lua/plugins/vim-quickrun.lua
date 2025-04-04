@@ -3,8 +3,8 @@
 return {
   'thinca/vim-quickrun',
   -- Load lazily, triggered by command or keymap
-  cmd = { "QuickRun" },
-  event = "VeryLazy",
+  cmd = { 'QuickRun' },
+  event = 'VeryLazy',
   -- No opts needed
   -- config function to define command abbreviation
   config = function()

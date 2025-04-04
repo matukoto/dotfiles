@@ -3,10 +3,11 @@ return {
   'matukoto/fm-nvim',
   -- Load lazily, triggered by commands or keymaps
   cmd = {
-    "Gitui", "Lazygit", -- Add other commands if enabled below
+    'Gitui',
+    'Lazygit', -- Add other commands if enabled below
     -- "Lf", "Fm", "Nnn", "Fff", "Twf", "Fzf", "Fzy", "Xplr", "Vifm", "Skim", "Broot", "Ranger", "Joshuto", "Neomutt", "Taskwarrior"
   },
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   opts = {
     edit_cmd = 'edit', -- Command to open file

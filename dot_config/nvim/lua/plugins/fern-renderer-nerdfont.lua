@@ -5,7 +5,7 @@ return {
   -- Dependencies: Requires fern.vim and vim-nerdfont
   dependencies = { 'lambdalisue/vim-fern', 'lambdalisue/vim-nerdfont' },
   -- Load when fern is loaded
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- init function runs before the plugin is loaded, suitable for setting globals
   init = function()
     -- Set the fern renderer to use nerdfont icons

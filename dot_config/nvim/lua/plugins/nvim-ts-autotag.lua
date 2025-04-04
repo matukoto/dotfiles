@@ -6,8 +6,21 @@ return {
   dependencies = { 'nvim-treesitter/nvim-treesitter' },
   -- Load for relevant filetypes
   ft = {
-    "html", "javascriptreact", "typescriptreact", "svelte", "vue",
-    "tsx", "jsx", "rescript", "xml", "php", "markdown", "astro", "glimmer", "handlebars", "hbs"
+    'html',
+    'javascriptreact',
+    'typescriptreact',
+    'svelte',
+    'vue',
+    'tsx',
+    'jsx',
+    'rescript',
+    'xml',
+    'php',
+    'markdown',
+    'astro',
+    'glimmer',
+    'handlebars',
+    'hbs',
   },
   -- opts table passes configuration directly to setup()
   -- Note: Original config had setup({ opts = { ... } }), so we use the inner table.

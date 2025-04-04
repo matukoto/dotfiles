@@ -2,15 +2,15 @@
 return {
   'stevearc/oil.nvim',
   -- Dependencies: Icons are nice to have
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
   -- Load lazily, triggered by command or keymap
-  cmd = "Oil",
-  event = "VeryLazy",
+  cmd = 'Oil',
+  event = 'VeryLazy',
   -- opts table passes configuration directly to setup()
   opts = {
     default_file_explorer = false, -- Don't replace netrw by default
     columns = {
-      "icon", -- Show filetype icons
+      'icon', -- Show filetype icons
       -- "permissions",
       -- "size",
       -- "mtime",
@@ -67,8 +67,12 @@ return {
     use_default_keymaps = false,
     view_options = {
       show_hidden = false, -- Do not show hidden files by default
-      is_hidden_file = function(name, bufnr) return vim.startswith(name, '.') end,
-      is_always_hidden = function(name, bufnr) return false end,
+      is_hidden_file = function(name, bufnr)
+        return vim.startswith(name, '.')
+      end,
+      is_always_hidden = function(name, bufnr)
+        return false
+      end,
       natural_order = true, -- Sort intuitively
       sort = {
         { 'type', 'asc' }, -- Sort folders first
@@ -76,9 +80,15 @@ return {
       },
     },
     git = { -- Disable git integration by default
-      add = function(path) return false end,
-      mv = function(src_path, dest_path) return false end,
-      rm = function(path) return false end,
+      add = function(path)
+        return false
+      end,
+      mv = function(src_path, dest_path)
+        return false
+      end,
+      rm = function(path)
+        return false
+      end,
     },
     float = {
       padding = 2,
@@ -86,7 +96,9 @@ return {
       max_height = 0,
       border = 'rounded',
       win_options = { winblend = 0 },
-      override = function(conf) return conf end,
+      override = function(conf)
+        return conf
+      end,
     },
     preview = {
       max_width = 0.9,
@@ -116,7 +128,7 @@ return {
   },
   -- Define global keymaps using the 'keys' table
   keys = {
-    { "<Leader>n", "<cmd>Oil --float<CR>", desc = "Open Oil (Float)" },
+    { '<Leader>n', '<cmd>Oil --float<CR>', desc = 'Open Oil (Float)' },
     -- Add other global keymaps if needed, e.g., open in current window
     -- { "-", "<cmd>Oil<CR>", desc = "Open parent directory" }, -- Example mapping for '-'
   },

@@ -3,7 +3,7 @@
 return {
   'bkad/CamelCaseMotion',
   -- Load lazily, likely triggered by keymaps or specific events
-  event = "VeryLazy",
+  event = 'VeryLazy',
   -- init function runs before the plugin is loaded, suitable for setting globals
   init = function()
     -- Set the trigger key for CamelCaseMotion
