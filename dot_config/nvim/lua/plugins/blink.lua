@@ -44,7 +44,7 @@ return {
         auto_show = true,
         auto_show_delay_ms = 1000, -- Delay before showing docs
       },
-      ghost_text = { enabled = true }, -- Show inline preview
+      ghost_text = { enabled = false }, -- Show inline preview
     },
     sources = {
       -- Default sources: LSP, path, snippets (if available), buffer
