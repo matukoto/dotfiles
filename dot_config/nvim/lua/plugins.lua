@@ -18,7 +18,7 @@ return {
   'williamboman/mason-lspconfig.nvim',
   'WhoIsSethDaniel/mason-tool-installer.nvim',
   'jinzhongjia/LspUI.nvim',
-  'j-hui/fidget.nvim', { tag = 'legacy' }, -- Specify tag if needed, check repo for latest
+  {'j-hui/fidget.nvim', tag = 'legacy' }, -- Specify tag if needed, check repo for latest
   'nanotee/sqls.nvim',
   'rachartier/tiny-code-action.nvim',
   'rachartier/tiny-inline-diagnostic.nvim',

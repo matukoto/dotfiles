@@ -120,7 +120,9 @@ vim.opt.mouse = 'a'
 
 -- 置換を簡単に monaqaさん
 -- https://zenn.dev/vim_jp/articles/2023-06-30-vim-substitute-tips
-vim.cmd([[ cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':s' ? [getchar(), ''][1] .. "%s///g<Left><Left>" : 's' ]])
+vim.cmd(
+  [[ cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':s' ? [getchar(), ''][1] .. "%s///g<Left><Left>" : 's' ]]
+)
 -- visual mode の範囲選択をした状態でも同じことをしたい
 -- vim.cmd([[ cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':\'\<\,\'\>s' ? [getchar(), ''][1] .. "%s///g<Left><Left>" : 's' ]])
 
@@ -160,24 +162,24 @@ vim.api.nvim_create_user_command('TCL', CloseTabAndMoveLeft, {})
 
 -- Disable unnecessary default plugins on startup
 if vim.fn.has('vim_starting') == 1 then
-  vim.g.loaded_gzip              = 1
-  vim.g.loaded_tar               = 1
-  vim.g.loaded_tarPlugin         = 1
-  vim.g.loaded_zip               = 1
-  vim.g.loaded_zipPlugin         = 1
-  vim.g.loaded_rrhelper          = 1
-  vim.g.loaded_2html_plugin      = 1
-  vim.g.loaded_vimball           = 1
-  vim.g.loaded_vimballPlugin     = 1
-  vim.g.loaded_getscript         = 1
-  vim.g.loaded_getscriptPlugin   = 1
-  vim.g.loaded_logipat           = 1
-  vim.g.loaded_matchparen        = 1
-  vim.g.loaded_man               = 1
+  vim.g.loaded_gzip = 1
+  vim.g.loaded_tar = 1
+  vim.g.loaded_tarPlugin = 1
+  vim.g.loaded_zip = 1
+  vim.g.loaded_zipPlugin = 1
+  vim.g.loaded_rrhelper = 1
+  vim.g.loaded_2html_plugin = 1
+  vim.g.loaded_vimball = 1
+  vim.g.loaded_vimballPlugin = 1
+  vim.g.loaded_getscript = 1
+  vim.g.loaded_getscriptPlugin = 1
+  vim.g.loaded_logipat = 1
+  vim.g.loaded_matchparen = 1
+  vim.g.loaded_man = 1
   -- NOTE: Netrw is used to download a missing spellfile
-  vim.g.loaded_netrw             = 1
-  vim.g.loaded_netrwPlugin       = 1
-  vim.g.loaded_netrwSettings     = 1
+  vim.g.loaded_netrw = 1
+  vim.g.loaded_netrwPlugin = 1
+  vim.g.loaded_netrwSettings = 1
   vim.g.loaded_netrwFileHandlers = 1
 end
 
@@ -208,7 +210,7 @@ vim.cmd('cabbrev h tab help')
 -- Plugin Management (Lazy.nvim)
 -- This section will be populated later after creating lazy.lua
 if vim.g.vscode then
-    -- VSCode extension specific settings (if any)
+  -- VSCode extension specific settings (if any)
 else
   -- Plugin loading is handled at the end of the file by lazy.nvim setup
 end
@@ -254,14 +256,14 @@ vim.api.nvim_create_autocmd('CursorMoved', {
 -- vim.cmd('colorscheme everforest') -- Set your desired colorscheme here
 
 -- Ensure lazy.nvim is installed
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
     lazypath,
   })
 end
@@ -269,7 +271,8 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Load plugins (This should be near the end)
 if not vim.g.vscode then
-  require('lazy').setup('plugins') -- Assuming plugins are defined in lua/plugins.lua or lua/plugins/init.lua
+  -- require('lazy').setup('plugins') -- Assuming plugins are defined in lua/plugins.lua or lua/plugins/init.lua
+  require('lazy').setup(require('plugins'))
 end
 
-print("init.lua loaded successfully!")
+print('init.lua loaded successfully!')

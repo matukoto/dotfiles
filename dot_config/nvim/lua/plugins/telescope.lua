@@ -9,14 +9,21 @@ local qfs_actions_ok, qfs_actions = pcall(require, 'qfscope.actions')
 if not qfs_actions_ok then
   -- Assign dummy functions or notify if qfscope is essential for these mappings
   qfs_actions = {
-    qfscope_search_filename = function() print("qfscope not loaded") end,
-    qfscope_grep_filename = function() print("qfscope not loaded") end,
-    qfscope_grep_line = function() print("qfscope not loaded") end,
-    qfscope_grep_text = function() print("qfscope not loaded") end,
+    qfscope_search_filename = function()
+      print('qfscope not loaded')
+    end,
+    qfscope_grep_filename = function()
+      print('qfscope not loaded')
+    end,
+    qfscope_grep_line = function()
+      print('qfscope not loaded')
+    end,
+    qfscope_grep_text = function()
+      print('qfscope not loaded')
+    end,
   }
   -- vim.notify("qfscope.actions not found for telescope mappings", vim.log.levels.WARN)
 end
-
 
 return {
   'nvim-telescope/telescope.nvim',
@@ -151,28 +158,32 @@ return {
 
     -- Setup for telescope-all-recent (needs to be called separately)
     pcall(require('telescope-all-recent').setup, {
-        database = {
-          folder = vim.fn.stdpath('data'),
-          file = 'telescope-all-recent.sqlite3',
-          max_timestamps = 10,
+      database = {
+        folder = vim.fn.stdpath('data'),
+        file = 'telescope-all-recent.sqlite3',
+        max_timestamps = 10,
+      },
+      debug = false,
+      scoring = {
+        recency_modifier = {
+          [1] = { age = 240, value = 100 },
+          [2] = { age = 1440, value = 80 },
+          [3] = { age = 4320, value = 60 },
+          [4] = { age = 10080, value = 40 },
+          [5] = { age = 43200, value = 20 },
+          [6] = { age = 129600, value = 10 },
         },
-        debug = false,
-        scoring = {
-          recency_modifier = {
-            [1] = { age = 240, value = 100 }, [2] = { age = 1440, value = 80 },
-            [3] = { age = 4320, value = 60 }, [4] = { age = 10080, value = 40 },
-            [5] = { age = 43200, value = 20 }, [6] = { age = 129600, value = 10 },
-          },
-          boost_factor = 0.0001,
-        },
-        default = {
-          disable = true, use_cwd = true, sorting = 'recent',
-        },
-        pickers = {
-          man_pages = { disable = false, use_cwd = false, sorting = 'frecency' },
-        },
+        boost_factor = 0.0001,
+      },
+      default = {
+        disable = true,
+        use_cwd = true,
+        sorting = 'recent',
+      },
+      pickers = {
+        man_pages = { disable = false, use_cwd = false, sorting = 'frecency' },
+      },
     })
-
 
     -- Load extensions after setup
     require('telescope').load_extension('zf-native')
@@ -182,21 +193,61 @@ return {
     pcall(require('telescope').load_extension, 'all_recent') -- Load the recent extension
 
     -- Define keymaps here, after telescope and extensions are loaded
-    vim.keymap.set('n', '<leader>g', '<cmd>Telescope live_grep<CR>', { desc = 'Telescope Live Grep' })
-    vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<CR>', { desc = 'Telescope Find Files' })
-    vim.keymap.set('n', '<leader>o', '<cmd>Telescope smart_open<CR>', { desc = 'Telescope Smart Open' })
-    vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<CR>', { desc = 'Telescope Buffers' }) -- Common mapping for buffers
-    vim.keymap.set('n', '<leader>h', '<cmd>Telescope help_tags<CR>', { desc = 'Telescope Help Tags' }) -- Common mapping for help
+    vim.keymap.set(
+      'n',
+      '<leader>g',
+      '<cmd>Telescope live_grep<CR>',
+      { desc = 'Telescope Live Grep' }
+    )
+    vim.keymap.set(
+      'n',
+      '<leader>f',
+      '<cmd>Telescope find_files<CR>',
+      { desc = 'Telescope Find Files' }
+    )
+    vim.keymap.set(
+      'n',
+      '<leader>o',
+      '<cmd>Telescope smart_open<CR>',
+      { desc = 'Telescope Smart Open' }
+    )
+    -- vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<CR>', { desc = 'Telescope Buffers' }) -- Common mapping for buffers
+    vim.keymap.set(
+      'n',
+      '<leader>h',
+      '<cmd>Telescope help_tags<CR>',
+      { desc = 'Telescope Help Tags' }
+    ) -- Common mapping for help
 
     -- Zk specific mappings (ensure zk plugin/extension is loaded if needed)
-    vim.keymap.set('n', '<Leader>zk', '<cmd>Telescope zk notes<CR>', { desc = 'Telescope Zk Notes' })
-    vim.keymap.set('n', '<Leader>zd', '<cmd>Telescope zk notes createdAfter=3 days ago<CR>', { desc = 'Telescope Zk Recent Notes' })
+    vim.keymap.set(
+      'n',
+      '<Leader>zk',
+      '<cmd>Telescope zk notes<CR>',
+      { desc = 'Telescope Zk Notes' }
+    )
+    vim.keymap.set(
+      'n',
+      '<Leader>zd',
+      '<cmd>Telescope zk notes createdAfter=3 days ago<CR>',
+      { desc = 'Telescope Zk Recent Notes' }
+    )
     vim.keymap.set('n', '<Leader>zt', '<cmd>Telescope zk tags<CR>', { desc = 'Telescope Zk Tags' })
 
     -- Repo mapping
-    vim.keymap.set('n', '<Leader>R', '<cmd>Telescope repo list<CR>', { desc = 'Telescope Repo List' })
+    vim.keymap.set(
+      'n',
+      '<Leader>R',
+      '<cmd>Telescope repo list<CR>',
+      { desc = 'Telescope Repo List' }
+    )
     -- Registers mapping
-    vim.keymap.set('n', '<Leader>r', '<cmd>Telescope registers<CR>', { desc = 'Telescope Registers' })
+    vim.keymap.set(
+      'n',
+      '<Leader>r',
+      '<cmd>Telescope registers<CR>',
+      { desc = 'Telescope Registers' }
+    )
 
     -- Kensaku mapping (uncomment if used)
     -- vim.keymap.set('n', '<Leader>k', function() require('telescope').extensions.kensaku.kensaku() end, { desc = 'Telescope Kensaku' })

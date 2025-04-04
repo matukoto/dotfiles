@@ -27,33 +27,33 @@ return {
       hide_during_completion = true,
       debounce = 75,
       keymap = {
-        accept = '<Tab>', -- Use Tab to accept suggestion
-        accept_word = false,
-        accept_line = false,
-        next = '<M-]>', -- Alt + ]
-        prev = '<M-[>', -- Alt + [
-        dismiss = '<C-]>', -- Ctrl + ]
+        accept = '<Tab>',      -- サジェストを確定（Tab）
+        accept_word = false,   -- 単語単位での確定を無効化
+        accept_line = false,   -- 行単位での確定を無効化
+        next = '<M-]>',       -- 次のサジェストに移動（Alt+]）
+        prev = '<M-[>',       -- 前のサジェストに移動（Alt+[）
+        dismiss = '<C-]>',     -- サジェストを閉じる（Ctrl+]）
+        -- expand = '<C-Space>', -- Vim script設定から追加 (copilot#expand() は直接呼べないため、代替手段が必要か確認)
       },
     },
-    filetypes = {
+    -- filetypes from copilot.vim (empty in this case, but merging logic shown)
+    -- Merge with existing filetypes, Vim script settings take precedence if defined
+    filetypes = vim.tbl_deep_extend("force", {
       yaml = false,
       markdown = true,
       help = false,
       gitcommit = true,
       gitrebase = false,
       hgcommit = false,
-      svn = false, -- Added svn just in case
+      svn = false,
       cvs = false,
-      -- Disable for specific languages where it might interfere or isn't needed
       java = false,
       svelte = false,
       typescript = false,
-      -- Default for unspecified filetypes
-      ['*'] = false, -- Default to disabled unless explicitly enabled above
-      -- Example: Enable for Lua
+      ['*'] = false,
       lua = true,
-      python = true, -- Example: Enable for Python
-    },
+      python = true,
+    }, vim.g.copilot_filetypes or {}), -- Merge with vim.g.copilot_filetypes if it exists
     copilot_node_command = 'node', -- Ensure Node.js v18+ is in PATH
     server_opts_overrides = {
       -- Example override:
