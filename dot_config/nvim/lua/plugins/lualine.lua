@@ -1,19 +1,12 @@
 -- dot_config/nvim/lua/plugins/lualine.lua
 
--- Define the custom component in the module scope
-local CTimeLine = require('lualine.component'):extend()
-CTimeLine.init = function(self, options)
-  CTimeLine.super.init(self, options)
-end
-CTimeLine.update_status = function(self)
-  return os.date(self.options.format or '%H:%M', os.time())
-end
+-- Custom component definition moved inside config function
 
 return {
   -- Plugin specification for lazy.nvim
-  'nvim-lualine/lualine.nvim', -- Restore plugin name
-  dependencies = { 'nvim-tree/nvim-web-devicons' }, -- Restore dependencies
-  -- opts will be passed to require('lualine').setup() by lazy.nvim
+  'nvim-lualine/lualine.nvim',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  -- Basic opts, custom component setup moved to config
   opts = {
     options = {
       icons_enabled = true,
@@ -52,7 +45,8 @@ return {
         'filetype',
       },
       lualine_y = { 'location', 'progress' },
-      lualine_z = { CTimeLine }, -- Reference the custom component defined above
+      -- lualine_z = { CTimeLine }, -- Custom component added in config
+      lualine_z = {}, -- Placeholder, will be updated in config
     },
     inactive_sections = {
       lualine_a = {},
@@ -65,30 +59,23 @@ return {
     tabline = {},
     winbar = {},
     inactive_winbar = {},
-    extensions = {}, -- Add extensions like 'nvim-tree', 'toggleterm' if needed
+    extensions = {},
   },
-  -- config function runs *after* setup(opts) because opts is defined
+  -- config function runs after the plugin is loaded
   config = function(_, opts)
-    -- Apply the options using setup
-    require('lualine').setup(opts)
+    -- Define the custom component *after* lualine is loaded
+    local CTimeLine = require('lualine.component'):extend()
+    CTimeLine.init = function(self, options)
+      CTimeLine.super.init(self, options)
+    end
+    CTimeLine.update_status = function(self)
+      return os.date(self.options.format or '%H:%M', os.time())
+    end
 
-    -- Place the autocmd here, as it needs lualine to be loaded
-    -- Use a specific augroup name to avoid conflicts
-    vim.api.nvim_create_augroup('LualineLspProgress', { clear = true })
-    vim.api.nvim_create_autocmd('User', {
-      group = 'LualineLspProgress',
-      pattern = 'LspProgressStatusUpdated',
-      callback = function()
-        -- Ensure lualine is loaded before calling refresh
-        -- Using pcall is safer in autocmds
-        local lualine_ok, lualine = pcall(require, 'lualine')
-        if lualine_ok then
-          lualine.refresh()
-        else
-          vim.notify('Lualine refresh failed in autocmd', vim.log.levels.WARN)
-        end
-      end,
-    })
-    -- print("Lualine config executed.") -- For debugging if needed
+    -- Add the custom component to the opts table before setup
+    opts.sections.lualine_z = { CTimeLine }
+
+    -- Apply the final configuration
+    require('lualine').setup(opts)
   end,
 }

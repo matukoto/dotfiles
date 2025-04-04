@@ -1,13 +1,12 @@
 -- dot_config/nvim/lua/plugins/fidget.lua
 return {
   'j-hui/fidget.nvim',
-  tag = 'legacy', -- Specify the tag used in the main plugins list
   -- Load lazily, typically when LSP starts attaching
   event = 'LspAttach',
-  -- opts table passes configuration directly to setup()
+  -- Basic opts, things requiring the plugin to be loaded are moved to config
   opts = {
     progress = {
-      poll_rate = 0,
+      poll_rate = 0, -- Keep basic options here
       suppress_on_insert = false,
       ignore_done_already = false,
       ignore_empty_message = false,
@@ -19,7 +18,7 @@ return {
         return msg.lsp_client.name
       end,
       ignore = {},
-      display = {
+      display = { -- Keep basic display options here
         render_limit = 16,
         done_ttl = 3,
         done_icon = '✔',
@@ -34,10 +33,8 @@ return {
         icon_style = 'Question',
         priority = 30,
         skip_history = true,
-        -- format_message requires fidget to be loaded, safe within opts
-        format_message = function(...)
-          return require('fidget.progress.display').default_format_message(...)
-        end,
+        -- format_message requires fidget to be loaded, move to config
+        -- format_message = function(...) ... end,
         format_annote = function(msg)
           return msg.title
         end,
@@ -50,28 +47,18 @@ return {
         log_handler = false,
       },
     },
-    notification = {
+    notification = { -- Keep basic notification options here
       poll_rate = 10,
       filter = vim.log.levels.INFO,
       history_size = 128,
-      override_vim_notify = false, -- Set to true to use fidget for all vim.notify calls
+      override_vim_notify = false,
       configs = {
-        default = require('fidget.notification').default_config,
-        -- update_hook = false, -- This seems incorrect, likely meant for specific configs
+        -- default requires fidget to be loaded, move to config
+        -- default = require('fidget.notification').default_config,
       },
-      -- redirect requires fidget to be loaded, safe within opts
-      redirect = function(msg, level, opts)
-        -- Example: Redirect to nvim-notify if available and on_open is used
-        if opts and opts.on_open then
-          local notify_ok, nvim_notify = pcall(require, 'fidget.integration.nvim-notify')
-          if notify_ok then
-            return nvim_notify.delegate(msg, level, opts)
-          end
-        end
-        -- Default behavior (no redirection)
-        return nil
-      end,
-      view = {
+      -- redirect requires fidget to be loaded, move to config
+      -- redirect = function(msg, level, opts) ... end,
+      view = { -- Keep basic view options here
         stack_upwards = true,
         icon_separator = ' ',
         group_separator = '---',
@@ -109,8 +96,38 @@ return {
       path = string.format('%s/fidget.nvim.log', vim.fn.stdpath('cache')),
     },
   },
-  -- No explicit config function needed if opts handles everything
-  -- config = function(_, opts)
-  --   require('fidget').setup(opts)
-  -- end,
+  -- config function runs after the plugin is loaded
+  config = function(_, opts)
+    -- Set options that require the plugin to be loaded
+    opts.progress.display.format_message = function(...)
+      -- Use pcall for safety in case the module path changes in future versions
+      local ok, display = pcall(require, 'fidget.progress.display')
+      if ok then
+        return display.default_format_message(...)
+      else
+        return '...' -- Fallback message
+      end
+    end
+
+    local ok_notification, notification = pcall(require, 'fidget.notification')
+    if ok_notification then
+      opts.notification.configs.default = notification.default_config
+      opts.notification.redirect = function(msg, level, notify_opts)
+        -- Example: Redirect to nvim-notify if available and on_open is used
+        if notify_opts and notify_opts.on_open then
+          local ok_integration, integration = pcall(require, 'fidget.integration.nvim-notify')
+          if ok_integration then
+            return integration.delegate(msg, level, notify_opts)
+          end
+        end
+        -- Default behavior (no redirection)
+        return nil
+      end
+    else
+      vim.notify("Failed to require 'fidget.notification'", vim.log.levels.WARN)
+    end
+
+    -- Apply the final configuration
+    require('fidget').setup(opts)
+  end,
 }

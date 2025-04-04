@@ -1,19 +1,19 @@
 -- dot_config/nvim/lua/plugins/fern.lua
 -- Configuration for fern.vim file explorer
 return {
-  'lambdalisue/vim-fern',
-  -- Dependencies: fern extensions
+  'lambdalisue/vim-fern', -- Core fern plugin
+  -- Explicitly define dependencies here
   dependencies = {
     'yuki-yano/fern-preview.vim',
     'lambdalisue/vim-fern-git-status',
     'lambdalisue/vim-fern-hijack',
-    'lambdalisue/vim-nerdfont', -- Optional, for icons
-    'lambdalisue/vim-fern-renderer-nerdfont', -- Optional, for icons
+    'lambdalisue/vim-nerdfont', -- Required by renderer
+    'lambdalisue/vim-fern-renderer-nerdfont',
   },
-  -- Load immediately to ensure variables are set for dependencies like fern-preview
-  cmd = { 'Fern' },
-  lazy = false,
-  -- init function to set global variables before loading
+  -- Load fern itself early to ensure its variables are set for dependencies
+  cmd = { 'Fern' }, -- Can still be triggered by command
+  lazy = false, -- Ensure fern loads before dependencies try to access its vars
+  -- init function to set global variables before fern or its dependencies load
   init = function()
     -- Show hidden files by default
     vim.g['fern#default_hidden'] = 1
