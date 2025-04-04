@@ -26,9 +26,9 @@ if not qfs_actions_ok then
 end
 
 return {
-  'nvim-telescope/telescope.nvim',
+  'nvim-telescope/telescope.nvim', -- Restore plugin name
   -- Dependencies are managed in the main plugins list (plenary, zf-native, sqlite, etc.)
-  dependencies = {
+  dependencies = { -- Restore dependencies
     'nvim-lua/plenary.nvim',
     { 'natecraddock/telescope-zf-native.nvim', build = 'make' },
     'kkharji/sqlite.lua',

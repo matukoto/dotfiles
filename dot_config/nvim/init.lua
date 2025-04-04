@@ -271,8 +271,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Load plugins (This should be near the end)
 if not vim.g.vscode then
-  -- require('lazy').setup('plugins') -- Assuming plugins are defined in lua/plugins.lua or lua/plugins/init.lua
-  require('lazy').setup(require('plugins'))
+  require('lazy').setup('plugins') -- Load specs from lua/plugins/ directory
 end
 
 print('init.lua loaded successfully!')

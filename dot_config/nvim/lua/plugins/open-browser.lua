@@ -14,6 +14,5 @@ return {
     { "gx", "<Plug>(openbrowser-smart-search)", mode = "n", desc = "Open URL/Search (Normal)" },
     { "gx", "<Plug>(openbrowser-smart-search)", mode = "v", desc = "Open URL/Search (Visual)" },
   },
-  -- No specific opts or config needed
-  opts = {},
+  -- No opts or config needed
 }

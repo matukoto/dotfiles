@@ -21,6 +21,5 @@ return {
     { "<C-f>", "<cmd>FuzzyMotion<CR>", mode = "n", desc = "Fuzzy Motion Jump" },
     -- Add other keymaps if desired
   },
-  -- No specific opts or config needed as configuration is done via globals and keymaps
-  opts = {},
+  -- No opts or config needed
 }

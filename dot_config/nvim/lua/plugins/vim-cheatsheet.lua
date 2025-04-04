@@ -17,8 +17,7 @@ return {
     -- Set floating window height ratio
     vim.g['cheatsheet#float_window_height_ratio'] = 0.5
   end,
-  -- No specific opts or config needed as configuration is done via globals
-  opts = {},
+  -- No opts or config needed
   -- Define keymaps if needed
   -- keys = {
   --   { "<leader>?", "<cmd>Cheatsheet<cr>", desc = "Open Cheatsheet" },

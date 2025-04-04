@@ -17,6 +17,5 @@ return {
     -- Enable status for directories containing changes
     vim.g['fern_git_status#disable_directories'] = 0
   end,
-  -- No specific opts or config needed as configuration is done via globals
-  opts = {},
+  -- No opts or config needed
 }

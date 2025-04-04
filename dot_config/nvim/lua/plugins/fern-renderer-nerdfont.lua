@@ -11,6 +11,5 @@ return {
     -- Set the fern renderer to use nerdfont icons
     vim.g['fern#renderer'] = 'nerdfont'
   end,
-  -- No specific opts or config needed as configuration is done via globals
-  opts = {},
+  -- No opts or config needed
 }

@@ -6,8 +6,7 @@ return {
   dependencies = { 'famiu/bufdelete.nvim' },
   -- Load lazily, triggered by keymaps
   event = "VeryLazy",
-  -- No specific opts needed for default setup
-  opts = {},
+  -- No opts needed
   -- Define keymaps using the 'keys' table
   keys = {
     {

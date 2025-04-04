@@ -22,6 +22,5 @@ return {
     -- Add other keymaps if desired
     -- { "<leader>db", "<cmd>DBUIToggle<cr>", desc = "Toggle DBUI" },
   },
-  -- No specific opts needed as configuration is primarily via globals and commands/keymaps
-  opts = {},
+  -- No opts needed
 }

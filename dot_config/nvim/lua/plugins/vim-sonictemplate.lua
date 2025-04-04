@@ -11,8 +11,7 @@ return {
     -- Use vim.fn.expand to correctly handle $HOME or ~
     vim.g.sonictemplate_vim_template_dir = vim.fn.expand('~/.config/vim/sonictemplate/')
   end,
-  -- No specific opts needed for default behavior
-  opts = {},
+  -- No opts needed
   -- config function to define command abbreviation after loading
   config = function()
     -- Define command abbreviation 'tp' for 'Template'

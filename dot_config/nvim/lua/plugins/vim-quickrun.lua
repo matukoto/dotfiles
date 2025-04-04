@@ -5,8 +5,7 @@ return {
   -- Load lazily, triggered by command or keymap
   cmd = { "QuickRun" },
   event = "VeryLazy",
-  -- No specific opts needed for default behavior
-  opts = {},
+  -- No opts needed
   -- config function to define command abbreviation
   config = function()
     -- Define command abbreviation 'qr' for 'QuickRun'

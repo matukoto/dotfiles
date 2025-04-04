@@ -10,9 +10,9 @@ return {
     'lambdalisue/vim-nerdfont', -- Optional, for icons
     'lambdalisue/vim-fern-renderer-nerdfont', -- Optional, for icons
   },
-  -- Load earlier to ensure variables are set for dependencies
+  -- Load immediately to ensure variables are set for dependencies like fern-preview
   cmd = { "Fern" },
-  event = { "BufReadPre", "BufNewFile" }, -- Load earlier than VeryLazy
+  lazy = false,
   -- init function to set global variables before loading
   init = function()
     -- Show hidden files by default

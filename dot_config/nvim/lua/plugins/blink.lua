@@ -4,7 +4,7 @@ return {
   -- Build step is required for this plugin
   build = 'cargo build --release',
   -- Load when entering insert mode or specific completion events
-  event = { "InsertEnter", "CmdlineEnter" },
+  event = { 'InsertEnter', 'CmdlineEnter' },
   -- Dependencies like LSP and snippet engines should be loaded
   dependencies = {
     -- Add snippet engine dependency if used, e.g., 'L3MON4D3/LuaSnip'
@@ -60,16 +60,9 @@ return {
       window = { border = 'solid' },
     },
     fuzzy = {
-      implementation = 'lua', -- Use built-in Lua fuzzy matcher
+      implementation = 'rust', -- Use built-in Lua fuzzy matcher
       -- implementation = 'rust', -- Use Rust implementation (requires build)
     },
   },
   -- config function can be used for additional setup after opts are applied
-  config = function(_, opts)
-    require('blink.cmp').setup(opts)
-    -- Example: Add custom source or filetype specific setup
-    -- require('blink.cmp').setup_filetype('markdown', {
-    --   sources = { default = { 'buffer', 'path' } }
-    -- })
-  end,
 }

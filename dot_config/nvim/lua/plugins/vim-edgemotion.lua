@@ -12,6 +12,5 @@ return {
     -- { "<C-j>", "<Plug>(edgemotion-j)", mode = "v", desc = "Move Down (EdgeMotion Visual)" },
     -- { "<C-k>", "<Plug>(edgemotion-k)", mode = "v", desc = "Move Up (EdgeMotion Visual)" },
   },
-  -- No specific opts or config needed for default behavior
-  opts = {},
+  -- No opts or config needed
 }

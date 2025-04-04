@@ -21,10 +21,5 @@ return {
     -- Optional: Shared server address (uncomment if using denops-shared-server)
     -- vim.g.denops_server_addr = "127.0.0.1:32123"
   end,
-  -- No specific opts or config needed for denops itself usually
-  opts = {},
-  -- config = function()
-    -- Optional: Call install command if needed (usually done manually once)
-    -- vim.call('denops_shared_server#install')
-  -- end,
+  -- No opts or config needed for denops itself
 }

@@ -14,8 +14,7 @@ return {
     -- Example: Enable default 'w' motion
     -- vim.keymap.set('n', 'w', '<Plug>CamelCaseMotion_w', { silent = true })
   end,
-  -- No specific opts or config needed for this plugin if only setting the global var
-  opts = {},
+  -- No opts or config needed
   -- keys = {
   --   -- Example: Define keymaps using lazy.nvim's keys table
   --   { "w", "<Plug>CamelCaseMotion_w", mode = "n", silent = true, desc = "Next CamelCase Word" },

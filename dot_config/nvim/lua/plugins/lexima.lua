@@ -9,8 +9,7 @@ return {
     -- Treat Ctrl+H as Backspace
     vim.g.lexima_ctrlh_as_backspace = 1
   end,
-  -- No specific opts needed for default setup
-  opts = {},
+  -- No opts needed
   -- config function to add custom rules after loading
   config = function()
     -- Define custom rules in Lua table format
