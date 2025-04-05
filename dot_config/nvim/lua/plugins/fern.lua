@@ -5,14 +5,36 @@ return {
   -- Explicitly define dependencies here
   dependencies = {
     'yuki-yano/fern-preview.vim',
-    'lambdalisue/vim-fern-git-status',
     'lambdalisue/vim-fern-hijack',
     'lambdalisue/vim-nerdfont', -- Required by renderer
-    'lambdalisue/vim-fern-renderer-nerdfont',
+    {
+      'lambdalisue/fern-renderer-nerdfont.vim',
+      config = function()
+        vim.g['fern#renderer'] = 'nerdfont'
+      end,
+    },
+    {
+      'lambdalisue/vim-fern-git-status',
+      -- Dependencies: Requires fern.vim
+      dependencies = { 'lambdalisue/vim-fern' },
+      -- Load when fern is loaded or specifically requested
+      event = 'VeryLazy',
+      -- init function runs before the plugin is loaded, suitable for setting globals
+      init = function()
+        -- Disable status for ignored files (performance)
+        vim.g['fern_git_status#disable_ignored'] = 1
+        -- Enable status for untracked files
+        vim.g['fern_git_status#disable_untracked'] = 0
+        -- Disable status for submodules
+        vim.g['fern_git_status#disable_submodules'] = 1
+        -- Enable status for directories containing changes
+        vim.g['fern_git_status#disable_directories'] = 0
+      end,
+      -- No opts or config needed
+    },
   },
   -- Load fern itself early to ensure its variables are set for dependencies
-  cmd = { 'Fern' }, -- Can still be triggered by command
-  lazy = false, -- Ensure fern loads before dependencies try to access its vars
+  event = 'VeryLazy',
   -- init function to set global variables before fern or its dependencies load
   init = function()
     -- Show hidden files by default
