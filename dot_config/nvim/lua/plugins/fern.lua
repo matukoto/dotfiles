@@ -5,30 +5,35 @@ return {
   -- Explicitly define dependencies here
   dependencies = {
     'yuki-yano/fern-preview.vim',
-    'lambdalisue/vim-fern-git-status',
-    'lambdalisue/vim-fern-hijack',
+    { 'lambdalisue/vim-fern-hijack', lazy = false },
     'lambdalisue/vim-nerdfont', -- Required by renderer
-    'lambdalisue/vim-fern-renderer-nerdfont',
+    'lambdalisue/vim-fern-git-status',
+    'lambdalisue/fern-renderer-nerdfont.vim',
   },
   -- Load fern itself early to ensure its variables are set for dependencies
-  cmd = { 'Fern' }, -- Can still be triggered by command
-  lazy = false, -- Ensure fern loads before dependencies try to access its vars
+  event = 'VeryLazy',
   -- init function to set global variables before fern or its dependencies load
   init = function()
     -- Show hidden files by default
     vim.g['fern#default_hidden'] = 1
     -- Disable default keymappings
     vim.g['fern#disable_default_mappings'] = 1
+    vim.g['fern_git_status#disable_ignored'] = 1
+    vim.g['fern_git_status#disable_untracked'] = 0
+    vim.g['fern_git_status#disable_submodules'] = 1
+    vim.g['fern_git_status#disable_directories'] = 0
   end,
   -- Define global keymaps using the 'keys' table
   keys = {
-    { '<Leader>E', '<Cmd>Fern . -drawer<CR>', desc = 'Open Fern Drawer' },
-    { '<Leader>e', '<Cmd>Fern . -reveal=%<CR>', desc = 'Open Fern (Reveal Current)' },
+    { '<Leader>e', '<Cmd>Fern . -drawer<CR>', desc = 'Open Fern Drawer' },
+    { '<Leader>E', '<Cmd>Fern . -reveal=%<CR>', desc = 'Open Fern (Reveal Current)' },
     { '<Leader>ce', '<Cmd>Fern %:h<CR>', desc = 'Open Fern (Current Dir)' },
   },
   -- config function to define autocmds after loading
   config = function()
+    vim.fn['fern_git_status#init']()
     -- Define the function for fern buffer settings
+    vim.g['fern#renderer'] = 'nerdfont'
     local function fern_settings()
       local map = vim.keymap.set
       local buffer_opts = { silent = true, buffer = true }
