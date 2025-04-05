@@ -89,49 +89,49 @@ require('lazy').setup({
     { import = 'plugins.yazi' },
 
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
-    { 'vim-jp/vimdoc-ja' },
-    { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
-    { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
-    { 'nanotee/sqls.nvim' },
-    { 'rachartier/tiny-inline-diagnostic.nvim' },
-    { 'shougo/pum.vim' },
+    { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
+    { 'williamboman/mason.nvim' }, -- LSP基盤なので一旦そのまま
+    { 'williamboman/mason-lspconfig.nvim' }, -- LSP基盤なので一旦そのまま
+    { 'WhoIsSethDaniel/mason-tool-installer.nvim', event = 'VeryLazy' },
+    { 'nanotee/sqls.nvim', event = 'VeryLazy' },
+    { 'rachartier/tiny-inline-diagnostic.nvim', event = 'VeryLazy' },
+    { 'shougo/pum.vim', event = 'VeryLazy' },
     -- { "yuki-yano/fern-preview.vim" }, -- Moved to fern.lua dependencies
     -- { "lambdalisue/vim-fern-hijack" }, -- Moved to fern.lua dependencies
-    { 'AndreM222/copilot-lualine' },
-    { 'nvim-treesitter/nvim-treesitter-context' },
+    { 'AndreM222/copilot-lualine', event = 'VeryLazy' },
+    { 'nvim-treesitter/nvim-treesitter-context', event = 'VeryLazy' },
     -- { "lambdalisue/vim-nerdfont" }, -- Moved to fern.lua dependencies
-    { 'ogaken-1/nvim-gin-preview' },
-    { 'sindrets/diffview.nvim' },
-    { 'lambdalisue/vim-kensaku' },
-    { 'lambdalisue/vim-kensaku-search' },
-    { 'famiu/bufdelete.nvim' },
-    { 'kevinhwang91/nvim-bqf' },
-    { 'haya14busa/vim-asterisk' },
-    { 'tyru/capture.vim' },
-    { 'itchyny/vim-cursorword' },
-    { 'lambdalisue/vim-suda' },
-    { 'nanotee/zoxide.vim' },
-    { 'simeji/winresizer' },
-    { 'tpope/vim-surround' },
-    { 'machakann/vim-sandwich' },
-    { 'wakatime/vim-wakatime' },
-    { 'tpope/vim-dadbod' },
-    { 'neko-night/nvim' },
+    { 'ogaken-1/nvim-gin-preview', event = 'VeryLazy' },
+    { 'sindrets/diffview.nvim', cmd = 'DiffviewOpen' }, -- コマンド実行時にロード
+    { 'lambdalisue/vim-kensaku', event = 'VeryLazy' },
+    { 'lambdalisue/vim-kensaku-search', event = 'VeryLazy' },
+    { 'famiu/bufdelete.nvim', event = 'VeryLazy' },
+    { 'kevinhwang91/nvim-bqf', event = 'VeryLazy' }, -- Quickfix/Location Listが開かれた時に必要だが、VeryLazyでも問題ないことが多い
+    { 'haya14busa/vim-asterisk', event = 'VeryLazy' },
+    { 'tyru/capture.vim', event = 'VeryLazy' },
+    { 'itchyny/vim-cursorword', event = 'VeryLazy' },
+    { 'lambdalisue/vim-suda', cmd = 'SudaWrite' }, -- コマンド実行時にロード
+    { 'nanotee/zoxide.vim', cmd = { 'Zi', 'Zcd' } }, -- コマンド実行時にロード
+    { 'simeji/winresizer', event = 'VeryLazy' },
+    { 'tpope/vim-surround', event = 'VeryLazy' },
+    { 'machakann/vim-sandwich', event = 'VeryLazy' },
+    { 'wakatime/vim-wakatime', event = 'VeryLazy' },
+    { 'tpope/vim-dadbod', event = 'VeryLazy' }, -- dadbod-ui などが cmd でロードされるならこれも遅延可能
+    { 'neko-night/nvim' }, -- カラースキームは即時ロード
 
     -- 依存関係として必要だが import されていないプラグイン
-    { 'kevinhwang91/promise-async' }, -- nvim-ufo dependency
-    { 'nvim-tree/nvim-web-devicons' }, -- lualine dependency
-    { 'nvim-neotest/nvim-nio' }, -- neotest dependency
-    { 'antoinemadec/FixCursorHold.nvim' }, -- neotest dependency
-    { 'marilari88/neotest-vitest' }, -- neotest dependency
-    { 'nvim-lua/plenary.nvim' }, -- telescope dependency
-    { 'natecraddock/telescope-zf-native.nvim', build = 'make' }, -- telescope dependency
-    { 'kkharji/sqlite.lua' }, -- telescope dependency
-    { 'danielfalk/smart-open.nvim' }, -- telescope dependency
-    { 'atusy/qfscope.nvim' }, -- telescope dependency
-    { 'cljoly/telescope-repo.nvim' }, -- telescope dependency
-    { 'prochri/telescope-all-recent.nvim' }, -- telescope dependency
+    { 'kevinhwang91/promise-async' }, -- nvim-ufo dependency (依存関係は即時ロード)
+    { 'nvim-tree/nvim-web-devicons' }, -- lualine dependency (依存関係は即時ロード)
+    { 'nvim-neotest/nvim-nio' }, -- neotest dependency (依存関係は即時ロード)
+    { 'antoinemadec/FixCursorHold.nvim' }, -- neotest dependency (依存関係は即時ロード)
+    { 'marilari88/neotest-vitest' }, -- neotest dependency (依存関係は即時ロード)
+    { 'nvim-lua/plenary.nvim' }, -- telescope dependency (依存関係は即時ロード)
+    { 'natecraddock/telescope-zf-native.nvim', build = 'make' }, -- telescope dependency (依存関係は即時ロード)
+    { 'kkharji/sqlite.lua' }, -- telescope dependency (依存関係は即時ロード)
+    { 'danielfalk/smart-open.nvim' }, -- telescope dependency (依存関係は即時ロード)
+    { 'atusy/qfscope.nvim' }, -- telescope dependency (依存関係は即時ロード)
+    { 'cljoly/telescope-repo.nvim' }, -- telescope dependency (依存関係は即時ロード)
+    { 'prochri/telescope-all-recent.nvim' }, -- telescope dependency (依存関係は即時ロード)
 
     -- 必要に応じて他のプラグインや設定をここに追加
   },

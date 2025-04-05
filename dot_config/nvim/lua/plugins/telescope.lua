@@ -27,6 +27,7 @@ end
 
 return {
   'nvim-telescope/telescope.nvim', -- Restore plugin name
+  cmd = "Telescope", -- Load when Telescope command is executed
   -- Dependencies are managed in the main plugins list (plenary, zf-native, sqlite, etc.)
   dependencies = { -- Restore dependencies
     'nvim-lua/plenary.nvim',

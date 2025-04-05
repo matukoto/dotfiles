@@ -6,6 +6,9 @@ return {
   dependencies = { 'vim-denops/denops.vim' },
   -- Load earlier to ensure Denops is ready
   event = { 'BufReadPre', 'BufNewFile', 'InsertEnter', 'CmdlineEnter' },
+  keys = {
+    { '<C-j>', '<Plug>(skkeleton-toggle)', mode = { 'i', 'c' }, desc = 'Toggle skk' },
+  },
   -- No specific opts needed, configuration is done via vim.call in config
   -- config function to apply Vim script settings using vim.call and Lua API
   config = function()
@@ -53,7 +56,6 @@ return {
       [']'] = { ']', '' },
       [']]'] = { '」', '' },
     })
-
     -- Function to ensure keepState is false on enable
     -- Use Lua function instead of Vim script function
     local function skkeleton_init()
@@ -66,14 +68,5 @@ return {
       group = vim.api.nvim_create_augroup('SkkeletonEnablePreviousLua', { clear = true }),
       callback = skkeleton_init,
     })
-
-    -- Keymappings to enable skkeleton
-    vim.keymap.set(
-      { 'i', 'c' },
-      '<C-j>',
-      '<Plug>(skkeleton-enable)',
-      { noremap = false, desc = 'Enable Skkeleton' }
-    )
-    -- vim.schedule_wrap removed
   end,
 }
