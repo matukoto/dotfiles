@@ -1,16 +1,24 @@
--- dot_config/nvim/lua/plugins/snacks.lua
--- Enhanced buffer/process management with a picker UI
 return {
   'folke/snacks.nvim',
-  -- Dependencies: Telescope is often used as the picker backend
-  dependencies = { 'nvim-telescope/telescope.nvim' },
-  -- Load lazily, triggered by commands or keymaps
-  cmd = { 'SnacksOpen', 'SnacksClose', 'SnacksHide', 'SnacksShow', 'SnacksPicker' },
-  event = 'VeryLazy',
+  priority = 1000,
+  lazy = false,
   -- opts table passes configuration directly to setup()
   opts = {
-    -- Configure the picker UI (likely Telescope)
+    dashboard = {
+      -- row = 10,
+      sections = {
+        { section = 'header' },
+        { section = 'keys', gap = 1, padding = 1 },
+        { section = 'startup' },
+      },
+    },
     picker = {
+      formatters = {
+        file = {
+          filename_first = true,
+          truncate = 100,
+        },
+      },
       layout = {
         preset = 'dropdown', -- Use dropdown layout
         layout = {
@@ -29,7 +37,9 @@ return {
             ['<c-f>'] = false,
             ['<c-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
             ['<c-s>'] = false,
-            ['<c-x>'] = { 'edit_split', mode = { 'i', 'n' } }, -- Edit in split
+            ['<c-h>'] = { 'edit_split', mode = { 'i', 'n' } }, -- Edit in split
+            ['<c-v>'] = { 'edit_vsplit', mode = { 'i', 'n' } }, -- Edit in split
+            ['<c-t>'] = { 'edit_tab', mode = { 'i', 'n' } }, -- Edit in split
             -- Add other picker keymaps if needed
           },
         },
@@ -44,6 +54,47 @@ return {
   },
   -- Define global keymaps using the 'keys' table
   keys = {
+    {
+      '<leader>f', -- Original keymap for buffer picker
+      function()
+        -- Ensure snacks is loaded before calling picker
+        local ok, snacks = pcall(require, 'snacks')
+        if ok then
+          snacks.picker.files()
+        else
+          vim.notify('snacks.nvim not loaded.', vim.log.levels.WARN)
+        end
+      end,
+      desc = 'Pick Files (Snacks)',
+    },
+    {
+      '<leader>g', -- Original keymap for buffer picker
+      function()
+        -- Ensure snacks is loaded before calling picker
+        local ok, snacks = pcall(require, 'snacks')
+        if ok then
+          snacks.picker.grep()
+        else
+          vim.notify('snacks.nvim not loaded.', vim.log.levels.WARN)
+        end
+      end,
+      desc = 'Pick Greps (Snacks)',
+    },
+    {
+      '<space>h',
+      function()
+        picker.help({
+          win = {
+            input = {
+              keys = {
+                ['<CR>'] = { 'edit_vsplit', mode = { 'i', 'n' } },
+              },
+            },
+          },
+        })
+      end,
+      desc = 'Pick Help',
+    },
     {
       '<leader>b', -- Original keymap for buffer picker
       function()
@@ -85,13 +136,4 @@ return {
       desc = 'Pick Kensaku (Snacks)',
     },
   },
-  -- config function can be used for setup that requires the plugin to be loaded
-  -- config = function(_, opts)
-  --   require('snacks').setup(opts)
-  --   -- It might be more robust to register the kensaku source here:
-  --   -- local kensaku_source_ok, kensaku_source = pcall(require, 'plugins.snacks.sources.kensaku')
-  --   -- if kensaku_source_ok then
-  --   --   require('snacks.picker.config.sources').kensaku = kensaku_source
-  --   -- end
-  -- end,
 }
