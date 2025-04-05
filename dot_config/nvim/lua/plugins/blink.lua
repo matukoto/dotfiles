@@ -51,6 +51,14 @@ return {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
       -- Customize sources per filetype if needed
       -- markdown = { 'buffer', 'path' },
+      providers = {
+        buffer = {
+          opts = {
+            -- get all buffers, even ones like neo-tree
+            get_bufnrs = vim.api.nvim_list_bufs,
+          },
+        },
+      },
     },
     snippets = {
       preset = 'default', -- Use default snippet integration (requires snippet engine)
