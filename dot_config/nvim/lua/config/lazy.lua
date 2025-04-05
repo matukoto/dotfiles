@@ -53,7 +53,7 @@ require('lazy').setup({
     { import = 'plugins.lspsaga' },
     { import = 'plugins.lspui' },
     { import = 'plugins.lualine' },
-    { import = 'plugins.markdown' },
+    { import = 'plugins.render-markdown' },
     { import = 'plugins.mini-test' },
     { import = 'plugins.neotest' },
     { import = 'plugins.nvim-lastplace' },
