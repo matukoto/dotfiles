@@ -71,9 +71,7 @@ require('lazy').setup({
     { import = 'plugins.smoothcursor' },
     { import = 'plugins.snacks' },
     { import = 'plugins.styler' },
-    { import = 'plugins.telescope' },
     { import = 'plugins.term-edit' },
-    { import = 'plugins.tiny-code-action' },
     { import = 'plugins.todo-comments' },
     { import = 'plugins.toggleterm' },
     { import = 'plugins.treesitter' },
@@ -97,7 +95,6 @@ require('lazy').setup({
     { 'shougo/pum.vim', event = 'VeryLazy' },
     -- { "yuki-yano/fern-preview.vim" }, -- Moved to fern.lua dependencies
     -- { "lambdalisue/vim-fern-hijack" }, -- Moved to fern.lua dependencies
-    { 'AndreM222/copilot-lualine', event = 'VeryLazy' },
     { 'nvim-treesitter/nvim-treesitter-context', event = 'VeryLazy' },
     -- { "lambdalisue/vim-nerdfont" }, -- Moved to fern.lua dependencies
     { 'ogaken-1/nvim-gin-preview', event = 'VeryLazy' },
@@ -117,22 +114,6 @@ require('lazy').setup({
     { 'wakatime/vim-wakatime', event = 'VeryLazy' },
     { 'tpope/vim-dadbod', event = 'VeryLazy' }, -- dadbod-ui などが cmd でロードされるならこれも遅延可能
     { 'neko-night/nvim' }, -- カラースキームは即時ロード
-
-    -- 依存関係として必要だが import されていないプラグイン
-    { 'kevinhwang91/promise-async' }, -- nvim-ufo dependency (依存関係は即時ロード)
-    { 'nvim-tree/nvim-web-devicons' }, -- lualine dependency (依存関係は即時ロード)
-    { 'nvim-neotest/nvim-nio' }, -- neotest dependency (依存関係は即時ロード)
-    { 'antoinemadec/FixCursorHold.nvim' }, -- neotest dependency (依存関係は即時ロード)
-    { 'marilari88/neotest-vitest' }, -- neotest dependency (依存関係は即時ロード)
-    { 'nvim-lua/plenary.nvim' }, -- telescope dependency (依存関係は即時ロード)
-    { 'natecraddock/telescope-zf-native.nvim', build = 'make' }, -- telescope dependency (依存関係は即時ロード)
-    { 'kkharji/sqlite.lua' }, -- telescope dependency (依存関係は即時ロード)
-    { 'danielfalk/smart-open.nvim' }, -- telescope dependency (依存関係は即時ロード)
-    { 'atusy/qfscope.nvim' }, -- telescope dependency (依存関係は即時ロード)
-    { 'cljoly/telescope-repo.nvim' }, -- telescope dependency (依存関係は即時ロード)
-    { 'prochri/telescope-all-recent.nvim' }, -- telescope dependency (依存関係は即時ロード)
-
-    -- 必要に応じて他のプラグインや設定をここに追加
   },
   -- 必要に応じて他の lazy.nvim の設定をここに追加できます
   -- 例: change_detection = { notify = false }

@@ -2,11 +2,8 @@
 return {
   'CopilotC-Nvim/CopilotChat.nvim',
   branch = 'main', -- Or specify a release tag if preferred
-  -- Dependencies: copilot.lua should be loaded, telescope is needed for the custom prompt action
   dependencies = {
     'zbirenbaum/copilot.lua', -- Ensure copilot core is loaded
-    'nvim-lua/plenary.nvim', -- Often a dependency for telescope integrations
-    'nvim-telescope/telescope.nvim', -- Needed for the custom prompt picker
   },
   -- Load lazily, triggered by commands or keymaps
   cmd = {
@@ -112,16 +109,6 @@ return {
 
     -- Define custom functions globally or within this scope
     -- Make them global if called directly from keymaps outside this config
-    _G.ShowCopilotChatActionPrompt = function()
-      -- Ensure telescope is loaded before picking
-      local ok, telescope = pcall(require, 'CopilotChat.integrations.telescope')
-      if ok then
-        local actions = require('CopilotChat.actions')
-        telescope.pick(actions.prompt_actions())
-      else
-        vim.notify('Telescope integration for CopilotChat not found.', vim.log.levels.WARN)
-      end
-    end
 
     _G.CopilotChatBuffer = function()
       local input = vim.fn.input('Quick Chat (Buffer): ')

@@ -2,10 +2,8 @@
 -- Highlight and search for TODO comments
 return {
   'folke/todo-comments.nvim',
-  -- Dependencies: Telescope for searching
-  dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
   -- Load lazily, triggered by commands or events
-  cmd = { 'TodoTrouble', 'TodoTelescope' },
+  cmd = { 'TodoTrouble' },
   event = { 'BufReadPost', 'BufNewFile' },
   -- opts table passes configuration directly to setup()
   opts = {
@@ -43,11 +41,6 @@ return {
         require('todo-comments').jump_prev()
       end,
       desc = 'Previous TODO Comment',
-    },
-    {
-      '<leader>st', -- Search TODO comments with Telescope
-      '<cmd>TodoTelescope<cr>',
-      desc = 'Search TODOs (Telescope)',
     },
     -- Optional: Integrate with trouble.nvim
     -- { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "TODOs in Trouble" },
