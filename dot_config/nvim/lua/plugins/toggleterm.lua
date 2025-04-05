@@ -2,6 +2,7 @@
 return {
   'akinsho/toggleterm.nvim',
   -- version = "*", -- Uncomment and specify version if needed, e.g., version = "v2.9.0"
+  event = 'VeryLazy', -- Load when Neovim is ready
   -- opts will be passed to require('toggleterm').setup()
   opts = {
     size = function(term)

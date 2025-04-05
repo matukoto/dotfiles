@@ -1,6 +1,7 @@
 -- dot_config/nvim/lua/plugins/neotest.lua
 return {
   'nvim-neotest/neotest',
+  event = 'VeryLazy',
   -- Dependencies listed in the main plugins.lua are automatically handled by lazy.nvim
   -- but listing them here can improve clarity and ensure correct loading order if needed.
   dependencies = {
