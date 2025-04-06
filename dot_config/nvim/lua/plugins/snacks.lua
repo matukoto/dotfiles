@@ -13,6 +13,13 @@ return {
       only_current = false, -- only show indent guides in the current window
       hl = 'SnacksIndent', ---@type string|string[] hl groups for indent guides
     },
+    terminal = {
+      win = {
+        style = 'terminal',
+      },
+      start_insert = true,
+      auto_insert = true,
+    },
     dashboard = {
       sections = {
         { section = 'header' },
@@ -62,6 +69,15 @@ return {
   },
   -- Define global keymaps using the 'keys' table
   keys = {
+
+    {
+      '<leader>u', -- Original keymap for buffer picker
+      -- Ensure snacks is loaded before calling picker
+      function()
+        Snacks.terminal.toggle()
+      end,
+      desc = 'snacks terminal toggle',
+    },
     {
       '<leader>f', -- Original keymap for buffer picker
       -- Ensure snacks is loaded before calling picker

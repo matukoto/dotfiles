@@ -72,7 +72,6 @@ require('lazy').setup({
     { import = 'plugins.styler' },
     { import = 'plugins.term-edit' },
     { import = 'plugins.todo-comments' },
-    { import = 'plugins.toggleterm' },
     { import = 'plugins.treesitter' },
     { import = 'plugins.trouble' },
     { import = 'plugins.ufo' },
