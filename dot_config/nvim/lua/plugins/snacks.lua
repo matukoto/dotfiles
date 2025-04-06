@@ -146,7 +146,14 @@ return {
   },
   -- Define global keymaps using the 'keys' table
   keys = {
-
+    {
+      '<C-w>',
+      function()
+        Snacks.bufdelete.delete()
+      end,
+      nowait = true,
+      desc = 'Close Buffer (Snacks)',
+    },
     {
       '<leader>u', -- Original keymap for buffer picker
       -- Ensure snacks is loaded before calling picker

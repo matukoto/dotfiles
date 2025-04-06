@@ -19,17 +19,17 @@ return {
       -- middle_mouse_command = nil, -- Command for middle mouse button
       indicator = {
         -- icon = '▎', -- Indicator icon
-        style = 'underline', -- 'icon' | 'underline' | 'none'
+        style = 'icon', -- 'icon' | 'underline' | 'none'
       },
-      -- buffer_close_icon = '󰅖',
-      -- modified_icon = '●',
-      -- close_icon = '',
-      -- left_trunc_marker = '',
-      -- right_trunc_marker = '',
-      -- max_name_length = 18,
-      -- max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
-      -- truncate_names = true, -- Truncate buffer names
-      -- tab_size = 18,
+      buffer_close_icon = '󰅖',
+      modified_icon = '●',
+      close_icon = '',
+      left_trunc_marker = '',
+      right_trunc_marker = '',
+      max_name_length = 18,
+      max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
+      truncate_names = true, -- Truncate buffer names
+      tab_size = 18,
       diagnostics = 'nvim_lsp', -- "nvim_lsp" | "coc" | false
       diagnostics_update_in_insert = false,
       -- diagnostics_indicator = function(count, level, diagnostics_dict, context) ... end,
@@ -51,13 +51,8 @@ return {
   -- Define keymaps using the 'keys' table
   keys = {
     -- Navigate buffers
-    { '[b', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev Buffer' },
-    { ']b', '<cmd>BufferLineCycleNext<cr>', desc = 'Next Buffer' },
-    { '<leader>bp', '<cmd>BufferLineTogglePin<cr>', desc = 'Toggle Pin Buffer' },
-    { '<leader>bP', '<cmd>BufferLineGroupClose ungrouped<cr>', desc = 'Close Unpinned Buffers' },
-    { '<leader>bo', '<cmd>BufferLineCloseOthers<cr>', desc = 'Close Other Buffers' },
-    { '<leader>br', '<cmd>BufferLineCloseRight<cr>', desc = 'Close Buffers to the Right' },
-    { '<leader>bl', '<cmd>BufferLineCloseLeft<cr>', desc = 'Close Buffers to the Left' },
+    { '<C-h>', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev Buffer' },
+    { '<C-l>', '<cmd>BufferLineCycleNext<cr>', desc = 'Next Buffer' },
     -- You can also map buffer numbers directly if desired
     -- { "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", desc = "Go to Buffer 1" },
     -- { "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>", desc = "Go to Buffer 2" },

@@ -66,7 +66,6 @@ require('lazy').setup({
     { import = 'plugins.scope' },
     { import = 'plugins.skkeleton_indicator' },
     { import = 'plugins.skkeleton' },
-    { import = 'plugins.smartbufs' },
     { import = 'plugins.smoothcursor' },
     { import = 'plugins.snacks' },
     { import = 'plugins.styler' },
@@ -99,7 +98,6 @@ require('lazy').setup({
     { 'sindrets/diffview.nvim', cmd = 'DiffviewOpen' }, -- コマンド実行時にロード
     { 'lambdalisue/vim-kensaku', event = 'VeryLazy' },
     { 'lambdalisue/vim-kensaku-search', event = 'VeryLazy' },
-    { 'famiu/bufdelete.nvim', event = 'VeryLazy' },
     { 'kevinhwang91/nvim-bqf', event = 'VeryLazy' }, -- Quickfix/Location Listが開かれた時に必要だが、VeryLazyでも問題ないことが多い
     { 'haya14busa/vim-asterisk', event = 'VeryLazy' },
     { 'tyru/capture.vim', event = 'VeryLazy' },
