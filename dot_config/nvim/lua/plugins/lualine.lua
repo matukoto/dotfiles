@@ -38,15 +38,12 @@ return {
         -- symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
       },
       lualine_x = {
-        {
-          'copilot',
-          show_colors = false, -- Specific config for copilot component
-        },
+        {},
         'fileformat',
         'filetype',
       },
       lualine_y = { 'location', 'progress' },
-      -- lualine_z = { CTimeLine }, -- Custom component added in config
+      -- lualine_z = { time_line }, -- Custom component added in config
       lualine_z = {}, -- Placeholder, will be updated in config
     },
     inactive_sections = {
@@ -65,16 +62,25 @@ return {
   -- config function runs after the plugin is loaded
   config = function(_, opts)
     -- Define the custom component *after* lualine is loaded
-    local CTimeLine = require('lualine.component'):extend()
-    CTimeLine.init = function(self, options)
-      CTimeLine.super.init(self, options)
+    local time_line = require('lualine.component'):extend()
+    time_line.init = function(self, options)
+      time_line.super.init(self, options)
     end
-    CTimeLine.update_status = function(self)
+    time_line.update_status = function(self)
       return os.date(self.options.format or '%H:%M', os.time())
     end
 
     -- Add the custom component to the opts table before setup
-    opts.sections.lualine_z = { CTimeLine }
+    opts.sections.lualine_z = { time_line }
+
+    local copilot_status = function()
+      if vim.g.loaded_copilot == 1 and vim.fn['copilot#Enabled']() == 1 then
+        return ' '
+      else
+        return ' '
+      end
+    end
+    opts.sections.lualine_x = { copilot_status }
 
     -- Apply the final configuration
     require('lualine').setup(opts)
