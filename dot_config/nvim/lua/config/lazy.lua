@@ -79,7 +79,7 @@ require('lazy').setup({
     { import = 'plugins.vim-quickrun' },
     { import = 'plugins.vim-sonictemplate' },
     { import = 'plugins.waitevent' },
-    -- { import = 'plugins.which-key' },
+    { import = 'plugins.which-key' },
     { import = 'plugins.yazi' },
 
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
