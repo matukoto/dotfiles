@@ -159,7 +159,7 @@ return {
     {
       '<leader>B',
       function()
-        Snacks.picker.git_blame_line()
+        Snacks.git.blame_line()
       end,
       desc = 'Git Branches',
     },
