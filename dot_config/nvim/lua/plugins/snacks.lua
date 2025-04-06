@@ -3,9 +3,17 @@ return {
   priority = 1000,
   lazy = false,
   -- opts table passes configuration directly to setup()
+  ---@type snacks.Config
   opts = {
+    indent = {
+      priority = 1,
+      enabled = true, -- enable indent guides
+      char = '│',
+      only_scope = false, -- only show indent guides of the scope
+      only_current = false, -- only show indent guides in the current window
+      hl = 'SnacksIndent', ---@type string|string[] hl groups for indent guides
+    },
     dashboard = {
-      -- row = 10,
       sections = {
         { section = 'header' },
         { section = 'keys', gap = 1, padding = 1 },
