@@ -29,21 +29,19 @@ return {
   -- Define keymaps using the 'keys' table
   keys = {
     {
-      ']t', -- Jump to next TODO comment
+      '<leader>st',
       function()
-        require('todo-comments').jump_next()
+        Snacks.picker.todo_comments()
       end,
-      desc = 'Next TODO Comment',
+      desc = 'Todo',
     },
-    {
-      '[t', -- Jump to previous TODO comment
-      function()
-        require('todo-comments').jump_prev()
-      end,
-      desc = 'Previous TODO Comment',
-    },
-    -- Optional: Integrate with trouble.nvim
-    -- { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "TODOs in Trouble" },
+    -- {
+    --   '<leader>sT',
+    --   function()
+    --     Snacks.picker.todo_comments({ keywords = { 'TODO', 'FIX', 'FIXME' } })
+    --   end,
+    --   desc = 'Todo/Fix/Fixme',
+    -- },
   },
   -- No explicit config function needed if opts and keys are sufficient
   -- config = function(_, opts)
