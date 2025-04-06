@@ -5,7 +5,6 @@ return {
   dependencies = {
     'zbirenbaum/copilot.lua',
     'nvim-lua/plenary.nvim', -- Often a dependency
-    'nvim-telescope/telescope.nvim', -- For default picker
   },
   -- Load lazily, triggered by commands or keymaps
   cmd = { 'CodeCompanion', 'CodeCompanionChat', 'CodeCompanionInline' },

@@ -2,10 +2,8 @@
 -- Highlight and search for TODO comments
 return {
   'folke/todo-comments.nvim',
-  -- Dependencies: Telescope for searching
-  dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
   -- Load lazily, triggered by commands or events
-  cmd = { 'TodoTrouble', 'TodoTelescope' },
+  cmd = { 'TodoTrouble' },
   event = { 'BufReadPost', 'BufNewFile' },
   -- opts table passes configuration directly to setup()
   opts = {
@@ -31,26 +29,19 @@ return {
   -- Define keymaps using the 'keys' table
   keys = {
     {
-      ']t', -- Jump to next TODO comment
+      '<leader>st',
       function()
-        require('todo-comments').jump_next()
+        Snacks.picker.todo_comments()
       end,
-      desc = 'Next TODO Comment',
+      desc = 'Todo',
     },
-    {
-      '[t', -- Jump to previous TODO comment
-      function()
-        require('todo-comments').jump_prev()
-      end,
-      desc = 'Previous TODO Comment',
-    },
-    {
-      '<leader>st', -- Search TODO comments with Telescope
-      '<cmd>TodoTelescope<cr>',
-      desc = 'Search TODOs (Telescope)',
-    },
-    -- Optional: Integrate with trouble.nvim
-    -- { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "TODOs in Trouble" },
+    -- {
+    --   '<leader>sT',
+    --   function()
+    --     Snacks.picker.todo_comments({ keywords = { 'TODO', 'FIX', 'FIXME' } })
+    --   end,
+    --   desc = 'Todo/Fix/Fixme',
+    -- },
   },
   -- No explicit config function needed if opts and keys are sufficient
   -- config = function(_, opts)

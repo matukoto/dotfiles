@@ -1,22 +1,14 @@
 -- dot_config/nvim/lua/plugins/blink.lua
 return {
   'saghen/blink.cmp',
-  -- Build step is required for this plugin
   build = 'cargo build --release',
-  -- Load when entering insert mode or specific completion events
   event = { 'InsertEnter', 'CmdlineEnter' },
-  -- Dependencies like LSP and snippet engines should be loaded
-  dependencies = {
-    -- Add snippet engine dependency if used, e.g., 'L3MON4D3/LuaSnip'
-    -- 'L3MON4D3/LuaSnip',
-    -- 'rafamadriz/friendly-snippets', -- Optional: Snippet collection
-  },
-  -- opts table passes configuration directly to setup()
+
+  ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
   opts = {
-    -- enabled = function() ... end, -- Conditional enabling (optional)
     keymap = {
       preset = 'default',
-      -- Override default keymaps if needed
       ['<C-j>'] = { 'select_and_accept', 'fallback' }, -- Select next and accept if no selection
       -- ['<C-k>'] = { 'select_prev', 'fallback' }, -- Example: Select previous
       -- ['<Tab>'] = { 'accept', 'fallback' }, -- Example: Accept with Tab
@@ -68,9 +60,7 @@ return {
       window = { border = 'solid' },
     },
     fuzzy = {
-      implementation = 'rust', -- Use built-in Lua fuzzy matcher
-      -- implementation = 'rust', -- Use Rust implementation (requires build)
+      implementation = 'prefer_rust_with_warning', -- Use built-in Lua fuzzy matcher
     },
   },
-  -- config function can be used for additional setup after opts are applied
 }
