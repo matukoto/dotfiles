@@ -178,21 +178,6 @@ return {
       desc = 'Pick Greps (Snacks)',
     },
     {
-      '<space>h',
-      function()
-        Snacks.picker.help({
-          win = {
-            input = {
-              keys = {
-                ['<CR>'] = { 'edit_vsplit', mode = { 'i', 'n' } },
-              },
-            },
-          },
-        })
-      end,
-      desc = 'Pick Help',
-    },
-    {
       '<leader>b', -- Original keymap for buffer picker
       function()
         Snacks.picker.buffers()
@@ -336,13 +321,6 @@ return {
       desc = 'Grep Open Buffers',
     },
     {
-      '<leader>sg',
-      function()
-        Snacks.picker.grep()
-      end,
-      desc = 'Grep',
-    },
-    {
       '<leader>sw',
       function()
         Snacks.picker.grep_word()
@@ -410,7 +388,15 @@ return {
     {
       '<leader>sh',
       function()
-        Snacks.picker.help()
+        Snacks.picker.help({
+          win = {
+            input = {
+              keys = {
+                ['<CR>'] = { 'edit_vsplit', mode = { 'i', 'n' } },
+              },
+            },
+          },
+        })
       end,
       desc = 'Help Pages',
     },
@@ -436,7 +422,7 @@ return {
       desc = 'Jumps',
     },
     {
-      '<leader>sk',
+      '<leader>sK',
       function()
         Snacks.picker.keymaps()
       end,
@@ -550,7 +536,7 @@ return {
       desc = 'LSP Workspace Symbols',
     },
     {
-      '<leader>k', -- Original keymap for kensaku picker
+      '<leader>sk', -- Original keymap for kensaku picker
       function()
         local snacks_ok, snacks = pcall(require, 'snacks')
         local kensaku_source_ok, kensaku_source = pcall(require, 'plugins.snacks.sources.kensaku')
