@@ -3,6 +3,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     -- build step ensures parsers are installed/updated
+    event = { 'BufReadPost', 'BufNewFile' },
     build = ':TSUpdate',
     -- opts will be passed to the setup function
     opts = {

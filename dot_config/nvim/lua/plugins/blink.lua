@@ -2,8 +2,8 @@
 return {
   'saghen/blink.cmp',
   build = 'cargo build --release',
-  event = { 'InsertEnter', 'CmdlineEnter' },
-
+  -- event = { 'InsertEnter', 'CmdlineEnter' },
+  event = { 'VeryLazy' },
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {

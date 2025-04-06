@@ -2,7 +2,7 @@
 return {
   -- Main LSP configuration plugin
   'neovim/nvim-lspconfig',
-
+  event = 'LspAttach',
   -- Dependencies - these should also be listed in the main plugins file
   -- lazy.nvim handles loading dependencies before the main plugin
   dependencies = {

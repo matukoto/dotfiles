@@ -6,6 +6,7 @@ return {
   -- Plugin specification for lazy.nvim
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  event = { 'BufReadPre' },
   -- Basic opts, custom component setup moved to config
   opts = {
     options = {
