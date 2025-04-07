@@ -9,10 +9,11 @@ return {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-    'j-hui/fidget.nvim', -- Optional: For LSP progress notifications
-    'nvimdev/lspsaga.nvim', -- Optional: For UI enhancements like code actions, finder
-    'jinzhongjia/LspUI.nvim', -- Optional: For UI enhancements like hover, definition
-    -- 'saghen/blink.cmp', -- Assuming blink.cmp provides capabilities, ensure it's loaded
+    'j-hui/fidget.nvim',
+    'nvimdev/lspsaga.nvim',
+    'jinzhongjia/LspUI.nvim',
+    'saghen/blink.cmp',
+    'mfussenegger/nvim-jdtls',
   },
 
   -- config function runs after the plugin and its dependencies are loaded
@@ -32,7 +33,7 @@ return {
     -- Configure Mason
     mason.setup({
       registries = {
-        'github:nvim-java/mason-registry',
+        -- 'github:nvim-java/mason-registry',
         'github:mason-org/mason-registry',
       },
       -- Other mason options like ui = { border = 'rounded' } can go here
@@ -424,32 +425,49 @@ return {
         },
       },
     })
-
-    -- Other servers with default settings (already handled by mason_lspconfig default handler)
-    -- lspconfig.bashls.setup({})
-    -- lspconfig.rust_analyzer.setup({})
-    -- lspconfig.yamlls.setup({})
-    -- lspconfig.vimls.setup({})
-    -- lspconfig.jsonls.setup({})
-    -- lspconfig.lemminx.setup({})
-    -- lspconfig.fsautocomplete.setup({})
-    -- lspconfig.tailwindcss.setup({})
-    -- lspconfig.markdown_oxide.setup({})
-    -- lspconfig.tinymist.setup({})
-
-    -- Java setup (conditionally loaded if jdtls is installed)
-    -- local jdtls_ok, _ = pcall(require, 'jdtls')
-    -- if jdtls_ok then
-    --    print("Setting up jdtls...")
-    --    -- require('java').setup({...}) -- Setup nvim-java first if used
-    --    lspconfig.jdtls.setup({
-    --       -- Add jdtls specific settings here
-    --       -- settings = { java = { ... } }
-    --    })
-    -- else
-    --    print("jdtls not found, skipping setup.")
-    -- end
-
-    -- print("LSP config function finished.") -- For debugging
+    lspconfig.jdtls.setup({
+      cmd = {
+        'java',
+        '-Declipse.application=org.eclipse.jdt.ls.core.id1',
+        '-Dosgi.bundles.defaultStartLevel=4',
+        '-Declipse.product=org.eclipse.jdt.ls.core.product',
+        '-Dlog.protocol=true',
+        '-Dlog.level=ALL',
+        '-Xms1g',
+        '--add-modules=ALL-SYSTEM',
+        '--add-opens',
+        'java.base/java.util=ALL-UNNAMED',
+        '--add-opens',
+        'java.base/java.lang=ALL-UNNAMED',
+        -- 以下のパスは環境に合わせて調整してください
+        '-jar',
+        '/home/user/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+        '-configuration',
+        '/home/user/.local/share/nvim/lsp_servers/jdtls/config_linux',
+        '-data',
+        '/home/user/projects/java',
+      },
+      settings = {
+        java = {
+          import = {
+            gradle = {
+              enabled = true,
+            },
+            maven = {
+              enabled = true,
+            },
+          },
+          format = {
+            settings = {
+              url = 'https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml',
+              profile = 'GoogleStyle',
+            },
+          },
+          saveActions = {
+            organizeImports = true,
+          },
+        },
+      },
+    })
   end,
 }
