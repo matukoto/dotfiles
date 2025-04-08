@@ -426,27 +426,28 @@ return {
       },
     })
     lspconfig.jdtls.setup({
-      cmd = {
-        'java',
-        '-Declipse.application=org.eclipse.jdt.ls.core.id1',
-        '-Dosgi.bundles.defaultStartLevel=4',
-        '-Declipse.product=org.eclipse.jdt.ls.core.product',
-        '-Dlog.protocol=true',
-        '-Dlog.level=ALL',
-        '-Xms1g',
-        '--add-modules=ALL-SYSTEM',
-        '--add-opens',
-        'java.base/java.util=ALL-UNNAMED',
-        '--add-opens',
-        'java.base/java.lang=ALL-UNNAMED',
-        -- 以下のパスは環境に合わせて調整してください
-        '-jar',
-        '/home/user/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-        '-configuration',
-        '/home/user/.local/share/nvim/lsp_servers/jdtls/config_linux',
-        '-data',
-        '/home/user/projects/java',
-      },
+      -- cmd = {
+      --   'java',
+      --   '-Declipse.application=org.eclipse.jdt.ls.core.id1',
+      --   '-Dosgi.bundles.defaultStartLevel=4',
+      --   '-Declipse.product=org.eclipse.jdt.ls.core.product',
+      --   '-Dlog.protocol=true',
+      --   '-Dlog.level=ALL',
+      --   '-Xms1g',
+      --   '--add-modules=ALL-SYSTEM',
+      --   '--add-opens',
+      --   'java.base/java.util=ALL-UNNAMED',
+      --   '--add-opens',
+      --   'java.base/java.lang=ALL-UNNAMED',
+      --   -- 以下のパスは環境に合わせて調整してください
+      --   '-jar',
+      --   '/home/user/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+      --   '-configuration',
+      --   '/home/user/.local/share/nvim/lsp_servers/jdtls/config_linux',
+      --   '-data',
+      --   '/home/user/projects/java',
+      -- },
+      root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
       settings = {
         java = {
           import = {
