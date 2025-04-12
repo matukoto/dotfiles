@@ -35,6 +35,12 @@ return {
             desc = 'project',
             action = ":lua Snacks.dashboard.pick('projects')",
           },
+          {
+            icon = ' ',
+            key = 's',
+            desc = 'git status',
+            action = ':GinStatus',
+          },
           { icon = ' ', key = 'i', desc = 'edit', action = ':ene | startinsert' },
           {
             icon = ' ',
