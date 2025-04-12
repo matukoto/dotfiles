@@ -15,4 +15,4 @@
 "cargo:leetcode-cli" = "latest"
 "vim" = "9.1.0990"
 [settings]
-experimental = true
+experimental = false
