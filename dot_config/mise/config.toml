@@ -5,7 +5,6 @@
 "go" = "1.24.2"
 "node" = "22.14.0"
 "lua" = "5.4.7"
-"npm:pnpm" = "9.12.0"
 "npm:vite" = "5.4.7"
 "npm:vitest" = "2.1.1"
 "npm:zenn-cli" = "0.1.158"
@@ -13,8 +12,6 @@
 "npm:browser-sync" = "latest"
 "npm:secretlint" = "8.4.0"
 "npm:textlint" = "14.4.0"
-"go:github.com/rhysd/vim-startuptime" = "latest"
-"go:golang.org/x/tools/gopls" = "0.16.2"
 "cargo:leetcode-cli" = "latest"
 "vim" = "9.1.0990"
 [settings]
