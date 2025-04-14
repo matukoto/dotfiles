@@ -26,7 +26,6 @@ require('lazy').setup({
     { import = 'plugins.ccc' },
     { import = 'plugins.chowcho' },
     { import = 'plugins.codecompanion' },
-    { import = 'plugins.comment' },
     { import = 'plugins.conform' },
     { import = 'plugins.copilot-chat' },
     { import = 'plugins.copilot' },
