@@ -2,11 +2,17 @@
 return {
   -- Main LSP configuration plugin
   'neovim/nvim-lspconfig',
-  event = 'LspAttach',
+  event = 'VeryLazy',
   -- Dependencies - these should also be listed in the main plugins file
   -- lazy.nvim handles loading dependencies before the main plugin
   dependencies = {
-    'williamboman/mason.nvim',
+    {
+      'williamboman/mason.nvim',
+      registries = {
+        'github:nvim-java/mason-registry',
+        'github:mason-org/mason-registry',
+      },
+    },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     'j-hui/fidget.nvim',
@@ -33,7 +39,7 @@ return {
     -- Configure Mason
     mason.setup({
       registries = {
-        -- 'github:nvim-java/mason-registry',
+        'github:nvim-java/mason-registry',
         'github:mason-org/mason-registry',
       },
       -- Other mason options like ui = { border = 'rounded' } can go here
@@ -60,32 +66,11 @@ return {
     -- Function to register servers with capabilities
     local function server_register(server_name)
       local opts = {}
-      -- Attempt to load server-specific options (optional)
-      -- local success, req_opts = pcall(require, 'plugins.lsp.servers.' .. server_name)
-      -- if success then
-      --   opts = req_opts
-      -- end
-
-      -- Get capabilities, potentially from a completion plugin like nvim-cmp or blink.cmp
-      -- Ensure the capability source plugin is loaded first
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      local cmp_caps_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-      if cmp_caps_ok then
-        capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
-      -- print("Using nvim-cmp capabilities")
-      else
-        -- Fallback or check for blink.cmp if used
-        local blink_ok, blink_cmp = pcall(require, 'blink.cmp')
-        if blink_ok then
-          capabilities = blink_cmp.get_lsp_capabilities(capabilities)
-        -- print("Using blink.cmp capabilities")
-        else
-          -- print("Using default LSP capabilities")
-        end
+      local success, req_opts = pcall(require, 'plugins.lsp.servers.' .. server_name)
+      if success then
+        opts = req_opts
       end
-      opts.capabilities = capabilities
-
-      -- Setup the server using lspconfig
+      opts.capabilities = require('blink.cmp').get_lsp_capabilities(opts.capabilities)
       lspconfig[server_name].setup(opts)
     end
 
@@ -100,7 +85,7 @@ return {
         'typos_lsp',
         'bashls',
         -- 'marksman',
-        'fsautocomplete',
+        -- 'fsautocomplete',
         'vimls',
         'markdown_oxide',
         'jsonls',
@@ -425,28 +410,35 @@ return {
         },
       },
     })
+    local home_dir = vim.env.HOME
+    local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+    local workspace_dir = home_dir .. '/.cache/nvim/jdtls/workspaces/' .. project_name
     lspconfig.jdtls.setup({
-      -- cmd = {
-      --   'java',
-      --   '-Declipse.application=org.eclipse.jdt.ls.core.id1',
-      --   '-Dosgi.bundles.defaultStartLevel=4',
-      --   '-Declipse.product=org.eclipse.jdt.ls.core.product',
-      --   '-Dlog.protocol=true',
-      --   '-Dlog.level=ALL',
-      --   '-Xms1g',
-      --   '--add-modules=ALL-SYSTEM',
-      --   '--add-opens',
-      --   'java.base/java.util=ALL-UNNAMED',
-      --   '--add-opens',
-      --   'java.base/java.lang=ALL-UNNAMED',
-      --   -- 以下のパスは環境に合わせて調整してください
-      --   '-jar',
-      --   '/home/user/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-      --   '-configuration',
-      --   '/home/user/.local/share/nvim/lsp_servers/jdtls/config_linux',
-      --   '-data',
-      --   '/home/user/projects/java',
-      -- },
+      cmd = {
+        home_dir .. '/.local/share/mise/installs/java/corretto-17.0.14.7.1/bin/java',
+        '-Declipse.application=org.eclipse.jdt.ls.core.id1',
+        '-Dosgi.bundles.defaultStartLevel=4',
+        '-Declipse.product=org.eclipse.jdt.ls.core.product',
+        '-Dosgi.checkConfiguration=true',
+        '-Dosgi.sharedConfiguration.area=' .. home_dir,
+        '/.local/share/nvim/mason/share/jdtls/config',
+        '-Dosgi.sharedConfiguration.area.readOnly=true',
+        '-Dosgi.configuration.cascaded=true',
+        '-Xms1G',
+        '--add-modules=ALL-SYSTEM',
+        '--add-opens',
+        'java.base/java.util=ALL-UNNAMED',
+        '--add-opens',
+        'java.base/java.lang=ALL-UNNAMED',
+        '-javaagent:',
+        home_dir .. '/.local/share/nvim/mason/share/lombok-nightly/lombok.jar',
+        '-jar',
+        home_dir .. '/.local/share/nvim/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar',
+        '-configuration',
+        home_dir .. '/.cache/nvim/jdtls/config',
+        '-data',
+        workspace_dir,
+      },
       root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
       settings = {
         java = {
@@ -470,5 +462,16 @@ return {
         },
       },
     })
+
+    lspconfig.bashls.setup({})
+    lspconfig.rust_analyzer.setup({})
+    lspconfig.yamlls.setup({})
+    lspconfig.vimls.setup({})
+    lspconfig.jsonls.setup({})
+    lspconfig.lemminx.setup({})
+    lspconfig.fsautocomplete.setup({})
+    lspconfig.tailwindcss.setup({})
+    lspconfig.markdown_oxide.setup({})
+    lspconfig.tinymist.setup({})
   end,
 }
