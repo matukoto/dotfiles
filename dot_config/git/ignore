@@ -22,3 +22,4 @@ Icon?
 .venv
 .env
 *.key
+.mise.toml
