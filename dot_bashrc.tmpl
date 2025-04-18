@@ -123,6 +123,11 @@ fi
 /usr/bin/setxkbmap -option "ctrl:nocaps"
 {{ end }}
 
+case $- in
+    *i*) exec nu;;
+      *) return;;
+esac
+
 # starship
 eval "$(starship init bash)"
 
