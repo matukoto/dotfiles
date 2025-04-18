@@ -30,7 +30,7 @@ return {
         'bash',
         'go',
         'sql',
-        -- 'nu',
+        'nu',
         'markdown',
         'markdown_inline',
         -- Files
