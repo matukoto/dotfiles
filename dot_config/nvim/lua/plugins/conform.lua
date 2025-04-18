@@ -29,7 +29,6 @@ return {
     -- Define formatters and their configurations
     formatters_by_ft = {
       lua = { 'stylua' },
-      nu = { 'nufmt' },
       sql = { 'sql_formatter' },
       yaml = { 'yamlfmt' },
       java = { lsp_format = 'fallback' }, -- Use LSP if no other formatter is found
