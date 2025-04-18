@@ -264,7 +264,15 @@ $env.config = {
   # buffer_editor: "emacs" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
   edit_mode: emacs # emacs, vi
-  shell_integration: false # enables terminal markers and a workaround to arrow keys stop working issue
+  shell_integration: {
+    osc2: false,
+    osc7: false,
+    osc8: false,
+    osc9_9: false,
+    osc133: false,
+    osc633: false,
+    reset_application_mode: false,
+  }
 
   ls: {
     use_ls_colors: true # use the LS_COLORS environment variable to colorize output
