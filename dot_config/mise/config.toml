@@ -13,6 +13,7 @@
 "npm:secretlint" = "8.4.0"
 "npm:textlint" = "14.4.0"
 "cargo:leetcode-cli" = "latest"
+"cargo:nushell/nufmt" = "latest"
 "vim" = "9.1.0990"
 [settings]
 experimental = false
