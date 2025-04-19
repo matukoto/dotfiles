@@ -678,22 +678,162 @@ $env.config = {
 $env.BAT_PAGER = 'never' # bat コマンドのページャーを無効化
 $env.BAT_THEME = 'Nord' # bat コマンドのテーマを設定
 
-# Path 環境変数にユーザーの bin ディレクトリを追加 (コメントアウト中)
-# let-env Path = ( $env.Path | append ($env.USERPROFILE + "\\bin"))
+# PATH の設定
+$env.PATH = (
+  $env.PATH
+  | split row (char esep)
+  | prepend [
+    # ユーザーのバイナリディレクトリ
+    ($env.HOME | path join "bin")
+    ($env.HOME | path join ".local/bin")
+    # 開発言語関連のバイナリディレクトリ
+    ($env.HOME | path join "go/bin")
+    ($env.HOME | path join ".cargo/bin")
+    ($env.HOME | path join ".deno/bin")
+    # ツール関連のバイナリディレクトリ
+    ($env.HOME | path join ".local/share/nvim/mason/bin")
+    ($env.HOME | path join ".local/share/mise/shims")
+    ($env.HOME | path join ".local/share/aquaproj-aqua/bin")
+  ]
+)
 
-# オーバーレイを使用して他の Nushell スクリプトを読み込む (コメントアウト中)
-# starship の初期化スクリプト
-# overlay use ~\.cache\starship\init.nu
-# go-task の補完スクリプト
-# overlay use ~\AppData\Roaming\nushell\my_modules\completions\go-task.nu
-# terraform の補完スクリプト
-# overlay use ~\AppData\Roaming\nushell\my_modules\completions\terraform.nu
-# connehito 関連の関数スクリプト
-# overlay use ~\AppData\Roaming\nushell\my_modules\functions\connehito_functions.nu
-# scoop の補完スクリプト
-# overlay use ~\ghq\github.com\nushell\nu_scripts\custom-completions\scoop\scoop-completions.nu
+# XDG Base Directory の設定
+$env.XDG_CONFIG_HOME = ($env.HOME | path join ".config")
+$env.XDG_CACHE_HOME = ($env.HOME | path join ".cache")
+$env.XDG_DATA_HOME = ($env.HOME | path join ".local/share")
+$env.XDG_STATE_HOME = ($env.HOME | path join ".local/state")
+$env.INITVIM = ($env.XDG_CONFIG_HOME | path join "nvim/init.vim")
+$env.VIMRC = ($env.HOME | path join ".vimrc")
+$env.AQUA_GLOBAL_CONFIG = ($env.XDG_CONFIG_HOME | path join "aquaproj-aqua/aqua.yaml")
+
+# 基本的な環境変数の設定
+$env.BROWSER = "wslview"
+$env.EDITOR = "nvim"
+$env.SYSTEMD_EDITOR = $env.EDITOR
+$env.TZ = "Asia/Tokyo"
+# $env.GPG_TTY = (term size).tty
+
+# エイリアスの設定
+# 基本的なコマンドのエイリアス
+alias ls = eza # ls を eza に置き換え
+alias l = do { clear; eza } # クリアしてから eza を実行
+alias ll = eza -alF --time-style "+%Y/%m/%d %H:%M" # 詳細なリスト表示
+alias la = eza -A # 隠しファイルを含むリスト表示
+
+# vim 関連のエイリアス
+alias v = nvim # nvim のショートカット
+alias va = nvim ~/work/workLog/a.md # 特定のファイルを開く
+alias v. = nvim . # カレントディレクトリを開く
+alias vr = nvim ./README.md # README.md を開く
+
+# git 関連のエイリアス
+alias s = git status # git status のショートカット
+alias ga = git add # git add のショートカット
+alias gc = git commit # git commit のショートカット
+alias gp = git push # git push のショートカット
+alias gpu = git push --upstream origin HEAD # 現在のブランチを origin にプッシュ
+alias gl = git pull # git pull のショートカット
+alias gs = git switch # git switch のショートカット
+alias gd = git diff # git diff のショートカット
+alias gsc = git switch -c # 新しいブランチを作成して切り替え
+alias gcp = git cherry-pick # git cherry-pick のショートカット
+alias groot = cd (git rev-parse --show-toplevel) # Git リポジトリのルートに移動
+
+# github cli 関連のエイリアス
+alias gas = gh auth switch # GitHub の認証切り替え
+
+# chezmoi 関連のエイリアス
+alias dot = chezmoi cd # chezmoi のディレクトリに移動
+alias cu = do { pull_skk_dict; chezmoi update } # SKK辞書を更新して chezmoi update を実行
+alias ca = chezmoi apply # chezmoi の変更を適用
+
+# ディレクトリ移動のエイリアス
+alias conf = cd ($env.HOME | path join ".config") # .config ディレクトリに移動
+alias ob = cd ($env.HOME | path join "obsidian") # obsidian ディレクトリに移動
+
+# その他のエイリアス
+alias f = ghf # ghf コマンドのショートカット
+alias ai = aqua i -a # aqua install のショートカット
+alias ag = aqua g # aqua global のショートカット
+alias a = aqua # aqua のショートカット
+alias skkadd = update_skk_dict # SKK辞書の更新
+alias skkpull = pull_skk_dict # SKK辞書の取得
+alias skk = cd ~/.skk # SKKディレクトリに移動
+alias fsi = dotnet fsi # F# インタラクティブ
+alias lc = leetcode # leetcode コマンドのショートカット
+alias startuptime = vim-startuptime -count 100 -vimpath nvim # nvim の起動時間計測
+
+# 開発ディレクトリへの移動エイリアス（ホスト名に基づく条件分岐）
+def setup_dev_aliases [] {
+    # work
+    alias work = cd ($env.HOME | path join "work/workLog")
+    alias snsd = cd ($env.HOME | path join "repo/local-dev-env/ut-tools")
+    # private
+    alias dia = cd ($env.HOME | path join "myself/diary")
+    alias shd = cd ($env.HOME | path join "work/sh-dev")
+    alias god = cd ($env.HOME | path join "work/go-dev")
+    alias vimd = cd ($env.HOME | path join "work/vim-dev")
+    alias dockerd = cd ($env.HOME | path join "work/docker-dev")
+    alias javad = cd ($env.HOME | path join "work/java-dev")
+    alias grpcd = cd ($env.HOME | path join "work/grpc-dev")
+    alias hobbyd = cd ($env.HOME | path join "myself/hobby")
+    alias techd = cd ($env.HOME | path join "myself/tech")
+}
+
+# ホストに応じたエイリアスを設定
+setup_dev_aliases
+
+# 外部ツールの初期化
+# def setup_tools [] {
+#     # 初期化スクリプトの保存先ディレクトリの作成
+#     if not ("~/.cache/mise" | path exists) { mkdir ~/.cache/mise }
+#     if not ("~/.cache/zoxide" | path exists) { mkdir ~/.cache/zoxide }
+#     if not ("~/.cache/atuin" | path exists) { mkdir ~/.cache/atuin }
+#     if not ("~/.cache/starship" | path exists) { mkdir ~/.cache/starship }
+#
+#     # mise (バージョン管理ツール) の初期化
+#     if (which mise | is-not-empty) {
+#         mise activate | save --raw ~/.cache/mise/init.nu
+#     }
+#
+#     # zoxide (スマートな cd コマンド) の初期化
+#     if (which zoxide | is-not-empty) {
+#         zoxide init nushell | save --raw ~/.cache/zoxide/init.nu
+#     }
+#
+#     # atuin (シェル履歴管理) の初期化
+#     if (which atuin | is-not-empty) {
+#         atuin init nu --disable-up-arrow | save --raw ~/.cache/atuin/init.nu
+#     }
+#
+# }
+
+# モジュールの設定
+def setup_modules [] {
+    # モジュール用ディレクトリの作成
+    let modules_dir = "~/.config/nushell/my_modules"
+    let completions_dir = $"($modules_dir)/completions"
+    let functions_dir = $"($modules_dir)/functions"
+
+    if not ($modules_dir | path exists) { mkdir $modules_dir }
+    if not ($completions_dir | path exists) { mkdir $completions_dir }
+    if not ($functions_dir | path exists) { mkdir $functions_dir }
 
 
+}
+
+# 初期化とモジュールのセットアップを実行
+# setup_tools
+setup_modules
+
+# 初期化スクリプトの読み込み
+# if ("~/.cache/mise/init.nu" | path exists) { source ~/.cache/mise/init.nu }
+# if ("~/.cache/zoxide/init.nu" | path exists) { source ~/.cache/zoxide/init.nu }
+# if ("~/.cache/atuin/init.nu" | path exists) { source ~/.cache/atuin/init.nu }
+# if ("~/.cache/starship/init.nu" | path exists) { source ~/.cache/starship/init.nu }
+
+# モジュールの読み込み
+# let modules_dir = "~/.config/nushell/my_modules"
 # プロンプトの設定 (コメントアウト中)
 # 左側プロンプトを作成する関数
 # def create_left_prompt [] {
