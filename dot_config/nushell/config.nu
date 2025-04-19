@@ -258,8 +258,8 @@ def "exec_pet_search" [] {
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
   color_config: $default_theme
-  use_grid_icons: true
-  footer_mode: "25" # always, never, number_of_rows, auto
+  # use_grid_icons: true # Option removed in newer Nushell versions
+  footer_mode: 25 # always, never, number_of_rows, auto (Changed string "25" to int 25)
   float_precision: 2
   # buffer_editor: "emacs" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
@@ -306,10 +306,6 @@ $env.config = {
       completer: null # check 'carapace_completer' above as an example
     }
   }
-  filesize: {
-    metric: true # true => KB, MB, GB (ISO standard), false => KiB, MiB, GiB (Windows standard)
-    format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, zb, zib, auto
-  }
 
   hooks: {
     pre_prompt: [{||
@@ -331,18 +327,6 @@ $env.config = {
     pre_execution: [{||
       null  # replace with source code to run before the repl input is run
     }]
-    env_change: {
-      PWD: [
-        { # switch terraform version by terraform-switcher
-          condition: {|_, after|
-              ((which tfswitch | get path.0 | path exists)
-               and ($after | path join .terraform-version | path exists)
-              )
-          }
-          code: "tfswitch"
-        }
-      ]
-    }
   }
   menus: [
       # Configuration for default nushell menus
@@ -623,10 +607,6 @@ $env.config = {
 # environment
 $env.BAT_PAGER = 'never'
 $env.BAT_THEME = 'Nord'
-# for direnv
-$env.DIRENV_CONFIG = $env.USERPROFILE + "\\AppData\\Local\\direnv"
-$env.XDG_CACHE_HOME = $env.USERPROFILE + "\\AppData\\Local\\Temp"
-$env.XDG_DATA_HOME = $env.USERPROFILE + "\\AppData\\Local"
 
 # let-env Path = ( $env.Path | append ($env.USERPROFILE + "\\bin"))
 
