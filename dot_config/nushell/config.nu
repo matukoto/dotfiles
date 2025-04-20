@@ -805,7 +805,7 @@ def setup_modules [] {
 
 # 初期化とモジュールのセットアップを実行
 setup_tools
-setup_modules
+# setup_modules
 
 # 初期化スクリプトの読み込み
 # if ("~/.cache/mise/init.nu" | path exists) { source ~/.cache/mise/init.nu }
