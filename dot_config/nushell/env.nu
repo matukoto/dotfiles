@@ -99,3 +99,9 @@ $env.NU_PLUGIN_DIRS = [
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 zoxide init nushell | save -f ~/.zoxide.nu
+
+# use ~/.config/nushell/oh-my-v2.nu git_prompt
+# git_prompt
+# $env.PROMPT_COMMAND = { (git_prompt).left_prompt }
+# $env.PROMPT_COMMAND_RIGHT = { (git_prompt).right_prompt }
+# $env.PROMPT_INDICATOR = " "
