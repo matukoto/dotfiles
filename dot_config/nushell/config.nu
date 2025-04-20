@@ -784,29 +784,9 @@ def setup_dev_aliases [] {
 setup_dev_aliases
 
 # 外部ツールの初期化
-# def setup_tools [] {
-#     # 初期化スクリプトの保存先ディレクトリの作成
-#     if not ("~/.cache/mise" | path exists) { mkdir ~/.cache/mise }
-#     if not ("~/.cache/zoxide" | path exists) { mkdir ~/.cache/zoxide }
-#     if not ("~/.cache/atuin" | path exists) { mkdir ~/.cache/atuin }
-#     if not ("~/.cache/starship" | path exists) { mkdir ~/.cache/starship }
-#
-#     # mise (バージョン管理ツール) の初期化
-#     if (which mise | is-not-empty) {
-#         mise activate | save --raw ~/.cache/mise/init.nu
-#     }
-#
-#     # zoxide (スマートな cd コマンド) の初期化
-#     if (which zoxide | is-not-empty) {
-#         zoxide init nushell | save --raw ~/.cache/zoxide/init.nu
-#     }
-#
-#     # atuin (シェル履歴管理) の初期化
-#     if (which atuin | is-not-empty) {
-#         atuin init nu --disable-up-arrow | save --raw ~/.cache/atuin/init.nu
-#     }
-#
-# }
+def setup_tools [] {
+source ~/.local/share/atuin/init.nu
+}
 
 # モジュールの設定
 def setup_modules [] {
@@ -823,7 +803,7 @@ def setup_modules [] {
 }
 
 # 初期化とモジュールのセットアップを実行
-# setup_tools
+setup_tools
 setup_modules
 
 # 初期化スクリプトの読み込み
@@ -836,47 +816,3 @@ setup_modules
 # let modules_dir = "~/.config/nushell/my_modules"
 # プロンプトの設定 (コメントアウト中)
 # 左側プロンプトを作成する関数
-# def create_left_prompt [] {
-  # # 現在のディレクトリパス
-  # let path_segment = ($env.PWD)
-
-  # # Git リポジトリの場合、現在のブランチ名を表示
-  # let git_current_branch = (
-    # if (".git" | path exists) {
-      # $" (ansi yellow)[(git branch --show-current)]" # 黄色で表示
-    # } else {
-      # "" # Git リポジトリでない場合は空文字列
-    # }
-  # )
-
-  # # 改行 + パス + Git ブランチ + 改行 + スペース
-  # "\n" + $path_segment + $git_current_branch + "\n "
-# }
-# # 左側プロンプトを生成するコマンドを設定
-# $env.PROMPT_COMMAND = { create_left_prompt }
-# # プロンプトのインジケーターを設定
-# $env.PROMPT_INDICATOR = "❯ "
-
-# # 右側プロンプトを作成する関数
-# def create_right_prompt [] {
-
-  # # 現在の日時を表示
-  # let datetime_segment = (date now | format date "%Y-%m-%d %H:%M:%S" | str join " ")
-  # # Git ステータス (dirty/clean) を表示する例 (コメントアウト中)
-  # # let git_segment = (
-    # # if (".git" | path exists) {
-      # # let git_segment = (git status --porcelain | lines | count | if $it > 0 { echo "dirty" } { echo "clean" } | str trim | str join " ")
-      # # $git_segment
-    # # } else {
-      # # ""
-    # # }
-  # # )
-
-  # # $git_segment
-  # $datetime_segment # 日時のみ表示
-# }
-
-# # 右側プロンプトを生成するコマンドを設定
-# $env.PROMPT_COMMAND_RIGHT = { create_right_prompt }
-# # 複数行入力時のインジケーターを設定
-# $env.PROMPT_MULTILINE_INDICATOR = "::: "
