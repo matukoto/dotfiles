@@ -786,6 +786,7 @@ setup_dev_aliases
 # 外部ツールの初期化
 def setup_tools [] {
 source ~/.local/share/atuin/init.nu
+source ~/.zoxide.nu
 }
 
 # モジュールの設定
