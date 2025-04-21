@@ -3,10 +3,9 @@
 # for examples
 # vi キーバインド
 # set -o vi
-
-# If not running interactively, don't do anything
+# If not running interactively, use nushell
 case $- in
-    *i*) ;;
+    *i*) exec nu;;
       *) return;;
 esac
 
@@ -122,11 +121,6 @@ fi
 # capslock -> ctrl
 /usr/bin/setxkbmap -option "ctrl:nocaps"
 {{ end }}
-
-case $- in
-    *i*) exec nu;;
-      *) return;;
-esac
 
 # starship
 eval "$(starship init bash)"
