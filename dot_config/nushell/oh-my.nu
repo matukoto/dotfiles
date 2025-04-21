@@ -267,22 +267,23 @@ def get_repo_status [gs os] {
   let S_COLOR = (ansi { fg: ($GIT_FG) bg: ($GIT_BG) })
 
   let R = (ansi reset)
+  let SPACE = (char space)
 
   let repo_status = (
     $"(
-      if ($ahead_cnt > 0) {$'($A_COLOR)($AHEAD_ICON)($ahead_cnt)($R)'}
+      if ($ahead_cnt > 0) {$'($A_COLOR)($AHEAD_ICON)($SPACE)($ahead_cnt)($SPACE)($SPACE)($R)'}
     )(
-      if ($behind_cnt > 0) {$'($B_COLOR)($BEHIND_ICON)($behind_cnt)($R)'}
+      if ($behind_cnt > 0) {$'($B_COLOR)($SPACE)($BEHIND_ICON)($SPACE)($behind_cnt)($SPACE)($SPACE)($R)'}
     )(
-      if ($index_change_cnt > 0) {$'($I_COLOR)($INDEX_CHANGE_ICON)($index_change_cnt)($R)'}
+      if ($index_change_cnt > 0) {$'($I_COLOR)($SPACE)($INDEX_CHANGE_ICON)($SPACE)($index_change_cnt)($SPACE)($SPACE)($R)'}
     )(
-      if ($conflicted_cnt > 0) {$'($C_COLOR)($CONFLICTED_CHANGE_ICON)($conflicted_cnt)($R)'}
+      if ($conflicted_cnt > 0) {$'($C_COLOR)($CONFLICTED_CHANGE_ICON)($SPACE)($conflicted_cnt)($SPACE)($SPACE)($R)'}
     )(
-      if ($wt_change_cnt > 0) {$'($W_COLOR)($WT_CHANGE_ICON)($wt_change_cnt)($R)'}
+      if ($wt_change_cnt > 0) {$'($W_COLOR)($WT_CHANGE_ICON)($SPACE)($wt_change_cnt)($SPACE)($SPACE)($R)'}
     )(
-      if ($untracked_cnt > 0) {$'($U_COLOR)($UNTRACKED_CHANGE_ICON)($untracked_cnt)($R)'}
+      if ($untracked_cnt > 0) {$'($U_COLOR)($UNTRACKED_CHANGE_ICON)($SPACE)($untracked_cnt)($SPACE)($SPACE)($R)'}
     )(
-      if $has_no_changes {$'($N_COLOR)($NO_CHANGE_ICON)($R)'} else {$'($H_COLOR)($HAS_CHANGE_ICON)($R)'}
+      if $has_no_changes {$'($N_COLOR)($NO_CHANGE_ICON)($SPACE)($SPACE)($R)'} else {$'($H_COLOR)($HAS_CHANGE_ICON)($SPACE)($SPACE)($R)'}
     )"
   )
 
