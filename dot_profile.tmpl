@@ -49,6 +49,11 @@ if [ -d "$AQUA_ROOT_DIR/bin" ]; then
   PATH="$AQUA_ROOT_DIR/bin:$PATH"
 fi
 
+export MISE_PATH=$HOME/.local/share/mise/shims
+if [ -d "$MISE_PATH" ]; then
+  PATH="$MISE_PATH:$PATH"
+fi
+
 export VIMRC="$HOME/.vimrc"
 export INITVIM="$HOME/.config/nvim/init.vim"
 export OBSIDIAN="$HOME/myself/diary/"
