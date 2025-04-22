@@ -422,23 +422,23 @@ $env.config = {
 }
 
 # PATH の設定
-$env.PATH = (
-  $env.PATH
-  | split row (char esep)
-  | prepend [
-    # ユーザーのバイナリディレクトリ
-    ($env.HOME | path join "bin")
-    ($env.HOME | path join ".local/bin")
-    # 開発言語関連のバイナリディレクトリ
-    ($env.HOME | path join "go/bin")
-    ($env.HOME | path join ".cargo/bin")
-    ($env.HOME | path join ".deno/bin")
-    # ツール関連のバイナリディレクトリ
-    ($env.HOME | path join ".local/share/nvim/mason/bin")
-    ($env.HOME | path join ".local/share/mise/shims")
-    ($env.HOME | path join ".local/share/aquaproj-aqua/bin")
-  ]
-)
+# $env.PATH = (
+#   $env.PATH
+#   | split row (char esep)
+#   | prepend [
+#     # ユーザーのバイナリディレクトリ
+#     ($env.HOME | path join "bin")
+#     ($env.HOME | path join ".local/bin")
+#     # 開発言語関連のバイナリディレクトリ
+#     ($env.HOME | path join "go/bin")
+#     ($env.HOME | path join ".cargo/bin")
+#     ($env.HOME | path join ".deno/bin")
+#     # ツール関連のバイナリディレクトリ
+#     ($env.HOME | path join ".local/share/nvim/mason/bin")
+#     ($env.HOME | path join ".local/share/mise/shims")
+#     ($env.HOME | path join ".local/share/aquaproj-aqua/bin")
+#   ]
+# )
 
 # XDG Base Directory の設定
 $env.XDG_CONFIG_HOME = ($env.HOME | path join ".config")
@@ -524,16 +524,6 @@ alias techd = cd ($env.HOME | path join "myself/tech")
 # 外部ツールの初期化
 source ~/.local/share/atuin/init.nu
 source ~/.zoxide.nu
-
-# モジュールの設定
-  # モジュール用ディレクトリの作成
-  let modules_dir = "~/.config/nushell"
-  let completions_dir = $"($modules_dir)/completions"
-  let functions_dir = $"($modules_dir)/functions"
-
-  if not ($modules_dir | path exists) { mkdir $modules_dir }
-  if not ($completions_dir | path exists) { mkdir $completions_dir }
-  if not ($functions_dir | path exists) { mkdir $functions_dir }
 
 # 初期化スクリプトの読み込み
 # if ("~/.cache/mise/init.nu" | path exists) { source ~/.cache/mise/init.nu }
