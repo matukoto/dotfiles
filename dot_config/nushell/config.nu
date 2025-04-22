@@ -522,7 +522,7 @@ alias hobbyd = cd ($env.HOME | path join "myself/hobby")
 alias techd = cd ($env.HOME | path join "myself/tech")
 
 # 外部ツールの初期化
-source ~/.local/share/atuin/init.nu
+source ~/.config/atuin/atuin.nu
 source ~/.zoxide.nu
 
 # 初期化スクリプトの読み込み
