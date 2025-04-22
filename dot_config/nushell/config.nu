@@ -523,7 +523,7 @@ alias techd = cd ($env.HOME | path join "myself/tech")
 
 # 外部ツールの初期化
 source ~/.config/atuin/atuin.nu
-source ~/.zoxide.nu
+source ~/.config/zoxide/zoxide.nu
 
 # 初期化スクリプトの読み込み
 # if ("~/.cache/mise/init.nu" | path exists) { source ~/.cache/mise/init.nu }
