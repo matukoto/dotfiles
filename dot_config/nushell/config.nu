@@ -419,6 +419,17 @@ $env.config = {
       mode: [emacs, vi_normal, vi_insert] # 複数のモードに適用
       event: { send: menu name: commands_with_description } # commands_with_description を表示
     }
+    # ghq + fzf でリポジトリ検索
+    {
+      name: ghq_repo_list_fzf
+      modifier: control
+      keycode: char_f
+      mode: [emacs]
+      event: {
+        send: executehostcommand
+        cmd: "cd (ghq list --full-path | fzf | decode utf-8 | str trim)"
+      }
+    }
   ]
 }
 
