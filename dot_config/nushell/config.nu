@@ -89,6 +89,7 @@ def "exec_pet_search" [] {
 
 # デフォルトの設定レコード。グローバル設定の多くはここでセットアップされる。
 $env.config = {
+  show_banner: false # wellcome message を非表示
   color_config: $default_theme # カラー設定 (上で定義した default_theme を使用)
   footer_mode: never # フッターの表示モード: always, never, number_of_rows, auto 
   float_precision: 2 # 浮動小数点数の表示精度
