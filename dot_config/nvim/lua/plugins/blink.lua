@@ -11,6 +11,7 @@ return {
   },
   {
     'saghen/blink.cmp',
+    dependencies = { 'rinx/cmp-skkeleton' },
     build = 'cargo build --release',
     -- event = { 'InsertEnter', 'CmdlineEnter' },
     event = { 'VeryLazy' },
@@ -50,10 +51,12 @@ return {
       },
       sources = {
         -- Default sources: LSP, path, snippets (if available), buffer
-        default = { 'lsp', 'path', 'snippets', 'buffer' },
-        -- Customize sources per filetype if needed
-        -- markdown = { 'buffer', 'path' },
+        default = { 'skkeleton', 'lsp', 'path', 'snippets', 'buffer' },
         providers = {
+          skkeleton = {
+            name = 'skkeleton',
+            module = 'blink.compat.source',
+          },
           buffer = {
             opts = {
               -- get all buffers, even ones like neo-tree
