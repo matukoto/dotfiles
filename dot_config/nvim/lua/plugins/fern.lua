@@ -25,7 +25,7 @@ return {
   end,
   -- Define global keymaps using the 'keys' table
   keys = {
-    { '<Leader>e', '<Cmd>Fern . -drawer<CR>', desc = 'Open Fern Drawer' },
+    { '<Leader>e', '<Cmd>Fern %:h -drawer<CR>', desc = 'Open Fern Drawer' },
     { '<Leader>E', '<Cmd>Fern . -reveal=%<CR>', desc = 'Open Fern (Reveal Current)' },
     { '<Leader>ce', '<Cmd>Fern %:h<CR>', desc = 'Open Fern (Current Dir)' },
   },
