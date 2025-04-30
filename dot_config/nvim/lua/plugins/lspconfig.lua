@@ -53,6 +53,7 @@ return {
         'typos',
         'shfmt',
         'sql-formatter',
+        'fixjson',
         'biome',
         'prettierd',
         'prettier',

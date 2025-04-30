@@ -34,8 +34,8 @@ return {
       java = { lsp_format = 'fallback' }, -- Use LSP if no other formatter is found
       sh = { 'shellcheck', 'shfmt', stop_after_first = false },
       -- JSON files use the dynamic tsFormatter
-      json = tsFormatter,
-      jsonc = tsFormatter,
+      json = { 'fixjson' },
+      jsonc = { 'fixjson' },
       -- Frontend files
       svelte = { 'eslint' }, -- Or jsFormatter if preferred
       fsharp = { 'fantomas' },
