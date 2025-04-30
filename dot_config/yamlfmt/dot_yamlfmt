@@ -5,3 +5,7 @@ formatter:
   retain_line_breaks: true
   # 複数の空行を1つにする
   retain_line_breaks_single: true
+  # ドキュメント開始の --- を含める
+  include_document_start: true
+  # 末尾に改行
+  eof_newline: true
