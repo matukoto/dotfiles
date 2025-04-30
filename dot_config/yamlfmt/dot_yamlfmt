@@ -1,0 +1,7 @@
+formatter:
+  type: basic
+  line_ending: lf
+  # 空行を保持する
+  retain_line_breaks: true
+  # 複数の空行を1つにする
+  retain_line_breaks_single: true
