@@ -7,11 +7,7 @@ return {
   opts = {
     -- Define linters per filetype
     linters_by_ft = {
-      yaml = { 'actionlint' },
-      -- Add other linters here, e.g.:
-      -- python = { 'flake8' },
-      -- javascript = { 'eslint_d' },
-      -- lua = { 'luacheck' },
+      ghaction = { 'actionlint' },
     },
     -- Configure linting on events (optional, defaults are usually good)
     lint_on_events = { 'BufWritePost', 'BufReadPost', 'InsertLeave' },
