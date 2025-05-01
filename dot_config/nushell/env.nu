@@ -105,3 +105,16 @@ $env.NU_PLUGIN_DIRS = [
 # $env.PROMPT_COMMAND = { (git_prompt).left_prompt }
 # $env.PROMPT_COMMAND_RIGHT = { (git_prompt).right_prompt }
 # $env.PROMPT_INDICATOR = ""
+
+# 補完
+use ~/.config/nushell/completions/aws-completions.nu *
+use ~/.config/nushell/completions/curl-completions.nu *
+use ~/.config/nushell/completions/docker-completions.nu *
+use ~/.config/nushell/completions/eza-completions.nu *
+use ~/.config/nushell/completions/gh-completions.nu *
+use ~/.config/nushell/completions/git-completions.nu *
+use ~/.config/nushell/completions/make-completions.nu *
+use ~/.config/nushell/completions/npm-completions.nu *
+use ~/.config/nushell/completions/pnpm-completions.nu *
+use ~/.config/nushell/completions/rg-completions.nu *
+use ~/.config/nushell/completions/scoop-completions.nu *
