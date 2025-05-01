@@ -31,3 +31,4 @@ packages:
   - name: pnpm/pnpm@v10.9.0
   - name: rhysd/vim-startuptime@v1.3.2
   - name: golang.org/x/tools/gopls@v0.18.1
+  - name: aws/aws-cli@2.27.5
