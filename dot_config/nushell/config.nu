@@ -499,7 +499,7 @@ alias gas = gh auth switch # GitHub の認証切り替え
 
 # chezmoi 関連のエイリアス
 alias dot = chezmoi cd # chezmoi のディレクトリに移動
-alias cu = do { pull_skk_dict; chezmoi update } # SKK辞書を更新して chezmoi update を実行
+alias cu = chezmoi update
 alias ca = chezmoi apply # chezmoi の変更を適用
 
 # ディレクトリ移動のエイリアス
