@@ -80,7 +80,7 @@ require('lazy').setup({
     { import = 'plugins.waitevent' },
     { import = 'plugins.which-key' },
     { import = 'plugins.yazi' },
-
+    { import = 'plugins.aider' },
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
     { 'williamboman/mason.nvim' }, -- LSP基盤なので一旦そのまま
