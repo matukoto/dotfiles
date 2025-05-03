@@ -107,8 +107,8 @@ if ! shopt -oq posix; then
 fi
 
 # 環境変数 Key など GitHub上で保管しないほうがいいもの
-if [ -f ~/.api_key_environment ]; then
-  . ~/.api_key_environment
+if [ -f ~/.env ]; then
+  . ~/.env
 fi
 
 {{ if (and (eq .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) }}
