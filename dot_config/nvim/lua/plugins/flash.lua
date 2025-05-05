@@ -66,10 +66,7 @@ return {
           -- Hide flash in operator-pending mode when yanking
           opts.autohide = opts.autohide or (vim.fn.mode(true):find('no') and vim.v.operator == 'y')
           -- Don't show jump labels when count is used or during macro execution/recording
-          opts.jump_labels = opts.jump_labels
-            and vim.v.count == 0
-            and vim.fn.reg_executing() == ''
-            and vim.fn.reg_recording() == ''
+          opts.jump_labels = opts.jump_labels and vim.v.count == 0 and vim.fn.reg_executing() == '' and vim.fn.reg_recording() == ''
         end,
         autohide = false, -- Hide flash after jump
         jump_labels = false, -- Show jump labels for char motions

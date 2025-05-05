@@ -350,8 +350,7 @@ return {
           -- print("Attaching vtsls in node directory: " .. vim.api.nvim_buf_get_name(bufnr))
           -- Call the global attach function if you still want the keymaps etc.
           -- Find the UserLspConfig autocmd callback and call it
-          local group_id =
-            vim.api.nvim_get_autocmds({ group = 'UserLspConfig', event = 'LspAttach' })
+          local group_id = vim.api.nvim_get_autocmds({ group = 'UserLspConfig', event = 'LspAttach' })
           if group_id and group_id[1] and group_id[1].callback then
             group_id[1].callback({ buf = bufnr, data = { client_id = client.id } })
           end
@@ -369,8 +368,7 @@ return {
         -- vim.lsp.buf_detach_client(bufnr, client.id)
         else
           -- print("Attaching denols in non-node directory: " .. vim.api.nvim_buf_get_name(bufnr))
-          local group_id =
-            vim.api.nvim_get_autocmds({ group = 'UserLspConfig', event = 'LspAttach' })
+          local group_id = vim.api.nvim_get_autocmds({ group = 'UserLspConfig', event = 'LspAttach' })
           if group_id and group_id[1] and group_id[1].callback then
             group_id[1].callback({ buf = bufnr, data = { client_id = client.id } })
           end

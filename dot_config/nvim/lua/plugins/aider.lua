@@ -15,44 +15,14 @@ return {
       end,
     })
     vim.api.nvim_set_keymap('n', '<leader>at', ':AiderRun<CR>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap(
-      'n',
-      '<leader>aa',
-      ':AiderAddCurrentFile<CR>',
-      { noremap = true, silent = true }
-    )
-    vim.api.nvim_set_keymap(
-      'n',
-      '<leader>ar',
-      ':AiderAddCurrentFileReadOnly<CR>',
-      { noremap = true, silent = true }
-    )
-    vim.api.nvim_set_keymap(
-      'n',
-      '<leader>aw',
-      ':AiderAddWeb<CR>',
-      { noremap = true, silent = true }
-    )
+    vim.api.nvim_set_keymap('n', '<leader>aa', ':AiderAddCurrentFile<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<leader>ar', ':AiderAddCurrentFileReadOnly<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<leader>aw', ':AiderAddWeb<CR>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('n', '<leader>ax', ':AiderExit<CR>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap(
-      'n',
-      '<leader>ai',
-      ':AiderAddIgnoreCurrentFile<CR>',
-      { noremap = true, silent = true }
-    )
-    vim.api.nvim_set_keymap(
-      'n',
-      '<leader>aI',
-      ':AiderOpenIgnore<CR>',
-      { noremap = true, silent = true }
-    )
+    vim.api.nvim_set_keymap('n', '<leader>ai', ':AiderAddIgnoreCurrentFile<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<leader>aI', ':AiderOpenIgnore<CR>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('n', '<leader>aI', ':AiderPaste<CR>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('n', '<leader>ah', ':AiderHide<CR>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap(
-      'v',
-      '<leader>av',
-      ':AiderVisualTextWithPrompt<CR>',
-      { noremap = true, silent = true }
-    )
+    vim.api.nvim_set_keymap('v', '<leader>av', ':AiderVisualTextWithPrompt<CR>', { noremap = true, silent = true })
   end,
 }

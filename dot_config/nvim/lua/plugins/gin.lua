@@ -35,24 +35,9 @@ return {
     -- Define custom functions globally or within this scope
     -- Make them global if called directly from autocmds or keymaps outside this config
     _G.MyGinLogSettings = function()
-      vim.keymap.set(
-        'n',
-        'if',
-        '<Plug>(gin-action-fixup:instant-fixup)',
-        { buffer = true, silent = true }
-      )
-      vim.keymap.set(
-        'n',
-        'ir',
-        '<Plug>(gin-action-fixup:instant-reword)',
-        { buffer = true, silent = true }
-      )
-      vim.keymap.set(
-        'n',
-        '<CR>',
-        '<Plug>(gin-action-show:vsplit)',
-        { buffer = true, silent = true }
-      )
+      vim.keymap.set('n', 'if', '<Plug>(gin-action-fixup:instant-fixup)', { buffer = true, silent = true })
+      vim.keymap.set('n', 'ir', '<Plug>(gin-action-fixup:instant-reword)', { buffer = true, silent = true })
+      vim.keymap.set('n', '<CR>', '<Plug>(gin-action-show:vsplit)', { buffer = true, silent = true })
       vim.opt_local.cursorline = true
     end
 
@@ -66,12 +51,7 @@ return {
     end
 
     _G.MyGinStatusSettings = function()
-      vim.keymap.set(
-        'n',
-        'co',
-        '<Cmd>lua _G.GinCheckoutCurrentFile()<CR>',
-        { buffer = true, silent = true }
-      )
+      vim.keymap.set('n', 'co', '<Cmd>lua _G.GinCheckoutCurrentFile()<CR>', { buffer = true, silent = true })
     end
 
     _G.MyGinPatchSettings = function()

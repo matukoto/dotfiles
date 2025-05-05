@@ -40,10 +40,7 @@ return {
         -- Use pcall for safer JSON decoding
         local ok, decoded = pcall(vim.json.decode, output)
         if not ok or decoded == nil then
-          vim.notify(
-            'nvim-lint: Failed to decode actionlint output: ' .. output,
-            vim.log.levels.WARN
-          )
+          vim.notify('nvim-lint: Failed to decode actionlint output: ' .. output, vim.log.levels.WARN)
           return {}
         end
 
@@ -69,22 +66,19 @@ return {
     }
 
     -- Autocmd to trigger linting on specified events
-    vim.api.nvim_create_autocmd(
-      opts.lint_on_events or { 'BufWritePost', 'BufReadPost', 'InsertLeave' },
-      {
-        group = vim.api.nvim_create_augroup('nvim-lint', { clear = true }),
-        callback = function(event)
-          -- Use a timer to debounce linting for relevant events
-          if event.event == 'InsertLeave' or event.event == 'TextChanged' then
-            vim.defer_fn(function()
-              lint.try_lint()
-            end, opts.debounce_time or 150)
-          else
+    vim.api.nvim_create_autocmd(opts.lint_on_events or { 'BufWritePost', 'BufReadPost', 'InsertLeave' }, {
+      group = vim.api.nvim_create_augroup('nvim-lint', { clear = true }),
+      callback = function(event)
+        -- Use a timer to debounce linting for relevant events
+        if event.event == 'InsertLeave' or event.event == 'TextChanged' then
+          vim.defer_fn(function()
             lint.try_lint()
-          end
-        end,
-      }
-    )
+          end, opts.debounce_time or 150)
+        else
+          lint.try_lint()
+        end
+      end,
+    })
 
     -- Optional: Add a command to manually trigger linting
     vim.api.nvim_create_user_command('Lint', function()

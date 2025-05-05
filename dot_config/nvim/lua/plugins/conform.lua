@@ -5,10 +5,8 @@ local jsFormatter = { 'biome', 'prettierd', 'prettier', stop_after_first = true 
 
 local tsFormatter = function(bufnr) -- Pass bufnr for context
   -- Use vim.fs.find instead of vim.fs.root for better root detection flexibility
-  local pkg_json_path = vim.fs.find(
-    'package.json',
-    { upward = true, path = vim.api.nvim_buf_get_name(bufnr), stop = vim.loop.os_homedir() }
-  )
+  local pkg_json_path =
+    vim.fs.find('package.json', { upward = true, path = vim.api.nvim_buf_get_name(bufnr), stop = vim.loop.os_homedir() })
   if pkg_json_path and #pkg_json_path > 0 then
     -- print("Using Node formatter (biome/prettierd/prettier) for:", vim.api.nvim_buf_get_name(bufnr))
     return jsFormatter

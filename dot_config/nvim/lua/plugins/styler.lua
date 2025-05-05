@@ -15,10 +15,7 @@ return {
     -- Use pcall for safety in case the colorscheme isn't available immediately
     local ok, _ = pcall(vim.cmd, 'colorscheme ' .. _G.DEFAULT_COLORSCHEME)
     if not ok then
-      vim.notify(
-        'Failed to set initial colorscheme: ' .. _G.DEFAULT_COLORSCHEME,
-        vim.log.levels.WARN
-      )
+      vim.notify('Failed to set initial colorscheme: ' .. _G.DEFAULT_COLORSCHEME, vim.log.levels.WARN)
     end
   end,
   -- No specific opts needed for default setup
@@ -48,10 +45,7 @@ return {
         -- Use pcall for safety in case the inactive colorscheme isn't valid
         local ok, _ = pcall(styler.set_theme, win, { colorscheme = _G.INACTIVE_COLORSCHEME })
         if not ok then
-          vim.notify(
-            'Failed to set inactive colorscheme: ' .. _G.INACTIVE_COLORSCHEME,
-            vim.log.levels.WARN
-          )
+          vim.notify('Failed to set inactive colorscheme: ' .. _G.INACTIVE_COLORSCHEME, vim.log.levels.WARN)
         end
       end
     end

@@ -118,9 +118,7 @@ vim.opt.mouse = 'a'
 
 -- 置換を簡単に monaqaさん
 -- https://zenn.dev/vim_jp/articles/2023-06-30-vim-substitute-tips
-vim.cmd(
-  [[ cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':s' ? [getchar(), ''][1] .. "%s///g<Left><Left>" : 's' ]]
-)
+vim.cmd([[ cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':s' ? [getchar(), ''][1] .. "%s///g<Left><Left>" : 's' ]])
 -- visual mode の範囲選択をした状態でも同じことをしたい
 -- vim.cmd([[ cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':\'\<\,\'\>s' ? [getchar(), ''][1] .. "%s///g<Left><Left>" : 's' ]])
 

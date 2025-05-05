@@ -1,5 +1,5 @@
 # https://github.com/neovim/neovim/blob/master/.stylua.toml
-column_width = 120
+column_width = 140
 line_endings = "Unix"
 indent_type = "Spaces"
 indent_width = 2
