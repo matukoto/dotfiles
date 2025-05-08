@@ -1,7 +1,7 @@
 -- dot_config/nvim/lua/plugins/conform.lua
 
 -- Helper functions defined outside the return table to be available for opts
-local jsFormatter = { 'biome', 'prettierd', 'prettier', stop_after_first = true }
+local jsFormatter = { 'biome', 'eslint', 'prettierd', 'prettier', stop_after_first = true }
 
 local tsFormatter = function(bufnr) -- Pass bufnr for context
   -- Use vim.fs.find instead of vim.fs.root for better root detection flexibility
@@ -25,6 +25,18 @@ return {
   cmd = 'ConformInfo', -- Load when ConformInfo command is used
   opts = {
     -- Define formatters and their configurations
+    formatters = {
+      eslint = {
+        command = 'npx',
+        args = { 'eslint', '--fix', '$FILENAME' },
+        stdin = false,
+      },
+      pnpm_format = {
+        command = 'pnpm',
+        args = { 'run', 'format:file', '$FILENAME' },
+        stdin = false, -- format コマンドがファイルを直接書き換える場合は false
+      },
+    },
     formatters_by_ft = {
       lua = { 'stylua' },
       sql = { 'sql_formatter' },
@@ -66,7 +78,7 @@ return {
       lsp_fallback = true, -- Fallback to LSP if conform fails
       async = true,
       timeout_ms = 3000, -- Adjust timeout as needed
-      quiet = false, -- Show messages during formatting
+      quiet = true, -- Show messages during formatting
       -- stop_after_first = false, -- Run all formatters even if one fails (handled by formatter definition now)
     },
 
