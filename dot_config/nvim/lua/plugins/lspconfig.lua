@@ -1,4 +1,3 @@
--- dot_config/nvim/lua/plugins/lspconfig.lua
 return {
   -- Main LSP configuration plugin
   'neovim/nvim-lspconfig',
@@ -6,15 +5,6 @@ return {
   -- Dependencies - these should also be listed in the main plugins file
   -- lazy.nvim handles loading dependencies before the main plugin
   dependencies = {
-    {
-      'williamboman/mason.nvim',
-      registries = {
-        'github:nvim-java/mason-registry',
-        'github:mason-org/mason-registry',
-      },
-    },
-    'williamboman/mason-lspconfig.nvim',
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
     'j-hui/fidget.nvim',
     'nvimdev/lspsaga.nvim',
     'jinzhongjia/LspUI.nvim',
@@ -24,9 +14,6 @@ return {
   -- config function runs after the plugin and its dependencies are loaded
   config = function()
     local lspconfig = require('lspconfig')
-    local mason = require('mason')
-    local mason_lspconfig = require('mason-lspconfig')
-    local mason_tool_installer = require('mason-tool-installer')
 
     -- Define diagnostic signs
     local signs = { Error = ' ', Warn = ' ', Hint = '󱩎 ', Info = ' ' }
@@ -35,88 +22,6 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl })
     end
 
-    -- Configure Mason
-    mason.setup({
-      registries = {
-        'github:nvim-java/mason-registry',
-        'github:mason-org/mason-registry',
-      },
-      -- Other mason options like ui = { border = 'rounded' } can go here
-    })
-
-    -- Configure Mason Tool Installer
-    mason_tool_installer.setup({
-      ensure_installed = {
-        'stylua',
-        'shellcheck',
-        'typos',
-        'shfmt',
-        'sql-formatter',
-        'fixjson',
-        'biome',
-        'prettierd',
-        'prettier',
-        'eslint', -- Corrected from duplicate shellcheck
-        'markdownlint-cli2',
-      },
-      auto_update = false,
-      run_on_start = true,
-    })
-
-    -- Function to register servers with capabilities
-    local function server_register(server_name)
-      local opts = {}
-      local success, req_opts = pcall(require, 'plugins.lsp.servers.' .. server_name)
-      if success then
-        opts = req_opts
-      end
-      opts.capabilities = require('blink.cmp').get_lsp_capabilities(opts.capabilities)
-      lspconfig[server_name].setup(opts)
-    end
-
-    -- Configure Mason Lspconfig bridge
-    -- This defines which servers to install and manages their setup via server_register
-    mason_lspconfig.setup({
-      ensure_installed = {
-        'svelte',
-        'vtsls',
-        'lua_ls',
-        'sqls',
-        'typos_lsp',
-        'bashls',
-        -- 'marksman',
-        -- 'fsautocomplete',
-        'vimls',
-        'markdown_oxide',
-        'jsonls',
-        'yamlls',
-        'lemminx',
-        'gopls', -- Added missing servers from individual setups below
-        'rust_analyzer',
-        'tinymist',
-        'denols',
-        'tailwindcss',
-        -- 'jdtls', -- If Java is needed
-      },
-      handlers = {
-        -- Default handler using the server_register function defined above
-        server_register,
-
-        -- Custom setup for specific servers can be done here if needed,
-        -- overriding the default handler.
-        -- Example:
-        -- ["lua_ls"] = function()
-        --   lspconfig.lua_ls.setup({
-        --     capabilities = capabilities, -- Make sure capabilities are in scope
-        --     settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
-        --   })
-        -- end,
-
-        -- Keep individual setups below for settings overrides for now
-      },
-    })
-
-    -- Autocmd for LspAttach to configure keymaps and diagnostics
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true }),
       callback = function(ev)
@@ -264,25 +169,6 @@ return {
             compositeLiteralTypes = true,
             functionTypeParameters = true,
           },
-        },
-      },
-    })
-
-    lspconfig.lua_ls.setup({
-      settings = {
-        Lua = {
-          runtime = { version = 'LuaJIT' },
-          workspace = { checkThirdParty = false, library = vim.api.nvim_get_runtime_file('', true) }, -- Include vim runtime paths
-          hint = {
-            enable = true,
-            await = true,
-            paramName = 'Literal',
-            paramType = true,
-            semicolon = 'Disable',
-            arrayIndex = 'Disable',
-          },
-          diagnostics = { globals = { 'vim' }, groupFileStatus = { await = 'Opened' } }, -- Recognize vim global
-          completion = { callSnippet = 'Replace' }, -- Better snippet handling
         },
       },
     })
