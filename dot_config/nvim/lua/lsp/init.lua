@@ -23,7 +23,6 @@ local mason_servers = {
 }
 
 local non_mason_servers = {
-  'denols',
   'gopls',
 }
 
@@ -52,7 +51,11 @@ vim.lsp.config('*', {
 
 require('mason-lspconfig').setup({
   -- mason でインストールした LS を自動で enable する
-  automatic_enable = true,
+  automatic_enable = {
+    exclude = {
+      'vtsls',
+    },
+  },
   ensure_installed = mason_servers,
 })
 
