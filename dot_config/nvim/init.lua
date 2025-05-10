@@ -252,4 +252,3 @@ vim.api.nvim_create_autocmd('CursorMoved', {
 -- vim.cmd('colorscheme everforest') -- Set your desired colorscheme here
 
 require('config.lazy')
-require('lsp')
