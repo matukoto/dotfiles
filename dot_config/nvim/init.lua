@@ -251,8 +251,5 @@ vim.api.nvim_create_autocmd('CursorMoved', {
 -- colorscheme
 -- vim.cmd('colorscheme everforest') -- Set your desired colorscheme here
 
--- init.lua
 require('config.lazy')
-
--- lazy.nvim のセットアップは lua/config/lazy.lua で行われます
-print('init.lua loaded successfully!')
+require('lsp')
