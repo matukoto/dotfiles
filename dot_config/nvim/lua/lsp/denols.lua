@@ -1,3 +1,4 @@
+local utils = require('lsp.utils')
 ---@type vim.lsp.Config
 return {
   root_markers = {
@@ -7,5 +8,8 @@ return {
   },
   single_file_support = true,
   workspace_required = true,
-  settings = SharedTsJsSettings,
+  settings = {
+    typescript = utils.tsAndJsInlayHints,
+    javascript = utils.tsAndJsInlayHints,
+  },
 }
