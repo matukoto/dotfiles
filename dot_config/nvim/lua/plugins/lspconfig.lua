@@ -1,9 +1,10 @@
 -- MEMO
 -- 1. vim.lsp.config('*', {……})
--- 2. lsp/*.lua
--- 3. after/lsp/*.lua
--- 4. vim.lsp.config('hoge', {……})
--- の順に後勝ちで読み込まれる by delphinus さん
+-- 2. lua/lsp/*.lua
+-- 3. nvim-lspconfig
+-- 4. after/lsp/*.lua
+-- 5. vim.lsp.config('hoge', {……})
+-- の順に後勝ちで読み込まれる
 
 local mason_servers = {
   'svelte',
