@@ -83,9 +83,9 @@ require('lazy').setup({
     { import = 'plugins.aider' },
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
-    { 'williamboman/mason.nvim' }, -- LSP基盤なので一旦そのまま
-    { 'williamboman/mason-lspconfig.nvim' }, -- LSP基盤なので一旦そのまま
-    { 'WhoIsSethDaniel/mason-tool-installer.nvim', event = 'VeryLazy' },
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
+    { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
     { 'nanotee/sqls.nvim', event = 'VeryLazy' },
     { 'rachartier/tiny-inline-diagnostic.nvim', event = 'VeryLazy' },
     { 'shougo/pum.vim', event = 'VeryLazy' },
