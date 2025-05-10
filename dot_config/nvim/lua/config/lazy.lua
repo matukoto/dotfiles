@@ -32,9 +32,7 @@ require('lazy').setup({
     { import = 'plugins.denops' },
     { import = 'plugins.dial' },
     { import = 'plugins.dmacro' },
-    -- { import = "plugins.fern-git-status" }, -- Moved to fern.lua dependencies
-    -- { import = "plugins.fern-renderer-nerdfont" }, -- Moved to fern.lua dependencies
-    { import = 'plugins.fern' }, -- Keep this, it loads fern.lua which now includes dependencies
+    { import = 'plugins.fern' },
     { import = 'plugins.fidget' },
     { import = 'plugins.flash' },
     { import = 'plugins.fm-nvim' },
@@ -83,33 +81,24 @@ require('lazy').setup({
     { import = 'plugins.aider' },
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
-    { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
-    { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
-    { 'nanotee/sqls.nvim', event = 'VeryLazy' },
+    -- { 'nanotee/sqls.nvim', event = 'VeryLazy' },
     { 'rachartier/tiny-inline-diagnostic.nvim', event = 'VeryLazy' },
     { 'shougo/pum.vim', event = 'VeryLazy' },
-    -- { "yuki-yano/fern-preview.vim" }, -- Moved to fern.lua dependencies
-    -- { "lambdalisue/vim-fern-hijack" }, -- Moved to fern.lua dependencies
     { 'nvim-treesitter/nvim-treesitter-context', event = 'VeryLazy' },
-    -- { "lambdalisue/vim-nerdfont" }, -- Moved to fern.lua dependencies
     { 'ogaken-1/nvim-gin-preview', event = 'VeryLazy' },
-    { 'sindrets/diffview.nvim', cmd = 'DiffviewOpen' }, -- コマンド実行時にロード
+    { 'sindrets/diffview.nvim', cmd = 'DiffviewOpen' },
     { 'lambdalisue/vim-kensaku', event = 'VeryLazy' },
     { 'lambdalisue/vim-kensaku-search', event = 'VeryLazy' },
-    { 'kevinhwang91/nvim-bqf', event = 'VeryLazy' }, -- Quickfix/Location Listが開かれた時に必要だが、VeryLazyでも問題ないことが多い
+    { 'kevinhwang91/nvim-bqf', event = 'VeryLazy' },
     { 'haya14busa/vim-asterisk', event = 'VeryLazy' },
     { 'tyru/capture.vim', event = 'VeryLazy' },
     { 'itchyny/vim-cursorword', event = 'VeryLazy' },
-    { 'lambdalisue/vim-suda', cmd = 'SudaWrite' }, -- コマンド実行時にロード
-    { 'nanotee/zoxide.vim', cmd = { 'Zi', 'Zcd' } }, -- コマンド実行時にロード
+    { 'lambdalisue/vim-suda', cmd = 'SudaWrite' },
     { 'simeji/winresizer', event = 'VeryLazy' },
     { 'tpope/vim-surround', event = 'VeryLazy' },
     { 'machakann/vim-sandwich', event = 'VeryLazy' },
     { 'wakatime/vim-wakatime', event = 'VeryLazy' },
-    { 'tpope/vim-dadbod', event = 'VeryLazy' }, -- dadbod-ui などが cmd でロードされるならこれも遅延可能
+    { 'tpope/vim-dadbod', event = 'VeryLazy' },
     { 'neko-night/nvim' }, -- カラースキームは即時ロード
   },
-  -- 必要に応じて他の lazy.nvim の設定をここに追加できます
-  -- 例: change_detection = { notify = false }
 })
