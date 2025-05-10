@@ -9,7 +9,7 @@ return {
   single_file_support = true,
   workspace_required = true,
   settings = {
-    typescript = utils.tsAndJsInlayHints,
-    javascript = utils.tsAndJsInlayHints,
+    typescript = { inlayHints = utils.tsAndJsInlayHints },
+    javascript = { inlayHints = utils.tsAndJsInlayHints },
   },
 }

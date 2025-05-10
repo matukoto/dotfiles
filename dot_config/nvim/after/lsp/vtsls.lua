@@ -7,8 +7,8 @@ return {
   single_file_support = false,
   workspace_required = true,
   settings = {
-    typescript = utils.tsAndJsInlayHints,
-    javascript = utils.tsAndJsInlayHints,
+    typescript = { inlayHints = utils.tsAndJsInlayHints },
+    javascript = { inlayHints = utils.tsAndJsInlayHints },
     tsserver = {
       pluginPaths = { '.' },
       globalPlugins = {
