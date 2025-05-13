@@ -53,7 +53,7 @@ return {
       'jinzhongjia/LspUI.nvim',
       'saghen/blink.cmp',
       {
-        'williamboman/mason.nvim',
+        'mason-org/mason.nvim',
         config = function()
           require('mason').setup({
             registries = {
@@ -63,7 +63,7 @@ return {
           })
         end,
       },
-      { 'williamboman/mason-lspconfig.nvim' },
+      { 'mason-org/mason-lspconfig.nvim' },
       { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
     },
 
