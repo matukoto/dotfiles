@@ -20,12 +20,12 @@ local mason_servers = {
   'yamlls',
   'lemminx',
   'tailwindcss',
-  -- 'jdtls', -- If Java is needed
 }
 
 local non_mason_servers = {
   'gopls',
   'denols',
+  'jdtls',
 }
 
 local mason_tools = {
@@ -229,5 +229,10 @@ return {
       -- Highlight for active signature parameter
       vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { bg = '#888888', fg = '#efef33' })
     end,
+  },
+  {
+    'mfussenegger/nvim-jdtls',
+    dependencies = { 'mason-org/mason.nvim' },
+    ft = 'java',
   },
 }
