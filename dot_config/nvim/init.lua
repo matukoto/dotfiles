@@ -199,8 +199,6 @@ vim.cmd('cabbrev qq TCL')
 vim.keymap.set('n', '<Leader>p', '"*p', { silent = true })
 
 vim.cmd('cabbrev cm <Cmd>Capture message<CR>')
-vim.cmd('cabbrev w  <Cmd>silent w<CR>')
-vim.cmd('cabbrev wa <Cmd>silent wa<CR>')
 vim.cmd('cabbrev h tab help')
 
 -- Plugin Management (Lazy.nvim)
