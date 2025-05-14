@@ -47,7 +47,6 @@ require('lazy').setup({
     { import = 'plugins.lspconfig' },
     { import = 'plugins.lspsaga' },
     { import = 'plugins.lspui' },
-    { import = 'plugins.nvim-java' },
     { import = 'plugins.lualine' },
     { import = 'plugins.render-markdown' },
     { import = 'plugins.mini-test' },
