@@ -1,7 +1,7 @@
 local home = os.getenv('HOME')
 local workspace_path = home .. '/.cache/jdtls/workspace/'
 local os_name = 'linux' -- `linux`, `win` or `mac`
-local root_dir = vim.fs.root(0, { '.git', 'mvnw', 'gradlew' })
+local root_dir = vim.fs.root(0, { 'mvnw', 'gradlew', '.git' })
 local project_name = vim.fn.fnamemodify(root_dir, ':p:h:t')
 local workspace_dir = workspace_path .. project_name
 
@@ -17,7 +17,7 @@ return {
     '-Dosgi.configuration.cascaded=true',
     '-Dlog.protocol=true',
     '-Dlog.level=ALL',
-    '-javaagent:' .. home .. '/.local/share/nvim/mason/share/lombok-nightly/lombok.jar',
+    '-javaagent:' .. home .. '/.local/share/nvim/mason/packages/lombok-nightly/lombok.jar',
     '-Xms1g',
     '--add-modules=ALL-SYSTEM',
     '--add-opens',
