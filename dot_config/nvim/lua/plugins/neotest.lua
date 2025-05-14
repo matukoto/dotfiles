@@ -1,115 +1,44 @@
 return {
-  {
-    'rcasia/neotest-java',
-    ft = 'java',
-    dependencies = {
-      -- 'mfussenegger/nvim-jdtls',
-      'mfussenegger/nvim-dap',
-      'rcarriga/nvim-dap-ui',
-      'theHamsta/nvim-dap-virtual-text',
-    },
-  },
-  {
+  'nvim-neotest/neotest',
+  dependencies = {
+    'nvim-neotest/nvim-nio',
+    'nvim-lua/plenary.nvim',
+    'antoinemadec/FixCursorHold.nvim',
+    'nvim-treesitter/nvim-treesitter',
     'marilari88/neotest-vitest',
-    ft = 'typescript',
-  },
-  {
     'nvim-neotest/neotest-plenary',
-    ft = 'lua',
-  },
-  {
-    'nvim-neotest/neotest',
-    dependencies = {
-      'nvim-neotest/nvim-nio',
-      'nvim-lua/plenary.nvim',
-      'antoinemadec/FixCursorHold.nvim',
-      'nvim-treesitter/nvim-treesitter',
+    {
+      'rcasia/neotest-java',
+      dependencies = {
+        'mfussenegger/nvim-jdtls',
+        'mfussenegger/nvim-dap',
+        'rcarriga/nvim-dap-ui',
+        'theHamsta/nvim-dap-virtual-text',
+      },
     },
-    event = 'VeryLazy',
-    opts = {
+  },
+  event = { 'VeryLazy' },
+  config = function()
+    require('neotest').setup({
       adapters = {
-        ['neotest-java'] = {
-          -- config here
-        },
-        ['neotest-vitest'] = {
-          --config here
-        },
-        ['neotest-plenary'] = {
-          --config here
-        },
+        require('neotest-plenary'),
+        require('neotest-java'),
+        require('neotest-vitest')({
+          -- Filter directories when searching for test files. Useful in large projects (see Filter directories notes).
+          filter_dir = function(name, rel_path, root)
+            return name ~= 'node_modules'
+          end,
+          args = { '--coverage' },
+        }),
       },
-      keys = {
-        {
-          '<leader>tt',
-          function()
-            require('neotest').run.run()
-          end,
-          desc = 'Run Nearest Test',
-        },
-        {
-          '<leader>tf',
-          function()
-            require('neotest').run.run(vim.fn.expand('%'))
-          end,
-          desc = 'Run Current File',
-        },
-        {
-          '<leader>ta',
-          function()
-            require('neotest').run.run(vim.loop.cwd())
-          end,
-          desc = 'Run All Tests (Directory)',
-        },
-        {
-          '<leader>tS',
-          function()
-            require('neotest').run.stop()
-          end,
-          desc = 'Stop Test Run',
-        },
-        {
-          '<leader>ts',
-          function()
-            require('neotest').summary.toggle()
-          end,
-          desc = 'Toggle Test Summary',
-        }, -- Use toggle instead of open
-        {
-          '<leader>to',
-          function()
-            require('neotest').output.open({ enter = true, auto_close = true })
-          end,
-          desc = 'Show Test Output',
-        },
-        {
-          '<leader>tO',
-          function()
-            require('neotest').output.open({ enter = true, auto_close = false, last_run = true })
-          end,
-          desc = 'Show Last Test Output (Keep Open)',
-        },
-        {
-          '<leader>tw',
-          function()
-            require('neotest').watch.toggle(vim.fn.expand('%'))
-          end,
-          desc = 'Toggle Watch Mode (File)',
-        },
-        {
-          '[t',
-          function()
-            require('neotest').jump.prev({ status = 'failed' })
-          end,
-          desc = 'Prev Failed Test',
-        },
-        {
-          ']t',
-          function()
-            require('neotest').jump.next({ status = 'failed' })
-          end,
-          desc = 'Next Failed Test',
-        },
-      },
-    },
-  },
+      status = { enabled = true, virtual_text = true, signs = false },
+    })
+
+    -- Key Bindings
+    vim.keymap.set('n', '<leader>tn', '<cmd>lua require("neotest").run.run()<CR>', { desc = '[T]est [N]earest' })
+    vim.keymap.set('n', '<leader>tf', '<cmd>lua require("neotest").run.run(vim.fn.expand("%s"))<CR>', { desc = '[T]est [F]ile' })
+    vim.keymap.set('n', '<leader>ta', '<cmd>lua require("neotest").run.run({ suite = true })<CR>', { desc = '[T]est [A]ll' })
+    vim.keymap.set('n', '<leader>ts', '<cmd>lua require("neotest").summary.toggle()<CR>', { desc = '[T]est [S]ummary' })
+    vim.keymap.set('n', '<leader>to', '<cmd>lua require("neotest").output.open({ enter = true })<CR>', { desc = '[T]est [O]utput' })
+  end,
 }
