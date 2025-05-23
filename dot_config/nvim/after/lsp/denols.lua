@@ -6,7 +6,8 @@ return {
     'deno.jsonc',
     'deps.ts',
   },
-  single_file_support = true,
+  -- singile_file_support と workspace_required はどちらも true では共存できない
+  single_file_support = false,
   workspace_required = true,
   settings = {
     typescript = { inlayHints = utils.tsAndJsInlayHints },
