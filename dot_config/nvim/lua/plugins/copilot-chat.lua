@@ -2,6 +2,14 @@
 return {
   'CopilotC-Nvim/CopilotChat.nvim',
   branch = 'main', -- Or specify a release tag if preferred
+  cond = function()
+    local plugin = os.getenv('PRIVATE_PLUGIN_ENABLED')
+    if plugin ~= nil then
+      return true
+    else
+      return false
+    end
+  end,
   dependencies = {
     'zbirenbaum/copilot.lua', -- Ensure copilot core is loaded
   },

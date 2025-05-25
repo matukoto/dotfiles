@@ -1,6 +1,14 @@
 return {
   'nekowasabi/aider.vim',
   dependencies = 'vim-denops/denops.vim',
+  cond = function()
+    local plugin = os.getenv('PRIVATE_PLUGIN_ENABLED')
+    if plugin ~= nil then
+      return true
+    else
+      return false
+    end
+  end,
   config = function()
     vim.g.aider_command = 'aider --no-auto-commits'
     vim.g.aider_buffer_open_type = 'floating'
