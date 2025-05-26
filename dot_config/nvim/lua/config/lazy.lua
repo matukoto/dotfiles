@@ -22,7 +22,6 @@ require('lazy').setup({
     { import = 'plugins.blink' },
     { import = 'plugins.bufferline' },
     { import = 'plugins.camelcasemotion' },
-    { import = 'plugins.ccc' },
     { import = 'plugins.chowcho' },
     { import = 'plugins.codecompanion' },
     { import = 'plugins.conform' },
@@ -78,6 +77,7 @@ require('lazy').setup({
     { import = 'plugins.which-key' },
     { import = 'plugins.yazi' },
     { import = 'plugins.aider' },
+    { import = 'plugins.nvim-highlight-colors' },
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
     -- { 'nanotee/sqls.nvim', event = 'VeryLazy' },
