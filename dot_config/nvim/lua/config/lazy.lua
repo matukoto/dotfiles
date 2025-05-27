@@ -78,6 +78,7 @@ require('lazy').setup({
     { import = 'plugins.yazi' },
     { import = 'plugins.aider' },
     { import = 'plugins.nvim-highlight-colors' },
+    { import = 'plugins.auto-session' },
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
     -- { 'nanotee/sqls.nvim', event = 'VeryLazy' },
