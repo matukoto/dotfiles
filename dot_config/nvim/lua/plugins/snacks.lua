@@ -43,6 +43,12 @@ return {
           },
           { icon = ' ', key = 'i', desc = 'edit', action = ':ene | startinsert' },
           {
+            icon = ' ',
+            key = 'b',
+            desc = 'Restore Session',
+            action = '<cmd>SessionSearch<CR>',
+          },
+          {
             icon = ' ',
             key = 'g',
             desc = 'grep',
