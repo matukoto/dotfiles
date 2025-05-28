@@ -5,7 +5,7 @@
 "go" = "1.24.3"
 "node" = "22.15.1"
 "lua" = "5.4.7"
-"npm:vite" = "5.4.7"
+"npm:vite" = "5.4.19"
 "npm:vitest" = "2.1.1"
 "npm:zenn-cli" = "0.1.158"
 "npm:@marp-team/marp-cli" = "latest"
