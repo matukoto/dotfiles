@@ -7,7 +7,7 @@
 "lua" = "5.4.7"
 "npm:vite" = "5.4.19"
 "npm:vitest" = "2.1.1"
-"npm:zenn-cli" = "0.1.158"
+"npm:zenn-cli" = "0.1.161"
 "npm:@marp-team/marp-cli" = "latest"
 "npm:browser-sync" = "latest"
 "npm:secretlint" = "8.4.0"
