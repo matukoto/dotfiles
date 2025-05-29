@@ -24,6 +24,7 @@ return {
             \   'sorters': [],                  
             \   'converters': [],               
             \   'minAutoCompleteLength': 1,     
+            \   'maxItems': 10,
             \ },
             \ })
       call ddc#enable()
