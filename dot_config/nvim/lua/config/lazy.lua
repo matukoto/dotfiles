@@ -54,6 +54,7 @@ require('lazy').setup({
     { import = 'plugins.nvim-lint' },
     { import = 'plugins.nvim-ts-autotag' },
     { import = 'plugins.oil' },
+    { import = 'plugins.otree' },
     { import = 'plugins.open-browser' },
     { import = 'plugins.project' },
     { import = 'plugins.quicker' },
