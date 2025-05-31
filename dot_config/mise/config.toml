@@ -11,7 +11,7 @@
 "npm:@marp-team/marp-cli" = "latest"
 "npm:browser-sync" = "latest"
 "npm:secretlint" = "8.4.0"
-"npm:textlint" = "14.4.0"
+"npm:textlint" = "14.7.2"
 "cargo:leetcode-cli" = "latest"
 # nushell
 "cargo:nu_plugin_gstat" = "latest"
