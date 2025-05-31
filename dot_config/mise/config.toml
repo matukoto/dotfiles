@@ -6,7 +6,7 @@
 "node" = "22.16.0"
 "lua" = "5.4.7"
 "npm:vite" = "5.4.19"
-"npm:vitest" = "2.1.1"
+"npm:vitest" = "3.1.4"
 "npm:zenn-cli" = "0.1.161"
 "npm:@marp-team/marp-cli" = "latest"
 "npm:browser-sync" = "latest"
