@@ -16,6 +16,6 @@
 # nushell
 "cargo:nu_plugin_gstat" = "latest"
 "vim" = "9.1.0990"
-"bun" = "1.2.14"
+"bun" = "1.2.15"
 [settings]
 experimental = false
