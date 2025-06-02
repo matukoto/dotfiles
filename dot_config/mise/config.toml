@@ -9,12 +9,7 @@
 "npm:vitest" = "3.1.4"
 "npm:zenn-cli" = "0.1.161"
 "npm:@marp-team/marp-cli" = "latest"
-"npm:browser-sync" = "latest"
-"npm:secretlint" = "8.4.0"
-"npm:textlint" = "14.4.0"
 "cargo:leetcode-cli" = "latest"
-# nushell
-"cargo:nu_plugin_gstat" = "latest"
 "vim" = "9.1.0990"
 "bun" = "1.2.14"
 [settings]
