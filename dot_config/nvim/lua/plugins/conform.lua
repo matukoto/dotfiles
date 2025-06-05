@@ -68,19 +68,22 @@ return {
     },
 
     -- Configure format-on-save
-    format_on_save = {
-      -- I recommend using format_after_save instead for async formatting
-      -- timeout_ms = 500, -- Set timeout for sync formatting
-      -- lsp_fallback = true, -- Fallback to LSP formatting if conform fails
-    },
+    format_on_save = function(buf)
+      -- w! で保存したときはフォーマットをスキップ
+      if vim.v.cmdbang == 1 then
+        return nil
+      end
+      return {}
+    end,
+
     -- Recommended: Use format_after_save for asynchronous formatting
-    format_after_save = {
-      lsp_fallback = true, -- Fallback to LSP if conform fails
-      async = true,
-      timeout_ms = 3000, -- Adjust timeout as needed
-      quiet = true, -- Show messages during formatting
-      -- stop_after_first = false, -- Run all formatters even if one fails (handled by formatter definition now)
-    },
+    -- format_after_save = {
+    --   lsp_fallback = true, -- Fallback to LSP if conform fails
+    --   async = true,
+    --   timeout_ms = 3000, -- Adjust timeout as needed
+    --   quiet = true, -- Show messages during formatting
+    --   -- stop_after_first = false, -- Run all formatters even if one fails (handled by formatter definition now)
+    -- },
 
     -- Default options for formatters
     default_format_opts = {
