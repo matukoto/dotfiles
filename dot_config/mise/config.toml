@@ -6,7 +6,7 @@
 "node" = "22.16.0"
 "lua" = "5.4.7"
 "npm:vite" = "6.3.5"
-"npm:vitest" = "3.1.4"
+"npm:vitest" = "3.2.2"
 "npm:zenn-cli" = "0.1.161"
 "npm:@anthropic-ai/claude-code" = "1.0.11"
 "npm:@marp-team/marp-cli" = "latest"
