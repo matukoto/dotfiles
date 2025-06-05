@@ -246,6 +246,17 @@ vim.api.nvim_create_autocmd('CursorMoved', {
   command = 'normal! zz',
 })
 
+-- terminal を下に半分くらいの高さで開くコマンド
+vim.api.nvim_create_user_command('TermHalfBelow', function()
+  local current_win_height = vim.api.nvim_win_get_height(0)
+  local target_height = math.floor(current_win_height / 3)
+  if target_height < 1 then
+    target_height = 1
+  end
+  vim.cmd('botright ' .. target_height .. 'split term://' .. vim.o.shell)
+end, {})
+vim.cmd('cabbrev t TermHalfBelow')
+
 -- colorscheme
 -- vim.cmd('colorscheme everforest') -- Set your desired colorscheme here
 
