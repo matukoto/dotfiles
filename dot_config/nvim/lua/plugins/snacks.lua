@@ -13,13 +13,13 @@ return {
       only_current = false, -- only show indent guides in the current window
       hl = 'SnacksIndent', ---@type string|string[] hl groups for indent guides
     },
-    terminal = {
-      win = {
-        style = 'terminal',
-      },
-      start_insert = true,
-      auto_insert = true,
-    },
+    -- terminal = {
+    --   win = {
+    --     style = 'terminal',
+    --   },
+    --   start_insert = true,
+    --   auto_insert = true,
+    -- },
     dashboard = {
       preset = {
         keys = {
