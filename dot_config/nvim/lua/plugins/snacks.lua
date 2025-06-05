@@ -254,7 +254,7 @@ return {
       desc = 'Projects',
     },
     {
-      '<leader>r',
+      '<leader>R',
       function()
         Snacks.picker.recent()
       end,
