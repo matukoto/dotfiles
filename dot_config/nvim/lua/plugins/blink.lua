@@ -28,8 +28,10 @@ return {
       end,
       keymap = {
         preset = 'default',
-        ['<C-j>'] = { 'select_and_accept', 'fallback' }, -- Select next and accept if no selection
-        -- ['<C-k>'] = { 'select_prev', 'fallback' }, -- Example: Select previous
+        ['<C-j>'] = { 'accept', 'fallback' }, -- Select next and accept if no selection
+        --['<C-j>'] = { 'select_and_accept', 'fallback' }, -- Select next and accept if no selection
+        ['<C-p>'] = { 'select_prev', 'fallback' }, -- Example: Select previous
+        ['<C-n>'] = { 'select_next', 'fallback' }, -- Example: Select previous
         -- ['<Tab>'] = { 'accept', 'fallback' }, -- Example: Accept with Tab
       },
       cmdline = {
