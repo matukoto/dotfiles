@@ -1,5 +1,3 @@
--- dot_config/nvim/lua/plugins/lexima.lua
--- Configuration for cohama/lexima.vim auto-pairing plugin
 return {
   'cohama/lexima.vim',
   -- Load when entering insert mode
@@ -47,16 +45,8 @@ return {
       },
     }
 
-    -- Ensure lexima functions are available before adding rules
-    if vim.fn.exists('*lexima#add_rule') == 2 then
-      for _, rule in ipairs(rules) do
-        vim.call('lexima#add_rule', rule)
-      end
-    else
-      vim.notify('lexima.vim functions not found, cannot add custom rules.', vim.log.levels.WARN)
+    for _, rule in ipairs(rules) do
+      vim.call('lexima#add_rule', rule)
     end
-
-    -- Enable lexima (usually done automatically, but can be explicit)
-    -- vim.cmd('call lexima#enable()')
   end,
 }
