@@ -195,6 +195,7 @@ vim.keymap.set('n', 'H', '<Cmd>tabprevious<CR>', { silent = true })
 vim.keymap.set('n', 'L', '<Cmd>tabnext<CR>', { silent = true })
 vim.keymap.set('n', 'Q', '<Cmd>TCL<CR>', { silent = true })
 vim.cmd('cabbrev qq TCL')
+vim.cmd('cabbrev rs restart')
 
 vim.keymap.set('n', '<Leader>p', '"*p', { silent = true })
 
