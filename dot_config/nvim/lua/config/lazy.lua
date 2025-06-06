@@ -83,6 +83,7 @@ require('lazy').setup({
     { import = 'plugins.overseer' },
     { import = 'plugins.nvim-notify' },
     { import = 'plugins.bufterm' },
+    { import = 'plugins.claude-code' },
 
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
