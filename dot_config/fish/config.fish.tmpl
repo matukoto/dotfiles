@@ -22,6 +22,9 @@ if status is-interactive
     set -x INITVIM $XDG_CONFIG_HOME/nvim/init.vim
     set -x VIMRC $HOME/.vimrc
     set -x AQUA_GLOBAL_CONFIG $XDG_CONFIG_HOME/aquaproj-aqua/aqua.yaml
+{{ if (or (eq .chezmoi.hostname "matukoto-manjaro") (eq .chezmoi.hostname "DesktopFractal") (eq .chezmoi.hostname "ThinkPadE14")) }}
+    set -x PRIVATE_PLUGIN_ENABLED true
+{{ end }}
 
     # Fish paths
     set -x FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
@@ -50,7 +53,8 @@ if status is-interactive
     abbr --add gc 'git commit'
     abbr --add gp 'git push'
     abbr --add gpu 'git push --upstream-origin origin HEAD'
-    abbr --add gl 'git pull'
+    abbr --add gpl 'git pull'
+    abbr --add gl 'git log'
     abbr --add gs 'git switch'
     abbr --add gd 'git diff'
     abbr --add gsc 'git switch -c'
