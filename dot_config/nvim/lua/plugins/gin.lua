@@ -21,7 +21,7 @@ return {
   end,
   -- Define global keymaps using the 'keys' table
   keys = {
-    { '<C-g>s', '<Cmd>GinStatus ++opener=edit<CR>', desc = 'Gin Status (Edit)' },
+    { '<C-g>s', '<Cmd>GinStatus ++opener=tabedit<CR>', desc = 'Gin Status (Edit)' },
     { '<C-g>a', '<Cmd>Gin add --all<CR>', desc = 'Gin Add All' },
     { '<C-g>c', '<Cmd>Gin commit --quiet<CR>', desc = 'Gin Commit' },
     { '<C-g>P', '<Cmd>GinPatch ++no-head %<CR>', desc = 'Gin Patch Buffer' },
