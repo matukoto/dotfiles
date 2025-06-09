@@ -2,7 +2,7 @@
 # language runtime
 "java" = { version = "corretto-17.0.14.7", release_type = "ga" }
 "rust" = "1.87.0"
-"go" = "1.24.3"
+"go" = "1.24.4"
 "node" = "22.16.0"
 "lua" = "5.4.7"
 "npm:vite" = "6.3.5"
