@@ -4,6 +4,14 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
   },
+  cond = function()
+    local plugin = os.getenv('PRIVATE_PLUGIN_ENABLED')
+    if plugin ~= nil then
+      return true
+    else
+      return false
+    end
+  end,
   config = function()
     require('claude-code').setup({
       -- Terminal window settings
