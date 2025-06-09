@@ -19,7 +19,7 @@ packages:
   - name: jqlang/jq@jq-1.8.0
   - name: jdx/mise@v2025.6.0
   - name: atuinsh/atuin@v18.6.1
-  - name: sxyazi/yazi@v25.4.8
+  - name: sxyazi/yazi@v25.5.31
   - name: denoland/deno@v2.3.3
   - name: kubernetes/kubectl@v1.33.1
   - name: kubernetes-sigs/kind@v0.29.0
