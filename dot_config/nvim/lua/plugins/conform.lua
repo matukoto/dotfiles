@@ -45,6 +45,7 @@ return {
       sh = { 'shellcheck', 'shfmt', stop_after_first = false },
       -- JSON files use the dynamic tsFormatter
       json = { 'fixjson' },
+      json5 = { 'fixjson' },
       jsonc = { 'fixjson' },
       -- Frontend files
       svelte = { 'eslint' }, -- Or jsFormatter if preferred
