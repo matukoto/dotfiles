@@ -1,6 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-
   "extends": [
     "config:best-practices",
     "github>aquaproj/aqua-renovate-config:file#2.8.1(aqua/.*\\.ya?ml)",
@@ -9,17 +8,21 @@
   ],
   "timezone": "Asia/Tokyo",
   "automerge": false,
-  "dependencyDashboard": false,
+  "dependencyDashboard": true,
   "platformAutomerge": true,
   "packageRules": [
     {
+      "matchPackageNames": [
+        "aquaproj/aqua-registry"
+      ],
+      "extends": [
+        "schedule:earlyMondays"
+      ]
+    },
+    {
       "matchFileNames": [
         "aqua.yaml",
-        "renovate.json"
-      ],
-      "matchPackageNames": [
-        "aquaproj/aqua-registry",
-        "aquaproj/aqua"
+        "renovate.json5"
       ],
       "groupName": "aqua"
     },
@@ -30,7 +33,7 @@
       "enabledManagers": [
         "mise",
         "npm",
-        "gomod",
+        "go",
         "cargo"
       ],
       "groupName": "mise"
