@@ -33,7 +33,7 @@
       "enabledManagers": [
         "mise",
         "npm",
-        "go",
+        "gomod",
         "cargo"
       ],
       "groupName": "mise"
