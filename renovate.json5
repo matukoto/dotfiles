@@ -20,7 +20,7 @@
     },
     {
       "matchFileNames": [
-        "aqua.yaml",
+        "dot_config/aquaproj-aqua/aqua.yaml",
         "renovate.json5"
       ],
       "groupName": "aqua"
