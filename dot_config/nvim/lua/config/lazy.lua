@@ -84,6 +84,7 @@ require('lazy').setup({
     { import = 'plugins.nvim-notify' },
     { import = 'plugins.bufterm' },
     { import = 'plugins.claude-code' },
+    { import = 'plugins.yanky' },
 
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
