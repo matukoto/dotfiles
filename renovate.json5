@@ -19,13 +19,6 @@
     },
     {
       "matchFileNames": [
-        "dot_config/aquaproj-aqua/aqua.yaml",
-        "renovate.json5"
-      ],
-      "groupName": "aqua"
-    },
-    {
-      "matchFileNames": [
         "mise/config.toml"
       ],
       "enabledManagers": [
