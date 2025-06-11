@@ -1,5 +1,7 @@
 local wezterm = require('wezterm')
 local config = {
+  -- 音を鳴らす
+  audible_bell = 'SystemBeep',
   window_background_opacity = 0.85, -- 透過率
   -- default_prog = { 'bash' },
   default_prog = { 'wsl.exe', '--cd', '~' },
@@ -72,6 +74,11 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
     { Foreground = { Color = edge_foreground } },
     { Text = SOLID_RIGHT_ARROW },
   }
+end)
+
+-- OS通知
+wezterm.on('bell', function(window, pane)
+  window:toast_notification('通知', 'タスクが完了しました', nil, 4000)
 end)
 
 return config
