@@ -9,7 +9,7 @@ my_private*
 README.md
 *time
 *.key
-renovate.json
+renovate.json5
 minimal_init.lua
 {{ if eq .chezmoi.os "windows" -}}
 .config/efm-langserver
