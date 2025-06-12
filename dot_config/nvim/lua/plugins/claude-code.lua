@@ -46,7 +46,7 @@ return {
             verbose = '<leader>cV', -- Normal mode keymap for Claude Code with verbose flag
           },
         },
-        window_navigation = true, -- Enable window navigation keymaps (<C-h/j/k/l>)
+        window_navigation = false,
         scrolling = true, -- Enable scrolling keymaps (<C-f/b>) for page up/down
       },
     })
