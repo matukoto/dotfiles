@@ -50,5 +50,8 @@ return {
         scrolling = true, -- Enable scrolling keymaps (<C-f/b>) for page up/down
       },
     })
+
+    vim.cmd('cabbrev Cc ClaudeCode<CR>')
+    vim.cmd('cabbrev CC ClaudeCodeContinue<CR>')
   end,
 }
