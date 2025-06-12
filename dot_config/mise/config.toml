@@ -12,6 +12,6 @@
 "npm:@marp-team/marp-cli" = "latest"
 "cargo:leetcode-cli" = "latest"
 "vim" = "9.1.0990"
-"bun" = "1.2.15"
+"bun" = "1.2.16"
 [settings]
 experimental = false
