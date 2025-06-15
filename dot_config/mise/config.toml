@@ -8,7 +8,7 @@
 "npm:vite" = "6.3.5"
 "npm:vitest" = "3.2.3"
 "npm:zenn-cli" = "0.1.161"
-"npm:@anthropic-ai/claude-code" = "1.0.17"
+"npm:@anthropic-ai/claude-code" = "1.0.24"
 "npm:@marp-team/marp-cli" = "latest"
 "cargo:leetcode-cli" = "latest"
 "vim" = "9.1.0990"
