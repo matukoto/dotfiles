@@ -42,10 +42,6 @@ if [ -d "$AQUA_ROOT_DIR/bin" ]; then
   PATH="$AQUA_ROOT_DIR/bin:$PATH"
 fi
 
-export MISE_PATH=$HOME/.local/share/mise/shims
-if [ -d "$MISE_PATH" ]; then
-  PATH="$MISE_PATH:$PATH"
-fi
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
