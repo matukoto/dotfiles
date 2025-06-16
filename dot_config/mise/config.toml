@@ -1,9 +1,10 @@
 [tools]
 # language runtime
-"java" = { version = "corretto-17.0.14.7", release_type = "ga" }
+"core:java" = { version = "corretto-17.0.14.7", release_type = "ga" }
 "core:rust" = "1.87.0"
-"go" = "1.24.4"
-"node" = "22.16.0"
+"core:go" = "1.24.4"
+"core:node" = "22.16.0"
+"core:bun" = "1.2.16"
 "lua" = "5.4.7"
 "npm:vite" = "6.3.5"
 "npm:vitest" = "3.2.3"
@@ -12,6 +13,5 @@
 "npm:@marp-team/marp-cli" = "latest"
 "cargo:leetcode-cli" = "latest"
 "vim" = "9.1.0990"
-"bun" = "1.2.16"
 [settings]
 experimental = false
