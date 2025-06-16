@@ -28,6 +28,17 @@
         "cargo"
       ],
       "groupName": "mise"
+    },
+    {
+      "matchManagers": [
+        "mise"
+      ],
+      "matchPackageNames": [
+        "java"
+      ],
+      "description": "Restrict Java versions to mise-compatible format",
+      "allowedVersions": "/^corretto-\\d+\\.\\d+\\.\\d+\\.\\d+\\.\\d+$/",
+      "versioning": "loose"
     }
   ]
 }
