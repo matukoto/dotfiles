@@ -27,7 +27,7 @@ packages:
   - name: docker/compose@v2.36.2
   - name: natecraddock/zf@0.10.2
   - name: nushell/nushell@0.105.1
-  - name: duckdb/duckdb@v1.3.0
+  - name: duckdb/duckdb@v1.3.1
   - name: suzuki-shunsuke/pinact@v3.3.0
   - name: pnpm/pnpm@v10.12.1
   - name: rhysd/vim-startuptime@v1.3.2
