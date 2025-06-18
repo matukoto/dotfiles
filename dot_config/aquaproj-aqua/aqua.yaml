@@ -32,6 +32,6 @@ packages:
   - name: pnpm/pnpm@v10.12.1
   - name: rhysd/vim-startuptime@v1.3.2
   - name: golang.org/x/tools/gopls@v0.19.0
-  - name: aws/aws-cli@2.27.5
+  - name: aws/aws-cli@2.27.37
   - name: tstack/lnav@v0.12.4
   - name: biomejs/biome@cli/v1.9.4
