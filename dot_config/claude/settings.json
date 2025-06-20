@@ -1,6 +1,7 @@
 {
     "preferredNotifChannel": "terminal_bell",
     "includeCoAuthoredBy": false,
+    "autoUpdaterStatus": "disabled",
     "permissions": {
         "allow": [
             "Bash(npm:*)",
