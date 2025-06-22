@@ -83,7 +83,6 @@ require('lazy').setup({
     { import = 'plugins.overseer' },
     { import = 'plugins.nvim-notify' },
     { import = 'plugins.bufterm' },
-    --{ import = 'plugins.claude-code' },
     { import = 'plugins.claudecode' },
     { import = 'plugins.yanky' },
 
