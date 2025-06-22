@@ -3,12 +3,7 @@ return {
   'zbirenbaum/copilot.lua',
   -- Load when entering insert mode or specific commands are used
   cond = function()
-    local plugin = os.getenv('PRIVATE_PLUGIN_ENABLED')
-    if plugin ~= nil then
-      return true
-    else
-      return false
-    end
+    return os.getenv('PRIVATE_PLUGIN_ENABLED') ~= nil
   end,
   event = 'InsertEnter',
   cmd = { 'Copilot', 'CopilotAuth', 'CopilotPanel', 'CopilotSuggestion' },

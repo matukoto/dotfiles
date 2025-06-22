@@ -3,12 +3,7 @@ return {
   'olimorris/codecompanion.nvim',
   -- Dependencies: Needs the adapter plugin (copilot.lua in this case)
   cond = function()
-    local plugin = os.getenv('PRIVATE_PLUGIN_ENABLED')
-    if plugin ~= nil then
-      return true
-    else
-      return false
-    end
+    return os.getenv('PRIVATE_PLUGIN_ENABLED') ~= nil
   end,
   dependencies = {
     'zbirenbaum/copilot.lua',
