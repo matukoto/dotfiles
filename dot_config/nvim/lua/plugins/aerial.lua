@@ -172,7 +172,7 @@ return {
   },
   -- Define global keymaps using the 'keys' table
   keys = {
-    { '<leader>a', '<cmd>AerialToggle!<CR>', desc = 'Toggle Aerial Outline' },
+    { '<leader>aa', '<cmd>AerialToggle!<CR>', desc = 'Toggle Aerial Outline' },
   },
   -- config function to define autocmds after setup
   config = function(_, opts)
