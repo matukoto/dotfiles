@@ -5,7 +5,7 @@
 "core:go" = "1.24.4"
 "core:node" = "22.16.0"
 "core:bun" = "1.2.16"
-"lua" = "5.4.7"
+"lua" = "5.4.8"
 "npm:vite" = "6.3.5"
 "npm:vitest" = "3.2.4"
 "npm:zenn-cli" = "0.1.161"
