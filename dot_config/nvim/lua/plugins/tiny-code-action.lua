@@ -4,17 +4,25 @@ return {
     { 'nvim-lua/plenary.nvim' },
     { 'folke/snacks.nvim', opts = { terminal = {} } },
   },
+  lazy = true,
   event = 'LspAttach',
   opts = {
-    --- The backend to use, currently only "vim", "delta", "difftastic", "diffsofancy" are supported
     backend = 'delta',
-
-    -- The picker to use, "telescope", "snacks", "select" are supported
-    -- And it's opts that will be passed at the picker's creation, optional
-    -- If you want to use the `fzf-lua` picker, you can simply set it to `select`
-    --
-    -- You can also set `picker = "telescope"` without any opts.
-    picker = 'snacks',
+    picker = {
+      'snacks',
+      -- opts = {
+      --   layout = {
+      --     preview = true,
+      --     layout = {
+      --       backdrop = true,
+      --       width = 0.9,
+      --       min_width = 80,
+      --       height = 0.9,
+      --       min_height = 3,
+      --     },
+      --   },
+      -- },
+    },
     backend_opts = {
       delta = {
         -- Header from delta can be quite large.
@@ -31,10 +39,6 @@ return {
         },
       },
     },
-
-    -- The icons to use for the code actions
-    -- You can add your own icons, you just need to set the exact action's kind of the code action
-    -- You can set the highlight like so: { link = "DiagnosticError" } or  like nvim_set_hl ({ fg ..., bg..., bold..., ...})
     signs = {
       quickfix = { '󰁨', { link = 'DiagnosticInfo' } },
       others = { '?', { link = 'DiagnosticWarning' } },
@@ -48,10 +52,10 @@ return {
       ['codeAction'] = { '', { link = 'DiagnosticError' } },
     },
   },
-  config = function()
-    require('tiny-code-action').setup()
-    vim.keymap.set({ 'n', 'x' }, 'ga', function()
+  config = function(_, opts)
+    require('tiny-code-action').setup(opts)
+    vim.keymap.set('n', 'ga', function()
       require('tiny-code-action').code_action()
-    end, { noremap = true, silent = true })
+    end, { noremap = true, silent = true, desc = 'Tiny Code Action' })
   end,
 }

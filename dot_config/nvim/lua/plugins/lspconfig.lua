@@ -152,11 +152,11 @@ return {
           end
 
           -- Code Actions
-          if lspsaga_ok then
-            set({ 'n', 'v' }, 'ga', '<cmd>Lspsaga code_action<CR>', opts)
-          else
-            set({ 'n', 'v' }, 'ga', vim.lsp.buf.code_action, opts)
-          end
+          -- if lspsaga_ok then
+          --   set({ 'n', 'v' }, 'ga', '<cmd>Lspsaga code_action<CR>', opts)
+          -- else
+          --   set({ 'n', 'v' }, 'ga', vim.lsp.buf.code_action, opts)
+          -- end
 
           -- Diagnostics
           if lspsaga_ok then
