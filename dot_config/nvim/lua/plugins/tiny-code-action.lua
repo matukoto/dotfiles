@@ -7,35 +7,22 @@ return {
   lazy = true,
   event = 'LspAttach',
   opts = {
-    backend = 'delta',
+    backend = 'difftastic',
     picker = {
       'snacks',
-      -- opts = {
-      --   layout = {
-      --     preview = true,
-      --     layout = {
-      --       backdrop = true,
-      --       width = 0.9,
-      --       min_width = 80,
-      --       height = 0.9,
-      --       min_height = 3,
-      --     },
-      --   },
-      -- },
+      opts = {
+        layout = {
+          preview = true,
+        },
+      },
     },
     backend_opts = {
-      delta = {
-        -- Header from delta can be quite large.
-        -- You can remove them by setting this to the number of lines to remove
-        header_lines_to_remove = 4,
-
-        -- The arguments to pass to delta
-        -- If you have a custom configuration file, you can set the path to it like so:
-        -- args = {
-        --     "--config" .. os.getenv("HOME") .. "/.config/delta/config.yml",
-        -- }
+      difftastic = {
+        header_lines_to_remove = 1,
         args = {
-          '--line-numbers',
+          '--color=always',
+          '--display=inline',
+          '--syntax-highlight=on',
         },
       },
     },
