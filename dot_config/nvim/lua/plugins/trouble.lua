@@ -3,6 +3,7 @@ return {
   'folke/trouble.nvim',
   -- Dependencies like nvim-web-devicons are usually handled if listed elsewhere
   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  event = 'VeryLazy',
   -- opts can be used to pass configuration options to setup()
   opts = {
     -- Your custom configuration goes here
