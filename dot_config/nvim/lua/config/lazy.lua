@@ -85,6 +85,7 @@ require('lazy').setup({
     { import = 'plugins.bufterm' },
     { import = 'plugins.claudecode' },
     { import = 'plugins.yanky' },
+    { import = 'plugins.tiny-code-action' },
 
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
