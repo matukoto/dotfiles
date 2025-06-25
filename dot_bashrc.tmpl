@@ -119,6 +119,11 @@ fi
 # mise
 eval "$(~/.local/share/aquaproj-aqua/bin/mise activate bash)"
 
+# Claude Code settings
+export CLAUDE_DISABLE_UPDATES=1
+export NO_UPDATE_NOTIFIER=1
+export CLAUDE_CONFIG_DIR=~/.config/claude
+
 # If not running interactively, use nushell
 # case $- in
 #     *i*) exec nu;;

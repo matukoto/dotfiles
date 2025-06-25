@@ -111,6 +111,11 @@ if status is-interactive
 
     ~/.local/share/aquaproj-aqua/bin/mise activate fish | source
 
+    # Claude Code settings
+    set -x CLAUDE_DISABLE_UPDATES 1
+    set -x NO_UPDATE_NOTIFIER 1
+    set -x CLAUDE_CONFIG_DIR ~/.config/claude
+
     zoxide init fish | source
 
     atuin init --disable-up-arrow fish | source
