@@ -31,7 +31,7 @@ packages:
   - name: suzuki-shunsuke/pinact@v3.3.0
   - name: pnpm/pnpm@v10.12.4
   - name: rhysd/vim-startuptime@v1.3.2
-  - name: golang.org/x/tools/gopls@v0.19.0
+  - name: golang.org/x/tools/gopls@v0.19.1
   - name: aws/aws-cli@2.27.44
   - name: tstack/lnav@v0.12.4
   - name: biomejs/biome@cli/v1.9.4
