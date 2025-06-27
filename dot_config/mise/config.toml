@@ -6,7 +6,7 @@
 "core:node" = "22.16.0"
 "core:bun" = "1.2.16"
 "lua" = "5.4.8"
-"npm:vite" = "6.3.5"
+"npm:vite" = "7.0.0"
 "npm:vitest" = "3.2.4"
 "npm:zenn-cli" = "0.1.161"
 "npm:@anthropic-ai/claude-code" = "1.0.29"
