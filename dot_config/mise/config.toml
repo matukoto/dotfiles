@@ -4,7 +4,7 @@
 "core:rust" = "1.87.0"
 "core:go" = "1.24.4"
 "core:node" = "22.16.0"
-"core:bun" = "1.2.16"
+"core:bun" = "1.2.17"
 "lua" = "5.4.8"
 "npm:vite" = "6.3.5"
 "npm:vitest" = "3.2.4"
