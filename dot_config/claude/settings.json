@@ -1,7 +1,8 @@
 {
     "preferredNotifChannel": "terminal_bell",
     "includeCoAuthoredBy": false,
-    "autoUpdaterStatus": "disabled",
+    "autoUpdates": false,
+    "thema": "dark",
     "permissions": {
         "allow": [
             "Bash(npm:*)",
@@ -182,5 +183,8 @@
             "Write(/etc/sudoers)"
         ]
     },
-    "env": {}
+    "env": {
+        "MAX_THINKING_TOKENS": "31999",
+        "DISABLE_AUTOUPDATER": 1
+    }
 }
