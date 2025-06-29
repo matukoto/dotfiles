@@ -27,11 +27,20 @@ return {
         return true -- vim.tbl_contains({ 'lua', 'markdown' }, vim.bo.filetype)
       end,
       keymap = {
-        preset = 'default',
-        ['<C-j>'] = { 'accept', 'fallback' }, -- Select next and accept if no selection
-        --['<C-j>'] = { 'select_and_accept', 'fallback' }, -- Select next and accept if no selection
-        ['<C-p>'] = { 'select_prev', 'fallback' }, -- Example: Select previous
-        ['<C-n>'] = { 'select_next', 'fallback' }, -- Example: Select previous
+        preset = 'none',
+        ['<C-j>'] = { 'select_and_accept', 'fallback' }, -- Select next and accept if no selection
+        -- ['<C-s>'] = { 'show', 'show_documentation', 'hide_documentation' },
+        -- ['<C-e>'] = { 'hide' },
+        -- ['<C-y>'] = { 'select_and_accept' },
+        -- ['<Up>'] = { 'select_prev', 'fallback' },
+        -- ['<Down>'] = { 'select_next', 'fallback' },
+        ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+        ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+        ['<Tab>'] = { 'snippet_forward', 'fallback' },
+        ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+        ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
+        ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' }, -- Example: Select previous
+        ['<C-n>'] = { 'select_next', 'fallback_to_mappings' }, -- Example: Select previous
         -- ['<Tab>'] = { 'accept', 'fallback' }, -- Example: Accept with Tab
       },
       cmdline = {
