@@ -28,7 +28,7 @@ return {
       end,
       keymap = {
         preset = 'none',
-        ['<C-j>'] = { 'select_and_accept', 'fallback' }, -- Select next and accept if no selection
+        ['<cr>'] = { 'select_and_accept', 'fallback' }, -- Select next and accept if no selection
         -- ['<C-s>'] = { 'show', 'show_documentation', 'hide_documentation' },
         -- ['<C-e>'] = { 'hide' },
         -- ['<C-y>'] = { 'select_and_accept' },

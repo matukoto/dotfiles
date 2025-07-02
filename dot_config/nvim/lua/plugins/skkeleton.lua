@@ -4,7 +4,7 @@ return {
   -- Load earlier to ensure Denops is ready
   event = { 'InsertEnter', 'CmdlineEnter' },
   keys = {
-    { '<C-k>', '<Plug>(skkeleton-toggle)', mode = { 'i', 'c', 't' }, desc = 'Toggle skk' },
+    { '<C-j>', '<Plug>(skkeleton-toggle)', mode = { 'i', 'c', 't' }, desc = 'Toggle skk' },
   },
   init = function()
     vim.api.nvim_create_autocmd('User', {
