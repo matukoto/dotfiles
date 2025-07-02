@@ -35,7 +35,7 @@ local mason_tools = {
   'shfmt',
   'sql-formatter',
   'fixjson',
-  -- 'eslint',
+  'eslint_d',
   'markdownlint-cli2',
   'yamlfmt',
 }
