@@ -1,7 +1,33 @@
--- dot_config/nvim/lua/plugins/conform.lua
+local jsFormatter = function()
+  local root_patterns = {
+    biome = { 'biome.json', 'biome.jsonc' },
+    eslint = { 'eslint.config.js' },
+    prettier = { '.prettierrc', '.prettierrc.json', '.prettierrc.js' },
+  }
 
--- Helper functions defined outside the return table to be available for opts
-local jsFormatter = { 'biome', 'eslint', 'prettierd', 'prettier', stop_after_first = true }
+  local root_dir = vim.fs.dirname(vim.fs.find({ '.git', 'package.json' }, { upward = true })[1])
+  if not root_dir then
+    root_dir = vim.fn.getcwd()
+  end
+  for _, pattern in ipairs(root_patterns.biome) do
+    if vim.fn.filereadable(root_dir .. '/' .. pattern) == 1 then
+      return { 'biome', stop_after_first = true }
+    end
+  end
+
+  for _, pattern in ipairs(root_patterns.eslint) do
+    if vim.fn.filereadable(root_dir .. '/' .. pattern) == 1 then
+      return { 'eslint_d', stop_after_first = true }
+    end
+  end
+
+  for _, pattern in ipairs(root_patterns.prettier) do
+    if vim.fn.filereadable(root_dir .. '/' .. pattern) == 1 then
+      return { 'prettierd', stop_after_first = true }
+    end
+  end
+  return { 'prettierd', stop_after_first = true }
+end
 
 local tsFormatter = function(bufnr) -- Pass bufnr for context
   -- Use vim.fs.find instead of vim.fs.root for better root detection flexibility
@@ -12,7 +38,7 @@ local tsFormatter = function(bufnr) -- Pass bufnr for context
     return jsFormatter
   else
     -- print("Using Deno formatter (deno_fmt) for:", vim.api.nvim_buf_get_name(bufnr))
-    return { 'deno_fmt' }
+    return { 'deno_fmt', stop_after_first = true }
   end
 end
 
@@ -26,11 +52,6 @@ return {
   opts = {
     -- Define formatters and their configurations
     formatters = {
-      eslint = {
-        command = 'npx',
-        args = { 'eslint', '--fix', '$FILENAME' },
-        stdin = false,
-      },
       pnpm_format = {
         command = 'pnpm',
         args = { 'run', 'format:file', '$FILENAME' },
@@ -48,7 +69,7 @@ return {
       jsonc = { 'eslint_d' },
       json5 = { 'eslint_d' },
       -- Frontend files
-      svelte = { 'eslint_d' }, -- Or jsFormatter if preferred
+      svelte = jsFormatter, -- Or jsFormatter if preferred
       fsharp = { 'fantomas' },
       html = jsFormatter,
       css = jsFormatter,
