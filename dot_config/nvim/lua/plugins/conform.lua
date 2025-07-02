@@ -45,10 +45,10 @@ return {
       sh = { 'shellcheck', 'shfmt', stop_after_first = false },
       -- JSON files use the dynamic tsFormatter
       json = { 'fixjson' },
-      json5 = { 'fixjson' },
-      jsonc = { 'fixjson' },
+      jsonc = { 'eslint_d' },
+      json5 = { 'eslint_d' },
       -- Frontend files
-      svelte = { 'eslint' }, -- Or jsFormatter if preferred
+      svelte = { 'eslint_d' }, -- Or jsFormatter if preferred
       fsharp = { 'fantomas' },
       html = jsFormatter,
       css = jsFormatter,
