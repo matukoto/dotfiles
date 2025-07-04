@@ -11,7 +11,7 @@
 "npm:zenn-cli" = "0.1.161"
 "npm:@anthropic-ai/claude-code" = "1.0.43"
 "npm:@marp-team/marp-cli" = "latest"
-"npm:sv" = '0.8.16'
+"npm:sv" = '0.8.17'
 "npm:tsx" = '4.20.3'
 "npm:playwright" = '1.53.1'
 'npm:@modelcontextprotocol/inspector' ='0.15.0'
