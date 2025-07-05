@@ -16,6 +16,5 @@
 "npm:playwright" = '1.53.1'
 'npm:@modelcontextprotocol/inspector' ='0.15.0'
 "cargo:leetcode-cli" = "latest"
-"vim" = "9.1.0990"
 [settings]
 experimental = false
