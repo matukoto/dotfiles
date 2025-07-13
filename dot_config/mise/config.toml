@@ -8,7 +8,7 @@
 "lua" = "5.4.8"
 "npm:vite" = "7.0.0"
 "npm:vitest" = "3.2.4"
-"npm:zenn-cli" = "0.1.161"
+"npm:zenn-cli" = "0.2.1"
 "npm:@anthropic-ai/claude-code" = "1.0.51"
 "npm:@marp-team/marp-cli" = "latest"
 "npm:sv" = '0.8.17'
