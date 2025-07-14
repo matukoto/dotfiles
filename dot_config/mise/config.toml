@@ -13,7 +13,7 @@
 "npm:@marp-team/marp-cli" = "latest"
 "npm:sv" = '0.8.18'
 "npm:tsx" = '4.20.3'
-"npm:playwright" = '1.53.1'
+"npm:playwright" = '1.54.1'
 'npm:@modelcontextprotocol/inspector' ='0.15.0'
 "cargo:leetcode-cli" = "latest"
 [settings]
