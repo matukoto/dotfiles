@@ -16,5 +16,6 @@
 "npm:playwright" = '1.54.1'
 'npm:@modelcontextprotocol/inspector' ='0.16.1'
 "cargo:leetcode-cli" = "latest"
+"spring-boot" = "3.5.3"
 [settings]
 experimental = false
