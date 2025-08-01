@@ -44,7 +44,7 @@ return {
       },
       format = {
         settings = {
-          url = 'https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml',
+          url = vim.fn.expand('~/.config/jdtls/google-java-format.xml'),
           profile = 'GoogleStyle',
         },
       },
