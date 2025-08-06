@@ -35,7 +35,7 @@ local tsFormatter = function(bufnr) -- Pass bufnr for context
     vim.fs.find('package.json', { upward = true, path = vim.api.nvim_buf_get_name(bufnr), stop = vim.loop.os_homedir() })
   if pkg_json_path and #pkg_json_path > 0 then
     -- print("Using Node formatter (biome/prettierd/prettier) for:", vim.api.nvim_buf_get_name(bufnr))
-    return jsFormatter
+    return jsFormatter()
   else
     -- print("Using Deno formatter (deno_fmt) for:", vim.api.nvim_buf_get_name(bufnr))
     return { 'deno_fmt', stop_after_first = true }
