@@ -11,7 +11,7 @@
 "npm:@anthropic-ai/claude-code" = "1.0.80"
 "npm:@marp-team/marp-cli" = "latest"
 "npm:sv" = '0.9.2'
-"npm:tsx" = '4.20.3'
+"npm:tsx" = '4.20.4'
 "npm:playwright" = '1.54.2'
 'npm:@modelcontextprotocol/inspector' ='0.16.2'
 "cargo:leetcode-cli" = "latest"
