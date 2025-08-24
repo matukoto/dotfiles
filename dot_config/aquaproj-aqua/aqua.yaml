@@ -29,7 +29,7 @@ packages:
   - name: nushell/nushell@0.106.1
   - name: duckdb/duckdb@v1.3.2
   - name: suzuki-shunsuke/pinact@v3.3.2
-  - name: pnpm/pnpm@v10.14.0
+  - name: pnpm/pnpm@v10.15.0
   - name: rhysd/vim-startuptime@v1.3.2
   - name: golang.org/x/tools/gopls@v0.19.1
   - name: aws/aws-cli@2.28.13
