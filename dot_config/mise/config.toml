@@ -5,7 +5,7 @@
 "go" = "1.25.1"
 "node" = "24.10.0"
 "lua" = "5.4.8"
-"npm:vite" = "7.1.5"
+"npm:vite" = "7.1.10"
 "npm:vitest" = "3.2.4"
 "npm:zenn-cli" = "0.2.3"
 "npm:@anthropic-ai/claude-code" = "1.0.128"
