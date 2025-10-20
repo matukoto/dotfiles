@@ -13,6 +13,7 @@ return {
     'saghen/blink.cmp',
     -- dependencies = { 'rinx/cmp-skkeleton' },
     build = 'cargo build --release',
+    -- version = '1.*',
     -- event = { 'InsertEnter', 'CmdlineEnter' },
     enabled = true,
     event = { 'VeryLazy' },
@@ -28,7 +29,7 @@ return {
       end,
       keymap = {
         preset = 'none',
-        ['<cr>'] = { 'select_and_accept', 'fallback' }, -- Select next and accept if no selection
+        ['<C-j>'] = { 'select_and_accept', 'fallback' }, -- Select next and accept if no selection
         -- ['<C-s>'] = { 'show', 'show_documentation', 'hide_documentation' },
         -- ['<C-e>'] = { 'hide' },
         -- ['<C-y>'] = { 'select_and_accept' },
