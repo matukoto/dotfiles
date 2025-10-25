@@ -12,7 +12,7 @@
 "npm:@marp-team/marp-cli" = "latest"
 "npm:sv" = '0.9.9'
 "npm:tsx" = '4.20.6'
-"npm:playwright" = '1.55.0'
+"npm:playwright" = '1.56.1'
 'npm:@modelcontextprotocol/inspector' ='0.17.1'
 "cargo:leetcode-cli" = "latest"
 "spring-boot" = "3.5.3"
