@@ -20,7 +20,7 @@ packages:
   - name: jdx/mise@v2025.10.18
   - name: atuinsh/atuin@v18.10.0
   - name: sxyazi/yazi@v25.5.31
-  - name: denoland/deno@v2.5.5
+  - name: denoland/deno@v2.5.6
   - name: kubernetes/kubectl@v1.34.1
   - name: kubernetes-sigs/kind@v0.30.0
   - name: docker/cli@v27.4.1
