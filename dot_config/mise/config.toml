@@ -16,5 +16,6 @@
 'npm:@modelcontextprotocol/inspector' ='0.17.2'
 #"cargo:leetcode-cli" = "latest"
 "spring-boot" = "3.5.3"
+"npm:@openapitools/openapi-generator-cli" = 'latest'
 [settings]
 experimental = false
