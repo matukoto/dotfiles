@@ -5,10 +5,30 @@
     "github>aquaproj/aqua-renovate-config#2.9.0"
   ],
   "timezone": "Asia/Tokyo",
-  "automerge": false,
+  "automerge": true,
   "dependencyDashboard": true,
   "platformAutomerge": true,
   "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "minimumReleaseAge": "2 days",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "minimumReleaseAge": "5 days",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "automerge": false
+    },
     {
       "matchPackageNames": [
         "aquaproj/aqua-registry"
