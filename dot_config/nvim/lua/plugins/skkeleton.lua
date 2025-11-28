@@ -52,18 +52,18 @@ return {
           ['z8'] = { '⑧', '' },
           ['z9'] = { '⑨', '' },
         })
-        vim.cmd([[
-          " skkeleton がモードの状態を保持しないように修正
-          function! s:skkeleton_init() abort
-            call skkeleton#config({
-              \ 'keepState': v:false
-              \ })
-          endfunction
-          augroup skkeleton-enable-previous
-            autocmd!
-            autocmd User skkeleton-enable-pre call s:skkeleton_init()
-          augroup END
-          ]])
+        -- vim.cmd([[
+        --   " skkeleton がモードの状態を保持しないように修正
+        --   function! s:skkeleton_init() abort
+        --     call skkeleton#config({
+        --       \ 'keepState': v:false
+        --       \ })
+        --   endfunction
+        --   augroup skkeleton-enable-previous
+        --     autocmd!
+        --     autocmd User skkeleton-enable-pre call s:skkeleton_init()
+        --   augroup END
+        --   ]])
       end,
       group = vim.api.nvim_create_augroup('skkelectonInitPre', { clear = true }),
     })

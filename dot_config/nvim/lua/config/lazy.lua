@@ -27,7 +27,6 @@ require('lazy').setup({
     { import = 'plugins.conform' },
     { import = 'plugins.copilot-chat' },
     { import = 'plugins.copilot' },
-    { import = 'plugins.ddc' },
     { import = 'plugins.denops' },
     { import = 'plugins.dial' },
     { import = 'plugins.dmacro' },
@@ -89,7 +88,7 @@ require('lazy').setup({
 
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
-    -- { 'nanotee/sqls.nvim', event = 'VeryLazy' },
+    { 'nanotee/sqls.nvim', event = 'VeryLazy' },
     { 'rachartier/tiny-inline-diagnostic.nvim', event = 'VeryLazy' },
     { 'shougo/pum.vim', event = 'VeryLazy' },
     { 'nvim-treesitter/nvim-treesitter-context', event = 'VeryLazy' },
@@ -105,7 +104,7 @@ require('lazy').setup({
     { 'simeji/winresizer', event = 'VeryLazy' },
     { 'tpope/vim-surround', event = 'VeryLazy' },
     { 'machakann/vim-sandwich', event = 'VeryLazy' },
-    { 'wakatime/vim-wakatime', event = 'VeryLazy' },
+    -- { 'wakatime/vim-wakatime', event = 'VeryLazy' },
     { 'tpope/vim-dadbod', event = 'VeryLazy' },
     { 'neko-night/nvim' }, -- カラースキームは即時ロード
   },

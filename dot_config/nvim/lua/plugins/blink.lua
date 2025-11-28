@@ -1,34 +1,21 @@
--- dot_config/nvim/lua/plugins/blink.lua
 return {
-  -- {
-  --   'saghen/blink.compat',
-  --   -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
-  --   version = '*',
-  --   -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
-  --   lazy = true,
-  --   -- make sure to set opts so that lazy.nvim calls blink.compat's setup
-  --   opts = {},
-  -- },
   {
     'saghen/blink.cmp',
-    -- dependencies = { 'rinx/cmp-skkeleton' },
+    dependencies = {
+      'Xantibody/blink-cmp-skkeleton',
+      'vim-skk/skkeleton',
+      'vim-denops/denops.vim',
+    },
     build = 'cargo build --release',
     -- version = '1.*',
-    -- event = { 'InsertEnter', 'CmdlineEnter' },
     enabled = true,
     event = { 'VeryLazy' },
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
-      enabled = function()
-        local skk_enabled = vim.fn['skkeleton#is_enabled']()
-        if skk_enabled then
-          return false
-        end
-        return true -- vim.tbl_contains({ 'lua', 'markdown' }, vim.bo.filetype)
-      end,
       keymap = {
         preset = 'none',
+        ['<Space>'] = {}, -- Required: Let skkeleton handle Space
         ['<C-j>'] = { 'select_and_accept', 'fallback' }, -- Select next and accept if no selection
         -- ['<C-s>'] = { 'show', 'show_documentation', 'hide_documentation' },
         -- ['<C-e>'] = { 'hide' },
@@ -100,18 +87,18 @@ return {
       },
       sources = {
         -- Default sources: LSP, path, snippets (if available), buffer
-        default = {
-          --'skkeleton',
-          'lsp',
-          'path',
-          'snippets',
-          'buffer',
-        },
+        default = function(ctx)
+          if require('blink-cmp-skkeleton').is_enabled() then
+            return { 'skkeleton' }
+          else
+            return { 'lsp', 'path', 'snippets', 'buffer' }
+          end
+        end,
         providers = {
-          -- skkeleton = {
-          --   name = 'skkeleton',
-          --   module = 'blink.compat.source',
-          -- },
+          skkeleton = {
+            name = 'skkeleton',
+            module = 'blink-cmp-skkeleton',
+          },
           buffer = {
             opts = {
               -- get all buffers, even ones like neo-tree
