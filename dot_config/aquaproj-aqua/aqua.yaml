@@ -32,7 +32,7 @@ packages:
   - name: pnpm/pnpm@v10.25.0
   - name: rhysd/vim-startuptime@v1.3.2
   - name: golang.org/x/tools/gopls@v0.21.0
-  - name: aws/aws-cli@2.32.14
+  - name: aws/aws-cli@2.32.15
   - name: tstack/lnav@v0.13.2
   - name: biomejs/biome@@biomejs/biome@2.3.8
   - name: Wilfred/difftastic@0.67.0
