@@ -21,7 +21,7 @@ packages:
   - name: atuinsh/atuin@v18.10.0
   - name: sxyazi/yazi@v25.5.31
   - name: denoland/deno@v2.6.2
-  - name: kubernetes/kubectl@v1.34.3
+  - name: kubernetes/kubectl@v1.35.0
   - name: kubernetes-sigs/kind@v0.30.0
   - name: docker/cli@v27.4.1
   - name: docker/compose@v2.40.3
