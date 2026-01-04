@@ -28,7 +28,7 @@ packages:
   - name: natecraddock/zf@0.10.2
   - name: nushell/nushell@0.109.1
   - name: duckdb/duckdb@v1.4.3
-  - name: suzuki-shunsuke/pinact@v3.7.4
+  - name: suzuki-shunsuke/pinact@v3.8.0
   - name: pnpm/pnpm@v10.26.2
   - name: rhysd/vim-startuptime@v1.3.2
   - name: golang.org/x/tools/gopls@v0.21.0
