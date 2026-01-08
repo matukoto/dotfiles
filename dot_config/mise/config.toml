@@ -8,7 +8,7 @@
 "npm:vite" = "7.3.0"
 "npm:vitest" = "4.0.16"
 "npm:zenn-cli" = "0.2.11"
-"npm:@anthropic-ai/claude-code" = "2.0.76"
+"npm:@anthropic-ai/claude-code" = "2.0.77"
 "npm:@marp-team/marp-cli" = "latest"
 "npm:sv" = '0.11.2'
 "npm:tsx" = '4.21.0'
