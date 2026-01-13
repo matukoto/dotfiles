@@ -15,7 +15,11 @@
   },
   // HTMLフォーマット設定（Svelte対応）
   "html": {
-    "experimentalFullSupportEnabled": true
+    "experimentalFullSupportEnabled": true,
+    "formatter": {
+      "enabled": true,
+      "indentScriptAndStyle": true
+    }
   },
   // JavaScriptの言語設定
   "javascript": {
