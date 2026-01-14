@@ -1,0 +1,23 @@
+# font
+font-family = "HackGen Console NF"
+font-size = 14
+
+# 選択したテキストを自動的にクリップボードへコピーする
+copy-on-select = true
+
+# ターミナル内のプログラムがクリップボードの内容を読み取ることを許可するかどうか
+clipboard-read = ask
+# ターミナル内のプログラムがクリップボードにデータを書き込むことを許可するか
+clipboard-write = allow
+
+# コピー時に末尾の空白（スペースやタブなど）を自動で削除する
+# clipboard-write 経由で送信されるデータには影響しない
+clipboard-trim-trailing-spaces = true
+
+# ターミナルタイトルの報告を有効/無効にするか
+title-report = false # セキュリティリスクになりうるため無効が推奨されている
+
+confirm-close-surface = false
+
+# 最後のタブが閉じられた時にアプリを閉じる
+quit-after-last-window-closed = true
