@@ -15,6 +15,7 @@ local mason_servers = {
   'bashls',
   -- 'marksman',
   'fsautocomplete',
+  'csharp_ls',
   'vimls',
   'jsonls',
   'yamlls',
@@ -39,6 +40,7 @@ local mason_tools = {
   'markdownlint-cli2',
   'yamlfmt',
   'fantomas',
+  'csharp-language-server',
 }
 
 return {
