@@ -14,7 +14,7 @@ local mason_servers = {
   'typos_lsp',
   'bashls',
   -- 'marksman',
-  -- 'fsautocomplete',
+  'fsautocomplete',
   'vimls',
   'jsonls',
   'yamlls',
@@ -38,6 +38,7 @@ local mason_tools = {
   'eslint_d',
   'markdownlint-cli2',
   'yamlfmt',
+  'fantomas',
 }
 
 return {
