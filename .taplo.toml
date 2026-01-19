@@ -1,0 +1,33 @@
+# Taplo Configuration
+
+[formatting]
+    # インデントの幅（2または4が一般的です。お好みで調整してください）
+    indent_entries = true
+    indent_string = "    "
+
+    # セクション（[table]）の前に空行を入れる（視認性が向上します）
+    align_entries = false
+    align_comments = true
+
+    # カラムの最大幅（これを超えると改行を試みます）
+    column_width = 80
+
+    # キーの並び替え（false にすると、あなたが書いた順番を維持します）
+    reorder_keys = false
+
+    # 配列（[[on-window-detected]] など）の整形
+    indent_tables = true
+
+
+    [formatting.options]
+        # Exclude patterns
+        exclude = [
+            ".git/**",
+            "node_modules/**",
+            "vendor/**",
+            ".venv/**",
+            "dist/**",
+            "build/**",
+            "target/**",
+            "**/*.lock",
+        ]
