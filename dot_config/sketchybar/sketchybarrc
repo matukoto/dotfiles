@@ -40,7 +40,7 @@ sketchybar --default "${default[@]}"
 
 sketchybar --add event aerospace_workspace_change
 
-# Show workspace indicators (excluding hidden workspace 9)
+# Show workspace indicators (excluding hidden workspace 0)
 for sid in 1 2; do
     sketchybar --add item space.$sid left \
     --subscribe space.$sid aerospace_workspace_change \

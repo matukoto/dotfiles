@@ -7,19 +7,20 @@ config-version = 2
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = [
-    'exec-and-forget sketchybar'
-]
+# after-startup-command = ['exec-and-forget sketchybar']
 
 # Sync state when workspace changes (e.g. clicking dock icons, monitor changes)
-exec-on-workspace-change = [
-    '/bin/bash',
-    '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-]
+# exec-on-workspace-change = [
+#     '/bin/bash',
+#     '-c',
+#     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+# ]
 
 # Start AeroSpace at login
 start-at-login = false
+
+# アプリのバンドルID確認方法
+# osascript -e 'id of app "Ghostty"'
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -46,7 +47,8 @@ default-root-container-orientation = 'auto'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 # workspace 0 のウィンドウにフォーカスが当たったら workspace 1 に移動
-on-focus-changed = ['exec-and-forget ~/dotfiles/bin/aerospace-focus-handler']
+# aerospace には PATH が通っていないのでフルパスを記載
+on-focus-changed = ['exec-and-forget ~/.local/bin/aerospace-focus-handler']
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -57,18 +59,13 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-# 1: メイン表示用, 2: サブモニター用, 0: 待避用
-persistent-workspaces = ["1", "2", "0"]
+# 1: メイン表示用, 0: 待避用
+persistent-workspaces = ["1", "0"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 on-mode-changed = []
-
-# Possible values: (qwerty|dvorak|colemak)
-# See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
-[key-mapping]
-    preset = 'qwerty'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -80,14 +77,12 @@ on-mode-changed = []
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
     inner.horizontal = 0
-    inner.vertical =   0
-    outer.left =       0
-    outer.bottom =     0
-    outer.top =        35
-    outer.right =      0
-
-# 'main' binding mode declaration
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+    inner.vertical = 0
+    outer.left = 0
+    outer.bottom = 0
+    outer.top = 35
+    outer.right = 0
+# 'main' binding mode declaration See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
@@ -120,19 +115,10 @@ on-mode-changed = []
     # '''
 
     # App toggle - workspace 1 (メインモニター)
-    ctrl-alt-t = 'exec-and-forget ~/dotfiles/bin/app-toggle com.github.wez.wezterm WezTerm 1'
-    ctrl-alt-b = 'exec-and-forget ~/dotfiles/bin/app-toggle com.google.Chrome "Google Chrome" 1'
-    ctrl-alt-g = 'exec-and-forget ~/dotfiles/bin/app-toggle com.jetbrains.goland GoLand 1'
-    ctrl-alt-v = 'exec-and-forget ~/dotfiles/bin/app-toggle com.microsoft.VSCode "Visual Studio Code" 1'
-
-    # App toggle - workspace 2 (サブモニター)
-    ctrl-alt-o = 'exec-and-forget ~/dotfiles/bin/app-toggle md.obsidian Obsidian 2'
-    ctrl-alt-s = 'exec-and-forget ~/dotfiles/bin/app-toggle com.tinyspeck.slackmacgap Slack 2'
-    ctrl-alt-l = 'exec-and-forget ~/dotfiles/bin/app-toggle jp.naver.line.mac LINE 2'
-    ctrl-alt-j = 'exec-and-forget ~/dotfiles/bin/app-toggle com.electron.logseq Logseq 2'
-    ctrl-alt-z = 'exec-and-forget ~/dotfiles/bin/app-toggle us.zoom.xos zoom.us 2'
-    ctrl-alt-c = 'exec-and-forget ~/dotfiles/bin/app-toggle com.apple.iCal Calendar 2'
-    ctrl-alt-1 = 'exec-and-forget ~/dotfiles/bin/app-toggle com.1password.1password 1Password 2'
+    ctrl-alt-t = 'exec-and-forget ~/.local/bin/app-toggle com.mitchellh.ghostty Ghostty 1'
+    ctrl-alt-b = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi Vivaldi 1'
+    ctrl-alt-o = 'exec-and-forget ~/.local/bin/app-toggle md.obsidian Obsidian 1'
+    ctrl-alt-g = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi.app.dfbmlaainldjbgehmmmecanmooialjhe Gemini 1'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     ctrl-alt-slash = 'layout tiles horizontal vertical'
@@ -155,12 +141,10 @@ on-mode-changed = []
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-1 = 'workspace 1'
-    alt-2 = 'workspace 2'
+    # alt-1 = 'workspace 1'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
-    alt-shift-2 = 'move-node-to-workspace 2'
     alt-shift-0 = 'move-node-to-workspace 0'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -176,7 +160,10 @@ on-mode-changed = []
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
-    f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+    f = [
+        'layout floating tiling',
+        'mode main',
+    ] # Toggle between floating and tiling layout
     backspace = ['close-all-windows-but-current', 'mode main']
 
     # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
@@ -187,68 +174,36 @@ on-mode-changed = []
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
 
-# https://ghostty.org/docs/help/macos-tiling-wms
-[[on-window-detected]]
-if.app-id = "com.mitchellh.ghostty"
-run = ["layout tiling"]
-
 # Startup window placement - workspace 1 (メインモニター)
 [[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
-if.during-aerospace-startup = true
-run = 'move-node-to-workspace 1'
+    if.app-id = "com.mitchellh.ghostty"
+    if.during-aerospace-startup = true
+    run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-if.app-id = 'com.google.Chrome'
-if.during-aerospace-startup = true
-run = 'move-node-to-workspace 1'
+    if.app-id = 'md.obsidian'
+    if.during-aerospace-startup = true
+    run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-if.app-id = 'com.jetbrains.goland'
-if.during-aerospace-startup = true
-run = 'move-node-to-workspace 1'
+    if.app-id = 'com.vivaldi.Vivaldi'
+    if.during-aerospace-startup = true
+    run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-if.during-aerospace-startup = true
-run = 'move-node-to-workspace 1'
+    if.app-id = 'com.vivaldi.Vivaldi.app.dfbmlaainldjbgehmmmecanmooialjhe'
+    if.during-aerospace-startup = true
+    run = 'move-node-to-workspace 1'
 
-# Startup window placement - workspace 2 (サブモニター)
+# 常時表示しないものはフローティングで一時的に表示
 [[on-window-detected]]
-if.app-id = 'md.obsidian'
-if.during-aerospace-startup = true
-run = 'move-node-to-workspace 2'
-[[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
-if.during-aerospace-startup = true
-run = 'move-node-to-workspace 2'
+    if.app-id = 'com.apple.Music'
+    run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'jp.naver.line.mac'
-if.during-aerospace-startup = true
-run = 'move-node-to-workspace 2'
-
-[[on-window-detected]]
-if.app-id = 'com.electron.logseq'
-if.during-aerospace-startup = true
-run = 'move-node-to-workspace 2'
-
-[[on-window-detected]]
-if.app-id = 'us.zoom.xos'
-if.during-aerospace-startup = true
-run = 'move-node-to-workspace 2'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.iCal'
-if.during-aerospace-startup = true
-run = 'move-node-to-workspace 2'
-
-[[on-window-detected]]
-if.app-id = 'com.1password.1password'
-if.during-aerospace-startup = true
-run = 'move-node-to-workspace 2'
+    if.app-id = 'com.apple.iCal'
+    run = 'layout floating'
 
 # https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
-1=1
-2=2
+    1 = 1

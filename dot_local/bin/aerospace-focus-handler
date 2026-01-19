@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 # workspace 0 にあるウィンドウにフォーカスが当たった場合、適切な workspace に移動させる
 
+# jq の存在確認
+if ! command -v jq &>/dev/null; then
+  exit 0
+fi
+
 # Get focused window info
 FOCUSED=$(aerospace list-windows --focused --json 2>/dev/null)
 if [ -z "$FOCUSED" ] || [ "$FOCUSED" = "[]" ]; then
@@ -8,7 +13,7 @@ if [ -z "$FOCUSED" ] || [ "$FOCUSED" = "[]" ]; then
 fi
 
 WINDOW_ID=$(echo "$FOCUSED" | jq -r '.[0]["window-id"] // empty')
-APP_NAME=$(echo "$FOCUSED" | jq -r '.[0]["app-name"] // empty')
+#APP_NAME=$(echo "$FOCUSED" | jq -r '.[0]["app-name"] // empty')
 
 if [ -z "$WINDOW_ID" ]; then
   exit 0
@@ -23,14 +28,7 @@ fi
 
 # Determine target workspace based on app
 # Workspace 2 apps: Obsidian, Slack, LINE, Logseq, Zoom, Calendar, 1Password
-case "$APP_NAME" in
-"Obsidian" | "Slack" | "LINE" | "Logseq" | "zoom.us" | "Calendar" | "1Password")
-  TARGET_WS=2
-  ;;
-*)
-  TARGET_WS=1
-  ;;
-esac
+TARGET_WS=1
 
 # Move window to target workspace and switch to it
 aerospace move-node-to-workspace --window-id "$WINDOW_ID" "$TARGET_WS"
