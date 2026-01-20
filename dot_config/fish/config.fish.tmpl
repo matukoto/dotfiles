@@ -36,7 +36,7 @@ if status is-interactive
     #set -x MANPAGER 'nvim +Man!'
     set -x SYSTEMD_EDITOR "$EDITOR"
     set -x TZ Asia/Tokyo
-    set -x GPG_TTY $(tty)
+    set -x GPG_TTY (tty)
 
     abbr --add f ghf
     abbr --add ai 'aqua i -a'
