@@ -68,6 +68,7 @@ return {
       json = { 'fixjson' },
       jsonc = { 'eslint_d' },
       json5 = { 'eslint_d' },
+      toml = { 'taplo' },
       -- Frontend files
       svelte = jsFormatter, -- Or jsFormatter if preferred
       fsharp = { 'fantomas' },

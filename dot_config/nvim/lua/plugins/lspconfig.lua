@@ -41,6 +41,7 @@ local mason_tools = {
   'yamlfmt',
   'fantomas',
   'csharp-language-server',
+  'taplo',
 }
 
 return {
