@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# speaker
+/opt/homebrew/bin/blueutil --connect 01-29-b5-21-6f-dc

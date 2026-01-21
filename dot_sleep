@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# speaker
+/opt/homebrew/bin/blueutil --disconnect 01-29-b5-21-6f-dc
+
+# HHKB
+/opt/homebrew/bin/blueutil --disconnect ee-52-a6-02-8a-f8
