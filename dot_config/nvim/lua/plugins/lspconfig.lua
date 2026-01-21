@@ -21,6 +21,7 @@ local mason_servers = {
   'yamlls',
   'lemminx',
   'tailwindcss',
+  'copilot',
 }
 
 local non_mason_servers = {
@@ -218,6 +219,17 @@ return {
               -- elseif vim.lsp.buf.inlay_hint then
               --    vim.lsp.buf.inlay_hint(ev.buf, true)
             end
+          end
+          -- copilot でのみインラインtab補完を有効にする
+          if client.name == 'copilot' then
+            vim.lsp.inline_completion.enable(true, {
+              client_id = client.id,
+            })
+            vim.keymap.set('i', '<tab>', function()
+              if not vim.lsp.inline_completion.get() then
+                return '<tab>'
+              end
+            end, { expr = true })
           end
 
           -- Optional: Format on save

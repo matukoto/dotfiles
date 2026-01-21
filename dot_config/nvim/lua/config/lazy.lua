@@ -26,8 +26,6 @@ require('lazy').setup({
     { import = 'plugins.chowcho' },
     { import = 'plugins.codecompanion' },
     { import = 'plugins.conform' },
-    { import = 'plugins.copilot-chat' },
-    { import = 'plugins.copilot' },
     { import = 'plugins.denops' },
     { import = 'plugins.dial' },
     { import = 'plugins.dmacro' },
