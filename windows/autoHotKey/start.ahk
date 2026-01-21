@@ -23,6 +23,22 @@ SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 ~^[::IME_SET(0)
 ~^o::IME_SET(0)
 
+; ctrl + tab を alt + tab に変換
+^Tab::
+    AltTabMenu := true
+    If GetKeyState("Shift","P")
+        Send {Alt Down}{Shift Down}{Tab}
+    else
+        Send {Alt Down}{Tab}
+return
+~LCtrl Up::
+    ; 左ctrl で IME OFF
+    IME_SET(0)
+    If (AltTabMenu){
+        Send {Shift Up}{Alt Up}
+        AltTabMenu := false
+    }
+return
 
 ; HotString メールアドレスを自動入力する
 ; HotString で大文字小文字を区別する
