@@ -1,7 +1,0 @@
-[[plugins]]
-repo = "sainnhe/gruvbox-material"
-on_event = ['BufRead', 'CursorHold']
-hook_source = """
-set background=dark
-colorscheme gruvbox-material
-"""
