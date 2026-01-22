@@ -31,7 +31,6 @@ require('lazy').setup({
     { import = 'plugins.dmacro' },
     { import = 'plugins.fern' },
     { import = 'plugins.fyler' },
-    { import = 'plugins.fidget' },
     { import = 'plugins.flash' },
     { import = 'plugins.fm-nvim' },
     { import = 'plugins.full_visual_line' },

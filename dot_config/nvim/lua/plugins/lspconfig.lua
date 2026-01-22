@@ -53,7 +53,6 @@ return {
     -- Dependencies - these should also be listed in the main plugins file
     -- lazy.nvim handles loading dependencies before the main plugin
     dependencies = {
-      'j-hui/fidget.nvim',
       'nvimdev/lspsaga.nvim',
       'jinzhongjia/LspUI.nvim',
       'saghen/blink.cmp',
