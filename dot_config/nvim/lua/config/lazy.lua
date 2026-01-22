@@ -22,6 +22,7 @@ require('lazy').setup({
     { import = 'plugins.blink' },
     { import = 'plugins.bufferline' },
     { import = 'plugins.camelcasemotion' },
+    { import = 'plugins.noice' },
     { import = 'plugins.ccc' },
     { import = 'plugins.chowcho' },
     { import = 'plugins.conform' },
@@ -60,7 +61,7 @@ require('lazy').setup({
     { import = 'plugins.skkeleton' },
     { import = 'plugins.smoothcursor' },
     { import = 'plugins.snacks' },
-    { import = 'plugins.styler' },
+    { import = 'plugins.tint' },
     { import = 'plugins.term-edit' },
     { import = 'plugins.todo-comments' },
     { import = 'plugins.treesitter' },
@@ -84,6 +85,7 @@ require('lazy').setup({
     -- { import = 'plugins.aider' },
     -- { import = 'plugins.codecompanion' },
     -- { import = 'plugins.claudecode' },
+    { import = 'plugins.colorscheme' },
 
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
