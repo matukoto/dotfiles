@@ -1,6 +1,6 @@
 # font
 font-family = "HackGen Console NF"
-font-size = 14
+font-size = 16
 
 # 選択したテキストを自動的にクリップボードへコピーする
 copy-on-select = true
@@ -14,10 +14,14 @@ clipboard-write = allow
 # clipboard-write 経由で送信されるデータには影響しない
 clipboard-trim-trailing-spaces = true
 
-# ターミナルタイトルの報告を有効/無効にするか
-title-report = false # セキュリティリスクになりうるため無効が推奨されている
-
 confirm-close-surface = false
 
 # 最後のタブが閉じられた時にアプリを閉じる
 quit-after-last-window-closed = true
+
+# windowサイズを指定
+window-height = 40
+window-width = 120
+
+# (macの信号機)タイトルバーを表示する
+window-decoration = true
