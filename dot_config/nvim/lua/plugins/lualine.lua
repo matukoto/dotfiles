@@ -1,7 +1,3 @@
--- dot_config/nvim/lua/plugins/lualine.lua
-
--- Custom component definition moved inside config function
-
 return {
   -- Plugin specification for lazy.nvim
   'nvim-lualine/lualine.nvim',
@@ -22,12 +18,13 @@ return {
       always_divide_middle = true,
       globalstatus = true,
       refresh = {
-        statusline = 1000,
+        -- statusline = 1000,
         tabline = 1000,
-        winbar = 1000,
+        -- winbar = 1000,
       },
     },
-    sections = {
+    sections = {},
+    tabline = {
       lualine_a = { 'mode' },
       lualine_b = { 'branch', 'diff' },
       lualine_c = {
@@ -54,7 +51,6 @@ return {
       lualine_y = {},
       lualine_z = {},
     },
-    tabline = {},
     winbar = {},
     inactive_winbar = {},
     extensions = {},
@@ -71,7 +67,7 @@ return {
     end
 
     -- Add the custom component to the opts table before setup
-    opts.sections.lualine_z = { time_line }
+    opts.tabline.lualine_z = { time_line }
 
     local copilot_status = function()
       if vim.g.loaded_copilot == 1 and vim.fn['copilot#Enabled']() == 1 then
@@ -80,7 +76,7 @@ return {
         return ' '
       end
     end
-    opts.sections.lualine_x = { copilot_status }
+    opts.tabline.lualine_x = { copilot_status }
 
     -- Apply the final configuration
     require('lualine').setup(opts)

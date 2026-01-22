@@ -1,7 +1,7 @@
 -- local is_windows = vim.fn.has('win32') == 1
 
--- statusline を常に1つにする
-vim.opt.laststatus = 3
+-- statusline を非表示にする (tablineに表示する)
+vim.opt.laststatus = 0
 
 -- 文字コードの自動判別
 vim.opt.encoding = 'utf-8'
