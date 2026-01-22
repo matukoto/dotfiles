@@ -2,6 +2,7 @@
 
 -- statusline を非表示にする (tablineに表示する)
 vim.opt.laststatus = 0
+vim.opt.cmdheight = 0
 
 -- 文字コードの自動判別
 vim.opt.encoding = 'utf-8'

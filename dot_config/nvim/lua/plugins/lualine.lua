@@ -16,7 +16,7 @@ return {
       },
       ignore_focus = {},
       always_divide_middle = true,
-      globalstatus = true,
+      globalstatus = false,
       refresh = {
         -- statusline = 1000,
         tabline = 1000,
@@ -24,34 +24,27 @@ return {
       },
     },
     sections = {},
-    tabline = {
+    winbar = {
       lualine_a = { 'mode' },
-      lualine_b = { 'branch', 'diff' },
+      lualine_b = { 'branch' },
       lualine_c = {
-        'diagnostics',
-        -- Note: Original had commented out sub-options for diagnostics
-        -- sources = { 'nvim_lsp' },
-        -- sections = { 'error', 'warn', 'info', 'hint' },
-        -- symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
+        function()
+          -- lspsagaがロードされているか確認してシンボルを取得
+          local ok, saga_winbar = pcall(require, 'lspsaga.symbol.winbar')
+          if ok then
+            -- get_bar() でパンくずリストの文字列を取得
+            local bar = saga_winbar.get_bar()
+            return bar
+          end
+          return ''
+        end,
       },
-      lualine_x = {
-        {},
-        'fileformat',
-        'filetype',
-      },
-      lualine_y = { 'location', 'progress' },
-      -- lualine_z = { time_line }, -- Custom component added in config
-      lualine_z = {}, -- Placeholder, will be updated in config
+      lualine_x = { 'diagnostics', 'diff' },
+      lualine_y = { 'filetype' },
+      lualine_z = { 'location', 'progress' },
     },
-    inactive_sections = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = { 'filename' },
-      lualine_x = { 'location', 'overseer' },
-      lualine_y = {},
-      lualine_z = {},
-    },
-    winbar = {},
+    inactive_sections = {},
+    tabline = {},
     inactive_winbar = {},
     extensions = {},
   },
@@ -67,16 +60,16 @@ return {
     end
 
     -- Add the custom component to the opts table before setup
-    opts.tabline.lualine_z = { time_line }
+    -- opts.tabline.lualine_z = { time_line }
 
-    local copilot_status = function()
-      if vim.g.loaded_copilot == 1 and vim.fn['copilot#Enabled']() == 1 then
-        return ' '
-      else
-        return ' '
-      end
-    end
-    opts.tabline.lualine_x = { copilot_status }
+    -- local copilot_status = function()
+    --   if vim.g.loaded_copilot == 1 and vim.fn['copilot#Enabled']() == 1 then
+    --     return ' '
+    --   else
+    --     return ' '
+    --   end
+    -- end
+    -- opts.tabline.lualine_x = { copilot_status }
 
     -- Apply the final configuration
     require('lualine').setup(opts)
