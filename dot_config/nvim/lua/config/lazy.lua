@@ -24,7 +24,6 @@ require('lazy').setup({
     { import = 'plugins.camelcasemotion' },
     { import = 'plugins.ccc' },
     { import = 'plugins.chowcho' },
-    { import = 'plugins.codecompanion' },
     { import = 'plugins.conform' },
     { import = 'plugins.denops' },
     { import = 'plugins.dial' },
@@ -74,14 +73,17 @@ require('lazy').setup({
     { import = 'plugins.waitevent' },
     { import = 'plugins.which-key' },
     { import = 'plugins.yazi' },
-    { import = 'plugins.aider' },
     { import = 'plugins.auto-session' },
     { import = 'plugins.overseer' },
     { import = 'plugins.nvim-notify' },
     { import = 'plugins.bufterm' },
-    { import = 'plugins.claudecode' },
     { import = 'plugins.yanky' },
     { import = 'plugins.tiny-code-action' },
+    -- chat関連プラグイン
+    { import = 'plugins.aibo' },
+    -- { import = 'plugins.aider' },
+    -- { import = 'plugins.codecompanion' },
+    -- { import = 'plugins.claudecode' },
 
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
