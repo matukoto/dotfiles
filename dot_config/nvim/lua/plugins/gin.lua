@@ -12,6 +12,10 @@ return {
     -- Apply changes without confirmation
     vim.g.gin_proxy_apply_without_confirm = 1
 
+    -- Alias typo することが多いため
+    vim.cmd('cnoreabbrev GIn Gin')
+    vim.cmd('cnoreabbrev GIN Gin')
+
     -- Configure delta for diff view if executable
     if vim.fn.executable('delta') == 1 then
       vim.g.gin_diff_persistent_args = {
