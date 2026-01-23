@@ -1,6 +1,4 @@
-{{- if (and (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) (ne .chezmoi.hostname "ThinkPadE14")) -}}
-{{- include  "work/dot_gitconfig" -}}
-{{- else -}}
+{{ if (or (eq .chezmoi.os "darwin") (or (or (eq .chezmoi.hostname "matukoto-manjaro") (eq .chezmoi.hostname "DesktopFractal")) (eq .chezmoi.hostname "ThinkPadE14"))) -}}
 [user]
   email = keisuke.suke.san@gmail.com
   name = MATSUMOTO Keisuke
@@ -11,6 +9,9 @@
 [commit]
   gpgsign = true
   template = ~/.config/vim/gitmessage
+{{- else -}}
+{{- include  "work/dot_gitconfig" -}}
+{{- end }}
 
 {{ if eq .chezmoi.os "windows" -}}
 [credential]
