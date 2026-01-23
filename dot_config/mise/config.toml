@@ -12,6 +12,7 @@
 "npm:@marp-team/marp-cli" = "latest"
 "npm:sv" = '0.11.2'
 "npm:tsx" = '4.21.0'
+"gemini-cli" = '0.25.1'
 "npm:playwright" = '1.57.0'
 'npm:@modelcontextprotocol/inspector' ='0.18.0'
 #"cargo:leetcode-cli" = "latest"
