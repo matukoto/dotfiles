@@ -23,7 +23,7 @@ eval (/opt/homebrew/bin/brew shellenv)
     set -x INITVIM $XDG_CONFIG_HOME/nvim/init.vim
     set -x VIMRC $HOME/.vimrc
     set -x AQUA_GLOBAL_CONFIG $XDG_CONFIG_HOME/aquaproj-aqua/aqua.yaml
-    {{ if (or (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "matukoto-manjaro") (eq .chezmoi.hostname "DesktopFractal") (eq .chezmoi.hostname "ThinkPadE14")) -}}
+    {{ if (or (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "DesktopFractal") (eq .chezmoi.hostname "ThinkPadE14")) -}}
     set -x PRIVATE_PLUGIN_ENABLED true
     {{- end }}
 
