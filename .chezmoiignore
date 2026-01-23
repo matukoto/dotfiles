@@ -1,3 +1,4 @@
+CLAUDE.md
 work/
 setting/
 dpp/
@@ -11,7 +12,7 @@ README.md
 *.key
 renovate.json5
 minimal_init.lua
-{{ if eq .chezmoi.os "windows" -}}
+{{ if eq .chezmoi.os "windows" }}
 .config/efm-langserver
 .config/fish
 .config/git
@@ -27,7 +28,12 @@ minimal_init.lua
 .config/starship.toml
 windows
 .vimrc
-{{ else -}}
+{{ else }}
 AppData
 _vimrc
-{{ end -}}
+{{ end }}
+{{ if ne .chezmoi.os "darwin" }}
+.config/aerospace
+.sleep
+.wakeup
+{{ end }}
