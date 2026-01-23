@@ -9,9 +9,11 @@ if status is-interactive
     fish_add_path "$HOME/.local/share/nvim/mason/bin"
     fish_add_path "$HOME/.local/share/aquaproj-aqua/bin"
 
-{{ if eq .chezmoi.osRelease.id "ubuntu" }}
-    # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-{{ end }}
+{{ if eq .chezmoi.os "darwin" -}}
+eval (/opt/homebrew/bin/brew shellenv)
+{{- else if eq .chezmoi.os "linux" -}}
+# eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+{{- end }}
 
     # XDG Base Directory
     set -x XDG_CONFIG_HOME $HOME/.config
@@ -21,9 +23,9 @@ if status is-interactive
     set -x INITVIM $XDG_CONFIG_HOME/nvim/init.vim
     set -x VIMRC $HOME/.vimrc
     set -x AQUA_GLOBAL_CONFIG $XDG_CONFIG_HOME/aquaproj-aqua/aqua.yaml
-{{ if (or (eq .chezmoi.hostname "matukoto-manjaro") (eq .chezmoi.hostname "DesktopFractal") (eq .chezmoi.hostname "ThinkPadE14")) }}
+    {{ if (or (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "DesktopFractal") (eq .chezmoi.hostname "ThinkPadE14")) -}}
     set -x PRIVATE_PLUGIN_ENABLED true
-{{ end }}
+    {{- end }}
 
     # Fish paths
     set -x FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
@@ -87,28 +89,6 @@ if status is-interactive
     abbr --add browser-html 'deno run -A --unstable npm:browser-sync  start --server --files "*.html"'
     abbr --add startuptime 'vim-startuptime -count 100 -vimpath nvim'
     abbr --add a aqua
-
-{{ if (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) }}
-    # work
-    abbr --add work 'cd $HOME/work/workLog/'
-    abbr --add snsd 'cd $HOME/repo/local-dev-env/ut-tools/'
-{{ else }}
-    # private
-    abbr --add dia 'cd $HOME/myself/diary/'
-    abbr --add shd 'cd $HOME/work/sh-dev/'
-    abbr --add god 'cd $HOME/work/go-dev/'
-    abbr --add vimd 'cd $HOME/work/vim-dev/'
-    abbr --add dockerd 'cd $HOME/work/docker-dev/'
-    abbr --add javad 'cd $HOME/work/java-dev/'
-    abbr --add grpcd 'cd $HOME/work/grpc-dev/'
-    abbr --add hobbyd 'cd $HOME/myself/hobby/'
-    abbr --add techd 'cd $HOME/myself/tech/'
-{{ end }}
-
-{{ if (and (eq .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) }}
-    # capslock -> ctrl
-    /usr/bin/setxkbmap -option "ctrl:nocaps"
-{{ end }}
 
     ~/.local/share/aquaproj-aqua/bin/mise activate fish | source
 

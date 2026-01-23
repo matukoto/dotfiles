@@ -8,29 +8,6 @@ alias va='nvim ~/work/workLog/a.md'
 alias dot='chezmoi cd'
 alias conf='cd $HOME/.config'
 
-{{ if (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) }}
-alias work='cd $HOME/work/workLog/'
-alias snsd='cd $HOME/repo/local-dev-env/ut-tools/'
-{{ else }}
-alias dia='cd $HOME/myself/diary/'
-# work
-alias shd='cd $HOME/work/sh-dev/'
-alias god='cd $HOME/work/go-dev/'
-alias vimd='cd $HOME/work/vim-dev/'
-alias dockerd='cd $HOME/work/docker-dev/'
-alias javad='cd $HOME/work/java-dev/'
-alias grpcd='cd $HOME/work/grpc-dev/'
-
-# myself
-alias hobbyd='cd $HOME/myself/hobby/'
-alias techd='cd $HOME/myself/tech/'
-
-# wealsoft
-alias forkd='cd $HOME/wealsoft/fork-tech-blog/'
-alias techblogd='cd $HOME/wealsoft/w-tech-blog/'
-alias pocd='cd $HOME/wealsoft/poc-frontend-app/'
-{{ end }}
-
 # Git
 alias gs='git status'
 

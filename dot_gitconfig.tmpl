@@ -1,6 +1,4 @@
-{{- if (and (and (ne .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) (ne .chezmoi.hostname "ThinkPadE14")) -}}
-{{- include  "work/dot_gitconfig" -}}
-{{- else -}}
+{{ if (or (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "DesktopFractal") (eq .chezmoi.hostname "ThinkPadE14")) -}}
 [user]
   email = keisuke.suke.san@gmail.com
   name = MATSUMOTO Keisuke
@@ -8,30 +6,30 @@
 [fetch]
   # fetch 時に自動で --prune を実行し、リモートで削除されたブランチをローカルでも削除してくれる
   prune = true
-[gpg]
-  program = /usr/bin/gpg
 [commit]
   gpgsign = true
   template = ~/.config/vim/gitmessage
-{{- end -}}
+{{- else -}}
+{{- include  "work/dot_gitconfig" -}}
+{{- end }}
 
-{{ if eq .chezmoi.os "linux" }}
+{{ if eq .chezmoi.os "windows" -}}
+[credential]
+  helper = manager
+[ghq]
+  root = ~/Documents/workspace
+{{- else -}}
 [credential "https://github.com"]
 	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !gh auth git-credential
 [ghq]
   root = ~/work
-{{ end }}
+{{- end }}
 
-{{ if eq .chezmoi.os "windows" }}
-[credential]
-  helper = manager
-[ghq]
-  root = ~/Documents/workspace
-{{ end }}
 [init]
   defaultBranch = main
+
 [core]
   editor = vim
 	pager = delta
@@ -79,3 +77,10 @@
   pushf = push --force-with-lease --force-if-includes
   mru = "!git log -g -n 1000 --format=\"%gd %gs\" --date=relative HEAD@{now} | grep checkout | grep \" to\" | sed 's/HEAD@{\\(.*\\)}.* to\\(.*\\)/(\\1)\\t\\2/' | awk -v OFS=' ' '!x[$NF]++' | head -n 15 | column -ts $'\\t'" -R 1
   gpn = "!f() { git push origin HEAD:refs/heads/$1; }; f"
+
+[gpg]
+{{ if eq .chezmoi.os "darwin" -}}
+  program = /opt/homebrew/bin/gpg
+{{- else -}}
+  program = /usr/bin/gpg
+{{- end }}
