@@ -1,5 +1,5 @@
 [user]
-name = "Keisuke.Matsumoto"
-email = "keisuke.suke.san@gmail.com"
+    name = "Keisuke.Matsumoto"
+    email = "keisuke.suke.san@gmail.com"
 [ui]
-editor = "vim"
+    editor = "vim"
