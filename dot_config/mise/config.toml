@@ -1,22 +1,22 @@
 [tools]
-# language runtime
-"java" = { version = "corretto-17.0.14.7", release_type = "ga" }
-"rust" = "1.92.0"
-"go" = "1.25.6"
-"node" = "24.13.0"
-"lua" = "5.4.8"
-"dotnet" = "10.0.102"
-"npm:vite" = "7.3.1"
-"npm:vitest" = "4.0.17"
-"npm:zenn-cli" = "0.3.1"
-"npm:@marp-team/marp-cli" = "latest"
-"npm:sv" = '0.11.2'
-"npm:tsx" = '4.21.0'
-"gemini-cli" = '0.25.1'
-"npm:playwright" = '1.57.0'
-'npm:@modelcontextprotocol/inspector' ='0.18.0'
-#"cargo:leetcode-cli" = "latest"
-"spring-boot" = "3.5.3"
-"npm:@openapitools/openapi-generator-cli" = 'latest'
+    # language runtime
+    "java" = { version = "corretto-17.0.14.7", release_type = "ga" }
+    "rust" = "1.92.0"
+    "go" = "1.25.6"
+    "node" = "24.13.0"
+    "lua" = "5.4.8"
+    "dotnet" = "10.0.102"
+    "npm:vite" = "7.3.1"
+    "npm:vitest" = "4.0.17"
+    "npm:zenn-cli" = "0.3.1"
+    "npm:@marp-team/marp-cli" = "latest"
+    "npm:sv" = '0.11.2'
+    "npm:tsx" = '4.21.0'
+    "gemini-cli" = '0.25.1'
+    "npm:playwright" = '1.57.0'
+    'npm:@modelcontextprotocol/inspector' = '0.18.0'
+    #"cargo:leetcode-cli" = "latest"
+    "spring-boot" = "3.5.3"
+    "npm:@openapitools/openapi-generator-cli" = 'latest'
 [settings]
-experimental = false
+    experimental = false
