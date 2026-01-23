@@ -90,11 +90,6 @@ eval (/opt/homebrew/bin/brew shellenv)
     abbr --add startuptime 'vim-startuptime -count 100 -vimpath nvim'
     abbr --add a aqua
 
-{{ if (and (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "matukoto-manjaro") (ne .chezmoi.hostname "DesktopFractal")) -}}
-    # capslock -> ctrl
-    /usr/bin/setxkbmap -option "ctrl:nocaps"
-{{- end }}
-
     ~/.local/share/aquaproj-aqua/bin/mise activate fish | source
 
     # Claude Code settings
