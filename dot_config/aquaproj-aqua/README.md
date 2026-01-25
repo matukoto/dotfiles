@@ -36,6 +36,14 @@ aqua g-c
 aqua generate-checksum
 ```
 
+### チェックサムの自動更新
+
+GitHub Actionsを使用して、`aqua.yaml`の変更時にチェックサムを自動的に更新します。
+
+RenovateなどでパッケージのバージョンがPull Requestで更新されると、`.github/workflows/aqua-checksum-update.yaml`ワークフローが自動実行され、チェックサムファイルを更新するコミットが追加されます。
+
+これにより、手動でチェックサムを更新する手間が省け、常に最新のチェックサムが維持されます。
+
 ### 参考資料
 
 - [aqua チェックサム検証のハンドブック](https://zenn.dev/shunsuke_suzuki/books/aqua-handbook/viewer/checksum-verification)
