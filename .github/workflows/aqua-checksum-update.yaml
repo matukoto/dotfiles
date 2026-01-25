@@ -36,7 +36,7 @@ jobs:
 
       - name: Generate checksums
         run: |
-          cd dot_config/aquaproj-aqua
+          cd ${{ github.workspace }}/dot_config/aquaproj-aqua
           aqua g-c
         env:
           AQUA_CONFIG: ${{ github.workspace }}/dot_config/aquaproj-aqua/aqua.yaml
@@ -46,11 +46,13 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           
-          if git diff --quiet dot_config/aquaproj-aqua/aqua-checksums.json; then
+          CHECKSUM_FILE="${{ github.workspace }}/dot_config/aquaproj-aqua/aqua-checksums.json"
+          
+          if git diff --quiet "$CHECKSUM_FILE"; then
             echo "No changes to checksums"
             exit 0
           fi
           
-          git add dot_config/aquaproj-aqua/aqua-checksums.json
+          git add "$CHECKSUM_FILE"
           git commit -m "chore: aquaチェックサムを更新"
           git push
