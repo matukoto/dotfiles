@@ -1,4 +1,13 @@
 ---
+# aqua - Declarative CLI Version Manager
+# https://aquaproj.github.io/
+# チェックサム検証を有効化
+# チェックサムを生成するには: aqua g-c
+checksum:
+  enabled: true
+  require_checksum: true
+  supported_envs:
+  - all
 registries:
   - type: standard
     ref: v4.454.0 # renovate: depName=aquaproj/aqua-registry
