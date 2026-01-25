@@ -32,11 +32,25 @@ aqua update-checksum --all
 
 ### チェックサムの自動更新
 
-GitHub Actionsを使用して、`aqua.yaml`の変更時にチェックサムを自動的に更新します。
+Renovateの`postUpgradeTasks`機能を使用して、`aqua.yaml`の変更時にチェックサムを自動的に更新します。
 
-RenovateなどでパッケージのバージョンがPull Requestで更新されると、`.github/workflows/aqua-checksum-update.yaml`ワークフローが自動実行され、チェックサムファイルを更新するコミットが追加されます。
+`renovate.json5`に以下の設定を追加しています：
 
-これにより、手動でチェックサムを更新する手間が省け、常に最新のチェックサムが維持されます。
+```json
+{
+  "postUpgradeTasks": {
+    "commands": [
+      "aqua update-checksum --all --config dot_config/aquaproj-aqua/aqua.yaml"
+    ],
+    "fileFilters": [
+      "dot_config/aquaproj-aqua/aqua-checksums.json"
+    ],
+    "executionMode": "update"
+  }
+}
+```
+
+これにより、Renovateがパッケージのバージョンを更新するPRを作成する際に、自動的にチェックサムも更新され、手動でチェックサムを更新する手間が省けます。
 
 ### 参考資料
 
