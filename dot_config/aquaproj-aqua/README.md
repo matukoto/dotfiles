@@ -27,13 +27,7 @@
 新しいパッケージを追加した後、または既存のパッケージのバージョンを更新した後は、以下のコマンドでチェックサムを生成してください：
 
 ```bash
-aqua g-c
-```
-
-または
-
-```bash
-aqua generate-checksum
+aqua update-checksum --all
 ```
 
 ### チェックサムの自動更新
