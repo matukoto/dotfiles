@@ -8,7 +8,7 @@
     "dotnet" = "10.0.102"
     "npm:vite" = "7.3.1"
     "npm:vitest" = "4.0.18"
-    "npm:zenn-cli" = "0.4.0"
+    "npm:zenn-cli" = "0.4.1"
     "npm:@marp-team/marp-cli" = "latest"
     "npm:sv" = '0.11.3'
     "npm:tsx" = '4.21.0'
