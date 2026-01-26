@@ -43,6 +43,7 @@ Renovateの`postUpgradeTasks`機能を使用して、`aqua.yaml`の変更時に�
       "aqua update-checksum --all --config dot_config/aquaproj-aqua/aqua.yaml"
     ],
     "fileFilters": [
+      "dot_config/aquaproj-aqua/aqua.yaml",
       "dot_config/aquaproj-aqua/aqua-checksums.json"
     ],
     "executionMode": "update"
@@ -54,5 +55,6 @@ Renovateの`postUpgradeTasks`機能を使用して、`aqua.yaml`の変更時に�
 
 ### 参考資料
 
-- [aqua チェックサム検証のハンドブック](https://zenn.dev/shunsuke_suzuki/books/aqua-handbook/viewer/checksum-verification)
+- [aqua チェックサム検証のハンドブック](https://aquaproj.github.io/docs/reference/checksum/)
 - [aqua 公式ドキュメント](https://aquaproj.github.io/)
+- [Renovate postUpgradeTasks](https://docs.renovatebot.com/configuration-options/#postupgradetasks)
