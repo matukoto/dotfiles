@@ -8,6 +8,16 @@
   "automerge": true,
   "dependencyDashboard": true,
   "platformAutomerge": true,
+  "postUpgradeTasks": {
+    "commands": [
+      "aqua update-checksum --all --config dot_config/aquaproj-aqua/aqua.yaml"
+    ],
+    "fileFilters": [
+      "dot_config/aquaproj-aqua/aqua.yaml",
+      "dot_config/aquaproj-aqua/aqua-checksums.json"
+    ],
+    "executionMode": "update"
+  },
   "packageRules": [
     {
       "matchUpdateTypes": [
