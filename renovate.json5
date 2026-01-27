@@ -2,22 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:best-practices",
-    "github>aquaproj/aqua-renovate-config#2.9.0"
+    "github>aquaproj/aqua-renovate-config#2.10.0"
   ],
   "timezone": "Asia/Tokyo",
   "automerge": true,
   "dependencyDashboard": true,
   "platformAutomerge": true,
-  "postUpgradeTasks": {
-    "commands": [
-      "aqua update-checksum --all --config dot_config/aquaproj-aqua/aqua.yaml"
-    ],
-    "fileFilters": [
-      "dot_config/aquaproj-aqua/aqua.yaml",
-      "dot_config/aquaproj-aqua/aqua-checksums.json"
-    ],
-    "executionMode": "update"
-  },
   "packageRules": [
     {
       "matchUpdateTypes": [

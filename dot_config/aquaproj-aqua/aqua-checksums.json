@@ -326,6 +326,36 @@
       "algorithm": "sha256"
     },
     {
+      "id": "github_release/github.com/github/copilot-cli/v0.0.394/copilot-darwin-arm64.tar.gz",
+      "checksum": "6C11964B63FC577F140ADA3655845F6E315B2355EB1D8842D6D1A41F0D16080D",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/github/copilot-cli/v0.0.394/copilot-darwin-x64.tar.gz",
+      "checksum": "FA22DE7F7B87A84825DD331AFFBF25DBE9B8D58EBF9C449E6E9FFFE7A77D2AAB",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/github/copilot-cli/v0.0.394/copilot-linux-arm64.tar.gz",
+      "checksum": "41EA330BA9017203A414D591E5EDE8B47BC70F4C96786B43B3C90DA3A1DD29F7",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/github/copilot-cli/v0.0.394/copilot-linux-x64.tar.gz",
+      "checksum": "5A6E5EA16129AC4A0C9CFC0ADD5413B3E9DB0A54E00DE880B5E14FF1518DD8BA",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/github/copilot-cli/v0.0.394/copilot-win32-arm64.zip",
+      "checksum": "5A0A8C50E3D15E96F79CAA0F7A5AB02A662D3DB37CB08B1090E2A3D635364AE6",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/github/copilot-cli/v0.0.394/copilot-win32-x64.zip",
+      "checksum": "DA7F771E3D85DD21EC34B11F98C9C8DE378E0D1307EBFF5C97855489A889E67F",
+      "algorithm": "sha256"
+    },
+    {
       "id": "github_release/github.com/gitui-org/gitui/v0.28.0/gitui-linux-aarch64.tar.gz",
       "checksum": "4CE1F32528F79DFE118130E753900F6EA7FFC17EB72DF3ABCF22313EC771C131",
       "algorithm": "sha256"
@@ -816,13 +846,28 @@
       "algorithm": "sha256"
     },
     {
+      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.33.6.pkg",
+      "checksum": "4E8432AE18E1A29235CBCE5A2D6DF9344F720022C2D9D2DB0E8826699F66F306",
+      "algorithm": "sha256"
+    },
+    {
       "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.33.5.zip",
       "checksum": "8CC893FAB4CCB146EE1C36E6DAFC3BD50280D2D3DB4C93C6D5070E34547733FC",
       "algorithm": "sha256"
     },
     {
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.33.6.zip",
+      "checksum": "C0BF3FFB5FD42E03C1D4AB16F940AAD482A2F159273D343E5C879061DD55B6D5",
+      "algorithm": "sha256"
+    },
+    {
       "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.33.5.zip",
       "checksum": "A1F6A25F1CADEB16A155519A09ABD1784DDFBC58E9FFE4904E83D77FC2C6DAA4",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.33.6.zip",
+      "checksum": "E27A9D9B07429099DD641ED2B3B6664B41FF9471C426E8323C076BA87D215210",
       "algorithm": "sha256"
     },
     {
@@ -883,6 +928,11 @@
     {
       "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.454.0/registry.yaml",
       "checksum": "BB2B0B3F7281023585C11B84A20E6A2C0A8D172EDDC3FBFFB230D43E606278C3",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.458.0/registry.yaml",
+      "checksum": "9F9D24141449F357FAC5537C3B68E3472018360B339223F3C2953E4A6D12C3CC",
       "algorithm": "sha256"
     }
   ]
