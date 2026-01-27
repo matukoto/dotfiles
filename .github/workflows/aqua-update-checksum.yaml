@@ -21,12 +21,11 @@ jobs:
           aqua_opts: '--config dot_config/aquaproj-aqua/aqua.yaml'
         env:
           AQUA_CONFIG: dot_config/aquaproj-aqua/aqua.yaml
-          AQUA_LOG_LEVEL: debug
-      - name: Update aqua-checksums.json
-        run: >
-          aqua update-checksum --all --config dot_config/aquaproj-aqua/aqua.yaml
+      # v0.2.5
+      - uses: >-
+          aquaproj/update-checksum-action@3c4e4e66c8c101a88eac0e0e511ab54e98ce4eca
+        with:
+          aqua_yaml: dot_config/aquaproj-aqua/aqua.yaml
+          prune: true
         env:
-          AQUA_CONFIG: dot_config/aquaproj-aqua/aqua.yaml
-      - name: Autofix
-        # checksumの更新をPRに自動コミット
-        uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27
+          GITHUB_TOKEN: ${{ github.token }}
