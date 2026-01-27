@@ -44,9 +44,9 @@ return {
           { icon = ' ', key = 'i', desc = 'edit', action = ':ene | startinsert' },
           {
             icon = ' ',
-            key = 'b',
+            key = 'r',
             desc = 'Restore Session',
-            action = '<cmd>SessionSearch<CR>',
+            action = '<cmd>AutoSession search<CR>',
           },
           {
             icon = ' ',
@@ -55,18 +55,11 @@ return {
             action = ":lua Snacks.dashboard.pick('live_grep')",
           },
           {
-            icon = ' ',
-            key = 'r',
-            desc = 'Recent',
-            action = ":lua Snacks.dashboard.pick('oldfiles')",
-          },
-          {
             icon = ' ',
             key = 'c',
             desc = 'Config',
             action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
           },
-          { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
           {
             icon = '󰒲 ',
             key = 'L',
