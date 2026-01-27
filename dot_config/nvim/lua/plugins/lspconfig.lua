@@ -27,7 +27,6 @@ local mason_servers = {
 local non_mason_servers = {
   'gopls',
   'denols',
-  'jdtls',
 }
 
 local mason_tools = {
@@ -43,6 +42,8 @@ local mason_tools = {
   'fantomas',
   'csharp-language-server',
   'taplo',
+  'jdtls',
+  'lombok-nightly',
 }
 
 return {
