@@ -66,11 +66,10 @@ return {
       sh = { 'shellcheck', 'shfmt', stop_after_first = false },
       -- JSON files use the dynamic tsFormatter
       json = { 'fixjson' },
-      jsonc = { 'eslint_d' },
-      json5 = { 'eslint_d' },
-      toml = { 'taplo' },
+      jsonc = { 'biome' },
+      json5 = { 'fixjson' },
       -- Frontend files
-      svelte = jsFormatter, -- Or jsFormatter if preferred
+      svelte = { 'biome' }, -- Or jsFormatter if preferred
       fsharp = { 'fantomas' },
       html = jsFormatter,
       css = jsFormatter,
@@ -120,7 +119,7 @@ return {
     -- }
 
     -- Log level for debugging
-    log_level = vim.log.levels.WARN, -- Or ERROR, INFO, DEBUG
+    log_level = vim.log.levels.DEBUG, -- Or ERROR, INFO, DEBUG
 
     -- Notify on error
     notify_on_error = true,
