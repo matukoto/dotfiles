@@ -9,7 +9,7 @@
   "dependencyDashboard": true,
   "platformAutomerge": true,
   "allowedPostUpgradeCommands": [
-    "^aqua update-checksum --all --config .*\\.yaml$"
+    "^aqua update-checksum --all --config dot_config/aquaproj-aqua/aqua\\.yaml$"
   ],
   "packageRules": [
     {
