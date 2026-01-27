@@ -60,7 +60,7 @@ require('lazy').setup({
     { import = 'plugins.skkeleton' },
     { import = 'plugins.smoothcursor' },
     { import = 'plugins.snacks' },
-    { import = 'plugins.tint' },
+    -- { import = 'plugins.tint' },
     { import = 'plugins.term-edit' },
     { import = 'plugins.todo-comments' },
     { import = 'plugins.treesitter' },
