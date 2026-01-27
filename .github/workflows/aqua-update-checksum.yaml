@@ -22,6 +22,7 @@ jobs:
         env:
           AQUA_CONFIG: dot_config/aquaproj-aqua/aqua.yaml
           AQUA_LOG_LEVEL: debug
+          AQUA_REQUIRE_CHECKSUM: false
       - name: Update aqua-checksums.json
         run: >
           aqua update-checksum --all --config dot_config/aquaproj-aqua/aqua.yaml
