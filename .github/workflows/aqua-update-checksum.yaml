@@ -18,14 +18,13 @@ jobs:
       - uses: aquaproj/aqua-installer@0d9bbff5b5efc37244b8271be7e59cb25fbc8366
         with:
           aqua_version: v2.56.5
-          aqua_opts: '--config dot_config/aquaproj-aqua/aqua.yaml'
+          # aqua_opts: '--config dot_config/aquaproj-aqua/aqua.yaml'
         env:
           AQUA_CONFIG: dot_config/aquaproj-aqua/aqua.yaml
-      # v0.2.5
-      - uses: >-
-          aquaproj/update-checksum-action@v0.2.7
+      # v0.2.7
+      - uses: aquaproj/update-checksum-action@v0.2.7
         with:
-          aqua_yaml: dot_config/aquaproj-aqua/aqua.yaml
+          # aqua_yaml: dot_config/aquaproj-aqua/aqua.yaml
           prune: true
         env:
           GITHUB_TOKEN: ${{ github.token }}
