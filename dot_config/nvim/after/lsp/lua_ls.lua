@@ -3,7 +3,10 @@ return {
   settings = {
     Lua = {
       runtime = { version = 'LuaJIT' },
-      workspace = { checkThirdParty = false, library = vim.api.nvim_get_runtime_file('', true) }, -- Include vim runtime paths
+      -- library の手動設定を削除し、lazydev に任せる
+      workspace = {
+        checkThirdParty = false,
+      },
       hint = {
         enable = true,
         await = true,
@@ -12,8 +15,10 @@ return {
         semicolon = 'Disable',
         arrayIndex = 'Disable',
       },
-      diagnostics = { globals = { 'vim' }, groupFileStatus = { await = 'Opened' } }, -- Recognize vim global
-      completion = { callSnippet = 'Replace' }, -- Better snippet handling
+      diagnostics = {
+        groupFileStatus = { await = 'Opened' },
+      },
+      completion = { callSnippet = 'Replace' },
     },
   },
 }

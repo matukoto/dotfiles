@@ -62,13 +62,19 @@ return {
           if require('blink-cmp-skkeleton').is_enabled() then
             return { 'skkeleton' }
           else
-            return { 'lsp', 'path', 'snippets', 'buffer' }
+            return { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' }
           end
         end,
         providers = {
           skkeleton = {
             name = 'skkeleton',
             module = 'blink-cmp-skkeleton',
+          },
+          lazydev = {
+            name = 'LazyDev',
+            module = 'lazydev.integrations.blink',
+            -- make lazydev completions top priority (see `:h blink.cmp`)
+            score_offset = 100,
           },
           buffer = {
             opts = {
