@@ -13,7 +13,7 @@ jobs:
       contents: write
     steps:
       # v6.0.2
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
       # v4.1.1
       - uses:
           aquaproj/aqua-installer@4551ec64e21bf0f557c2525135ff0bd2cba40ec7
