@@ -24,5 +24,6 @@ jobs:
       - uses: aquaproj/update-checksum-action@c5df5a5c2a897a9b807068f062140506d092e7ac # v0.2.7
         with:
           prune: true
+          working_directory: dot_config/aqua
         env:
           GITHUB_TOKEN: ${{ github.token }}
