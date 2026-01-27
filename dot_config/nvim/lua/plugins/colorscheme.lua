@@ -1,22 +1,50 @@
 return {
-  -- ==========================================
-  -- 1. Gruvbox (レトロ・暖色系)
-  -- ==========================================
+  -- Edge: 基本これ。高コントラストでネオン調のテーマ
   {
-    'ellisonleao/gruvbox.nvim',
+    'sainnhe/edge',
+    lazy = false,
     priority = 1000,
-    enabled = true, -- これを true にして使用
     config = function()
-      require('gruvbox').setup({
-        contrast = 'hard', -- soft, medium, hard から選択
-      })
-      vim.cmd([[colorscheme gruvbox]])
+      -- Edge: 高コントラストでネオン調のテーマ。
+      vim.g.edge_enable_italic = true
+      vim.g.edge_style = 'neon' -- neon, aura, default
+      vim.g.edge_dim_inactive_windows = true
+      vim.cmd.colorscheme('edge')
     end,
   },
-
-  -- -- ==========================================
-  -- -- 2. Rose Pine (くすみカラー・上品な暖色)
-  -- -- ==========================================
+  -- Gruvbox-material: 伝統的な低彩度の暖色系ダークテーマ
+  -- {
+  --   'sainnhe/gruvbox-material',
+  --   priority = 1000,
+  --   enabled = true,
+  --   config = function()
+  --    vim.cmd.colorscheme('gruvbox')
+  --   end,
+  -- },
+  -- Sonokai: 柔らかいコントラストのダークテーマ
+  -- {
+  --   'sainnhe/sonokai',
+  --   priority = 1000,
+  --   enabled = true,
+  --   config = function()
+  --   end,
+  -- },
+  -- ==========================================
+  -- ライトテーマ: everforest
+  -- ==========================================
+  -- {
+  --   'sainnhe/everforest',
+  --   priority = 1000,
+  --   enabled = true,
+  --   config = function()
+  --     vim.opt.background = 'light'
+  --     vim.g.everforest_background = 'soft'
+  --     vim.cmd.colorscheme('everforest')
+  --   end,
+  -- },
+  -- ==========================================
+  -- Rose Pine (くすみカラー・上品な暖色)
+  -- ==========================================
   -- {
   --   'rose-pine/neovim',
   --   name = 'rose-pine',
@@ -27,9 +55,9 @@ return {
   --   end,
   -- },
   --
-  -- -- ==========================================
-  -- -- 3. Tokyo Night (モダン・寒色系)
-  -- -- ==========================================
+  -- ==========================================
+  -- Tokyo Night (モダン・寒色系)
+  -- ==========================================
   -- {
   --   'folke/tokyonight.nvim',
   --   priority = 1000,
@@ -40,9 +68,9 @@ return {
   --   end,
   -- },
   --
-  -- -- ==========================================
-  -- -- 4. Catppuccin (パステル・高い視認性)
-  -- -- ==========================================
+  -- ==========================================
+  -- Catppuccin (パステル・高い視認性)
+  -- ==========================================
   -- {
   --   'catppuccin/nvim',
   --   name = 'catppuccin',
@@ -53,9 +81,9 @@ return {
   --   end,
   -- },
   --
-  -- -- ==========================================
-  -- -- 5. Kanagawa (和風・落ち着いた中間色)
-  -- -- ==========================================
+  -- ==========================================
+  -- Kanagawa (和風・落ち着いた中間色)
+  -- ==========================================
   -- {
   --   'rebelot/kanagawa.nvim',
   --   priority = 1000,
