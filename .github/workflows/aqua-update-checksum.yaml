@@ -1,0 +1,33 @@
+---
+name: aqua-update-checksum
+
+"on":
+  pull_request:
+    paths:
+      - dot_config/aquaproj-aqua/aqua.yaml
+
+jobs:
+  update-checksum:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # v6.0.2
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      # v4.1.1
+      - uses:
+          aquaproj/aqua-installer@4551ec64e21bf0f557c2525135ff0bd2cba40ec7
+        with:
+          aqua_version: v3.9.0
+          aqua_opts: '--config dot_config/aquaproj-aqua/aqua.yaml'
+        env:
+          AQUA_CONFIG: dot_config/aquaproj-aqua/aqua.yaml
+      - name: Update aqua-checksums.json
+        run: >
+          aqua update-checksum --all
+          --config dot_config/aquaproj-aqua/aqua.yaml
+        env:
+          AQUA_CONFIG: dot_config/aquaproj-aqua/aqua.yaml
+      - name: Autofix
+        # checksumの更新をPRに自動コミット
+        uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27

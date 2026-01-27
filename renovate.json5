@@ -10,23 +10,6 @@
   "platformAutomerge": true,
   "packageRules": [
     {
-      "matchFileNames": [
-        "dot_config/aquaproj-aqua/aqua.yaml"
-      ],
-      "postUpgradeTasks": {
-        "commands": [
-          "aqua update-checksum --all --config dot_config/aquaproj-aqua/aqua.yaml"
-        ],
-        // fileFilters: postUpgradeTasksのコマンドが変更するファイルのパターンを指定。
-        // コマンド実行後、このパターンにマッチする変更されたファイルのみがコミットに含まれる。
-        // aqua update-checksumコマンドはaqua-checksums.jsonのみを更新するため、そのファイルだけを指定。
-        "fileFilters": [
-          "dot_config/aquaproj-aqua/aqua-checksums.json"
-        ],
-        "executionMode": "update"
-      }
-    },
-    {
       "matchUpdateTypes": [
         "patch"
       ],
