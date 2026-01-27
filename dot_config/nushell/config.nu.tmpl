@@ -459,7 +459,7 @@ $env.XDG_DATA_HOME = ($env.HOME | path join ".local/share")
 $env.XDG_STATE_HOME = ($env.HOME | path join ".local/state")
 $env.INITVIM = ($env.XDG_CONFIG_HOME | path join "nvim/init.vim")
 $env.VIMRC = ($env.HOME | path join ".vimrc")
-$env.AQUA_GLOBAL_CONFIG = ($env.XDG_CONFIG_HOME | path join "aquaproj-aqua/aqua.yaml")
+$env.AQUA_GLOBAL_CONFIG = ($env.XDG_CONFIG_HOME | path join "aqua/aqua.yaml")
 {{ if (or (eq .chezmoi.hostname "DesktopFractal") (eq .chezmoi.hostname "ThinkPadE14")) }}
 $env.PRIVATE_PLUGIN_ENABLED = "true"
 {{ end }}
