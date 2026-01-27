@@ -29,4 +29,5 @@ jobs:
         env:
           AQUA_CONFIG: dot_config/aquaproj-aqua/aqua.yaml
       - name: Autofix
+        # checksumの更新をPRに自動コミット
         uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27
