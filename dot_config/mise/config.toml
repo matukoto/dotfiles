@@ -10,7 +10,7 @@
     "npm:vitest" = "4.0.18"
     "npm:zenn-cli" = "0.4.1"
     "npm:@marp-team/marp-cli" = "latest"
-    "npm:sv" = '0.11.3'
+    "npm:sv" = '0.11.4'
     "npm:tsx" = '4.21.0'
     "gemini-cli" = '0.25.1'
     "npm:playwright" = '1.57.0'
