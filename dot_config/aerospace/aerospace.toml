@@ -1,7 +1,5 @@
 config-version = 2
 
-# You can use it to add commands that run after AeroSpace startup.
-# Available commands : https://nikitabobko.github.io/AeroSpace/commands
 # after-startup-command = ['exec-and-forget sketchybar']
 
 # Sync state when workspace changes (e.g. clicking dock icons, monitor changes)
@@ -16,6 +14,8 @@ start-at-login = true
 
 # アプリのバンドルID確認方法
 # osascript -e 'id of app "Ghostty"'
+# 現在動作中のアプリのリスト
+# lsappinfo list
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -126,6 +126,26 @@ on-mode-changed = []
 
 [[on-window-detected]]
     if.app-id = 'com.apple.iCal'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.finder'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.tinyspeck.slackmacgap'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.bitwarden.desktop'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.hnc.Discord'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.electron.aqua-voice'
     run = 'layout floating'
 
 # https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
