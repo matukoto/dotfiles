@@ -70,7 +70,7 @@ require('lazy').setup({
     { import = 'plugins.vim-edgemotion' },
     { import = 'plugins.vim-quickrun' },
     { import = 'plugins.vim-sonictemplate' },
-    { import = 'plugins.waitevent' },
+    -- { import = 'plugins.waitevent' },
     { import = 'plugins.which-key' },
     { import = 'plugins.yazi' },
     { import = 'plugins.auto-session' },
@@ -88,6 +88,7 @@ require('lazy').setup({
 
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
+    { 'lambdalisue/vim-guise', dependencies = 'vim-denops/denops.vim' },
     { 'nanotee/sqls.nvim', event = 'VeryLazy' },
     { 'rachartier/tiny-inline-diagnostic.nvim', event = 'VeryLazy' },
     { 'shougo/pum.vim', event = 'VeryLazy' },
