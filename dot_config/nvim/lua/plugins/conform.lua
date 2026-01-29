@@ -57,6 +57,13 @@ return {
         args = { 'run', 'format:file', '$FILENAME' },
         stdin = false, -- format コマンドがファイルを直接書き換える場合は false
       },
+      injected = {
+        options = {
+          lang_to_formatters = {
+            yaml = {},
+          },
+        },
+      },
     },
     formatters_by_ft = {
       lua = { 'stylua' },
