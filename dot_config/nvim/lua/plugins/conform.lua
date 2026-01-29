@@ -92,6 +92,7 @@ return {
         'markdownlint-cli2', -- Lint markdown
         stop_after_first = false,
       },
+      toml = { 'taplo' },
       -- Optional: Global fallback or specific formatters
       -- ['*'] = { 'typos' }, -- Be careful with global formatters like typos
     },
