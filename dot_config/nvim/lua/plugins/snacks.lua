@@ -5,6 +5,10 @@ return {
   -- opts table passes configuration directly to setup()
   ---@type snacks.Config
   opts = {
+    -- 画像表示機能を有効化 (Ghosttyターミナル用)
+    image = {
+      enabled = true,
+    },
     indent = {
       priority = 1,
       enabled = true, -- enable indent guides
