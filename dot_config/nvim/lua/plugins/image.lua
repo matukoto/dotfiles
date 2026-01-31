@@ -11,8 +11,10 @@ return {
   event = 'VeryLazy',
   -- 設定オプション
   opts = {
-    -- バックエンドの設定 (kitty, ueberzug, sixel)
-    -- Weztermを使用している場合はkittyまたはsixelを試す
+    -- バックエンドの設定
+    -- WeztermはKittyプロトコルの部分的なサポートがあるが、完全対応ではない
+    -- 最良の体験にはKittyターミナルの使用を推奨
+    -- Weztermを使用する場合: 'kitty' を試すか、'ueberzug' または将来的に 'sixel' を検討
     backend = 'kitty',
     -- バックエンドのフォールバック順序
     integrations = {
