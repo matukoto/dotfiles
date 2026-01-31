@@ -7,8 +7,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
   },
   -- 遅延読み込み: ファイルタイプに応じて読み込む
-  ft = { 'markdown', 'norg', 'html' },
-  event = 'VeryLazy',
+  ft = { 'markdown', 'norg' },
   -- 設定オプション
   opts = {
     -- バックエンドの設定
@@ -33,14 +32,6 @@ return {
         download_remote_images = true,
         only_render_image_at_cursor = false,
         filetypes = { 'norg' },
-      },
-      -- htmlでの画像表示
-      html = {
-        enabled = false,
-      },
-      -- cssでの画像表示
-      css = {
-        enabled = false,
       },
     },
     -- 最大サイズ設定

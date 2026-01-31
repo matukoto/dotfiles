@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Vim で使う
-sudo apt install \
+sudo apt install -y \
   libncurses5-dev \
   libncursesw5-dev \
   make \
@@ -14,5 +14,5 @@ sudo apt install \
   libsqlite3-dev
 
 # Neovim の画像表示（image.nvim）で使う
-sudo apt install \
+sudo apt install -y \
   imagemagick
