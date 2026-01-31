@@ -46,4 +46,4 @@ packages:
   - name: astral-sh/uv@0.9.26
   - name: oven-sh/bun@bun-v1.3.7
   - name: tree-sitter/tree-sitter@v0.26.3
-  - name: github/copilot-cli@v0.0.395
+  - name: github/copilot-cli@v0.0.398
