@@ -12,7 +12,3 @@ sudo apt install -y \
   libssl-dev \
   libdbus-1-dev \
   libsqlite3-dev
-
-# Neovim の画像表示（image.nvim）で使う
-sudo apt install -y \
-  imagemagick
