@@ -18,5 +18,6 @@
     #"cargo:leetcode-cli" = "latest"
     "spring-boot" = "3.5.3"
     "npm:@openapitools/openapi-generator-cli" = 'latest'
+    "wrangler" = "4.61.1"
 [settings]
     experimental = false
