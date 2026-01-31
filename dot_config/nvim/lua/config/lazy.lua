@@ -39,6 +39,7 @@ require('lazy').setup({
     { import = 'plugins.gitgraph' },
     { import = 'plugins.gitsigns' },
     { import = 'plugins.hlslens' },
+    { import = 'plugins.image' },
     { import = 'plugins.lazydev' },
     { import = 'plugins.lexima' },
     { import = 'plugins.lspconfig' },
