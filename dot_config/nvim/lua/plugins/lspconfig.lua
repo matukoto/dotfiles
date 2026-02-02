@@ -74,7 +74,6 @@ return {
 
     -- config function runs after the plugin and its dependencies are loaded
     config = function()
-      local lspconfig = require('lspconfig')
       -- Add additional capabilities supported by nvim-cmp
       vim.lsp.config('*', {
         capabilities = require('blink.cmp').get_lsp_capabilities(),
@@ -97,12 +96,46 @@ return {
         run_on_start = true,
       })
 
-      vim.lsp.enable(non_mason_servers) -- Define diagnostic signs
-      local signs = { Error = ' ', Warn = ' ', Hint = '󱩎 ', Info = ' ' }
-      for type, icon in pairs(signs) do
-        local hl = 'DiagnosticSign' .. type
-        vim.fn.sign_define(hl, { text = icon, texthl = hl })
-      end
+      vim.lsp.enable(non_mason_servers)
+      vim.diagnostic.config({
+        severity_sort = true,
+        virtual_text = false,
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = '󰅚 ',
+            [vim.diagnostic.severity.WARN] = '󰀪 ',
+            [vim.diagnostic.severity.HINT] = '󰌶 ',
+            [vim.diagnostic.severity.INFO] = '󰋽 ',
+          },
+          linehl = {
+            [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+          },
+          numhl = {
+            [vim.diagnostic.severity.WARN] = 'WarningMsg',
+          },
+        },
+        underline = true,
+        update_in_insert = false,
+        float = {
+          border = 'single',
+          header = '',
+          prefix = '',
+          suffix = '',
+          source = 'if_many',
+          format = function(diag)
+            local code = diag.code or ''
+            local source = diag.source or ''
+            local message = diag.message or ''
+            if code ~= '' then
+              return string.format('[%s %s] %s', source, code, message)
+            elseif source ~= '' then
+              return string.format('[%s] %s', source, message)
+            else
+              return message
+            end
+          end,
+        },
+      })
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true }),
@@ -111,8 +144,8 @@ return {
           local set = vim.keymap.set
 
           -- Keymaps using LspUI / Lspsaga if available, otherwise fallback to vim.lsp.buf
-          local lspsaga_ok, lspsaga = pcall(require, 'lspsaga')
-          local lspui_ok, LspUI = pcall(require, 'LspUI')
+          local lspsaga_ok, _ = pcall(require, 'lspsaga')
+          local lspui_ok, _ = pcall(require, 'LspUI')
 
           -- Hover
           if lspui_ok then
@@ -172,42 +205,8 @@ return {
           end
           set('n', 'ge', vim.diagnostic.open_float, opts)
           set('n', 'gq', vim.diagnostic.setqflist, opts)
-          if lspui_ok then
-            set('n', 'g[', '<cmd>LspUI diagnostic prev<CR>', opts)
-            set('n', 'g]', '<cmd>LspUI diagnostic next<CR>', opts)
-          else
-            set('n', '[d', vim.diagnostic.goto_prev, opts) -- Standard mapping
-            set('n', ']d', vim.diagnostic.goto_next, opts) -- Standard mapping
-          end
-
-          -- Configure diagnostics appearance
-          vim.diagnostic.config({
-            severity_sort = true,
-            virtual_text = false, -- Disable virtual text diagnostics (can be noisy)
-            signs = true, -- Use signs defined earlier
-            underline = true,
-            update_in_insert = false,
-            float = {
-              border = 'single',
-              header = '', -- No header
-              prefix = '', -- No prefix
-              suffix = '', -- No suffix
-              source = 'if_many', -- Show source only if multiple sources exist for the same diagnostic
-              format = function(diag) -- Custom format
-                local code = diag.code or ''
-                local source = diag.source or ''
-                local message = diag.message or ''
-                -- Simple format: [Source Code] Message
-                if code ~= '' then
-                  return string.format('[%s %s] %s', source, code, message)
-                elseif source ~= '' then
-                  return string.format('[%s] %s', source, message)
-                else
-                  return message
-                end
-              end,
-            },
-          })
+          set('n', 'g[', '<cmd>LspUI diagnostic prev<CR>', opts)
+          set('n', 'g]', '<cmd>LspUI diagnostic next<CR>', opts)
 
           -- Inlay Hints (if server supports it)
           local client = vim.lsp.get_client_by_id(ev.data.client_id)
@@ -231,14 +230,6 @@ return {
               end
             end, { expr = true })
           end
-
-          -- Optional: Format on save
-          -- if client and client.server_capabilities.documentFormattingProvider then
-          --   vim.api.nvim_create_autocmd('BufWritePre', {
-          --     buffer = ev.buf,
-          --     callback = function() vim.lsp.buf.format({ async = false }) end
-          --   })
-          -- end
         end,
       })
 
