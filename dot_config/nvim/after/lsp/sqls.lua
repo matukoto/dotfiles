@@ -5,7 +5,8 @@ return {
       connections = {
         {
           driver = 'postgresql',
-          dataSourceName = 'host=127.0.0.1 port=5432 user=postgres password=postgres dbname=postgres sslmode=disable',
+          -- '%3D' をデコードすると '=', schemaName をスキーマ名に置換すればスキーマ名を指定する必要がなくなる
+          dataSourceName = 'postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable&options=-csearch_path%3DschemaName',
         },
       },
     },
