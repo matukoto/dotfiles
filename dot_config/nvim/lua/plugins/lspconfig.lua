@@ -42,8 +42,6 @@ local mason_tools = {
   'fantomas',
   'csharp-language-server',
   'taplo',
-  'jdtls',
-  'lombok-nightly',
 }
 
 return {
@@ -236,10 +234,5 @@ return {
       -- Highlight for active signature parameter
       vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { bg = '#888888', fg = '#efef33' })
     end,
-  },
-  {
-    'mfussenegger/nvim-jdtls',
-    dependencies = { 'mason-org/mason.nvim' },
-    ft = 'java',
   },
 }
