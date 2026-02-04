@@ -180,23 +180,23 @@ return {
     require('aerial').setup(opts)
 
     -- Autocmd to open aerial automatically for markdown files
-    vim.api.nvim_create_autocmd('BufRead', {
-      group = vim.api.nvim_create_augroup('AerialMarkdownAutoOpen', { clear = true }),
-      pattern = { '*.md' },
-      callback = function()
-        -- Use vim.schedule to ensure aerial is loaded if lazy-loaded
-        vim.schedule(function()
-          local aerial_ok, aerial = pcall(require, 'aerial')
-          if aerial_ok then
-            aerial.open({
-              focus = false, -- Don't focus the aerial window
-              direction = 'right', -- Open to the right
-              -- You might want to check if it's already open
-              -- if not aerial.is_open() then ... end
-            })
-          end
-        end)
-      end,
-    })
+    -- vim.api.nvim_create_autocmd('BufRead', {
+    --   group = vim.api.nvim_create_augroup('AerialMarkdownAutoOpen', { clear = true }),
+    --   pattern = { '*.md' },
+    --   callback = function()
+    --     -- Use vim.schedule to ensure aerial is loaded if lazy-loaded
+    --     vim.schedule(function()
+    --       local aerial_ok, aerial = pcall(require, 'aerial')
+    --       if aerial_ok then
+    --         aerial.open({
+    --           focus = false, -- Don't focus the aerial window
+    --           direction = 'right', -- Open to the right
+    --           -- You might want to check if it's already open
+    --           -- if not aerial.is_open() then ... end
+    --         })
+    --       end
+    --     end)
+    --   end,
+    -- })
   end,
 }

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Vim で使う
-sudo apt install \
+sudo apt install -y \
   libncurses5-dev \
   libncursesw5-dev \
   make \

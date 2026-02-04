@@ -57,6 +57,13 @@ return {
         args = { 'run', 'format:file', '$FILENAME' },
         stdin = false, -- format コマンドがファイルを直接書き換える場合は false
       },
+      injected = {
+        options = {
+          lang_to_formatters = {
+            yaml = {},
+          },
+        },
+      },
     },
     formatters_by_ft = {
       lua = { 'stylua' },
@@ -85,6 +92,7 @@ return {
         'markdownlint-cli2', -- Lint markdown
         stop_after_first = false,
       },
+      toml = { 'taplo' },
       -- Optional: Global fallback or specific formatters
       -- ['*'] = { 'typos' }, -- Be careful with global formatters like typos
     },

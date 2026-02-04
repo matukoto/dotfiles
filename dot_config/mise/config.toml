@@ -4,19 +4,20 @@
     "rust" = "1.93.0"
     "go" = "1.25.6"
     "node" = "24.13.0"
-    "lua" = "5.4.8"
+    "lua" = "5.5.0"
     "dotnet" = "10.0.102"
     "npm:vite" = "7.3.1"
     "npm:vitest" = "4.0.18"
-    "npm:zenn-cli" = "0.4.1"
+    "npm:zenn-cli" = "0.4.4"
     "npm:@marp-team/marp-cli" = "latest"
     "npm:sv" = '0.11.4'
     "npm:tsx" = '4.21.0'
     "gemini-cli" = '0.25.1'
-    "npm:playwright" = '1.57.0'
+    "npm:playwright" = '1.58.1'
     'npm:@modelcontextprotocol/inspector' = '0.19.0'
     #"cargo:leetcode-cli" = "latest"
     "spring-boot" = "3.5.3"
     "npm:@openapitools/openapi-generator-cli" = 'latest'
+    "wrangler" = "4.61.1"
 [settings]
     experimental = false

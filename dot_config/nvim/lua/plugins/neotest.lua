@@ -7,22 +7,22 @@ return {
     'nvim-treesitter/nvim-treesitter',
     'marilari88/neotest-vitest',
     'nvim-neotest/neotest-plenary',
-    {
-      'rcasia/neotest-java',
-      dependencies = {
-        'mfussenegger/nvim-jdtls',
-        'mfussenegger/nvim-dap',
-        'rcarriga/nvim-dap-ui',
-        'theHamsta/nvim-dap-virtual-text',
-      },
-    },
+    -- {
+    --   'rcasia/neotest-java',
+    --   dependencies = {
+    --     'mfussenegger/nvim-jdtls',
+    --     'mfussenegger/nvim-dap',
+    --     'rcarriga/nvim-dap-ui',
+    --     'theHamsta/nvim-dap-virtual-text',
+    --   },
+    -- },
   },
   event = { 'VeryLazy' },
   config = function()
     require('neotest').setup({
       adapters = {
         require('neotest-plenary'),
-        require('neotest-java'),
+        --require('neotest-java'),
         require('neotest-vitest')({
           -- Filter directories when searching for test files. Useful in large projects (see Filter directories notes).
           filter_dir = function(name, rel_path, root)

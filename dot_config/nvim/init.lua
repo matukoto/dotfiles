@@ -202,6 +202,7 @@ vim.keymap.set('n', '<Leader>p', '"*p', { silent = true })
 
 vim.cmd('cabbrev cm <Cmd>Capture message<CR>')
 vim.cmd('cabbrev h tab help')
+vim.cmd('cabbrev lspinfo checkhealth vim.lsp')
 
 -- Plugin Management (Lazy.nvim)
 -- This section will be populated later after creating lazy.lua
@@ -253,5 +254,6 @@ vim.cmd('cabbrev t ' .. 'vsplit term://' .. vim.o.shell)
 
 -- colorscheme
 -- vim.cmd('colorscheme everforest') -- Set your desired colorscheme here
+vim.lsp.log._set_filename(vim.fn.stdpath('log') .. '/lsp/lsp-' .. os.date('%y') .. os.date('%m') .. os.date('%d') .. '.log')
 
 require('config.lazy')

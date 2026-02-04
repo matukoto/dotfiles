@@ -136,9 +136,9 @@ $time
 
 [custom.svelte]
     command = """
-grep -oP '(?<="version": ").+(?=")' node_modules/svelte/package.json
+node -p "require('./node_modules/svelte/package.json').version"
 """
-    detect_files = ['svelte.config.js']
-    format = '[$symbol(v$output)]($style)'
-    style = 'bold red'
+    detect_files = ['svelte.config.js', 'package.json']
+    format = '[$symbol $output]($style)'
+    style = 'bold #FF7777'
     symbol = ' '

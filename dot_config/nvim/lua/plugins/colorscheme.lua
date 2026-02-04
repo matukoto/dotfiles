@@ -1,17 +1,16 @@
 return {
   -- Edge: 基本これ。高コントラストでネオン調のテーマ
-  {
-    'sainnhe/edge',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- Edge: 高コントラストでネオン調のテーマ。
-      vim.g.edge_enable_italic = true
-      vim.g.edge_style = 'neon' -- neon, aura, default
-      vim.g.edge_dim_inactive_windows = true
-      vim.cmd.colorscheme('edge')
-    end,
-  },
+  -- {
+  --   'sainnhe/edge',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.g.edge_enable_italic = true
+  --     vim.g.edge_style = 'neon' -- neon, aura, default
+  --     vim.g.edge_dim_inactive_windows = true
+  --     vim.cmd.colorscheme('edge')
+  --   end,
+  -- },
   -- Gruvbox-material: 伝統的な低彩度の暖色系ダークテーマ
   -- {
   --   'sainnhe/gruvbox-material',
@@ -19,16 +18,21 @@ return {
   --   enabled = true,
   --   config = function()
   --    vim.cmd.colorscheme('gruvbox')
+  --     vim.g.gruvbox_dim_inactive_windows = true
   --   end,
   -- },
   -- Sonokai: 柔らかいコントラストのダークテーマ
-  -- {
-  --   'sainnhe/sonokai',
-  --   priority = 1000,
-  --   enabled = true,
-  --   config = function()
-  --   end,
-  -- },
+  {
+    'sainnhe/sonokai',
+    lazy = false,
+    priority = 1000,
+    enabled = true,
+    config = function()
+      vim.g.sonokai_enable_italic = true
+      vim.g.sonokai_dim_inactive_windows = true
+      vim.cmd.colorscheme('sonokai')
+    end,
+  },
   -- ==========================================
   -- ライトテーマ: everforest
   -- ==========================================
@@ -38,6 +42,7 @@ return {
   --   enabled = true,
   --   config = function()
   --     vim.opt.background = 'light'
+  --     vim.g.everforest_dim_inactive_windows = true
   --     vim.g.everforest_background = 'soft'
   --     vim.cmd.colorscheme('everforest')
   --   end,
@@ -51,6 +56,7 @@ return {
   --   priority = 1000,
   --   enabled = false,
   --   config = function()
+  --     vim.cmd.colorscheme('rose-pine'),
   --     vim.cmd([[colorscheme rose-pine]])
   --   end,
   -- },
@@ -64,7 +70,7 @@ return {
   --   enabled = false,
   --   config = function()
   --     require('tokyonight').setup({ style = 'moon' })
-  --     vim.cmd([[colorscheme tokyonight]])
+  --     vim.cmd.colorscheme('tokyonight')
   --   end,
   -- },
   --
@@ -77,7 +83,7 @@ return {
   --   priority = 1000,
   --   enabled = false,
   --   config = function()
-  --     vim.cmd([[colorscheme catppuccin-mocha]])
+  --   vim.cmd.colorscheme('catppuccin-mocha')
   --   end,
   -- },
   --
@@ -89,6 +95,7 @@ return {
   --   priority = 1000,
   --   enabled = false,
   --   config = function()
+  --     vim.cmd.colorscheme('kanagawa'),
   --     vim.cmd([[colorscheme kanagawa]])
   --   end,
   -- },
