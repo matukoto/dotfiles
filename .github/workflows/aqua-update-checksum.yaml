@@ -8,16 +8,16 @@ name: aqua-update-checksum
 
 jobs:
   update-checksum:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     permissions:
       contents: write
     steps:
       # v6.0.2
       - uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
       # v4.1.1
-      - uses: aquaproj/aqua-installer@0d9bbff5b5efc37244b8271be7e59cb25fbc8366
+      - uses: aquaproj/aqua-installer@7053e18161e62dffa977457ced6cd24d6c3dda24
         with:
-          aqua_version: v2.56.5
+          aqua_version: v2.56.6
         env:
           AQUA_CONFIG: dot_config/aqua/aqua.yaml
       # v0.2.7

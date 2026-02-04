@@ -3,7 +3,6 @@ return {
   event = 'VeryLazy',
   dependencies = {
     'MunifTanjim/nui.nvim',
-    -- plugins.nvim-notify は自動的に連携されます
   },
   opts = {
     presets = {
@@ -25,6 +24,17 @@ return {
         },
       },
     },
+    routes = {
+      {
+        -- lsp の progress で特定の情報を非表示にする
+        filter = {
+          event = 'lsp',
+          kind = 'progress',
+          any = { { find = 'Validate document' }, { find = 'Publish Diagnostics' }, { find = 'Building' } },
+        },
+        opts = { skip = true },
+      },
+    },
     cmdline = {
       view = 'cmdline_popup',
     },
@@ -41,7 +51,6 @@ return {
       override = {
         ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
         ['vim.lsp.util.stylize_markdown'] = true,
-        ['cmp.entry.get_documentation'] = true,
       },
     },
   },

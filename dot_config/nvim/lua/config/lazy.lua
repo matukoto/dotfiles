@@ -85,11 +85,11 @@ require('lazy').setup({
     -- { import = 'plugins.codecompanion' },
     -- { import = 'plugins.claudecode' },
     { import = 'plugins.colorscheme' },
+    { import = 'plugins.nvim-java' },
 
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
     { 'lambdalisue/vim-guise', dependencies = 'vim-denops/denops.vim' },
-    { 'nanotee/sqls.nvim', event = 'VeryLazy' },
     { 'rachartier/tiny-inline-diagnostic.nvim', event = 'VeryLazy' },
     { 'shougo/pum.vim', event = 'VeryLazy' },
     { 'nvim-treesitter/nvim-treesitter-context', event = 'VeryLazy' },
