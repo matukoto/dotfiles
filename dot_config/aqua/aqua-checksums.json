@@ -801,33 +801,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/x-motemen/ghq/v1.8.0/ghq_darwin_amd64.zip",
-      "checksum": "F50A794201BAC18DF1AC8D00E863E9635576AA94",
+      "id": "github_release/github.com/x-motemen/ghq/v1.8.1/ghq_darwin_amd64.zip",
+      "checksum": "FA984CB1D7CAC14F04AFC2D2FED754D14503FA21",
       "algorithm": "sha1"
     },
     {
-      "id": "github_release/github.com/x-motemen/ghq/v1.8.0/ghq_darwin_arm64.zip",
-      "checksum": "6FD6333348FDAF78DFBBE36CEC168F3E656A63C8",
+      "id": "github_release/github.com/x-motemen/ghq/v1.8.1/ghq_darwin_arm64.zip",
+      "checksum": "D3620447336CABA325453989EC6DA82E11F43E89",
       "algorithm": "sha1"
     },
     {
-      "id": "github_release/github.com/x-motemen/ghq/v1.8.0/ghq_linux_amd64.zip",
-      "checksum": "F38219DDBC6EF6FEBD75556902EEE4759BAD07C3",
+      "id": "github_release/github.com/x-motemen/ghq/v1.8.1/ghq_linux_amd64.zip",
+      "checksum": "78E80E312BB9DB433E2C49AAB7B0C2512D4D0C14",
       "algorithm": "sha1"
     },
     {
-      "id": "github_release/github.com/x-motemen/ghq/v1.8.0/ghq_linux_arm64.zip",
-      "checksum": "E5A73C5F4785D798A66B10419AB7B43B8525A7E4",
+      "id": "github_release/github.com/x-motemen/ghq/v1.8.1/ghq_linux_arm64.zip",
+      "checksum": "D28F7A76F1FED98B2050E2EFAE3BCE5A1F56ECB3",
       "algorithm": "sha1"
     },
     {
-      "id": "github_release/github.com/x-motemen/ghq/v1.8.0/ghq_windows_amd64.zip",
-      "checksum": "008A7AFB65DE5490506B2786926ACA77E2CF53BC",
+      "id": "github_release/github.com/x-motemen/ghq/v1.8.1/ghq_windows_amd64.zip",
+      "checksum": "76CE6CF72393BB9C08E27E8DA542F88FC5E4C16B",
       "algorithm": "sha1"
     },
     {
-      "id": "github_release/github.com/x-motemen/ghq/v1.8.0/ghq_windows_arm64.zip",
-      "checksum": "D7B0E3C9C9A246C580B46D7E0EE47E9E6DEC26D6",
+      "id": "github_release/github.com/x-motemen/ghq/v1.8.1/ghq_windows_arm64.zip",
+      "checksum": "43B5E6C26A58C046F151601744CEECB4494A0039",
       "algorithm": "sha1"
     },
     {
