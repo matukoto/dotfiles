@@ -17,7 +17,7 @@ jobs:
       # v4.1.1
       - uses: aquaproj/aqua-installer@7053e18161e62dffa977457ced6cd24d6c3dda24
         with:
-          aqua_version: v2.56.5
+          aqua_version: v2.56.6
         env:
           AQUA_CONFIG: dot_config/aqua/aqua.yaml
       # v0.2.7
