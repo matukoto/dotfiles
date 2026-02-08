@@ -101,28 +101,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.1.51/opencode-darwin-arm64.zip",
-      "checksum": "C6688C38094976D3CECE7497869CAE78FD899F71EB9D2F45CFA752E604AB7BE3",
+      "id": "github_release/github.com/anomalyco/opencode/v1.1.52/opencode-darwin-arm64.zip",
+      "checksum": "72E3CB488E617CBE5258E848C58FFF447599705DABE2C18306A5FD79E614978B",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.1.51/opencode-darwin-x64.zip",
-      "checksum": "22D63F5F27BFE7E72D0687F75644342CCD5BB8DDEEEBC990C759CE927F6964FE",
+      "id": "github_release/github.com/anomalyco/opencode/v1.1.52/opencode-darwin-x64.zip",
+      "checksum": "13D656B561E34ACB05DCDBB5D870D818D6F836D8F66B835977650CA89B9C644F",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.1.51/opencode-linux-arm64.tar.gz",
-      "checksum": "D06753EC09D34A0978DCA9F1BB9D827B001022CA4EFAFC751822813B643F4FF9",
+      "id": "github_release/github.com/anomalyco/opencode/v1.1.52/opencode-linux-arm64.tar.gz",
+      "checksum": "2468DF04DC7725CAAAB34F3FC794D934C2849830C0A9BB66D200F79009C5254D",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.1.51/opencode-linux-x64.tar.gz",
-      "checksum": "9B09B4CD20BEED42C3308267F1F663F1F79C76A7E6E0E9BDFC8D05536430628E",
+      "id": "github_release/github.com/anomalyco/opencode/v1.1.52/opencode-linux-x64.tar.gz",
+      "checksum": "D2F402CF19DD6B0D3248FBC848609345075FBF4956C9B75E5957A930D20AEFB8",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.1.51/opencode-windows-x64.zip",
-      "checksum": "3B08170AEE17A245685ADF7648AC6FD9CE56575ABD48DB6FCE3811C3A6B48458",
+      "id": "github_release/github.com/anomalyco/opencode/v1.1.52/opencode-windows-x64.zip",
+      "checksum": "5C9583BEF13355715589326BC614517E5E260D8D164BC4F6599740508D967985",
       "algorithm": "sha256"
     },
     {
@@ -341,33 +341,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v0.0.400/copilot-darwin-arm64.tar.gz",
-      "checksum": "899E6509092AB92C8C6D099FDC17DDA11050947F1052219D47569115C5D865C0",
+      "id": "github_release/github.com/github/copilot-cli/v0.0.401/copilot-darwin-arm64.tar.gz",
+      "checksum": "22080B78C03DF6D236DEFB6B1CCA3D8651E4E3D9E97B8E9B4F8DC7567BD6938A",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v0.0.400/copilot-darwin-x64.tar.gz",
-      "checksum": "21AC2624A3F4E00EFAB8BF6F21F5E9F73647E132A17CFFE2C9E57C2090119245",
+      "id": "github_release/github.com/github/copilot-cli/v0.0.401/copilot-darwin-x64.tar.gz",
+      "checksum": "8342A5ED1E67FB7B6005BD94545B4FBAD39B298B8D3D222F80D1334376187639",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v0.0.400/copilot-linux-arm64.tar.gz",
-      "checksum": "9C2A40229932861D00CC87E6CC1D83F8400BA3A0F4E713A8388654625F9A8C46",
+      "id": "github_release/github.com/github/copilot-cli/v0.0.401/copilot-linux-arm64.tar.gz",
+      "checksum": "FECC034218D54079245CBDB6C098ADE691B668EB03E97C1F76A050FDB251EE9D",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v0.0.400/copilot-linux-x64.tar.gz",
-      "checksum": "E97AFCBAAD69D03F2D68EC8F4294A9A9B14B34B578E49785FFF3DEB0C0EAB1BF",
+      "id": "github_release/github.com/github/copilot-cli/v0.0.401/copilot-linux-x64.tar.gz",
+      "checksum": "060EABE41EDCF400BB2AE622D9060266F565EA43840B6E779E7D072E5016A282",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v0.0.400/copilot-win32-arm64.zip",
-      "checksum": "77E08D9C2BF576348F7E05062EEE2911AF3FD7FE414D55B01F61688CC1B2B679",
+      "id": "github_release/github.com/github/copilot-cli/v0.0.401/copilot-win32-arm64.zip",
+      "checksum": "C7C8041D548C03ED98C84323BBA551BEE7E88B933A42F106E2410BCC1BAF4C91",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v0.0.400/copilot-win32-x64.zip",
-      "checksum": "02FC89AFBD608C70C98E5C0E2F3DB8BEC5139D8F103E3F42C1A83DD7A204185C",
+      "id": "github_release/github.com/github/copilot-cli/v0.0.401/copilot-win32-x64.zip",
+      "checksum": "17E39CD4095031D8F01251A7FA631E236503052989CA75CEAF4E2EB534959BD4",
       "algorithm": "sha256"
     },
     {
@@ -491,28 +491,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mikefarah/yq/v4.50.1/yq_darwin_amd64",
-      "checksum": "6C24724C203F8EF0AFAA4584D8B7BAA150FEC7F6D8A493EFA49B80F620174119",
+      "id": "github_release/github.com/mikefarah/yq/v4.52.1/yq_darwin_amd64",
+      "checksum": "7FDE7B6A9488473F3383EB5BEF52E13E03149D0DC1507D6FEE3C3343F981B377",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mikefarah/yq/v4.50.1/yq_darwin_arm64",
-      "checksum": "589CD3E27B2A0AE62FC4513C7D18DB56203AAF88BF7C480F0CB3D4F4D0AC5514",
+      "id": "github_release/github.com/mikefarah/yq/v4.52.1/yq_darwin_arm64",
+      "checksum": "FAF051A49A3B73B72790430206679609D86AECA89BC6EA24475B5CECE4666B8E",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mikefarah/yq/v4.50.1/yq_linux_amd64",
-      "checksum": "C7A1278E6BBC4924F41B56DB838086C39D13EE25DCB22089E7FBF16AC901F0D4",
+      "id": "github_release/github.com/mikefarah/yq/v4.52.1/yq_linux_amd64",
+      "checksum": "BB7C52FBAEEC8B208D7EB2E4E782BB56B83FA00B871AA3C7BFD1E33201446E25",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mikefarah/yq/v4.50.1/yq_linux_arm64",
-      "checksum": "CF0A663D8E4E00BB61507C5237B95B45A6AAA1FBEDAC77F4DC8ABDADD5E2B745",
+      "id": "github_release/github.com/mikefarah/yq/v4.52.1/yq_linux_arm64",
+      "checksum": "1A5AB3D31A50A0CA3DF898B8F715B71F96E8B0C2FCC40498FAC2E7A5FC4D1381",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mikefarah/yq/v4.50.1/yq_windows_amd64.exe",
-      "checksum": "85C8C1B035C3E7CD10C503F1F00334B6EDAE18C9FD6B64A06B98D82449E20BF8",
+      "id": "github_release/github.com/mikefarah/yq/v4.52.1/yq_windows_amd64.exe",
+      "checksum": "8BCF6E2E092C53E9C8C9564403CD27EB5C8CC980858633D65B823F57E52A6CD4",
       "algorithm": "sha256"
     },
     {
@@ -721,33 +721,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.8.0/pinact_darwin_amd64.tar.gz",
-      "checksum": "4F658C9258BA261019114AFCF8CBC155CE1B9A1157D17CB1FC2E0A48D962D1D7",
+      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.9.0/pinact_darwin_amd64.tar.gz",
+      "checksum": "70F68407A05FA88843FBF9B400D979E6205489EF8AF251DACC21841A07989DF4",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.8.0/pinact_darwin_arm64.tar.gz",
-      "checksum": "512E90FB9861912B1414B473CEA7277794750BE1D7756C6D296FA1077CE9E5EC",
+      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.9.0/pinact_darwin_arm64.tar.gz",
+      "checksum": "23C8A4EDA8FD7949C8CBB1CFE6F3D01279402FE6201E9CB0A90447A5ECFDEF89",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.8.0/pinact_linux_amd64.tar.gz",
-      "checksum": "13A5415F6A9E6F6CC7140954EEFF120488C0B6C69525FA541011ACC2A39F0429",
+      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.9.0/pinact_linux_amd64.tar.gz",
+      "checksum": "3829DA718DE38B1E914B974C3E77045A256999AF84789437A7305B09130D8A6A",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.8.0/pinact_linux_arm64.tar.gz",
-      "checksum": "03AC062B927571372B6575E11A5E5760C4E1E3658A246FFBF6C8062369FFA5E5",
+      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.9.0/pinact_linux_arm64.tar.gz",
+      "checksum": "34A957423002662C6289782B571660BEDA6A37449A76D763C8AD8B1B9A500A54",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.8.0/pinact_windows_amd64.zip",
-      "checksum": "9073BD0BDCCBE5653EBE9D1B7786A0F4CAF2B8BA9102A129C0A18262C7047570",
+      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.9.0/pinact_windows_amd64.zip",
+      "checksum": "B923A567F88417D79CE183E59C2A2372D9CAE9B697A472CE1F95D745932746B1",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.8.0/pinact_windows_arm64.zip",
-      "checksum": "051E6F025FCCAB521242268D198381774B27B92F2A385E3905A8D01615057955",
+      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.9.0/pinact_windows_arm64.zip",
+      "checksum": "A2DBFBA73410063EE683636EE61CD57C43F130B7DF90442A40F5D57734C73A5A",
       "algorithm": "sha256"
     },
     {
@@ -856,18 +856,18 @@
       "algorithm": "sha1"
     },
     {
-      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.33.12.pkg",
-      "checksum": "07241B0DCAF1E7FC1E154FFA553D942FA8A81557E0E7C3F58747250390FB4220",
+      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.33.13.pkg",
+      "checksum": "E4E9083AC90DFCD0662EDC0A5339B6087F61C57C2B8D98D4EADACBE039E093AA",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.33.12.zip",
-      "checksum": "C8BFB29D058B4F433839FC8D63FB66667CF988B25CB58304C03D7D6415339FBD",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.33.13.zip",
+      "checksum": "27C037C26912676E697D4D97A6A1F904A3A147DC1EF88126334FA12AE044DA05",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.33.12.zip",
-      "checksum": "2AB3A8CE348B8EFDB62B6423B664422DC2C9AC2165CA5875DDE8846DAD9E9C61",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.33.13.zip",
+      "checksum": "675DB67E9CD30A2F58991E085D3F2B23BF520F016091C495D7E7C64E789400A8",
       "algorithm": "sha256"
     },
     {
