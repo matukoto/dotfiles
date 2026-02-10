@@ -206,15 +206,8 @@ vim.keymap.set('n', '<Leader>p', '"*p', { silent = true })
 
 vim.cmd('cabbrev cm <Cmd>Capture message<CR>')
 vim.cmd('cabbrev h tab help')
+vim.cmd('cabbrev H vert help')
 vim.cmd('cabbrev lspinfo checkhealth vim.lsp')
-
--- Plugin Management (Lazy.nvim)
--- This section will be populated later after creating lazy.lua
-if vim.g.vscode then
--- VSCode extension specific settings (if any)
-else
-  -- Plugin loading is handled at the end of the file by lazy.nvim setup
-end
 
 -- リドゥ
 vim.keymap.set('n', 'U', '<C-r>')
@@ -247,11 +240,11 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
   end,
 })
 
--- Center screen on cursor move
-vim.api.nvim_create_autocmd('CursorMoved', {
-  pattern = '*',
-  command = 'normal! zz',
-})
+-- -- Center screen on cursor move
+-- vim.api.nvim_create_autocmd('CursorMoved', {
+--   pattern = '*',
+--   command = 'normal! zz',
+-- })
 
 require('config.auto_reload')
 
