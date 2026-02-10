@@ -24,4 +24,6 @@ Icon?
 *.key
 .mise.toml
 
+# agents
 .claude/*
+**/docs/agents/**
