@@ -1,5 +1,6 @@
 ; feat()      feature
 ; fix()       bug fix
+; agents()    adding or updating agent scripts
 ; deps()      dependencies
 ; breaking()  breaking changes
 ; docs()      documentation
