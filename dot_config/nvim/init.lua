@@ -76,6 +76,10 @@ vim.opt.ignorecase = true
 -- swap しない
 vim.opt.swapfile = false
 
+-- 外部更新を自動検知
+vim.opt.autoread = true
+vim.opt.updatetime = 1000
+
 --検索時に大文字を含んでいたら大/小を区別
 vim.opt.smartcase = true
 
@@ -248,6 +252,8 @@ vim.api.nvim_create_autocmd('CursorMoved', {
   pattern = '*',
   command = 'normal! zz',
 })
+
+require('config.auto_reload')
 
 -- terminal を縦分割で開く
 vim.cmd('cabbrev t ' .. 'vsplit term://' .. vim.o.shell)
