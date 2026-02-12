@@ -3,8 +3,6 @@ name: aqua-update-checksum
 
 "on":
   pull_request:
-    paths:
-      - dot_config/aqua/aqua.yaml
 
 jobs:
   update-checksum:
