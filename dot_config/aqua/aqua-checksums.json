@@ -191,6 +191,16 @@
       "algorithm": "sha256"
     },
     {
+      "id": "github_release/github.com/biomejs/biome/@biomejs/biome@2.3.8/biome-win32-arm64.exe",
+      "checksum": "D7E1B57393FE72AB390C91950119C129F82C86FF083FD43BC3E86FC674B7B5AE",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/biomejs/biome/@biomejs/biome@2.3.8/biome-win32-x64.exe",
+      "checksum": "E1F3AFC0C5EE0DE0C642C198DFA4D380D7C1A0003E370FBE7ED6A083E3985552",
+      "algorithm": "sha256"
+    },
+    {
       "id": "github_release/github.com/cli/cli/v2.86.0/gh_2.86.0_linux_amd64.tar.gz",
       "checksum": "F3B08BD6A28420CC2229B0A1A687FA25F2B838D3F04B297414C1041CA68103C7",
       "algorithm": "sha256"
@@ -246,28 +256,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.6.8/deno-aarch64-apple-darwin.zip",
-      "checksum": "9DEE1808EBD2C9B95710E2FFD80C756F29DF0364B5D6A53DF017521CC2383783",
+      "id": "github_release/github.com/denoland/deno/v2.6.9/deno-aarch64-apple-darwin.zip",
+      "checksum": "81F8DA15540AA7CDCB1E37C13EE15E919B2AA26B65157C2AA69FED7C037DBFA5",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.6.8/deno-aarch64-unknown-linux-gnu.zip",
-      "checksum": "09A0A800BE639986515540DDAE2F2752625ED412F63D36C7152C2A72EE78C2D7",
+      "id": "github_release/github.com/denoland/deno/v2.6.9/deno-aarch64-unknown-linux-gnu.zip",
+      "checksum": "D1CD2F5F08ABDC22156B67FC1CD9E8DCD2E8E3AB5CAFFE1DA603992C8B1B5D67",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.6.8/deno-x86_64-apple-darwin.zip",
-      "checksum": "03A0DCCB3FB3D8659CC737E7CC1BBE579D919752725ED2BE8C145F75B473ADD8",
+      "id": "github_release/github.com/denoland/deno/v2.6.9/deno-x86_64-apple-darwin.zip",
+      "checksum": "CE1961BDE80352D43D1967B5F5B92EB7BE66AFA7E942700E66B6D7474485A69A",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.6.8/deno-x86_64-pc-windows-msvc.zip",
-      "checksum": "FEBE91C13A3BD5509F77058F1376BFF99C76B518046EBD46FE385BBF81B836D9",
+      "id": "github_release/github.com/denoland/deno/v2.6.9/deno-x86_64-pc-windows-msvc.zip",
+      "checksum": "2D2FEAED5AA9AC55C2207ADCBE45FC0773632C2FAC8CF5F3D41B691FE2246ED3",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.6.8/deno-x86_64-unknown-linux-gnu.zip",
-      "checksum": "E24AA1134B220D7185FA78136886B9A2D4014F0FA16AC6BEC08B0F8F623344A1",
+      "id": "github_release/github.com/denoland/deno/v2.6.9/deno-x86_64-unknown-linux-gnu.zip",
+      "checksum": "8A677A4B0CEA1A25AAECFC70D6C6A288F9AD69AF0A92E9E9D513CABAAF3C688F",
       "algorithm": "sha256"
     },
     {
@@ -338,36 +348,6 @@
     {
       "id": "github_release/github.com/eza-community/eza/v0.23.4/eza_x86_64-unknown-linux-musl.tar.gz",
       "checksum": "D231BB3EE33B08C76279B5888845DCEB7034D055C42BB9BE46DBE0DAE39394DF",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/github/copilot-cli/v0.0.401/copilot-darwin-arm64.tar.gz",
-      "checksum": "22080B78C03DF6D236DEFB6B1CCA3D8651E4E3D9E97B8E9B4F8DC7567BD6938A",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/github/copilot-cli/v0.0.401/copilot-darwin-x64.tar.gz",
-      "checksum": "8342A5ED1E67FB7B6005BD94545B4FBAD39B298B8D3D222F80D1334376187639",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/github/copilot-cli/v0.0.401/copilot-linux-arm64.tar.gz",
-      "checksum": "FECC034218D54079245CBDB6C098ADE691B668EB03E97C1F76A050FDB251EE9D",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/github/copilot-cli/v0.0.401/copilot-linux-x64.tar.gz",
-      "checksum": "060EABE41EDCF400BB2AE622D9060266F565EA43840B6E779E7D072E5016A282",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/github/copilot-cli/v0.0.401/copilot-win32-arm64.zip",
-      "checksum": "C7C8041D548C03ED98C84323BBA551BEE7E88B933A42F106E2410BCC1BAF4C91",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/github/copilot-cli/v0.0.401/copilot-win32-x64.zip",
-      "checksum": "17E39CD4095031D8F01251A7FA631E236503052989CA75CEAF4E2EB534959BD4",
       "algorithm": "sha256"
     },
     {
@@ -561,28 +541,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.8/bun-darwin-aarch64.zip",
-      "checksum": "672A0A9A7B744D085A1D2219CA907E3E26F5579FCA9E783A9510A4F98A36212F",
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.9/bun-darwin-aarch64.zip",
+      "checksum": "CDE6A4EDF19CF64909158FA5A464A12026FD7F0D79A4A950C10CF0AF04266D85",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.8/bun-darwin-x64.zip",
-      "checksum": "4A0ECD703B37D66ABAF51E5BC24FD1249E8DC392C17EE6235710CF51A0988B85",
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.9/bun-darwin-x64.zip",
+      "checksum": "588F4A48740B9A0C366A00F878810AB3AB5E6734D29B7C3CBDD9484B74A007DE",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.8/bun-linux-aarch64.zip",
-      "checksum": "4E9DEB6814A7EC7F68725DDD97D0D7B4065BCDA9A850F69D497567E995A7FA33",
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.9/bun-linux-aarch64.zip",
+      "checksum": "A2C2862BCC1FD1C0B3A8DCDC8C7EFB5E2ACD871EB20ED2F17617884EDE81C844",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.8/bun-linux-x64.zip",
-      "checksum": "0322B17F0722DA76A64298AAD498225AEDCBF6DF1008A1DEE45E16ECB226A3F1",
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.9/bun-linux-x64.zip",
+      "checksum": "4680E80E44E32AA718560CEAE85D22ECFBF2EFB8F3641782E35E4B7EFD65A1AA",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.8/bun-windows-x64.zip",
-      "checksum": "4C0A82866424E23D1BDAA9517307EC2F143ED513C15546DBA0B859C6C55C47C7",
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.9/bun-windows-x64.zip",
+      "checksum": "F4C1CF3549F6AF986DC6535C40B4785FF1A7E7805E59637EC450FC11ADB0C874",
       "algorithm": "sha256"
     },
     {
@@ -926,8 +906,8 @@
       "algorithm": "sha256"
     },
     {
-      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.464.0/registry.yaml",
-      "checksum": "3A808B88889B888ACBB573B97BF3EAB39E0BCE0BD69D423FD6DE4AF5130600C4E9ADCBFE19B5343FDFC437FA5669313AC30A200A7818B0FF3D4ACF9EA3C2B42A",
+      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.465.0/registry.yaml",
+      "checksum": "ACC05C7DC0C401667657F814F89B6B51FF4C3B82E745E3FF093C3D09255F888FA0F6CCD6C101412ECF0ECB66BD5B72E2E9538F1501FC1188393026BF3CD17315",
       "algorithm": "sha512"
     }
   ]
