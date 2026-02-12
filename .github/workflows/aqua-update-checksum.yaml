@@ -8,6 +8,7 @@ name: aqua-update-checksum
 
 jobs:
   update-checksum:
+    if: contains(github.head_ref, 'renovate')
     runs-on: ubuntu-24.04-arm
     permissions:
       contents: write
