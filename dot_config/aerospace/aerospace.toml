@@ -54,10 +54,10 @@ on-mode-changed = []
     alt-f = 'fullscreen'
 
     # App toggle - workspace 1 (メインモニター)
-    ctrl-alt-t = 'exec-and-forget ~/.local/bin/app-toggle com.mitchellh.ghostty Ghostty 1'
-    ctrl-alt-b = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi Vivaldi 1'
-    ctrl-alt-o = 'exec-and-forget ~/.local/bin/app-toggle md.obsidian Obsidian 1'
-    ctrl-alt-g = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi.app.dfbmlaainldjbgehmmmecanmooialjhe Gemini 1'
+    ctrl-cmd-t = 'exec-and-forget ~/.local/bin/app-toggle com.mitchellh.ghostty Ghostty 1'
+    ctrl-cmd-v = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi Vivaldi 1'
+    ctrl-cmd-b = 'exec-and-forget ~/.local/bin/app-toggle md.obsidian Obsidian 1'
+    ctrl-cmd-g = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi.app.dfbmlaainldjbgehmmmecanmooialjhe Gemini 1'
 
     ctrl-alt-slash = 'layout tiles horizontal vertical'
     ctrl-alt-comma = 'layout accordion horizontal vertical'
@@ -146,6 +146,10 @@ on-mode-changed = []
 
 [[on-window-detected]]
     if.app-id = 'com.electron.aqua-voice'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.edgemac'
     run = 'layout floating'
 
 # https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
