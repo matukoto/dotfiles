@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "github-copilot/gpt-5.2-codex",
+  "model": "github-copilot/gpt-5.3-codex",
   "small_model": "google/gemini-3-pro-preview",
   "enabled_providers": ["github-copilot", "google"],
   "disabled_providers": ["opencode"],
