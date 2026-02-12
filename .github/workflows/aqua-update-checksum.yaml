@@ -29,3 +29,5 @@ jobs:
         with:
           prune: true
           working_directory: dot_config/aqua
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
