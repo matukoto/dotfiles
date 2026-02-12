@@ -471,28 +471,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mikefarah/yq/v4.52.1/yq_darwin_amd64",
-      "checksum": "7FDE7B6A9488473F3383EB5BEF52E13E03149D0DC1507D6FEE3C3343F981B377",
+      "id": "github_release/github.com/mikefarah/yq/v4.52.2/yq_darwin_amd64",
+      "checksum": "54A63555210E73ABED09108097072E28BF82A6BB20439A72B55509C4DD42378D",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mikefarah/yq/v4.52.1/yq_darwin_arm64",
-      "checksum": "FAF051A49A3B73B72790430206679609D86AECA89BC6EA24475B5CECE4666B8E",
+      "id": "github_release/github.com/mikefarah/yq/v4.52.2/yq_darwin_arm64",
+      "checksum": "34613EA97C4C77E1894A8978DBF72588D187A69A6292C10DAB396C767A1ECDE7",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mikefarah/yq/v4.52.1/yq_linux_amd64",
-      "checksum": "BB7C52FBAEEC8B208D7EB2E4E782BB56B83FA00B871AA3C7BFD1E33201446E25",
+      "id": "github_release/github.com/mikefarah/yq/v4.52.2/yq_linux_amd64",
+      "checksum": "A74BD266990339E0C48A2103534AEF692ABF99F19390D12C2B0CE6830385C459",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mikefarah/yq/v4.52.1/yq_linux_arm64",
-      "checksum": "1A5AB3D31A50A0CA3DF898B8F715B71F96E8B0C2FCC40498FAC2E7A5FC4D1381",
+      "id": "github_release/github.com/mikefarah/yq/v4.52.2/yq_linux_arm64",
+      "checksum": "C82856AC30DA522F50DCDD4F53065487B5A2927E9B87FF637956900986F1F7C2",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mikefarah/yq/v4.52.1/yq_windows_amd64.exe",
-      "checksum": "8BCF6E2E092C53E9C8C9564403CD27EB5C8CC980858633D65B823F57E52A6CD4",
+      "id": "github_release/github.com/mikefarah/yq/v4.52.2/yq_windows_amd64.exe",
+      "checksum": "2B6CD8974004FA0511F6B6B359D2698214FADEB4599F0B00E8D85AE62B3922D4",
       "algorithm": "sha256"
     },
     {
