@@ -1,16 +1,54 @@
 #!/bin/bash
 
-# ヘルプ / 引数チェック
-if [ -z "$1" ]; then
-  echo "エラー: 検索したいファイル名を指定してください。"
-  echo "使用法: $0 <ファイル名> [ユーザー名]"
-  echo "例1 (フォロー全員): $0 build.gradle"
-  echo "例2 (特定ユーザー): $0 build.gradle torvalds"
+# ヘルプ
+show_help() {
+  echo "使用法: $0 --file <ファイル名> [--user <ユーザー名>] [--repo <リポジトリ名>]"
+  echo "  -f, --file   検索したいファイル名 (必須)"
+  echo "  -u, --user   検索対象ユーザー (任意)"
+  echo "  -r, --repo   検索対象リポジトリ (任意: owner/repo または repo名)"
+  echo "例1 (フォロー全員): $0 --file build.gradle"
+  echo "例2 (特定ユーザー): $0 --file build.gradle --user torvalds"
+  echo "例3 (特定リポジトリ/フォロー全員): $0 --file build.gradle --repo linux"
+  echo "例4 (特定リポジトリ/特定ユーザー): $0 --file build.gradle --user torvalds --repo linux"
+  echo "例5 (owner/repo指定): $0 --file build.gradle --repo torvalds/linux"
+}
+
+QUERY=""
+TARGET_USER=""
+TARGET_REPO=""
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+  -f | --file)
+    shift
+    QUERY="$1"
+    ;;
+  -u | --user)
+    shift
+    TARGET_USER="$1"
+    ;;
+  -r | --repo)
+    shift
+    TARGET_REPO="$1"
+    ;;
+  -h | --help)
+    show_help
+    exit 0
+    ;;
+  *)
+    echo "エラー: 不明なオプションです: $1" >&2
+    show_help
+    exit 1
+    ;;
+  esac
+  shift
+done
+
+if [ -z "$QUERY" ]; then
+  echo "エラー: 検索したいファイル名を指定してください。" >&2
+  show_help
   exit 1
 fi
-
-QUERY="$1"
-TARGET_USER="$2"
 
 # code_search (上限10) の残り回数をチェックする関数
 check_limit() {
@@ -28,6 +66,19 @@ get_users() {
   fi
 }
 
+build_query() {
+  local user="$1"
+  local base_query="filename:$QUERY"
+  if [ -n "$TARGET_REPO" ]; then
+    if [[ "$TARGET_REPO" == */* ]]; then
+      base_query="$base_query+repo:$TARGET_REPO"
+    else
+      base_query="$base_query+repo:$user/$TARGET_REPO"
+    fi
+  fi
+  echo "$base_query"
+}
+
 echo "--- Start Searching for '$QUERY' (Strict Mode: Limit 10/min) ---"
 
 # メインループ
@@ -42,14 +93,14 @@ get_users | while read user; do
   # 残りが 2回以下なら、回復するまで長めに待機 (念の為70秒)
   if [ "$REMAINING" -le 2 ]; then
     echo "⚠️  Rate limit low ($REMAINING/10). Waiting 70 seconds..." >&2
-    sleep 70
+    sleep 10
     REMAINING=$(check_limit)
   fi
 
   echo "Checking @$user... (Remaining: $REMAINING)" >&2
 
   # 検索実行
-  gh api "search/code?q=filename:$QUERY+user:$user" --paginate \
+  gh api "search/code?q=$(build_query "$user")+user:$user" --paginate \
     -q '.items[] | "\(.repository.full_name): \(.path)"'
 
   # 【重要】制限が10回/分なので、少なくとも6秒以上空ける必要がある。
