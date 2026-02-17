@@ -1,10 +1,42 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "github-copilot/gpt-5.3-codex",
+  "model": "github-copilot/gpt-5.2-codex",
   "small_model": "google/gemini-3-pro-preview",
   "enabled_providers": ["github-copilot", "google"],
   "disabled_providers": ["opencode"],
   "plugin": ["@sveltejs/opencode"],
+  "agent": {
+    "code-reviewer": {
+      "description": "Reviews code for best practices and potential issues",
+      "mode": "subagent",
+      "model": "github-copilot/gpt-5.1-codex-mini",
+      "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
+      "tools": {
+        "write": false,
+        "edit": false
+      }
+    },
+    "explore": {
+      "description": "コードベースを探索するための高速な読み取り専用エージェント。ファイルを変更できません。これは、パターンでファイルをすばやく検索したり、コードでキーワードを検索したり、コードベースに関する質問に答えたりする必要がある場合に使用します。",
+      "mode": "subagent",
+      "model": "github-copilot/gpt-5.1-codex-mini",
+      "prompt": "You are an exploration agent. Focus on quickly finding information in the codebase without making any changes.",
+      "tools": {
+        "write": false,
+        "edit": false
+      }
+    },
+    "general": {
+      "description": "複雑な質問を調査し、複数ステップのタスクを実行するための汎用エージェント。完全なツールアクセス権 (todo を除く) があるため、必要に応じてファイルを変更できます。これを使用して、複数の作業単位を並行して実行します。",
+      "mode": "subagent",
+      "model": "github-copilot/gpt-5.1-codex-mini",
+      "prompt": "You are a general-purpose assistant. Handle complex tasks and coordinate with other agents as needed.",
+      "tools": {
+        "write": true,
+        "edit": true
+      }
+    }
+  },
   // 背景が透明なテーマ
   "theme": "lucent-orng",
   "mcp": {
