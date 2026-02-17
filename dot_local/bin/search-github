@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# ヘルプ / 引数チェック
+if [ -z "$1" ]; then
+  echo "エラー: 検索したいファイル名を指定してください。"
+  echo "使用法: $0 <ファイル名> [ユーザー名]"
+  echo "例1 (フォロー全員): $0 build.gradle"
+  echo "例2 (特定ユーザー): $0 build.gradle torvalds"
+  exit 1
+fi
+
+QUERY="$1"
+TARGET_USER="$2"
+
+# code_search (上限10) の残り回数をチェックする関数
+check_limit() {
+  gh api rate_limit --method GET -H "Cache-Control: no-cache" --jq ".resources.code_search.remaining"
+}
+
+# 検索対象ユーザーを取得する関数
+get_users() {
+  if [ -n "$TARGET_USER" ]; then
+    echo "--- Mode: Single User (@$TARGET_USER) ---" >&2
+    echo "$TARGET_USER"
+  else
+    echo "--- Mode: All Following Users ---" >&2
+    gh api user/following --paginate -q '.[].login'
+  fi
+}
+
+echo "--- Start Searching for '$QUERY' (Strict Mode: Limit 10/min) ---"
+
+# メインループ
+get_users | while read user; do
+
+  # 残り回数チェック
+  REMAINING=$(check_limit)
+
+  # APIエラー等で空の場合は0扱いにする
+  if [ -z "$REMAINING" ]; then REMAINING=0; fi
+
+  # 残りが 2回以下なら、回復するまで長めに待機 (念の為70秒)
+  if [ "$REMAINING" -le 2 ]; then
+    echo "⚠️  Rate limit low ($REMAINING/10). Waiting 70 seconds..." >&2
+    sleep 70
+    REMAINING=$(check_limit)
+  fi
+
+  echo "Checking @$user... (Remaining: $REMAINING)" >&2
+
+  # 検索実行
+  gh api "search/code?q=filename:$QUERY+user:$user" --paginate \
+    -q '.items[] | "\(.repository.full_name): \(.path)"'
+
+  # 【重要】制限が10回/分なので、少なくとも6秒以上空ける必要がある。
+  # ギリギリを攻めるなら sleep 6 ですが、安全を見るなら sleep 7-8 推奨です。
+  sleep 6
+done
