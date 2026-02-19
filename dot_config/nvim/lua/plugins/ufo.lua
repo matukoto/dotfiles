@@ -13,7 +13,7 @@ return {
   init = function()
     -- Set options required for UFO + Treesitter folding
     -- These need to be set early, before filetype plugins or LSP might interfere
-    vim.o.foldcolumn = '1' -- Show fold column
+    vim.o.foldcolumn = '0'
     vim.o.foldlevel = 99 -- Start with all folds open
     vim.o.foldlevelstart = 99
     vim.o.foldenable = true -- Enable folding
