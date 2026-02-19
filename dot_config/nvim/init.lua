@@ -21,7 +21,7 @@ vim.opt.ruler = true
 -- カーソル行の背景色変更
 vim.opt.cursorline = true
 -- 折り畳んだあとの行数
-vim.opt.foldcolumn = '1'
+vim.opt.foldcolumn = '0'
 -- 自動的に開かれる折り畳みレベル
 vim.opt.foldlevel = 99
 -- 開始時の折り畳みレベル
