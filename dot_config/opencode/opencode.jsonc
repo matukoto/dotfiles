@@ -2,6 +2,17 @@
   "$schema": "https://opencode.ai/config.json",
   "model": "github-copilot/gpt-5.2-codex",
   "small_model": "google/gemini-3-pro-preview",
+  "lsp": {
+    "typescript": {
+      "command": ["vtsls", "--stdio"],
+      "extensions": [".ts", ".tsx", ".js", ".jsx"],
+      "initialization": {
+        "preferences": {
+          "importModuleSpecifierPreference": "relative"
+        }
+      }
+    }
+  },
   "enabled_providers": ["github-copilot", "google"],
   "disabled_providers": ["opencode"],
   "plugin": ["@sveltejs/opencode"],
