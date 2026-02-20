@@ -47,4 +47,5 @@ packages:
   - name: oven-sh/bun@bun-v1.3.9
   - name: tree-sitter/tree-sitter@v0.26.5
   - name: anomalyco/opencode@v1.2.6
+  - name: github/copilot-cli@v0.0.412
 
