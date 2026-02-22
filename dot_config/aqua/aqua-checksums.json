@@ -101,28 +101,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.2.7/opencode-darwin-arm64.zip",
-      "checksum": "B0803A5887A38EA27915A9D81E70493205133DB4C118D34178532FFCD5AE1866",
+      "id": "github_release/github.com/anomalyco/opencode/v1.2.9/opencode-darwin-arm64.zip",
+      "checksum": "33539E5D603B87A7FAF57F09AD0450E8549C933DDE629A822AADB8E24C3AA362",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.2.7/opencode-darwin-x64.zip",
-      "checksum": "0E724AE61BABDEF2F703B8FB9C26B57CCDDE6BBEC818C8A66791EA47CB8331CB",
+      "id": "github_release/github.com/anomalyco/opencode/v1.2.9/opencode-darwin-x64.zip",
+      "checksum": "4011EAF4A28969A3267CE5D19DE352CC7F94D1D72E09728FC4BA7857BF29F62C",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.2.7/opencode-linux-arm64.tar.gz",
-      "checksum": "32D048C3496DECC61D3496D74BEB272BC73F520FF29E4ED35898C490F1AE66DA",
+      "id": "github_release/github.com/anomalyco/opencode/v1.2.9/opencode-linux-arm64.tar.gz",
+      "checksum": "3D989EA59C542DA2B96ED2484524BCE254719FA470DA85FED6A631A472AC47E5",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.2.7/opencode-linux-x64.tar.gz",
-      "checksum": "7E8FC357E032873A9C98547830B56C1936B2A106CFB8B8BDCF07917B6E242D69",
+      "id": "github_release/github.com/anomalyco/opencode/v1.2.9/opencode-linux-x64.tar.gz",
+      "checksum": "7727B84CD077C954D914B1CF7C19EB81530D110373173B8CB41007F34F6EFCD3",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.2.7/opencode-windows-x64.zip",
-      "checksum": "C0EC2484AB2468558EE088BDFBF37FEB622F5FC2989040DF61240829F87BE23C",
+      "id": "github_release/github.com/anomalyco/opencode/v1.2.9/opencode-windows-x64.zip",
+      "checksum": "E3066E242E82DCDEAC99894A20FEAF070374D0EBC0B2CB0E15169E0BDDF4C090",
       "algorithm": "sha256"
     },
     {
