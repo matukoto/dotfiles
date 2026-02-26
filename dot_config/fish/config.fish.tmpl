@@ -9,11 +9,11 @@ if status is-interactive
     fish_add_path "$HOME/.local/share/nvim/mason/bin"
     fish_add_path "$HOME/.local/share/aquaproj-aqua/bin"
 
-{{ if eq .chezmoi.os "darwin" -}}
-eval (/opt/homebrew/bin/brew shellenv)
-{{- else if eq .chezmoi.os "linux" -}}
-# eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-{{- end }}
+    # {{ if eq .chezmoi.os "darwin" -}}
+    # eval (/opt/homebrew/bin/brew shellenv)
+    # {{- else if eq .chezmoi.os "linux" -}}
+    # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    # {{- end }}
 
     # XDG Base Directory
     set -x XDG_CONFIG_HOME $HOME/.config
@@ -23,9 +23,9 @@ eval (/opt/homebrew/bin/brew shellenv)
     set -x INITVIM $XDG_CONFIG_HOME/nvim/init.vim
     set -x VIMRC $HOME/.vimrc
     set -x AQUA_GLOBAL_CONFIG $XDG_CONFIG_HOME/aqua/aqua.yaml
-    {{ if (or (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "DesktopFractal") (eq .chezmoi.hostname "ThinkPadE14")) -}}
+    # {{ if (or (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "DesktopFractal") (eq .chezmoi.hostname "ThinkPadE14")) -}}
     set -x PRIVATE_PLUGIN_ENABLED true
-    {{- end }}
+    # {{- end }}
 
     # Fish paths
     set -x FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
@@ -90,18 +90,23 @@ eval (/opt/homebrew/bin/brew shellenv)
     abbr --add startuptime 'vim-startuptime -count 100 -vimpath nvim'
     abbr --add a aqua
 
-    ~/.local/share/aquaproj-aqua/bin/mise activate fish | source
+    # config caches
+    set -l CONFIG_CACHE $FISH_CACHE_DIR/config.fish
+    if not test -f "$CONFIG_CACHE"; or test "$FISH_CONFIG" -nt "$CONFIG_CACHE"
+        mkdir -p $FISH_CACHE_DIR
+        echo '' >$CONFIG_CACHE
 
-    # Claude Code settings
-    set -x CLAUDE_DISABLE_UPDATES 1
-    set -x NO_UPDATE_NOTIFIER 1
-    set -x CLAUDE_CONFIG_DIR ~/.config/claude
+        # tools
+        # type -q direnv && direnv hook fish >>$CONFIG_CACHE
+        zoxide init fish >>$CONFIG_CACHE
+        # type -q zoxide && zoxide init fish >>$CONFIG_CACHE
+        mise activate fish >>$CONFIG_CACHE
+        atuin init --disable-up-arrow fish >>$CONFIG_CACHE
 
-    zoxide init fish | source
-
-    atuin init --disable-up-arrow fish | source
-
-    if test "$TERM_PROGRAM" != "toggleterm"
-        starship init fish | source
+        set_color brmagenta --bold --underline
+        echo "config cache updated"
+        set_color normal
     end
+    source $CONFIG_CACHE
+
 end
