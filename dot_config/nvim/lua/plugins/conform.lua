@@ -61,6 +61,7 @@ return {
       yaml = { 'yamlfmt' },
       java = { lsp_format = 'fallback' },
       sh = { 'shellcheck', 'shfmt', stop_after_first = false },
+      fish = { 'fish_indent' },
       json = { 'fixjson' },
       jsonc = { 'biome' },
       json5 = { 'fixjson' },

@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.tmpl set filetype=sh
+autocmd BufNewFile,BufRead *rc.tmpl set filetype=sh
