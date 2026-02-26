@@ -23,6 +23,7 @@ return {
       'java',
       'groovy',
       'bash',
+      'fish',
       'go',
       'sql',
       'nu',

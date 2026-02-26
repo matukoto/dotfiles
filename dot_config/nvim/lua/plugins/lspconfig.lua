@@ -22,6 +22,7 @@ local mason_servers = {
   'lemminx',
   'tailwindcss',
   'copilot',
+  'fish_lsp',
 }
 
 local non_mason_servers = {
