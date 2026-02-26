@@ -701,6 +701,26 @@
       "algorithm": "sha256"
     },
     {
+      "id": "github_release/github.com/sharkdp/hyperfine/v1.20.0/hyperfine-v1.20.0-aarch64-unknown-linux-gnu.tar.gz",
+      "checksum": "90875CB1DB7A1D797C311174D061728361E58FC70E3B62262A00635AC3B1997C",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/sharkdp/hyperfine/v1.20.0/hyperfine-v1.20.0-x86_64-apple-darwin.tar.gz",
+      "checksum": "F58D0B90993FADFA122A351428C469CE24AFEF3865F027F0E6E86F0830D088F1",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/sharkdp/hyperfine/v1.20.0/hyperfine-v1.20.0-x86_64-pc-windows-msvc.zip",
+      "checksum": "2508C549B049B1D4342D08EDC1CB42BFAC169082B6E3069431B5BAB9822DBB32",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/sharkdp/hyperfine/v1.20.0/hyperfine-v1.20.0-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "3285EC7959285288137043DD81DCE0DDE056227018A8277532D9A364B4F03C2B",
+      "algorithm": "sha256"
+    },
+    {
       "id": "github_release/github.com/starship/starship/v1.24.2/starship-aarch64-apple-darwin.tar.gz",
       "checksum": "D3A0DA21374962625A2EE992110979BC1FA33424D7B6AEA58A70405E26544FD9",
       "algorithm": "sha256"
