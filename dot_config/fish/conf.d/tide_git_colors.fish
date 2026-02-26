@@ -6,3 +6,4 @@ set -g tide_git_color_conflicted red
 set -g tide_git_color_upstream red
 set -g tide_git_color_stash white
 set -g tide_git_color_operation red
+set -g tide_git_icon ''
