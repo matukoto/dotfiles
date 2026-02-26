@@ -22,17 +22,18 @@ return {
   --   end,
   -- },
   -- Sonokai: 柔らかいコントラストのダークテーマ
-  {
-    'sainnhe/sonokai',
-    lazy = false,
-    priority = 1000,
-    enabled = true,
-    config = function()
-      vim.g.sonokai_enable_italic = true
-      vim.g.sonokai_dim_inactive_windows = true
-      vim.cmd.colorscheme('sonokai')
-    end,
-  },
+  -- {
+  --   'sainnhe/sonokai',
+  --   lazy = false,
+  --   priority = 1000,
+  --   enabled = true,
+  --   config = function()
+  --     vim.g.sonokai_enable_italic = true
+  --     vim.g.sonokai_dim_inactive_windows = true
+  --     vim.cmd.colorscheme('sonokai')
+  --     vim.g.sonokai_transparent_background = true
+  --   end,
+  -- },
   -- ==========================================
   -- ライトテーマ: everforest
   -- ==========================================
@@ -64,15 +65,18 @@ return {
   -- ==========================================
   -- Tokyo Night (モダン・寒色系)
   -- ==========================================
-  -- {
-  --   'folke/tokyonight.nvim',
-  --   priority = 1000,
-  --   enabled = false,
-  --   config = function()
-  --     require('tokyonight').setup({ style = 'moon' })
-  --     vim.cmd.colorscheme('tokyonight')
-  --   end,
-  -- },
+  {
+    'folke/tokyonight.nvim',
+    priority = 1000,
+    enabled = true,
+    config = function()
+      require('tokyonight').setup({
+        style = 'moon',
+        transparent = true, -- 背景を透明にする
+      })
+      vim.cmd.colorscheme('tokyonight')
+    end,
+  },
   --
   -- ==========================================
   -- Catppuccin (パステル・高い視認性)

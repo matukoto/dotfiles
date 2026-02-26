@@ -25,3 +25,6 @@ window-width = 120
 
 # (macの信号機)タイトルバーを表示する
 window-decoration = true
+
+# 背景透過
+background-opacity = 0.6
