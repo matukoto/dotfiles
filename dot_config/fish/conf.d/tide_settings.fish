@@ -4,7 +4,7 @@
 
 # --- prompt layout ---
 set -U tide_left_prompt_items os pwd git newline character
-set -U tide_right_prompt_items status cmd_duration context jobs direnv bun node python rustc java php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir zig lua time
+set -U tide_right_prompt_items status cmd_duration context jobs direnv bun node svelte python rustc java php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir zig lua time
 
 set -U tide_left_prompt_frame_enabled false
 set -U tide_left_prompt_prefix ''
@@ -236,3 +236,8 @@ set -U tide_zig_icon \ue6a9
 set -U tide_lua_bg_color normal
 set -U tide_lua_color brblue
 set -U tide_lua_icon '🌙'
+
+# --- svelte ---
+set -U tide_svelte_bg_color normal
+set -U tide_svelte_color brred
+set -U tide_svelte_icon \ue697
