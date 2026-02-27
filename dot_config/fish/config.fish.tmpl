@@ -99,8 +99,10 @@ if status is-interactive
 
         # tools
         type -q zoxide && zoxide init fish >>$CONFIG_CACHE
-        type -q mise && mise activate fish >>$CONFIG_CACHE
-        type -q atuin && atuin init --disable-up-arrow fish >>$CONFIG_CACHE
+        # mise の起動時 hook-env（~17ms）をスキップし、fish_prompt イベント経由のみにする
+        type -q mise && mise activate fish | string replace --regex '^__mise_env_eval$' '' >>$CONFIG_CACHE
+        # atuin uuid は起動が遅い（~34ms）ため uuidgen で代替する
+        type -q atuin && atuin init --disable-up-arrow fish | string replace --all 'atuin uuid' 'uuidgen' >>$CONFIG_CACHE
 
         set_color brmagenta --bold --underline
         echo "config cache updated"
