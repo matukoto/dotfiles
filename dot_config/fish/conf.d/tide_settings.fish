@@ -1,11 +1,15 @@
 # tide 設定
-# バージョンが一致していれば set -U をスキップして起動を高速化する
-# 設定を変更したらバージョン番号をインクリメントすること
-set -l _tide_settings_version 1
-if test "$_tide_settings_version" = "$tide_settings_version"
+# tide_settings.fish の mtime が変わった場合のみ set -U を実行して起動を高速化する
+set -l _tide_settings_file (status filename)
+set -l _tide_settings_mtime (command stat -f %m $_tide_settings_file 2>/dev/null; or command stat -c %Y $_tide_settings_file 2>/dev/null)
+if test "$_tide_settings_mtime" = "$tide_settings_mtime"
     return
 end
-set -U tide_settings_version $_tide_settings_version
+set -U tide_settings_mtime $_tide_settings_mtime
+
+set_color brmagenta --bold --underline
+echo "tide settings updated"
+set_color normal
 
 # --- prompt layout ---
 set -U tide_left_prompt_items os pwd git newline vi_mode character
