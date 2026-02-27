@@ -98,11 +98,9 @@ if status is-interactive
         echo '' >$CONFIG_CACHE
 
         # tools
-        # type -q direnv && direnv hook fish >>$CONFIG_CACHE
-        zoxide init fish >>$CONFIG_CACHE
-        # type -q zoxide && zoxide init fish >>$CONFIG_CACHE
-        mise activate fish >>$CONFIG_CACHE
-        atuin init --disable-up-arrow fish >>$CONFIG_CACHE
+        type -q zoxide && zoxide init fish >>$CONFIG_CACHE
+        type -q mise && mise activate fish >>$CONFIG_CACHE
+        type -q atuin && atuin init --disable-up-arrow fish >>$CONFIG_CACHE
 
         set_color brmagenta --bold --underline
         echo "config cache updated"
