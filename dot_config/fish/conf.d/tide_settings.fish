@@ -1,6 +1,11 @@
 # tide 設定
-# fish_variables から切り出した tide_* Universal Variables
-# conf.d は fish_variables より後に読み込まれるため上書きが可能
+# バージョンが一致していれば set -U をスキップして起動を高速化する
+# 設定を変更したらバージョン番号をインクリメントすること
+set -l _tide_settings_version 1
+if test "$_tide_settings_version" = "$tide_settings_version"
+    return
+end
+set -U tide_settings_version $_tide_settings_version
 
 # --- prompt layout ---
 set -U tide_left_prompt_items os pwd git newline vi_mode character
