@@ -176,7 +176,7 @@ set -U tide_pwd_color_truncated_dirs magenta
 set -U tide_pwd_icon \uf07c
 set -U tide_pwd_icon_home \uf015
 set -U tide_pwd_icon_unwritable \uf023
-set -U tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform bun.lockb Cargo.toml composer.json CVS go.mod package.json build.zig
+set -U tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform bun.lockb Cargo.toml composer.json CVS go.mod package.json build.zig pom.xml build.gradle build.gradle.kts .java-version
 
 # --- python ---
 set -U tide_python_bg_color normal
