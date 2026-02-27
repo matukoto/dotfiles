@@ -3,8 +3,11 @@ function _tide_item_character
 
     set -q add_prefix || echo -ns ' '
 
-    # Neovim 内、またはデフォルトキーバインドの場合は常に ❯ を表示
-    if set -q NVIM; or test "$fish_key_bindings" = fish_default_key_bindings
+    # Neovim 内、デフォルトキーバインド、または vi_mode アイテムが左プロンプトにある場合は常に ❯ を表示
+    # （vi_mode アイテムがモード表示を担うため character 側では不要）
+    if set -q NVIM
+        or test "$fish_key_bindings" = fish_default_key_bindings
+        or contains vi_mode $tide_left_prompt_items
         echo -ns $tide_character_icon
     else
         switch $fish_bind_mode
