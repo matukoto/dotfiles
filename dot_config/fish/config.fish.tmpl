@@ -1,10 +1,6 @@
 if status is-interactive
 
-    # vi キーバインド（Neovim 内では無効化）
-    if not set -q NVIM
-        fish_vi_key_bindings
-    end
-
+    # vi キーバインドは conf.d/_key_bindings.fish で設定
     fish_add_path "$HOME/bin"
     fish_add_path "$HOME/.local/bin"
     fish_add_path "$HOME/go/bin"
