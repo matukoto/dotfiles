@@ -93,7 +93,7 @@ if status is-interactive
 
     # config caches
     set -l CONFIG_CACHE $FISH_CACHE_DIR/config.fish
-    if not test -f "$CONFIG_CACHE"; or test "$FISH_CONFIG" -nt "$CONFIG_CACHE"
+    if not test -f "$CONFIG_CACHE"; or test "$FISH_CONFIG_DIR/config.fish" -nt "$CONFIG_CACHE"
         mkdir -p $FISH_CACHE_DIR
         echo '' >$CONFIG_CACHE
 
