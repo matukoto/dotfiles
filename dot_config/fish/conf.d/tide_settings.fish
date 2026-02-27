@@ -109,7 +109,7 @@ set -U tide_git_color_staged yellow
 set -U tide_git_color_stash white
 set -U tide_git_color_untracked green
 set -U tide_git_color_upstream red
-set -U tide_git_icon ''
+set -U tide_git_icon ''
 set -U tide_git_truncation_length 24
 set -U tide_git_truncation_strategy ''
 
