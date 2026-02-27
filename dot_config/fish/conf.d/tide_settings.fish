@@ -13,7 +13,7 @@ set_color normal
 
 # --- prompt layout ---
 set -U tide_left_prompt_items os pwd git newline vi_mode character
-set -U tide_right_prompt_items status cmd_duration context jobs direnv bun node svelte python rustc java php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir zig lua time
+set -U tide_right_prompt_items status cmd_duration context jobs direnv bun node svelte python rustc java csharp fsharp php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir zig lua time
 
 set -U tide_left_prompt_frame_enabled false
 set -U tide_left_prompt_prefix ''
@@ -176,7 +176,7 @@ set -U tide_pwd_color_truncated_dirs magenta
 set -U tide_pwd_icon \uf07c
 set -U tide_pwd_icon_home \uf015
 set -U tide_pwd_icon_unwritable \uf023
-set -U tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform bun.lockb Cargo.toml composer.json CVS go.mod package.json build.zig pom.xml build.gradle build.gradle.kts .java-version
+set -U tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform bun.lockb Cargo.toml composer.json CVS go.mod package.json build.zig pom.xml build.gradle build.gradle.kts .java-version global.json
 
 # --- python ---
 set -U tide_python_bg_color normal
@@ -250,3 +250,13 @@ set -U tide_lua_icon '🌙'
 set -U tide_svelte_bg_color normal
 set -U tide_svelte_color brred
 set -U tide_svelte_icon \ue697
+
+# --- csharp ---
+set -U tide_csharp_bg_color normal
+set -U tide_csharp_color magenta
+set -U tide_csharp_icon \ue648
+
+# --- fsharp ---
+set -U tide_fsharp_bg_color normal
+set -U tide_fsharp_color blue
+set -U tide_fsharp_icon \ue7a7
