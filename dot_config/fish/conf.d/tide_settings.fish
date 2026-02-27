@@ -222,7 +222,7 @@ set -U tide_vi_mode_color_default white
 set -U tide_vi_mode_color_insert cyan
 set -U tide_vi_mode_color_replace green
 set -U tide_vi_mode_color_visual yellow
-set -U tide_vi_mode_icon_default D
+set -U tide_vi_mode_icon_default \ue62b
 set -U tide_vi_mode_icon_insert I
 set -U tide_vi_mode_icon_replace R
 set -U tide_vi_mode_icon_visual V
