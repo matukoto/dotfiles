@@ -3,7 +3,7 @@
 # conf.d は fish_variables より後に読み込まれるため上書きが可能
 
 # --- prompt layout ---
-set -U tide_left_prompt_items os pwd git newline character
+set -U tide_left_prompt_items os pwd git newline vi_mode character
 set -U tide_right_prompt_items status cmd_duration context jobs direnv bun node svelte python rustc java php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir zig lua time
 
 set -U tide_left_prompt_frame_enabled false
