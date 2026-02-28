@@ -901,33 +901,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.1/bin/darwin/amd64/kubectl",
-      "checksum": "07A04D82BC2DE2F5D53DFD81F2109CA864F634A82B225257DAA2F9C2DB15CCEF",
+      "id": "http/dl.k8s.io/v1.35.2/bin/darwin/amd64/kubectl",
+      "checksum": "163955964D4ED9E66656EAB45C0114F5C1110D1B430ACE432B20DDC430023DF5",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.1/bin/darwin/arm64/kubectl",
-      "checksum": "2B000DDED317319B1EBCA19C2BC70F772C7AAA0E8962FAE2D987BA04DD1A1B50",
+      "id": "http/dl.k8s.io/v1.35.2/bin/darwin/arm64/kubectl",
+      "checksum": "B0B59CDD7BA20CA20B85214943100E578DD50DDD85242FCDDF277A87C2249706",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.1/bin/linux/amd64/kubectl",
-      "checksum": "36E2F4AC66259232341DD7866952D64A958846470F6A9A6A813B9117BD965207",
+      "id": "http/dl.k8s.io/v1.35.2/bin/linux/amd64/kubectl",
+      "checksum": "924EB50779153F20CB668117D141440B95DF2F325A64452D78DFF9469145E277",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.1/bin/linux/arm64/kubectl",
-      "checksum": "706256E21A4E9192EE62D1A007AC0BFCFF2B0B26E92CC7BAAD487A6A5D08FF82",
+      "id": "http/dl.k8s.io/v1.35.2/bin/linux/arm64/kubectl",
+      "checksum": "CD859449F54AD2CB05B491C490C13BB836CDD0886AE013C0AED3DD67FF747467",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.1/bin/windows/amd64/kubectl.exe",
-      "checksum": "D2D28CA3440ED94262B9B4BFFB30119CFCA69AC30B9CAD531A08E8EBD9720DD2",
+      "id": "http/dl.k8s.io/v1.35.2/bin/windows/amd64/kubectl.exe",
+      "checksum": "A6D02010AAE330A3031AFE7843747D5A18DB59C9F0BCA415E45FB24BBDCCDD2C",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.1/bin/windows/arm64/kubectl.exe",
-      "checksum": "BD79A702525F2E30D5275A22AA2BDA6FD34B92FA8D474DCE2B151E7B9A155B4C",
+      "id": "http/dl.k8s.io/v1.35.2/bin/windows/arm64/kubectl.exe",
+      "checksum": "108B38BC77542AA055E35DE56079C299038A97FCDC873DF7938923EA9B56BBB6",
       "algorithm": "sha256"
     },
     {
