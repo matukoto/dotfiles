@@ -32,7 +32,7 @@ return {
     { '<C-g>p', '<Cmd>Gin push --quiet<CR>', desc = 'Gin Push' },
     { '<C-g>l', '<Cmd>GinLog<CR>', desc = 'Gin Log' },
     { '<C-g>b', '<Cmd>GinBranch --all<CR>', desc = 'Gin Branch' },
-    { '<C-g>d', '<Cmd>GinDiff<CR>', desc = 'Gin Diff' },
+    -- { '<C-g>d', '<Cmd>GinDiff<CR>', desc = 'Gin Diff' },
   },
   -- config function to define autocmds and custom functions after loading
   config = function()
