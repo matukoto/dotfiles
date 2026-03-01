@@ -5,6 +5,8 @@
     "github>aquaproj/aqua-renovate-config#2.10.0"
   ],
   "timezone": "Asia/Tokyo",
+  "prConcurrentLimit": 1,
+  "prHourlyLimit": 0,
   "automerge": true,
   "dependencyDashboard": true,
   "platformAutomerge": true,
@@ -13,14 +15,14 @@
       "matchUpdateTypes": [
         "patch"
       ],
-      "minimumReleaseAge": "2 days",
+      "minimumReleaseAge": "1 days",
       "automerge": true
     },
     {
       "matchUpdateTypes": [
         "minor"
       ],
-      "minimumReleaseAge": "5 days",
+      "minimumReleaseAge": "1 days",
       "automerge": true
     },
     {
