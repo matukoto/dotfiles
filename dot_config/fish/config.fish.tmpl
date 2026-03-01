@@ -110,15 +110,10 @@ if status is-interactive
         set need_update 1
     end
 
-    # ツールのバージョンが変わった場合に再生成（aqua 経由のツールは mtime で検知できないため）
+    # aqua.yaml が CONFIG_CACHE より新しければツールが更新された可能性があるため再生成
     if test $need_update -eq 0
-        set -l current_versions ""
-        type -q zoxide && set -a current_versions (command zoxide --version 2>/dev/null)
-        type -q mise && set -a current_versions (command mise --version 2>/dev/null)
-        type -q atuin && set -a current_versions (command atuin --version 2>/dev/null)
-        set -l saved_versions (cat $FISH_CACHE_DIR/tool_versions 2>/dev/null)
-        if test "$current_versions" != "$saved_versions"
-            echo "tool versions changed, updating config cache"
+        if test -f "$AQUA_GLOBAL_CONFIG"; and test "$AQUA_GLOBAL_CONFIG" -nt "$CONFIG_CACHE"
+            echo "aqua config updated, updating config cache"
             set need_update 1
         end
     end
@@ -126,13 +121,6 @@ if status is-interactive
     if test $need_update -eq 1
         mkdir -p $FISH_CACHE_DIR
         echo '' >$CONFIG_CACHE
-
-        # ツールバージョンを記録
-        set -l current_versions ""
-        type -q zoxide && set -a current_versions (command zoxide --version 2>/dev/null)
-        type -q mise && set -a current_versions (command mise --version 2>/dev/null)
-        type -q atuin && set -a current_versions (command atuin --version 2>/dev/null)
-        printf '%s\n' $current_versions >$FISH_CACHE_DIR/tool_versions
 
         # tools
         type -q zoxide && zoxide init fish >>$CONFIG_CACHE
