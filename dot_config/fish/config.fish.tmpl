@@ -1,3 +1,34 @@
+# === 環境変数（インタラクティブ・非インタラクティブ共通）===
+
+# XDG Base Directory
+set -x XDG_CONFIG_HOME $HOME/.config
+set -x XDG_CACHE_HOME $HOME/.cache
+set -x XDG_DATA_HOME $HOME/.local/share
+set -x XDG_STATE_HOME $HOME/.local/state
+set -x INITVIM $XDG_CONFIG_HOME/nvim/init.vim
+set -x VIMRC $HOME/.vimrc
+set -x AQUA_GLOBAL_CONFIG $XDG_CONFIG_HOME/aqua/aqua.yaml
+# {{ if (or (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "DesktopFractal") (eq .chezmoi.hostname "ThinkPadE14")) -}}
+set -x PRIVATE_PLUGIN_ENABLED true
+# {{- end }}
+
+# Fish paths
+set -x FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
+#set -x FISH_COMPLETIONS_DIR $FISH_CONFIG_DIR/completions
+set -x FISH_FUNCTIONS_DIR $FISH_CONFIG_DIR/functions
+set -x FISH_CACHE_DIR $XDG_CACHE_HOME/fish
+
+set -x BROWSER wslview
+set -x EDITOR nvim
+#set -x MANPAGER 'nvim +Man!'
+set -x SYSTEMD_EDITOR "$EDITOR"
+set -x TZ Asia/Tokyo
+
+# GPG_TTY: TTY がある場合のみ設定
+if tty > /dev/null 2>&1
+    set -x GPG_TTY (tty)
+end
+
 if status is-interactive
 
     # vi キーバインドは conf.d/_key_bindings.fish で設定
@@ -15,31 +46,6 @@ if status is-interactive
     # {{- else if eq .chezmoi.os "linux" -}}
     eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
     # {{- end }}
-
-    # XDG Base Directory
-    set -x XDG_CONFIG_HOME $HOME/.config
-    set -x XDG_CACHE_HOME $HOME/.cache
-    set -x XDG_DATA_HOME $HOME/.local/share
-    set -x XDG_STATE_HOME $HOME/.local/state
-    set -x INITVIM $XDG_CONFIG_HOME/nvim/init.vim
-    set -x VIMRC $HOME/.vimrc
-    set -x AQUA_GLOBAL_CONFIG $XDG_CONFIG_HOME/aqua/aqua.yaml
-    # {{ if (or (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "DesktopFractal") (eq .chezmoi.hostname "ThinkPadE14")) -}}
-    set -x PRIVATE_PLUGIN_ENABLED true
-    # {{- end }}
-
-    # Fish paths
-    set -x FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
-    #set -x FISH_COMPLETIONS_DIR $FISH_CONFIG_DIR/completions
-    set -x FISH_FUNCTIONS_DIR $FISH_CONFIG_DIR/functions
-    set -x FISH_CACHE_DIR $XDG_CACHE_HOME/fish
-
-    set -x BROWSER wslview
-    set -x EDITOR nvim
-    #set -x MANPAGER 'nvim +Man!'
-    set -x SYSTEMD_EDITOR "$EDITOR"
-    set -x TZ Asia/Tokyo
-    set -x GPG_TTY (tty)
 
     abbr --add f ghf
     abbr --add ai 'aqua i -a'
@@ -142,9 +148,7 @@ if status is-interactive
         # atuin uuid は起動が遅い（~34ms）ため uuidgen で代替する
         type -q atuin && atuin init --disable-up-arrow fish | string replace --all 'atuin uuid' uuidgen >>$CONFIG_CACHE
 
-        set_color brmagenta --bold --underline
         echo "config cache updated"
-        set_color normal
     end
     source $CONFIG_CACHE
 
