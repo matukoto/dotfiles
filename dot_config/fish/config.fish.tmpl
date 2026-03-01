@@ -11,9 +11,9 @@ if status is-interactive
     fish_add_path "$HOME/.local/share/aquaproj-aqua/bin"
 
     # {{ if eq .chezmoi.os "darwin" -}}
-    # eval (/opt/homebrew/bin/brew shellenv)
+    eval (/opt/homebrew/bin/brew shellenv)
     # {{- else if eq .chezmoi.os "linux" -}}
-    # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
     # {{- end }}
 
     # XDG Base Directory
@@ -100,6 +100,7 @@ if status is-interactive
     if not test -f "$CONFIG_CACHE"
         set need_update 1
     else if test "$FISH_CONFIG_DIR/config.fish" -nt "$CONFIG_CACHE"
+        echo "config cache need update"
         set need_update 1
     end
 
@@ -108,6 +109,7 @@ if status is-interactive
         if type -q zoxide
             set -l zoxide_path (command -s zoxide 2>/dev/null)
             if test -n "$zoxide_path"; and test "$zoxide_path" -nt "$CONFIG_CACHE"
+                echo "zoxide cache need update"
                 set need_update 1
             end
         end
@@ -115,6 +117,7 @@ if status is-interactive
         if test $need_update -eq 0; and type -q mise
             set -l mise_path (command -s mise 2>/dev/null)
             if test -n "$mise_path"; and test "$mise_path" -nt "$CONFIG_CACHE"
+                echo "mise cache need update"
                 set need_update 1
             end
         end
@@ -122,6 +125,7 @@ if status is-interactive
         if test $need_update -eq 0; and type -q atuin
             set -l atuin_path (command -s atuin 2>/dev/null)
             if test -n "$atuin_path"; and test "$atuin_path" -nt "$CONFIG_CACHE"
+                echo "atuin cache need update"
                 set need_update 1
             end
         end
@@ -136,7 +140,7 @@ if status is-interactive
         # mise の起動時 hook-env（~17ms）をスキップし、fish_prompt イベント経由のみにする
         type -q mise && mise activate fish | string replace --regex '^__mise_env_eval$' '' >>$CONFIG_CACHE
         # atuin uuid は起動が遅い（~34ms）ため uuidgen で代替する
-        type -q atuin && atuin init --disable-up-arrow fish | string replace --all 'atuin uuid' 'uuidgen' >>$CONFIG_CACHE
+        type -q atuin && atuin init --disable-up-arrow fish | string replace --all 'atuin uuid' uuidgen >>$CONFIG_CACHE
 
         set_color brmagenta --bold --underline
         echo "config cache updated"
