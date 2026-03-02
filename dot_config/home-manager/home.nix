@@ -1,6 +1,18 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
+  # unfree だが矯正許可する
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "copilot-language-server"
+    ];
+
   home = {
     username = "matukoto";
     homeDirectory = "/Users/matukoto";
