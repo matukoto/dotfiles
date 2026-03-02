@@ -28,6 +28,7 @@ local mason_servers = {
 local non_mason_servers = {
   'gopls',
   'denols',
+  'nixd',
 }
 
 local mason_tools = {

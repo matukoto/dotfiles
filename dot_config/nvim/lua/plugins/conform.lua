@@ -57,6 +57,7 @@ return {
     },
     formatters_by_ft = {
       lua = { 'stylua' },
+      nix = { 'nixfmt' },
       sql = { 'sql_formatter' },
       yaml = { 'yamlfmt' },
       java = { lsp_format = 'fallback' },
