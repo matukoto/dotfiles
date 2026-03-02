@@ -6,7 +6,7 @@
 }:
 
 {
-  # unfree だが矯正許可する
+  # unfree だが許可する
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
@@ -27,7 +27,7 @@
       actionlint
       bash-language-server
       copilot-language-server
-      csharp-ls
+      # csharp-ls MacOS ではインストールできない
       fish-lsp
       fsautocomplete
       fantomas
