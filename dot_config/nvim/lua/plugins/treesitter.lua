@@ -11,6 +11,7 @@ return {
       'lua',
       'fsharp',
       'make',
+      'nix',
       -- Frontend
       'typescript',
       'tsx',
