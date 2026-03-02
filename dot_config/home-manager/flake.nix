@@ -13,6 +13,7 @@
 
   outputs =
     {
+      self,
       nixpkgs,
       home-manager,
       neovim-nightly-overlay,
