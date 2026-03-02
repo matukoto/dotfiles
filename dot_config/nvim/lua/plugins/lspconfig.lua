@@ -6,14 +6,14 @@
 -- 5. vim.lsp.config('hoge', {……})
 -- の順に後勝ちで読み込まれる
 
-local mason_servers = {
+-- nix で管理しているサーバー（mason不要）
+local lsp_servers = {
   'svelte',
   'vtsls',
   'lua_ls',
   'sqls',
   'typos_lsp',
   'bashls',
-  -- 'marksman',
   'fsautocomplete',
   'csharp_ls',
   'vimls',
@@ -23,27 +23,10 @@ local mason_servers = {
   'tailwindcss',
   'copilot',
   'fish_lsp',
-}
-
-local non_mason_servers = {
+  -- gopls, denols, nixd は after/lsp/ で個別設定
   'gopls',
   'denols',
   'nixd',
-}
-
-local mason_tools = {
-  'stylua',
-  'shellcheck',
-  'typos',
-  'shfmt',
-  'sql-formatter',
-  'fixjson',
-  'eslint_d',
-  'markdownlint-cli2',
-  'yamlfmt',
-  'fantomas',
-  'csharp-language-server',
-  'taplo',
 }
 
 return {
@@ -51,25 +34,10 @@ return {
   {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
-    -- Dependencies - these should also be listed in the main plugins file
-    -- lazy.nvim handles loading dependencies before the main plugin
     dependencies = {
       'nvimdev/lspsaga.nvim',
       'jinzhongjia/LspUI.nvim',
       'saghen/blink.cmp',
-      {
-        'mason-org/mason.nvim',
-        config = function()
-          require('mason').setup({
-            registries = {
-              'github:nvim-java/mason-registry',
-              'github:mason-org/mason-registry',
-            },
-          })
-        end,
-      },
-      { 'mason-org/mason-lspconfig.nvim' },
-      { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
     },
 
     -- config function runs after the plugin and its dependencies are loaded
@@ -79,24 +47,8 @@ return {
         capabilities = require('blink.cmp').get_lsp_capabilities(),
       })
 
-      require('mason')
-      require('mason-lspconfig').setup({
-        -- mason でインストールした LS を自動で enable する
-        automatic_enable = {
-          exclude = {
-            -- 'vtsls',
-          },
-        },
-        ensure_installed = mason_servers,
-      })
+      vim.lsp.enable(lsp_servers)
 
-      require('mason-tool-installer').setup({
-        ensure_installed = mason_tools,
-        auto_update = false,
-        run_on_start = true,
-      })
-
-      vim.lsp.enable(non_mason_servers)
       vim.diagnostic.config({
         severity_sort = true,
         virtual_text = false,
@@ -214,9 +166,6 @@ return {
             -- Check if inlay hint function exists (Neovim 0.10+)
             if vim.lsp.inlay_hint then
               vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
-              -- Legacy check for older Neovim versions (if needed)
-              -- elseif vim.lsp.buf.inlay_hint then
-              --    vim.lsp.buf.inlay_hint(ev.buf, true)
             end
           end
           -- copilot でのみインラインtab補完を有効にする
