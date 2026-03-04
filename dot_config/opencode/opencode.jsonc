@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "github-copilot/gpt-5.2-codex",
+  "model": "github-copilot/claude-sonnet-4.6",
   "small_model": "google/gemini-3-pro-preview",
   "lsp": {
     "typescript": {
@@ -46,14 +46,6 @@
         "write": true,
         "edit": true
       }
-    }
-  },
-  // 背景が透明なテーマ
-  "theme": "lucent-orng",
-  "mcp": {
-    "svelte": {
-      "type": "remote",
-      "url": "https://mcp.svelte.dev/mcp"
     }
   }
 }
