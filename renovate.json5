@@ -41,15 +41,21 @@
     },
     {
       "matchFileNames": [
-        "mise/config.toml"
+        "dot_config/mise/**",
+        "**/mise.toml"
       ],
-      "enabledManagers": [
-        "mise",
-        "npm",
-        "gomod",
-        "cargo"
+      "groupName": "mise",
+      "commitMessageTopic": "mise"
+    },
+    {
+      "matchFileNames": [
+        "dot_config/aqua/**"
       ],
-      "groupName": "mise"
+      "excludePackageNames": [
+        "aquaproj/aqua-registry"
+      ],
+      "groupName": "aqua",
+      "commitMessageTopic": "aqua"
     },
     {
       "matchManagers": [
