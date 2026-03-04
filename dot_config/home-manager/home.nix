@@ -38,6 +38,10 @@
       sqls
       yaml-language-server
 
+      # Package managers
+      mise
+      (callPackage ./pkgs/aqua.nix { })
+
       # Linters / Formatters / Tools
       nixfmt
       actionlint
