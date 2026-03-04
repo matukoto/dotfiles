@@ -39,11 +39,10 @@ packages の編集後 `home-manager switch` を実行することでパッケー
 
 #### 手始めに Nix の lsp と formatter を home-manager で管理する
 
-```home.nix
-  home.packages = with pkgs; [
-    nixfmt
-    nixd
-  ];
+```nix
+home.packages = with pkgs; [  nixfmt
+  nixd
+];
 ```
 
 ### パッケージ最新化
@@ -69,17 +68,90 @@ home-manager switch --flake .#matukoto@linux
 ```
 home-manager/
 ├── flake.nix   # エントリーポイント・依存管理
-├── flake.lock  # 依存バージョンのロックファイル（手動編集しない）
-├── home.nix    # Darwin / Linux 共通設定（パッケージ一覧など）
+├── flake.lock  # ロックファイル
+├── home.nix    # OS 共通設定
 ├── darwin.nix  # macOS 固有設定
 └── linux.nix   # Linux(WSL) 固有設定
 ```
 
-#### 設計方針
+### nixpkgs から検索
 
-- `home.nix` に共通パッケージ（LSP・linter・formatter など）をまとめる
-- `darwin.nix` / `linux.nix` が `home.nix` を `imports` で取り込み、OS 固有の設定を上書き・追加する
-- `flake.nix` で `pkgsDarwin`（aarch64-darwin）と `pkgsLinux`（x86_64-linux）を別々に用意し、`homeConfigurations."matukoto@darwin"` / `"matukoto@linux"` として公開する
+```sh
+nix search nixpkgs <package-name>
+```
+
+### nixpkgs にない場合
+
+今回は aqua をインストールしたい。
+pkgs ディレクトリ配下に aqua.nix を作成して、aqua のインストール方法を記述する。
+以下のように aqua.nix を作成しhome.nix で aqua.nix を呼び出す。
+
+```
+home-manager/
+├── home.nix
+└── pkgs/
+    └── aqua.nix
+```
+
+##### home.nix
+
+```nix
+{
+  home = {
+    packages = with pkgs; [
+       # aqua.nix を呼び出す
+      (pkgs.callPackage ./pkgs/aqua.nix { })
+    ];
+  }
+}
+```
+
+##### aqua.nix
+
+Linux と macOS でインストールするファイルが違うため、それぞれ設定している
+
+```nix
+{ pkgs }:
+
+let
+  version = "2.56.7";
+
+  target =
+    if pkgs.stdenv.isDarwin then
+      {
+        suffix = "darwin_arm64";
+        sha256 = "8d6b37e86448debc0dfabf3b103f11bea8d7ad9b0c0b9bb3163b6075bbd87aba";
+      }
+    else
+      {
+        suffix = "linux_amd64";
+        sha256 = "0000000000000000000000000000000000000000000000000000000000000000";
+      };
+in
+pkgs.stdenv.mkDerivation {
+  pname = "aqua";
+  inherit version;
+
+  src = pkgs.fetchurl {
+    url = "https://github.com/aquaproj/aqua/releases/download/v${version}/aqua_${target.suffix}.tar.gz";
+    sha256 = target.sha256;
+  };
+
+  sourceRoot = ".";
+
+  installPhase = ''
+    mkdir -p $out/bin
+    cp -r aqua $out/bin/
+    chmod +x $out/bin/aqua
+  '';
+
+  meta = {
+    description = "Declarative CLI Version manager written in Go.";
+    homepage = "https://github.com/aquaproj/aqua";
+    license = pkgs.lib.licenses.mit;
+  };
+}
+```
 
 ## 参考
 
@@ -88,3 +160,4 @@ home-manager/
 - [Nixでdotfiles管理できるようになるまでのメモ](https://zenn.dev/airrnot1106/scraps/20e6a33574229f)
 - [Nixとhome-managerにdotfiles管理を移行する](https://blog.tomoyukim.net/entry/nix-home-manager/)
 - [home-manager/modules/programs at master · nix-community/home-manager](https://github.com/nix-community/home-manager/tree/master/modules/programs)
+- [yuyu-hf/dotfiles](https://github.com/yuyu-hf/dotfiles)
