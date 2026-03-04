@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  username,
   ...
 }:
 
@@ -14,7 +15,7 @@
     ];
 
   home = {
-    username = "matukoto";
+    inherit username;
     stateVersion = "25.11"; # Please read the comment before changing.
 
     packages = with pkgs; [

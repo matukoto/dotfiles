@@ -29,21 +29,31 @@
         system = "x86_64-linux";
         overlays = sharedOverlays;
       };
+
+      mkHome =
+        {
+          pkgs,
+          modules,
+          username,
+        }:
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inherit username; };
+          inherit modules;
+        };
     in
     {
       homeConfigurations = {
-        "matukoto@darwin" = home-manager.lib.homeManagerConfiguration {
+        "darwin" = mkHome {
           pkgs = pkgsDarwin;
-          modules = [
-            ./darwin.nix
-          ];
+          username = "matukoto";
+          modules = [ ./darwin.nix ];
         };
 
-        "matukoto@linux" = home-manager.lib.homeManagerConfiguration {
+        "linux" = mkHome {
           pkgs = pkgsLinux;
-          modules = [
-            ./linux.nix
-          ];
+          username = "matsumoto";
+          modules = [ ./linux.nix ];
         };
       };
     };

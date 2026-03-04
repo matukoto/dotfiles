@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  username,
   ...
 }:
 
@@ -8,7 +9,7 @@
   imports = [ ./home.nix ];
 
   home = {
-    homeDirectory = "/Users/matukoto";
+    homeDirectory = "/Users/${username}";
 
     packages = with pkgs; [
     ];
