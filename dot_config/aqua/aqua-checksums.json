@@ -401,6 +401,26 @@
       "algorithm": "sha256"
     },
     {
+      "id": "github_release/github.com/jdx/mise/v2026.3.0/mise-v2026.3.0-linux-arm64-musl.tar.gz",
+      "checksum": "42B92CFCED1E0B241B340537389DDD91E583388ECE21A4FE767200E1A88E41B3",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/jdx/mise/v2026.3.0/mise-v2026.3.0-linux-x64-musl.tar.gz",
+      "checksum": "776F121A30D587C26108766838F5E6DD4D945629394C33283372D343003E8442",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/jdx/mise/v2026.3.0/mise-v2026.3.0-macos-arm64.tar.gz",
+      "checksum": "2D91CF6E058FEDFC6E1C7319144FE74BE9D12684F4F0478C633D4318A780F0E2",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/jdx/mise/v2026.3.0/mise-v2026.3.0-macos-x64.tar.gz",
+      "checksum": "EE66771923975E03A2FAAE90122D2E5116ED56EBFF31CE51140D0B331992B3FB",
+      "algorithm": "sha256"
+    },
+    {
       "id": "github_release/github.com/jqlang/jq/jq-1.8.1/jq-linux-amd64",
       "checksum": "020468DE7539CE70EF1BCEAF7CDE2E8C4F2CA6C3AFB84642AABC5C97D9FC2A0D",
       "algorithm": "sha256"
