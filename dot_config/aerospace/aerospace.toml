@@ -156,6 +156,10 @@ on-mode-changed = []
     if.app-id = 'com.microsoft.teams2'
     run = 'layout floating'
 
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    run = 'layout floating'
+
 # https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
     1 = 1
