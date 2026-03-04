@@ -2,7 +2,6 @@
   description = "Home Manager configuration of matukoto";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -13,24 +12,39 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
       neovim-nightly-overlay,
+      ...
     }:
     let
-      system = "aarch64-darwin";
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [ neovim-nightly-overlay.overlays.default ];
+      sharedOverlays = [ neovim-nightly-overlay.overlays.default ];
+
+      pkgsDarwin = import nixpkgs {
+        system = "aarch64-darwin";
+        overlays = sharedOverlays;
+      };
+
+      pkgsLinux = import nixpkgs {
+        system = "x86_64-linux";
+        overlays = sharedOverlays;
       };
     in
     {
-      homeConfigurations."matukoto" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      homeConfigurations = {
+        "matukoto@darwin" = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsDarwin;
+          modules = [
+            ./darwin.nix
+          ];
+        };
 
-        modules = [ ./home.nix ];
-
+        "matukoto@linux" = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsLinux;
+          modules = [
+            ./linux.nix
+          ];
+        };
       };
     };
 }

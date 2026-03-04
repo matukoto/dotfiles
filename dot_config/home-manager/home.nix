@@ -15,22 +15,17 @@
 
   home = {
     username = "matukoto";
-    homeDirectory = "/Users/matukoto";
-
     stateVersion = "25.11"; # Please read the comment before changing.
+
     packages = with pkgs; [
-      nixfmt
-      nixd
-      neovim
+      neovim # nightly
 
       # LSP servers
-      actionlint
+      nixd
       bash-language-server
       copilot-language-server
-      # csharp-ls MacOS ではインストールできない
       fish-lsp
       fsautocomplete
-      fantomas
       jdt-language-server
       lemminx
       lombok
@@ -38,28 +33,26 @@
       svelte-language-server
       tailwindcss-language-server
       typos-lsp
-      vim-language-server
       vtsls
       vscode-langservers-extracted # jsonls など
+      sqls
       yaml-language-server
 
       # Linters / Formatters / Tools
+      nixfmt
+      actionlint
       eslint_d
+      fantomas
       fixjson
       markdownlint-cli2
       shellcheck
       shfmt
       sql-formatter
-      sqls
       stylua
       taplo
       typos
       yamlfmt
     ];
-
-    file = {
-    };
-
   };
 
   programs.home-manager.enable = true;
