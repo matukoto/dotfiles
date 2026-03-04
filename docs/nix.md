@@ -18,6 +18,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://nixos.org/nix/install | sh
 
 experimental なのに実質標準らしい。
 はよ標準にしてくれ。
+何か理由があるのかな？
 
 ```~/.cofnig/nix/nix.conf
 experimental-features = nix-command flakes
@@ -27,22 +28,35 @@ experimental-features = nix-command flakes
  nix run home-manager/master -- init --switch
 ```
 
-### 手始めに Nix の lsp と formatter を home-manager で管理する
+シェル再起動で home-manager が利用できるようになる。
 
-```nix
-{ pkgs, ... }:
+### パッケージ導入
 
-{
+home.nix の packages 配下を編集することでパッケージの管理ができる。
+packages の編集後 `home-manager switch` を実行することでパッケージの管理が反映される。
+
+#### 手始めに Nix の lsp と formatter を home-manager で管理する
+
+```home.nix
   home.packages = with pkgs; [
-    # lsp
-    rls
-    rust-analyzer
-    # formatter
-    rustfmt
+    nixfmt
+    nixd
   ];
-}
-```formmter
+```
+
+### パッケージ最新化
+
+```sh
+# flake.lock を更新
+nix flake update
+home-manager switch
+```
+
+### クロスプラットフォーム化
+
+macOS と Linux(WSL2 Ubuntu) で同じ home.nix を利用できるようにする。
 
 ## 参考
 
 - [home-manager入門/kuu](https://zenn.dev/kuu/articles/20250204_introduce-home-manager)
+- [Homebrew管理下のCLIをNixに移してみる/kawarimidoll](https://zenn.dev/kawarimidoll/articles/0a4ec8bab8a8ba)
