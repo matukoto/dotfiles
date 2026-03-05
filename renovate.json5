@@ -64,7 +64,16 @@
       ],
       "description": "Restrict Java versions to mise-compatible format",
       "allowedVersions": "/^corretto-\\d+\\.\\d+\\.\\d+\\.\\d+\\.\\d+$/",
-      "versioning": "loose",
+      "versioning": "loose"
+    },
+    {
+      "matchManagers": [
+        "mise"
+      ],
+      "matchPackageNames": [
+        "java"
+      ],
+      "description": "Disable major updates for Java",
       "matchUpdateTypes": [
         "patch",
         "minor"
