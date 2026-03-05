@@ -44,18 +44,16 @@
         "dot_config/mise/**",
         "**/mise.toml"
       ],
-      "groupName": "mise",
-      "commitMessageTopic": "mise"
+      "groupName": "mise"
     },
     {
       "matchFileNames": [
         "dot_config/aqua/**"
       ],
-      "groupName": "aqua",
-      "commitMessageTopic": "aqua",
-      "matchPackageNames": [
-        "!aquaproj/aqua-registry"
-      ]
+      "excludePackageNames": [
+        "aquaproj/aqua-registry"
+      ],
+      "groupName": "aqua"
     },
     {
       "matchManagers": [
