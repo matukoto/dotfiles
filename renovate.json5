@@ -59,10 +59,10 @@
       matchManagers: [
         'mise',
       ],
-      matchPackageNames: [
+      matchDepNames: [
         'java',
       ],
-      description: 'Disable Java updates (corretto format not supported by Renovate)',
+      description: 'Javaの自動更新を無効化。RenovateはcorrettoプレフィックスをパースできないためpackageName=java-jdkにフォールバックし、matchPackageNamesが効かない。そのためmatchDepNamesを使用している。',
       enabled: false,
     },
   ],
