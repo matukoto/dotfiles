@@ -1,72 +1,76 @@
 {
-  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: [
-    'config:best-practices',
-    'github>aquaproj/aqua-renovate-config#2.10.0',
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    "github>aquaproj/aqua-renovate-config#2.10.0"
   ],
-  timezone: 'Asia/Tokyo',
-  prConcurrentLimit: 1,
-  prHourlyLimit: 0,
-  automerge: true,
-  dependencyDashboard: true,
-  platformAutomerge: true,
-  packageRules: [
+  "timezone": "Asia/Tokyo",
+  "prConcurrentLimit": 1,
+  "prHourlyLimit": 0,
+  "automerge": true,
+  "dependencyDashboard": true,
+  "platformAutomerge": true,
+  "packageRules": [
     {
-      matchUpdateTypes: [
-        'patch',
+      "matchUpdateTypes": [
+        "patch"
       ],
-      minimumReleaseAge: '1 days',
-      automerge: true,
+      "minimumReleaseAge": "1 days",
+      "automerge": true
     },
     {
-      matchUpdateTypes: [
-        'minor',
+      "matchUpdateTypes": [
+        "minor"
       ],
-      minimumReleaseAge: '1 days',
-      automerge: true,
+      "minimumReleaseAge": "1 days",
+      "automerge": true
     },
     {
-      matchUpdateTypes: [
-        'major',
+      "matchUpdateTypes": [
+        "major"
       ],
-      automerge: false,
+      "automerge": false
     },
     {
-      matchPackageNames: [
-        'aquaproj/aqua-registry',
+      "matchPackageNames": [
+        "aquaproj/aqua-registry"
       ],
-      extends: [
-        'schedule:earlyMondays',
-      ],
+      "extends": [
+        "schedule:earlyMondays"
+      ]
     },
     {
-      matchFileNames: [
-        'dot_config/mise/**',
-        '**/mise.toml',
+      "matchFileNames": [
+        "dot_config/mise/**",
+        "**/mise.toml"
       ],
-      groupName: 'mise',
-      commitMessageTopic: 'mise',
+      "groupName": "mise",
+      "commitMessageTopic": "mise"
     },
     {
-      matchFileNames: [
-        'dot_config/aqua/**',
+      "matchFileNames": [
+        "dot_config/aqua/**"
       ],
-      groupName: 'aqua',
-      commitMessageTopic: 'aqua',
-      matchPackageNames: [
-        '!aquaproj/aqua-registry',
-      ],
+      "groupName": "aqua",
+      "commitMessageTopic": "aqua",
+      "matchPackageNames": [
+        "!aquaproj/aqua-registry"
+      ]
     },
     {
-      matchManagers: [
-        'mise',
+      "matchManagers": [
+        "mise"
       ],
-      matchPackageNames: [
-        'java',
+      "matchPackageNames": [
+        "java"
       ],
-      description: 'Restrict Java versions to mise-compatible format',
-      allowedVersions: '/^corretto-\\d+\\.\\d+\\.\\d+\\.\\d+\\.\\d+$/',
-      versioning: 'loose',
-    },
-  ],
+      "description": "Restrict Java versions to mise-compatible format",
+      "allowedVersions": "/^corretto-\\d+\\.\\d+\\.\\d+\\.\\d+\\.\\d+$/",
+      "versioning": "loose",
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ]
+    }
+  ]
 }
