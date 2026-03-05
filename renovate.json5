@@ -62,22 +62,8 @@
       "matchPackageNames": [
         "java"
       ],
-      "description": "Restrict Java versions to mise-compatible format",
-      "allowedVersions": "/^corretto-\\d+\\.\\d+\\.\\d+\\.\\d+\\.\\d+$/",
-      "versioning": "loose"
-    },
-    {
-      "matchManagers": [
-        "mise"
-      ],
-      "matchPackageNames": [
-        "java"
-      ],
-      "description": "Disable major updates for Java",
-      "matchUpdateTypes": [
-        "patch",
-        "minor"
-      ]
+      "description": "Disable Java updates (corretto format not supported by Renovate)",
+      "enabled": false
     }
   ]
 }
