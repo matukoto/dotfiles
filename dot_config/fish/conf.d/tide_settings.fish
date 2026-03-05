@@ -148,11 +148,6 @@ set -U tide_node_bg_color normal
 set -U tide_node_color green
 set -U tide_node_icon \ue24f
 
-# --- os ---
-set -U tide_os_bg_color normal
-set -U tide_os_color brwhite
-set -U tide_os_icon \uf179
-
 # --- php ---
 set -U tide_php_bg_color normal
 set -U tide_php_color blue
