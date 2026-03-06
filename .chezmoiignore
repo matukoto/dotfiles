@@ -14,6 +14,10 @@ README.md
 *.key
 renovate.json5
 minimal_init.lua
+.config/fish/config.fish
+.config/fish/fish_plugins
+.config/fish/conf.d
+.config/fish/functions
 {{ if eq .chezmoi.os "windows" }}
 .config/efm-langserver
 .config/fish
