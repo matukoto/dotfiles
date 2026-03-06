@@ -7,6 +7,8 @@
 }:
 
 {
+  imports = [ ./modules/fish.nix ];
+
   # unfree だが許可する
   nixpkgs.config.allowUnfreePredicate =
     pkg:

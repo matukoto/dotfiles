@@ -8,44 +8,37 @@ set -x XDG_STATE_HOME $HOME/.local/state
 set -x INITVIM $XDG_CONFIG_HOME/nvim/init.vim
 set -x VIMRC $HOME/.vimrc
 set -x AQUA_GLOBAL_CONFIG $XDG_CONFIG_HOME/aqua/aqua.yaml
-# {{ if (or (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "DesktopFractal") (eq .chezmoi.hostname "ThinkPadE14")) -}}
-set -x PRIVATE_PLUGIN_ENABLED true
-# {{- end }}
 
 # Fish paths
 set -x FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
-#set -x FISH_COMPLETIONS_DIR $FISH_CONFIG_DIR/completions
 set -x FISH_FUNCTIONS_DIR $FISH_CONFIG_DIR/functions
 set -x FISH_CACHE_DIR $XDG_CACHE_HOME/fish
 
-set -x BROWSER wslview
+# Nix が OS ごとに生成時に差し込む
+# __PRIVATE_PLUGIN_ENABLED_LINE__
+# __BROWSER_LINE__
 set -x EDITOR nvim
-#set -x MANPAGER 'nvim +Man!'
 set -x SYSTEMD_EDITOR "$EDITOR"
 set -x TZ Asia/Tokyo
 
 # GPG_TTY: TTY がある場合のみ設定
-if tty > /dev/null 2>&1
+if tty >/dev/null 2>&1
     set -x GPG_TTY (tty)
 end
 
 if status is-interactive
-
     # vi キーバインドは conf.d/_key_bindings.fish で設定
     fish_add_path "$HOME/bin"
     fish_add_path "$HOME/.local/bin"
     fish_add_path "$HOME/go/bin"
     fish_add_path "$HOME/.cargo/bin"
-    fish_add_path "$HOME/.rustup/toolchains/*/bin"
     fish_add_path "$HOME/.deno/bin"
     fish_add_path "$HOME/.local/share/nvim/mason/bin"
     fish_add_path "$HOME/.local/share/aquaproj-aqua/bin"
 
-    # {{ if eq .chezmoi.os "darwin" -}}
-    eval (/opt/homebrew/bin/brew shellenv)
-    # {{- else if eq .chezmoi.os "linux" -}}
-    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-    # {{- end }}
+    if type -q brew
+        eval (brew shellenv)
+    end
 
     abbr --add f ghf
     abbr --add ai 'aqua i -a'
@@ -61,7 +54,7 @@ if status is-interactive
     abbr --add ga 'git add'
     abbr --add gc 'git commit'
     abbr --add gp 'git push'
-    abbr --add gpu 'git push --upstream-origin origin HEAD'
+    abbr --add gpu 'git push --set-upstream origin HEAD'
     abbr --add gpl 'git pull'
     abbr --add gl 'git log'
     abbr --add gs 'git switch'
@@ -85,14 +78,11 @@ if status is-interactive
     abbr --add v. 'nvim .'
     abbr --add vr 'nvim ./README.md'
     abbr --add dot 'chezmoi cd'
-    abbr --add cu 'pull_skk_dict | chezmoi update'
+    abbr --add cu 'pull_skk_dict and chezmoi update'
     abbr --add ca 'chezmoi apply'
     abbr --add conf 'cd $HOME/.config'
 
     abbr --add ob 'cd $HOME/obsidian/'
-    # abbr --add zenn 'deno run -A --unstable-fs npm:zenn-cli@latest'
-    # abbr --add marp 'deno run npm:@marp-team/marp-cli'
-    # abbr --add browser-sync 'deno run -A --unstable npm:browser-sync'
     abbr --add browser-html 'deno run -A --unstable npm:browser-sync  start --server --files "*.html"'
     abbr --add startuptime 'vim-startuptime -count 100 -vimpath nvim'
     abbr --add a aqua
@@ -111,27 +101,25 @@ if status is-interactive
     end
 
     # aqua.yaml が CONFIG_CACHE より新しければツールが更新された可能性があるため再生成
-    if test $need_update -eq 0
-        if test -f "$AQUA_GLOBAL_CONFIG"; and test "$AQUA_GLOBAL_CONFIG" -nt "$CONFIG_CACHE"
-            echo "aqua config updated, updating config cache"
-            set need_update 1
-        end
-    end
+    # if test $need_update -eq 0
+    #     if test -f "$AQUA_GLOBAL_CONFIG"; and test "$AQUA_GLOBAL_CONFIG" -nt "$CONFIG_CACHE"
+    #         echo "aqua config updated, updating config cache"
+    #         set need_update 1
+    #     end
+    # end
 
     if test $need_update -eq 1
         mkdir -p $FISH_CACHE_DIR
-        echo '' >$CONFIG_CACHE
+        echo "" >$CONFIG_CACHE
 
         # tools
         type -q zoxide && zoxide init fish >>$CONFIG_CACHE
         # mise の起動時 hook-env（~17ms）をスキップし、fish_prompt イベント経由のみにする
-        # set -gx PATH は aqua バージョン更新時に古いパスが蓄積するため除去する（hook-env が動的に管理するため不要）
-        type -q mise && mise activate fish | string replace --regex '^__mise_env_eval$' '' | string replace --regex '^set -gx PATH .*' '' >>$CONFIG_CACHE
+        type -q mise && mise activate fish >>$CONFIG_CACHE
         # atuin uuid は起動が遅い（~34ms）ため uuidgen で代替する
-        type -q atuin && atuin init --disable-up-arrow fish | string replace --all 'atuin uuid' uuidgen >>$CONFIG_CACHE
+        type -q atuin && atuin init --disable-up-arrow fish | string replace --all "atuin uuid" uuidgen >>$CONFIG_CACHE
 
         echo "config cache updated"
     end
     source $CONFIG_CACHE
-
 end

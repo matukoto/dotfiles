@@ -1,7 +1,12 @@
 # tide 設定
 # tide_settings.fish の mtime が変わった場合のみ set -U を実行して起動を高速化する
 set -l _tide_settings_file (status filename)
-set -l _tide_settings_mtime (stat -f "%m" $_tide_settings_file 2>/dev/null)
+set -l _tide_settings_mtime ""
+if test (uname) = "Darwin"
+    set _tide_settings_mtime (stat -f "%m" $_tide_settings_file 2>/dev/null)
+else
+    set _tide_settings_mtime (stat -c "%Y" $_tide_settings_file 2>/dev/null)
+end
 if test "$_tide_settings_mtime" = "$tide_settings_mtime"
     return
 end
