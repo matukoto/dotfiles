@@ -101,7 +101,7 @@
       ga = "git add";
       gc = "git commit";
       gp = "git push";
-      gpu = "git push --upstream-origin origin HEAD";
+      gpu = "git push --set-upstream origin HEAD";
       gpl = "git pull";
       gl = "git log";
       gs = "git switch";
@@ -149,7 +149,13 @@
       set -x FISH_FUNCTIONS_DIR $FISH_CONFIG_DIR/functions
       set -x FISH_CACHE_DIR $XDG_CACHE_HOME/fish
 
-      set -x BROWSER wslview
+      if test -e /proc/sys/fs/binfmt_misc/WSLInterop
+          set -x BROWSER wslview
+      else if test (uname) = "Darwin"
+          set -x BROWSER open
+      else
+          set -x BROWSER xdg-open
+      end
       set -x EDITOR nvim
       set -x SYSTEMD_EDITOR "$EDITOR"
       set -x TZ Asia/Tokyo
@@ -166,15 +172,12 @@
       fish_add_path "$HOME/.local/bin"
       fish_add_path "$HOME/go/bin"
       fish_add_path "$HOME/.cargo/bin"
-      fish_add_path "$HOME/.rustup/toolchains/*/bin"
       fish_add_path "$HOME/.deno/bin"
       fish_add_path "$HOME/.local/share/nvim/mason/bin"
       fish_add_path "$HOME/.local/share/aquaproj-aqua/bin"
 
-      if test (uname) = "Darwin"
-          eval (/opt/homebrew/bin/brew shellenv)
-      else if test (uname) = "Linux"
-          eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+      if type -q brew
+          eval (brew shellenv)
       end
 
       # config caches
