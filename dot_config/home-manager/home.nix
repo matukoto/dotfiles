@@ -61,21 +61,21 @@
   };
 
   xdg.configFile = {
-    "fish/conf.d/_key_bindings.fish".source = ../fish/conf.d/_key_bindings.fish;
-    "fish/conf.d/tide_settings.fish".source = ../fish/conf.d/tide_settings.fish;
-    "fish/conf.d/fish_greeting.fish".source = ../fish/conf.d/fish_greeting.fish;
-    "fish/functions/pull_skk_dict.fish".source = ../fish/functions/pull_skk_dict.fish;
-    "fish/functions/_tide_item_java.fish".source = ../fish/functions/_tide_item_java.fish;
-    "fish/functions/_tide_item_character.fish".source = ../fish/functions/_tide_item_character.fish;
-    "fish/functions/_tide_item_svelte.fish".source = ../fish/functions/_tide_item_svelte.fish;
-    "fish/functions/update_skk_dict.fish".source = ../fish/functions/update_skk_dict.fish;
-    "fish/functions/_tide_item_lua.fish".source = ../fish/functions/_tide_item_lua.fish;
-    "fish/functions/_tide_item_fsharp.fish".source = ../fish/functions/_tide_item_fsharp.fish;
-    "fish/functions/_tide_item_git.fish".source = ../fish/functions/_tide_item_git.fish;
-    "fish/functions/_tide_item_vi_mode.fish".source = ../fish/functions/_tide_item_vi_mode.fish;
-    "fish/functions/yy.fish".source = ../fish/functions/yy.fish;
-    "fish/functions/_tide_item_csharp.fish".source = ../fish/functions/_tide_item_csharp.fish;
-    "fish/functions/ghf.fish".source = ../fish/functions/ghf.fish;
+    "fish/conf.d/_key_bindings.fish".source = ./fish/conf.d/_key_bindings.fish;
+    "fish/conf.d/tide_settings.fish".source = ./fish/conf.d/tide_settings.fish;
+    "fish/conf.d/fish_greeting.fish".source = ./fish/conf.d/fish_greeting.fish;
+    "fish/functions/pull_skk_dict.fish".source = ./fish/functions/pull_skk_dict.fish;
+    "fish/functions/_tide_item_java.fish".source = ./fish/functions/_tide_item_java.fish;
+    "fish/functions/_tide_item_character.fish".source = ./fish/functions/_tide_item_character.fish;
+    "fish/functions/_tide_item_svelte.fish".source = ./fish/functions/_tide_item_svelte.fish;
+    "fish/functions/update_skk_dict.fish".source = ./fish/functions/update_skk_dict.fish;
+    "fish/functions/_tide_item_lua.fish".source = ./fish/functions/_tide_item_lua.fish;
+    "fish/functions/_tide_item_fsharp.fish".source = ./fish/functions/_tide_item_fsharp.fish;
+    "fish/functions/_tide_item_git.fish".source = ./fish/functions/_tide_item_git.fish;
+    "fish/functions/_tide_item_vi_mode.fish".source = ./fish/functions/_tide_item_vi_mode.fish;
+    "fish/functions/yy.fish".source = ./fish/functions/yy.fish;
+    "fish/functions/_tide_item_csharp.fish".source = ./fish/functions/_tide_item_csharp.fish;
+    "fish/functions/ghf.fish".source = ./fish/functions/ghf.fish;
   };
 
   programs.fish = {
@@ -139,8 +139,8 @@
       set -x VIMRC $HOME/.vimrc
       set -x AQUA_GLOBAL_CONFIG $XDG_CONFIG_HOME/aqua/aqua.yaml
 
-      set -l hostname (hostname)
-      if test (uname) = "Darwin"; or test "$hostname" = "DesktopFractal"; or test "$hostname" = "ThinkPadE14"
+      set -l local_hostname (hostname)
+      if test (uname) = "Darwin"; or test "$local_hostname" = "DesktopFractal"; or test "$local_hostname" = "ThinkPadE14"
           set -x PRIVATE_PLUGIN_ENABLED true
       end
 
