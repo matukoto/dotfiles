@@ -9,23 +9,14 @@ set -x INITVIM $XDG_CONFIG_HOME/nvim/init.vim
 set -x VIMRC $HOME/.vimrc
 set -x AQUA_GLOBAL_CONFIG $XDG_CONFIG_HOME/aqua/aqua.yaml
 
-set -l local_hostname (hostname)
-if test (uname) = "Darwin"; or test "$local_hostname" = "DesktopFractal"; or test "$local_hostname" = "ThinkPadE14"
-    set -x PRIVATE_PLUGIN_ENABLED true
-end
-
 # Fish paths
 set -x FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
 set -x FISH_FUNCTIONS_DIR $FISH_CONFIG_DIR/functions
 set -x FISH_CACHE_DIR $XDG_CACHE_HOME/fish
 
-if test -e /proc/sys/fs/binfmt_misc/WSLInterop
-    set -x BROWSER wslview
-else if test (uname) = "Darwin"
-    set -x BROWSER open
-else
-    set -x BROWSER xdg-open
-end
+# Nix が OS ごとに生成時に差し込む
+# __PRIVATE_PLUGIN_ENABLED_LINE__
+# __BROWSER_LINE__
 set -x EDITOR nvim
 set -x SYSTEMD_EDITOR "$EDITOR"
 set -x TZ Asia/Tokyo
@@ -87,7 +78,7 @@ if status is-interactive
     abbr --add v. 'nvim .'
     abbr --add vr 'nvim ./README.md'
     abbr --add dot 'chezmoi cd'
-    abbr --add cu 'pull_skk_dict | chezmoi update'
+    abbr --add cu 'pull_skk_dict and chezmoi update'
     abbr --add ca 'chezmoi apply'
     abbr --add conf 'cd $HOME/.config'
 
@@ -110,12 +101,12 @@ if status is-interactive
     end
 
     # aqua.yaml が CONFIG_CACHE より新しければツールが更新された可能性があるため再生成
-    if test $need_update -eq 0
-        if test -f "$AQUA_GLOBAL_CONFIG"; and test "$AQUA_GLOBAL_CONFIG" -nt "$CONFIG_CACHE"
-            echo "aqua config updated, updating config cache"
-            set need_update 1
-        end
-    end
+    # if test $need_update -eq 0
+    #     if test -f "$AQUA_GLOBAL_CONFIG"; and test "$AQUA_GLOBAL_CONFIG" -nt "$CONFIG_CACHE"
+    #         echo "aqua config updated, updating config cache"
+    #         set need_update 1
+    #     end
+    # end
 
     if test $need_update -eq 1
         mkdir -p $FISH_CACHE_DIR
@@ -124,8 +115,7 @@ if status is-interactive
         # tools
         type -q zoxide && zoxide init fish >>$CONFIG_CACHE
         # mise の起動時 hook-env（~17ms）をスキップし、fish_prompt イベント経由のみにする
-        # set -gx PATH は aqua バージョン更新時に古いパスが蓄積するため除去する（hook-env が動的に管理するため不要）
-        type -q mise && mise activate fish | string replace --regex '^__mise_env_eval$' "" | string replace --regex '^set -gx PATH .*' "" >>$CONFIG_CACHE
+        type -q mise && mise activate fish >>$CONFIG_CACHE
         # atuin uuid は起動が遅い（~34ms）ため uuidgen で代替する
         type -q atuin && atuin init --disable-up-arrow fish | string replace --all "atuin uuid" uuidgen >>$CONFIG_CACHE
 

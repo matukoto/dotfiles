@@ -1,5 +1,17 @@
 { pkgs, ... }:
 
+let
+  generatedConfigFish = builtins.replaceStrings
+    [
+      "# __PRIVATE_PLUGIN_ENABLED_LINE__"
+      "# __BROWSER_LINE__"
+    ]
+    [
+      (if pkgs.stdenv.isDarwin then "set -x PRIVATE_PLUGIN_ENABLED true" else "")
+      (if pkgs.stdenv.isDarwin then "set -x BROWSER open" else "set -x BROWSER wslview")
+    ]
+    (builtins.readFile ../fish/config.fish);
+in
 {
   xdg.configFile = {
     "fish/conf.d/_key_bindings.fish".source = ../fish/conf.d/_key_bindings.fish;
@@ -29,7 +41,7 @@
       }
     ];
 
-    # 本文は fish-lsp/formatter で扱えるよう .fish ファイルとして管理する
-    shellInit = builtins.readFile ../fish/config.fish;
+    # 本文は fish-lsp/formatter で扱える .fish を基準に、OS別行だけNixで生成する
+    shellInit = generatedConfigFish;
   };
 }
