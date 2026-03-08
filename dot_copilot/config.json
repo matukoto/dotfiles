@@ -1,0 +1,14 @@
+{
+  "banner": "never",
+  "model": "gpt-5.4",
+  "render_markdown": true,
+  "theme": "auto",
+  "trusted_folders": [],
+  "reasoning_effort": "xhigh",
+  "allowed_urls": [
+    "https://github.com",
+    "https://docs.github.com",
+    "https://docs.renovatebot.com",
+    "https://opencode.ai"
+  ]
+}

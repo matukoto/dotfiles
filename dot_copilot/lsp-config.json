@@ -1,0 +1,58 @@
+{
+  "lspServers": {
+    "nix": {
+      "command": "nixd",
+      "args": [],
+      "fileExtensions": {
+        ".nix": "nix"
+      }
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": [
+        "start"
+      ],
+      "fileExtensions": {
+        ".sh": "shellscript",
+        ".bash": "shellscript"
+      }
+    },
+    "fish": {
+      "command": "fish-lsp",
+      "args": [
+        "start"
+      ],
+      "fileExtensions": {
+        ".fish": "fish"
+      }
+    },
+    "lua": {
+      "command": "lua-language-server",
+      "args": [],
+      "fileExtensions": {
+        ".lua": "lua"
+      }
+    },
+    "svelte": {
+      "command": "svelteserver",
+      "args": [
+        "--stdio"
+      ],
+      "fileExtensions": {
+        ".svelte": "svelte"
+      }
+    },
+    "typescript": {
+      "command": "vtsls",
+      "args": [
+        "--stdio"
+      ],
+      "fileExtensions": {
+        ".ts": "typescript",
+        ".tsx": "typescriptreact",
+        ".js": "javascript",
+        ".jsx": "javascriptreact"
+      }
+    }
+  }
+}
