@@ -10,6 +10,9 @@
   automerge: true,
   dependencyDashboard: true,
   platformAutomerge: true,
+  lockFileMaintenance: {
+    enabled: true,
+  },
   packageRules: [
     {
       matchUpdateTypes: [
