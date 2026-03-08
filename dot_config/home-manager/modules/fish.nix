@@ -4,33 +4,36 @@ let
   homeManagerFlakeDir = "${config.home.homeDirectory}/.local/share/chezmoi/dot_config/home-manager";
   homeManagerFlakeTarget = if pkgs.stdenv.isDarwin then "darwin" else "linux";
   configFishTemplate = builtins.readFile ../fish/config.fish;
-  privatePluginEnabledLine = if pkgs.stdenv.isDarwin then "set -x PRIVATE_PLUGIN_ENABLED true" else "";
+  privatePluginEnabledLine =
+    if pkgs.stdenv.isDarwin then "set -x PRIVATE_PLUGIN_ENABLED true" else "";
   browserLine = if pkgs.stdenv.isDarwin then "set -x BROWSER open" else "set -x BROWSER wslview";
-  generatedConfigFishBase = builtins.replaceStrings
-    [
-      "# __PRIVATE_PLUGIN_ENABLED_LINE__"
-      "# __BROWSER_LINE__"
-      "# __FISH_CONFIG_GENERATION_HASH_LINE__"
-    ]
-    [
-      privatePluginEnabledLine
-      browserLine
-      ""
-    ]
-    configFishTemplate;
+  generatedConfigFishBase =
+    builtins.replaceStrings
+      [
+        "# __PRIVATE_PLUGIN_ENABLED_LINE__"
+        "# __BROWSER_LINE__"
+        "# __FISH_CONFIG_GENERATION_HASH_LINE__"
+      ]
+      [
+        privatePluginEnabledLine
+        browserLine
+        ""
+      ]
+      configFishTemplate;
   configGenerationHash = builtins.hashString "sha256" generatedConfigFishBase;
-  generatedConfigFish = builtins.replaceStrings
-    [
-      "# __PRIVATE_PLUGIN_ENABLED_LINE__"
-      "# __BROWSER_LINE__"
-      "# __FISH_CONFIG_GENERATION_HASH_LINE__"
-    ]
-    [
-      privatePluginEnabledLine
-      browserLine
-      ''set -x FISH_CONFIG_GENERATION_HASH "${configGenerationHash}"''
-    ]
-    configFishTemplate;
+  generatedConfigFish =
+    builtins.replaceStrings
+      [
+        "# __PRIVATE_PLUGIN_ENABLED_LINE__"
+        "# __BROWSER_LINE__"
+        "# __FISH_CONFIG_GENERATION_HASH_LINE__"
+      ]
+      [
+        privatePluginEnabledLine
+        browserLine
+        ''set -x FISH_CONFIG_GENERATION_HASH "${configGenerationHash}"''
+      ]
+      configFishTemplate;
 in
 {
   xdg.configFile = {
@@ -49,8 +52,6 @@ in
     "fish/functions/yy.fish".source = ../fish/functions/yy.fish;
     "fish/functions/_tide_item_csharp.fish".source = ../fish/functions/_tide_item_csharp.fish;
     "fish/functions/ghf.fish".source = ../fish/functions/ghf.fish;
-    "fish/functions/copilot-safe.fish".source = ../fish/functions/copilot-safe.fish;
-    "fish/functions/copilot-yolo.fish".source = ../fish/functions/copilot-yolo.fish;
     "fish/functions/hmu.fish".text = ''
       function hmu --description "flake を更新して home-manager を現在の OS 向けに切り替える"
           set -l current_dir (pwd)
