@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
+  homeManagerFlakeDir = "${config.home.homeDirectory}/.local/share/chezmoi/dot_config/home-manager";
+  homeManagerFlakeTarget = if pkgs.stdenv.isDarwin then "darwin" else "linux";
   configFishTemplate = builtins.readFile ../fish/config.fish;
   privatePluginEnabledLine = if pkgs.stdenv.isDarwin then "set -x PRIVATE_PLUGIN_ENABLED true" else "";
   browserLine = if pkgs.stdenv.isDarwin then "set -x BROWSER open" else "set -x BROWSER wslview";
@@ -47,6 +49,17 @@ in
     "fish/functions/yy.fish".source = ../fish/functions/yy.fish;
     "fish/functions/_tide_item_csharp.fish".source = ../fish/functions/_tide_item_csharp.fish;
     "fish/functions/ghf.fish".source = ../fish/functions/ghf.fish;
+    "fish/functions/hmu.fish".text = ''
+      function hmu --description "flake を更新して home-manager を現在の OS 向けに切り替える"
+          set -l current_dir (pwd)
+          cd "${homeManagerFlakeDir}"
+          and nix flake update
+          and home-manager switch --flake ".#${homeManagerFlakeTarget}"
+          set -l status_code $status
+          cd "$current_dir"
+          return $status_code
+      end
+    '';
   };
 
   programs.fish = {

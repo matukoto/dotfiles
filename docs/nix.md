@@ -48,19 +48,19 @@ home.packages = with pkgs; [  nixfmt
 ### パッケージ最新化
 
 ```sh
-# flake.lock を更新
-nix flake update
-home-manager switch
+# ~/.local/share/chezmoi/dot_config/home-manager で flake 更新と switch をまとめて実行
+hmu
 ```
 
 ### クロスプラットフォーム化
 
 macOS と Linux(WSL2 Ubuntu) で同じ home.nix を利用できるようにする。
-結局コマンドをわけないとダメだった。
+`hmu` は Nix 側で現在の OS に対応する flake ターゲットを選ぶ。
 
 ```sh
-home-manager switch --flake .#matukoto@darwin
-home-manager switch --flake .#matukoto@linux
+# 内部では OS ごとに以下を切り替える
+home-manager switch --flake .#darwin
+home-manager switch --flake .#linux
 ```
 
 #### ファイル構成
