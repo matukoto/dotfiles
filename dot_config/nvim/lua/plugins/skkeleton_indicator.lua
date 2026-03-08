@@ -26,10 +26,13 @@ return {
     -- border = 'rounded', -- Optional border
     row = 1, -- Position row (relative to bottom)
     col = 0, -- Position column (relative to left)
-    zindex = nil, -- Stacking order (nil for default)
+    zindex = 210, -- Sidekick composer のような浮動ウィンドウより前面に出す
     alwaysShown = false, -- Show only when skkeleton is active
     fadeOutMs = 0, -- No fade out effect
     ignoreFt = {}, -- Filetypes to ignore
+    bufFilter = function(buf)
+      return vim.bo[buf].filetype ~= 'sidekick_terminal'
+    end,
   },
   -- config function ensures setup is called after loading
   config = function(_, opts)
