@@ -1,5 +1,8 @@
 return {
   'lambdalisue/nvim-aibo',
+  cond = function()
+    return os.getenv('PRIVATE_PLUGIN_ENABLED') ~= nil
+  end,
   opts = {
     console = {
       mappings = function(bufnr)

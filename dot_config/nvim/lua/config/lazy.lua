@@ -82,6 +82,7 @@ require('lazy').setup({
     { import = 'plugins.tiny-code-action' },
     -- chat関連プラグイン
     { import = 'plugins.aibo' },
+    { import = 'plugins.sidekick' },
     -- { import = 'plugins.aider' },
     -- { import = 'plugins.codecompanion' },
     -- { import = 'plugins.claudecode' },
