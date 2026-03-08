@@ -17,6 +17,7 @@ set -x FISH_CACHE_DIR $XDG_CACHE_HOME/fish
 # Nix が OS ごとに生成時に差し込む
 # __PRIVATE_PLUGIN_ENABLED_LINE__
 # __BROWSER_LINE__
+# __FISH_CONFIG_GENERATION_HASH_LINE__
 set -x EDITOR nvim
 set -x SYSTEMD_EDITOR "$EDITOR"
 set -x TZ Asia/Tokyo
@@ -89,15 +90,23 @@ if status is-interactive
 
     # config caches
     set -l CONFIG_CACHE $FISH_CACHE_DIR/config.fish
+    set -l CONFIG_CACHE_GENERATION_HASH_FILE $FISH_CACHE_DIR/config.fish.hash
+    set -l current_config_generation_hash $FISH_CONFIG_GENERATION_HASH
     # キャッシュ更新が必要かどうかを判定するフラグ
     set -l need_update 0
 
-    # キャッシュファイルが存在しない、または config.fish が新しい場合
+    # キャッシュファイルが存在しない、または config.fish の世代が変わった場合
     if not test -f "$CONFIG_CACHE"
         set need_update 1
-    else if test "$FISH_CONFIG_DIR/config.fish" -nt "$CONFIG_CACHE"
+    else if not test -f "$CONFIG_CACHE_GENERATION_HASH_FILE"
         echo "config cache need update"
         set need_update 1
+    else
+        set -l cached_config_generation_hash (string trim -- (cat "$CONFIG_CACHE_GENERATION_HASH_FILE"))
+        if test "$cached_config_generation_hash" != "$current_config_generation_hash"
+            echo "config cache need update"
+            set need_update 1
+        end
     end
 
     # aqua.yaml が CONFIG_CACHE より新しければツールが更新された可能性があるため再生成
@@ -119,6 +128,7 @@ if status is-interactive
         # atuin uuid は起動が遅い（~34ms）ため uuidgen で代替する
         type -q atuin && atuin init --disable-up-arrow fish | string replace --all "atuin uuid" uuidgen >>$CONFIG_CACHE
 
+        printf '%s\n' "$current_config_generation_hash" >$CONFIG_CACHE_GENERATION_HASH_FILE
         echo "config cache updated"
     end
     source $CONFIG_CACHE

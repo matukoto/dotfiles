@@ -1,16 +1,34 @@
 { pkgs, ... }:
 
 let
+  configFishTemplate = builtins.readFile ../fish/config.fish;
+  privatePluginEnabledLine = if pkgs.stdenv.isDarwin then "set -x PRIVATE_PLUGIN_ENABLED true" else "";
+  browserLine = if pkgs.stdenv.isDarwin then "set -x BROWSER open" else "set -x BROWSER wslview";
+  generatedConfigFishBase = builtins.replaceStrings
+    [
+      "# __PRIVATE_PLUGIN_ENABLED_LINE__"
+      "# __BROWSER_LINE__"
+      "# __FISH_CONFIG_GENERATION_HASH_LINE__"
+    ]
+    [
+      privatePluginEnabledLine
+      browserLine
+      ""
+    ]
+    configFishTemplate;
+  configGenerationHash = builtins.hashString "sha256" generatedConfigFishBase;
   generatedConfigFish = builtins.replaceStrings
     [
       "# __PRIVATE_PLUGIN_ENABLED_LINE__"
       "# __BROWSER_LINE__"
+      "# __FISH_CONFIG_GENERATION_HASH_LINE__"
     ]
     [
-      (if pkgs.stdenv.isDarwin then "set -x PRIVATE_PLUGIN_ENABLED true" else "")
-      (if pkgs.stdenv.isDarwin then "set -x BROWSER open" else "set -x BROWSER wslview")
+      privatePluginEnabledLine
+      browserLine
+      ''set -x FISH_CONFIG_GENERATION_HASH "${configGenerationHash}"''
     ]
-    (builtins.readFile ../fish/config.fish);
+    configFishTemplate;
 in
 {
   xdg.configFile = {
