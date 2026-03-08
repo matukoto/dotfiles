@@ -78,7 +78,7 @@ if status is-interactive
     abbr --add v. 'nvim .'
     abbr --add vr 'nvim ./README.md'
     abbr --add dot 'chezmoi cd'
-    abbr --add cu 'pull_skk_dict and chezmoi update'
+    abbr --add cu 'pull_skk_dict; and update_skk_dict'
     abbr --add ca 'chezmoi apply'
     abbr --add conf 'cd $HOME/.config'
 
