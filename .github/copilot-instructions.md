@@ -100,6 +100,11 @@
   - 汎用 CLI: `dot_config/aqua/aqua.yaml`（checksum 必須）
   - 言語ランタイム / npm ベース CLI: `dot_config/mise/config.toml`
   - エディタ依存の LSP / formatter / linter: `dot_config/home-manager/home.nix`
+- GitHub Copilot CLI の起動ポリシーは shell wrapper で管理する。
+  fish は `dot_config/home-manager/fish/functions/`、
+  bash は `dot_bash_aliases.tmpl` を確認する。
+  `trusted_folders` のような machine-specific な永続設定は
+  リポジトリではなくローカルの `~/.copilot/config.json` を使う。
 - Fish 関連を変えるときは
   `dot_config/home-manager/fish/` と
   `dot_config/home-manager/modules/fish.nix` を合わせて確認する。

@@ -7,8 +7,36 @@ alias v='nvim'
 alias va='nvim ~/work/workLog/a.md'
 alias dot='chezmoi cd'
 alias conf='cd $HOME/.config'
+alias cps='copilot_safe'
+alias cpy='copilot_yolo'
 
 # Git
 alias gs='git status'
 
 # alias wezterm='/mnt/c/Program\ Files/WezTerm/wezterm.exe'
+
+copilot_safe() {
+  local current_dir git_root status_code
+  current_dir=$(pwd)
+  git_root=$(git rev-parse --show-toplevel 2>/dev/null)
+
+  if [ -n "$git_root" ]; then
+    cd "$git_root" || return 1
+  fi
+
+  copilot \
+    --allow-tool 'shell' \
+    --deny-tool 'shell(git push)' \
+    --deny-tool 'shell(rm)' \
+    --allow-url github.com \
+    --allow-url docs.github.com \
+    "$@"
+  status_code=$?
+
+  cd "$current_dir" || return "$status_code"
+  return "$status_code"
+}
+
+copilot_yolo() {
+  copilot --allow-all "$@"
+}

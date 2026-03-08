@@ -87,6 +87,8 @@ if status is-interactive
     abbr --add browser-html 'deno run -A --unstable npm:browser-sync  start --server --files "*.html"'
     abbr --add startuptime 'vim-startuptime -count 100 -vimpath nvim'
     abbr --add a aqua
+    abbr --add cps 'copilot --allow-tool shell --deny-tool "shell(git push)" --deny-tool "shell(rm)"'
+    abbr --add cpy copilot-yolo 'copilot --allow-all'
 
     # config caches
     set -l CONFIG_CACHE $FISH_CACHE_DIR/config.fish

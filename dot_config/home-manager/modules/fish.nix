@@ -49,6 +49,8 @@ in
     "fish/functions/yy.fish".source = ../fish/functions/yy.fish;
     "fish/functions/_tide_item_csharp.fish".source = ../fish/functions/_tide_item_csharp.fish;
     "fish/functions/ghf.fish".source = ../fish/functions/ghf.fish;
+    "fish/functions/copilot-safe.fish".source = ../fish/functions/copilot-safe.fish;
+    "fish/functions/copilot-yolo.fish".source = ../fish/functions/copilot-yolo.fish;
     "fish/functions/hmu.fish".text = ''
       function hmu --description "flake を更新して home-manager を現在の OS 向けに切り替える"
           set -l current_dir (pwd)
