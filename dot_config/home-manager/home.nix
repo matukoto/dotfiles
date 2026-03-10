@@ -21,6 +21,11 @@
     stateVersion = "25.11"; # Please read the comment before changing.
 
     packages = with pkgs; [
+      # cli tools
+      curl
+      git
+      imagemagick
+      gnupg
       neovim # nightly
 
       # LSP servers
