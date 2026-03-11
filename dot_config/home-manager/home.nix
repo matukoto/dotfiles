@@ -31,8 +31,8 @@
 
     packages = with pkgs; [
       # cli tools
-      curl
-      git
+      curlMinimal
+      gitMinimal
       imagemagick
       gnupg
       neovim # nightly
