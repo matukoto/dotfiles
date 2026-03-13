@@ -76,7 +76,7 @@ xnoremap P p
 
 " vim diff
 "- [vimdiffでより賢いアルゴリズム (patience, histogram) を使う #Git - Qiita](https://qiita.com/takaakikasai/items/3d4f8a4867364a46dfa3)
-set diffopt=internal,filler,algorithm:histogram,indent-heuristic
+" set diffopt=internal,filler,algorithm:histogram,indent-heuristic
 
 " 折返したときもインデント
 set breakindent
@@ -189,14 +189,26 @@ endfunction
 " :TCL コマンドでカスタム関数を実行
 command! TCL call CloseTabAndMoveLeft()
 
-" let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
-" let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
-" if !filereadable(s:jetpackfile)
-"   call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
-" endif
+" 1. XDG Base Directory のパスを決定
+let s:config_home = empty($XDG_CONFIG_HOME) ? expand('~/.config') : $XDG_CONFIG_HOME
+let s:vim_home = s:config_home .. '/vim'
 
+" 2. Jetpack 本体のダウンロード先（手動でフルパスを指定）
+let s:jetpackfile = s:vim_home .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
+let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+
+" 3. Jetpack が存在しない場合はダウンロード
+if !filereadable(s:jetpackfile)
+  call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
+endif
+
+" 4. Vim に ~/.config/vim をパッケージ検索パスとして認識させる
+execute 'set packpath^=' .. s:vim_home
 packadd vim-jetpack
-call jetpack#begin()
+
+" 5. 【修正箇所】jetpack#begin にはベースとなる ~/.config/vim だけを渡す
+" これにより、内部で自動的に /pack/jetpack/opt が付与され、重複が解消されます
+call jetpack#begin(s:vim_home)
   call jetpack#add('tani/vim-jetpack')
   call jetpack#add('vim-jp/vimdoc-ja')
   " denops
@@ -236,8 +248,8 @@ call jetpack#begin()
   " call jetpack#add('sainnhe/edge')
   call jetpack#add('cocopon/iceberg.vim')
 call jetpack#end()
-syntax enable
 
+syntax enable
 " let g:denops_disable_version_check = 1
 let g:denops#server#deno_args = ['-q', '--no-lock', '-A', '--unstable-ffi', '--unstable-kv']
 
