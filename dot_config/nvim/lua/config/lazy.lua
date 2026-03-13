@@ -88,6 +88,7 @@ require('lazy').setup({
     -- { import = 'plugins.claudecode' },
     { import = 'plugins.colorscheme' },
     { import = 'plugins.nvim-java' },
+    { import = 'plugins.wakatime' },
 
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
@@ -106,7 +107,6 @@ require('lazy').setup({
     { 'simeji/winresizer', event = 'VeryLazy' },
     { 'tpope/vim-surround', event = 'VeryLazy' },
     { 'machakann/vim-sandwich', event = 'VeryLazy' },
-    -- { 'wakatime/vim-wakatime', event = 'VeryLazy' },
     { 'tpope/vim-dadbod', event = 'VeryLazy' },
     { 'neko-night/nvim' }, -- カラースキームは即時ロード
   },
