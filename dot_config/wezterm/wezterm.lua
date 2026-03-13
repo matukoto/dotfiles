@@ -2,12 +2,12 @@ local wezterm = require('wezterm')
 local config = {
   -- 音を鳴らす
   audible_bell = 'SystemBeep',
-  window_background_opacity = 0.85, -- 透過率
+  window_background_opacity = 0.65, -- 透過率
   -- default_prog = { 'bash' },
-  default_prog = { 'wsl.exe', '--cd', '~' },
-  color_scheme = 'Edge Dark (base16)',
-  font = wezterm.font('PlemolJP35 Console NF'),
-  font_size = 14.0, -- フォントサイズは偶数でないと変になる
+  --default_prog = { 'wsl.exe', '--cd', '~' },
+  -- color_scheme = '',
+  --font = wezterm.font('HackGen Console NF'),
+  font_size = 16.0, -- フォントサイズは偶数でないと変になる
   initial_cols = 110,
   initial_rows = 37,
   -- keybind ファイル読み込み
@@ -42,12 +42,12 @@ local config = {
   leader = { key = 'j', mods = 'ALT', timeout_milliseconds = 2000 },
 }
 
-local mux = wezterm.mux
+-- local mux = wezterm.mux
 
-wezterm.on('gui-startup', function()
-  local _, _, window = mux.spawn_window({ args = { 'nu.exe' } })
-  window:spawn_tab({ args = { 'wsl.exe', '--cd', '~' } })
-end)
+-- wezterm.on('gui-startup', function()
+--   local _, _, window = mux.spawn_window({ args = { 'nu.exe' } })
+--   window:spawn_tab({ args = { 'wsl.exe', '--cd', '~' } })
+-- end)
 
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_lower_left_triangle
