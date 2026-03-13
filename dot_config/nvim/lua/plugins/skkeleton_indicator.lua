@@ -1,5 +1,49 @@
 -- dot_config/nvim/lua/plugins/skkeleton_indicator.lua
 -- Indicator for skkeleton input method status
+local skipped_filetypes = {
+  sidekick_terminal = true,
+}
+
+local function build_buf_filter()
+  local disabled_buffers = {}
+  local group = vim.api.nvim_create_augroup('skkeletonIndicatorBufFilter', { clear = true })
+
+  local function refresh(buf)
+    if not vim.api.nvim_buf_is_valid(buf) then
+      disabled_buffers[buf] = nil
+      return
+    end
+
+    if skipped_filetypes[vim.bo[buf].filetype] then
+      disabled_buffers[buf] = true
+    else
+      disabled_buffers[buf] = nil
+    end
+  end
+
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    refresh(buf)
+  end
+
+  vim.api.nvim_create_autocmd({ 'BufWinEnter', 'FileType', 'TermOpen' }, {
+    group = group,
+    callback = function(args)
+      refresh(args.buf)
+    end,
+  })
+
+  vim.api.nvim_create_autocmd({ 'BufDelete', 'BufWipeout' }, {
+    group = group,
+    callback = function(args)
+      disabled_buffers[args.buf] = nil
+    end,
+  })
+
+  return function(buf)
+    return not disabled_buffers[buf]
+  end
+end
+
 return {
   'delphinus/skkeleton_indicator.nvim',
   -- Dependencies: Requires skkeleton
@@ -30,9 +74,7 @@ return {
     alwaysShown = false, -- Show only when skkeleton is active
     fadeOutMs = 0, -- No fade out effect
     ignoreFt = {}, -- Filetypes to ignore
-    bufFilter = function(buf)
-      return vim.bo[buf].filetype ~= 'sidekick_terminal'
-    end,
+    bufFilter = build_buf_filter(),
   },
   -- config function ensures setup is called after loading
   config = function(_, opts)
