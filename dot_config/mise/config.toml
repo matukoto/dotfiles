@@ -6,7 +6,7 @@
     "node" = "24.14.0"
     "lua" = "5.5.0"
     "dotnet" = "10.0.102"
-    "npm:vite" = "7.3.1"
+    "npm:vite" = "8.0.0"
     "npm:vitest" = "4.0.18"
     "npm:zenn-cli" = "0.4.6"
     "npm:@marp-team/marp-cli" = "latest"
