@@ -10,11 +10,11 @@ registries:
   - type: standard
     ref: v4.485.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-  - name: cli/cli@v2.87.3
+  - name: cli/cli@v2.88.1
   - name: x-motemen/ghq@v1.9.4
   - name: dandavison/delta@0.18.2
   - name: extrawurst/gitui@v0.28.0
-  - name: altsem/gitu@v0.40.0
+  - name: altsem/gitu@v0.41.0
   - name: BurntSushi/ripgrep@15.1.0
   - name: ajeetdsouza/zoxide@v0.9.9
   - name: mikefarah/yq@v4.52.4
@@ -22,30 +22,30 @@ packages:
   - name: eza-community/eza@v0.23.4
   - name: starship/starship@v1.24.2
   - name: junegunn/fzf@v0.70.0
-  - name: sharkdp/fd@v10.3.0
+  - name: sharkdp/fd@v10.4.2
   - name: jqlang/jq@jq-1.8.1
-  - name: atuinsh/atuin@v18.12.1
+  - name: atuinsh/atuin@v18.13.2
   - name: sxyazi/yazi@v26.1.22
-  - name: denoland/deno@v2.7.4
+  - name: denoland/deno@v2.7.5
   - name: kubernetes/kubectl@v1.35.2
   - name: kubernetes-sigs/kind@v0.31.0
   - name: docker/cli@v27.4.1
   - name: docker/compose@v5.1.0
   - name: natecraddock/zf@0.10.2
   - name: nushell/nushell@0.111.0
-  - name: duckdb/duckdb@v1.4.4
+  - name: duckdb/duckdb@v1.5.0
   - name: suzuki-shunsuke/pinact@v3.9.0
-  - name: pnpm/pnpm@v10.30.3
+  - name: pnpm/pnpm@v10.32.1
   - name: rhysd/vim-startuptime@v1.3.2
   - name: golang.org/x/tools/gopls@v0.21.1
-  - name: aws/aws-cli@2.34.4
+  - name: aws/aws-cli@2.34.9
   - name: tstack/lnav@v0.13.2
   - name: biomejs/biome@@biomejs/biome@2.3.8
   - name: Wilfred/difftastic@0.67.0
-  - name: astral-sh/uv@0.10.9
+  - name: astral-sh/uv@0.10.10
   - name: oven-sh/bun@bun-v1.3.10
-  - name: tree-sitter/tree-sitter@v0.26.6
-  - name: anomalyco/opencode@v1.2.20
-  - name: github/copilot-cli@v1.0.2
+  - name: tree-sitter/tree-sitter@v0.26.7
+  - name: anomalyco/opencode@v1.2.26
+  - name: github/copilot-cli@v1.0.5
   - name: sharkdp/hyperfine@v1.20.0
 
