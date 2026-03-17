@@ -50,7 +50,7 @@ require('lazy').setup({
     { import = 'plugins.mini-test' },
     { import = 'plugins.neotest' },
     { import = 'plugins.nvim-lastplace' },
-    { import = 'plugins.nvim-lint' },
+    -- { import = 'plugins.nvim-lint' },
     { import = 'plugins.nvim-ts-autotag' },
     { import = 'plugins.open-browser' },
     { import = 'plugins.project' },
