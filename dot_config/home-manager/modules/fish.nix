@@ -56,7 +56,6 @@ in
       function hmu --description "flake を更新して home-manager を現在の OS 向けに切り替える"
           set -l current_dir (pwd)
           cd "${homeManagerFlakeDir}"
-          and nix flake update
           and home-manager switch --flake ".#${homeManagerFlakeTarget}"
           set -l status_code $status
           cd "$current_dir"
