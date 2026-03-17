@@ -15,6 +15,7 @@
   },
   nix: {
     enabled: true,
+    schedule: ["before 9am"],
   },
   packageRules: [
     {
