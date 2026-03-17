@@ -82,7 +82,7 @@
 
 [gpg]
 {{ if eq .chezmoi.os "darwin" -}}
-  program = /opt/homebrew/bin/gpg
+  program = ~/.nix-profile/bin/gpg
 {{- else -}}
   program = /usr/bin/gpg
 {{- end }}
