@@ -2,12 +2,12 @@ local wezterm = require('wezterm')
 local config = {
   -- 音を鳴らす
   audible_bell = 'SystemBeep',
-  window_background_opacity = 0.65, -- 透過率
+  window_background_opacity = 0.4, -- 透過率
   -- default_prog = { 'bash' },
   --default_prog = { 'wsl.exe', '--cd', '~' },
-  -- color_scheme = '',
-  --font = wezterm.font('HackGen Console NF'),
-  font_size = 16.0, -- フォントサイズは偶数でないと変になる
+  color_scheme = 'Eva Dim (base16)',
+  font = wezterm.font('HackGen Console NF'),
+  font_size = 18.0, -- フォントサイズは偶数でないと変になる
   initial_cols = 110,
   initial_rows = 37,
   -- keybind ファイル読み込み
