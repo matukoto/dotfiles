@@ -73,6 +73,14 @@
       taplo
       typos
       yamlfmt
+
+      # fonts
+      plemoljp-nf
+      hackgen-nf-font
+
+      # agents
+      gemini-cli
+      geminicommit
     ];
   };
 
