@@ -54,10 +54,10 @@ on-mode-changed = []
     alt-f = 'fullscreen'
 
     # App toggle - workspace 1 (メインモニター)
-    ctrl-cmd-t = 'exec-and-forget ~/.local/bin/app-toggle com.mitchellh.ghostty Ghostty 1'
-    ctrl-cmd-v = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi Vivaldi 1'
-    ctrl-cmd-b = 'exec-and-forget ~/.local/bin/app-toggle md.obsidian Obsidian 1'
-    ctrl-cmd-g = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi.app.dfbmlaainldjbgehmmmecanmooialjhe Gemini 1'
+    ctrl-alt-t = 'exec-and-forget ~/.local/bin/app-toggle com.github.wez.wezterm wezterm 1'
+    ctrl-alt-v = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi Vivaldi 1'
+    ctrl-alt-b = 'exec-and-forget ~/.local/bin/app-toggle md.obsidian Obsidian 1'
+    ctrl-alt-g = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi.app.dfbmlaainldjbgehmmmecanmooialjhe Gemini 1'
 
     ctrl-alt-slash = 'layout tiles horizontal vertical'
     ctrl-alt-comma = 'layout accordion horizontal vertical'
@@ -100,7 +100,7 @@ on-mode-changed = []
 
 # Startup window placement - workspace 1 (メインモニター)
 [[on-window-detected]]
-    if.app-id = "com.mitchellh.ghostty"
+    if.app-id = "com.github.wez.wezterm"
     if.during-aerospace-startup = true
     run = 'move-node-to-workspace 1'
 
@@ -158,6 +158,10 @@ on-mode-changed = []
 
 [[on-window-detected]]
     if.app-id = 'com.google.Chrome'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.mitchellh.ghostty'
     run = 'layout floating'
 
 # https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
