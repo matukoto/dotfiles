@@ -351,33 +351,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.7/copilot-darwin-arm64.tar.gz",
-      "checksum": "F3578D241D55331604E092A5719FAA18466B2743F4FD58EFD5006F7092D87450",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.8/copilot-darwin-arm64.tar.gz",
+      "checksum": "7EF08C8C402A4436B17184A7AD0A85C937DDEFA29F14F09C3903C2317226DF69",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.7/copilot-darwin-x64.tar.gz",
-      "checksum": "CC647BFD8C05CFA50F8E299550FED4F5235C65CBBEF3C6032ED1F920869933F1",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.8/copilot-darwin-x64.tar.gz",
+      "checksum": "E25A30120669AE184EBCDE39F456F3B05A9031CCE6E03C5C5F11575255AEAAD5",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.7/copilot-linux-arm64.tar.gz",
-      "checksum": "9EDBF4FDC3066597CDB50C89D43D0E83F67D8860E9FE515CA11D61810FA3393C",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.8/copilot-linux-arm64.tar.gz",
+      "checksum": "CEAF83D8A0D988C1FCCDE31EDD763D2FE5CF921CBE7A6AEB4DE4AC9740EF1B52",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.7/copilot-linux-x64.tar.gz",
-      "checksum": "E83757442DC4CC424DBEAE174E30CB8F76E54AA0C105876E72B32E29A0FA37AD",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.8/copilot-linux-x64.tar.gz",
+      "checksum": "948AA3B282F42387C759FBED6D8485E12CD3300CE561473B48AF988B8E5306B3",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.7/copilot-win32-arm64.zip",
-      "checksum": "24E7A6B53E0221035B592F9B15C60CB97AEDD3AA6E6082042AE2833A327B04D9",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.8/copilot-win32-arm64.zip",
+      "checksum": "2F7FC3DF5D876D2C67B633B4DF386DD06AB5341EE03D91D11718F4B7C570FDCC",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.7/copilot-win32-x64.zip",
-      "checksum": "8B66BA8F199A89775EEF904B107D220E007F7A802CC6D3E367DC6E5F2E79500E",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.8/copilot-win32-x64.zip",
+      "checksum": "2844F6FFD7B086BE518D9871636650DC065E6C1A16DF15B1387084689EAEEE9D",
       "algorithm": "sha256"
     },
     {
@@ -866,48 +866,48 @@
       "algorithm": "sha1"
     },
     {
-      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.34.11.pkg",
-      "checksum": "9F41ED1F4DF251389678AB60A3066222C02556B4ACE4D3BAA6EED0E66CCCFB3D",
+      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.34.12.pkg",
+      "checksum": "23B5B6C0D14DF1E7B8B3B7EA830B570BEE6F58612638DCAA4B0704626E8E7127",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.34.11.zip",
-      "checksum": "421023CEC031CD656098C481FF623628662B0C154E76A6414C5F016ECCAF3849",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.34.12.zip",
+      "checksum": "DE563A959DC06048453E5A82BAD9675C84D56F84D4F35EDCA3661031F6B0B41A",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.34.11.zip",
-      "checksum": "0B7468258CAD569A4E3AECBCB9EA056D7EC31CD2420B5F6A29B19133BE0CB07D",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.34.12.zip",
+      "checksum": "A8C7787A3A63CAB6C1C6013ADFF364CDE28F06F4D31F38E88BD33E1A6038C970",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.2/bin/darwin/amd64/kubectl",
-      "checksum": "163955964D4ED9E66656EAB45C0114F5C1110D1B430ACE432B20DDC430023DF5",
+      "id": "http/dl.k8s.io/v1.35.3/bin/darwin/amd64/kubectl",
+      "checksum": "2F339B1EAE2E1792EC08DA281B37AFBEEE94F70BED6B7398E7EFD81BA08F8D37",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.2/bin/darwin/arm64/kubectl",
-      "checksum": "B0B59CDD7BA20CA20B85214943100E578DD50DDD85242FCDDF277A87C2249706",
+      "id": "http/dl.k8s.io/v1.35.3/bin/darwin/arm64/kubectl",
+      "checksum": "280651239D84BAB214BA83403666BF6976A5FA0DBDB41404F26EB6F276D34963",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.2/bin/linux/amd64/kubectl",
-      "checksum": "924EB50779153F20CB668117D141440B95DF2F325A64452D78DFF9469145E277",
+      "id": "http/dl.k8s.io/v1.35.3/bin/linux/amd64/kubectl",
+      "checksum": "FD31C7D7129260E608F6FAF92D5984C3267AD0B5EAD3BCED2FE125686E286AD6",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.2/bin/linux/arm64/kubectl",
-      "checksum": "CD859449F54AD2CB05B491C490C13BB836CDD0886AE013C0AED3DD67FF747467",
+      "id": "http/dl.k8s.io/v1.35.3/bin/linux/arm64/kubectl",
+      "checksum": "6F0CD088A82DDE5D5807122056069E2FAC4ED447CC518EFC055547AE46525F14",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.2/bin/windows/amd64/kubectl.exe",
-      "checksum": "A6D02010AAE330A3031AFE7843747D5A18DB59C9F0BCA415E45FB24BBDCCDD2C",
+      "id": "http/dl.k8s.io/v1.35.3/bin/windows/amd64/kubectl.exe",
+      "checksum": "6C367F9C34BE9A13A94EB523DD62006973E1D051ADEA7D6BCF800DDE3F6E84DF",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.2/bin/windows/arm64/kubectl.exe",
-      "checksum": "108B38BC77542AA055E35DE56079C299038A97FCDC873DF7938923EA9B56BBB6",
+      "id": "http/dl.k8s.io/v1.35.3/bin/windows/arm64/kubectl.exe",
+      "checksum": "7F2D923AA852A8E909568F45DA5780F6783007354AE11E6AB8001BC86C8C75AA",
       "algorithm": "sha256"
     },
     {
