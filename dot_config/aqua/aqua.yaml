@@ -25,7 +25,7 @@ packages:
   - name: jqlang/jq@jq-1.8.1
   - name: atuinsh/atuin@v18.13.3
   - name: sxyazi/yazi@v26.1.22
-  - name: denoland/deno@v2.7.6
+  - name: denoland/deno@v2.7.7
   - name: kubernetes/kubectl@v1.35.3
   - name: kubernetes-sigs/kind@v0.31.0
   - name: docker/cli@v27.4.1
