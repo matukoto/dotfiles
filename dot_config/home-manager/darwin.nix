@@ -12,6 +12,7 @@
     homeDirectory = "/Users/${username}";
 
     packages = with pkgs; [
+      colima
     ];
   };
 }
