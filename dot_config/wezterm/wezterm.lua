@@ -52,7 +52,31 @@ local config = {
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_lower_left_triangle
 
-wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
+-- パスやプロセス名から末尾の名前だけを抽出する共通関数（ディレクトリ名取得のため）
+local function basename(s)
+  if s == nil then
+    return ''
+  end
+  return string.gsub(s, '(.*[/\\])(.*)', '%2')
+end
+
+-- タブのタイトルをプロセス名とカレントディレクトリ名にする関数(例: "1: nvim (chezmoi)") )
+local function tabTitle(tab)
+  local proc = basename(tab.active_pane.foreground_process_name)
+  if proc == '' then
+    proc = basename(tab.active_pane.title)
+  end
+
+  local cwd = ''
+  local cwd_uri = tab.active_pane.current_working_dir
+  if cwd_uri then
+    cwd = basename(cwd_uri.file_path)
+  end
+
+  return string.format(' %d: %s (%s) ', tab.tab_index + 1, proc, cwd)
+end
+
+wezterm.on('format-tab-title', function(tab)
   local background = '#5c6d74'
   local foreground = '#FFFFFF'
   local edge_background = 'none'
@@ -62,7 +86,8 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
     edge_background = '#78CDD1'
   end
   local edge_foreground = background
-  local title = '   ' .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. '   '
+  local title = tabTitle(tab)
+
   return {
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
