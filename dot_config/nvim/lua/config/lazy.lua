@@ -78,6 +78,7 @@ require('lazy').setup({
     { import = 'plugins.overseer' },
     { import = 'plugins.nvim-notify' },
     { import = 'plugins.bufterm' },
+    { import = 'plugins.termite' },
     { import = 'plugins.yanky' },
     { import = 'plugins.tiny-code-action' },
     -- chat関連プラグイン
