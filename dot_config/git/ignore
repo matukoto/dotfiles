@@ -22,7 +22,7 @@ Icon?
 .venv
 .env
 *.key
-.mise.toml
+#.mise.toml
 
 # agents
 .claude/*
