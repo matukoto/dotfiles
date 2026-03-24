@@ -35,6 +35,10 @@ return {
       'json',
       'yaml',
       'toml',
+      -- git
+      'gitignore',
+      'git_rebase',
+      'git_config',
     }
 
     -- パーサーのインストール
