@@ -89,6 +89,7 @@ if status is-interactive
     abbr --add a aqua
     abbr --add cps 'copilot --allow-tool shell --deny-tool "shell(git push)" --deny-tool "shell(rm)"'
     abbr --add cpy copilot-yolo 'copilot --allow-all'
+    abbr --add ns "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history"
 
     # config caches
     set -l CONFIG_CACHE $FISH_CACHE_DIR/config.fish

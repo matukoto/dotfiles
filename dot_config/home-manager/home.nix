@@ -35,6 +35,7 @@
       gitMinimal
       imagemagick
       gnupg
+      nix-search-tv
       neovim # nightly
 
       # LSP servers
@@ -84,5 +85,6 @@
     ];
   };
 
+  programs.nix-search-tv.enableTelevisionIntegration = true;
   programs.home-manager.enable = true;
 }
