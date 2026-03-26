@@ -55,9 +55,10 @@ on-mode-changed = []
 
     # App toggle - workspace 1 (メインモニター)
     ctrl-alt-t = 'exec-and-forget ~/.local/bin/app-toggle com.github.wez.wezterm wezterm 1'
-    ctrl-alt-v = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi Vivaldi 1'
+    # ctrl-alt-v = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi Vivaldi 1'
+    ctrl-alt-g = 'exec-and-forget ~/.local/bin/app-toggle com.google.Chrome Chrome 1'
     ctrl-alt-b = 'exec-and-forget ~/.local/bin/app-toggle md.obsidian Obsidian 1'
-    ctrl-alt-g = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi.app.dfbmlaainldjbgehmmmecanmooialjhe Gemini 1'
+    # ctrl-alt-g = 'exec-and-forget ~/.local/bin/app-toggle com.vivaldi.Vivaldi.app.dfbmlaainldjbgehmmmecanmooialjhe Gemini 1'
 
     ctrl-alt-slash = 'layout tiles horizontal vertical'
     ctrl-alt-comma = 'layout accordion horizontal vertical'
@@ -110,14 +111,14 @@ on-mode-changed = []
     run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-    if.app-id = 'com.vivaldi.Vivaldi'
+    if.app-id = 'com.google.Chrome'
     if.during-aerospace-startup = true
     run = 'move-node-to-workspace 1'
 
-[[on-window-detected]]
-    if.app-id = 'com.vivaldi.Vivaldi.app.dfbmlaainldjbgehmmmecanmooialjhe'
-    if.during-aerospace-startup = true
-    run = 'move-node-to-workspace 1'
+    # [[on-window-detected]]
+    #     if.app-id = 'com.vivaldi.Vivaldi.app.dfbmlaainldjbgehmmmecanmooialjhe'
+    #     if.during-aerospace-startup = true
+    #     run = 'move-node-to-workspace 1'
 
 # 常時表示しないものはフローティングで一時的に表示
 [[on-window-detected]]
@@ -157,7 +158,7 @@ on-mode-changed = []
     run = 'layout floating'
 
 [[on-window-detected]]
-    if.app-id = 'com.google.Chrome'
+    if.app-id = 'com.vivaldi.Vivaldi'
     run = 'layout floating'
 
 [[on-window-detected]]
