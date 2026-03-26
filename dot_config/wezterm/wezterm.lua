@@ -5,6 +5,7 @@ local config = {
   window_background_opacity = 0.4, -- 透過率
   -- default_prog = { 'bash' },
   --default_prog = { 'wsl.exe', '--cd', '~' },
+  enable_scroll_bar = true,
   color_scheme = 'Eva Dim (base16)',
   font = wezterm.font('HackGen Console NF'),
   font_size = 18.0, -- フォントサイズは偶数でないと変になる
