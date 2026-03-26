@@ -14,7 +14,7 @@ local config = {
   -- keybind ファイル読み込み
   keys = require('keybinds').keys,
   key_tables = require('keybinds').key_tables,
-  use_ime = false,
+  use_ime = true,
   -- タイトルバーの非表示
   window_decorations = 'RESIZE',
   -- タブバーの表示
