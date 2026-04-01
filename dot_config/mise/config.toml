@@ -1,24 +1,24 @@
 [tools]
     # language runtime
     "java" = { version = "corretto-24.0.2.12.1", release_type = "ga" }
-    "rust" = "1.94.0"
+    "rust" = "1.94.1"
     "go" = "1.26.1"
-    "node" = "24.14.0"
+    "node" = "24.14.1"
     "lua" = "5.5.0"
     "dotnet" = "10.0.102"
-    "npm:vite" = "8.0.1"
-    "npm:vitest" = "4.1.0"
-    "npm:pnpm" = "10.32.1"
-    "npm:zenn-cli" = "0.4.6"
+    "npm:vite" = "8.0.3"
+    "npm:vitest" = "4.1.2"
+    "npm:pnpm" = "10.33.0"
+    "npm:zenn-cli" = "0.4.7"
     "npm:@marp-team/marp-cli" = "latest"
-    "npm:sv" = '0.12.8'
+    "npm:sv" = '0.13.0'
     "npm:tsx" = '4.21.0'
     "npm:playwright" = '1.58.2'
     'npm:@modelcontextprotocol/inspector' = '0.21.1'
     #"cargo:leetcode-cli" = "latest"
     "spring-boot" = "3.5.3"
     "npm:@openapitools/openapi-generator-cli" = 'latest'
-    'npm:@actions/languageserver' = '0.3.48'
+    'npm:@actions/languageserver' = '0.3.49'
     "wrangler" = "4.61.1"
 [settings]
     experimental = false
