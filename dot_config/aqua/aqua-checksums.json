@@ -101,28 +101,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.3.9/opencode-darwin-arm64.zip",
-      "checksum": "B9B4451C2FF278543C8CFF53D1EB2D42886AA1462311F3D8458EE0C1CAEB0ACB",
+      "id": "github_release/github.com/anomalyco/opencode/v1.3.10/opencode-darwin-arm64.zip",
+      "checksum": "944A4970F0E962132027662C4769E70873B8A358AB8DB492676AAF9A527AD7B9",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.3.9/opencode-darwin-x64.zip",
-      "checksum": "DD0EBFDE1DF3515801647A70883E6E2FDB46AE942FE183DE119B2B32DB40A875",
+      "id": "github_release/github.com/anomalyco/opencode/v1.3.10/opencode-darwin-x64.zip",
+      "checksum": "3AC437921F1C38879E85BE0FBBBAAAF61795FF5ADB4347E6ACF25CA790C0A7EB",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.3.9/opencode-linux-arm64.tar.gz",
-      "checksum": "65490BC70285F57268455C7B5B32DF35BCF6FB0C03A4296B1898CDC0132D38D2",
+      "id": "github_release/github.com/anomalyco/opencode/v1.3.10/opencode-linux-arm64.tar.gz",
+      "checksum": "2D9A3390E978A01306A9B0B66A5E0F2024412405B1920228BA88016FA9320F28",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.3.9/opencode-linux-x64.tar.gz",
-      "checksum": "A0C0812B506E20F055647339AC4153CA3399D8B8993074C2168DF9C6CAD71F8F",
+      "id": "github_release/github.com/anomalyco/opencode/v1.3.10/opencode-linux-x64.tar.gz",
+      "checksum": "BA53196DE632142A86B1DF77A0777FAE313620AC8FE54D11C83C310D4AEECA74",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.3.9/opencode-windows-x64.zip",
-      "checksum": "4EF883FAF6419240DC1B540654DF9F038885A0764B6727A29AAB3F09D0B555E0",
+      "id": "github_release/github.com/anomalyco/opencode/v1.3.10/opencode-windows-x64.zip",
+      "checksum": "12E6C7DEB86A24F0BE6D9339070DE92E2D863187ECC013A493D2ACA27AB7E8F2",
       "algorithm": "sha256"
     },
     {
@@ -251,28 +251,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.7.9/deno-aarch64-apple-darwin.zip",
-      "checksum": "647E44E3E9B4A905727B988F82AE33B598B7711795A68F12780ECC466C91DACD",
+      "id": "github_release/github.com/denoland/deno/v2.7.10/deno-aarch64-apple-darwin.zip",
+      "checksum": "11DAEA06670ACEC142E027C807415BA5820E8F7630C7B2F8BE65A0CFCDE6EFF6",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.7.9/deno-aarch64-unknown-linux-gnu.zip",
-      "checksum": "F8E13D1670ED0B3D955E7A218386E1B2C6B98C3EB7923D4CFA04F1BC73404ED9",
+      "id": "github_release/github.com/denoland/deno/v2.7.10/deno-aarch64-unknown-linux-gnu.zip",
+      "checksum": "01DD43509ACF645788F1DCE9D32D7533E6F3B58B6F973BEE4F8B0EF041FF67E4",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.7.9/deno-x86_64-apple-darwin.zip",
-      "checksum": "F05E7152E1B70DD2FC11DFE1006FB2B6B3111B9DA83111804A52278E03D4CD8D",
+      "id": "github_release/github.com/denoland/deno/v2.7.10/deno-x86_64-apple-darwin.zip",
+      "checksum": "DF7E6481DCA9893DC874AB971B8B5677D3AFF25721160D7E6D90BCEC2E85406A",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.7.9/deno-x86_64-pc-windows-msvc.zip",
-      "checksum": "F2CB68A66BCE2D4828429545EA7C2265B9F165E612629FC67E3DD39F13B87471",
+      "id": "github_release/github.com/denoland/deno/v2.7.10/deno-x86_64-pc-windows-msvc.zip",
+      "checksum": "1C1D067CB5356AEE3ED281C2466BBBDA349E6A455B1E88496C8F6AC4A27E1F5F",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.7.9/deno-x86_64-unknown-linux-gnu.zip",
-      "checksum": "1D7E719118120B6E9BC6E3E76624A25732970E661D740D09BB930A3BC01119FF",
+      "id": "github_release/github.com/denoland/deno/v2.7.10/deno-x86_64-unknown-linux-gnu.zip",
+      "checksum": "FD8E33F02205594A06DBDF5B203117CEC675EC9870F39E5F32D8CAFC544DE2F5",
       "algorithm": "sha256"
     },
     {
@@ -756,33 +756,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/tree-sitter/tree-sitter/v0.26.7/tree-sitter-linux-arm64.gz",
-      "checksum": "86A317732CC597E1576F8B11B4853F78FEDD2A3C756923E33F323667DEE6B4BE",
+      "id": "github_release/github.com/tree-sitter/tree-sitter/v0.26.8/tree-sitter-linux-arm64.gz",
+      "checksum": "E339D6533B20830DD1666FE320AFF85D301B3F59964A3836870B77F4827F9A17",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/tree-sitter/tree-sitter/v0.26.7/tree-sitter-linux-x64.gz",
-      "checksum": "4367A46BC8ABBB8328D6EFBEB26E86807AF0A3A7E462548A3924F87289EE1E9C",
+      "id": "github_release/github.com/tree-sitter/tree-sitter/v0.26.8/tree-sitter-linux-x64.gz",
+      "checksum": "9754A32800F0B970152782DF177B4A47C711E34E651A7ACEB384D8BD29FA136E",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/tree-sitter/tree-sitter/v0.26.7/tree-sitter-macos-arm64.gz",
-      "checksum": "24162119ACA35A160A2752A4457B17F3C47F7B2895AB63002C66B8DFD1BB41D1",
+      "id": "github_release/github.com/tree-sitter/tree-sitter/v0.26.8/tree-sitter-macos-arm64.gz",
+      "checksum": "024E2CEE34723524D62D41BDE4D2B4AF23C8BBE0236E116C79C0B37D9575889E",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/tree-sitter/tree-sitter/v0.26.7/tree-sitter-macos-x64.gz",
-      "checksum": "BBB1DF269CD462393E8826BEE55F2B09CCBC0D7B8B914C9827BEBD6C467087CA",
+      "id": "github_release/github.com/tree-sitter/tree-sitter/v0.26.8/tree-sitter-macos-x64.gz",
+      "checksum": "D0DAA279054C1D1CEDB08F5CA784B451CEB1F0E6B083B112D07317958AE77FE0",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/tree-sitter/tree-sitter/v0.26.7/tree-sitter-windows-arm64.gz",
-      "checksum": "E7EA8F67DB49C288F697D89A5538860EA1C219C92DFC366010D00B8B19D54D7F",
+      "id": "github_release/github.com/tree-sitter/tree-sitter/v0.26.8/tree-sitter-windows-arm64.gz",
+      "checksum": "7E276C740A1D47D3326F2450C91A40165265D4BB3097F5DF584285F8460A307D",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/tree-sitter/tree-sitter/v0.26.7/tree-sitter-windows-x64.gz",
-      "checksum": "5CEA52C5E8000FBE56C41148DD3124FDED2FE7CD0F66E4194BF92532905C55FF",
+      "id": "github_release/github.com/tree-sitter/tree-sitter/v0.26.8/tree-sitter-windows-x64.gz",
+      "checksum": "28301A969412066BF4818C30C71D9C313091A9B9DC24B53A14DDDA3A8E2CC2BB",
       "algorithm": "sha256"
     },
     {
@@ -836,18 +836,18 @@
       "algorithm": "sha1"
     },
     {
-      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.34.20.pkg",
-      "checksum": "DEB480D3C660026734B4FB56ABD828DD9F29AB8CFA9448A46F2A40E93C522C7D",
+      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.34.21.pkg",
+      "checksum": "DDCB27BB34103AF4332358612F5B8E37E844A64772F03995B29CD4552E661724",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.34.20.zip",
-      "checksum": "D73933335CFBCB586F8F040750F1F642C13A2392F174AE9F9748FD4B78C8A701",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.34.21.zip",
+      "checksum": "4FDD017D041F1C8A56117294DA2E2F883A496986BBEC7CA67B6698232DFB2764",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.34.20.zip",
-      "checksum": "328B3AE0EA1E545C23A3AC9203142950E0006EF0118D85DCC8BE6EC665D6ECD7",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.34.21.zip",
+      "checksum": "CEF42BB2825765B8AE423FC5E2F714232F01FB600A8208E43B154744928C5F27",
       "algorithm": "sha256"
     },
     {
