@@ -11,14 +11,14 @@
     "npm:pnpm" = "10.33.0"
     "npm:zenn-cli" = "0.4.7"
     "npm:@marp-team/marp-cli" = "latest"
-    "npm:sv" = '0.13.0'
+    "npm:sv" = '0.13.1'
     "npm:tsx" = '4.21.0'
-    "npm:playwright" = '1.58.2'
+    "npm:playwright" = '1.59.0'
     'npm:@modelcontextprotocol/inspector' = '0.21.1'
     #"cargo:leetcode-cli" = "latest"
     "spring-boot" = "3.5.3"
     "npm:@openapitools/openapi-generator-cli" = 'latest'
-    'npm:@actions/languageserver' = '0.3.49'
+    'npm:@actions/languageserver' = '0.3.50'
     "wrangler" = "4.61.1"
 [settings]
     experimental = false
