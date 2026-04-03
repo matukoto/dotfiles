@@ -90,6 +90,7 @@ require('lazy').setup({
     { import = 'plugins.colorscheme' },
     { import = 'plugins.nvim-java' },
     { import = 'plugins.wakatime' },
+    { import = 'plugins.octo' },
 
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
