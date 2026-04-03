@@ -84,14 +84,10 @@ require('lazy').setup({
     -- chat関連プラグイン
     { import = 'plugins.aibo' },
     { import = 'plugins.sidekick' },
-    -- { import = 'plugins.aider' },
-    -- { import = 'plugins.codecompanion' },
-    -- { import = 'plugins.claudecode' },
     { import = 'plugins.colorscheme' },
     { import = 'plugins.nvim-java' },
     { import = 'plugins.wakatime' },
     { import = 'plugins.octo' },
-
     -- plugins.lua にのみ記載があり、個別の設定ファイルがないプラグイン
     { 'vim-jp/vimdoc-ja', event = 'VeryLazy' },
     { 'lambdalisue/vim-guise', dependencies = 'vim-denops/denops.vim' },
