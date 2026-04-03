@@ -34,6 +34,7 @@
       curlMinimal
       gitMinimal
       imagemagick
+      gh
       gnupg
       nix-search-tv
       neovim # nightly
