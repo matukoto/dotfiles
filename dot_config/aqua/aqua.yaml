@@ -43,6 +43,6 @@ packages:
   - name: oven-sh/bun@bun-v1.3.11
   - name: tree-sitter/tree-sitter@v0.26.8
   - name: anomalyco/opencode@v1.3.13
-  - name: github/copilot-cli@v1.0.15
+  - name: github/copilot-cli@v1.0.16
   - name: sharkdp/hyperfine@v1.20.0
 
