@@ -8,6 +8,7 @@
 ; refactor()  refactoring
 ; test()      when adding missing tests
 ; chore()     maintain
+; perf()      performance
 
 ; [optional body]
 
