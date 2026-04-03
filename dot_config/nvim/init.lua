@@ -135,7 +135,16 @@ vim.keymap.set('n', '<Space>?', '?\\C')
 -- git commit message
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*commit',
-  callback = function()
+  callback = function(args)
+    local context_lines = {
+      ';',
+      '; 【Copilotへの指示】',
+      '; 以下の変更内容を日本語で要約し、Conventional Commitsの仕様に従ってコミットメッセージを作成してください。',
+      '; 1行目は型とスコープを含めて50文字以内（最大72文字以内）に収めてください。',
+    }
+    vim.api.nvim_buf_set_lines(args.buf, -1, -1, false, context_lines)
+
+    -- 【既存のマクロ】
     vim.keymap.set('n', '<CR><CR>', function()
       vim.cmd('normal! ^w"zdiw')
       vim.cmd('normal! "_dip')
