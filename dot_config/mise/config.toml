@@ -11,7 +11,7 @@
     "npm:pnpm" = "10.33.0"
     "npm:zenn-cli" = "0.4.7"
     "npm:@marp-team/marp-cli" = "latest"
-    "npm:sv" = '0.13.1'
+    "npm:sv" = '0.13.2'
     "npm:tsx" = '4.21.0'
     "npm:playwright" = '1.59.1'
     'npm:@modelcontextprotocol/inspector' = '0.21.1'
