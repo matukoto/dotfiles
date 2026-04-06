@@ -15,8 +15,7 @@ set -x FISH_FUNCTIONS_DIR $FISH_CONFIG_DIR/functions
 set -x FISH_CACHE_DIR $XDG_CACHE_HOME/fish
 
 # Nix が OS ごとに生成時に差し込む
-# __PRIVATE_PLUGIN_ENABLED_LINE__
-# __BROWSER_LINE__
+# __PRIVATE_PLUGIN_ENABLED_LINE__ __BROWSER_LINE__
 # __FISH_CONFIG_GENERATION_HASH_LINE__
 set -x EDITOR nvim
 set -x SYSTEMD_EDITOR "$EDITOR"
@@ -27,18 +26,16 @@ if tty >/dev/null 2>&1
     set -x GPG_TTY (tty)
 end
 
-if status is-interactive
-    # vi キーバインドは conf.d/_key_bindings.fish で設定
-    fish_add_path "$HOME/bin"
-    fish_add_path "$HOME/.local/bin"
-    fish_add_path "$HOME/go/bin"
-    fish_add_path "$HOME/.cargo/bin"
-    fish_add_path "$HOME/.deno/bin"
-    fish_add_path "$HOME/.local/share/nvim/mason/bin"
-    fish_add_path "$HOME/.local/share/aquaproj-aqua/bin"
+fish_add_path "$HOME/bin"
+fish_add_path "$HOME/.local/bin"
+fish_add_path "$HOME/go/bin"
+fish_add_path "$HOME/.cargo/bin"
+fish_add_path "$HOME/.deno/bin"
+fish_add_path "$HOME/.local/share/aquaproj-aqua/bin"
 
-    if type -q brew
-        eval (brew shellenv)
+if status is-interactive
+    if test -f /opt/homebrew/bin/brew
+        eval (/opt/homebrew/bin/brew shellenv)
     end
 
     abbr --add f ghf
@@ -88,7 +85,7 @@ if status is-interactive
     abbr --add startuptime 'vim-startuptime -count 100 -vimpath nvim'
     abbr --add a aqua
     abbr --add cps 'copilot --allow-tool shell --deny-tool "shell(git push)" --deny-tool "shell(rm)"'
-    abbr --add cpy copilot-yolo 'copilot --allow-all'
+    abbr --add cpy 'copilot --allow-all'
     abbr --add ns "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history"
 
     # config caches
@@ -113,12 +110,12 @@ if status is-interactive
     end
 
     # aqua.yaml が CONFIG_CACHE より新しければツールが更新された可能性があるため再生成
-    # if test $need_update -eq 0
-    #     if test -f "$AQUA_GLOBAL_CONFIG"; and test "$AQUA_GLOBAL_CONFIG" -nt "$CONFIG_CACHE"
-    #         echo "aqua config updated, updating config cache"
-    #         set need_update 1
-    #     end
-    # end
+    if test $need_update -eq 0
+        if test -f "$AQUA_GLOBAL_CONFIG"; and test "$AQUA_GLOBAL_CONFIG" -nt "$CONFIG_CACHE"
+            echo "aqua config updated, updating config cache"
+            set need_update 1
+        end
+    end
 
     if test $need_update -eq 1
         mkdir -p $FISH_CACHE_DIR
@@ -126,13 +123,12 @@ if status is-interactive
 
         # tools
         type -q zoxide && zoxide init fish >>$CONFIG_CACHE
-        # mise の起動時 hook-env（~17ms）をスキップし、fish_prompt イベント経由のみにする
         type -q mise && mise activate fish >>$CONFIG_CACHE
-        # atuin uuid は起動が遅い（~34ms）ため uuidgen で代替する
         type -q atuin && atuin init --disable-up-arrow fish | string replace --all "atuin uuid" uuidgen >>$CONFIG_CACHE
 
         printf '%s\n' "$current_config_generation_hash" >$CONFIG_CACHE_GENERATION_HASH_FILE
         echo "config cache updated"
     end
     source $CONFIG_CACHE
+
 end
