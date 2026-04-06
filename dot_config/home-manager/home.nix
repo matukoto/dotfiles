@@ -37,7 +37,6 @@
       gh
       gnupg
       nix-search-tv
-      neovim # nightly
 
       # LSP servers
       nixd
