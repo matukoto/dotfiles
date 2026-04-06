@@ -35,7 +35,11 @@ fish_add_path "$HOME/.local/share/aquaproj-aqua/bin"
 
 if status is-interactive
     if test -f /opt/homebrew/bin/brew
-        eval (/opt/homebrew/bin/brew shellenv)
+        function brew --description 'Lazy-initialize Homebrew shellenv on first use'
+            functions --erase brew
+            eval (/opt/homebrew/bin/brew shellenv)
+            /opt/homebrew/bin/brew $argv
+        end
     end
 
     abbr --add f ghf
