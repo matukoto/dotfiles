@@ -3,7 +3,7 @@ return {
   event = 'VeryLazy',
   keys = {
     {
-      ':',
+      '<C-f>',
       function()
         return require('jab').jab_win()
       end,
