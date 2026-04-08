@@ -34,17 +34,13 @@ let
       "$env.PRIVATE_PLUGIN_ENABLED = \"true\""
       "{{ end }}"
       "$env.BROWSER = \"wslview\""
-      "alias dot = chezmoi cd # chezmoi のディレクトリに移動"
-      "alias cu = chezmoi update"
-      "alias ca = chezmoi apply # chezmoi の変更を適用"
+      "# __NIX_APPLY_COMMAND__"
     ]
     [
       ""
       privatePluginEnabledLine
       ""
       browserLine
-      "alias dot = cd ($env.HOME | path join \".local/share/chezmoi\") # dotfiles リポジトリに移動"
-      "def cu [] { ^git -C ($env.HOME | path join \".local/share/chezmoi\") pull --rebase }"
       switchCommand
     ]
     configTemplate;
