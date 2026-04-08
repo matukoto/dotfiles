@@ -121,5 +121,17 @@
           darwin-system = self.darwinConfigurations.darwin.config.system.build.toplevel;
         };
       };
+
+      packages = {
+        x86_64-linux = {
+          home-manager = home-manager.packages.x86_64-linux.home-manager;
+          default = home-manager.packages.x86_64-linux.home-manager;
+        };
+
+        aarch64-darwin = {
+          darwin-rebuild = nix-darwin.packages.aarch64-darwin.darwin-rebuild;
+          default = nix-darwin.packages.aarch64-darwin.darwin-rebuild;
+        };
+      };
     };
 }

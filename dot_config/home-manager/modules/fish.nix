@@ -10,9 +10,9 @@ let
   homeManagerFlakeTarget = hostname;
   homeManagerSwitchCommand =
     if pkgs.stdenv.isDarwin then
-      ''sudo darwin-rebuild switch --flake ".#${homeManagerFlakeTarget}"''
+      ''sudo nix run .#darwin-rebuild -- switch --flake ".#${homeManagerFlakeTarget}"''
     else
-      ''home-manager switch --flake ".#${homeManagerFlakeTarget}"'';
+      ''nix run .#home-manager -- switch --flake ".#${homeManagerFlakeTarget}"'';
   configFishTemplate = builtins.readFile ../fish/config.fish;
   privatePluginEnabledLine =
     if pkgs.stdenv.isDarwin then "set -x PRIVATE_PLUGIN_ENABLED true" else "";

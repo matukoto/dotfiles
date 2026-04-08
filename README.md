@@ -4,9 +4,14 @@ Nix / Home Manager / nix-darwin で管理している personal dotfiles。
 
 ## apply
 
-- macOS: `cd dot_config/home-manager && sudo darwin-rebuild switch --flake .#darwin`
-- Linux: `cd dot_config/home-manager && home-manager switch --flake .#linux`
-- fish を使っている場合は `hms` で現在ホスト向けの反映、`hmu` で `nix flake update` + 反映を実行できます。
+- macOS:
+  `cd dot_config/home-manager &&`
+  `sudo nix run .#darwin-rebuild -- switch --flake .#darwin`
+- Linux:
+  `cd dot_config/home-manager &&`
+  `nix run .#home-manager -- switch --flake .#linux`
+- fish を使っている場合は `hms` で現在ホスト向けの反映、
+  `hmu` で `nix flake update` + 反映を実行できます。
 
 ## GitHub Copilot CLI
 

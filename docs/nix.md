@@ -20,25 +20,18 @@ Linux を Home Manager** で管理しています。
 
 ### macOS
 
-Nix 自体を入れたあと、初回だけ `darwin-rebuild` を `nix run` 経由で起動します。
+初回・継続運用ともに、まずは flake から `darwin-rebuild` を直接起動するのが安全です。
 
 ```sh
 cd ~/.local/share/chezmoi/dot_config/home-manager
-sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#darwin
-```
-
-2 回目以降は通常の `darwin-rebuild` で反映できます。
-
-```sh
-cd ~/.local/share/chezmoi/dot_config/home-manager
-sudo darwin-rebuild switch --flake .#darwin
+sudo nix run .#darwin-rebuild -- switch --flake .#darwin
 ```
 
 ### Linux
 
 ```sh
 cd ~/.local/share/chezmoi/dot_config/home-manager
-home-manager switch --flake .#linux
+nix run .#home-manager -- switch --flake .#linux
 ```
 
 ホスト別設定を使う場合は `.#DesktopFractal` や `.#ThinkPadE14` を指定します。
@@ -50,7 +43,8 @@ home-manager switch --flake .#linux
 - `hmu`
   - `nix flake update` してから現在のホスト向け設定を反映する
 
-Fish では `dot_config/home-manager/modules/fish.nix` がこの wrapper を生成します。
+Fish では `dot_config/home-manager/modules/fish.nix` が
+`nix run .#darwin-rebuild` / `nix run .#home-manager` ベースの wrapper を生成します。
 
 ## 検証
 
