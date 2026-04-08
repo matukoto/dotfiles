@@ -2,20 +2,14 @@
 
 現在の dotfiles は **macOS を `nix-darwin` + Home Manager、
 Linux を Home Manager** で管理しています。  
-歴史的な理由で `dot_foo` や `dot_config/` というパス名は残っていますが、
-配備そのものは `dot_config/home-manager/` の flake が担当します。
+歴史的な理由で `dot_foo` や `dot_config/` というパス名は残っていましたが、
+配備そのものは repo ルートの flake が担当します。
 
 ## 実行場所
 
-`flake.nix` は **repo ルートではなく**
-`~/.local/share/chezmoi/dot_config/home-manager/` にあります。
+`flake.nix` は `~/.local/share/chezmoi/`（repo ルート）にあります。
 
-- `cd ~/.local/share/chezmoi/dot_config/home-manager` してから
-  `.#darwin` / `.#linux` を使う
-- もしくは repo ルートから `./dot_config/home-manager#...` を使う
-
-`nix build .#darwinConfigurations...` を repo ルートで実行すると、
-`flake.nix` が見つからず失敗します。
+- `cd ~/.local/share/chezmoi` してから `.#darwin` / `.#linux` を使う
 
 ## flake 出力
 
@@ -39,15 +33,6 @@ repo ルートから実行する場合:
 ```sh
 cd ~/.local/share/chezmoi
 sudo -H nix --extra-experimental-features "nix-command flakes" run \
-  ./dot_config/home-manager#darwin-rebuild -- switch \
-  --flake ./dot_config/home-manager#darwin
-```
-
-`dot_config/home-manager` へ移動してから実行する場合:
-
-```sh
-cd ~/.local/share/chezmoi/dot_config/home-manager
-sudo -H nix --extra-experimental-features "nix-command flakes" run \
   .#darwin-rebuild -- switch --flake .#darwin
 ```
 
@@ -70,15 +55,6 @@ repo ルートから実行する場合:
 ```sh
 cd ~/.local/share/chezmoi
 nix --extra-experimental-features "nix-command flakes" run \
-  ./dot_config/home-manager#home-manager -- switch \
-  --flake ./dot_config/home-manager#linux
-```
-
-`dot_config/home-manager` へ移動してから実行する場合:
-
-```sh
-cd ~/.local/share/chezmoi/dot_config/home-manager
-nix --extra-experimental-features "nix-command flakes" run \
   .#home-manager -- switch --flake .#linux
 ```
 
@@ -91,7 +67,7 @@ nix --extra-experimental-features "nix-command flakes" run \
 - `hmu`
   - `nix flake update` してから現在のホスト向け設定を反映する
 
-Fish では `dot_config/home-manager/modules/fish.nix` が
+Fish では `config/home-manager/modules/fish.nix` が
 `nix run .#darwin-rebuild` / `nix run .#home-manager` ベースの wrapper を生成します。
 
 ## 検証
@@ -102,16 +78,16 @@ Fish では `dot_config/home-manager/modules/fish.nix` が
 cd ~/.local/share/chezmoi
 
 # Linux 出力の評価
-nix eval ./dot_config/home-manager#homeConfigurations.linux.activationPackage.drvPath
+nix eval .#homeConfigurations.linux.activationPackage.drvPath
 
 # Linux 出力の build
 nix build \
-  ./dot_config/home-manager#homeConfigurations.linux.activationPackage \
+  .#homeConfigurations.linux.activationPackage \
   --no-link
 
 # macOS 出力の build
 nix build \
-  ./dot_config/home-manager#darwinConfigurations.darwin.config.system.build.\
+  .#darwinConfigurations.darwin.config.system.build.\
   toplevel \
   --no-link
 ```
@@ -122,10 +98,10 @@ nix build \
 
 ## 追加先の目安
 
-- 汎用 CLI: `dot_config/aqua/aqua.yaml`
-- 言語ランタイム / npm ベース CLI: `dot_config/mise/config.toml`
-- エディタ依存の LSP / formatter / linter: `dot_config/home-manager/home.nix`
-- dotfile / config file の配備: `dot_config/home-manager/modules/*.nix`
+- 汎用 CLI: `config/aqua/aqua.yaml`
+- 言語ランタイム / npm ベース CLI: `config/mise/config.toml`
+- エディタ依存の LSP / formatter / linter: `config/home-manager/home.nix`
+- dotfile / config file の配備: `config/home-manager/modules/*.nix`
 
 ## 参考
 

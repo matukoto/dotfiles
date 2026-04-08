@@ -49,25 +49,25 @@ in
   home.file =
     {
       ".claude" = {
-        source = ../../../dot_claude;
+        source = ../../../claude;
         recursive = true;
       };
       ".copilot" = {
-        source = ../../../dot_copilot;
+        source = ../../../copilot;
         recursive = true;
       };
       ".docker/cli-plugins" = {
-        source = ../../../dot_docker/cli-plugins;
+        source = ../../../docker/cli-plugins;
         recursive = true;
       };
       ".local/bin" = {
-        source = ../../../dot_local/bin;
+        source = ../../../local/bin;
         recursive = true;
       };
       "minimal_init.lua".source = ../../../minimal_init.lua;
     }
     // lib.optionalAttrs (!pkgs.stdenv.isDarwin) {
-      ".sleep".source = ../../../dot_sleep;
-      ".wakeup".source = ../../../dot_wakeup;
+      ".sleep".source = ../../../sleep;
+      ".wakeup".source = ../../../wakeup;
     };
 }

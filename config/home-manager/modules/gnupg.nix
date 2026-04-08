@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  gpgAgentTemplate = builtins.readFile ../../../dot_gnupg/gpg-agent.conf.tmpl;
+  gpgAgentTemplate = builtins.readFile ../../../gnupg/gpg-agent.conf.tmpl;
   pinentryProgram =
     if pkgs.stdenv.isDarwin then "/opt/homebrew/bin/pinentry-mac" else "/usr/bin/pinentry-gtk-2";
   gpgAgentConfig = builtins.replaceStrings
@@ -24,6 +24,6 @@ in
 {
   home.file = {
     ".gnupg/gpg-agent.conf".text = gpgAgentConfig;
-    ".gnupg/gpg.conf".source = ../../../dot_gnupg/gpg.conf;
+    ".gnupg/gpg.conf".source = ../../../gnupg/gpg.conf;
   };
 }

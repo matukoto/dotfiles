@@ -6,6 +6,7 @@
 
 let
   configTemplate = builtins.readFile ../../nushell/config.nu.tmpl;
+  flakeDir = "$env.HOME/.local/share/chezmoi";
   flakeTarget = if pkgs.stdenv.isDarwin then "darwin" else hostname;
   privatePluginEnabledLine =
     if
@@ -23,13 +24,13 @@ let
     if pkgs.stdenv.isDarwin then
       ''
         def ca [] {
-          ^sudo -H nix --extra-experimental-features "nix-command flakes" run $"($env.HOME)/.local/share/chezmoi/dot_config/home-manager#darwin-rebuild" -- switch --flake $"($env.HOME)/.local/share/chezmoi/dot_config/home-manager#${flakeTarget}"
+          ^sudo -H nix --extra-experimental-features "nix-command flakes" run $"(${flakeDir})#darwin-rebuild" -- switch --flake $"(${flakeDir})#${flakeTarget}"
         } # 現在のホスト向け設定を適用
       ''
     else
       ''
         def ca [] {
-          ^nix --extra-experimental-features "nix-command flakes" run $"($env.HOME)/.local/share/chezmoi/dot_config/home-manager#home-manager" -- switch --flake $"($env.HOME)/.local/share/chezmoi/dot_config/home-manager#${flakeTarget}"
+          ^nix --extra-experimental-features "nix-command flakes" run $"(${flakeDir})#home-manager" -- switch --flake $"(${flakeDir})#${flakeTarget}"
         } # 現在のホスト向け設定を適用
       '';
   configNu =

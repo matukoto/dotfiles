@@ -69,7 +69,7 @@
               ;
           };
           modules = [
-            ./darwin-system.nix
+            ./config/home-manager/darwin-system.nix
             home-manager.darwinModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -82,7 +82,7 @@
                   username
                   ;
               };
-              home-manager.users.${username} = import ./darwin.nix;
+              home-manager.users.${username} = import ./config/home-manager/darwin.nix;
             }
           ]
           ++ modules;
@@ -99,7 +99,7 @@
           system = "x86_64-linux";
           username = "matsumoto";
           inherit hostname;
-          modules = [ ./linux.nix ];
+          modules = [ ./config/home-manager/linux.nix ];
         };
     in
     {

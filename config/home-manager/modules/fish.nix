@@ -6,7 +6,7 @@
 }:
 
 let
-  homeManagerFlakeDir = "${config.home.homeDirectory}/.local/share/chezmoi/dot_config/home-manager";
+  homeManagerRepoDir = "${config.home.homeDirectory}/.local/share/chezmoi";
   homeManagerFlakeTarget = if pkgs.stdenv.isDarwin then "darwin" else hostname;
   homeManagerSwitchCommand =
     if pkgs.stdenv.isDarwin then
@@ -65,7 +65,7 @@ in
     "fish/functions/hms.fish".text = ''
       function hms --description "現在のホスト向けに設定を反映する"
           set -l current_dir (pwd)
-          cd "${homeManagerFlakeDir}"
+          cd "${homeManagerRepoDir}"
           and ${homeManagerSwitchCommand}
           set -l status_code $status
           cd "$current_dir"
@@ -75,7 +75,7 @@ in
     "fish/functions/hmu.fish".text = ''
       function hmu --description "flake を更新して現在のホスト向けに設定を反映する"
           set -l current_dir (pwd)
-          cd "${homeManagerFlakeDir}"
+          cd "${homeManagerRepoDir}"
           and nix flake update
           and ${homeManagerSwitchCommand}
           set -l status_code $status

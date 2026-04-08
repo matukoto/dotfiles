@@ -48,14 +48,14 @@
     },
     {
       matchFileNames: [
-        'dot_config/mise/**',
+        'config/mise/**',
         '**/mise.toml',
       ],
       groupName: 'mise',
     },
     {
       matchFileNames: [
-        'dot_config/aqua/**',
+        'config/aqua/**',
       ],
       groupName: 'aqua',
       matchPackageNames: [
