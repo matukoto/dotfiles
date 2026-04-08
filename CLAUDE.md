@@ -11,7 +11,7 @@
 - 歴史的な理由で `dot_` や `dot_config/` という名前は残っていますが、
   chezmoi ではなく Nix 側から参照しています
 - 設定変更後は対象 OS に応じて
-  `nix run .#darwin-rebuild -- switch --flake` または
+  `sudo -H nix run .#darwin-rebuild -- switch --flake` または
   `nix run .#home-manager -- switch --flake` で反映します
 
 ## ファイル構造について
@@ -26,7 +26,7 @@
 - `~/.bashrc` や `~/.config/*` を直接編集せず、
   必ずこのリポジトリ側の元ファイルを修正してください
 - 反映コマンドは macOS では
-  `sudo nix run .#darwin-rebuild -- switch --flake .#darwin`、
+  `sudo -H nix run .#darwin-rebuild -- switch --flake .#darwin`、
   Linux では `nix run .#home-manager -- switch --flake .#linux` が基本です
 - Fish の `hms` / `hmu` は現在ホスト向けの反映ラッパーです
 

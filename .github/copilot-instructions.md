@@ -19,7 +19,7 @@
 - ローカル反映の基本コマンド:
   - macOS:
     `cd dot_config/home-manager &&`
-    `sudo nix run .#darwin-rebuild -- switch --flake .#darwin`
+    `sudo -H nix run .#darwin-rebuild -- switch --flake .#darwin`
   - Linux:
     `cd dot_config/home-manager &&`
     `nix run .#home-manager -- switch --flake .#linux`

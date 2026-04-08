@@ -19,7 +19,7 @@ let
     if pkgs.stdenv.isDarwin then
       ''
       def ca [] {
-        ^sudo nix run $"($env.HOME)/.local/share/chezmoi/dot_config/home-manager#darwin-rebuild" -- switch --flake $"($env.HOME)/.local/share/chezmoi/dot_config/home-manager#${hostname}"
+        ^sudo -H nix run $"($env.HOME)/.local/share/chezmoi/dot_config/home-manager#darwin-rebuild" -- switch --flake $"($env.HOME)/.local/share/chezmoi/dot_config/home-manager#${hostname}"
       } # 現在のホスト向け設定を適用
       ''
     else

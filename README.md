@@ -6,7 +6,7 @@ Nix / Home Manager / nix-darwin で管理している personal dotfiles。
 
 - macOS:
   `cd dot_config/home-manager &&`
-  `sudo nix run .#darwin-rebuild -- switch --flake .#darwin`
+  `sudo -H nix run .#darwin-rebuild -- switch --flake .#darwin`
 - Linux:
   `cd dot_config/home-manager &&`
   `nix run .#home-manager -- switch --flake .#linux`

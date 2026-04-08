@@ -10,7 +10,7 @@ let
   homeManagerFlakeTarget = hostname;
   homeManagerSwitchCommand =
     if pkgs.stdenv.isDarwin then
-      ''sudo nix run .#darwin-rebuild -- switch --flake ".#${homeManagerFlakeTarget}"''
+      ''sudo -H nix run .#darwin-rebuild -- switch --flake ".#${homeManagerFlakeTarget}"''
     else
       ''nix run .#home-manager -- switch --flake ".#${homeManagerFlakeTarget}"'';
   configFishTemplate = builtins.readFile ../fish/config.fish;

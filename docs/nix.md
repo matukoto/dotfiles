@@ -24,7 +24,7 @@ Linux を Home Manager** で管理しています。
 
 ```sh
 cd ~/.local/share/chezmoi/dot_config/home-manager
-sudo nix run .#darwin-rebuild -- switch --flake .#darwin
+sudo -H nix run .#darwin-rebuild -- switch --flake .#darwin
 ```
 
 ### Linux
