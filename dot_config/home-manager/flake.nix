@@ -74,6 +74,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "hm-backup";
               home-manager.extraSpecialArgs = {
                 inherit
                   hostname
@@ -83,7 +84,8 @@
               };
               home-manager.users.${username} = import ./darwin.nix;
             }
-          ] ++ modules;
+          ]
+          ++ modules;
         };
 
       darwinConfiguration = mkDarwin {

@@ -7,7 +7,7 @@
 
 let
   homeManagerFlakeDir = "${config.home.homeDirectory}/.local/share/chezmoi/dot_config/home-manager";
-  homeManagerFlakeTarget = hostname;
+  homeManagerFlakeTarget = if pkgs.stdenv.isDarwin then "darwin" else hostname;
   homeManagerSwitchCommand =
     if pkgs.stdenv.isDarwin then
       ''sudo -H nix --extra-experimental-features "nix-command flakes" run .#darwin-rebuild -- switch --flake ".#${homeManagerFlakeTarget}"''
