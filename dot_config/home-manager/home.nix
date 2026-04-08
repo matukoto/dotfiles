@@ -6,7 +6,14 @@
 }:
 
 {
-  imports = [ ./modules/fish.nix ];
+  imports = [
+    ./modules/bash.nix
+    ./modules/files.nix
+    ./modules/fish.nix
+    ./modules/git.nix
+    ./modules/gnupg.nix
+    ./modules/nushell.nix
+  ];
 
   nix = {
     gc = {
@@ -23,7 +30,7 @@
     packages = with pkgs; [
       # cli tools
       curlMinimal
-      gitMinimal
+      delta
       imagemagick
       gh
       gnupg

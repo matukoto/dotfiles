@@ -90,15 +90,21 @@
         username = "matukoto";
         hostname = darwinHostName;
       };
+
+      mkLinuxHome =
+        hostname:
+        mkHome {
+          system = "x86_64-linux";
+          username = "matsumoto";
+          inherit hostname;
+          modules = [ ./linux.nix ];
+        };
     in
     {
       homeConfigurations = {
-        "linux" = mkHome {
-          system = "x86_64-linux";
-          username = "matsumoto";
-          hostname = "linux";
-          modules = [ ./linux.nix ];
-        };
+        "linux" = mkLinuxHome "linux";
+        "DesktopFractal" = mkLinuxHome "DesktopFractal";
+        "ThinkPadE14" = mkLinuxHome "ThinkPadE14";
       };
 
       darwinConfigurations = {
