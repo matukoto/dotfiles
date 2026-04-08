@@ -32,6 +32,7 @@ require('lazy').setup({
     { import = 'plugins.fern' },
     { import = 'plugins.fyler' },
     { import = 'plugins.flash' },
+    { import = 'plugins.jab' },
     { import = 'plugins.fm-nvim' },
     { import = 'plugins.full_visual_line' },
     { import = 'plugins.fuzzy-motion' },
