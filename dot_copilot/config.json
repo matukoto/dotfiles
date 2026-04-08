@@ -1,14 +1,15 @@
 {
   "banner": "never",
   "model": "gpt-5.4",
-  "render_markdown": true,
+  "renderMarkdown": true,
   "theme": "auto",
   "trusted_folders": [],
-  "reasoning_effort": "xhigh",
+  "effortLevel": "xhigh",
   "allowed_urls": [
     "https://github.com",
     "https://docs.github.com",
     "https://docs.renovatebot.com",
     "https://opencode.ai"
-  ]
+  ],
+  "firstLaunchAt": "2026-03-11T00:00:00.000Z"
 }
