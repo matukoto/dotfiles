@@ -6,10 +6,12 @@ Nix / Home Manager / nix-darwin で管理している personal dotfiles。
 
 - macOS:
   `cd dot_config/home-manager &&`
-  `sudo -H nix run .#darwin-rebuild -- switch --flake .#darwin`
+  `sudo -H nix --extra-experimental-features "nix-command flakes" run`
+  `.#darwin-rebuild -- switch --flake .#darwin`
 - Linux:
   `cd dot_config/home-manager &&`
-  `nix run .#home-manager -- switch --flake .#linux`
+  `nix --extra-experimental-features "nix-command flakes" run`
+  `.#home-manager -- switch --flake .#linux`
 - fish を使っている場合は `hms` で現在ホスト向けの反映、
   `hmu` で `nix flake update` + 反映を実行できます。
 

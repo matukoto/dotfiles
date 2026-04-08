@@ -24,14 +24,16 @@ Linux を Home Manager** で管理しています。
 
 ```sh
 cd ~/.local/share/chezmoi/dot_config/home-manager
-sudo -H nix run .#darwin-rebuild -- switch --flake .#darwin
+sudo -H nix --extra-experimental-features "nix-command flakes" run \
+  .#darwin-rebuild -- switch --flake .#darwin
 ```
 
 ### Linux
 
 ```sh
 cd ~/.local/share/chezmoi/dot_config/home-manager
-nix run .#home-manager -- switch --flake .#linux
+nix --extra-experimental-features "nix-command flakes" run \
+  .#home-manager -- switch --flake .#linux
 ```
 
 ホスト別設定を使う場合は `.#DesktopFractal` や `.#ThinkPadE14` を指定します。

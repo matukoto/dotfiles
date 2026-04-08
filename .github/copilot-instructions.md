@@ -19,10 +19,12 @@
 - ローカル反映の基本コマンド:
   - macOS:
     `cd dot_config/home-manager &&`
-    `sudo -H nix run .#darwin-rebuild -- switch --flake .#darwin`
+    `sudo -H nix --extra-experimental-features "nix-command flakes" run`
+    `.#darwin-rebuild -- switch --flake .#darwin`
   - Linux:
     `cd dot_config/home-manager &&`
-    `nix run .#home-manager -- switch --flake .#linux`
+    `nix --extra-experimental-features "nix-command flakes" run`
+    `.#home-manager -- switch --flake .#linux`
 - fish の `hms` は現在ホスト向けの反映、
   `hmu` は `nix flake update` + 反映のラッパー。
 - 初期セットアップ / ツール同期:
@@ -89,8 +91,10 @@
 
 - 実際のホームディレクトリ上の dotfile を直接編集しない。
   必ずリポジトリ側の元ファイルを編集し、
-  必要なら `nix run .#darwin-rebuild -- switch --flake` /
-  `nix run .#home-manager -- switch --flake` で反映する。
+  必要なら
+  `nix --extra-experimental-features "nix-command flakes" run`
+  `.#darwin-rebuild -- switch --flake` /
+  `.#home-manager -- switch --flake` で反映する。
 - OS / ホスト差分は `modules/*.nix` と flake 出力で表現する。
 - 新しい CLI ツールやバージョン更新は追加先を分ける。
   - 汎用 CLI: `dot_config/aqua/aqua.yaml`（checksum 必須）
