@@ -4,15 +4,17 @@ Nix / Home Manager / nix-darwin で管理している personal dotfiles。
 
 ## apply
 
+- `flake.nix` は repo ルートではなく `dot_config/home-manager/` にあります。
 - macOS:
-  `cd dot_config/home-manager &&`
   `sudo -H nix --extra-experimental-features "nix-command flakes" run`
-  `.#darwin-rebuild -- switch --flake .#darwin`
+  `./dot_config/home-manager#darwin-rebuild -- switch`
+  `--flake ./dot_config/home-manager#darwin`
 - Linux:
-  `cd dot_config/home-manager &&`
   `nix --extra-experimental-features "nix-command flakes" run`
-  `.#home-manager -- switch --flake .#linux`
-- fish を使っている場合は `hms` で現在ホスト向けの反映、
+  `./dot_config/home-manager#home-manager -- switch`
+  `--flake ./dot_config/home-manager#linux`
+- 初回適用が終わるまでは `hms` / `hmu` ではなく上記の `nix run` を使います。
+- 初回適用後に shell を開き直すと、fish を使っている場合は `hms` で現在ホスト向けの反映、
   `hmu` で `nix flake update` + 反映を実行できます。
 
 ## GitHub Copilot CLI

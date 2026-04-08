@@ -5,6 +5,18 @@ Linux を Home Manager** で管理しています。
 歴史的な理由で `dot_foo` や `dot_config/` というパス名は残っていますが、
 配備そのものは `dot_config/home-manager/` の flake が担当します。
 
+## 実行場所
+
+`flake.nix` は **repo ルートではなく**
+`~/.local/share/chezmoi/dot_config/home-manager/` にあります。
+
+- `cd ~/.local/share/chezmoi/dot_config/home-manager` してから
+  `.#darwin` / `.#linux` を使う
+- もしくは repo ルートから `./dot_config/home-manager#...` を使う
+
+`nix build .#darwinConfigurations...` を repo ルートで実行すると、
+`flake.nix` が見つからず失敗します。
+
 ## flake 出力
 
 - `darwinConfigurations.darwin`
@@ -22,6 +34,17 @@ Linux を Home Manager** で管理しています。
 
 初回・継続運用ともに、まずは flake から `darwin-rebuild` を直接起動するのが安全です。
 
+repo ルートから実行する場合:
+
+```sh
+cd ~/.local/share/chezmoi
+sudo -H nix --extra-experimental-features "nix-command flakes" run \
+  ./dot_config/home-manager#darwin-rebuild -- switch \
+  --flake ./dot_config/home-manager#darwin
+```
+
+`dot_config/home-manager` へ移動してから実行する場合:
+
 ```sh
 cd ~/.local/share/chezmoi/dot_config/home-manager
 sudo -H nix --extra-experimental-features "nix-command flakes" run \
@@ -34,7 +57,23 @@ sudo -H nix --extra-experimental-features "nix-command flakes" run \
 `.before-nix-darwin` 付きに自動退避します。
 それ以外の `/etc` 衝突が出た場合だけ、内容を確認して手動退避してください。
 
+初回適用が終わるまでは、`hms` / `hmu` は使わず上記の `nix run` を直接使ってください。
+初回適用前の shell には古い関数が残っていることがあり、
+`homeConfigurations."darwin".activationPackage` を探して失敗する場合があります。
+反映後に shell を開き直すか `exec fish` すると、新しい `hms` / `hmu` が使えます。
+
 ### Linux
+
+repo ルートから実行する場合:
+
+```sh
+cd ~/.local/share/chezmoi
+nix --extra-experimental-features "nix-command flakes" run \
+  ./dot_config/home-manager#home-manager -- switch \
+  --flake ./dot_config/home-manager#linux
+```
+
+`dot_config/home-manager` へ移動してから実行する場合:
 
 ```sh
 cd ~/.local/share/chezmoi/dot_config/home-manager
@@ -59,16 +98,21 @@ Fish では `dot_config/home-manager/modules/fish.nix` が
 ### ローカル
 
 ```sh
-cd dot_config/home-manager
+cd ~/.local/share/chezmoi
 
 # Linux 出力の評価
-nix eval .#homeConfigurations.linux.activationPackage.drvPath
+nix eval ./dot_config/home-manager#homeConfigurations.linux.activationPackage.drvPath
 
 # Linux 出力の build
-nix build .#homeConfigurations.linux.activationPackage --no-link
+nix build \
+  ./dot_config/home-manager#homeConfigurations.linux.activationPackage \
+  --no-link
 
 # macOS 出力の build
-nix build .#darwinConfigurations.darwin.config.system.build.toplevel --no-link
+nix build \
+  ./dot_config/home-manager#darwinConfigurations.darwin.config.system.build.\
+  toplevel \
+  --no-link
 ```
 
 ### CI
