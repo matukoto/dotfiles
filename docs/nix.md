@@ -28,6 +28,12 @@ sudo -H nix --extra-experimental-features "nix-command flakes" run \
   .#darwin-rebuild -- switch --flake .#darwin
 ```
 
+初回導入で `/etc/bashrc` / `/etc/zprofile` / `/etc/zshenv` / `/etc/zshrc`
+のような macOS 標準の shell init file が残っている場合は、
+`darwin-system.nix` の preActivation で
+`.before-nix-darwin` 付きに自動退避します。
+それ以外の `/etc` 衝突が出た場合だけ、内容を確認して手動退避してください。
+
 ### Linux
 
 ```sh
