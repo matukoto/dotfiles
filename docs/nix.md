@@ -60,6 +60,7 @@ sudo -H nix --extra-experimental-features "nix-command flakes" run \
 初回適用が終わるまでは、`hms` / `hmu` は使わず上記の `nix run` を直接使ってください。
 初回適用前の shell には古い関数が残っていることがあり、
 `homeConfigurations."darwin".activationPackage` を探して失敗する場合があります。
+`exec fish` だけでは更新されず、先に `darwin-rebuild switch` の成功が必要です。
 反映後に shell を開き直すか `exec fish` すると、新しい `hms` / `hmu` が使えます。
 
 ### Linux
