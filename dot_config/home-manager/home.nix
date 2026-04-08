@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   pkgs,
   username,
   ...
@@ -9,15 +8,7 @@
 {
   imports = [ ./modules/fish.nix ];
 
-  # unfree だが許可する
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "copilot-language-server"
-    ];
-
   nix = {
-    package = pkgs.nix;
     gc = {
       automatic = true;
       options = "--delete-older-than 7d";

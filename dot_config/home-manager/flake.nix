@@ -1,8 +1,12 @@
 {
-  description = "Home Manager configuration of matukoto";
+  description = "Nix configuration of matukoto";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -10,45 +14,105 @@
   };
 
   outputs =
-    {
+    inputs@{
+      self,
       nixpkgs,
+      nix-darwin,
       home-manager,
       ...
     }:
     let
-
-      pkgsDarwin = import nixpkgs {
-        system = "aarch64-darwin";
-      };
-
-      pkgsLinux = import nixpkgs {
-        system = "x86_64-linux";
-      };
+      darwinHostName = "MATSUMOTOnoMacBook-Air";
+      mkPkgs =
+        system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfreePredicate =
+            pkg:
+            builtins.elem (nixpkgs.lib.getName pkg) [
+              "copilot-language-server"
+            ];
+        };
 
       mkHome =
         {
-          pkgs,
+          system,
           modules,
+          hostname,
           username,
         }:
         home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = { inherit username; };
+          pkgs = mkPkgs system;
+          extraSpecialArgs = {
+            inherit
+              hostname
+              inputs
+              username
+              ;
+          };
           inherit modules;
         };
+
+      mkDarwin =
+        {
+          modules ? [ ],
+          hostname,
+          username,
+        }:
+        nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = {
+            inherit
+              hostname
+              inputs
+              username
+              ;
+          };
+          modules = [
+            ./darwin-system.nix
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {
+                inherit
+                  hostname
+                  inputs
+                  username
+                  ;
+              };
+              home-manager.users.${username} = import ./darwin.nix;
+            }
+          ] ++ modules;
+        };
+
+      darwinConfiguration = mkDarwin {
+        username = "matukoto";
+        hostname = darwinHostName;
+      };
     in
     {
       homeConfigurations = {
-        "darwin" = mkHome {
-          pkgs = pkgsDarwin;
-          username = "matukoto";
-          modules = [ ./darwin.nix ];
+        "linux" = mkHome {
+          system = "x86_64-linux";
+          username = "matsumoto";
+          hostname = "linux";
+          modules = [ ./linux.nix ];
+        };
+      };
+
+      darwinConfigurations = {
+        "darwin" = darwinConfiguration;
+        "${darwinHostName}" = darwinConfiguration;
+      };
+
+      checks = {
+        x86_64-linux = {
+          linux-activation = self.homeConfigurations.linux.activationPackage;
         };
 
-        "linux" = mkHome {
-          pkgs = pkgsLinux;
-          username = "matsumoto";
-          modules = [ ./linux.nix ];
+        aarch64-darwin = {
+          darwin-system = self.darwinConfigurations.darwin.config.system.build.toplevel;
         };
       };
     };
