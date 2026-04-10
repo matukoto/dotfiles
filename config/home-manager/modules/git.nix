@@ -1,7 +1,18 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  hostname,
+  pkgs,
+  username,
+  ...
+}:
 
 let
   isDarwin = pkgs.stdenv.isDarwin;
+  signEnabledHosts = [
+    "DesktopFractal"
+    "ThinkPadE14"
+  ];
+  signingEnabled = isDarwin || builtins.elem hostname signEnabledHosts;
 in
 
 {
@@ -10,7 +21,7 @@ in
     package = pkgs.gitMinimal;
     signing = {
       key = "C8BD39A98C2BCF31";
-      signByDefault = isDarwin;
+      signByDefault = signingEnabled;
     };
     settings = {
       user = {
@@ -23,8 +34,9 @@ in
         gpn = "!f() { git push origin HEAD:refs/heads/$1; }; f";
       };
       fetch.prune = true;
-      tag.gpgsign = isDarwin;
+      tag.gpgsign = signingEnabled;
       commit = {
+        gpgsign = signingEnabled;
         template = "~/.config/vim/gitmessage";
         verbose = true;
       };
@@ -72,8 +84,8 @@ in
       "credential \"https://github.com\"".helper = "!gh auth git-credential";
       "credential \"https://gist.github.com\"".helper = "!gh auth git-credential";
     }
-    // lib.optionalAttrs isDarwin {
-      gpg.program = "${pkgs.gnupg}/bin/gpg";
+    // lib.optionalAttrs signingEnabled {
+      gpg.program = if isDarwin then "/etc/profiles/per-user/${username}/bin/gpg" else "/usr/bin/gpg";
     };
   };
 
