@@ -16,6 +16,13 @@ let
 in
 
 {
+  home.file.".gitconfig".text = ''
+    # Managed by Home Manager.
+    # Keep this file minimal to avoid stale legacy settings.
+    [include]
+      path = ~/.config/git/config
+  '';
+
   programs.git = {
     enable = true;
     package = pkgs.gitMinimal;
@@ -83,11 +90,15 @@ in
       ghq.root = "~/work";
       "credential \"https://github.com\"".helper = "!gh auth git-credential";
       "credential \"https://gist.github.com\"".helper = "!gh auth git-credential";
+      include.path = "~/.config/git/local.config";
     }
     // lib.optionalAttrs signingEnabled {
       gpg.program = if isDarwin then "/etc/profiles/per-user/${username}/bin/gpg" else "/usr/bin/gpg";
     };
   };
 
-  xdg.configFile."git/ignore".source = ../../git/ignore;
+  xdg.configFile = {
+    "git/ignore".source = ../../git/ignore;
+    "git/local.config".source = ../../../my_private_gitconfig;
+  };
 }
