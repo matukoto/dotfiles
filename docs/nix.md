@@ -55,10 +55,13 @@ repo ルートから実行する場合:
 ```sh
 cd ~/.local/share/chezmoi
 nix --extra-experimental-features "nix-command flakes" run \
-  .#home-manager -- switch --flake .#linux
+  .#home-manager -- switch -b hm-backup --flake .#linux
 ```
 
 ホスト別設定を使う場合は `.#DesktopFractal` や `.#ThinkPadE14` を指定します。
+
+Linux で既存ファイル衝突が出る場合は、上記の `-b hm-backup` 付きコマンドで
+`*.hm-backup` に退避しながら適用します。
 
 ## 日常運用
 

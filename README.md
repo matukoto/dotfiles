@@ -11,7 +11,7 @@ Nix / Home Manager / nix-darwin で管理している personal dotfiles。
   `--flake .#darwin`
 - Linux:
   `nix --extra-experimental-features "nix-command flakes" run`
-  `.#home-manager -- switch`
+  `.#home-manager -- switch -b hm-backup`
   `--flake .#linux`
 - 初回適用が終わるまでは `hms` / `hmu` ではなく上記の `nix run` を使います。
 - `exec fish` だけでは `hms` / `hmu` は新しくならず、先に初回反映が必要です。

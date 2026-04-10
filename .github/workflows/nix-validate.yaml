@@ -19,6 +19,10 @@ jobs:
       - name: Build Linux Home Manager output
         run: nix build .#homeConfigurations.linux.activationPackage --no-link
 
+      - name: Validate Linux Home Manager activation script
+        run: |
+          nix --extra-experimental-features "nix-command flakes" run .#home-manager -- --help
+
   darwin-system:
     name: darwin-system
     runs-on: macos-14

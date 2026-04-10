@@ -30,7 +30,7 @@ let
     else
       ''
         def ca [] {
-          ^nix --extra-experimental-features "nix-command flakes" run $"(${flakeDir})#home-manager" -- switch --flake $"(${flakeDir})#${flakeTarget}"
+          ^nix --extra-experimental-features "nix-command flakes" run $"(${flakeDir})#home-manager" -- switch -b hm-backup --flake $"(${flakeDir})#${flakeTarget}"
         } # 現在のホスト向け設定を適用
       '';
   configNu =
