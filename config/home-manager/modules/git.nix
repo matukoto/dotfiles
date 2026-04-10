@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
+
+let
+  isDarwin = pkgs.stdenv.isDarwin;
+in
 
 {
   programs.git = {
@@ -6,7 +10,7 @@
     package = pkgs.gitMinimal;
     signing = {
       key = "C8BD39A98C2BCF31";
-      signByDefault = true;
+      signByDefault = isDarwin;
     };
     settings = {
       user = {
@@ -19,7 +23,7 @@
         gpn = "!f() { git push origin HEAD:refs/heads/$1; }; f";
       };
       fetch.prune = true;
-      tag.gpgsign = true;
+      tag.gpgsign = isDarwin;
       commit = {
         template = "~/.config/vim/gitmessage";
         verbose = true;
@@ -67,6 +71,8 @@
       ghq.root = "~/work";
       "credential \"https://github.com\"".helper = "!gh auth git-credential";
       "credential \"https://gist.github.com\"".helper = "!gh auth git-credential";
+    }
+    // lib.optionalAttrs isDarwin {
       gpg.program = "${pkgs.gnupg}/bin/gpg";
     };
   };
