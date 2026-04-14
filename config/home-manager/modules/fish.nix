@@ -1,8 +1,18 @@
-{ config, pkgs, ... }:
+{
+  config,
+  hostname,
+  pkgs,
+  ...
+}:
 
 let
-  homeManagerFlakeDir = "${config.home.homeDirectory}/.local/share/chezmoi/dot_config/home-manager";
-  homeManagerFlakeTarget = if pkgs.stdenv.isDarwin then "darwin" else "linux";
+  homeManagerRepoDir = "${config.home.homeDirectory}/.local/share/chezmoi";
+  homeManagerFlakeTarget = if pkgs.stdenv.isDarwin then "darwin" else hostname;
+  homeManagerSwitchCommand =
+    if pkgs.stdenv.isDarwin then
+      ''sudo -H nix --extra-experimental-features "nix-command flakes" run .#darwin-rebuild -- switch --flake ".#${homeManagerFlakeTarget}"''
+    else
+      ''nix --extra-experimental-features "nix-command flakes" run .#home-manager -- switch -b hm-backup --flake ".#${homeManagerFlakeTarget}"'';
   configFishTemplate = builtins.readFile ../fish/config.fish;
   privatePluginEnabledLine =
     if pkgs.stdenv.isDarwin then "set -x PRIVATE_PLUGIN_ENABLED true" else "";
@@ -52,11 +62,22 @@ in
     "fish/functions/yy.fish".source = ../fish/functions/yy.fish;
     "fish/functions/_tide_item_csharp.fish".source = ../fish/functions/_tide_item_csharp.fish;
     "fish/functions/ghf.fish".source = ../fish/functions/ghf.fish;
-    "fish/functions/hmu.fish".text = ''
-      function hmu --description "flake を更新して home-manager を現在の OS 向けに切り替える"
+    "fish/functions/hms.fish".text = ''
+      function hms --description "現在のホスト向けに設定を反映する"
           set -l current_dir (pwd)
-          cd "${homeManagerFlakeDir}"
-          and home-manager switch --flake ".#${homeManagerFlakeTarget}"
+          cd "${homeManagerRepoDir}"
+          and ${homeManagerSwitchCommand}
+          set -l status_code $status
+          cd "$current_dir"
+          return $status_code
+      end
+    '';
+    "fish/functions/hmu.fish".text = ''
+      function hmu --description "flake を更新して現在のホスト向けに設定を反映する"
+          set -l current_dir (pwd)
+          cd "${homeManagerRepoDir}"
+          and nix flake update
+          and ${homeManagerSwitchCommand}
           set -l status_code $status
           cd "$current_dir"
           return $status_code

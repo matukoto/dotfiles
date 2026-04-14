@@ -1,0 +1,37 @@
+name: nix-validate
+on:
+  - push
+
+permissions:
+  contents: read
+
+jobs:
+  linux-home-manager:
+    name: linux-home-manager
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+      - name: Build Linux Home Manager output
+        run: nix build .#homeConfigurations.linux.activationPackage --no-link
+
+      - name: Validate Linux Home Manager activation script
+        run: |
+          nix --extra-experimental-features "nix-command flakes" run .#home-manager -- --help
+
+  darwin-system:
+    name: darwin-system
+    runs-on: macos-14
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+      - name: Build nix-darwin output
+        run: nix build .#darwinConfigurations.darwin.config.system.build.toplevel --no-link

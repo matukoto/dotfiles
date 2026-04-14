@@ -1,157 +1,110 @@
-# Nix home-manager の導入
+# Nix / Home Manager / nix-darwin
 
-home-manager: 環境管理ツール。
-とりあえずパッケージ管理に利用するので mason でインストールしている lsp や formatter 関連を home-manager で管理することを目指す。
+現在の dotfiles は **macOS を `nix-darwin` + Home Manager、
+Linux を Home Manager** で管理しています。  
+歴史的な理由で `dot_foo` や `dot_config/` というパス名は残っていましたが、
+配備そのものは repo ルートの flake が担当します。
 
-## MacOS
+## 実行場所
 
-### install
+`flake.nix` は `~/.local/share/chezmoi/`（repo ルート）にあります。
 
-```fish
-# 公式は sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) だが、fish で動かないため、パイプで実行する方法を採用
-curl --proto '=https' --tlsv1.2 -sSf -L https://nixos.org/nix/install | sh
-```
+- `cd ~/.local/share/chezmoi` してから `.#darwin` / `.#linux` を使う
 
-途中、`.appから、コンピュータの管理を求められています。管理にはパスワード、ネットワーク、およびシステム設定の変更が含まれます。`とダイアログがでるが許可する。
+## flake 出力
 
-### flake を有効にする
+- `darwinConfigurations.darwin`
+  - macOS 用の `nix-darwin` 出力
+  - `darwinConfigurations.<mac-hostname>` でも同じ内容を参照できます
+- `homeConfigurations.linux`
+  - Linux 共通出力
+- `homeConfigurations.DesktopFractal`
+- `homeConfigurations.ThinkPadE14`
+  - Linux のホスト別出力
 
-experimental なのに実質標準らしい。
-はよ標準にしてくれ。
-何か理由があるのかな？
+## 初回適用
 
-```~/.cofnig/nix/nix.conf
-experimental-features = nix-command flakes
-```
+### macOS
 
-### home-manager の有効化
+初回・継続運用ともに、まずは flake から `darwin-rebuild` を直接起動するのが安全です。
 
-```sh
- nix run home-manager/master -- init --switch
-```
-
-シェル再起動で home-manager が利用できるようになる。
-
-### パッケージ導入
-
-home.nix の packages 配下を編集することでパッケージの管理ができる。
-packages の編集後 `home-manager switch` を実行することでパッケージの管理が反映される。
-
-#### 手始めに Nix の lsp と formatter を home-manager で管理する
-
-```nix
-home.packages = with pkgs; [  nixfmt
-  nixd
-];
-```
-
-### パッケージ最新化
+repo ルートから実行する場合:
 
 ```sh
-# ~/.local/share/chezmoi/dot_config/home-manager で flake 更新と switch をまとめて実行
-hmu
+cd ~/.local/share/chezmoi
+sudo -H nix --extra-experimental-features "nix-command flakes" run \
+  .#darwin-rebuild -- switch --flake .#darwin
 ```
 
-### クロスプラットフォーム化
+初回導入で `/etc/bashrc` / `/etc/zprofile` / `/etc/zshenv` / `/etc/zshrc`
+のような macOS 標準の shell init file が残っている場合は、
+`darwin-system.nix` の preActivation で
+`.before-nix-darwin` 付きに自動退避します。
+それ以外の `/etc` 衝突が出た場合だけ、内容を確認して手動退避してください。
 
-macOS と Linux(WSL2 Ubuntu) で同じ home.nix を利用できるようにする。
-`hmu` は Nix 側で現在の OS に対応する flake ターゲットを選ぶ。
+初回適用が終わるまでは、`hms` / `hmu` は使わず上記の `nix run` を直接使ってください。
+初回適用前の shell には古い関数が残っていることがあり、
+`homeConfigurations."darwin".activationPackage` を探して失敗する場合があります。
+`exec fish` だけでは更新されず、先に `darwin-rebuild switch` の成功が必要です。
+反映後に shell を開き直すか `exec fish` すると、新しい `hms` / `hmu` が使えます。
+
+### Linux
+
+repo ルートから実行する場合:
 
 ```sh
-# 内部では OS ごとに以下を切り替える
-home-manager switch --flake .#darwin
-home-manager switch --flake .#linux
+cd ~/.local/share/chezmoi
+nix --extra-experimental-features "nix-command flakes" run \
+  .#home-manager -- switch -b hm-backup --flake .#linux
 ```
 
-#### ファイル構成
+ホスト別設定を使う場合は `.#DesktopFractal` や `.#ThinkPadE14` を指定します。
 
-```
-home-manager/
-├── flake.nix   # エントリーポイント・依存管理
-├── flake.lock  # ロックファイル
-├── home.nix    # OS 共通設定
-├── darwin.nix  # macOS 固有設定
-└── linux.nix   # Linux(WSL) 固有設定
-```
+Linux で既存ファイル衝突が出る場合は、上記の `-b hm-backup` 付きコマンドで
+`*.hm-backup` に退避しながら適用します。
 
-### nixpkgs から検索
+## 日常運用
+
+- `hms`
+  - 現在のホスト向け設定を反映する
+- `hmu`
+  - `nix flake update` してから現在のホスト向け設定を反映する
+
+Fish では `config/home-manager/modules/fish.nix` が
+`nix run .#darwin-rebuild` / `nix run .#home-manager` ベースの wrapper を生成します。
+
+## 検証
+
+### ローカル
 
 ```sh
-nix search nixpkgs <package-name>
+cd ~/.local/share/chezmoi
+
+# Linux 出力の評価
+nix eval .#homeConfigurations.linux.activationPackage.drvPath
+
+# Linux 出力の build
+nix build \
+  .#homeConfigurations.linux.activationPackage \
+  --no-link
+
+# macOS 出力の build
+nix build \
+  .#darwinConfigurations.darwin.config.system.build.\
+  toplevel \
+  --no-link
 ```
 
-### nixpkgs にない場合
+### CI
 
-今回は aqua をインストールしたい。
-pkgs ディレクトリ配下に aqua.nix を作成して、aqua のインストール方法を記述する。
-以下のように aqua.nix を作成しhome.nix で aqua.nix を呼び出す。
+`.github/workflows/nix-validate.yaml` で Linux / macOS の build を検証します。
 
-```
-home-manager/
-├── home.nix
-└── pkgs/
-    └── aqua.nix
-```
+## 追加先の目安
 
-##### home.nix
-
-```nix
-{
-  home = {
-    packages = with pkgs; [
-       # aqua.nix を呼び出す
-      (pkgs.callPackage ./pkgs/aqua.nix { })
-    ];
-  }
-}
-```
-
-##### aqua.nix
-
-Linux と macOS でインストールするファイルが違うため、それぞれ設定している
-
-```nix
-{ pkgs }:
-
-let
-  version = "2.56.7";
-
-  target =
-    if pkgs.stdenv.isDarwin then
-      {
-        suffix = "darwin_arm64";
-        sha256 = "8d6b37e86448debc0dfabf3b103f11bea8d7ad9b0c0b9bb3163b6075bbd87aba";
-      }
-    else
-      {
-        suffix = "linux_amd64";
-        sha256 = "0000000000000000000000000000000000000000000000000000000000000000";
-      };
-in
-pkgs.stdenv.mkDerivation {
-  pname = "aqua";
-  inherit version;
-
-  src = pkgs.fetchurl {
-    url = "https://github.com/aquaproj/aqua/releases/download/v${version}/aqua_${target.suffix}.tar.gz";
-    sha256 = target.sha256;
-  };
-
-  sourceRoot = ".";
-
-  installPhase = ''
-    mkdir -p $out/bin
-    cp -r aqua $out/bin/
-    chmod +x $out/bin/aqua
-  '';
-
-  meta = {
-    description = "Declarative CLI Version manager written in Go.";
-    homepage = "https://github.com/aquaproj/aqua";
-    license = pkgs.lib.licenses.mit;
-  };
-}
-```
+- 汎用 CLI: `config/aqua/aqua.yaml`
+- 言語ランタイム / npm ベース CLI: `config/mise/config.toml`
+- エディタ依存の LSP / formatter / linter: `config/home-manager/home.nix`
+- dotfile / config file の配備: `config/home-manager/modules/*.nix`
 
 ## 参考
 

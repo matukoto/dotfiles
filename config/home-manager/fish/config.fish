@@ -80,9 +80,9 @@ if status is-interactive
     abbr --add va 'nvim ~/work/workLog/a.md'
     abbr --add v. 'nvim .'
     abbr --add vr 'nvim ./README.md'
-    abbr --add dot 'chezmoi cd'
-    abbr --add cu 'pull_skk_dict; and chezmoi update'
-    abbr --add ca 'chezmoi apply'
+    abbr --add dot 'cd $HOME/.local/share/chezmoi'
+    abbr --add cu 'git -C $HOME/.local/share/chezmoi pull --rebase'
+    abbr --add ca hms
     abbr --add conf 'cd $HOME/.config'
 
     abbr --add ob 'cd $HOME/obsidian/'

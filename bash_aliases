@@ -5,7 +5,7 @@ alias l='clear && ls'
 
 alias v='nvim'
 alias va='nvim ~/work/workLog/a.md'
-alias dot='chezmoi cd'
+alias dot='cd $HOME/.local/share/chezmoi'
 alias conf='cd $HOME/.config'
 alias cps='copilot_safe'
 alias cpy='copilot_yolo'

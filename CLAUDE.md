@@ -2,30 +2,40 @@
 
 ## プロジェクトについて
 
-このプロジェクトはchezmoiで管理されているdotfilesリポジトリです。
+このプロジェクトは Nix / Home Manager / nix-darwin で管理している dotfiles リポジトリです。
 
 ## 作業について
 
-- chezmoiのテンプレート機能を使用しています
-- ファイル名が`dot_`で始まるファイルは、実際のシステムでは`.`で始まるファイルになります
-- `.tmpl`拡張子のファイルはテンプレートファイルです
-- 設定変更時は`chezmoi apply`でシステムに反映されます
+- 実ファイルの配備は repo ルートの flake が担当します
+- macOS は `nix-darwin` + Home Manager、Linux は Home Manager を使います
+- 歴史的な理由で `dot_` や `dot_config/` という名前は残っていましたが、
+  chezmoi ではなく Nix 側から参照しています
+- 設定変更後は対象 OS に応じて
+  `sudo -H nix --extra-experimental-features "nix-command flakes" run`
+  `.#darwin-rebuild -- switch --flake` または
+  `nix --extra-experimental-features "nix-command flakes" run`
+  `.#home-manager -- switch --flake` で反映します
 
 ## ファイル構造について
 
-- `dot_config/`: ~/.config/ ディレクトリの設定ファイル群
-- `dot_*`: ホームディレクトリの設定ファイル（ドットファイル）
-  - 例: `dot_bashrc` → `~/.bashrc`、`dot_gitconfig` → `~/.gitconfig`
-- `run/`: chezmoi実行時のスクリプト
+- `config/`: 実際に配備する設定ファイル群と Home Manager モジュール
+- `dot_*`: Home Manager が読み込むホームディレクトリ向けの元ファイル
+- `run/`: 手動 bootstrap や補助スクリプト
 - `others/`: その他のスクリプトやメモ
 
 ## 重要な注意点
 
-- `~/.bashrc`などのドットファイルを修正する場合は、`dot_bashrc`を編集してください
-- システムの実際のファイルを直接編集せず、必ずchezmoiで管理されているファイルを修正してください
+- `~/.bashrc` や `~/.config/*` を直接編集せず、
+  必ずこのリポジトリ側の元ファイルを修正してください
+- 反映コマンドは macOS では
+  `sudo -H nix --extra-experimental-features "nix-command flakes" run`
+  `.#darwin-rebuild -- switch --flake .#darwin`、
+  Linux では
+  `nix --extra-experimental-features "nix-command flakes" run`
+  `.#home-manager -- switch --flake .#linux` が基本です
+- Fish の `hms` / `hmu` は現在ホスト向けの反映ラッパーです
 
 ## テストについて
 
 - dotfilesの性質上、通常のユニットテストは適用されません
-- 設定ファイルの文法チェックや動作確認が主になります
-
+- repo ルート flake build と設定ファイルの文法チェックが主になります

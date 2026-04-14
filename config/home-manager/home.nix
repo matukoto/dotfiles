@@ -1,23 +1,21 @@
 {
   config,
-  lib,
   pkgs,
   username,
   ...
 }:
 
 {
-  imports = [ ./modules/fish.nix ];
-
-  # unfree だが許可する
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "copilot-language-server"
-    ];
+  imports = [
+    ./modules/bash.nix
+    ./modules/files.nix
+    ./modules/fish.nix
+    ./modules/git.nix
+    ./modules/gnupg.nix
+    ./modules/nushell.nix
+  ];
 
   nix = {
-    package = pkgs.nix;
     gc = {
       automatic = true;
       options = "--delete-older-than 7d";
@@ -32,7 +30,7 @@
     packages = with pkgs; [
       # cli tools
       curlMinimal
-      gitMinimal
+      delta
       imagemagick
       gh
       gnupg
