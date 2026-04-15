@@ -6,7 +6,7 @@
 }:
 
 let
-  homeManagerRepoDir = "${config.home.homeDirectory}/.local/share/chezmoi";
+  homeManagerRepoDir = "${config.home.homeDirectory}/work/github.com/matukoto/dotfiles";
   homeManagerFlakeTarget = if pkgs.stdenv.isDarwin then "darwin" else hostname;
   homeManagerSwitchCommand =
     if pkgs.stdenv.isDarwin then

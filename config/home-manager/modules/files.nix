@@ -6,8 +6,8 @@
 }:
 
 let
-  dotfilesDir = "${config.home.homeDirectory}/.local/share/chezmoi/config";
-  homeDir = "${config.home.homeDirectory}/.local/share/chezmoi/home";
+  dotfilesDir = "${config.home.homeDirectory}/work/github.com/matukoto/dotfiles/config";
+  homeDir = "${config.home.homeDirectory}/work/github.com/matukoto/dotfiles/home";
   commonConfigDirs = [
     "aqua"
     "atuin"
