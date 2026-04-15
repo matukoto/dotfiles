@@ -57,19 +57,19 @@ in
 
   home.file = {
     ".claude" = {
-      source = ../../../claude;
+      source = ../../../home/claude;
       recursive = true;
     };
     ".copilot" = {
-      source = ../../../copilot;
+      source = ../../../home/copilot;
       recursive = true;
     };
     ".docker/cli-plugins" = {
-      source = ../../../docker/cli-plugins;
+      source = ../../../home/docker/cli-plugins;
       recursive = true;
     };
     ".local/bin" = {
-      source = ../../../local/bin;
+      source = ../../../home/local/bin;
       recursive = true;
     };
   };
