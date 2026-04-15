@@ -2,8 +2,8 @@
 
 {
   home.file = {
-    ".bash_aliases".text = builtins.readFile ../../../bash_aliases;
-    ".bashrc".text = builtins.readFile ../../../bashrc;
-    ".profile".text = builtins.readFile ../../../profile;
+    ".bash_aliases".text = builtins.readFile ../../../home/bash_aliases;
+    ".bashrc".text = builtins.readFile ../../../home/bashrc;
+    ".profile".text = builtins.readFile ../../../home/profile;
   };
 }
