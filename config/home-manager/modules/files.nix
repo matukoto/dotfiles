@@ -57,7 +57,12 @@ in
 
   home.file = {
     ".claude".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/claude";
-    ".copilot".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/copilot";
+    ".copilot/config.json".source =
+      config.lib.file.mkOutOfStoreSymlink "${homeDir}/copilot/config.json";
+    ".copilot/lsp-config.json".source =
+      config.lib.file.mkOutOfStoreSymlink "${homeDir}/copilot/lsp-config.json";
+    ".copilot/mcp-config.json".source =
+      config.lib.file.mkOutOfStoreSymlink "${homeDir}/copilot/mcp-config.json";
     ".docker/cli-plugins".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/docker/cli-plugins";
     ".local/bin".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/local/bin";
   };
