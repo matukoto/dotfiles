@@ -12,7 +12,6 @@
     ./modules/fish.nix
     ./modules/git.nix
     ./modules/gnupg.nix
-    ./modules/nushell.nix
   ];
 
   nix = {
