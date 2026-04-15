@@ -8,6 +8,10 @@
 let
   dotfilesDir = "${config.home.homeDirectory}/work/github.com/matukoto/dotfiles/config";
   homeDir = "${config.home.homeDirectory}/work/github.com/matukoto/dotfiles/home";
+  localBinPath = ../../../home/local/bin;
+  localBinFiles = builtins.attrNames (
+    lib.filterAttrs (name: type: type == "regular") (builtins.readDir localBinPath)
+  );
   commonConfigDirs = [
     "aqua"
     "atuin"
@@ -46,6 +50,14 @@ let
       source = ../../. + "/${name}";
       recursive = true;
     };
+  localBinLinks = builtins.listToAttrs (
+    map (
+      fileName:
+      lib.nameValuePair ".local/bin/${fileName}" {
+        source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/local/bin/${fileName}";
+      }
+    ) localBinFiles
+  );
 in
 {
   xdg.configFile =
@@ -64,6 +76,6 @@ in
     ".copilot/mcp-config.json".source =
       config.lib.file.mkOutOfStoreSymlink "${homeDir}/copilot/mcp-config.json";
     ".docker/cli-plugins".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/docker/cli-plugins";
-    ".local/bin".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/local/bin";
-  };
+  }
+  // localBinLinks;
 }
