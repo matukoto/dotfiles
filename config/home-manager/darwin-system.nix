@@ -1,4 +1,9 @@
-{ lib, username, ... }:
+{
+  lib,
+  username,
+  pkgs,
+  ...
+}:
 
 {
   nixpkgs = {
@@ -10,9 +15,12 @@
       ];
   };
 
+  programs.fish.enable = true;
+
   users.users.${username} = {
     name = username;
     home = "/Users/${username}";
+    shell = pkgs.fish;
   };
 
   # 初回導入時に macOS 標準の shell init を退避し、nix-darwin の
