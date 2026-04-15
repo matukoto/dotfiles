@@ -119,9 +119,9 @@ export NO_UPDATE_NOTIFIER=1
 export CLAUDE_CONFIG_DIR=~/.config/claude
 
 # 対話型セッションでのみfishを起動
-if [[ $- == *i* ]] && [[ -z "$FISH_VERSION" ]] && [[ "$0" != *"fish"* ]]; then
-  # fishが利用可能な場合のみ起動
-  if command -v fish >/dev/null 2>&1; then
-    exec fish
-  fi
-fi
+# if [[ $- == *i* ]] && [[ -z "$FISH_VERSION" ]] && [[ "$0" != *"fish"* ]]; then
+#   # fishが利用可能な場合のみ起動
+#   if command -v fish >/dev/null 2>&1; then
+#     exec fish
+#   fi
+# fi
