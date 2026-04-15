@@ -11,16 +11,18 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
   };
 
   outputs =
     inputs@{
-      self,
-      nixpkgs,
-      nix-darwin,
-      home-manager,
-      ...
-    }:
+    self,
+    nixpkgs,
+    nix-darwin,
+    home-manager,
+    nix-homebrew,
+    ...
+  }:
     let
       darwinHostName = "MATSUMOTOnoMacBook-Air";
       mkPkgs =
@@ -67,10 +69,13 @@
               inputs
               username
               ;
+            inherit nix-homebrew;
           };
           modules = [
             ./config/home-manager/darwin-system.nix
             home-manager.darwinModules.home-manager
+            nix-homebrew.darwinModules.nix-homebrew
+            ./config/home-manager/darwin-homebrew.nix
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

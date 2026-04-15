@@ -105,6 +105,7 @@ nix build \
 - 言語ランタイム / npm ベース CLI: `config/mise/config.toml`
 - エディタ依存の LSP / formatter / linter: `config/home-manager/home.nix`
 - dotfile / config file の配備: `config/home-manager/modules/*.nix`
+- macOS の Homebrew 管理: `config/home-manager/darwin-homebrew.nix`
 
 ## 参考
 

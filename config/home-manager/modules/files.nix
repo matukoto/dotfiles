@@ -6,8 +6,8 @@
 }:
 
 let
-  #dotfilesDir = "${config.home.homeDirectory}/path/to/your/dotfiles";
   dotfilesDir = "${config.home.homeDirectory}/.local/share/chezmoi/config";
+  homeDir = "${config.home.homeDirectory}/.local/share/chezmoi/home";
   commonConfigDirs = [
     "aqua"
     "atuin"
@@ -56,21 +56,9 @@ in
     };
 
   home.file = {
-    ".claude" = {
-      source = ../../../home/claude;
-      recursive = true;
-    };
-    ".copilot" = {
-      source = ../../../home/copilot;
-      recursive = true;
-    };
-    ".docker/cli-plugins" = {
-      source = ../../../home/docker/cli-plugins;
-      recursive = true;
-    };
-    ".local/bin" = {
-      source = ../../../home/local/bin;
-      recursive = true;
-    };
+    ".claude".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/claude";
+    ".copilot".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/copilot";
+    ".docker/cli-plugins".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/docker/cli-plugins";
+    ".local/bin".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/local/bin";
   };
 }

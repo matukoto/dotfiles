@@ -1,10 +1,10 @@
 {
   "banner": "never",
-  "model": "gpt-5.4",
+  "model": "gpt-5.4-mini",
   "renderMarkdown": true,
   "theme": "auto",
   "trusted_folders": [],
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
   "allowed_urls": [
     "https://github.com",
     "https://docs.github.com",
