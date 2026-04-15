@@ -1,10 +1,13 @@
 {
+  config,
   lib,
   pkgs,
   ...
 }:
 
 let
+  #dotfilesDir = "${config.home.homeDirectory}/path/to/your/dotfiles";
+  dotfilesDir = "${config.home.homeDirectory}/.local/share/chezmoi/config";
   commonConfigDirs = [
     "aqua"
     "atuin"
@@ -24,11 +27,19 @@ let
     "yazi"
     "zoxide"
   ];
+
   darwinConfigDirs = [
     "aerospace"
     "borders"
     "sketchybar"
   ];
+
+  mkOutOfStoreConfigDir =
+    name:
+    lib.nameValuePair name {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/${name}";
+    };
+
   mkConfigDir =
     name:
     lib.nameValuePair name {
@@ -38,7 +49,7 @@ let
 in
 {
   xdg.configFile =
-    builtins.listToAttrs (map mkConfigDir commonConfigDirs)
+    builtins.listToAttrs (map mkOutOfStoreConfigDir commonConfigDirs)
     // lib.optionalAttrs pkgs.stdenv.isDarwin (builtins.listToAttrs (map mkConfigDir darwinConfigDirs))
     // {
       "typos.toml".source = ../../typos.toml;
