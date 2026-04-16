@@ -60,8 +60,8 @@ nix --extra-experimental-features "nix-command flakes" run \
 
 ホスト別設定を使う場合は `.#DesktopFractal` や `.#ThinkPadE14` を指定します。
 
-Linux で既存ファイル衝突が出る場合は、上記の `-b hm-backup` 付きコマンドで
-`*.hm-backup` に退避しながら適用します。
+初回適用だけ `-b hm-backup` を付けます。以降の `hms` / `hmu` では
+バックアップ指定は不要です。
 
 ## 日常運用
 

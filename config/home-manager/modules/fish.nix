@@ -12,7 +12,7 @@ let
     if pkgs.stdenv.isDarwin then
       ''sudo -H nix --extra-experimental-features "nix-command flakes" run .#darwin-rebuild -- switch --flake ".#${homeManagerFlakeTarget}"''
     else
-      ''nix --extra-experimental-features "nix-command flakes" run .#home-manager -- switch -b hm-backup --flake ".#${homeManagerFlakeTarget}"'';
+      ''nix --extra-experimental-features "nix-command flakes" run .#home-manager -- switch --flake ".#${homeManagerFlakeTarget}"'';
   configFishTemplate = builtins.readFile ../fish/config.fish;
   privatePluginEnabledLine =
     if pkgs.stdenv.isDarwin then "set -x PRIVATE_PLUGIN_ENABLED true" else "";
