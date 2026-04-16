@@ -29,6 +29,12 @@ vim.opt.foldlevelstart = 99
 -- 折り畳みを有効にする
 vim.opt.foldenable = true
 
+-- 各provider を無効化
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_node_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+
 -- タブ
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
