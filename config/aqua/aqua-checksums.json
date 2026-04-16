@@ -151,23 +151,23 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.14.1/atuin-aarch64-apple-darwin.tar.gz",
-      "checksum": "67CA2694583EAC0D02C442D1FFD1CB2D0C505D9F60357E7550AAEF2B966597F5",
+      "id": "github_release/github.com/atuinsh/atuin/v18.15.0/atuin-aarch64-apple-darwin.tar.gz",
+      "checksum": "A066CF8DD7969DAEE9D8DE04C8BD4C6D4549E0EE36FE3B50B62FD19605E3BDC3",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.14.1/atuin-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "CF67D0978DEF478E7D149CDB94A1E572EB008C8151D95F6A53EE5560720F1141",
+      "id": "github_release/github.com/atuinsh/atuin/v18.15.0/atuin-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "B242B984C105774D0E3202418D2349D148031B429B1D5AA81B61A4ACBC6A160E",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.14.1/atuin-x86_64-pc-windows-msvc.zip",
-      "checksum": "5B7E3630CAFAD6E8A9846246A192955F8988A4879C88AD167CDB7D7E6BDB0915",
+      "id": "github_release/github.com/atuinsh/atuin/v18.15.0/atuin-x86_64-pc-windows-msvc.zip",
+      "checksum": "405B62F6722DA6674853B9AC532FA3F492607AFFB936CF4371CA0F7364EAEDF3",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.14.1/atuin-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "F648ECB4248EB2CD77E17B42370D6229DEFE306D35443B0601C2C8A5A5FD0A16",
+      "id": "github_release/github.com/atuinsh/atuin/v18.15.0/atuin-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "83CF0BE524EF8DA85987DCF42F30ED581F19FEABC38442FC6AC99B4BB6817058",
       "algorithm": "sha256"
     },
     {
@@ -801,33 +801,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.3/bin/darwin/amd64/kubectl",
-      "checksum": "2F339B1EAE2E1792EC08DA281B37AFBEEE94F70BED6B7398E7EFD81BA08F8D37",
+      "id": "http/dl.k8s.io/v1.35.4/bin/darwin/amd64/kubectl",
+      "checksum": "DDDB01BDDB96F78E48E33105CCFA2FEEDFF585A8B2E3B812F5D0F64C7403710A",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.3/bin/darwin/arm64/kubectl",
-      "checksum": "280651239D84BAB214BA83403666BF6976A5FA0DBDB41404F26EB6F276D34963",
+      "id": "http/dl.k8s.io/v1.35.4/bin/darwin/arm64/kubectl",
+      "checksum": "EC644A2473B64B486987F695DFB1867963CE6D42D267B86E944585A546F92B5D",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.3/bin/linux/amd64/kubectl",
-      "checksum": "FD31C7D7129260E608F6FAF92D5984C3267AD0B5EAD3BCED2FE125686E286AD6",
+      "id": "http/dl.k8s.io/v1.35.4/bin/linux/amd64/kubectl",
+      "checksum": "B529430DF69A688FD61B64AD2299EDB5FD71CB58BE2A4779DBA624C7D3510EFD",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.3/bin/linux/arm64/kubectl",
-      "checksum": "6F0CD088A82DDE5D5807122056069E2FAC4ED447CC518EFC055547AE46525F14",
+      "id": "http/dl.k8s.io/v1.35.4/bin/linux/arm64/kubectl",
+      "checksum": "6A5A4CC4E396D7626A7A693A3044B51C75520F81DB30FE6816C2554E53BE336F",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.3/bin/windows/amd64/kubectl.exe",
-      "checksum": "6C367F9C34BE9A13A94EB523DD62006973E1D051ADEA7D6BCF800DDE3F6E84DF",
+      "id": "http/dl.k8s.io/v1.35.4/bin/windows/amd64/kubectl.exe",
+      "checksum": "D77D03309BD80DE56DAFE8CA59FF6F2076E2ED4EE61C6A94657A4B6E945210E6",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.35.3/bin/windows/arm64/kubectl.exe",
-      "checksum": "7F2D923AA852A8E909568F45DA5780F6783007354AE11E6AB8001BC86C8C75AA",
+      "id": "http/dl.k8s.io/v1.35.4/bin/windows/arm64/kubectl.exe",
+      "checksum": "7FC20079BF0E2B67BA3B2F9841BFB15F34D4C828D00BFCE39D3D57C3DCA21FDF",
       "algorithm": "sha256"
     },
     {
