@@ -8,6 +8,16 @@ return {
   },
   init = function()
     vim.api.nvim_create_autocmd('User', {
+      pattern = 'skkeleton-enable-pre',
+      callback = function()
+        vim.fn['skkeleton#config']({
+          keepState = vim.bo.filetype == 'markdown',
+        })
+      end,
+      group = vim.api.nvim_create_augroup('skkeletonKeepState', { clear = true }),
+    })
+
+    vim.api.nvim_create_autocmd('User', {
       pattern = 'skkeleton-initialize-pre',
       callback = function()
         vim.fn['skkeleton#config']({
@@ -25,7 +35,7 @@ return {
           showCandidatesCount = 2,
           userDictionary = vim.fn.expand('~/.skk/userdict.txt'),
           eggLikeNewline = false,
-          keepState = true,
+          keepState = false,
         })
         vim.fn['skkeleton#register_kanatable']('rom', {
           ['--'] = { '-', '' },
@@ -52,18 +62,6 @@ return {
           ['z8'] = { '⑧', '' },
           ['z9'] = { '⑨', '' },
         })
-        vim.cmd([[
-          " skkeleton がモードの状態を保持しないように修正
-          function! s:skkeleton_init() abort
-            call skkeleton#config({
-              \ 'keepState': v:false
-              \ })
-          endfunction
-          augroup skkeleton-enable-previous
-            autocmd!
-            autocmd User skkeleton-enable-pre call s:skkeleton_init()
-          augroup END
-          ]])
       end,
       group = vim.api.nvim_create_augroup('skkelectonInitPre', { clear = true }),
     })
