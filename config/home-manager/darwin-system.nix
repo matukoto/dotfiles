@@ -25,32 +25,35 @@
 
   # 初回導入時に macOS 標準の shell init を退避し、nix-darwin の
   # /etc 管理チェックで止まらないようにする。
-  system.activationScripts.preActivation.text = ''
-    managedEtcShellFiles=(
-      /etc/bashrc
-      /etc/zprofile
-      /etc/zshenv
-      /etc/zshrc
-    )
+  system = {
 
-    for etcFile in "''${managedEtcShellFiles[@]}"; do
-      etcStaticFile="/etc/static/''${etcFile#/etc/}"
-      currentTarget="$(readlink -- "$etcFile" 2>/dev/null || true)"
+    activationScripts.preActivation.text = ''
+      managedEtcShellFiles=(
+        /etc/bashrc
+        /etc/zprofile
+        /etc/zshenv
+        /etc/zshrc
+      )
 
-      if [[ ! -e "$etcFile" || "$currentTarget" == "$etcStaticFile" ]]; then
-        continue
-      fi
+      for etcFile in "''${managedEtcShellFiles[@]}"; do
+        etcStaticFile="/etc/static/''${etcFile#/etc/}"
+        currentTarget="$(readlink -- "$etcFile" 2>/dev/null || true)"
 
-      backupFile="''${etcFile}.before-nix-darwin"
-      if [[ -e "$backupFile" ]]; then
-        backupFile="''${backupFile}.$(date +%s)"
-      fi
+        if [[ ! -e "$etcFile" || "$currentTarget" == "$etcStaticFile" ]]; then
+          continue
+        fi
 
-      printf >&2 'backing up unmanaged %s -> %s\n' "$etcFile" "$backupFile"
-      mv "$etcFile" "$backupFile"
-    done
-  '';
+        backupFile="''${etcFile}.before-nix-darwin"
+        if [[ -e "$backupFile" ]]; then
+          backupFile="''${backupFile}.$(date +%s)"
+        fi
 
-  system.primaryUser = username;
-  system.stateVersion = 6;
+        printf >&2 'backing up unmanaged %s -> %s\n' "$etcFile" "$backupFile"
+        mv "$etcFile" "$backupFile"
+      done
+    '';
+
+    primaryUser = username;
+    stateVersion = 6;
+  };
 }
