@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   hostname,
   pkgs,
   ...
@@ -9,10 +10,9 @@ let
   homeManagerRepoDir = "${config.home.homeDirectory}/work/github.com/matukoto/dotfiles";
   homeManagerFlakeTarget = if pkgs.stdenv.isDarwin then "darwin" else hostname;
   homeManagerSwitchCommand =
-    if pkgs.stdenv.isDarwin then
-      ''sudo -H nix --extra-experimental-features "nix-command flakes" run .#darwin-rebuild -- switch --flake ".#${homeManagerFlakeTarget}"''
-    else
-      ''nix --extra-experimental-features "nix-command flakes" run .#home-manager -- switch --flake ".#${homeManagerFlakeTarget}"'';
+    ''nix --extra-experimental-features "nix-command flakes" run .#home-manager -- switch --flake ".#${homeManagerFlakeTarget}"'';
+  darwinSwitchCommand =
+    ''sudo -H nix --extra-experimental-features "nix-command flakes" run .#darwin-rebuild -- switch --flake ".#darwin"'';
   configFishTemplate = builtins.readFile ../fish/config.fish;
   privatePluginEnabledLine =
     if pkgs.stdenv.isDarwin then "set -x PRIVATE_PLUGIN_ENABLED true" else "";
@@ -46,7 +46,8 @@ let
       configFishTemplate;
 in
 {
-  xdg.configFile = {
+  xdg.configFile =
+    {
     "fish/conf.d/_key_bindings.fish".source = ../fish/conf.d/_key_bindings.fish;
     "fish/conf.d/tide_settings.fish".source = ../fish/conf.d/tide_settings.fish;
     "fish/conf.d/fish_greeting.fish".source = ../fish/conf.d/fish_greeting.fish;
@@ -63,7 +64,7 @@ in
     "fish/functions/_tide_item_csharp.fish".source = ../fish/functions/_tide_item_csharp.fish;
     "fish/functions/ghf.fish".source = ../fish/functions/ghf.fish;
     "fish/functions/hms.fish".text = ''
-      function hms --description "現在のホスト向けに設定を反映する"
+      function hms --description "Home Manager を反映する"
           set -l current_dir (pwd)
           cd "${homeManagerRepoDir}"
           and ${homeManagerSwitchCommand}
@@ -73,11 +74,22 @@ in
       end
     '';
     "fish/functions/hmu.fish".text = ''
-      function hmu --description "flake を更新して現在のホスト向けに設定を反映する"
+      function hmu --description "flake を更新して Home Manager を反映する"
           set -l current_dir (pwd)
           cd "${homeManagerRepoDir}"
           and nix flake update
           and ${homeManagerSwitchCommand}
+          set -l status_code $status
+          cd "$current_dir"
+          return $status_code
+      end
+    '';
+  } // lib.optionalAttrs pkgs.stdenv.isDarwin {
+    "fish/functions/hmd.fish".text = ''
+      function hmd --description "nix-darwin を反映する"
+          set -l current_dir (pwd)
+          cd "${homeManagerRepoDir}"
+          and ${darwinSwitchCommand}
           set -l status_code $status
           cd "$current_dir"
           return $status_code

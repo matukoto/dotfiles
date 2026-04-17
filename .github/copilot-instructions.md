@@ -25,8 +25,9 @@
     `cd ~/.local/share/chezmoi &&`
     `nix --extra-experimental-features "nix-command flakes" run`
     `.#home-manager -- switch --flake .#linux`
-- fish の `hms` は現在ホスト向けの反映、
-  `hmu` は `nix flake update` + 反映のラッパー。
+- fish の `hms` は Home Manager の反映、
+  `hmu` は `nix flake update` + Home Manager の反映のラッパー。
+- `hmd` は macOS の nix-darwin 反映ラッパー。
 - 初期セットアップ / ツール同期:
   - `mise i`
   - `aqua i -a`

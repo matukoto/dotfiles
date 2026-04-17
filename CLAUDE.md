@@ -15,6 +15,8 @@
   `.#darwin-rebuild -- switch --flake` または
   `nix --extra-experimental-features "nix-command flakes" run`
   `.#home-manager -- switch --flake` で反映します
+- fish の `hms` / `hmu` は Home Manager の反映ラッパー、
+  `hmd` は macOS の nix-darwin 反映ラッパーです
 
 ## ファイル構造について
 
@@ -33,7 +35,8 @@
   Linux では
   `nix --extra-experimental-features "nix-command flakes" run`
   `.#home-manager -- switch --flake .#linux` が基本です
-- Fish の `hms` / `hmu` は現在ホスト向けの反映ラッパーです
+- Fish の `hms` / `hmu` は Home Manager の反映ラッパー、
+  `hmd` は macOS の nix-darwin 反映ラッパーです
 
 ## テストについて
 

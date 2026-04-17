@@ -42,11 +42,10 @@ sudo -H nix --extra-experimental-features "nix-command flakes" run \
 `.before-nix-darwin` 付きに自動退避します。
 それ以外の `/etc` 衝突が出た場合だけ、内容を確認して手動退避してください。
 
-初回適用が終わるまでは、`hms` / `hmu` は使わず上記の `nix run` を直接使ってください。
-初回適用前の shell には古い関数が残っていることがあり、
-`homeConfigurations."darwin".activationPackage` を探して失敗する場合があります。
-`exec fish` だけでは更新されず、先に `darwin-rebuild switch` の成功が必要です。
-反映後に shell を開き直すか `exec fish` すると、新しい `hms` / `hmu` が使えます。
+初回適用が終わるまでは、`hms` / `hmu` / `hmd` は使わず上記の `nix run` を直接使ってください。
+初回適用前の shell には古い関数が残っていることがあり、`exec fish` だけでは更新されません。
+先に `darwin-rebuild switch` の成功が必要です。
+反映後に shell を開き直すか `exec fish` すると、新しい `hms` / `hmu` / `hmd` が使えます。
 
 ### Linux
 
@@ -66,12 +65,14 @@ nix --extra-experimental-features "nix-command flakes" run \
 ## 日常運用
 
 - `hms`
-  - 現在のホスト向け設定を反映する
+  - Home Manager を反映する
 - `hmu`
-  - `nix flake update` してから現在のホスト向け設定を反映する
+  - `nix flake update` してから Home Manager を反映する
+- `hmd`
+  - macOS で nix-darwin を反映する
 
 Fish では `config/home-manager/modules/fish.nix` が
-`nix run .#darwin-rebuild` / `nix run .#home-manager` ベースの wrapper を生成します。
+`hms` / `hmu` を生成し、macOS では `hmd` も追加します。
 
 ## 検証
 

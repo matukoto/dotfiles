@@ -97,6 +97,13 @@
         hostname = darwinHostName;
       };
 
+      darwinHomeConfiguration = mkHome {
+        system = "aarch64-darwin";
+        username = "matukoto";
+        hostname = darwinHostName;
+        modules = [ ./config/home-manager/darwin.nix ];
+      };
+
       mkLinuxHome =
         hostname:
         mkHome {
@@ -111,6 +118,8 @@
         "linux" = mkLinuxHome "linux";
         "DesktopFractal" = mkLinuxHome "DesktopFractal";
         "ThinkPadE14" = mkLinuxHome "ThinkPadE14";
+        "darwin" = darwinHomeConfiguration;
+        "${darwinHostName}" = darwinHomeConfiguration;
       };
 
       darwinConfigurations = {
@@ -135,6 +144,7 @@
         };
 
         aarch64-darwin = {
+          home-manager = home-manager.packages.aarch64-darwin.home-manager;
           darwin-rebuild = nix-darwin.packages.aarch64-darwin.darwin-rebuild;
           default = nix-darwin.packages.aarch64-darwin.darwin-rebuild;
         };

@@ -14,9 +14,9 @@ Nix / Home Manager / nix-darwin で管理している personal dotfiles。
   `.#home-manager -- switch -b hm-backup`
   `--flake .#linux`
 - 初回適用だけ `-b hm-backup` を付け、以降の `hms` / `hmu` ではバックアップ指定は不要です。
-- `exec fish` だけでは `hms` / `hmu` は新しくならず、先に初回反映が必要です。
-- 初回適用後に shell を開き直すと、fish を使っている場合は `hms` で現在ホスト向けの反映、
-  `hmu` で `nix flake update` + 反映を実行できます。
+- `exec fish` だけでは `hms` / `hmu` / `hmd` は新しくならず、先に初回反映が必要です。
+- 初回適用後に shell を開き直すと、fish を使っている場合は `hms` で Home Manager を反映し、
+  `hmd` で nix-darwin を反映できます。`hmu` は `nix flake update` + Home Manager 反映です。
 
 ## GitHub Copilot CLI
 
