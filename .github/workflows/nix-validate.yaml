@@ -1,6 +1,19 @@
 name: nix-validate
 on:
-  - push
+  push:
+    paths:
+      - .github/workflows/nix-validate.yaml
+      - flake.nix
+      - flake.lock
+      - config/**
+      - home/**
+      - run/**
+      - setting/**
+      - windows/**
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
