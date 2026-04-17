@@ -3,13 +3,13 @@
     "java" = { version = "corretto-24.0.2.12.1", release_type = "ga" }
     "rust" = "1.94.1"
     "go" = "1.26.2"
-    "node" = "24.14.1"
+    "node" = "24.15.0"
     "lua" = "5.5.0"
     "dotnet" = "10.0.102"
     "npm:@marp-team/marp-cli" = "latest"
     "npm:sv" = '0.15.1'
     "spring-boot" = "3.5.3"
-    'npm:@actions/languageserver' = '0.3.52'
+    'npm:@actions/languageserver' = '0.3.53'
     'npm:md-to-pdf' = '5.2.5'
     "wrangler" = "4.61.1"
 [settings]
