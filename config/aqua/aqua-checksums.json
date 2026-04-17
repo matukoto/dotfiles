@@ -151,23 +151,23 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.15.0/atuin-aarch64-apple-darwin.tar.gz",
-      "checksum": "A066CF8DD7969DAEE9D8DE04C8BD4C6D4549E0EE36FE3B50B62FD19605E3BDC3",
+      "id": "github_release/github.com/atuinsh/atuin/v18.15.1/atuin-aarch64-apple-darwin.tar.gz",
+      "checksum": "F0377E667DEAD37D627D946581284DDE7FF094955BD858DF88223EC2E4B21086",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.15.0/atuin-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "B242B984C105774D0E3202418D2349D148031B429B1D5AA81B61A4ACBC6A160E",
+      "id": "github_release/github.com/atuinsh/atuin/v18.15.1/atuin-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "B7C203455553927442881F364A8C9BA5D27C1869B0671FE1B236BE09B11ABA52",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.15.0/atuin-x86_64-pc-windows-msvc.zip",
-      "checksum": "405B62F6722DA6674853B9AC532FA3F492607AFFB936CF4371CA0F7364EAEDF3",
+      "id": "github_release/github.com/atuinsh/atuin/v18.15.1/atuin-x86_64-pc-windows-msvc.zip",
+      "checksum": "342BF71E411557F79FB5C4374A3C2A9B91A32B112F5B611244588494F1EAF2B7",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.15.0/atuin-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "83CF0BE524EF8DA85987DCF42F30ED581F19FEABC38442FC6AC99B4BB6817058",
+      "id": "github_release/github.com/atuinsh/atuin/v18.15.1/atuin-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "454BD558795C8072D5EB50CC0EA667ADAA876A1CBA600305F88618F7041D4A1D",
       "algorithm": "sha256"
     },
     {
@@ -316,33 +316,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.27/copilot-darwin-arm64.tar.gz",
-      "checksum": "5747D2CCBBCC7011FEB155C543BA8AFD9C70929FE45A1FF4DDF072023D912D28",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.28/copilot-darwin-arm64.tar.gz",
+      "checksum": "27FFE71A0BDDDB432AE79D526CD69481D8BBA7F7C02311C598B036F6100C4160",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.27/copilot-darwin-x64.tar.gz",
-      "checksum": "59E2DF11505AADE1C7D91C0A8F27C596635DB3185F9653D503FAA460D519578F",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.28/copilot-darwin-x64.tar.gz",
+      "checksum": "0A97CCC55E79F397CCB008F94B32DB97A93D14E05BE7FEB100DFEA8646B36751",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.27/copilot-linux-arm64.tar.gz",
-      "checksum": "50C0C4934AF1198EC347AC7CDC7CC4F49DE8192280BD2AAEC81D0BA4A3B3C0FB",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.28/copilot-linux-arm64.tar.gz",
+      "checksum": "437E4A841AD15FD306BDCB7D54CC023AE34B80249428BF9948564117397BFE97",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.27/copilot-linux-x64.tar.gz",
-      "checksum": "3A551C6DC8216041675132B53FDAEAF395E781EEED4C23DD02BD60D640D80722",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.28/copilot-linux-x64.tar.gz",
+      "checksum": "353EEAC118B44B027351810A1BFA4E096B7C940404E3EE55D447A4C5A4DEDF52",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.27/copilot-win32-arm64.zip",
-      "checksum": "D2931F3FC785A804D868ECBC11E20008CF7AF612BAC53F47DEDC208177F5AE71",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.28/copilot-win32-arm64.zip",
+      "checksum": "9E20174154821347F0BCD973753FF6E8B2603AAD126C9B3074ED105BC0F6614A",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.27/copilot-win32-x64.zip",
-      "checksum": "B268D2EBD5D3439ADE3B6EB421E1E51761AB983A673CA505AB44E55432ED28AF",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.28/copilot-win32-x64.zip",
+      "checksum": "A988C6DF40862D3EE3E16AA225F1A4AD7B40FCDEF7C9295246C01215EBD04C4E",
       "algorithm": "sha256"
     },
     {
@@ -491,28 +491,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.112.1/nu-0.112.1-aarch64-apple-darwin.tar.gz",
-      "checksum": "DD35A132EC239D6A964AF4C3CEFC23C89897FD75F4D843D14DF1A759284299CE",
+      "id": "github_release/github.com/nushell/nushell/0.112.2/nu-0.112.2-aarch64-apple-darwin.tar.gz",
+      "checksum": "A61806761DB7BC2EDDFC313D5EC496C92776A37124BC64A3036374BD55E8C881",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.112.1/nu-0.112.1-aarch64-unknown-linux-gnu.tar.gz",
-      "checksum": "4F3E6BAB699CCA729DA264434C2A0C7CEC73EC5ED8CA9A525D78D61C6D9A18C7",
+      "id": "github_release/github.com/nushell/nushell/0.112.2/nu-0.112.2-aarch64-unknown-linux-gnu.tar.gz",
+      "checksum": "C25A713F4C10BD886162C62C278DB6CF8A657754BE53D33379AF70FBADAB07B8",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.112.1/nu-0.112.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "4E51F3104D80060AEA9428CEDD98A00B34695FA76617C871F498263AB10D574D",
+      "id": "github_release/github.com/nushell/nushell/0.112.2/nu-0.112.2-x86_64-apple-darwin.tar.gz",
+      "checksum": "8DE1DC4A918A1AF29FCE75D263A8F673F16D35C04EBAA5E3C3AC4CE1EB154F3F",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.112.1/nu-0.112.1-x86_64-pc-windows-msvc.zip",
-      "checksum": "E5F909B4168EC225C761F2A29F86473C1152197F6AEEA139469933D1E48EEB9D",
+      "id": "github_release/github.com/nushell/nushell/0.112.2/nu-0.112.2-x86_64-pc-windows-msvc.zip",
+      "checksum": "DB57750EC878365135E7BAEBEE9F5EC74B84C80158ED0168F1CCBE15D6EC251D",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.112.1/nu-0.112.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "2DE687B5030D9A615956517412402DDC80F3779434AB434A960A7FE6FF2283DB",
+      "id": "github_release/github.com/nushell/nushell/0.112.2/nu-0.112.2-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "D9C0BA0938BEED6148C8A354C45612C0979D7A787794B8DD13E866CA3B571375",
       "algorithm": "sha256"
     },
     {
