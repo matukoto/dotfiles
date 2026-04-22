@@ -101,28 +101,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.14.19/opencode-darwin-arm64.zip",
-      "checksum": "554A2019225514F669E1B014482A2E27C7E729C3337020301510F32BE7162290",
+      "id": "github_release/github.com/anomalyco/opencode/v1.14.20/opencode-darwin-arm64.zip",
+      "checksum": "E6124C5C73576C678D24B09657B73281D96D67FC1C4DDD4714062811C51C81D5",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.14.19/opencode-darwin-x64.zip",
-      "checksum": "F78A1E19410ED3387518A9D875C56C3635383513DBDF34192DCBB9F2F13B15A0",
+      "id": "github_release/github.com/anomalyco/opencode/v1.14.20/opencode-darwin-x64.zip",
+      "checksum": "2D07563B69B6599507620D3AED1BE8D49AACB8C11E66646617BB5F3F735D69A1",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.14.19/opencode-linux-arm64.tar.gz",
-      "checksum": "F3D957A9C8000FAB2F00E5D80F4FF60877DF728E5625F0FDD96126D9EBEC9952",
+      "id": "github_release/github.com/anomalyco/opencode/v1.14.20/opencode-linux-arm64.tar.gz",
+      "checksum": "3CA509044E06B8E7DACF08DE735ADDEE400788F80729C333FBF4581D0F77B4D3",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.14.19/opencode-linux-x64.tar.gz",
-      "checksum": "8CB11723CE0EC82E2B6FF9A2356B12C2F4C4A95A087BA0A3004B19F167951440",
+      "id": "github_release/github.com/anomalyco/opencode/v1.14.20/opencode-linux-x64.tar.gz",
+      "checksum": "1707133022382EA8C8CC5BC47AB1DB52FA206BD9BAF8D3AD4D862B489DBB448F",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.14.19/opencode-windows-x64.zip",
-      "checksum": "498A572DEDF86C2688BFAEBBE4B8828214DAB4A02A8F93C6AD6A0F02B3969A02",
+      "id": "github_release/github.com/anomalyco/opencode/v1.14.20/opencode-windows-x64.zip",
+      "checksum": "15F13C9EC92181C10053CBC7D44630D11C0B626EF2C240D90EA871320D58D1ED",
       "algorithm": "sha256"
     },
     {
@@ -786,18 +786,18 @@
       "algorithm": "sha1"
     },
     {
-      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.34.33.pkg",
-      "checksum": "1BA73902E903A473F9F343D6AC1D75FB1AA5EBABB3049FD0E308616A6950A295",
+      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.34.34.pkg",
+      "checksum": "A087DDBAC5C5752E2DF5D6916AE286CC9E955695CC791C111FE7554DF9349A1B",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.34.33.zip",
-      "checksum": "9CE0B00B7926EA7B4F6FD7576E6B0E14EE783FE101E077FD861DC423BE3B74E3",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.34.34.zip",
+      "checksum": "949F992854BD48FFD2E4AAD020A91F1E977BFF1F7225895B98E0D80D70B688D0",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.34.33.zip",
-      "checksum": "9A077A102F0A35FCF8714537B0EC3210B55ADAF8FF5A100502DCC0E270FF8609",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.34.34.zip",
+      "checksum": "5D08619F44BECD0AFCDD8D9A44B2A3481F4EE291D7BB5E06F767FABC7A9DB22A",
       "algorithm": "sha256"
     },
     {
