@@ -9,7 +9,7 @@
     "npm:@marp-team/marp-cli" = "latest"
     "npm:sv" = '0.15.1'
     "spring-boot" = "3.5.3"
-    'npm:@actions/languageserver' = '0.3.53'
+    'npm:@actions/languageserver' = '0.3.54'
     'npm:md-to-pdf' = '5.2.5'
     "wrangler" = "4.61.1"
 [settings]
