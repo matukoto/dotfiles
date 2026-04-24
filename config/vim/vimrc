@@ -189,25 +189,18 @@ endfunction
 " :TCL コマンドでカスタム関数を実行
 command! TCL call CloseTabAndMoveLeft()
 
-" 1. XDG Base Directory のパスを決定
-let s:config_home = empty($XDG_CONFIG_HOME) ? expand('~/.config') : $XDG_CONFIG_HOME
-let s:vim_home = s:config_home .. '/vim'
+let s:vim_home = expand('~/.vim')
 
-" 2. Jetpack 本体のダウンロード先（手動でフルパスを指定）
 let s:jetpackfile = s:vim_home .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
 let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
 
-" 3. Jetpack が存在しない場合はダウンロード
 if !filereadable(s:jetpackfile)
   call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
 endif
 
-" 4. Vim に ~/.config/vim をパッケージ検索パスとして認識させる
 execute 'set packpath^=' .. s:vim_home
 packadd vim-jetpack
 
-" 5. 【修正箇所】jetpack#begin にはベースとなる ~/.config/vim だけを渡す
-" これにより、内部で自動的に /pack/jetpack/opt が付与され、重複が解消されます
 call jetpack#begin(s:vim_home)
   call jetpack#add('tani/vim-jetpack')
   call jetpack#add('vim-jp/vimdoc-ja')
@@ -497,4 +490,3 @@ endif
 
 colorscheme iceberg
 set background=dark
-
