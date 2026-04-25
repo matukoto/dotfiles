@@ -36,7 +36,10 @@ return {
       },
       completion = {
         keyword = { range = 'full' }, -- Match on full word range
-        accept = { auto_brackets = { enabled = true } }, -- Enable auto brackets
+        accept = {
+          auto_brackets = { enabled = true }, -- brackets を補完された単語の属性に合わせて自動で挿入する (例: 関数なら括弧、クラスなら波括弧など)
+          create_undo_point = false, -- undo point を作らないことで1つのundo で▼補完された単語全体を消せるようにする
+        },
         list = { selection = { preselect = true, auto_insert = true } }, -- Preselect and auto-insert
         menu = {
           auto_show = true, -- Show menu automatically
