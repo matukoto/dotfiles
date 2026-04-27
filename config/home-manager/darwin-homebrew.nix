@@ -56,6 +56,7 @@
       "wezterm"
       "zoom"
       "logi-options+"
+      "google-gemini"
     ];
   };
 }
