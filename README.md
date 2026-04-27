@@ -46,12 +46,30 @@ repo ルートの `flake.nix` が
 ## ツール別 README
 
 - [`config/aqua/README.md`](config/aqua/README.md)
+- [`config/aerospace/README.md`](config/aerospace/README.md)
+- [`config/atuin/README.md`](config/atuin/README.md)
+- [`config/borders/README.md`](config/borders/README.md)
+- [`config/claude/README.md`](config/claude/README.md)
+- [`config/ghostty/README.md`](config/ghostty/README.md)
+- [`config/git/README.md`](config/git/README.md)
+- [`config/gitui/README.md`](config/gitui/README.md)
+- [`config/home-manager/README.md`](config/home-manager/README.md)
+- [`config/jdtls/README.md`](config/jdtls/README.md)
+- [`config/mise/README.md`](config/mise/README.md)
+- [`config/nix/README.md`](config/nix/README.md)
 - [`config/nvim/README.md`](config/nvim/README.md)
+- [`config/opencode/README.md`](config/opencode/README.md)
+- [`config/sketchybar/README.md`](config/sketchybar/README.md)
+- [`config/sqls/README.md`](config/sqls/README.md)
+- [`config/stylua/README.md`](config/stylua/README.md)
 - [`config/vim/README.md`](config/vim/README.md)
+- [`config/wezterm/README.md`](config/wezterm/README.md)
+- [`config/yamlfmt/README.md`](config/yamlfmt/README.md)
+- [`config/yazi/README.md`](config/yazi/README.md)
 
-各ツールディレクトリの README には、
+各 README には、
 その設定が管理している範囲、主要ファイル、
-使っているプラグインや補助ツールの概要を順次追記。
+使っているプラグインや補助ツールの概要を記載。
 
 ## GitHub Copilot CLI
 
