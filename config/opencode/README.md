@@ -7,9 +7,7 @@
 
 - `opencode.jsonc`: OpenCode 本体設定。
 - `AGENTS.md`: エージェントへの作業ルール。
-- `package.json`: プラグイン依存定義。
-- `package-lock.json`: lockfile。
-- `node_modules/`: `@opencode-ai/plugin` などの依存実体。
+- `README.md`: このディレクトリの説明。
 
 ## 構成
 
@@ -30,6 +28,7 @@
 
 ## 補足
 
-- 依存を含めてディレクトリごと管理する構成。
-- AI ツール設定でありつつ、
-  ローカルプラグイン実体も同居。
+- Git 追跡対象は
+  `opencode.jsonc`, `AGENTS.md`, `README.md`。
+- プラグイン依存の実体ファイルは
+  このリポジトリでは管理しない前提。
