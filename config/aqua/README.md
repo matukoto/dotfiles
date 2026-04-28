@@ -1,60 +1,46 @@
 # aqua設定
 
-このディレクトリには[aqua](https://aquaproj.github.io/)の設定ファイルが含まれています。
+`~/.config/aqua` に配備する aqua 設定。
+CLI ツールの導入元、バージョン、チェックサム管理の置き場。
 
-## ファイル構成
+## 主要ファイル
 
-- `aqua.yaml`: aquaのメイン設定ファイル
-- `aqua-checksums.json`: パッケージのチェックサム情報
+- `aqua.yaml`: パッケージ定義本体。
+- `aqua-checksums.json`: 配布バイナリのチェックサム記録。
 
-## チェックサム検証とは
+## 構成
 
-チェックサム検証は、ダウンロードしたパッケージのバイナリファイルが改ざんされていないことを確認するセキュリティ機能です。
-各パッケージのチェックサム（ハッシュ値）を事前に記録しておき、インストール時に実際のファイルのチェックサムと照合することで、ファイルの整合性を保証します。
+- 汎用 CLI ツールの導入先。
+- `aqua-checksums.json` により
+  ダウンロード物の整合性確認を実施。
+- バージョン更新時は
+  `aqua.yaml` と `aqua-checksums.json` の両方が更新対象。
 
-### 導入の目的
+## 運用
 
-このリポジトリでチェックサム検証を導入した理由：
-
-1. **サプライチェーン攻撃からの保護**: パッケージの配布経路で改ざんされたバイナリが混入することを防ぎます
-2. **ダウンロードエラーの検出**: ネットワークエラーなどによる破損したファイルのインストールを防ぎます
-3. **再現性の保証**: 同じバージョンのパッケージが常に同じバイナリであることを保証します
-
-セキュリティ向上のため、チェックサム検証が有効化されています。
-
-### チェックサムの生成
-
-新しいパッケージを追加した後、または既存のパッケージのバージョンを更新した後は、以下のコマンドでチェックサムを生成してください：
+- パッケージ追加や更新後のチェックサム生成コマンド:
 
 ```bash
-aqua update-checksum --all
+aqua update-checksum --all --config config/aqua/aqua.yaml
 ```
 
-### チェックサムの自動更新
+- `renovate.json5` の `postUpgradeTasks` からも
+  同じコマンドを実行する構成。
+- Renovate 更新時は
+  `config/aqua/aqua.yaml` と
+  `config/aqua/aqua-checksums.json` を
+  同時に更新する前提。
 
-Renovateの`postUpgradeTasks`機能を使用して、`aqua.yaml`の変更時にチェックサムを自動的に更新します。
+## 関連設定
 
-`renovate.json5`に以下の設定を追加しています：
+- aqua 本体の導入は `config/home-manager/home.nix` と
+  `config/home-manager/pkgs/aqua.nix` 側で管理。
+- shell からの利用は
+  `config/home-manager/fish/config.fish` の
+  `AQUA_GLOBAL_CONFIG` と `aqua i -a` 系 abbr に連動。
 
-```json
-{
-  "postUpgradeTasks": {
-    "commands": [
-      "aqua update-checksum --all --config config/aqua/aqua.yaml"
-    ],
-    "fileFilters": [
-      "config/aqua/aqua.yaml",
-      "config/aqua/aqua-checksums.json"
-    ],
-    "executionMode": "update"
-  }
-}
-```
+## 参考
 
-これにより、Renovateがパッケージのバージョンを更新するPRを作成する際に、自動的にチェックサムも更新され、手動でチェックサムを更新する手間が省けます。
-
-### 参考資料
-
-- [aqua チェックサム検証のハンドブック](https://aquaproj.github.io/docs/reference/checksum/)
 - [aqua 公式ドキュメント](https://aquaproj.github.io/)
+- [aqua checksum](https://aquaproj.github.io/docs/reference/checksum/)
 - [Renovate postUpgradeTasks](https://docs.renovatebot.com/configuration-options/#postupgradetasks)
