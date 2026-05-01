@@ -471,26 +471,6 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/natecraddock/zf/0.10.2/zf-0.10.2-aarch64-linux.tar.xz",
-      "checksum": "69AD2AEC6B003D53B5ED60B8E7E0727491BA96716D770A06A9FD2D7CA6B3654C",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/natecraddock/zf/0.10.2/zf-0.10.2-aarch64-macos.tar.xz",
-      "checksum": "024F8EAEFDE05ADF5B10D222A8934C3F9A57E69617D8AB4E2AB418A91BA771E6",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/natecraddock/zf/0.10.2/zf-0.10.2-x86_64-linux.tar.xz",
-      "checksum": "7287C1255D5617069C0463CBCAB910A1C39D1047A1A0BAEA9016E7D9D29C63BE",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/natecraddock/zf/0.10.2/zf-0.10.2-x86_64-macos.tar.xz",
-      "checksum": "69E58D8E2B1B6C7951C360415093E7FB281D164B4DA9EAE50375852E0D71F94F",
-      "algorithm": "sha256"
-    },
-    {
       "id": "github_release/github.com/nushell/nushell/0.112.2/nu-0.112.2-aarch64-apple-darwin.tar.gz",
       "checksum": "A61806761DB7BC2EDDFC313D5EC496C92776A37124BC64A3036374BD55E8C881",
       "algorithm": "sha256"
@@ -756,6 +736,26 @@
       "algorithm": "sha256"
     },
     {
+      "id": "github_release/github.com/tstack/lnav/v0.14.0/lnav-0.14.0-aarch64-macos.zip",
+      "checksum": "F282D567E1BDB2C3E54D9502671B8011C0D4E3700B2616CF72778602F8EE0371",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/tstack/lnav/v0.14.0/lnav-0.14.0-linux-musl-arm64.zip",
+      "checksum": "027E9F540567CD0E9BA00335AB9BE0275A414B14608E10D49DC2D6A2633AA546",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/tstack/lnav/v0.14.0/lnav-0.14.0-linux-musl-x86_64.zip",
+      "checksum": "9D146D1DA2AF005A77920AFFF5DA96D2AE0771EE25450B0954B27DE95E7F0F57",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/tstack/lnav/v0.14.0/lnav-0.14.0-windows-x86_64.zip",
+      "checksum": "62E35078B0BA6FF94CB38A3E31DF0197B372A96E3E516A0BFC740061729BE023",
+      "algorithm": "sha256"
+    },
+    {
       "id": "github_release/github.com/x-motemen/ghq/v1.10.1/ghq_darwin_amd64.zip",
       "checksum": "3CA71E44BC393B399ACD0EF039FF2904B7BB9D24",
       "algorithm": "sha1"
@@ -856,8 +856,8 @@
       "algorithm": "sha256"
     },
     {
-      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.499.0/registry.yaml",
-      "checksum": "58EA68153179D614B9D415C923D9065BDBD19294256ABB530A6480F8BA492DF65634A87CF26DCE02D14BE84906F0C93F20517DC1DF9AD3B157906F1A82FCB1EB",
+      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.501.0/registry.yaml",
+      "checksum": "30E021034B82F30463C89E6D928BCB342F68461616F3FBEDFF5F0A1C138C99E226F826FF25ED14BDE9D45AD2990574CC2AD652D37B5A78C88C91D91A81EF4E3C",
       "algorithm": "sha512"
     }
   ]
