@@ -165,6 +165,15 @@ on-mode-changed = []
     if.app-id = 'com.mitchellh.ghostty'
     run = 'layout floating'
 
+# meeting 系
+[[on-window-detected]]
+    if.app-id = 'us.zoom.xos'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan'
+    run = 'layout floating'
+
 # https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
     1 = 1
