@@ -25,6 +25,26 @@
   }:
     let
       darwinHostName = "MATSUMOTOnoMacBook-Air";
+      direnvZshCheckOverlay =
+        final: prev:
+        if prev.stdenv.hostPlatform.system == "aarch64-darwin" then
+          {
+            direnv = prev.direnv.overrideAttrs (old: {
+              # direnv 2.37.1 の test-zsh が aarch64-darwin で hang するため外す
+              nativeCheckInputs = prev.lib.filter (
+                pkg: (pkg.pname or null) != "zsh"
+              ) (old.nativeCheckInputs or [ ]);
+              checkPhase = ''
+                runHook preCheck
+
+                make test-go test-bash test-fish
+
+                runHook postCheck
+              '';
+            });
+          }
+        else
+          { };
       mkPkgs =
         system:
         import nixpkgs {
@@ -34,6 +54,7 @@
             builtins.elem (nixpkgs.lib.getName pkg) [
               "copilot-language-server"
             ];
+          overlays = [ direnvZshCheckOverlay ];
         };
 
       mkHome =
@@ -72,6 +93,9 @@
             inherit nix-homebrew;
           };
           modules = [
+            {
+              nixpkgs.overlays = [ direnvZshCheckOverlay ];
+            }
             ./config/home-manager/darwin-system.nix
             home-manager.darwinModules.home-manager
             nix-homebrew.darwinModules.nix-homebrew
