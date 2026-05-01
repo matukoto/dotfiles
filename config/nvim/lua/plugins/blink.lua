@@ -6,7 +6,8 @@ return {
       'vim-skk/skkeleton',
       'vim-denops/denops.vim',
     },
-    build = 'nix run .#build-plugin',
+    -- build = 'nix run .#build-plugin',
+    version = '1.*',
     enabled = true,
     event = { 'VeryLazy' },
     ---@module 'blink.cmp'
