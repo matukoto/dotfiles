@@ -29,6 +29,11 @@ local lsp_servers = {
   'nixd',
 }
 
+-- Copilot を無効化したいファイルタイプのリスト
+local copilot_disabled_filetypes = {
+  java = true,
+}
+
 return {
   -- Main LSP configuration plugin
   {
@@ -91,8 +96,8 @@ return {
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true }),
-        callback = function(ev)
-          local opts = { buffer = ev.buf, silent = true }
+        callback = function(args)
+          local opts = { buffer = args.buf, silent = true }
           local set = vim.keymap.set
 
           -- Keymaps using LspUI / Lspsaga if available, otherwise fallback to vim.lsp.buf
@@ -161,15 +166,21 @@ return {
           set('n', 'g]', '<cmd>LspUI diagnostic next<CR>', opts)
 
           -- Inlay Hints (if server supports it)
-          local client = vim.lsp.get_client_by_id(ev.data.client_id)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
           if client and client.server_capabilities.inlayHintProvider then
             -- Check if inlay hint function exists (Neovim 0.10+)
             if vim.lsp.inlay_hint then
-              vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
+              vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
             end
           end
           -- copilot でのみインラインtab補完を有効にする
           if client.name == 'copilot' then
+            local current_filetype = vim.bo[args.buf].filetype
+
+            if copilot_disabled_filetypes[current_filetype] then
+              -- 条件に合致したら、このバッファから Copilot LSP をデタッチ（切り離す）
+              vim.lsp.buf_detach_client(args.buf, client.id)
+            end
             vim.lsp.inline_completion.enable(true, {
               client_id = client.id,
             })
