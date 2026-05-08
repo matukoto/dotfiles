@@ -263,8 +263,22 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 
 require('config.auto_reload')
 
+local function open_terminal_horizontal()
+  vim.cmd('belowright split')
+  vim.cmd('terminal')
+  vim.cmd('startinsert')
+end
+
 -- terminal を縦分割で開く
-vim.cmd('cabbrev t ' .. 'vsplit term://' .. vim.o.shell)
+local function open_terminal_vertical()
+  vim.cmd('vsplit')
+  vim.cmd('terminal')
+  vim.cmd('startinsert')
+end
+
+vim.api.nvim_create_user_command('Th', open_terminal_horizontal, {})
+vim.api.nvim_create_user_command('T', open_terminal_vertical, {})
+vim.cmd([[cnoreabbrev <expr> t getcmdtype() ==# ':' && getcmdline() =~# '^t\s*$' ? 'Th' : 't']])
 
 -- colorscheme
 -- vim.cmd('colorscheme everforest') -- Set your desired colorscheme here
