@@ -2,15 +2,15 @@
     # language runtime
     "java" = { version = "corretto-24.0.2.12.1", release_type = "ga" }
     "rust" = "1.95.0"
-    "go" = "1.26.2"
+    "go" = "1.26.3"
     "node" = "24.15.0"
     "lua" = "5.5.0"
     "dotnet" = "10.0.102"
     "npm:@marp-team/marp-cli" = "latest"
-    "npm:sv" = '0.15.2'
+    "npm:sv" = '0.15.3'
     "spring-boot" = "3.5.3"
-    'npm:@actions/languageserver' = '0.3.55'
+    'npm:@actions/languageserver' = '0.3.56'
     'npm:md-to-pdf' = '5.2.5'
-    "wrangler" = "4.87.0"
+    "wrangler" = "4.90.0"
 [settings]
     experimental = false
