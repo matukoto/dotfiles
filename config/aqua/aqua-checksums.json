@@ -101,28 +101,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.15.5/opencode-darwin-arm64.zip",
-      "checksum": "9CF68A67F6FDD0A5212DAA0FCBCA3DBC05FFF788DC6C6214AA2F2F4A7CABA815",
+      "id": "github_release/github.com/anomalyco/opencode/v1.15.6/opencode-darwin-arm64.zip",
+      "checksum": "1DE7B7C1D67E9A309020C5F5BE8D76818EF10F5F0370B46F81A75B2336BBA230",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.15.5/opencode-darwin-x64.zip",
-      "checksum": "FA8168407FCB06EF136BC98E8A18AACF042117F97C89EC944E0F6FE930269EC9",
+      "id": "github_release/github.com/anomalyco/opencode/v1.15.6/opencode-darwin-x64.zip",
+      "checksum": "F8352EC2F395911E625B622EA09F30518E5B6E1E244E0EA71A3CF39A9F8A7DE9",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.15.5/opencode-linux-arm64.tar.gz",
-      "checksum": "A6244ECCE03F303A8945FAE330F17964469FC0780FA3555CDE80FB97AC46F2FB",
+      "id": "github_release/github.com/anomalyco/opencode/v1.15.6/opencode-linux-arm64.tar.gz",
+      "checksum": "C4437B2712ED96837CB06B448B04D3D20F7EF100735B06AD319AB79ED011192B",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.15.5/opencode-linux-x64.tar.gz",
-      "checksum": "BF6F75DA089B22073BCF23754CC3BE351F713363164E5BDCD3E49501C811B1C5",
+      "id": "github_release/github.com/anomalyco/opencode/v1.15.6/opencode-linux-x64.tar.gz",
+      "checksum": "9874D0857F7B01A09189EBB8AF42EF20D556BE3F0D054563E5EEF1234528C71F",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.15.5/opencode-windows-x64.zip",
-      "checksum": "8C4DAA606D23EADF3DC776EF8049858E676FDB32804453E665BFEB77170D21C0",
+      "id": "github_release/github.com/anomalyco/opencode/v1.15.6/opencode-windows-x64.zip",
+      "checksum": "00A01278136FC50461E568FA54F454A2D4561FFD5703020996EB13A96F6C7955",
       "algorithm": "sha256"
     },
     {
@@ -316,33 +316,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.49/copilot-darwin-arm64.tar.gz",
-      "checksum": "4F91C420A2DBD260626E854C7234B1491A7C7E17438B9F15138B292ABEF58F28",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.51/copilot-darwin-arm64.tar.gz",
+      "checksum": "046EE196CB86B0BCBE455345B040AF4485DDB1725275F4631C33D3FDCA8DCC3B",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.49/copilot-darwin-x64.tar.gz",
-      "checksum": "0661C7C61B0955DD3B74B928A848BE125B57CEDB7C0DD7DA265347CA69E34900",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.51/copilot-darwin-x64.tar.gz",
+      "checksum": "381C7554865CBE41932E2063104EE27098ABB5CEA2C33B37EF179D25FBDB9F03",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.49/copilot-linux-arm64.tar.gz",
-      "checksum": "3A83A98A888935283FC59FAD55CA8828F54EB1737E2C831690F54AD66449EEC4",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.51/copilot-linux-arm64.tar.gz",
+      "checksum": "3B3FDC2B8F2C2CB83036DAD4820C1781C98ABED9B03709C0D9E5571DEE5679A5",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.49/copilot-linux-x64.tar.gz",
-      "checksum": "E61FA2490BC584FE65C4D9F3B2337EF63439CBD9E0A4F6648EB63223E1B32AFD",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.51/copilot-linux-x64.tar.gz",
+      "checksum": "9BE82361B57409842F1188A3E3CD8B85DA2E0C930B7FE6B60A70D79F5D5D38B4",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.49/copilot-win32-arm64.zip",
-      "checksum": "D298179ACD16DC661872BC41A21CE169F8BB8F320DB121CDC9AF0A549E19CD3B",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.51/copilot-win32-arm64.zip",
+      "checksum": "ADD96988005B770484CB8EC943C8DC81481B3F3FF32C68484764BEF3E4DFFC57",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.49/copilot-win32-x64.zip",
-      "checksum": "2E8FF202F28B8A69E22B3EDCBF363149AAD1C0C65A385C1AFEE79D5DE7906500",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.51/copilot-win32-x64.zip",
+      "checksum": "DCBF9EC4FF9F738E2F78DA6F6E561E4BE743605D8D275D60C3AF35AF15C4ECC2",
       "algorithm": "sha256"
     },
     {
