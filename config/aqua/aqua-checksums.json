@@ -276,28 +276,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/duckdb/duckdb/v1.5.2/duckdb_cli-linux-amd64.zip",
-      "checksum": "FC9145AFFABCA627431E73DDAF6B8117E5C192692480C13886F227BE202D5D15",
+      "id": "github_release/github.com/duckdb/duckdb/v1.5.3/duckdb_cli-linux-amd64.zip",
+      "checksum": "35CAEF1FECBC8D7E2C07DE4FD2CDEFC5189EC9BA9E1CCA228FB1A1C48CC52A8A",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/duckdb/duckdb/v1.5.2/duckdb_cli-linux-arm64.zip",
-      "checksum": "28B15A8D78E6DF62F6EC43DA6B0E6397DCD28E25AB93D847DF3C5C97F59375F5",
+      "id": "github_release/github.com/duckdb/duckdb/v1.5.3/duckdb_cli-linux-arm64.zip",
+      "checksum": "5E2399428793642E994F1584C47D49F4C58B7B4EC2297EA4A522353A6C553835",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/duckdb/duckdb/v1.5.2/duckdb_cli-osx-universal.zip",
-      "checksum": "DE789904E1B0B5F305D31B88A6FD8BD4F6ED3F63A00D95F8C7A2559A0995A2F1",
+      "id": "github_release/github.com/duckdb/duckdb/v1.5.3/duckdb_cli-osx-universal.zip",
+      "checksum": "AE799F106ACA1BB740B0406448F13BA91558D59197475CB6A0F349DB6E17721A",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/duckdb/duckdb/v1.5.2/duckdb_cli-windows-amd64.zip",
-      "checksum": "D7B4F5774419C2E9EB14CB7361D3488821EF0244F8AF461FD2C6FCB6F43BC3E0",
+      "id": "github_release/github.com/duckdb/duckdb/v1.5.3/duckdb_cli-windows-amd64.zip",
+      "checksum": "2ABA634FAB91B3CB3F88CB7A75A9539B47EF240A76F4D4FF8D1E48821C8CCD7F",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/duckdb/duckdb/v1.5.2/duckdb_cli-windows-arm64.zip",
-      "checksum": "7908E22D25E6991F45E895B1613277E2A600EEC6721253F45CE10CDE6A3FFDAF",
+      "id": "github_release/github.com/duckdb/duckdb/v1.5.3/duckdb_cli-windows-arm64.zip",
+      "checksum": "CBD135F2999CC75F77B8F4A511E7D2365FA4A77CDC805C439DE303380EF0EAB4",
       "algorithm": "sha256"
     },
     {
