@@ -81,48 +81,48 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/altsem/gitu/v0.41.0/gitu-v0.41.0-aarch64-apple-darwin.zip",
-      "checksum": "FF4E01AE9D09074C5E615929AEA13C1C0E04C4ABDB49FA0E8D278DFD1AC0CB31",
+      "id": "github_release/github.com/altsem/gitu/v0.42.0/gitu-v0.42.0-aarch64-apple-darwin.zip",
+      "checksum": "72B001ACDDE85FFE3A1C7F74CCD740085A2D2CD24F1725F02115EDAE70A9BDCC",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/altsem/gitu/v0.41.0/gitu-v0.41.0-x86_64-apple-darwin.zip",
-      "checksum": "C3900EA34EC858901DECF7A25D2E3FBAA3B9CCA8BA3437F777139B83E9EB7ED9",
+      "id": "github_release/github.com/altsem/gitu/v0.42.0/gitu-v0.42.0-x86_64-apple-darwin.zip",
+      "checksum": "45F616234E0379B484D582850C0F30CFAD02BA71AF41D1BEEC14FD42ED2522AA",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/altsem/gitu/v0.41.0/gitu-v0.41.0-x86_64-pc-windows-msvc.zip",
-      "checksum": "7A29BBB273EA28A181226794FD60DD00470E7AE104AFDB7CDCAFA86438855B02",
+      "id": "github_release/github.com/altsem/gitu/v0.42.0/gitu-v0.42.0-x86_64-pc-windows-msvc.zip",
+      "checksum": "184BF99A57FCC4568CB1FEC6C3996FD2B6C85981CAEFF34EF3A9F7346384FB48",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/altsem/gitu/v0.41.0/gitu-v0.41.0-x86_64-unknown-linux-gnu.zip",
-      "checksum": "2D0B111A2AE5AE9C5AF8AA734B57835EA041F9755E67BF0875F30E0B2EA42925",
+      "id": "github_release/github.com/altsem/gitu/v0.42.0/gitu-v0.42.0-x86_64-unknown-linux-gnu.zip",
+      "checksum": "5769C26FF636EAB791BE711C3E1C52612DC5E45192F2AF2B480F3E3FC96675B5",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.15.7/opencode-darwin-arm64.zip",
-      "checksum": "335307EE87D3DAC84986BF8F0BD4273A43C35FCB9B124556C2F4FAD4A510E3A4",
+      "id": "github_release/github.com/anomalyco/opencode/v1.15.10/opencode-darwin-arm64.zip",
+      "checksum": "B9074B933E0DB458243F7BA20D8C3BF6A85E679B400C62DF0EAFD3ABADD725ED",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.15.7/opencode-darwin-x64.zip",
-      "checksum": "12E4A562BCD6E691EB846CEEDC5C1F7BAD88F047DF3775BE21AAF979BDA959D7",
+      "id": "github_release/github.com/anomalyco/opencode/v1.15.10/opencode-darwin-x64.zip",
+      "checksum": "EF14F611D0C3E68D9488FD0573B3BC2185DFD4CCB27755F8389018DBA3F79539",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.15.7/opencode-linux-arm64.tar.gz",
-      "checksum": "D2CA40F11B0EB1648CBFFAF9850C122A83062B21ADA18E5DB29558C6BFAFEE0F",
+      "id": "github_release/github.com/anomalyco/opencode/v1.15.10/opencode-linux-arm64.tar.gz",
+      "checksum": "DEF583A68CB155CDDD9523E52139A5B915E981EEF17A274C8C8171A3EE828AE2",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.15.7/opencode-linux-x64.tar.gz",
-      "checksum": "6F7F95F13917B9AAB8421DBB7E121ABF2FECFECDCCD16FD5B497F522F454F928",
+      "id": "github_release/github.com/anomalyco/opencode/v1.15.10/opencode-linux-x64.tar.gz",
+      "checksum": "A4C0C94A7FDBF637E3AE479C046CA49E925370B4CEE503DFBA7AB677A13CD0C5",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.15.7/opencode-windows-x64.zip",
-      "checksum": "8AC96B52692A3DAEB84A20295CC7ED43AA3C698078E802926A47AEF83748EAB2",
+      "id": "github_release/github.com/anomalyco/opencode/v1.15.10/opencode-windows-x64.zip",
+      "checksum": "EE069519FEA3748385F439A1D9A2CA41A84938D51194A4E8A553AFB0B86DC2C5",
       "algorithm": "sha256"
     },
     {
@@ -221,28 +221,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.7.14/deno-aarch64-apple-darwin.zip",
-      "checksum": "AEB5825F83B4A9CD7F9355A1C4DDD666205DACF76CCB7B98C2B10E066BC9E4BB",
+      "id": "github_release/github.com/denoland/deno/v2.8.0/deno-aarch64-apple-darwin.zip",
+      "checksum": "DBA813B8B69D6218CFFB11252B9E4E6036CA2C9D79843CDE367B4B369AAF9634",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.7.14/deno-aarch64-unknown-linux-gnu.zip",
-      "checksum": "B815C919452B5993A7C22DF018A88C2F706EEA6B5E0AA7802B2B0709EDDE01E8",
+      "id": "github_release/github.com/denoland/deno/v2.8.0/deno-aarch64-unknown-linux-gnu.zip",
+      "checksum": "933A6A7D2985957271CD2085A5A5A1832398AA221A354DAAB5635196CF2CBBAE",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.7.14/deno-x86_64-apple-darwin.zip",
-      "checksum": "C89149513BF8E82AB5B351DAC544F8C0CADA90753BD2F576F46325FB67997AE1",
+      "id": "github_release/github.com/denoland/deno/v2.8.0/deno-x86_64-apple-darwin.zip",
+      "checksum": "D6EB643B7F1AFB22139F4AA17C4D97BF7DDAB4E01E1820EDCB30B9AE5C3A7391",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.7.14/deno-x86_64-pc-windows-msvc.zip",
-      "checksum": "25F9871F5C1D9E999D60071F8069767134495FD601D2E2C7CE1E8C641487BDA0",
+      "id": "github_release/github.com/denoland/deno/v2.8.0/deno-x86_64-pc-windows-msvc.zip",
+      "checksum": "9B98D1F456878C8AC5CAA55779A04F2F1F91F8E942D6EF3F887681698F634ADF",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/denoland/deno/v2.7.14/deno-x86_64-unknown-linux-gnu.zip",
-      "checksum": "3287EFEF53606966469CB6A02781327BE22B908959397F976E2996DC1B64AE0F",
+      "id": "github_release/github.com/denoland/deno/v2.8.0/deno-x86_64-unknown-linux-gnu.zip",
+      "checksum": "BE2C8B53C8CA1D66BE76FEB9B1A524419DA708B00D4CA074CF5C633C81C1627B",
       "algorithm": "sha256"
     },
     {
@@ -786,18 +786,18 @@
       "algorithm": "sha1"
     },
     {
-      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.34.52.pkg",
-      "checksum": "4361F17C8C76745BBD08C971C3CA1AC21BA4896FCD9E0871554100BA8B860BA1",
+      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.34.53.pkg",
+      "checksum": "72B6146A71C9BD1ECABC194A923ED7D2F4C7D8D092C444415FD075153C4CF790",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.34.52.zip",
-      "checksum": "C1EBAB182748FE56A12A5CA4205C1E15BD230EFCA5BFD5633F3A4BB7B4237842",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.34.53.zip",
+      "checksum": "1883E4DDDEE2ECFAB39DF0FF0F13B32D50715F7AD9F02A322ECD73EE439CEF8F",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.34.52.zip",
-      "checksum": "CCDBF1B73B7A97B71D70BBE74DF142CECCAECD3CE272DF9E0B9481D6D5871FDC",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.34.53.zip",
+      "checksum": "B06C9865123CF1BC6F8761A0BF3161630E6F55D84363F9FDA89535E2CDBE654B",
       "algorithm": "sha256"
     },
     {
