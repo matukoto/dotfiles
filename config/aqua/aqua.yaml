@@ -29,7 +29,7 @@ packages:
   - name: kubernetes-sigs/kind@v0.31.0
   - name: docker/cli@v27.4.1
   - name: docker/compose@v5.1.4
-  - name: nushell/nushell@0.112.2
+  - name: nushell/nushell@0.113.0
   - name: duckdb/duckdb@v1.5.3
   - name: suzuki-shunsuke/pinact@v3.10.1
   - name: rhysd/vim-startuptime@v1.3.2
