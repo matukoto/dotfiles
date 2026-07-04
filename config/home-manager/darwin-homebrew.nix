@@ -20,25 +20,20 @@
     };
 
     taps = [
-      "felixkratz/formulae"
+      # "felixkratz/formulae"
       "mtgto/macskk"
       "nikitabobko/tap"
       "pakerwreah/calendr"
     ];
 
     brews = [
-      "borders"
       "cmake"
       "gettext"
       "ninja"
       "pinentry-mac"
-      "sketchybar"
-      "sleepwatcher"
-      "starship"
     ];
 
     casks = [
-      "aerospace"
       "alt-tab"
       "aqua-voice"
       "bitwarden"

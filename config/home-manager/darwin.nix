@@ -13,7 +13,9 @@
 
     packages = with pkgs; [
       colima
+      aerospace
       leetcode-cli
+      jankyborders
     ];
   };
 }
