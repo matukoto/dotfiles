@@ -14,7 +14,7 @@ packages:
   - name: extrawurst/gitui@v0.28.1
   - name: altsem/gitu@v0.42.0
   - name: BurntSushi/ripgrep@15.1.0
-  - name: ajeetdsouza/zoxide@v0.9.9
+  - name: ajeetdsouza/zoxide@v0.10.0
   - name: mikefarah/yq@v4.53.3
   - name: sharkdp/bat@v0.26.1
   - name: eza-community/eza@v0.23.4
