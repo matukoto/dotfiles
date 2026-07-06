@@ -466,28 +466,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.113.1/nu-0.113.1-aarch64-apple-darwin.tar.gz",
-      "checksum": "458AA21674221B2E8ADBD784F9BA8113288B78F3C352465CEF37B114FF3DFFD5",
+      "id": "github_release/github.com/nushell/nushell/0.114.0/nu-0.114.0-aarch64-apple-darwin.tar.gz",
+      "checksum": "C98F7DEEDD41023FE6DC4567ABB368C9442BDA62989B91E179E095CBB457CE58",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.113.1/nu-0.113.1-aarch64-unknown-linux-gnu.tar.gz",
-      "checksum": "08B94C6FD9C66881616DF4C89ADC03E8A42A57FDF6876CFD1B16CEC7E82348B4",
+      "id": "github_release/github.com/nushell/nushell/0.114.0/nu-0.114.0-aarch64-unknown-linux-gnu.tar.gz",
+      "checksum": "280163B9A2B3C54E45DED348B577A569CDF2A292E8FE9D77FE02405C3415C8C3",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.113.1/nu-0.113.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "18EC6448CD8562B4F94BA24BACE6164C5D8B8D634C8105751EC45E17D34549B2",
+      "id": "github_release/github.com/nushell/nushell/0.114.0/nu-0.114.0-x86_64-apple-darwin.tar.gz",
+      "checksum": "DD1F92F524794FAB8B4F20287D84038FB08865F9A7C5A5C71461D44ED1C5C7F8",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.113.1/nu-0.113.1-x86_64-pc-windows-msvc.zip",
-      "checksum": "FD3E56DAC9F866D2D3FE2FABD6580C14371AFDCEC9DDDA54624A50986D36B3D2",
+      "id": "github_release/github.com/nushell/nushell/0.114.0/nu-0.114.0-x86_64-pc-windows-msvc.zip",
+      "checksum": "F34858D797AA229079BC9C78DD30221BC75042F0308984D23B4B1679ABD97758",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.113.1/nu-0.113.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "7FAEA21F8A49EDF760C7BB9267F7702827937B19FC7DCE412716B1CACBF38AE7",
+      "id": "github_release/github.com/nushell/nushell/0.114.0/nu-0.114.0-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "83E6FF74144B04CC0CA7861268E2B0F66657832A2DC9C075044AEF15BF910DF9",
       "algorithm": "sha256"
     },
     {
