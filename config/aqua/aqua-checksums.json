@@ -101,28 +101,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.17.14/opencode-darwin-arm64.zip",
-      "checksum": "EC018C0AC8BCD0669DDBF9BF6BBF09001CEDE7FC460381DB27C2732588AFB098",
+      "id": "github_release/github.com/anomalyco/opencode/v1.17.15/opencode-darwin-arm64.zip",
+      "checksum": "9667289C143D1FBDD440055AF4041BB432F44B07DDF0AEF048A8C7F2F7C65E2D",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.17.14/opencode-darwin-x64.zip",
-      "checksum": "06ECDC8BC60F9C4FC0A632F1CE72500264D6CA1DAAC78F7903815ED227045855",
+      "id": "github_release/github.com/anomalyco/opencode/v1.17.15/opencode-darwin-x64.zip",
+      "checksum": "4BC40C124A1B419CFA922CADB3D68C2D67B2082276360B3CA36003AA350D9AD4",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.17.14/opencode-linux-arm64.tar.gz",
-      "checksum": "40B743178D7CF493A8C8ED43648B1A31AAEEAA0A53EBC39944523EC806694D5F",
+      "id": "github_release/github.com/anomalyco/opencode/v1.17.15/opencode-linux-arm64.tar.gz",
+      "checksum": "23AAD358A8489CDA9E9C46CDE7CE87B2FC4847203DDB4D2179BE34215AD6EEAE",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.17.14/opencode-linux-x64.tar.gz",
-      "checksum": "38A870D0951A73F640EAE7DB1729364BC4E3A8405F7F3E1DED4994F7CD53ED2E",
+      "id": "github_release/github.com/anomalyco/opencode/v1.17.15/opencode-linux-x64.tar.gz",
+      "checksum": "0E1353771192C7D2DC0C610D61FF70668BB8A4420DC4D9E35CFD33D7245F3E67",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.17.14/opencode-windows-x64.zip",
-      "checksum": "7DE99B25D32B5225A3DBA667CE442FDEBBC397F618B64902D888B10F7A0AA338",
+      "id": "github_release/github.com/anomalyco/opencode/v1.17.15/opencode-windows-x64.zip",
+      "checksum": "4853D74160D639557DB1EBDE9D327C38FB95B1DB0886AFC18D9EF962459D84E2",
       "algorithm": "sha256"
     },
     {
@@ -246,33 +246,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.3.0/docker-compose-darwin-aarch64",
-      "checksum": "222D80FE371B22B397308B0A2562436AF1C6BA0448CD6298CA52CD6D9C7E67DE",
+      "id": "github_release/github.com/docker/compose/v5.3.1/docker-compose-darwin-aarch64",
+      "checksum": "32691BA1196D819FA68CBDC0AAD9A5569E730A35AE40C6FDD8458110ECD69488",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.3.0/docker-compose-darwin-x86_64",
-      "checksum": "CB7D0CA7D526EE57940F42C912136348B4ACA8DDCACF2A716C578CB2762FED30",
+      "id": "github_release/github.com/docker/compose/v5.3.1/docker-compose-darwin-x86_64",
+      "checksum": "56620A2E87E789147B9B1CC5D37EEECEC2332E2CDF5C2D58A68F999F2DC416CA",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.3.0/docker-compose-linux-aarch64",
-      "checksum": "BA0D9F5CE70086B3830448CE2F8A6405513C996065FE45D2F7C144A1F0D99398",
+      "id": "github_release/github.com/docker/compose/v5.3.1/docker-compose-linux-aarch64",
+      "checksum": "AA611E811D0EA25897839C404BFB5BF93CE706DC51C500A4457890F5D0606A86",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.3.0/docker-compose-linux-x86_64",
-      "checksum": "FFFB010206C952EE5E45D0CD05DC88D3CA063C4634D40EAAD6B72677C4C7BBF0",
+      "id": "github_release/github.com/docker/compose/v5.3.1/docker-compose-linux-x86_64",
+      "checksum": "F9EBC6EBDB19D769B793C245A736CAAEB198C62587F13B25C660C13B4987F959",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.3.0/docker-compose-windows-aarch64.exe",
-      "checksum": "C69EE136CD6C3318CF2683A722FB4D1DEC38C992D5E0CB2E2E06F0B1499018DA",
+      "id": "github_release/github.com/docker/compose/v5.3.1/docker-compose-windows-aarch64.exe",
+      "checksum": "5871699D19EE22904F7D1A7CE7E9E6B5A582F6CF9286AFD0117AD601CC6737D6",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.3.0/docker-compose-windows-x86_64.exe",
-      "checksum": "EAC499928BCFDEAF0FE3DC9A783EB0BA5293188A2458C38730030E92A2759A20",
+      "id": "github_release/github.com/docker/compose/v5.3.1/docker-compose-windows-x86_64.exe",
+      "checksum": "6D36CC701393C066D67EBC77773B718D8C738BC4CCB350FBF1DC0E6A09F44CB9",
       "algorithm": "sha256"
     },
     {
