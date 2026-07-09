@@ -24,7 +24,7 @@ packages:
   - name: jqlang/jq@jq-1.8.2
   - name: atuinsh/atuin@v18.16.1
   - name: sxyazi/yazi@v26.5.6
-  - name: denoland/deno@v2.9.1
+  - name: denoland/deno@v2.9.2
   - name: kubernetes/kubectl@v1.36.2
   - name: kubernetes-sigs/kind@v0.32.0
   - name: docker/cli@v27.4.1
@@ -33,8 +33,8 @@ packages:
   - name: duckdb/duckdb@v1.5.4
   - name: suzuki-shunsuke/pinact@v4.1.0
   - name: rhysd/vim-startuptime@v1.3.2
-  - name: golang.org/x/tools/gopls@v0.22.0
-  - name: aws/aws-cli@2.35.17
+  - name: golang.org/x/tools/gopls@v0.23.0
+  - name: aws/aws-cli@2.35.18
   - name: tstack/lnav@v0.14.0
   - name: biomejs/biome@@biomejs/biome@2.3.8
   - name: Wilfred/difftastic@0.69.0
