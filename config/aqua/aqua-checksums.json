@@ -101,28 +101,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.17.15/opencode-darwin-arm64.zip",
-      "checksum": "9667289C143D1FBDD440055AF4041BB432F44B07DDF0AEF048A8C7F2F7C65E2D",
+      "id": "github_release/github.com/anomalyco/opencode/v1.17.16/opencode-darwin-arm64.zip",
+      "checksum": "DE2994F0AA2F4A576D6844BF2A8FDD53EC2A79C5976CEC440ECB63F93E1FA046",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.17.15/opencode-darwin-x64.zip",
-      "checksum": "4BC40C124A1B419CFA922CADB3D68C2D67B2082276360B3CA36003AA350D9AD4",
+      "id": "github_release/github.com/anomalyco/opencode/v1.17.16/opencode-darwin-x64.zip",
+      "checksum": "00BE1BA43D1E658F97BCF8AB9105E633C0491F3049E3B227683441926CB10616",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.17.15/opencode-linux-arm64.tar.gz",
-      "checksum": "23AAD358A8489CDA9E9C46CDE7CE87B2FC4847203DDB4D2179BE34215AD6EEAE",
+      "id": "github_release/github.com/anomalyco/opencode/v1.17.16/opencode-linux-arm64.tar.gz",
+      "checksum": "E7ED83D8D68B27BEB03483A97570567578AD4B45448CE56068BDD0E55DB40479",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.17.15/opencode-linux-x64.tar.gz",
-      "checksum": "0E1353771192C7D2DC0C610D61FF70668BB8A4420DC4D9E35CFD33D7245F3E67",
+      "id": "github_release/github.com/anomalyco/opencode/v1.17.16/opencode-linux-x64.tar.gz",
+      "checksum": "802B3F4995B22A105D155FF702F83101C4C1D2584B15D066183E9B02669F6D7F",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.17.15/opencode-windows-x64.zip",
-      "checksum": "4853D74160D639557DB1EBDE9D327C38FB95B1DB0886AFC18D9EF962459D84E2",
+      "id": "github_release/github.com/anomalyco/opencode/v1.17.16/opencode-windows-x64.zip",
+      "checksum": "689EE2D084B740B26610BA4F3670C4BDA825AD990F551CFAB99BD3F8A4A6D08A",
       "algorithm": "sha256"
     },
     {
@@ -301,18 +301,18 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/eza-community/eza/v0.23.4/eza.exe_x86_64-pc-windows-gnu.tar.gz",
-      "checksum": "4D4F87F6BC8E6EE176789C28BEE698234CE0275DA013709EB16B0F14819C1688",
+      "id": "github_release/github.com/eza-community/eza/v0.23.5/eza.exe_x86_64-pc-windows-gnu.tar.gz",
+      "checksum": "BBEF561F5CFC8E778649B65E69C9C6E4C836C0FBE83EE3D0A5128091D797ED8A",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/eza-community/eza/v0.23.4/eza_aarch64-unknown-linux-gnu.tar.gz",
-      "checksum": "366E8430225F9955C3DC659B452150C169894833CCFEF455E01765E265A3EDDA",
+      "id": "github_release/github.com/eza-community/eza/v0.23.5/eza_aarch64-unknown-linux-gnu.tar.gz",
+      "checksum": "40B87AE8628AA2FF0F0D2DC24AB52F689631366385C3DA630BAE745671FD71EC",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/eza-community/eza/v0.23.4/eza_x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "D231BB3EE33B08C76279B5888845DCEB7034D055C42BB9BE46DBE0DAE39394DF",
+      "id": "github_release/github.com/eza-community/eza/v0.23.5/eza_x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "E06EEBAB74B73D6B7D51A796A353824B001BEA82DF077706382E100815D28904",
       "algorithm": "sha256"
     },
     {
