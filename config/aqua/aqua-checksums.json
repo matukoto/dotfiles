@@ -151,23 +151,23 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.16.1/atuin-aarch64-apple-darwin.tar.gz",
-      "checksum": "0A3FDC4CFA18758D6A872950625F2042233DF0412A0C10D0DADF30BFC3BC6D6B",
+      "id": "github_release/github.com/atuinsh/atuin/v18.17.0/atuin-aarch64-apple-darwin.tar.gz",
+      "checksum": "AE8A6F84557EE14F60EE50AD9430C78110ACFA5C53DACAD493B809C574A094B7",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.16.1/atuin-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "5245DC1553F40AFE3A160878A71076E4C5257C83CF819E259C0447A67A9C2D37",
+      "id": "github_release/github.com/atuinsh/atuin/v18.17.0/atuin-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "3B109E0FCCA599DCF0ADAF90500D5C68B4C8E70E4CBDD5E598A8308EE8EFED72",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.16.1/atuin-x86_64-pc-windows-msvc.zip",
-      "checksum": "FFEBCC8FCB530B79A6096E0A04A7926BEDA021D68E066CD1C76B423B4E4F7281",
+      "id": "github_release/github.com/atuinsh/atuin/v18.17.0/atuin-x86_64-pc-windows-msvc.zip",
+      "checksum": "10CA65C3BF0547E4B2570642168DA6E92BC135005BDBA0288C6DA57B51F89AB1",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.16.1/atuin-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "AEEE16FAAB126D2F11658AD4920C73FA8479B25FBD3E26570450AF7310AAC70A",
+      "id": "github_release/github.com/atuinsh/atuin/v18.17.0/atuin-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "0FF7C20A6EDAF00C9A20AB0BFA4DB890A84A56630BB4ADB8045BE6A94E46E0FC",
       "algorithm": "sha256"
     },
     {
@@ -781,18 +781,18 @@
       "algorithm": "sha1"
     },
     {
-      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.35.18.pkg",
-      "checksum": "491AD155920DA72D5024BBDE061C1D9E29CF7A04DB8859C64C76B37693B4DBD3",
+      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.35.19.pkg",
+      "checksum": "279C0544027BF8B7BB299CA3A79D370C7DE7212FE63092E2E81915B26746741D",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.35.18.zip",
-      "checksum": "272CA9C0D7178292CF9392EE48E4FF14798D10C924BED3379FF1BA9145D7CE76",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.35.19.zip",
+      "checksum": "EBBDC9D28A218D6F25728804BD616D12937A7795BF9D51D5E0BD5A59D48310C8",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.35.18.zip",
-      "checksum": "815FD90211C88F2AD8D137D293935F0BB8EF6DCA895B8460A8778DAE825F1D9F",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.35.19.zip",
+      "checksum": "D0F683F9317C6D34BB797C08581A0AD224FCCB89BAA1F8F1BB8F081F62D36FDD",
       "algorithm": "sha256"
     },
     {
