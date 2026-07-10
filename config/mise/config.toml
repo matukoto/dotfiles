@@ -1,7 +1,7 @@
 [tools]
     # language runtime
     "java" = { version = "corretto-24.0.2.12.1", release_type = "ga" }
-    "rust" = "1.96.1"
+    "rust" = "1.97.0"
     "go" = "1.26.5"
     "node" = "24.18.0"
     "lua" = "5.5.0"
@@ -11,6 +11,6 @@
     "spring-boot" = "3.5.3"
     'npm:@actions/languageserver' = '0.3.58'
     'npm:md-to-pdf' = '5.2.5'
-    "wrangler" = "4.107.1"
+    "wrangler" = "4.109.0"
 [settings]
     experimental = false
