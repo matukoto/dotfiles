@@ -12,7 +12,7 @@ packages:
   - name: x-motemen/ghq@v1.10.1
   - name: dandavison/delta@0.19.2
   - name: extrawurst/gitui@v0.28.1
-  - name: altsem/gitu@v0.42.0
+  - name: altsem/gitu@v0.43.0
   - name: BurntSushi/ripgrep@15.1.0
   - name: ajeetdsouza/zoxide@v0.10.0
   - name: mikefarah/yq@v4.53.3
@@ -29,7 +29,7 @@ packages:
   - name: kubernetes-sigs/kind@v0.32.0
   - name: docker/cli@v27.4.1
   - name: docker/compose@v5.3.1
-  - name: nushell/nushell@0.114.0
+  - name: nushell/nushell@0.114.1
   - name: duckdb/duckdb@v1.5.4
   - name: suzuki-shunsuke/pinact@v4.1.0
   - name: rhysd/vim-startuptime@v1.3.2
