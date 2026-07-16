@@ -11,6 +11,6 @@
     "spring-boot" = "3.5.3"
     'npm:@actions/languageserver' = '0.3.60'
     'npm:md-to-pdf' = '5.2.5'
-    "wrangler" = "4.110.0"
+    "wrangler" = "4.111.0"
 [settings]
     experimental = false
