@@ -30,7 +30,7 @@ packages:
   - name: docker/cli@v27.4.1
   - name: docker/compose@v5.3.1
   - name: nushell/nushell@0.114.1
-  - name: duckdb/duckdb@v1.5.4
+  - name: duckdb/duckdb@v1.5.5
   - name: suzuki-shunsuke/pinact@v4.1.0
   - name: rhysd/vim-startuptime@v1.3.2
   - name: golang.org/x/tools/gopls@v0.23.0
