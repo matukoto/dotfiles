@@ -101,28 +101,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.18.4/opencode-darwin-arm64.zip",
-      "checksum": "04FB881B632B323C712DFDA6DCBBC6FCE736394F07BA76176E52D6665925D4E6",
+      "id": "github_release/github.com/anomalyco/opencode/v1.18.5/opencode-darwin-arm64.zip",
+      "checksum": "85F6F9EECE174D3BF0C92588086A65284388B891256C8F4102DC317D476FFCA6",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.18.4/opencode-darwin-x64.zip",
-      "checksum": "E177C532654572079981DB1DCE464A78ADBAED9654A142848B2E81BEB8C9F5C6",
+      "id": "github_release/github.com/anomalyco/opencode/v1.18.5/opencode-darwin-x64.zip",
+      "checksum": "F972E376CF7D6AF855919093674123F6912EC8388AF83C9AEE2C2E9D6E536203",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.18.4/opencode-linux-arm64.tar.gz",
-      "checksum": "EBA87EFBA3976D533A24CCA0316F8EF375B5F8E797C0A95C25EE919700B7BA35",
+      "id": "github_release/github.com/anomalyco/opencode/v1.18.5/opencode-linux-arm64.tar.gz",
+      "checksum": "18B643362FDF0B8D5B8711B3E160DAFB4E68D0BFC00288F56FD1298FD72DA69D",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.18.4/opencode-linux-x64.tar.gz",
-      "checksum": "BAB463C3FB3224D388BB7CFAD63F38703DF9CF0BE2CFD2CE8CB49D886B53A174",
+      "id": "github_release/github.com/anomalyco/opencode/v1.18.5/opencode-linux-x64.tar.gz",
+      "checksum": "CD4A2557A3D6550F27CB5C0257EBE8D73388BB34BEDA8B6121E6428A74C1EAE2",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.18.4/opencode-windows-x64.zip",
-      "checksum": "814DAE5724DFA396A43B6408703D0929625483E2FAC135623F10F0FA8DB04A96",
+      "id": "github_release/github.com/anomalyco/opencode/v1.18.5/opencode-windows-x64.zip",
+      "checksum": "755B9FF083EF4F444A9BE1FB59803729A2158E448A526317FA3E54DE464B515B",
       "algorithm": "sha256"
     },
     {
