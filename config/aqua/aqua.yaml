@@ -31,7 +31,7 @@ packages:
   - name: docker/compose@v5.3.1
   - name: nushell/nushell@0.114.1
   - name: duckdb/duckdb@v1.5.5
-  - name: suzuki-shunsuke/pinact@v4.1.0
+  - name: suzuki-shunsuke/pinact@v4.1.1
   - name: rhysd/vim-startuptime@v1.3.2
   - name: golang.org/x/tools/gopls@v0.23.0
   - name: aws/aws-cli@2.36.11
@@ -42,6 +42,6 @@ packages:
   - name: oven-sh/bun@bun-v1.3.14
   - name: tree-sitter/tree-sitter@v0.26.11
   - name: anomalyco/opencode@v1.18.9
-  - name: github/copilot-cli@v1.0.75
+  - name: github/copilot-cli@v1.0.76
   - name: sharkdp/hyperfine@v1.20.0
 
