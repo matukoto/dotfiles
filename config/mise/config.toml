@@ -7,10 +7,10 @@
     "lua" = "5.5.0"
     "dotnet" = "10.0.102"
     "npm:@marp-team/marp-cli" = "latest"
-    "npm:sv" = '0.16.6'
+    "npm:sv" = '0.17.0'
     "spring-boot" = "3.5.3"
     'npm:@actions/languageserver' = '0.3.60'
     'npm:md-to-pdf' = '5.2.5'
-    "wrangler" = "4.115.0"
+    "wrangler" = "4.118.0"
 [settings]
     experimental = false
