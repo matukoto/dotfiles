@@ -28,13 +28,13 @@ packages:
   - name: kubernetes/kubectl@v1.36.3
   - name: kubernetes-sigs/kind@v0.32.0
   - name: docker/cli@v27.4.1
-  - name: docker/compose@v5.3.1
+  - name: docker/compose@v5.4.0
   - name: nushell/nushell@0.114.1
   - name: duckdb/duckdb@v1.5.5
   - name: suzuki-shunsuke/pinact@v4.1.1
   - name: rhysd/vim-startuptime@v1.3.2
   - name: golang.org/x/tools/gopls@v0.23.0
-  - name: aws/aws-cli@2.36.14
+  - name: aws/aws-cli@2.36.15
   - name: tstack/lnav@v0.14.0
   - name: biomejs/biome@@biomejs/biome@2.3.8
   - name: Wilfred/difftastic@0.69.0
