@@ -3,7 +3,7 @@
     "java" = { version = "corretto-24.0.2.12.1", release_type = "ga" }
     "rust" = "1.97.1"
     "go" = "1.26.5"
-    "node" = "24.18.1"
+    "node" = "24.19.0"
     "lua" = "5.5.0"
     "dotnet" = "10.0.102"
     "npm:@marp-team/marp-cli" = "latest"
