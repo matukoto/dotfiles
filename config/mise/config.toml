@@ -2,7 +2,7 @@
     # language runtime
     "java" = { version = "corretto-24.0.2.12.1", release_type = "ga" }
     "rust" = "1.97.1"
-    "go" = "1.26.5"
+    "go" = "1.26.6"
     "node" = "24.19.0"
     "lua" = "5.5.1"
     "dotnet" = "10.0.102"
@@ -11,6 +11,6 @@
     "spring-boot" = "3.5.3"
     'npm:@actions/languageserver' = '0.3.61'
     'npm:md-to-pdf' = '5.2.5'
-    "wrangler" = "4.121.0"
+    "wrangler" = "4.123.0"
 [settings]
     experimental = false
