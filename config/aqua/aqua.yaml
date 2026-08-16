@@ -23,7 +23,7 @@ packages:
   - name: sharkdp/fd@v10.4.2
   - name: jqlang/jq@jq-1.8.2
   - name: atuinsh/atuin@v18.19.0
-  - name: sxyazi/yazi@v26.5.6
+  - name: sxyazi/yazi@v26.8.15
   - name: denoland/deno@v2.9.5
   - name: kubernetes/kubectl@v1.36.3
   - name: kubernetes-sigs/kind@v0.32.0
