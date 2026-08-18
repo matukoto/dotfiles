@@ -28,7 +28,7 @@ packages:
   - name: kubernetes/kubectl@v1.36.3
   - name: kubernetes-sigs/kind@v0.32.0
   - name: docker/cli@v27.4.1
-  - name: docker/compose@v5.4.0
+  - name: docker/compose@v5.5.0
   - name: nushell/nushell@0.115.0
   - name: duckdb/duckdb@v1.5.5
   - name: suzuki-shunsuke/pinact@v4.1.1

@@ -246,33 +246,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.4.0/docker-compose-darwin-aarch64",
-      "checksum": "BC3D1FD4C01E3AF9B481FC5EA153EA7C006C77EB39BE78E9AF3E2E8EBECC0D61",
+      "id": "github_release/github.com/docker/compose/v5.5.0/docker-compose-darwin-aarch64",
+      "checksum": "6777710E5A5DB5709E5F4B5985844E74B73CC1A6123E3A6690B6ABABF2DEAF51",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.4.0/docker-compose-darwin-x86_64",
-      "checksum": "59FC378C6832C7C8D628D4D38A4E2BEBCAD579B21D1D380E9B8872961FE3DA83",
+      "id": "github_release/github.com/docker/compose/v5.5.0/docker-compose-darwin-x86_64",
+      "checksum": "D0F0C867FD740953899A63D6D1A291DC60200B0961DE9612A01BCC560E6E29A6",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.4.0/docker-compose-linux-aarch64",
-      "checksum": "FC5D1371F1EC7987E703DA94EDE49AF3FBFB240B83F22991A98511DE7BC4B93B",
+      "id": "github_release/github.com/docker/compose/v5.5.0/docker-compose-linux-aarch64",
+      "checksum": "FF42489F5A9B879D5D117C5FFEA6DEFC27390B3286DA8AD52CBC9C6AB5DF590E",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.4.0/docker-compose-linux-x86_64",
-      "checksum": "837FD1D35BF6A494F41B5B5988269A7BE79DE337CF1A1A6FF0E45AB51BB4E9BE",
+      "id": "github_release/github.com/docker/compose/v5.5.0/docker-compose-linux-x86_64",
+      "checksum": "C57AB918ABD5B05CA7E7D0F275875DD1330A695074F309DC9EAB1B49EFAFCD4B",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.4.0/docker-compose-windows-aarch64.exe",
-      "checksum": "7895808619A27DD6CBCA51B61AC211B59711ED82660B867B2C852D34E7881662",
+      "id": "github_release/github.com/docker/compose/v5.5.0/docker-compose-windows-aarch64.exe",
+      "checksum": "673B844868A8EBAE57B81F3CFEFFCA8A00ED256E660A357C057191A40FFC83C2",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.4.0/docker-compose-windows-x86_64.exe",
-      "checksum": "D51BC731B3FF6F062A26E8FDFD391AE98AEAB516432F097C66D39C1C9D06680E",
+      "id": "github_release/github.com/docker/compose/v5.5.0/docker-compose-windows-x86_64.exe",
+      "checksum": "51E1E61195F3616896265487ED64551095F3BD27AC7FBD5758D3538C3BFA1B19",
       "algorithm": "sha256"
     },
     {
