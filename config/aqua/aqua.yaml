@@ -29,7 +29,7 @@ packages:
   - name: kubernetes-sigs/kind@v0.32.0
   - name: docker/cli@v27.4.1
   - name: docker/compose@v5.5.0
-  - name: nushell/nushell@0.115.0
+  - name: nushell/nushell@0.115.1
   - name: duckdb/duckdb@v1.5.5
   - name: suzuki-shunsuke/pinact@v4.1.1
   - name: rhysd/vim-startuptime@v1.3.2
@@ -41,7 +41,7 @@ packages:
   - name: astral-sh/uv@0.12.5
   - name: oven-sh/bun@bun-v1.4.0
   - name: tree-sitter/tree-sitter@v0.26.13
-  - name: anomalyco/opencode@v1.18.21
+  - name: anomalyco/opencode@v1.18.22
   - name: github/copilot-cli@v1.0.80
   - name: sharkdp/hyperfine@v1.20.0
 
