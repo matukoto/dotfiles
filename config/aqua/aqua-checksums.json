@@ -101,28 +101,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.18.21/opencode-darwin-arm64.zip",
-      "checksum": "72F4B6029AF185EB030995CFA062D038914E3142C9AA38F714FE56448E6E87D2",
+      "id": "github_release/github.com/anomalyco/opencode/v1.18.22/opencode-darwin-arm64.zip",
+      "checksum": "79CE381136A0981953CCC329417678498B25B8D32C2A1A7B55EE5ED25590F94C",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.18.21/opencode-darwin-x64.zip",
-      "checksum": "405559E5873A9131FF6BCAFC413F46D4F199B4401F232D00BCD301D97EA7CDFC",
+      "id": "github_release/github.com/anomalyco/opencode/v1.18.22/opencode-darwin-x64.zip",
+      "checksum": "D1AF85E1E63A0421F67D3E70C61C7B56393C7C32FF5EF4E49F02F3B1F29C3770",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.18.21/opencode-linux-arm64.tar.gz",
-      "checksum": "D30D2CBA74617F4E7B96E25563C9572FFE453F9EAE70FC0DF16286813537EE72",
+      "id": "github_release/github.com/anomalyco/opencode/v1.18.22/opencode-linux-arm64.tar.gz",
+      "checksum": "7243E7A417D190EFA1B7B0981DBF0D6C8AA78BA2FB0181EA23336FDBB51C5178",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.18.21/opencode-linux-x64.tar.gz",
-      "checksum": "D910C3ED7613BB5791A328904615D41CC25B7D3A6B470E3199AB0426A995B38A",
+      "id": "github_release/github.com/anomalyco/opencode/v1.18.22/opencode-linux-x64.tar.gz",
+      "checksum": "23ECA6A892C6B53C0F9BA2333B6906BDC31902634631D54CF17500E7E8CBFA20",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.18.21/opencode-windows-x64.zip",
-      "checksum": "F8CC5477F478FA129ECE99B550D508363CEFF612F99D859042E526B13B951542",
+      "id": "github_release/github.com/anomalyco/opencode/v1.18.22/opencode-windows-x64.zip",
+      "checksum": "8728790C37BBD05EF03B50B8F8267D02E7FE10260D943C8DB4521ADC301BA7A3",
       "algorithm": "sha256"
     },
     {
@@ -471,28 +471,28 @@
       "algorithm": "sha512"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.115.0/nu-0.115.0-aarch64-apple-darwin.tar.gz",
-      "checksum": "91F3C77E4F634B54029B07E3DC4E99FFEC5FC0F98537F9B630BDA32B4D06DA5E",
+      "id": "github_release/github.com/nushell/nushell/0.115.1/nu-0.115.1-aarch64-apple-darwin.tar.gz",
+      "checksum": "2E6ED1EB043869FF05B5F2448A8C443E4D3A93557BA4303B21008A0523C96734",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.115.0/nu-0.115.0-aarch64-unknown-linux-gnu.tar.gz",
-      "checksum": "508F00F858474E754335BEA741C8F729B8AE526451AA01B9C1E36944311B846A",
+      "id": "github_release/github.com/nushell/nushell/0.115.1/nu-0.115.1-aarch64-unknown-linux-gnu.tar.gz",
+      "checksum": "5C4A5BCA0AF5B070E903A68FA014CC24E6419D0AC9CEC03A2948494B2D310E08",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.115.0/nu-0.115.0-x86_64-apple-darwin.tar.gz",
-      "checksum": "0BDDB610EFD2A3567076AF9A337C6DD078582E8E9E9AF76E0CC2204CBFE3E6D1",
+      "id": "github_release/github.com/nushell/nushell/0.115.1/nu-0.115.1-x86_64-apple-darwin.tar.gz",
+      "checksum": "0292F4B92AF29CFE5D9C4B2EC06EEB325B705D1D6C19536A8BEC2B75859B3485",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.115.0/nu-0.115.0-x86_64-pc-windows-msvc.zip",
-      "checksum": "4F6A0BCBBC2975CF46F3FF93AECC7093C91FA59ACA28020E4294906DB13ACE23",
+      "id": "github_release/github.com/nushell/nushell/0.115.1/nu-0.115.1-x86_64-pc-windows-msvc.zip",
+      "checksum": "B83009CBC88021F4DC293C49320118886B78363F9A4BB14933D33C8803241F46",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.115.0/nu-0.115.0-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "D510565B039B5384986652E579FE443877FCC4DF86F16072ED5EDCA641AD92F1",
+      "id": "github_release/github.com/nushell/nushell/0.115.1/nu-0.115.1-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "8A9722177DDD421EBA927B4BAAE4AE341A4D1C3434504BE7B1B17D998BAFDD87",
       "algorithm": "sha256"
     },
     {
