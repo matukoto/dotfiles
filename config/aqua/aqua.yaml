@@ -44,4 +44,4 @@ packages:
   - name: anomalyco/opencode@v1.18.23
   - name: github/copilot-cli@v1.0.80
   - name: sharkdp/hyperfine@v1.20.0
-
+  - name: openai/codex@rust-v0.153.4
