@@ -282,6 +282,6 @@ vim.cmd([[cnoreabbrev <expr> t getcmdtype() ==# ':' && getcmdline() =~# '^t\s*$'
 
 -- colorscheme
 -- vim.cmd('colorscheme everforest') -- Set your desired colorscheme here
-vim.lsp.log._set_filename(vim.fn.stdpath('log') .. '/lsp/lsp-' .. os.date('%y') .. os.date('%m') .. os.date('%d') .. '.log')
+-- vim.lsp.log._set_filename(vim.fn.stdpath('log') .. '/lsp/lsp-' .. os.date('%y') .. os.date('%m') .. os.date('%d') .. '.log')
 
 require('config.lazy')
