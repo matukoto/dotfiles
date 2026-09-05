@@ -2,7 +2,7 @@ local wezterm = require('wezterm')
 local config = {
   -- 音を鳴らす
   audible_bell = 'SystemBeep',
-  window_background_opacity = 0.4, -- 透過率
+  window_background_opacity = 0.9, -- 透過率
   -- default_prog = { 'bash' },
   --default_prog = { 'wsl.exe', '--cd', '~' },
   enable_scroll_bar = true,
@@ -16,7 +16,7 @@ local config = {
   key_tables = require('keybinds').key_tables,
   use_ime = true,
   -- タイトルバーの非表示
-  window_decorations = 'RESIZE',
+  -- window_decorations = 'RESIZE',
   -- タブバーの表示
   show_tabs_in_tab_bar = true,
   -- タブバーが1つしかない場合非表示
