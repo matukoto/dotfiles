@@ -1,9 +1,9 @@
 [tools]
     # language runtime
     "java" = { version = "corretto-24.0.2.12.1", release_type = "ga" }
-    "rust" = "1.98.0"
-    "go" = "1.27.0"
-    "node" = "24.19.0"
+    "rust" = "1.98.1"
+    "go" = "1.27.1"
+    "node" = "24.20.0"
     "lua" = "5.5.1"
     "dotnet" = "10.0.102"
     "npm:@marp-team/marp-cli" = "latest"
@@ -11,6 +11,6 @@
     "spring-boot" = "3.5.3"
     'npm:@actions/languageserver' = '0.3.61'
     'npm:md-to-pdf' = '5.2.5'
-    "wrangler" = "4.125.0"
+    "wrangler" = "4.129.0"
 [settings]
     experimental = false
