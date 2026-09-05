@@ -21,7 +21,7 @@ local lsp_servers = {
   'yamlls',
   'lemminx',
   'tailwindcss',
-  'copilot',
+  -- 'copilot',
   'fish_lsp',
   -- gopls, denols, nixd は after/lsp/ で個別設定
   'gopls',
@@ -30,9 +30,9 @@ local lsp_servers = {
 }
 
 -- Copilot を無効化したいファイルタイプのリスト
-local copilot_disabled_filetypes = {
-  java = true,
-}
+-- local copilot_disabled_filetypes = {
+--   java = true,
+-- }
 
 return {
   -- Main LSP configuration plugin
@@ -174,22 +174,22 @@ return {
             end
           end
           -- copilot でのみインラインtab補完を有効にする
-          if client.name == 'copilot' then
-            local current_filetype = vim.bo[args.buf].filetype
-
-            if copilot_disabled_filetypes[current_filetype] then
-              -- 条件に合致したら、このバッファから Copilot LSP をデタッチ（切り離す）
-              vim.lsp.buf_detach_client(args.buf, client.id)
-            end
-            vim.lsp.inline_completion.enable(true, {
-              client_id = client.id,
-            })
-            vim.keymap.set('i', '<tab>', function()
-              if not vim.lsp.inline_completion.get() then
-                return '<tab>'
-              end
-            end, { expr = true })
-          end
+          -- if client.name == 'copilot' then
+          --   local current_filetype = vim.bo[args.buf].filetype
+          --
+          --   if copilot_disabled_filetypes[current_filetype] then
+          --     -- 条件に合致したら、このバッファから Copilot LSP をデタッチ（切り離す）
+          --     vim.lsp.buf_detach_client(args.buf, client.id)
+          --   end
+          --   vim.lsp.inline_completion.enable(true, {
+          --     client_id = client.id,
+          --   })
+          --   vim.keymap.set('i', '<tab>', function()
+          --     if not vim.lsp.inline_completion.get() then
+          --       return '<tab>'
+          --     end
+          --   end, { expr = true })
+          -- end
         end,
       })
 
