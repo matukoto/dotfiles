@@ -43,7 +43,7 @@ return {
             icon = ' ',
             key = 's',
             desc = 'git status',
-            action = ':GinStatus',
+            action = ':GinFloat GinStatus',
           },
           { icon = ' ', key = 'i', desc = 'edit', action = ':ene | startinsert' },
           {

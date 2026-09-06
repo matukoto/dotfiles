@@ -14,9 +14,11 @@ return {
 
     local function open_gin_in_float(command)
       local buf = vim.api.nvim_create_buf(false, true)
+      vim.bo[buf].bufhidden = 'wipe'
+      vim.bo[buf].swapfile = false
       local width = math.floor(vim.o.columns * 0.85)
       local height = math.floor(vim.o.lines * 0.85)
-      vim.api.nvim_open_win(buf, true, {
+      local win = vim.api.nvim_open_win(buf, true, {
         relative = 'editor',
         width = width,
         height = height,
@@ -25,7 +27,11 @@ return {
         style = 'minimal',
         border = 'rounded',
       })
-      vim.cmd(command)
+      local ok, err = pcall(vim.cmd, command)
+      if not ok then
+        vim.api.nvim_win_close(win, true)
+        error(err)
+      end
     end
 
     -- Run a Gin command in a floating window. Gin's default `edit` opener then
