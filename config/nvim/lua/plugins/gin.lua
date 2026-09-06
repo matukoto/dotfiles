@@ -83,6 +83,7 @@ return {
     end
 
     _G.MyGinStatusSettings = function()
+      require('config.gin_preview').setup(vim.api.nvim_get_current_buf())
       vim.keymap.set('n', 'co', '<Cmd>lua _G.GinCheckoutCurrentFile()<CR>', { buffer = true, silent = true })
     end
 
