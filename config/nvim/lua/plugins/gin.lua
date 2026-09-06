@@ -13,6 +13,10 @@ return {
     vim.g.gin_proxy_apply_without_confirm = 1
 
     local function open_gin_in_float(command)
+      local origin = vim.api.nvim_get_current_win()
+      if vim.api.nvim_win_get_config(origin).relative ~= '' then
+        origin = vim.w[origin].gin_origin_win
+      end
       local buf = vim.api.nvim_create_buf(false, true)
       vim.bo[buf].bufhidden = 'wipe'
       vim.bo[buf].swapfile = false
@@ -27,6 +31,7 @@ return {
         style = 'minimal',
         border = 'rounded',
       })
+      vim.w[win].gin_origin_win = origin
       local ok, err = pcall(vim.cmd, command)
       if not ok then
         vim.api.nvim_win_close(win, true)

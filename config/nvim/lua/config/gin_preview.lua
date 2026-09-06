@@ -146,7 +146,47 @@ function M.open(kind)
   if not ok then vim.notify(tostring(err), vim.log.levels.ERROR) end
 end
 
+function M.edit_file()
+  if updating then return end
+  local status = vim.api.nvim_get_current_win()
+  local buf = vim.api.nvim_get_current_buf()
+  local cursor = vim.api.nvim_win_get_cursor(status)
+  local line = vim.api.nvim_get_current_line()
+  if line:sub(1, 1) == '#' or #line < 4 then return end
+  local floating = vim.api.nvim_win_get_config(status).relative ~= ''
+  local target = floating and vim.w[status].gin_origin_win or status
+  if not valid(target) or vim.api.nvim_win_get_config(target).relative ~= '' then
+    target = nil
+    for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+      if vim.api.nvim_win_get_config(win).relative == '' then target = win; break end
+    end
+  end
+  if not target then return end
+  updating = true
+  -- Let Gin resolve the selected path first, then display the resulting file
+  -- in the original editing window. No status-line parsing or register edits.
+  local ok, err = pcall(function()
+    vim.fn['denops#request']('gin', 'action:action:edit:local:edit', { buf })
+    local file = vim.api.nvim_get_current_buf()
+    if file == buf then return end
+    if floating then
+      vim.api.nvim_win_set_buf(target, file)
+      close(status)
+      if valid(status) then vim.api.nvim_win_close(status, false) end
+      vim.api.nvim_set_current_win(target)
+    end
+  end)
+  if not ok and valid(status) then
+    vim.api.nvim_win_set_buf(status, buf)
+    vim.api.nvim_win_set_cursor(status, cursor)
+    vim.api.nvim_set_current_win(status)
+  end
+  updating = false
+  if not ok then vim.notify(tostring(err), vim.log.levels.ERROR) end
+end
+
 function M.setup(buf)
+  vim.keymap.set('n', '<CR>', M.edit_file, { buffer = buf, silent = true, desc = 'Open file in editing window' })
   local group = vim.api.nvim_create_augroup('GinAutoPreview' .. buf, { clear = true })
   local generation = 0
   local function queue()
