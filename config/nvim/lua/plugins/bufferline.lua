@@ -32,6 +32,11 @@ return {
       tab_size = 18,
       diagnostics = 'nvim_lsp', -- "nvim_lsp" | "coc" | false
       diagnostics_update_in_insert = false,
+      -- Gin keeps its URI buffers for asynchronous refreshes. They are UI
+      -- buffers, so omit them from the file-buffer tabline.
+      custom_filter = function(bufnr)
+        return vim.api.nvim_buf_get_name(bufnr):match('^gin[%w-]*://') == nil
+      end,
       -- diagnostics_indicator = function(count, level, diagnostics_dict, context) ... end,
       -- offsets = { { filetype = "NvimTree", text = "File Explorer", text_align = "left" } }, -- Example offset
       show_buffer_icons = true, -- Show devicons
