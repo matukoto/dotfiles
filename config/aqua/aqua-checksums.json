@@ -761,23 +761,23 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/tstack/lnav/v0.14.0/lnav-0.14.0-aarch64-macos.zip",
-      "checksum": "F282D567E1BDB2C3E54D9502671B8011C0D4E3700B2616CF72778602F8EE0371",
+      "id": "github_release/github.com/tstack/lnav/v0.14.1/lnav-0.14.1-aarch64-macos.zip",
+      "checksum": "3B860EC5B2368E045A500C107006EEE7077F9B66692DC17FCBF0B36A859F6631",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/tstack/lnav/v0.14.0/lnav-0.14.0-linux-musl-arm64.zip",
-      "checksum": "027E9F540567CD0E9BA00335AB9BE0275A414B14608E10D49DC2D6A2633AA546",
+      "id": "github_release/github.com/tstack/lnav/v0.14.1/lnav-0.14.1-linux-musl-arm64.zip",
+      "checksum": "E605AC855AF193B5C7201E2FD94372FEBEC931C5721B50FDF828B3E5AF90C677",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/tstack/lnav/v0.14.0/lnav-0.14.0-linux-musl-x86_64.zip",
-      "checksum": "9D146D1DA2AF005A77920AFFF5DA96D2AE0771EE25450B0954B27DE95E7F0F57",
+      "id": "github_release/github.com/tstack/lnav/v0.14.1/lnav-0.14.1-linux-musl-x86_64.zip",
+      "checksum": "EC1750F0A6962EED6BB85AD4249457894F190E961277C56D69C47EECCE9E705E",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/tstack/lnav/v0.14.0/lnav-0.14.0-windows-x86_64.zip",
-      "checksum": "62E35078B0BA6FF94CB38A3E31DF0197B372A96E3E516A0BFC740061729BE023",
+      "id": "github_release/github.com/tstack/lnav/v0.14.1/lnav-0.14.1-windows-x86_64.zip",
+      "checksum": "6EACBC1C540837CFEF3BC555E985027D91638023462ECC96616C14EF49F521A1",
       "algorithm": "sha256"
     },
     {
