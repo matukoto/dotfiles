@@ -94,7 +94,6 @@ require('lazy').setup({
     { 'rachartier/tiny-inline-diagnostic.nvim', event = 'VeryLazy' },
     { 'shougo/pum.vim', event = 'VeryLazy' },
     { 'nvim-treesitter/nvim-treesitter-context', event = 'VeryLazy' },
-    { 'ogaken-1/nvim-gin-preview', event = 'VeryLazy' },
     { 'lambdalisue/vim-kensaku', event = 'VeryLazy' },
     { 'lambdalisue/vim-kensaku-search', event = 'VeryLazy' },
     { 'kevinhwang91/nvim-bqf', event = 'VeryLazy' },

@@ -3,7 +3,7 @@
 return {
   'lambdalisue/vim-gin',
   -- Dependencies: Denops is required
-  dependencies = { 'vim-denops/denops.vim', 'ogaken-1/nvim-gin-preview' },
+  dependencies = { 'vim-denops/denops.vim' },
   -- Load when needed, triggered by commands or keymaps
   cmd = { 'Gin', 'GinStatus', 'GinLog', 'GinBranch', 'GinDiff', 'GinPatch' },
   event = 'VeryLazy',
@@ -11,6 +11,28 @@ return {
   init = function()
     -- Apply changes without confirmation
     vim.g.gin_proxy_apply_without_confirm = 1
+
+    local function open_gin_in_float(command)
+      local buf = vim.api.nvim_create_buf(false, true)
+      local width = math.floor(vim.o.columns * 0.85)
+      local height = math.floor(vim.o.lines * 0.85)
+      vim.api.nvim_open_win(buf, true, {
+        relative = 'editor',
+        width = width,
+        height = height,
+        row = math.floor((vim.o.lines - height) / 2),
+        col = math.floor((vim.o.columns - width) / 2),
+        style = 'minimal',
+        border = 'rounded',
+      })
+      vim.cmd(command)
+    end
+
+    -- Run a Gin command in a floating window. Gin's default `edit` opener then
+    -- replaces only this temporary buffer, leaving the original window intact.
+    vim.api.nvim_create_user_command('GinFloat', function(opts)
+      open_gin_in_float(opts.args)
+    end, { nargs = '+', complete = 'command' })
 
     -- Alias typo することが多いため
     vim.cmd('cnoreabbrev GIn Gin')
@@ -25,13 +47,13 @@ return {
   end,
   -- Define global keymaps using the 'keys' table
   keys = {
-    { '<C-g>s', '<Cmd>GinStatus ++opener=tabedit<CR>', desc = 'Gin Status (Edit)' },
+    { '<C-g>s', '<Cmd>GinFloat GinStatus<CR>', desc = 'Gin Status (Float)' },
     { '<C-g>a', '<Cmd>Gin add --all<CR>', desc = 'Gin Add All' },
     { '<C-g>c', '<Cmd>Gin commit --quiet<CR>', desc = 'Gin Commit' },
     { '<C-g>P', '<Cmd>GinPatch ++no-head %<CR>', desc = 'Gin Patch Buffer' },
     { '<C-g>p', '<Cmd>Gin push --quiet<CR>', desc = 'Gin Push' },
-    { '<C-g>l', '<Cmd>GinLog<CR>', desc = 'Gin Log' },
-    { '<C-g>b', '<Cmd>GinBranch --all<CR>', desc = 'Gin Branch' },
+    { '<C-g>l', '<Cmd>GinFloat GinLog<CR>', desc = 'Gin Log (Float)' },
+    { '<C-g>b', '<Cmd>GinFloat GinBranch --all<CR>', desc = 'Gin Branch (Float)' },
     -- { '<C-g>d', '<Cmd>GinDiff<CR>', desc = 'Gin Diff' },
   },
   -- config function to define autocmds and custom functions after loading
