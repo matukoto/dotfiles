@@ -1,6 +1,7 @@
 -- Keep Gin's buffers alive: its asynchronous refreshes retain their IDs.
 local M = {}
 local views = {}
+local updating = false
 local line_numbers = vim.api.nvim_create_namespace('GinPreviewLineNumbers')
 
 -- Decorate the unified diff without changing the text Gin parses for jumps.
@@ -65,14 +66,14 @@ local function layout(status, view)
   })
 end
 
-function M.open(kind)
+local function open(kind)
   local status = vim.api.nvim_get_current_win()
   if vim.api.nvim_win_get_config(status).relative == '' then
     vim.notify('Open GinStatus with GinFloat to use the preview', vim.log.levels.INFO)
     return
   end
   local line = vim.api.nvim_get_current_line()
-  if line:sub(1, 1) == '#' or #line < 4 then return end
+  local is_file = line:sub(1, 1) ~= '#' and #line >= 4
   local untracked = line:sub(1, 2) == '??'
   local action = untracked and 'edit:local:edit' or ('diff:' .. (kind or 'smart') .. ':edit')
   local buf = vim.api.nvim_get_current_buf()
@@ -98,6 +99,16 @@ function M.open(kind)
     })
   end
   layout(status, view)
+  if not is_file then
+    if not view.empty or not vim.api.nvim_buf_is_valid(view.empty) then
+      view.empty = vim.api.nvim_create_buf(false, true)
+      vim.bo[view.empty].bufhidden = 'wipe'
+      vim.api.nvim_buf_set_lines(view.empty, 0, -1, false, { 'Select a file to preview its diff.' })
+    end
+    vim.api.nvim_win_set_buf(view.preview, view.empty)
+    vim.api.nvim_win_set_config(view.preview, { title = ' Diff ', title_pos = 'center' })
+    return
+  end
   -- Run Gin's own candidate parser with the status buffer/cursor in the lower
   -- window. Its edit opener replaces that window only (also handles renames).
   vim.api.nvim_set_current_win(view.preview)
@@ -127,7 +138,38 @@ function M.open(kind)
   end
 end
 
+function M.open(kind)
+  if updating then return end
+  updating = true
+  local ok, err = pcall(open, kind)
+  updating = false
+  if not ok then vim.notify(tostring(err), vim.log.levels.ERROR) end
+end
+
 function M.setup(buf)
+  local group = vim.api.nvim_create_augroup('GinAutoPreview' .. buf, { clear = true })
+  local generation = 0
+  local function queue()
+    if updating then return end
+    local win = vim.api.nvim_get_current_win()
+    -- The preview temporarily displays the status buffer while Gin resolves
+    -- the selected file; never treat that lower window as a new status view.
+    for _, view in pairs(views) do
+      if view.preview == win then return end
+    end
+    if vim.api.nvim_get_current_buf() ~= buf or vim.api.nvim_win_get_config(win).relative == '' then return end
+    generation = generation + 1
+    local ticket = generation
+    vim.defer_fn(function()
+      if ticket ~= generation or updating or not valid(win) then return end
+      if vim.api.nvim_get_current_win() ~= win or vim.api.nvim_win_get_buf(win) ~= buf then return end
+      M.open()
+    end, 120)
+  end
+  vim.api.nvim_create_autocmd({ 'CursorMoved', 'BufWinEnter', 'TextChanged' }, {
+    group = group, buffer = buf, callback = queue,
+  })
+  queue()
   vim.keymap.set('n', 'p', function() M.open() end, { buffer = buf, nowait = true, desc = 'Preview diff below' })
   vim.keymap.set('n', 'gS', function() M.open('cached') end, { buffer = buf, desc = 'Preview staged diff' })
   vim.keymap.set('n', 'gU', function() M.open('local') end, { buffer = buf, desc = 'Preview unstaged diff' })
