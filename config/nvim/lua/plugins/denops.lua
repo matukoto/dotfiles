@@ -17,7 +17,7 @@ return {
       '--allow-env',
       '--allow-net=127.0.0.1,cdn.jsdelivr.net,www.google.com',
       '--allow-write',
-      '--allow-run=git',
+      '--allow-run=git,delta',
     }
 
     -- Optional: Debug mode (uncomment if needed)
