@@ -31,6 +31,7 @@
       "gettext"
       "ninja"
       "pinentry-mac"
+      "herdr"
     ];
 
     casks = [
