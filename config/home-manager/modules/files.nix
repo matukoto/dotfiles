@@ -18,6 +18,7 @@ let
     "claude"
     "ghostty"
     "gitui"
+    "herdr"
     "jdtls"
     "mise"
     "nix"
