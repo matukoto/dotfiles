@@ -28,6 +28,9 @@ LSP / formatter / CLI バイナリ本体は
   bootstrap し、`lua/plugins/*.lua` を import。
 - プラグイン設定の実体は `lua/plugins/` 側。使うものだけを `spec` で読み込み。
 
+全プラグインの用途・依存関係・未使用設定・役割の重複は
+[プラグイン棚卸し](PLUGIN_INVENTORY.md) を参照。
+
 ## 主なプラグインと役割
 
 - **LSP / 補完**:
