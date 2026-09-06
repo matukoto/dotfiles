@@ -227,7 +227,7 @@ call jetpack#begin(s:vim_home)
   call jetpack#add('LumaKernel/ddc-source-file')
   call jetpack#add('matsui54/ddc-source-buffer')
 
-  call jetpack#add('github/copilot.vim')
+  " call jetpack#add('github/copilot.vim')
   " filter
   call jetpack#add('shougo/ddc-matcher_head')
   call jetpack#add('shougo/ddc-sorter_rank')
@@ -427,8 +427,8 @@ nnoremap <C-f> <cmd>FuzzyMotion<CR>
 
 let g:camelcasemotion_key = '['
 
-imap <expr> <C-Space> copilot#expand()
-imap <C-]> <plug>(copilot-dismiss)
+" imap <expr> <C-Space> copilot#expand()
+" imap <C-]> <plug>(copilot-dismiss)
 
 
 " Gin
