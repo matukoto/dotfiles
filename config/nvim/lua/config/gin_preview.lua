@@ -1,6 +1,38 @@
 -- Keep Gin's buffers alive: its asynchronous refreshes retain their IDs.
 local M = {}
 local views = {}
+local line_numbers = vim.api.nvim_create_namespace('GinPreviewLineNumbers')
+
+-- Decorate the unified diff without changing the text Gin parses for jumps.
+local function show_source_lines(buf)
+  vim.api.nvim_buf_clear_namespace(buf, line_numbers, 0, -1)
+  local old, new, old_left, new_left
+  for i, line in ipairs(vim.api.nvim_buf_get_lines(buf, 0, -1, false)) do
+    local a, ac, b, bc = line:match('^@@ %-(%d+)(,?%d*) %+(%d+)(,?%d*) @@')
+    if a then
+      old, new = tonumber(a), tonumber(b)
+      old_left = ac == '' and 1 or tonumber(ac:sub(2))
+      new_left = bc == '' and 1 or tonumber(bc:sub(2))
+    elseif old and (old_left > 0 or new_left > 0) then
+      local prefix = line:sub(1, 1)
+      local left, right = '', ''
+      if prefix == '-' and old_left > 0 then
+        left, old, old_left = tostring(old), old + 1, old_left - 1
+      elseif prefix == '+' and new_left > 0 then
+        right, new, new_left = tostring(new), new + 1, new_left - 1
+      elseif prefix == ' ' and old_left > 0 and new_left > 0 then
+        left, right = tostring(old), tostring(new)
+        old, new, old_left, new_left = old + 1, new + 1, old_left - 1, new_left - 1
+      end
+      if left ~= '' or right ~= '' then
+        vim.api.nvim_buf_set_extmark(buf, line_numbers, i - 1, 0, {
+          virt_text = { { string.format('%4s %4s │ ', left, right), 'LineNr' } },
+          virt_text_pos = 'inline',
+        })
+      end
+    end
+  end
+end
 
 local function valid(win)
   return win and vim.api.nvim_win_is_valid(win)
@@ -84,6 +116,9 @@ function M.open(kind)
       vim.api.nvim_win_set_config(view.preview, {
         title = untracked and ' New file (content) ' or ' Diff (unified) ', title_pos = 'center',
       })
+      vim.wo[view.preview].number = untracked
+      vim.wo[view.preview].relativenumber = false
+      if not untracked then show_source_lines(result) end
       -- Check the window ID: an untracked file may also be open for editing.
       if not untracked then vim.keymap.set('n', 'q', function()
         if vim.api.nvim_get_current_win() == view.preview then close(status) end
