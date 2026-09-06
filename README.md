@@ -14,6 +14,10 @@ repo ルートの `flake.nix` が
 
 ## 適用方法
 
+Nix を使わず Neovim・Zsh 等を symlink 配備する場合は、
+[`scripts/link-configs.sh`](scripts/link-configs.sh) を使用。
+対象の選択・既存設定の扱いは [`docs/symlinks.md`](docs/symlinks.md) を参照。
+
 - `flake.nix` は repo ルート。
 - macOS:
   `sudo -H nix --extra-experimental-features "nix-command flakes" run`
@@ -33,6 +37,7 @@ repo ルートの `flake.nix` が
 | --- | --- |
 | [`flake.nix`](flake.nix) | macOS / Linux 向け flake 出力の定義。 |
 | [`config/home-manager/`](config/home-manager/) | パッケージ、OS 差分、`~/.config` への配備ルール。 |
+| [`config/zsh/`](config/zsh/README.md) | Nix 不要の macOS 向け Zsh。Fish と併用して試せる独立設定。 |
 | [`config/nvim/`](config/nvim/) | Neovim 本体設定と `lazy.nvim` ベースのプラグイン設定。 |
 | [`config/vim/`](config/vim/) | Vim 本体設定と `vim-jetpack` ベースのプラグイン設定。 |
 | [`config/aqua/`](config/aqua/) | CLI ツールの配布元・バージョン・チェックサム管理。 |
@@ -44,6 +49,9 @@ repo ルートの `flake.nix` が
 | [`home/`](home/) | `.claude` や `.copilot` など、XDG 外へ置くファイルの元データ。 |
 
 ## ツール別 README
+
+Fish から Zsh への移行調査・作業状況は
+[`docs/fish-to-zsh.md`](docs/fish-to-zsh.md) に記録。
 
 - [`config/aqua/README.md`](config/aqua/README.md)
 - [`config/aerospace/README.md`](config/aerospace/README.md)
