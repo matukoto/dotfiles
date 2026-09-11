@@ -151,23 +151,23 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.21.0/atuin-aarch64-apple-darwin.tar.gz",
-      "checksum": "C78AC159C89C38EE0B56EB6A11D9C0A7340DE3A03B98FBBCCD44F8E2D91E6E6E",
+      "id": "github_release/github.com/atuinsh/atuin/v18.22.0/atuin-aarch64-apple-darwin.tar.gz",
+      "checksum": "5E6E525F60147351F114397E7F09AEDED87F302E99EF83A5EEE74C524B805812",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.21.0/atuin-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "9B8A76DF370EBA71EA0809D4DF74F79351BE2314C1ED90CAE229499E69CA2EE1",
+      "id": "github_release/github.com/atuinsh/atuin/v18.22.0/atuin-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "76D12818E3DFF64DDAC3B9F4EC63B305070DDCF5FC382A2A23DC0826FA9BF5A8",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.21.0/atuin-x86_64-pc-windows-msvc.zip",
-      "checksum": "08ECD4ACA5836754E53EAA987FD0D514B527689335A11B6EF05121ABAABB7DA7",
+      "id": "github_release/github.com/atuinsh/atuin/v18.22.0/atuin-x86_64-pc-windows-msvc.zip",
+      "checksum": "B7848F9FD1445EB9679AB206013EEE71CEB82971CBB770CEC2A2E999510CB52D",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.21.0/atuin-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "792E1867D113BA9BEBEC94996B3160164ABA738E3D23987B3CDDB9DEE976AC08",
+      "id": "github_release/github.com/atuinsh/atuin/v18.22.0/atuin-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "B3C123DF1887CF27C6480A87D148C86831CD83DA478E0A8AB773CA188F3F3222",
       "algorithm": "sha256"
     },
     {
@@ -496,28 +496,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/openai/codex/rust-v0.153.4/codex-package-aarch64-apple-darwin.tar.gz",
-      "checksum": "35438DA1FBF7A6DB7DDB3BCEC84448FA6015BA188461472A97D9D1DA7D9C4353",
+      "id": "github_release/github.com/openai/codex/rust-v0.154.0/codex-package-aarch64-apple-darwin.tar.gz",
+      "checksum": "427CA74C027049E0CD1A330D611E7F8D1FE0F1EB6A6D85AC16F61BCF2CB4A485",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/openai/codex/rust-v0.153.4/codex-package-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "FC395CB043A1093AB0DB34F44ABA3199BFAA9CE640CD9BE7FD588F44B0DA64A4",
+      "id": "github_release/github.com/openai/codex/rust-v0.154.0/codex-package-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "97D93E11DF72D3C26772DB019E6EA8BB72C246500D46B98C760839F3240355E6",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/openai/codex/rust-v0.153.4/codex-package-x86_64-apple-darwin.tar.gz",
-      "checksum": "3EE638D7155C856EF31F3F4A85CB2195DE1939962D3924C935B24F0514564A3D",
+      "id": "github_release/github.com/openai/codex/rust-v0.154.0/codex-package-x86_64-apple-darwin.tar.gz",
+      "checksum": "8052C6ACCBE0361BFBD424A10AA5F2226636ED8AFB6DCBD5E6437993E57B16D8",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/openai/codex/rust-v0.153.4/codex-package-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "A6EF3442CB12766A88B39311D79244289E4F9763E2C53FF4FBEBC2CB653CC5F3",
+      "id": "github_release/github.com/openai/codex/rust-v0.154.0/codex-package-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "94CC5B3632769504C809F6C0364B693C0DFDDC5C30C8361095D2263A07AC45A4",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/openai/codex/rust-v0.153.4/codex-package-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "A822187E1A2420C61C5926721BFBD878701ED95547C9BB0D4DE4498A16BA1821",
+      "id": "github_release/github.com/openai/codex/rust-v0.154.0/codex-package-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "FC6E3E3B85F2CF7D664520EE5C66A7FE4AA12BAE7D46834F47E2F165FD0D6F78",
       "algorithm": "sha256"
     },
     {
@@ -811,18 +811,18 @@
       "algorithm": "sha1"
     },
     {
-      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.36.41.pkg",
-      "checksum": "53F5024DF577BDF3F4A36C5BF3EAED1A9BCF84AA18CB1C380B245E7FD084C8AA",
+      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.36.42.pkg",
+      "checksum": "5F4B477EC2E899622C0318E7A5DC2F84DA204288BA686176D2F90195026CFC1B",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.36.41.zip",
-      "checksum": "1612CDA15D605985D8CB675EC429C8916E3B696FA52325994955DC3215C590A9",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.36.42.zip",
+      "checksum": "CF64084AAFA091B68392CA585C87325C67137AB6D740F9D43F12C55F7FD6B297",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.36.41.zip",
-      "checksum": "659C1FE734A9534736FA452BB1B557DD4CCCADEA5823F45A74C0F09408A93D22",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.36.42.zip",
+      "checksum": "20842363A30A0FF5964236D0FFA72E7672DA88E285DE90A1E95A3CEFA77A2511",
       "algorithm": "sha256"
     },
     {
