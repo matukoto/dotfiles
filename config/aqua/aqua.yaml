@@ -31,7 +31,7 @@ packages:
   - name: docker/compose@v5.5.1
   - name: nushell/nushell@0.115.1
   - name: duckdb/duckdb@v1.5.5
-  - name: suzuki-shunsuke/pinact@v4.1.1
+  - name: suzuki-shunsuke/pinact@v5.0.0
   - name: rhysd/vim-startuptime@v1.3.2
   - name: golang.org/x/tools/gopls@v0.23.0
   - name: aws/aws-cli@2.36.43
