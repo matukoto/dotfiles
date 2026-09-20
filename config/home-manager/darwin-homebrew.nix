@@ -35,7 +35,6 @@
     ];
 
     casks = [
-      "alt-tab"
       "aqua-voice"
       "bitwarden"
       "calendr"
@@ -48,6 +47,7 @@
       "macskk"
       "obsidian"
       "raycast"
+      "tinycast"
       "vivaldi"
       "wezterm"
       "zoom"
