@@ -34,6 +34,12 @@ else
 fi
 
 # Enable optional tool shortcuts only when the tool is already available.
+if (( $+commands[aqua] )); then
+  alias a='aqua'
+  alias ai='aqua i -a'
+  alias ag='aqua g'
+fi
+(( $+commands[mise] )) && alias mi='mise i'
 (( $+commands[gh] )) && alias gas='gh auth switch'
 (( $+commands[dotnet] )) && alias fsi='dotnet fsi'
 if (( $+commands[deno] )); then

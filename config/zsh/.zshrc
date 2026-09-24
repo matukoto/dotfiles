@@ -40,6 +40,9 @@ bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 bindkey -M vicmd '^R' history-incremental-search-backward
 [[ -t 0 ]] && export GPG_TTY=$TTY
+if (( $+commands[mise] )); then
+  eval "$(mise activate zsh)"
+fi
 source "$DOTFILES_ZSH_DIR/functions.zsh"
 source "$DOTFILES_ZSH_DIR/prompt.zsh"
 source "$DOTFILES_ZSH_DIR/aliases.zsh"

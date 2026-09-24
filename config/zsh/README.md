@@ -2,6 +2,7 @@
 
 macOS 標準の `/bin/zsh` 用。Nix、Home Manager、aqua、mise、Homebrew、
 Atuin、zoxide、外部プロンプト・プラグインのインストールは不要。
+aqua と mise はインストール済みなら利用できる。
 既存の Fish とホームの起動ファイルを変更せず、子シェルとして試せる。
 
 ## このパソコンで試す
@@ -23,6 +24,7 @@ sh config/zsh/start.sh --clean-path
 
 このモードは PATH を macOS のシステムディレクトリに設定する。
 その後 `.zshenv` が、存在すれば `~/bin` と `~/.local/bin` を追加する。
+aqua の bin ディレクトリも存在すれば追加し、mise が見つかれば対話シェルで有効化する。
 PATH 以外の親シェルの環境変数は引き継ぐため、移行先そのものの完全再現ではない。
 
 ランチャーは `ZDOTDIR` でこのディレクトリを指定し、`-d` で後続のシステム起動ファイルを省略する。
@@ -73,7 +75,8 @@ Java のシステムスタブも JDK を確認してから呼び出す。
 
 言語検出は現在地から親ディレクトリまで確認する。
 Bun、Node、Python、Rust、Java、C#、F#、PHP、Pulumi、Ruby、Go、Terraform、Crystal、Elixir、Zig、Lua に対応。
-ランタイムの切り替え・プロジェクト設定の source は行わない。
+プロンプト自体はランタイムの切り替え・プロジェクト設定の source を行わない。
+mise が有効な場合は、mise がプロジェクトに応じてランタイムや環境変数を切り替える。
 バージョン取得は同期実行なので、インストール済みのランタイムや shim により待ち時間が発生する場合がある。
 
 ## alias
@@ -98,6 +101,8 @@ Fish の汎用的な短縮入力を Zsh の alias として追加。
 | `fsi` | `dotnet fsi`。.NET がある場合のみ |
 | `browser-html` | Deno 経由で browser-sync 起動。Deno がある場合のみ |
 | `startuptime` | Neovim 起動時間測定。vim-startuptime と nvim がある場合のみ |
+| `a` / `ai` / `ag` | `aqua` / `aqua i -a` / `aqua g`。aqua がある場合のみ |
+| `mi` | `mise i`。mise がある場合のみ |
 
 alias の追加自体はコマンドを実行しない。
 `browser-html` は利用時に npm パッケージの取得が発生し得る、従来のコマンド定義。
@@ -106,7 +111,7 @@ alias の追加自体はコマンドを実行しない。
 ## Fish との差分
 
 - 短縮入力41件のうち汎用的なものを alias に移植。個人用・ツール管理用のものは除外。
-- Atuin、zoxide、個人用パス・関数、Copilot、Nix 管理コマンド、ツール管理の初期化は含めない。
+- Atuin、zoxide、個人用パス・関数、Copilot、Nix 管理コマンドは含めない。
 - Fish の自動候補表示と入力中の構文ハイライトは含めない。履歴検索と補完は Zsh 標準を使う。
 - Tide 自体は使わず、主要な配置・色・情報を Zsh で再現する。パスの短縮は画面幅に基づく簡略版。
 - Vi の insert / normal 表示を再現。Tide と同じ replace / visual 表示の完全な対応は未実施。
@@ -116,6 +121,14 @@ alias の追加自体はコマンドを実行しない。
   移行先でフォントを利用できるかは未確認。フォントがなくてもシェル機能は動作する。
 
 ## データと端末固有設定
+
+aqua は `${AQUA_ROOT_DIR:-$XDG_DATA_HOME/aquaproj-aqua}/bin` を PATH に追加する。
+`AQUA_GLOBAL_CONFIG` の既定値は `$XDG_CONFIG_HOME/aqua/aqua.yaml`。既存の指定があれば維持する。
+mise は PATH 上に存在する場合、対話シェルで `mise activate zsh` を評価する。
+標準の `~/.local/bin/mise` も `.zshenv` の PATH 設定で検出できる。
+設定の読み込みからインストールコマンドは実行しない。
+参考: [aqua の PATH 設定](https://aquaproj.github.io/docs/install/)、
+[mise のシェル初期化](https://mise.jdx.dev/cli/activate.html)。
 
 新しい履歴は `${XDG_STATE_HOME:-~/.local/state}/zsh/history` に保存する。
 補完キャッシュも同じディレクトリ。Fish / Atuin の既存履歴は読み込まない。
