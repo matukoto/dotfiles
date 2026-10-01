@@ -22,8 +22,8 @@
     taps = [
       # "felixkratz/formulae"
       "mtgto/macskk"
-      "nikitabobko/tap"
       "pakerwreah/calendr"
+      "abue-ammar/tinycast"
     ];
 
     brews = [
@@ -35,7 +35,6 @@
     ];
 
     casks = [
-      "aqua-voice"
       "bitwarden"
       "calendr"
       "discord"
@@ -46,13 +45,10 @@
       "karabiner-elements"
       "macskk"
       "obsidian"
-      "raycast"
       "tinycast"
       "vivaldi"
       "wezterm"
       "zoom"
-      "logi-options+"
-      "google-gemini"
     ];
   };
 }
