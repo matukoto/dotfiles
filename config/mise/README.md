@@ -12,11 +12,29 @@
 - 言語ランタイム:
   `java`, `rust`, `go`, `node`, `lua`, `dotnet`。
 - 補助ツール:
-  `spring-boot`, `wrangler`。
+  `npm`, `pnpm`, `wrangler`。
 - npm ベース CLI:
-  `@marp-team/marp-cli`, `sv`,
-  `@actions/languageserver`, `md-to-pdf`。
+  `bash-language-server`, `vscode-langservers-extracted`,
+  `yaml-language-server`, `fixjson`, `markdownlint-cli2`, `sql-formatter`。
+- Go backend: `github.com/sqls-server/sqls`。
+  Apple Silicon では Go からビルドし、Rosetta に依存せず導入する。
+- 追加した LSP / formatter は 2026-10-25 に公式配布元の最新安定版を確認して固定。
+- GitHub backend は使用しない。
+- `typos-lsp`、LemMinX、jdtls、Lombok の追加は保留。
 - `experimental = false` の安定寄り設定。
+
+## 運用
+
+`config.toml` を `~/.config/mise/config.toml` に配備した後に実行:
+
+```bash
+mise install
+```
+
+npm 系 CLI の実行には Node.js、`sqls` のビルドには Go が必要。
+どちらも同じ設定で管理する。
+`sqls` の SQLite ドライバーを使う場合は C コンパイラも必要。
+プロジェクト側で Node.js を切り替える場合は、利用する CLI の対応バージョンも確認する。
 
 ## 関連設定
 

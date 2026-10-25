@@ -14,5 +14,13 @@
     # 'npm:@actions/languageserver' = '0.3.61'
     # 'npm:md-to-pdf' = '5.2.5'
     "wrangler" = "4.135.0"
+    # LSP Formatter Linter
+    "npm:bash-language-server" = "5.8.1"
+    "npm:vscode-langservers-extracted" = "4.10.0"
+    "npm:yaml-language-server" = "2.0.0"
+    "npm:fixjson" = "1.1.2"
+    "npm:markdownlint-cli2" = "0.24.0"
+    "npm:sql-formatter" = "15.9.0"
+    "go:github.com/sqls-server/sqls" = "0.2.48"
 [settings]
     experimental = false
