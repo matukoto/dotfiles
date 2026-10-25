@@ -1,6 +1,6 @@
 [tools]
     # language runtime
-    "java" = { version = "corretto-24.0.2.12.1", release_type = "ga" }
+    "java" = { version = "temurin-25.0.5+8.0.LTS", release_type = "ga" }
     "rust" = "1.98.1"
     "go" = "1.27.1"
     "node" = "24.21.0"
