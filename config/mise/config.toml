@@ -1,8 +1,8 @@
 [tools]
     # language runtime
     "java" = { version = "temurin-25.0.5+8.0.LTS", release_type = "ga" }
-    "rust" = "1.98.1"
-    "go" = "1.27.1"
+    "rust" = "1.99.1"
+    "go" = "1.27.3"
     "node" = "26.12.1"
     "npm" = "12.2.1"
     "pnpm" = "12.15.0"
@@ -13,7 +13,7 @@
     # "spring-boot" = "3.5.3"
     # 'npm:@actions/languageserver' = '0.3.61'
     # 'npm:md-to-pdf' = '5.2.5'
-    "wrangler" = "4.135.0"
+    "wrangler" = "4.152.0"
     # LSP Formatter Linter
     "npm:bash-language-server" = "5.8.1"
     "npm:vscode-langservers-extracted" = "4.10.0"
