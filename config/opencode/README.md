@@ -3,6 +3,10 @@
 `~/.config/opencode` に配備する OpenCode 設定。
 モデル定義、LSP、subagent、プラグイン依存の置き場。
 
+配備先は実ディレクトリとし、`opencode.jsonc` と `AGENTS.md` だけを
+リポジトリへ symlink する。プラグイン、依存パッケージ、生成された
+`tui.jsonc` などは `~/.config/opencode` 内に保持する。
+
 ## 主要ファイル
 
 - `opencode.jsonc`: OpenCode 本体設定。
