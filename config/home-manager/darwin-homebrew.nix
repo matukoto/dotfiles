@@ -28,6 +28,8 @@
 
     brews = [
       "herdr"
+      "aqua"
+      "mise"
     ];
 
     casks = [
