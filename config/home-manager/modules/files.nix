@@ -18,12 +18,10 @@ let
     "claude"
     "ghostty"
     "gitui"
-    "herdr"
     "jdtls"
     "mise"
     "nix"
     "nvim"
-    "opencode"
     "sqls"
     "stylua"
     "vim"
@@ -65,6 +63,11 @@ in
     builtins.listToAttrs (map mkOutOfStoreConfigDir commonConfigDirs)
     // lib.optionalAttrs pkgs.stdenv.isDarwin (builtins.listToAttrs (map mkConfigDir darwinConfigDirs))
     // {
+      "herdr/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/herdr/config.toml";
+      "opencode/opencode.jsonc".source =
+        config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/opencode/opencode.jsonc";
+      "opencode/AGENTS.md".source =
+        config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/opencode/AGENTS.md";
       "typos.toml".source = ../../typos.toml;
     };
 

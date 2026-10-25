@@ -27,6 +27,8 @@ OS 差分、shell 生成処理をまとめる場所。
 - `modules/files.nix`:
   `config/` 以下の各ディレクトリを
   `~/.config` へ out-of-store symlink 配備。
+  herdr は `config.toml`、OpenCode は `opencode.jsonc` と `AGENTS.md` のみを
+  symlink 配備し、ログやセッションなどの実行時データはリポジトリ外に保持。
 - `modules/fish.nix`:
   `config.fish` テンプレートを読み込み、
   OS 差分と generation hash を差し込んだうえで
