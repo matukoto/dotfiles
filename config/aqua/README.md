@@ -11,12 +11,24 @@ CLI ツールの導入元、バージョン、チェックサム管理の置き�
 ## 構成
 
 - 汎用 CLI ツールの導入先。
+- LSP: `copilot-language-server`, `lua-language-server`。
+- Linter / formatter: `shellcheck`, `shfmt`, `stylua`, `taplo`, `typos`, `yamlfmt`。
 - `aqua-checksums.json` により
   ダウンロード物の整合性確認を実施。
 - バージョン更新時は
   `aqua.yaml` と `aqua-checksums.json` の両方が更新対象。
 
 ## 運用
+
+- このリポジトリの設定からインストール:
+
+```bash
+aqua --config config/aqua/aqua.yaml install
+```
+
+- LSP / formatter のバージョンは固定し、npm 系と `sqls` は
+  [`mise`](../mise/README.md) で管理。
+- `typos-lsp`、LemMinX、jdtls、Lombok の追加は保留。
 
 - パッケージ追加や更新後のチェックサム生成コマンド:
 
