@@ -9,7 +9,9 @@ OS 差分、shell 生成処理をまとめる場所。
 - `home.nix`: 共通パッケージ定義。
   CLI、LSP、formatter、フォントなどの基本セット。
 - `darwin.nix`: macOS 用 Home Manager 設定。
-  `colima`、`leetcode-cli` などの追加。
+  `colima`、`leetcode-cli`、安定版 `neovim` などの追加。
+  Neovim は nixpkgs のリリース版を使用し、nightly overlay は使用しない。
+  更新は `flake.lock` 更新後に nix-darwin を反映する。`build-nvim` は使用不要。
 - `linux.nix`: Linux 用 Home Manager 設定。
   `csharp-ls` などの追加。
 - `darwin-system.nix`: nix-darwin 側の

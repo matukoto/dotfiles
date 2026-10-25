@@ -2,7 +2,7 @@
 
 let
   pinentryProgram =
-    if pkgs.stdenv.isDarwin then "/opt/homebrew/bin/pinentry-mac" else "/usr/bin/pinentry-gtk-2";
+    if pkgs.stdenv.isDarwin then "${pkgs.pinentry_mac}/bin/pinentry-mac" else "/usr/bin/pinentry-gtk-2";
 
   gpgAgentConfig = ''
     default-cache-ttl 43200

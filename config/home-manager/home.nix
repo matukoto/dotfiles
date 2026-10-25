@@ -54,11 +54,11 @@
       yaml-language-server
 
       # Package managers
-      #mise
-      (mise.overrideAttrs (oldAttrs: {
-        doCheck = false; # テストをスキップする
-      }))
-      (callPackage ./pkgs/aqua.nix { })
+      mise
+      # (mise.overrideAttrs (oldAttrs: {
+      #   doCheck = false; # テストをスキップする
+      # }))
+      # (callPackage ./pkgs/aqua.nix { })
 
       # Linters / Formatters / Tools
       nixfmt

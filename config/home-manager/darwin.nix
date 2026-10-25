@@ -16,6 +16,9 @@
       aerospace
       leetcode-cli
       jankyborders
+      pinentry_mac
+      neovim
     ];
   };
+
 }

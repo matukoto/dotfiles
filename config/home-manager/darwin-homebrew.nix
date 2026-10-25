@@ -27,10 +27,6 @@
     ];
 
     brews = [
-      "cmake"
-      "gettext"
-      "ninja"
-      "pinentry-mac"
       "herdr"
     ];
 
