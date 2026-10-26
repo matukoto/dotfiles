@@ -30,7 +30,7 @@ packages:
   - name: docker/cli@v27.4.1
   - name: docker/compose@v5.6.1
   - name: nushell/nushell@0.116.1
-  - name: duckdb/duckdb@v1.5.6
+  - name: duckdb/duckdb@v2.0.0
   - name: suzuki-shunsuke/pinact@v5.0.1
   - name: rhysd/vim-startuptime@v1.3.2
   - name: golang.org/x/tools/gopls@v0.24.0
@@ -43,7 +43,7 @@ packages:
   - name: tree-sitter/tree-sitter@v0.27.1
   - name: anomalyco/opencode@v1.19.4
   - name: github/copilot-cli@v1.0.103
-  - name: sharkdp/hyperfine@v1.21.0
+  - name: sharkdp/hyperfine@v2.0.0
   - name: openai/codex@rust-v0.164.0
     # LSP Formatter Linter
   - name: github/copilot-language-server-release@1.561.0
