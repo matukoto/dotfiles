@@ -126,31 +126,6 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/anomalyco/opencode/v1.19.4/opencode-darwin-arm64.zip",
-      "checksum": "C400A2F8C8AB7E99478A7F4DD1A466B57BF33888E520D85C55780A5464C4B689",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/anomalyco/opencode/v1.19.4/opencode-darwin-x64.zip",
-      "checksum": "123EBD72609C4F8DBAE0485CDAC39B9AEDFEB6576B2EEF64F2E73152B1DE82F4",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/anomalyco/opencode/v1.19.4/opencode-linux-arm64.tar.gz",
-      "checksum": "8568230CCD847DC93E95B9F6894379077D3E014A16B48040743573E77C23E85F",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/anomalyco/opencode/v1.19.4/opencode-linux-x64.tar.gz",
-      "checksum": "849BD6B3D959A1D2EF200ED1634A51C79A45CA236AA26665D75DEBD694805CCE",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/anomalyco/opencode/v1.19.4/opencode-windows-x64.zip",
-      "checksum": "93B899277BD6F68803009E32BF71772CE43C34B18ADF1E93B9B4D8780FDF62E5",
-      "algorithm": "sha256"
-    },
-    {
       "id": "github_release/github.com/astral-sh/uv/0.13.5/uv-aarch64-apple-darwin.tar.gz",
       "checksum": "743F85035A1996ECB350659E01CD9FAEA9709829BE09B1B4B03C73EAF3C9CD73",
       "algorithm": "sha256"
@@ -1078,6 +1053,36 @@
     {
       "id": "http/download.docker.com/win/static/stable/x86_64/docker-27.4.1.zip",
       "checksum": "2FBCF76331BD0773BFFC8ABB9B4DF81D29196827F17534196FA43ABB29B1D408",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "http/opencode.ai/files/bin/2.2.0/opencode-darwin-arm64.zip",
+      "checksum": "C71B1CD96541539AD38E2A75377D2F43D2A27567289A14371A182E9A0800DB3D",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "http/opencode.ai/files/bin/2.2.0/opencode-darwin-x64.zip",
+      "checksum": "CC191A1CEC9B9CD0192D78DC066BBF48730639131422FA54C87C485A821BA1D5",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "http/opencode.ai/files/bin/2.2.0/opencode-linux-arm64.tar.gz",
+      "checksum": "1F1CE0FC07B9245A815FFA9D652DBB80E6B0F07E5BF74EA87D2B1C0339FBAC52",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "http/opencode.ai/files/bin/2.2.0/opencode-linux-x64.tar.gz",
+      "checksum": "6D597970A8CC448F1B9A9F645532584B339DD3AB9583BB5F063F13D83E54768F",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "http/opencode.ai/files/bin/2.2.0/opencode-windows-arm64.zip",
+      "checksum": "BCEB8B16E4889B7766793E1E7B51E3AB97AD41E09367A5BF192C15C0334B848A",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "http/opencode.ai/files/bin/2.2.0/opencode-windows-x64.zip",
+      "checksum": "A56307BDCCDAFD3FC5255556F3BF867703EA56DBEFFAF00ADD4E9663EDB3B974",
       "algorithm": "sha256"
     },
     {
