@@ -106,23 +106,23 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/altsem/gitu/v0.43.0/gitu-v0.43.0-aarch64-apple-darwin.zip",
-      "checksum": "19FA3FBAF79736F07EEFC1FD9B163A47F40111BA4F6FE256796006CC62CDD70F",
+      "id": "github_release/github.com/altsem/gitu/v0.44.0/gitu-v0.44.0-aarch64-apple-darwin.zip",
+      "checksum": "34BD3845BEAB9F2471A224C27493B2BDF98C7CE3EF7AFA3E54B8FCBD230FD593",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/altsem/gitu/v0.43.0/gitu-v0.43.0-x86_64-apple-darwin.zip",
-      "checksum": "ABF5AE48F991C3D8AE1DC98BA03BB8D5827B954FF56352008CF90B1C5EEAC6D0",
+      "id": "github_release/github.com/altsem/gitu/v0.44.0/gitu-v0.44.0-x86_64-apple-darwin.zip",
+      "checksum": "603C2831454A1898BD49C184C33A20E2A59E431E74370FAE660E5AE1B1D8FDB8",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/altsem/gitu/v0.43.0/gitu-v0.43.0-x86_64-pc-windows-msvc.zip",
-      "checksum": "9DEBBC715166F038CF86F80CC4602F04EFAF10EF173329286A592CF2826F9BE3",
+      "id": "github_release/github.com/altsem/gitu/v0.44.0/gitu-v0.44.0-x86_64-pc-windows-msvc.zip",
+      "checksum": "D732619D850A07F6ED65EE3F901B879FFF5F8A4585F196A0DFCD1B15C7CFC16C",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/altsem/gitu/v0.43.0/gitu-v0.43.0-x86_64-unknown-linux-gnu.zip",
-      "checksum": "52C39E94E232D126D1ED37943DE943B7E91DF5F3749A2F86253E467D226D3741",
+      "id": "github_release/github.com/altsem/gitu/v0.44.0/gitu-v0.44.0-x86_64-unknown-linux-gnu.zip",
+      "checksum": "71C7F1178A67FB7FF02A6EFD2AB3A16CCA4CA9ACC49BC9101726BC13FB6F297E",
       "algorithm": "sha256"
     },
     {
@@ -986,18 +986,18 @@
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.39.0.pkg",
-      "checksum": "79808BAE5C61422ADC1FBD14182ABACCA4E6DF11263753033FA69441D0745073",
+      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.39.1.pkg",
+      "checksum": "2A0E523FC3F58EFE7D35914B3CF6A35ADC5820002489B7A4A65E006B2F4073DE",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.39.0.zip",
-      "checksum": "05DA9395B4D148C42E959192650BF4A7CBB59EA275FA334D0936C593C27B946F",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.39.1.zip",
+      "checksum": "5ADF0B5052843E542B55A846D49BA2A2B3F3FB4960F35C11DF9AC7C395CFFAAF",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.39.0.zip",
-      "checksum": "6C89CE7ED7BC0A2520E2BC3EEEDFEA4E2EB2E7DA2836860C9471871408404036",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.39.1.zip",
+      "checksum": "5B6C10E0A8CCDCF30C84BD643FEA511F103D257A4787A7CEF878691D63169804",
       "algorithm": "sha256"
     },
     {
