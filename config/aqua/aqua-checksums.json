@@ -631,28 +631,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/openai/codex/rust-v0.165.0/codex-package-aarch64-apple-darwin.tar.gz",
-      "checksum": "34D12384D90F8E09B0B9ABAABF2A0AC02A52093B131504AEAF282107F54A44B2",
+      "id": "github_release/github.com/openai/codex/rust-v0.166.0/codex-package-aarch64-apple-darwin.tar.gz",
+      "checksum": "55A440CB579F970ABE7C79AB181E54B0EA4C419BE99F333BBD868EEBAC9C21F0",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/openai/codex/rust-v0.165.0/codex-package-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "C8B2844FDEF57498572DB960344AEE8C836CE9F75C203379DA0A9C3A334FC3B7",
+      "id": "github_release/github.com/openai/codex/rust-v0.166.0/codex-package-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "7821B77DDA2E6283FB1F63F3165177A271DA8833E857CF673C6CA1C9DB3BFCC6",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/openai/codex/rust-v0.165.0/codex-package-x86_64-apple-darwin.tar.gz",
-      "checksum": "792ECAB0596006BD9F286430B2790AA487FD40FCA2F351CA313AD85991720226",
+      "id": "github_release/github.com/openai/codex/rust-v0.166.0/codex-package-x86_64-apple-darwin.tar.gz",
+      "checksum": "1CB65690230BE5982C654BA2655E3A3B594DCE9C55B780E78BFDFEFF829D7AD9",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/openai/codex/rust-v0.165.0/codex-package-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "2A64BEB5856C3170738793E0AA65B44AA3F2D7B8F53221A3F72BDAFE6485D119",
+      "id": "github_release/github.com/openai/codex/rust-v0.166.0/codex-package-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "D559BB88E74D471265857B93B7F19BC250DAE527673B9191B33534478093F6BC",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/openai/codex/rust-v0.165.0/codex-package-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "E97C4463D7F146692A955D7B0E1C8CF48F97CD4D616CD45C5DCAB2E8D9743316",
+      "id": "github_release/github.com/openai/codex/rust-v0.166.0/codex-package-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "1D44B28BC4AC9937D7D3532264BAA68A507CE364956A0D4EBB856F331CDEE254",
       "algorithm": "sha256"
     },
     {
@@ -986,18 +986,18 @@
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.39.1.pkg",
-      "checksum": "2A0E523FC3F58EFE7D35914B3CF6A35ADC5820002489B7A4A65E006B2F4073DE",
+      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.39.2.pkg",
+      "checksum": "74153A9818DD70EFE0503253F6E9C994CA93205D87FDA06BDE491AEE9B91DF5B",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.39.1.zip",
-      "checksum": "5ADF0B5052843E542B55A846D49BA2A2B3F3FB4960F35C11DF9AC7C395CFFAAF",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.39.2.zip",
+      "checksum": "53E639D3160ECFE7A5C50AD2A922CE8E96FB21F732193001251760D33CD7FD64",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.39.1.zip",
-      "checksum": "5B6C10E0A8CCDCF30C84BD643FEA511F103D257A4787A7CEF878691D63169804",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.39.2.zip",
+      "checksum": "BB3E675D5C9A915121F3F90B380EC041BA52517067D017E4A4CEBA40E0213247",
       "algorithm": "sha256"
     },
     {
@@ -1056,33 +1056,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.1/opencode-darwin-arm64.zip",
-      "checksum": "9DF6CA3D031565C61080C717374BA846D238EC5B1C411EEBE6B1B85835998FFE",
+      "id": "http/opencode.ai/files/bin/2.2.2/opencode-darwin-arm64.zip",
+      "checksum": "C1C901A6379D667B7A30A3EEA5A8F6E93416DBA43E889E834771F6FB174F35C9",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.1/opencode-darwin-x64.zip",
-      "checksum": "D1CFB2315CBCA0FE20876A76F2EFC63C945A002290B05AB01DADEC33B67A7F98",
+      "id": "http/opencode.ai/files/bin/2.2.2/opencode-darwin-x64.zip",
+      "checksum": "898677AA3C686326A37EDA1E5875A45C6D1510717AC663236AA200E913B13CFF",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.1/opencode-linux-arm64.tar.gz",
-      "checksum": "C354D8A2DC4152308BF286B5EC7F20B3B3CFC71F9476E64F6AA274142505B2F8",
+      "id": "http/opencode.ai/files/bin/2.2.2/opencode-linux-arm64.tar.gz",
+      "checksum": "DD866CEBB72D11C91A7A7C4C3FD961EE06E03A9D0A5FF8EAA2A8EBEBF25DE7BA",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.1/opencode-linux-x64.tar.gz",
-      "checksum": "3179551DDF69877CA24A960B0175E94405CF3F52147F1EEC705094374BEF49F2",
+      "id": "http/opencode.ai/files/bin/2.2.2/opencode-linux-x64.tar.gz",
+      "checksum": "3A38B8C284450A5CA81A2C1EBBF29EBE05E618518F095DA0066652167EB0EB33",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.1/opencode-windows-arm64.zip",
-      "checksum": "B7D95B30A0318343CE9E567851551E38C0039FF4AC14CFD2D1A17DB7D320CC0C",
+      "id": "http/opencode.ai/files/bin/2.2.2/opencode-windows-arm64.zip",
+      "checksum": "25A622C3EBE387DC92F1475E40F74E3E0B284C2F3D7136A9089763ADFD2905FA",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.1/opencode-windows-x64.zip",
-      "checksum": "F763730EC903064997DBF7260A86E5130D3CE7696DA5C12C69B6BC4472D0956B",
+      "id": "http/opencode.ai/files/bin/2.2.2/opencode-windows-x64.zip",
+      "checksum": "E604E66CC13128FE36DB7C68C7B0ED31C10B2CE759DD3D702EAE080DC140BED5",
       "algorithm": "sha256"
     },
     {
