@@ -13,7 +13,7 @@
     # "spring-boot" = "3.5.3"
     # 'npm:@actions/languageserver' = '0.3.61'
     # 'npm:md-to-pdf' = '5.2.5'
-    "wrangler" = "4.154.0"
+    "wrangler" = "4.155.0"
     # LSP Formatter Linter
     "npm:bash-language-server" = "5.8.1"
     "npm:vscode-langservers-extracted" = "4.10.0"
