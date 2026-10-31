@@ -986,18 +986,18 @@
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.39.2.pkg",
-      "checksum": "74153A9818DD70EFE0503253F6E9C994CA93205D87FDA06BDE491AEE9B91DF5B",
+      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.39.3.pkg",
+      "checksum": "F9014F2EDC9D4F40CB1F6662F1EC6D0F2D89D60D9D452F830008D9D92CA49F22",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.39.2.zip",
-      "checksum": "53E639D3160ECFE7A5C50AD2A922CE8E96FB21F732193001251760D33CD7FD64",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.39.3.zip",
+      "checksum": "F6EB845FBACB11BEE87DE3F5FBE8043773CBE89D0414607B44B71E216EB9226B",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.39.2.zip",
-      "checksum": "BB3E675D5C9A915121F3F90B380EC041BA52517067D017E4A4CEBA40E0213247",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.39.3.zip",
+      "checksum": "14CB35809AD7547DD3C69FA9899A3975FBD850B6A6791F3FE264856490CD9A63",
       "algorithm": "sha256"
     },
     {
@@ -1056,33 +1056,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.3/opencode-darwin-arm64.zip",
-      "checksum": "65DB03573E5717E6DA245AE3E5C2FFA35915B90689D37C43D4E1ADE4D47F55F9",
+      "id": "http/opencode.ai/files/bin/2.2.4/opencode-darwin-arm64.zip",
+      "checksum": "4E093CAE2931773C354896D98E7DA0CFA3607C110AEAF255BA07F9C2D2238219",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.3/opencode-darwin-x64.zip",
-      "checksum": "E6B67DEEB327AD25EFF94BB3C39D8B15466C3DE0224E3A0A47A385B69A266D4C",
+      "id": "http/opencode.ai/files/bin/2.2.4/opencode-darwin-x64.zip",
+      "checksum": "2BE9B7671F94A9636B85FF31FCFCE613F197C5204EC90291982D692010D072FD",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.3/opencode-linux-arm64.tar.gz",
-      "checksum": "72AAC82C021268F6CC9810DE913F8D47D05626B1AD974D7F5DC5B087E1AD0F68",
+      "id": "http/opencode.ai/files/bin/2.2.4/opencode-linux-arm64.tar.gz",
+      "checksum": "81EDCAE078F36356CDE3CF57D0CC6627896B18D1BDDF47317CB025C56FCFFD93",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.3/opencode-linux-x64.tar.gz",
-      "checksum": "EF3AEEAF5522B10D69A3DA7BBD6E6D8D259F845833D96B8310767D3407B18A35",
+      "id": "http/opencode.ai/files/bin/2.2.4/opencode-linux-x64.tar.gz",
+      "checksum": "1B70CE4A88E27C3643C2BB61C757DFE173B4E3629926CE808D45F3774D87826E",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.3/opencode-windows-arm64.zip",
-      "checksum": "E120B9EF22471693E7B65D4D0362B1D491E66EB205C7B44A966A3DF372D607DF",
+      "id": "http/opencode.ai/files/bin/2.2.4/opencode-windows-arm64.zip",
+      "checksum": "AD20A596F664BCE9FCCD87215E138C4BC4F823162D50B6779F5CEE8D74100BD0",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.3/opencode-windows-x64.zip",
-      "checksum": "48DB8B9A57B8524948F61F1E0C770B6762CE840992BEBF03FFCA43D896844BAF",
+      "id": "http/opencode.ai/files/bin/2.2.4/opencode-windows-x64.zip",
+      "checksum": "8255FA4808B9ED1BFBC5A4F50C800CABC3A88E66F0D67D0F87BD38CCE32F7321",
       "algorithm": "sha256"
     },
     {
