@@ -46,7 +46,7 @@ packages:
   - name: sharkdp/hyperfine@v2.0.0
   - name: openai/codex@rust-v0.166.0
     # LSP Formatter Linter
-  - name: github/copilot-language-server-release@1.564.0
+  - name: github/copilot-language-server-release@1.565.0
   - name: LuaLS/lua-language-server@3.19.2
   - name: koalaman/shellcheck@v0.11.0
   - name: mvdan/sh@v3.14.1
