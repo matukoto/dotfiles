@@ -1056,33 +1056,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.4/opencode-darwin-arm64.zip",
-      "checksum": "4E093CAE2931773C354896D98E7DA0CFA3607C110AEAF255BA07F9C2D2238219",
+      "id": "http/opencode.ai/files/bin/2.2.5/opencode-darwin-arm64.zip",
+      "checksum": "25BA9908979FA7D764792C82589B4B5768AB1511154E0317D98AA77D216CE767",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.4/opencode-darwin-x64.zip",
-      "checksum": "2BE9B7671F94A9636B85FF31FCFCE613F197C5204EC90291982D692010D072FD",
+      "id": "http/opencode.ai/files/bin/2.2.5/opencode-darwin-x64.zip",
+      "checksum": "4D4419022E6FFBD48AFC97C5101BDF001D38B0499F516169B9A80A87A340FD56",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.4/opencode-linux-arm64.tar.gz",
-      "checksum": "81EDCAE078F36356CDE3CF57D0CC6627896B18D1BDDF47317CB025C56FCFFD93",
+      "id": "http/opencode.ai/files/bin/2.2.5/opencode-linux-arm64.tar.gz",
+      "checksum": "5A528F42CAF576C6CDECE6A191EB273D3DB54EFFA5518E0402684D8F8026AEB6",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.4/opencode-linux-x64.tar.gz",
-      "checksum": "1B70CE4A88E27C3643C2BB61C757DFE173B4E3629926CE808D45F3774D87826E",
+      "id": "http/opencode.ai/files/bin/2.2.5/opencode-linux-x64.tar.gz",
+      "checksum": "09F44302C10FD036912F59C81FD1AEF5DF45DD06F649197F9DFC9BBE2A79614E",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.4/opencode-windows-arm64.zip",
-      "checksum": "AD20A596F664BCE9FCCD87215E138C4BC4F823162D50B6779F5CEE8D74100BD0",
+      "id": "http/opencode.ai/files/bin/2.2.5/opencode-windows-arm64.zip",
+      "checksum": "4E426A39D68516B036CD28B574C5CE5F3B50846AB460521F83F2458FE7F242D8",
       "algorithm": "sha256"
     },
     {
-      "id": "http/opencode.ai/files/bin/2.2.4/opencode-windows-x64.zip",
-      "checksum": "8255FA4808B9ED1BFBC5A4F50C800CABC3A88E66F0D67D0F87BD38CCE32F7321",
+      "id": "http/opencode.ai/files/bin/2.2.5/opencode-windows-x64.zip",
+      "checksum": "2F3BFD6B3527C60C2A882557B20DDC9BA6BDFF4B5A8FE61C853DA8FCFB3076E8",
       "algorithm": "sha256"
     },
     {
