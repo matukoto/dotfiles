@@ -151,23 +151,23 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.24.5/atuin-aarch64-apple-darwin.tar.gz",
-      "checksum": "644E92D5667E2EBBC00758C71D5974BC907D238EAA6CDC32B24EB73DCE7F9A5A",
+      "id": "github_release/github.com/atuinsh/atuin/v18.24.6/atuin-aarch64-apple-darwin.tar.gz",
+      "checksum": "756B7D2F8CB919D29888EA52B2FB19ABA92ED52DDBCA456839088CCC63257F5B",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.24.5/atuin-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "B44B3F264652B847B2E524EC397AA498C13076ED75CF213239ED2B9A0DE2F99D",
+      "id": "github_release/github.com/atuinsh/atuin/v18.24.6/atuin-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "0DCC72A06738F913040CDD990298A37D9EF062C8849026D0A3410D2DEF4C6BF7",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.24.5/atuin-x86_64-pc-windows-msvc.zip",
-      "checksum": "8EC5F2519D8019C129D3FB83A6C97ECA29AA23391D8802AF306D0C6DE8CDE30E",
+      "id": "github_release/github.com/atuinsh/atuin/v18.24.6/atuin-x86_64-pc-windows-msvc.zip",
+      "checksum": "D500E0DC85A85BB69513DA6C9D933CF15DBEB2497AB404E0189BA47A5D829FE9",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/atuinsh/atuin/v18.24.5/atuin-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "54182762C9D91A4F779748F622749FF6963956DB005FEB13E62D037196B05618",
+      "id": "github_release/github.com/atuinsh/atuin/v18.24.6/atuin-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "49B6E7A93CD6D8C77EE02BDB0EEF0ACFF4C80DDAA0EFB00C8179285771043698",
       "algorithm": "sha256"
     },
     {
@@ -606,28 +606,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.116.1/nu-0.116.1-aarch64-apple-darwin.tar.gz",
-      "checksum": "302FB3DFC5D44E7FE0D5B8227BE8E75B4C3956CA8D4804234E5C68FBDD3E4917",
+      "id": "github_release/github.com/nushell/nushell/0.117.0/nu-0.117.0-aarch64-apple-darwin.tar.gz",
+      "checksum": "1D0E642EF3BFF22113A82749A0FA24A0126F4FEA0DB46A5909E56E94A4B57527",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.116.1/nu-0.116.1-aarch64-unknown-linux-gnu.tar.gz",
-      "checksum": "E7BBB1639253FB83E2391600B957BA3E918F04A2C81850E9F30A68CB1EF20EF8",
+      "id": "github_release/github.com/nushell/nushell/0.117.0/nu-0.117.0-aarch64-unknown-linux-gnu.tar.gz",
+      "checksum": "E1A4FF6BAA2D7976BB51ECCFD44295A871CDD0BC69890A5E9B3B83A0ABD9ACB1",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.116.1/nu-0.116.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "44306F0766F2BE0E763D0C7A6A6774537589A335797A199D8E5B473D766EC6BD",
+      "id": "github_release/github.com/nushell/nushell/0.117.0/nu-0.117.0-x86_64-apple-darwin.tar.gz",
+      "checksum": "F44A99227D1FD19D7DA9B4A60ADBE32BF45700DC25F1A3CB08E4979DEE0C1B2F",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.116.1/nu-0.116.1-x86_64-pc-windows-msvc.zip",
-      "checksum": "6658C9E61FE42C88326C1CAA99E8DC9AD99BEC6C0BC353E6ECB7C5D3F79FEED7",
+      "id": "github_release/github.com/nushell/nushell/0.117.0/nu-0.117.0-x86_64-pc-windows-msvc.zip",
+      "checksum": "8A135F25D3F22F1542107EB117E94628AF35CE65402CBC098BFB26914227D3B2",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/nushell/nushell/0.116.1/nu-0.116.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "13EF75DF08DF30F8D7B031DF538E82A52C6E74CE839B1A9091C3A3F1969C3742",
+      "id": "github_release/github.com/nushell/nushell/0.117.0/nu-0.117.0-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "2B808786D44AF41170A29F8B9A15B5113BB6EA5DDA9221098ECA932F8A149924",
       "algorithm": "sha256"
     },
     {
