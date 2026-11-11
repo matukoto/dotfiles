@@ -22,14 +22,14 @@ packages:
   - name: junegunn/fzf@v0.75.0
   - name: sharkdp/fd@v10.5.2
   - name: jqlang/jq@jq-1.8.2
-  - name: atuinsh/atuin@v18.24.5
+  - name: atuinsh/atuin@v18.24.6
   - name: sxyazi/yazi@v26.9.1
   - name: denoland/deno@v2.9.8
   - name: kubernetes/kubectl@v1.37.2
   - name: kubernetes-sigs/kind@v0.33.0
   - name: docker/cli@v27.4.1
   - name: docker/compose@v5.7.0
-  - name: nushell/nushell@0.116.1
+  - name: nushell/nushell@0.117.0
   - name: duckdb/duckdb@v2.0.0
   - name: suzuki-shunsuke/pinact@v5.0.2
   - name: rhysd/vim-startuptime@v1.3.2
