@@ -52,5 +52,5 @@ packages:
   - name: mvdan/sh@v3.14.1
   - name: JohnnyMorganz/StyLua@v2.6.0
   - name: tamasfe/taplo@0.10.0
-  - name: crate-ci/typos@v1.52.0
+  - name: crate-ci/typos@v1.52.1
   - name: google/yamlfmt@v0.21.0
