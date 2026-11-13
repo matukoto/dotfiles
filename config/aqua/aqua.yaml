@@ -44,7 +44,7 @@ packages:
   - name: anomalyco/opencode@v2.2.7
   - name: github/copilot-cli@v1.0.109
   - name: sharkdp/hyperfine@v2.0.0
-  - name: openai/codex@rust-v0.167.1
+  - name: openai/codex@rust-v0.167.2
     # LSP Formatter Linter
   - name: github/copilot-language-server-release@1.569.0
   - name: LuaLS/lua-language-server@3.19.2
