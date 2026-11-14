@@ -22,7 +22,7 @@ packages:
   - name: junegunn/fzf@v0.75.0
   - name: sharkdp/fd@v10.5.2
   - name: jqlang/jq@jq-1.8.2
-  - name: atuinsh/atuin@v18.24.6
+  - name: atuinsh/atuin@v18.24.8
   - name: sxyazi/yazi@v26.9.1
   - name: denoland/deno@v2.9.8
   - name: kubernetes/kubectl@v1.37.2
@@ -42,7 +42,7 @@ packages:
   - name: oven-sh/bun@bun-v1.4.4
   - name: tree-sitter/tree-sitter@v0.27.2
   - name: anomalyco/opencode@v2.2.7
-  - name: github/copilot-cli@v1.0.109
+  - name: github/copilot-cli@v1.0.110
   - name: sharkdp/hyperfine@v2.0.0
   - name: openai/codex@rust-v0.167.2
     # LSP Formatter Linter
