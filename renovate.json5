@@ -8,14 +8,18 @@
   prConcurrentLimit: 1,
   prHourlyLimit: 0,
   automerge: true,
-  dependencyDashboard: true,
+  dependencyDashboard: {
+    enabled: true,
+  },
   platformAutomerge: true,
   lockFileMaintenance: {
     enabled: true,
   },
   nix: {
     enabled: true,
-    schedule: ["before 9am"],
+    schedule: [
+      'before 9am',
+    ],
   },
   packageRules: [
     {
