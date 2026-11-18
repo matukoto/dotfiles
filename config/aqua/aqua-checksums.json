@@ -126,28 +126,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/uv/0.13.8/uv-aarch64-apple-darwin.tar.gz",
-      "checksum": "6B71028A6B904F2AE3340EF52E595512DE807D06C0A20EAEF2F692581B246558",
+      "id": "github_release/github.com/astral-sh/uv/0.13.9/uv-aarch64-apple-darwin.tar.gz",
+      "checksum": "5AECA67F2283F75235DE40D0BD9C0A5BBC5FCE23B6D48B3BF9FA1B2DB08382CA",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/uv/0.13.8/uv-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "0C6F8593FCF1EADFC60E663B685C408267559D7C5D61C689BBB9F3A7E369BA32",
+      "id": "github_release/github.com/astral-sh/uv/0.13.9/uv-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "37FBB7C5BC66CF99C12AA881949D216181E201DEC449772C4329E56487D61179",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/uv/0.13.8/uv-x86_64-apple-darwin.tar.gz",
-      "checksum": "A04C2FFEAC28B2003A2C13CAF538AB425FCD7DEF3E4A41571F4A8FB370A66AF3",
+      "id": "github_release/github.com/astral-sh/uv/0.13.9/uv-x86_64-apple-darwin.tar.gz",
+      "checksum": "617A3211261B0FC739562F0071AA34E9739797C510208EDE8E2977C30903D041",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/uv/0.13.8/uv-x86_64-pc-windows-msvc.zip",
-      "checksum": "529E78A9CEC6CD7E3E014F7ECD8BDA0C113969D4ED0F2EFEEDB85C30943325B8",
+      "id": "github_release/github.com/astral-sh/uv/0.13.9/uv-x86_64-pc-windows-msvc.zip",
+      "checksum": "EDD61F7F5728A56CC62455386661860BDFC7BAB65872F39B0C25BDCC1D8E1BEB",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/uv/0.13.8/uv-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "61FB26DABC4F0CF1D050FC6C67D40E43E4FAE2994AF21EBC1E050B233BF2B5ED",
+      "id": "github_release/github.com/astral-sh/uv/0.13.9/uv-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "58CCF5F1792B8A5A88D01BC910EA131A8B3DB4A319A17AD5FAD75E0845A3E271",
       "algorithm": "sha256"
     },
     {
@@ -271,33 +271,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.7.1/docker-compose-darwin-aarch64",
-      "checksum": "5A9AA8B5FB5B1E3CD83F39C80E570AE30AAFD74CD9B47264FBE4FF7E6E6251CA",
+      "id": "github_release/github.com/docker/compose/v5.7.2/docker-compose-darwin-aarch64",
+      "checksum": "85B86E18DA0D39CEA41124773B432EF3D9AC64DA068432C5F4170A25058BB74B",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.7.1/docker-compose-darwin-x86_64",
-      "checksum": "C28B37C7BF1CC315ACDF511C2C0F34CE19D4D33B6038611617063A99C45417C6",
+      "id": "github_release/github.com/docker/compose/v5.7.2/docker-compose-darwin-x86_64",
+      "checksum": "0C50A809F7E60DE9F32CAFDC24074F20249F89D415FDD3823D3E011A770A796D",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.7.1/docker-compose-linux-aarch64",
-      "checksum": "F2F49F903240895FA764C0DCA3A14548B754AD9426F6B609CCAF55EC5A3AA2A5",
+      "id": "github_release/github.com/docker/compose/v5.7.2/docker-compose-linux-aarch64",
+      "checksum": "E3AFD91588E494FF309FCED4AD40C5FA93ABABE54C1C2EEFFE90865719D8D0DB",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.7.1/docker-compose-linux-x86_64",
-      "checksum": "AF426722A8AF5DE812FCEE30CC1C39F0639F5F723CBADEFB25E5D4DB054064CF",
+      "id": "github_release/github.com/docker/compose/v5.7.2/docker-compose-linux-x86_64",
+      "checksum": "E14235D9C622C5BD57EB8ADEED4A0F7308C7F3862E6812DD843F6FE27F1307CC",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.7.1/docker-compose-windows-aarch64.exe",
-      "checksum": "3ED47AB4D1CD56D63981246820420E7AAF042F2A48E6CCC95993872980A4E0A9",
+      "id": "github_release/github.com/docker/compose/v5.7.2/docker-compose-windows-aarch64.exe",
+      "checksum": "46E393B4E4E26958FEFCA5999C73ED456B8111ECB8ED260074A27FF349B67A51",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.7.1/docker-compose-windows-x86_64.exe",
-      "checksum": "E4316597452650AE92FE9719A2A7C2FCE8F56C5CEAFED88D2AED6E39B2B2B2D0",
+      "id": "github_release/github.com/docker/compose/v5.7.2/docker-compose-windows-x86_64.exe",
+      "checksum": "14B0F56D597539DD87E41E86047AAA350BBC6F1ECCF98386AAB77626BB3FD96B",
       "algorithm": "sha256"
     },
     {
@@ -376,28 +376,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-language-server-release/1.571.0/copilot-language-server-darwin-arm64-1.571.0.zip",
-      "checksum": "8E142F65733CC056D9B528EDFECAC95C5B1F72940D1D3072096371661BE75A06",
+      "id": "github_release/github.com/github/copilot-language-server-release/1.572.0/copilot-language-server-darwin-arm64-1.572.0.zip",
+      "checksum": "A856247EEA34E24793D88E2C87E62FAECE4A8F216806FDEA3C52E720633FEE4A",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-language-server-release/1.571.0/copilot-language-server-darwin-x64-1.571.0.zip",
-      "checksum": "1C825822AB017498BAF7559BDDCA6E8D9D48E85BE0CEF9B054AF22A6C5253E8A",
+      "id": "github_release/github.com/github/copilot-language-server-release/1.572.0/copilot-language-server-darwin-x64-1.572.0.zip",
+      "checksum": "CDF21B50EEFBB5B6A8AA617B9C11920A0BDD38DD569C769A96FDCAB40C3CE43B",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-language-server-release/1.571.0/copilot-language-server-linux-arm64-1.571.0.zip",
-      "checksum": "60868D43B2B46C106F620540BFDAB69616608034B9A0F89DFF1E38236C49BD4D",
+      "id": "github_release/github.com/github/copilot-language-server-release/1.572.0/copilot-language-server-linux-arm64-1.572.0.zip",
+      "checksum": "6DC38EDC7E0D01528B47C83D1562BF2E95C5AAC6EFE1025606A4AF22E2D4B7CC",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-language-server-release/1.571.0/copilot-language-server-linux-x64-1.571.0.zip",
-      "checksum": "5E612EAFAA560725B4C7F03FF69805ADD6BA257A70B9206765A7A7ED34AF8FD5",
+      "id": "github_release/github.com/github/copilot-language-server-release/1.572.0/copilot-language-server-linux-x64-1.572.0.zip",
+      "checksum": "D97EBAEE8E2CA791AEA2C2CC9B847AE32044B561E0315E71D6ACC5E344DF25FE",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-language-server-release/1.571.0/copilot-language-server-win32-x64-1.571.0.zip",
-      "checksum": "7AAB8389D96D6F322F6D70962F4BF9C59ECCF64796B8451A8D0E09C6377DB54B",
+      "id": "github_release/github.com/github/copilot-language-server-release/1.572.0/copilot-language-server-win32-x64-1.572.0.zip",
+      "checksum": "A2EB2C8E56713092517331D1AE0750EDE3600B56A9E241133B5C70312861405D",
       "algorithm": "sha256"
     },
     {
