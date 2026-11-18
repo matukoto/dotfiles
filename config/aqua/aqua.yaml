@@ -28,7 +28,7 @@ packages:
   - name: kubernetes/kubectl@v1.37.2
   - name: kubernetes-sigs/kind@v0.33.0
   - name: docker/cli@v27.4.1
-  - name: docker/compose@v5.7.2
+  - name: docker/compose@v5.8.0
   - name: nushell/nushell@0.117.0
   - name: duckdb/duckdb@v2.0.0
   - name: suzuki-shunsuke/pinact@v5.0.2
@@ -42,7 +42,7 @@ packages:
   - name: oven-sh/bun@bun-v1.4.4
   - name: tree-sitter/tree-sitter@v0.27.2
   - name: anomalyco/opencode@v2.3.0
-  - name: github/copilot-cli@v1.0.112
+  - name: github/copilot-cli@v1.0.113
   - name: sharkdp/hyperfine@v2.0.0
   - name: openai/codex@rust-v0.169.0
     # LSP Formatter Linter
