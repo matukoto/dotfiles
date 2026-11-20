@@ -226,23 +226,23 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/dandavison/delta/0.20.1/delta-0.20.1-aarch64-apple-darwin.tar.gz",
-      "checksum": "BC1839CEA69288D4673A24FAFFBB825D408CA907E0F7D33B1678C9E6CDD5E58E",
+      "id": "github_release/github.com/dandavison/delta/0.21.1/delta-0.21.1-aarch64-apple-darwin.tar.gz",
+      "checksum": "410442570AF59C7D8D7F1303ABFDC41BA8ABC7527A1BE697FD03546EDEABA9D6",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/dandavison/delta/0.20.1/delta-0.20.1-aarch64-unknown-linux-gnu.tar.gz",
-      "checksum": "DA7F4338F593572FF426AE153E0870E2FDC72729416EFF551B40CDEB67940DB8",
+      "id": "github_release/github.com/dandavison/delta/0.21.1/delta-0.21.1-aarch64-unknown-linux-gnu.tar.gz",
+      "checksum": "EFE38626967F550C1D3BBE2014990DFF5C8028A0A65A3F9B9B6C4A3BB53BFA28",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/dandavison/delta/0.20.1/delta-0.20.1-x86_64-pc-windows-msvc.zip",
-      "checksum": "C9AF7484B33F1DBC1312A892FC7D5753A6D3365140A4000D49E575A2DE742C25",
+      "id": "github_release/github.com/dandavison/delta/0.21.1/delta-0.21.1-x86_64-pc-windows-msvc.zip",
+      "checksum": "9645F8A04C700AEC5113B946A922ECF8DF7568BBBCD7F13B9514F02996035B86",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/dandavison/delta/0.20.1/delta-0.20.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "69DCB4043F55C29118F408C6EFD30115E0A4E0A6709253343B8C8FA814AB4A31",
+      "id": "github_release/github.com/dandavison/delta/0.21.1/delta-0.21.1-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "5CDB719BF6F7C7503EF8BCF181A31577EECA58A8167234F0955F48DD4A92E989",
       "algorithm": "sha256"
     },
     {
@@ -986,18 +986,18 @@
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.41.0.pkg",
-      "checksum": "E4212731CF74EC59A049F6097412FE2C9D0553E0DBEE71CB24611E829B2ED403",
+      "id": "http/awscli.amazonaws.com/AWSCLIV2-2.41.1.pkg",
+      "checksum": "FCC64D3B7C5425A7E236BFB2FABA4CBDFA580F888C7165268715E474D9D1408D",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.41.0.zip",
-      "checksum": "A1BDBB55835D5E5159F7AD9AD4F55BCCE838565A2F12ADED2AEFEE2F4BF71D0A",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-aarch64-2.41.1.zip",
+      "checksum": "83F3BB8440CF6A05E6289F8024126B8C8E15E9513ADFE0D6C059747350CDB1E2",
       "algorithm": "sha256"
     },
     {
-      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.41.0.zip",
-      "checksum": "41C0E2D33E30FF34F0FCAC8EC2A013D8C3B95100CF7D4BD1007302B7D4F655E5",
+      "id": "http/awscli.amazonaws.com/awscli-exe-linux-x86_64-2.41.1.zip",
+      "checksum": "F1B67518C009E9DEB94152AABA5CC015E80AF6B0630A7931D3662DF42B5F568E",
       "algorithm": "sha256"
     },
     {
