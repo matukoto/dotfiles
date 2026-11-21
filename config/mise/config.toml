@@ -10,13 +10,12 @@
     "python" = "3.14.10"
     "lua" = "5.5.1"
     "gcloud" = { version = "594.0.0", depends = ["python"] }
-    "dotnet" = "10.0.102"
     # "npm:@marp-team/marp-cli" = "latest"
     # "npm:sv" = '0.17.0'
     # "spring-boot" = "3.5.3"
     # 'npm:@actions/languageserver' = '0.3.61'
     # 'npm:md-to-pdf' = '5.2.5'
-    "wrangler" = "4.165.0"
+    # "wrangler" = "4.165.0"
     # LSP Formatter Linter
     "npm:bash-language-server" = "5.8.1"
     "npm:vscode-langservers-extracted" = "4.10.0"
