@@ -10,7 +10,7 @@ registries:
     ref: v4.586.0 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: x-motemen/ghq@v1.12.0
-  - name: dandavison/delta@0.21.1
+  - name: dandavison/delta@0.21.2
   - name: extrawurst/gitui@v0.28.1
   - name: altsem/gitu@v0.44.0
   - name: BurntSushi/ripgrep@15.2.0
@@ -34,7 +34,7 @@ packages:
   - name: suzuki-shunsuke/pinact@v5.0.2
   - name: rhysd/vim-startuptime@v1.3.2
   - name: golang.org/x/tools/gopls@v0.24.0
-  - name: aws/aws-cli@2.41.1
+  - name: aws/aws-cli@2.41.2
   - name: tstack/lnav@v0.14.1
   - name: biomejs/biome@@biomejs/biome@2.3.8
   # - name: Wilfred/difftastic@0.72.0
@@ -44,7 +44,7 @@ packages:
   - name: anomalyco/opencode@v2.3.2
   - name: github/copilot-cli@v1.0.114
   - name: sharkdp/hyperfine@v2.0.0
-  - name: openai/codex@rust-v0.170.0
+  - name: openai/codex@rust-v0.171.0
     # LSP Formatter Linter
   - name: github/copilot-language-server-release@1.573.0
   - name: LuaLS/lua-language-server@3.19.2
