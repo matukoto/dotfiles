@@ -24,11 +24,7 @@ fi
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' list-colors ''
-if [[ -n ${NVIM-} ]]; then
-  bindkey -e
-else
-  bindkey -v
-fi
+bindkey -e
 KEYTIMEOUT=10
 bindkey '^R' history-incremental-search-backward
 bindkey '^?' backward-delete-char
@@ -38,7 +34,6 @@ bindkey '^[[B' down-line-or-history
 bindkey '^[[3~' delete-char
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
-bindkey -M vicmd '^R' history-incremental-search-backward
 [[ -t 0 ]] && export GPG_TTY=$TTY
 if (( $+commands[mise] )); then
   eval "$(mise activate zsh)"
