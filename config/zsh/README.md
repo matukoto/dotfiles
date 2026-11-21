@@ -86,7 +86,7 @@ Fish の汎用的な短縮入力を Zsh の alias として追加。
 
 | 入力 | 内容 |
 | --- | --- |
-| `s` / `gd` / `gl` | `git status` / `git diff` / `git log` |
+| `s` / `gd` / `gl` | `git status` / `git diff` / `git log --max-count=100` |
 | `ga` / `gc` / `gp` / `gpl` | `git add` / `git commit` / `git push` / `git pull` |
 | `gpu` | `git push --set-upstream origin HEAD` |
 | `gs` / `gsc` / `gcp` | `git switch` / `git switch -c` / `git cherry-pick` |
