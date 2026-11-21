@@ -14,7 +14,7 @@ clipboard-write = allow
 # clipboard-write 経由で送信されるデータには影響しない
 clipboard-trim-trailing-spaces = true
 
-confirm-close-surface = false
+confirm-close-surface = always
 
 # 最後のタブが閉じられた時にアプリを閉じる
 quit-after-last-window-closed = true
