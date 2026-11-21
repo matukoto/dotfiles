@@ -65,7 +65,7 @@ dotfiles リポジトリを配置して使う場合は、`bash scripts/link-conf
 | コマンド入力 | 入力行と継続行はプロンプト文字なし |
 | Git | ブランチ、detached HEAD、stash、stage、変更、未追跡、競合、ahead/behind、操作状態 |
 | 言語 | プロジェクトを検出し、使用可能な言語コマンドのバージョンを表示。Svelte は package.json から取得 |
-| クラウド | 設定済みの `AWS_PROFILE` / `CLOUDSDK_CORE_PROJECT` を表示 |
+| クラウド | 現在の kubectl コンテキストと有効な gcloud configuration 名、設定済みの `AWS_PROFILE` / `CLOUDSDK_CORE_PROJECT` を表示 |
 | `ghf` | ghq + fzf がある場合にリポジトリを選択して移動 |
 | `yy` | Yazi がある場合に終了時のディレクトリへ移動 |
 
@@ -114,12 +114,14 @@ alias の追加自体はコマンドを実行しない。
 - Atuin、zoxide、個人用パス・関数、Copilot、Nix 管理コマンドは含めない。
 - Fish の自動候補表示と入力中の構文ハイライトは含めない。履歴検索と補完は Zsh 標準を使う。
 - Tide 自体は使わず、主要な配置・色・情報を Zsh で再現する。パスの短縮は画面幅に基づく簡略版。
-- kubectl の context 自動取得、direnv、Nix shell、distrobox / toolbox の表示は含めない。
-- クラウド表示は環境変数に限定し、CLI の設定ファイルからの自動取得は行わない。
+- direnv、Nix shell、distrobox / toolbox の表示は含めない。
 - アイコンを同じように表示するには Nerd Font が必要。現在の端末は HackGen Console NF。
   移行先でフォントを利用できるかは未確認。フォントがなくてもシェル機能は動作する。
 
 ## データと端末固有設定
+
+kubectl のコンテキストは `kubectl config current-context` で取得する。
+gcloud の configuration 名は `CLOUDSDK_ACTIVE_CONFIG_NAME` を優先し、未設定の場合は `CLOUDSDK_CONFIG` または `~/.config/gcloud` の設定を参照する。
 
 aqua は `${AQUA_ROOT_DIR:-$XDG_DATA_HOME/aquaproj-aqua}/bin` を PATH に追加する。
 `AQUA_GLOBAL_CONFIG` の既定値は `$XDG_CONFIG_HOME/aqua/aqua.yaml`。既存の指定があれば維持する。
