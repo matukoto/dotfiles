@@ -194,6 +194,25 @@ _dz_precmd() {
     _dz_escape "$AWS_PROFILE"
     details+=" %F{yellow} $REPLY%f"
   fi
+  local kube_context gcloud_config_dir=${CLOUDSDK_CONFIG:-$HOME/.config/gcloud}
+  local gcloud_config=${CLOUDSDK_ACTIVE_CONFIG_NAME-}
+  if (( $+commands[kubectl] )) && [[ -n ${KUBECONFIG-} || -f $HOME/.kube/config ]]; then
+    if kube_context=$(AQUA_DISABLE_LAZY_INSTALL=true command kubectl config current-context 2>/dev/null) && [[ -n $kube_context ]]; then
+      _dz_escape "$kube_context"
+      details+=" %F{blue}kubectl:$REPLY%f"
+    fi
+  fi
+  if [[ -z $gcloud_config ]]; then
+    if [[ -f $gcloud_config_dir/active_config && -r $gcloud_config_dir/active_config ]]; then
+      gcloud_config=$(<"$gcloud_config_dir/active_config")
+    elif [[ -f $gcloud_config_dir/configurations/config_default ]]; then
+      gcloud_config=default
+    fi
+  fi
+  if [[ -n $gcloud_config ]]; then
+    _dz_escape "$gcloud_config"
+    details+=" %F{blue}gcloud:$REPLY%f"
+  fi
   if [[ -n ${CLOUDSDK_CORE_PROJECT-} ]]; then
     _dz_escape "$CLOUDSDK_CORE_PROJECT"
     details+=" %F{blue}󰊭 $REPLY%f"
