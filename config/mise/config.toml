@@ -7,7 +7,9 @@
     "npm" = "12.2.3"
     "pnpm" = "12.21.0"
     "terraform" = "1.17.2"
+    "python" = "3.14.10"
     "lua" = "5.5.1"
+    "gcloud" = { version = "594.0.0", depends = ["python"] }
     "dotnet" = "10.0.102"
     # "npm:@marp-team/marp-cli" = "latest"
     # "npm:sv" = '0.17.0'
@@ -25,3 +27,6 @@
     "go:github.com/sqls-server/sqls" = "0.2.48"
 [settings]
     experimental = false
+
+[env]
+    CLOUDSDK_PYTHON = { value = "{{ tools.python.path }}/bin/python3", tools = true }
