@@ -59,7 +59,7 @@ if status is-interactive
     abbr --add gp 'git push'
     abbr --add gpu 'git push --set-upstream origin HEAD'
     abbr --add gpl 'git pull'
-    abbr --add gl 'git log'
+    abbr --add gl 'git log --max-count=100'
     abbr --add gs 'git switch'
     abbr --add gd 'git diff'
     abbr --add gsc 'git switch -c'

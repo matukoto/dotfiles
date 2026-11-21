@@ -58,14 +58,14 @@ dotfiles リポジトリを配置して使う場合は、`bash scripts/link-conf
 | --- | --- |
 | 基本環境 | XDG、東京のタイムゾーン、`BROWSER=open`、TTY がある場合の `GPG_TTY` |
 | エディタ | PATH 上に nvim があれば nvim、なければ vi |
-| 操作 | Vi キー。Neovim ターミナル内は Emacs キー |
+| 操作 | Emacs キー |
 | 履歴検索 | Zsh 標準の `Ctrl-R`。上・下キーで履歴移動 |
 | 補完 | Zsh 標準の compinit、メニュー選択、大文字小文字の補完設定 |
-| プロンプト | 空行、現在地・Git、改行、モードと `❯`。背景なし |
-| 右プロンプト | 失敗コード、3秒以上の実行時間、SSH/root 情報、ジョブ、言語、時刻 |
+| プロンプト | 入力行の上に時刻、現在地、Git、失敗コード、3秒以上の実行時間、SSH/root 情報、ジョブ、クラウド、言語を表示 |
+| コマンド入力 | 入力行と継続行はプロンプト文字なし |
 | Git | ブランチ、detached HEAD、stash、stage、変更、未追跡、競合、ahead/behind、操作状態 |
 | 言語 | プロジェクトを検出し、使用可能な言語コマンドのバージョンを表示。Svelte は package.json から取得 |
-| クラウド | 設定済みの `AWS_PROFILE` / `CLOUDSDK_CORE_PROJECT` を表示 |
+| クラウド | 現在の kubectl コンテキストと有効な gcloud configuration 名、設定済みの `AWS_PROFILE` / `CLOUDSDK_CORE_PROJECT` を表示 |
 | `ghf` | ghq + fzf がある場合にリポジトリを選択して移動 |
 | `yy` | Yazi がある場合に終了時のディレクトリへ移動 |
 
@@ -86,7 +86,7 @@ Fish の汎用的な短縮入力を Zsh の alias として追加。
 
 | 入力 | 内容 |
 | --- | --- |
-| `s` / `gd` / `gl` | `git status` / `git diff` / `git log` |
+| `s` / `gd` / `gl` | `git status` / `git diff` / `git log --max-count=100` |
 | `ga` / `gc` / `gp` / `gpl` | `git add` / `git commit` / `git push` / `git pull` |
 | `gpu` | `git push --set-upstream origin HEAD` |
 | `gs` / `gsc` / `gcp` | `git switch` / `git switch -c` / `git cherry-pick` |
@@ -114,13 +114,14 @@ alias の追加自体はコマンドを実行しない。
 - Atuin、zoxide、個人用パス・関数、Copilot、Nix 管理コマンドは含めない。
 - Fish の自動候補表示と入力中の構文ハイライトは含めない。履歴検索と補完は Zsh 標準を使う。
 - Tide 自体は使わず、主要な配置・色・情報を Zsh で再現する。パスの短縮は画面幅に基づく簡略版。
-- Vi の insert / normal 表示を再現。Tide と同じ replace / visual 表示の完全な対応は未実施。
-- kubectl の context 自動取得、direnv、Nix shell、distrobox / toolbox の表示は含めない。
-- クラウド表示は環境変数に限定し、CLI の設定ファイルからの自動取得は行わない。
+- direnv、Nix shell、distrobox / toolbox の表示は含めない。
 - アイコンを同じように表示するには Nerd Font が必要。現在の端末は HackGen Console NF。
   移行先でフォントを利用できるかは未確認。フォントがなくてもシェル機能は動作する。
 
 ## データと端末固有設定
+
+kubectl のコンテキストは `kubectl config current-context` で取得する。
+gcloud の configuration 名は `CLOUDSDK_ACTIVE_CONFIG_NAME` を優先し、未設定の場合は `CLOUDSDK_CONFIG` または `~/.config/gcloud` の設定を参照する。
 
 aqua は `${AQUA_ROOT_DIR:-$XDG_DATA_HOME/aquaproj-aqua}/bin` を PATH に追加する。
 `AQUA_GLOBAL_CONFIG` の既定値は `$XDG_CONFIG_HOME/aqua/aqua.yaml`。既存の指定があれば維持する。
@@ -151,7 +152,7 @@ DOTFILES_ZSH_LANGUAGE_PROMPT=0
 | --- | --- |
 | `.zshenv` | 対話・非対話共通の環境変数と PATH |
 | `.zshrc` | 履歴、補完、キー設定、モジュール読み込み |
-| `prompt.zsh` | Git・言語情報、プロンプト、ZLE のモード表示 |
+| `prompt.zsh` | Git・言語情報、プロンプト |
 | `functions.zsh` | groot / ghf / yy |
 | `aliases.zsh` | Git・一覧表示・エディタ等の alias |
 | `start.sh` | Fish と併用する起動入口 |

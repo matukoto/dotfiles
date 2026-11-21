@@ -1,7 +1,7 @@
 # Tide-like layout using only Zsh; Git and language tools are optional.
 autoload -Uz add-zsh-hook
 zmodload zsh/datetime
-typeset -g _dz_git='' _dz_languages='' _dz_mode='' _dz_right=''
+typeset -g _dz_git='' _dz_languages=''
 typeset -gi _dz_exit=0
 typeset -gF _dz_started=0
 typeset -gi _dz_apple_developer_tools=1
@@ -164,16 +164,14 @@ _dz_language_info() {
 }
 
 _dz_render() {
-  local color=green location=$PWD
-  (( _dz_exit )) && color=red
+  local location=$PWD details=$1
   if [[ $location == $HOME ]]; then
     location='~'
   elif [[ $location == $HOME/* ]]; then
     location="~/${location#$HOME/}"
   fi
   _dz_escape "$location"
-  PROMPT=$'\n'"%F{cyan}%$(( COLUMNS > 40 ? COLUMNS - 20 : 20 ))<…<$REPLY%<<%f$_dz_git"$'\n'"$_dz_mode%F{$color}❯%f "
-  RPROMPT=$_dz_right
+  PROMPT=$'\n'"%F{8}%*%f %F{cyan}%$(( COLUMNS > 40 ? COLUMNS - 20 : 20 ))<…<$REPLY%<<%f$_dz_git$details"$'\n'
 }
 
 _dz_preexec() { _dz_started=$EPOCHREALTIME; }
@@ -185,42 +183,46 @@ _dz_precmd() {
   _dz_started=0
   _dz_git_info
   _dz_language_info
-  _dz_right=''
-  (( _dz_exit )) && _dz_right+="%F{red}✘ $_dz_exit%f "
+  local details=''
+  (( _dz_exit )) && details+=" %F{red}✘ $_dz_exit%f"
   if (( elapsed >= 3 )); then
-    _dz_right+="%F{8} $((elapsed / 60))m $((elapsed % 60))s%f "
+    details+=" %F{8} $((elapsed / 60))m $((elapsed % 60))s%f"
   fi
-  [[ -n ${SSH_CONNECTION-} || $EUID == 0 ]] && _dz_right+='%F{yellow}%n@%m%f '
-  _dz_right+='%(1j.%F{green}%f .)'
+  [[ -n ${SSH_CONNECTION-} || $EUID == 0 ]] && details+=' %F{yellow}%n@%m%f'
+  details+='%(1j. %F{green}%f.)'
   if [[ -n ${AWS_PROFILE-} ]]; then
     _dz_escape "$AWS_PROFILE"
-    _dz_right+="%F{yellow} $REPLY%f "
+    details+=" %F{yellow} $REPLY%f"
+  fi
+  local gcloud_config_dir=${CLOUDSDK_CONFIG:-$HOME/.config/gcloud}
+  local gcloud_config=${CLOUDSDK_ACTIVE_CONFIG_NAME-}
+  if [[ -z $gcloud_config ]]; then
+    if [[ -f $gcloud_config_dir/active_config && -r $gcloud_config_dir/active_config ]]; then
+      gcloud_config=$(<"$gcloud_config_dir/active_config")
+    elif [[ -f $gcloud_config_dir/configurations/config_default ]]; then
+      gcloud_config=default
+    fi
+  fi
+  if [[ -n $gcloud_config ]]; then
+    _dz_escape "$gcloud_config"
+    details+=" %F{141}$REPLY%f"
+  fi
+  local kube_context
+  if (( $+commands[kubectl] )) && [[ -n ${KUBECONFIG-} || -f $HOME/.kube/config ]]; then
+    if kube_context=$(AQUA_DISABLE_LAZY_INSTALL=true command kubectl config current-context 2>/dev/null) && [[ -n $kube_context ]]; then
+      _dz_escape "$kube_context"
+      details+=" %F{215}$REPLY%f"
+    fi
   fi
   if [[ -n ${CLOUDSDK_CORE_PROJECT-} ]]; then
     _dz_escape "$CLOUDSDK_CORE_PROJECT"
-    _dz_right+="%F{blue}󰊭 $REPLY%f "
+    details+=" %F{blue}󰊭 $REPLY%f"
   fi
-  _dz_right+="${_dz_languages# } %F{8}%*%f"
-  _dz_render
+  _dz_render "$details$_dz_languages"
   return 0
 }
 
-_dz_keymap() {
-  _dz_mode=''
-  if [[ -z ${NVIM-} ]]; then
-    case ${KEYMAP:-main} in
-      vicmd) _dz_mode='%F{white}%f ' ;;
-      visual|vivis) _dz_mode='%F{yellow}V%f ' ;;
-      *) _dz_mode='%F{cyan}I%f ' ;;
-    esac
-  fi
-  _dz_render
-  zle && zle reset-prompt
-  return 0
-}
-
-autoload -Uz add-zle-hook-widget
+RPROMPT=''
+PS2=''
 add-zsh-hook preexec _dz_preexec
 add-zsh-hook precmd _dz_precmd
-add-zle-hook-widget line-init _dz_keymap
-add-zle-hook-widget keymap-select _dz_keymap
