@@ -13,7 +13,7 @@ packages:
   - name: dandavison/delta@0.22.0
   - name: extrawurst/gitui@v0.28.1
   - name: altsem/gitu@v0.44.0
-  - name: BurntSushi/ripgrep@15.2.0
+  - name: BurntSushi/ripgrep@16.0.0
   - name: ajeetdsouza/zoxide@v0.10.0
   - name: mikefarah/yq@v4.54.3
   - name: sharkdp/bat@v0.26.1
