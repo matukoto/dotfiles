@@ -271,33 +271,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.8.0/docker-compose-darwin-aarch64",
-      "checksum": "008B8FCF6C6D60340F5796626A0F0D51C042085793A9B1653343011727140B71",
+      "id": "github_release/github.com/docker/compose/v5.8.1/docker-compose-darwin-aarch64",
+      "checksum": "775DDF9CFAD37B21A29DD83707481D3806C2A83ED2139BC5F19543857D341D81",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.8.0/docker-compose-darwin-x86_64",
-      "checksum": "5C41CD573C549DC66ABB03C5B29D6D4DFAAE206B2E79848D1C32482BB2A3B416",
+      "id": "github_release/github.com/docker/compose/v5.8.1/docker-compose-darwin-x86_64",
+      "checksum": "59DDCB7F6A077B2B11B361FCA4C62A1DE20FD44054EC6C98188C9BB993DB4FBB",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.8.0/docker-compose-linux-aarch64",
-      "checksum": "1A9C918B2FB49B9C87F0018C64B5ABD0D30715155E98DC939779FBAEE6C414D3",
+      "id": "github_release/github.com/docker/compose/v5.8.1/docker-compose-linux-aarch64",
+      "checksum": "E169103DEB35AA6633A78ECA0A2A0658275D573DD689A33C839C71BADFA00CCE",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.8.0/docker-compose-linux-x86_64",
-      "checksum": "B8840F5008C447F41FCE0A57AE3ADEAB42C89B1EB6E6012524BCABBFB4FFBAF6",
+      "id": "github_release/github.com/docker/compose/v5.8.1/docker-compose-linux-x86_64",
+      "checksum": "CF2713394CA63900DA5D00E0BE12045634CEA93A504E1AB2F2AE24EED7F2D359",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.8.0/docker-compose-windows-aarch64.exe",
-      "checksum": "EC7A100A77D9AEDBAA6E2B13A10140729860B58B8D2B6855D8191C52E7DD50FC",
+      "id": "github_release/github.com/docker/compose/v5.8.1/docker-compose-windows-aarch64.exe",
+      "checksum": "B20430BDA14878CEE26410C1AADD6E0282A44C26F81BAD540D7C8C101B4B9139",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/docker/compose/v5.8.0/docker-compose-windows-x86_64.exe",
-      "checksum": "0C2D9245A5F61E8E3CC85009B8B4888FA82FDED08239D28BD6DA5CA818EDA2B2",
+      "id": "github_release/github.com/docker/compose/v5.8.1/docker-compose-windows-x86_64.exe",
+      "checksum": "7A0E8C884521ADFB5DBF7C6250F89172CD7F5CB68CE284C401CC3FE1A116F988",
       "algorithm": "sha256"
     },
     {
@@ -346,33 +346,33 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.116/copilot-darwin-arm64.tar.gz",
-      "checksum": "ACAA227712860978D8A73A7A64395F64DBA2C77FCAB2304FA21A995F12355584",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.117/copilot-darwin-arm64.tar.gz",
+      "checksum": "081E8B48EF046C7A1D1C1F3178FA0260998C2848FA720B600A27F24840E4F8BC",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.116/copilot-darwin-x64.tar.gz",
-      "checksum": "86ED34686E86E6685E21E7FC318C0AAAEA30A6A214926925A4665B7ED7EC7682",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.117/copilot-darwin-x64.tar.gz",
+      "checksum": "FC3827DFC74229C6045E12CCA2F517DB0B1AB11D05C3A9C7D5195A3C39FA67C8",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.116/copilot-linux-arm64.tar.gz",
-      "checksum": "BA3207AFD858A93B63C5CCD83C53F43FDB20FC00FD43260A532FB14B5F8D0776",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.117/copilot-linux-arm64.tar.gz",
+      "checksum": "24591C89A6A155F26E97BD081EA20F55C12E8A423EAAD01386E7C49A80990846",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.116/copilot-linux-x64.tar.gz",
-      "checksum": "FFEA833980A9767A18AFF7FD8459085A044266C26CA6A9EDAFE59CDCFF718C79",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.117/copilot-linux-x64.tar.gz",
+      "checksum": "D12052D8CB42C0EE4345FB625D3D65DFC6E19F65277E2A4827EE10723ADCE8AA",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.116/copilot-win32-arm64.zip",
-      "checksum": "977F63D1F5E8C1DF433D01C6258974EE7DC0BCF905B74962465D132BAEBD43B8",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.117/copilot-win32-arm64.zip",
+      "checksum": "33087F22D548321A5E0682FDF4DAA6A872AD9DCEDB00D7F22C004D9033E21039",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/github/copilot-cli/v1.0.116/copilot-win32-x64.zip",
-      "checksum": "5DE1C201158582252F915CD375BADFDE7D54FF247CF15DC97DB97F71D4A4E1A7",
+      "id": "github_release/github.com/github/copilot-cli/v1.0.117/copilot-win32-x64.zip",
+      "checksum": "57A7101FB6D7E3FC43B34F35C58A527C2A42762FB493A75630A17A47C3F115E7",
       "algorithm": "sha256"
     },
     {
